@@ -1,0 +1,13 @@
+[
+  {
+    "cityName": "Ankara",
+    "phone": "0312XXXXXXX",
+    "sourceUrl": "https://www.egm.gov.tr/ankara"
+  },
+  {
+    "cityName": "İstanbul",
+    "phone": "0212XXXXXXX",
+    "sourceUrl": "https://www.egm.gov.tr/istanbul"
+  }
+]
+

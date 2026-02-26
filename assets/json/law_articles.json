@@ -1,0 +1,15 @@
+[
+  {
+    "lawCode": "PVSK",
+    "lawName": "Polis Vazife ve Salahiyet Kanunu",
+    "articleNumber": 16,
+    "official_text": "Polis, görevini yaparken kanunların kendisine verdiği yetkileri ...",
+    "plain_summary": "Polis, görevini yerine getirirken kanunların çizdiği sınırlar içinde hareket eder.",
+    "field_example": "Asayiş uygulamasında kimlik kontrolü yapılırken, yetkinin kaynağı PVSK madde 16'dır.",
+    "common_mistakes": "Yetki sınırlarının aşılması, ölçüsüz güç kullanımı.",
+    "related": [15, 17],
+    "source_url": "https://www.mevzuat.gov.tr/",
+    "last_updated": "2024-01-01"
+  }
+]
+
