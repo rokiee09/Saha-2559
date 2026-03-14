@@ -8,6 +8,7 @@ class CityContact {
 
   late String cityName;
   late String phone;
+  String? address;
   String? sourceUrl;
 }
 

@@ -4,11 +4,23 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../db/isar_service.dart';
 import '../models/city_contact.dart';
+import '../models/law_article.dart';
 import '../models/field_card.dart';
 import '../models/martyr.dart';
 import 'law_repository.dart';
 
 class OfflineImportService {
+  /// İlk açılışta mevzuat yoksa JSON'dan yükler; tüm maddelerde resmî metin ve özet dolu olur.
+  static Future<void> ensureLawArticlesSeeded() async {
+    final isar = IsarService.db;
+    final count = await isar.lawArticles.count();
+    if (count > 0) return;
+    final jsonStr =
+        await rootBundle.loadString('assets/json/law_articles.json');
+    final repo = LawRepository();
+    await repo.importFromJsonString(jsonStr);
+  }
+
   static Future<void> importAll() async {
     await Future.wait([
       _importLawArticles(),
@@ -34,6 +46,7 @@ class OfflineImportService {
       final c = CityContact()
         ..cityName = map['cityName'] as String
         ..phone = map['phone'] as String
+        ..address = map['address'] as String?
         ..sourceUrl = map['sourceUrl'] as String?;
       return c;
     }).toList(growable: false);

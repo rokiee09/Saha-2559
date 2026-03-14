@@ -28,7 +28,24 @@ class ContactsPage extends ConsumerWidget {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: ListTile(
                   title: Text(city.cityName),
-                  subtitle: Text(city.phone),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(city.phone),
+                      if (city.address != null && city.address!.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(
+                            city.address!,
+                            style: Theme.of(context).textTheme.bodySmall,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                    ],
+                  ),
+                  isThreeLine: city.address != null && city.address!.isNotEmpty,
                   trailing: IconButton(
                     icon: const Icon(Icons.call),
                     onPressed: () => callPhone(city.phone),

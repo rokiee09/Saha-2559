@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../contacts/contacts_page.dart';
 import '../martyrs/martyrs_page.dart';
+import '../saha/trafik_ceza_page.dart';
 import '../settings/settings_page.dart';
 
 class TeskilatPage extends StatelessWidget {
@@ -14,6 +15,38 @@ class TeskilatPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          Card(
+            margin: const EdgeInsets.only(bottom: 12),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Teşkilat Yapısı ve İletişim',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Trafik ceza hesaplayıcı, il emniyet müdürlükleri, şehitlerimiz ve uygulama ayarlarına buradan ulaşabilirsiniz. '
+                    '81 il iletişim bilgileri ve saygı listesi güncel tutulmaktadır.',
+                  ),
+                ],
+              ),
+            ),
+          ),
+          _TeskilatCard(
+            icon: Icons.traffic,
+            title: 'Trafik Ceza Hesaplayıcı',
+            subtitle: 'Ceza maddesi seç → Para cezası, puan ve araç bağlama bilgisi',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const TrafikCezaPage()),
+              );
+            },
+          ),
           _TeskilatCard(
             icon: Icons.map,
             title: 'İl İletişim',

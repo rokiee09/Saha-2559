@@ -17,18 +17,23 @@ const CityContactSchema = CollectionSchema(
   name: r'CityContact',
   id: 4,
   properties: {
-    r'cityName': PropertySchema(
+    r'address': PropertySchema(
       id: 0,
+      name: r'address',
+      type: IsarType.string,
+    ),
+    r'cityName': PropertySchema(
+      id: 1,
       name: r'cityName',
       type: IsarType.string,
     ),
     r'phone': PropertySchema(
-      id: 1,
+      id: 2,
       name: r'phone',
       type: IsarType.string,
     ),
     r'sourceUrl': PropertySchema(
-      id: 2,
+      id: 3,
       name: r'sourceUrl',
       type: IsarType.string,
     )
@@ -53,6 +58,12 @@ int _cityContactEstimateSize(
   Map<Type, List<int>> allOffsets,
 ) {
   var bytesCount = offsets.last;
+  {
+    final value = object.address;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   bytesCount += 3 + object.cityName.length * 3;
   bytesCount += 3 + object.phone.length * 3;
   {
@@ -70,9 +81,10 @@ void _cityContactSerialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  writer.writeString(offsets[0], object.cityName);
-  writer.writeString(offsets[1], object.phone);
-  writer.writeString(offsets[2], object.sourceUrl);
+  writer.writeString(offsets[0], object.address);
+  writer.writeString(offsets[1], object.cityName);
+  writer.writeString(offsets[2], object.phone);
+  writer.writeString(offsets[3], object.sourceUrl);
 }
 
 CityContact _cityContactDeserialize(
@@ -82,10 +94,11 @@ CityContact _cityContactDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = CityContact();
-  object.cityName = reader.readString(offsets[0]);
+  object.address = reader.readStringOrNull(offsets[0]);
+  object.cityName = reader.readString(offsets[1]);
   object.id = id;
-  object.phone = reader.readString(offsets[1]);
-  object.sourceUrl = reader.readStringOrNull(offsets[2]);
+  object.phone = reader.readString(offsets[2]);
+  object.sourceUrl = reader.readStringOrNull(offsets[3]);
   return object;
 }
 
@@ -97,10 +110,12 @@ P _cityContactDeserializeProp<P>(
 ) {
   switch (propertyId) {
     case 0:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 1:
       return (reader.readString(offset)) as P;
     case 2:
+      return (reader.readString(offset)) as P;
+    case 3:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -200,6 +215,158 @@ extension CityContactQueryWhere
 
 extension CityContactQueryFilter
     on QueryBuilder<CityContact, CityContact, QFilterCondition> {
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'address',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'address',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressEqualTo(
+    String? value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressGreaterThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressLessThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressBetween(
+    String? lower,
+    String? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'address',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressContains(
+      String value,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'address',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition> addressMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'address',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'address',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      addressIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'address',
+        value: '',
+      ));
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QAfterFilterCondition> cityNameEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -683,6 +850,18 @@ extension CityContactQueryLinks
 
 extension CityContactQuerySortBy
     on QueryBuilder<CityContact, CityContact, QSortBy> {
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> sortByAddress() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'address', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> sortByAddressDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'address', Sort.desc);
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QAfterSortBy> sortByCityName() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'cityName', Sort.asc);
@@ -722,6 +901,18 @@ extension CityContactQuerySortBy
 
 extension CityContactQuerySortThenBy
     on QueryBuilder<CityContact, CityContact, QSortThenBy> {
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> thenByAddress() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'address', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> thenByAddressDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'address', Sort.desc);
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QAfterSortBy> thenByCityName() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'cityName', Sort.asc);
@@ -773,6 +964,13 @@ extension CityContactQuerySortThenBy
 
 extension CityContactQueryWhereDistinct
     on QueryBuilder<CityContact, CityContact, QDistinct> {
+  QueryBuilder<CityContact, CityContact, QDistinct> distinctByAddress(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'address', caseSensitive: caseSensitive);
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QDistinct> distinctByCityName(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -800,6 +998,12 @@ extension CityContactQueryProperty
   QueryBuilder<CityContact, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
+    });
+  }
+
+  QueryBuilder<CityContact, String?, QQueryOperations> addressProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'address');
     });
   }
 

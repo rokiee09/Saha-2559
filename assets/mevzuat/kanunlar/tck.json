@@ -1,0 +1,363 @@
+{
+  "law": "5237 Türk Ceza Kanunu",
+  "source": "mevzuat.gov.tr",
+  "articles": [
+    {
+      "id": "tck-1",
+      "article": "Madde 1",
+      "title": "Ceza Kanununun amacı",
+      "text": "(1) Ceza Kanununun amacı; kişi hak ve özgürlüklerini, kamu düzen ve güvenliğini, hukuk devletini, kamu sağlığını ve çevreyi, toplum barışını korumak, suç işlenmesini önlemektir. Kanunda, bu amacın gerçekleştirilmesi için ceza sorumluluğunun temel esasları ile suçlar, ceza ve güvenlik tedbirlerinin türleri düzenlenmiştir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-2",
+      "article": "Madde 2",
+      "title": "Suçta ve cezada kanunîlik ilkesi",
+      "text": "(1) Kanunun açıkça suç saymadığı bir fiil için kimseye ceza verilemez ve güvenlik tedbiri uygulanamaz. Kanunda yazılı cezalardan ve güvenlik tedbirlerinden başka bir ceza ve güvenlik tedbirine hükmolunamaz.\n\n(2) İdarenin düzenleyici işlemleriyle suç ve ceza konulamaz.\n\n(3) Kanunların suç ve ceza içeren hükümlerinin uygulanmasında kıyas yapılamaz. Suç ve ceza içeren hükümler, kıyasa yol açacak biçimde geniş yorumlanamaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-3",
+      "article": "Madde 3",
+      "title": "Adalet ve kanun önünde eşitlik ilkesi",
+      "text": "(1) Suç işleyen kişi hakkında işlenen fiilin ağırlığıyla orantılı ceza ve güvenlik tedbirine hükmolunur.\n\n(2) Ceza Kanununun uygulamasında kişiler arasında ırk, dil, din, mezhep, milliyet, renk, cinsiyet, siyasal veya diğer fikir yahut düşünceleri, felsefi inanç, milli veya sosyal köken, doğum, ekonomik ve diğer toplumsal konumları yönünden ayrım yapılamaz ve hiçbir kimseye ayrıcalık tanınamaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-4",
+      "article": "Madde 4",
+      "title": "Kanunun bağlayıcılığı",
+      "text": "1\n\n(1) Ceza kanunlarını bilmemek mazeret sayılmaz.\n\n(2) Ancak sakınamayacağı bir hata nedeniyle kanunu bilmediği için meşru sanarak bir suç işleyen kimse cezaen sorumlu olmaz.\n\nMülga fıkra: 29/6/2005 t. 5377 s. K. m.1",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-5",
+      "article": "Madde 5",
+      "title": "Özel kanunlarla ilişki",
+      "text": "(1) Bu Kanunun genel hükümleri, özel ceza kanunları ve ceza içeren kanunlardaki suçlar hakkında da uygulanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-6",
+      "article": "Madde 6",
+      "title": "Tanımlar",
+      "text": "1\n\n(1) Ceza kanunlarının uygulanmasında;\n\na) Vatandaş deyiminden; fiili işlediği sırada Türk vatandaşı olan kişi,\n\nb) Çocuk deyiminden; henüz onsekiz yaşını doldurmamış kişi,\n\nc) Kamu görevlisi deyiminden; kamusal faaliyetin yürütülmesine atama veya seçilme yoluyla ya da herhangi bir surette sürekli, süreli veya geçici olarak katılan kişi,\n\nd) Yargı görevi yapan deyiminden; yüksek mahkemeler, adlî ve idarî mahkemeler üye ve hakimleri ile Cumhuriyet savcısı ve avukatlar,\n\nDeğişik bent: 02/07/2018 t. 700 s. KhK. m.156\n\ne) Gece vakti deyiminden; güneşin batmasından bir saat sonra başlayan ve doğmasından bir saat evvele kadar devam eden zaman süresi,\n\nf) Silah deyiminden;\n\n1. Ateşli silahlar,\n\n2. Patlayıcı maddeler,\n\n3. Saldırı ve savunmada kullanılmak üzere yapılmış her türlü kesici, delici veya bereleyici alet,\n\n4. Saldırı ve savunma amacıyla yapılmış olmasa bile fiilen saldırı ve savunmada kullanılmaya elverişli diğer şeyler,\n\n5. Yakıcı, aşındırıcı, yaralayıcı, boğucu, zehirleyici, sürekli hastalığa yol açıcı nükleer, radyoaktif, kimyasal, biyolojik maddeler,\n\ng) Basın ve yayın yolu ile deyiminden; her türlü yazılı, görsel, işitsel ve elektronik kitle iletişim aracıyla yapılan yayınlar,\n\nh) İtiyadi suçlu deyiminden; kasıtlı bir suçun temel şeklini ya da daha ağır veya daha az cezayı gerektiren nitelikli şekillerini bir yıl içinde ve farklı zamanlarda ikiden fazla işleyen kişi,\n\ni) Suçu meslek edinen kişi deyiminden; kısmen de olsa geçimini suçtan elde ettiği kazançla sağlamaya alışmış kişi,\n\nj) Örgüt mensubu suçlu deyiminden; bir suç örgütünü kuran, yöneten, örgüte katılan veya örgüt adına diğerleriyle birlikte veya tek başına suç işleyen kişi,\n\nAnlaşılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-7",
+      "article": "Madde 7",
+      "title": "Zaman bakımından uygulama",
+      "text": "1\n\n(1) İşlendiği zaman yürürlükte bulunan kanuna göre suç sayılmayan bir fiilden dolayı kimseye ceza verilemez ve güvenlik tedbiri uygulanamaz. İşlendikten sonra yürürlüğe giren kanuna göre suç sayılmayan bir fiilden dolayı da kimse cezalandırılamaz ve hakkında güvenlik tedbiri uygulanamaz. Böyle bir ceza veya güvenlik tedbiri hükmolunmuşsa infazı ve kanuni neticeleri kendiliğinden kalkar.\n\n(2) Suçun işlendiği zaman yürürlükte bulunan kanun ile sonradan yürürlüğe giren kanunların hükümleri farklı ise, failin lehine olan kanun uygulanır ve infaz olunur.\n\n(3) Hapis cezasının ertelenmesi, koşullu salıverilme ve tekerrürle ilgili olanlar hariç; infaz rejimine ilişkin hükümler, derhal uygulanır.\n\nDeğişik fıkra: 29/6/2005 t. 5377 s. K. m.2\n\n(4) Geçici veya süreli kanunların, yürürlükte bulundukları süre içinde işlenmiş olan suçlar hakkında uygulanmasına devam edilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-8",
+      "article": "Madde 8",
+      "title": "Yer bakımından uygulama",
+      "text": "(1) Türkiye'de işlenen suçlar hakkında Türk kanunları uygulanır. Fiilin kısmen veya tamamen Türkiye'de işlenmesi veya neticenin Türkiye'de gerçekleşmesi halinde suç, Türkiye'de işlenmiş sayılır.\n\n(2) Suç;\n\na) Türk kara ve hava sahaları ile Türk karasularında,\n\nb) Açık denizde ve bunun üzerindeki hava sahasında, Türk deniz ve hava araçlarında veya bu araçlarla,\n\nc) Türk deniz ve hava savaş araçlarında veya bu araçlarla,\n\nd) Türkiye'nin kıt'a sahanlığında veya münhasır ekonomik bölgesinde tesis edilmiş sabit platformlarda veya bunlara karşı,\n\nİşlendiğinde Türkiye'de işlenmiş sayılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-9",
+      "article": "Madde 9",
+      "title": "Yabancı ülkede hüküm verilmesi",
+      "text": "(1) Türkiye'de işlediği suçtan dolayı yabancı ülkede hakkında hüküm verilmiş olan kimse, Türkiye'de yeniden yargılanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-10",
+      "article": "Madde 10",
+      "title": "Görev suçları",
+      "text": "(1) Yabancı ülkede Türkiye namına memuriyet veya görev üstlenmiş olup da bundan dolayı bir suç işleyen kimse, bu fiile ilişkin olarak yabancı ülkede hakkında mahkûmiyet hükmü verilmiş bulunsa bile, Türkiye'de yeniden yargılanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-11",
+      "article": "Madde 11",
+      "title": "Vatandaş tarafından işlenen suç",
+      "text": "(1) Bir Türk vatandaşı, 13 üncü maddede yazılı suçlar dışında, Türk kanunlarına göre aşağı sınırı bir yıldan az olmayan hapis cezasını gerektiren bir suçu yabancı ülkede işlediği ve kendisi Türkiye'de bulunduğu takdirde, bu suçtan dolayı yabancı ülkede hüküm verilmemiş olması ve Türkiye'de kovuşturulabilirliğin bulunması koşulu ile Türk kanunlarına göre cezalandırılır.\n\n(2) Suç, aşağı sınırı bir yıldan az hapis cezasını gerektirdiğinde yargılama yapılması zarar görenin veya yabancı hükûmetin şikayetine bağlıdır. Bu durumda şikayet, vatandaşın Türkiye'ye girdiği tarihten itibaren altı ay içinde yapılmalıdır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-12",
+      "article": "Madde 12",
+      "title": "Yabancı tarafından işlenen suç",
+      "text": "1\n\n(1) Bir yabancı, 13 üncü maddede yazılı suçlar dışında, Türk kanunlarına göre aşağı sınırı en az bir yıl hapis cezasını gerektiren bir suçu yabancı ülkede Türkiye'nin zararına işlediği ve kendisi Türkiye'de bulunduğu takdirde, Türk kanunlarına göre cezalandırılır. Yargılama yapılması Adalet Bakanının istemine bağlıdır.\n\n(2) Yukarıdaki fıkrada belirtilen suçun bir Türk vatandaşının veya Türk kanunlarına göre kurulmuş özel hukuk tüzel kişisinin zararına işlenmesi ve failin Türkiye'de bulunması halinde, bu suçtan dolayı yabancı ülkede hüküm verilmemiş olması koşulu ile suçtan zarar görenin şikayeti üzerine fail, Türk kanunlarına göre cezalandırılır.\n\n(3) Mağdur yabancı ise, aşağıdaki koşulların varlığı halinde fail, Adalet Bakanının istemi ile yargılanır:\n\na) Suçun, Türk kanunlarına göre aşağı sınırı üç yıldan az olmayan hapis cezasını gerektirmesi.\n\nb) Suçluların geri verilmesi anlaşmasının bulunmaması veya geri verilme isteminin suçun işlendiği ülkenin veya failin uyruğunda bulunduğu devletin hükûmeti tarafından kabul edilmemiş olması.\n\n(4) Birinci fıkra kapsamına giren suçtan dolayı yabancı mahkemece mahkûm edilen veya herhangi bir nedenle davası veya cezası düşen veya beraat eden yahut suçu kovuşturulabilir olmaktan çıkan yabancı hakkında Adalet Bakanının istemi üzerine Türkiye'de yeniden yargılama yapılır.\n\n(5) Birinci fıkra kapsamına giren hâllerde rüşvet ve nüfuz ticareti suçlarından dolayı yargılama yapılması Adalet Bakanının istemine bağlı değildir.\n\nEk fıkra: 18/6/2014 t. 6545 s. K. m.56",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-13",
+      "article": "Madde 13",
+      "title": "Diğer suçlar",
+      "text": "2\n\n(1) Aşağıdaki suçların, vatandaş veya yabancı tarafından, yabancı ülkede işlenmesi halinde, Türk kanunları uygulanır:\n\na) İkinci Kitap, Birinci Kısım altında yer alan suçlar.\n\nb) İkinci Kitap, Dördüncü Kısım altındaki Üçüncü, Dördüncü, Beşinci, Altıncı, Yedinci ve Sekizinci Bölümlerde yer alan suçlar.\n\nc) İşkence (madde 94, 95).\n\nd) Çevrenin kasten kirletilmesi (madde 181).\n\ne) Uyuşturucu veya uyarıcı madde imal ve ticareti (madde 188), uyuşturucu veya uyarıcı madde kullanılmasını kolaylaştırma (madde 190).\n\nf) Parada sahtecilik (madde 197), para ve kıymetli damgaları imale yarayan araçların üretimi ve ticareti (madde 200), mühürde sahtecilik (madde 202).\n\ng) Fuhuş (madde 227).\n\nh) Rüşvet (madde 252).\n\nMülga bent: 26/6/2009 t. 5918 s. K. m.1\n\ni) Deniz, demiryolu veya havayolu ulaşım araçlarının kaçırılması veya alıkonulması (madde 223, fıkra 2, 3) ya da bu araçlara karşı işlenen zarar verme (madde 152) suçları.\n\n(2) İkinci Kitap, Dördüncü Kısım altındaki Üçüncü, Dördüncü, Beşinci, Altıncı ve Yedinci Bölümlerde yer alanlar hariç; birinci fıkra kapsamına giren suçlardan dolayı Türkiye'de yargılama yapılması, Adalet Bakanının talebine bağlıdır.\n\nEk fıkra: 29/6/2005 t. 5377 s. K. m.3\n\n(3) Birinci fıkranın (a) ve (b) bentlerinde yazılı suçlar dolayısıyla yabancı bir ülkede mahkûmiyet veya beraat kararı verilmiş olsa bile, Adalet Bakanının talebi üzerine Türkiye'de yargılama yapılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-14",
+      "article": "Madde 14",
+      "title": "Seçimlik cezalarda soruşturma",
+      "text": "(1) 11 ve 12 nci maddelerde belirtilen hallerde, soruşturma konusu suçun yer aldığı kanun maddesinde hapis cezası ile adli para cezasından birinin uygulanması seçimlik sayılmış ise soruşturma veya kovuşturma açılmaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-15",
+      "article": "Madde 15",
+      "title": "Soruşturma koşulu olan cezanın hesaplanması",
+      "text": "(1) Miktarının soruşturma koşulu oluşturduğu hallerde ceza, soruşturma evresinde ileri sürülen kanuni ağırlaştırıcı nedenlerin aşağı sınırı ve kanuni hafifletici nedenlerin yukarı sınırı göz önünde bulundurularak hesaplanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-16",
+      "article": "Madde 16",
+      "title": "Cezadan mahsup",
+      "text": "(1) Nerede işlenmiş olursa olsun bir suçtan dolayı, yabancı ülkede gözaltında, gözlem altında, tutuklulukta veya hükümlülükte geçen süre, aynı suçtan dolayı Türkiye'de verilecek cezadan mahsup edilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-17",
+      "article": "Madde 17",
+      "title": "Hak yoksunlukları",
+      "text": "(1) Yukarıdaki maddelerde açıklanan hallerde mahkeme, yabancı mahkemelerden verilen ve Türk hukuk düzenine aykırı düşmeyen hükmün, Türk kanunlarına göre bir haktan yoksunluğu gerektirmesi halinde, Cumhuriyet savcısının istemi üzerine Türk kanunlarındaki sonuçlarının geçerli olmasına karar verir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-18",
+      "article": "Madde 18",
+      "title": "Geri verme",
+      "text": "2\n\nMülga madde: 23/04/2016 t. 6706 s. K. m.36\n\n(1) Yabancı bir ülkede işlenen veya işlendiği iddia edilen bir suç nedeniyle hakkında ceza soruşturması ya da kovuşturması başlatılan veya mahkûmiyet kararı verilmiş olan bir yabancı, talep üzerine, soruşturma ya da kovuşturmanın yapılabilmesi veya hükmedilen cezanın infazı amacıyla geri verilebilir. Ancak, geri verme talebine esas teşkil eden fiil;\n\na) Türk kanunlarına göre suç değilse,\n\nb) Düşünce suçu veya siyasi ya da askerî suç niteliğinde ise,\n\nc) Türkiye Devletinin güvenliğine karşı, Türkiye Devletinin veya bir Türk vatandaşının ya da Türk kanunlarına göre kurulmuş bir tüzel kişinin zararına işlenmişse,\n\nd) Türkiye'nin yargılama yetkisine giren bir suç ise,\n\ne) Zamanaşımına veya affa uğramış ise,\n\nGeri verme talebi kabul edilmez.\n\n(2) Uluslararası Ceza Divanına taraf olmanın gerektirdiği yükümlülükler hariç olmak üzere, vatandaş suç sebebiyle yabancı bir ülkeye verilemez.\n\n(3) Kişinin, talep eden devlete geri verilmesi halinde ırkı, dini, vatandaşlığı, belli bir sosyal gruba mensubiyeti veya siyasi görüşleri nedeniyle soruşturulacağına ya da kovuşturulacağına veya cezalandırılacağına ya da işkence ve kötü muameleye maruz kalacağına dair kuvvetli şüphe sebepleri varsa, talep kabul edilmez.\n\n(4) Kişinin bulunduğu yer ağır ceza mahkemesi, geri verme talebi hakkında bu madde ve Türkiye'nin taraf olduğu ilgili uluslararası sözleşme hükümlerine göre karar verir. Bu karara karşı temyiz yoluna başvurulabilir.\n\n(5) Mahkeme geri verme talebinin kabul edilebilir olduğuna karar verirse, bu kararın yerine getirilip getirilmemesi Bakanlar Kurulunun takdirine bağlıdır.\n\n(6) Geri verilmesi istenen kişi hakkında koruma tedbirlerine başvurulmasına, Türkiye'nin taraf olduğu ilgili uluslararası sözleşme hükümlerine göre karar verilebilir.\n\n(7) Geri verme talebinin kabul edilebilir olduğuna karar verilmesi halinde, ayrıca Ceza Muhakemesi Kanunu hükümlerine göre tutuklama kararı verilebilir veya diğer koruma tedbirlerine başvurulabilir.\n\n(8) Geri verme halinde, kişi ancak geri verme kararına dayanak teşkil eden suçlardan dolayı yargılanabilir veya mahkûm olduğu ceza infaz edilebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-19",
+      "article": "Madde 19",
+      "title": "Yabancı kanunun göz önünde bulundurulması",
+      "text": "(1) Türkiye'nin egemenlik alanı dışında işlenen suçlar dolayısıyla Türkiye'de yargılama yapılırken, Türk kanununa göre verilecek olan ceza, suçun işlendiği ülke kanununda öngörülen cezanın üst sınırından fazla olamaz.\n\n(2) Ancak suçun;\n\na) Türkiye'nin güvenliğine karşı veya zararına olarak,\n\nb) Türk vatandaşına karşı ya da Türk kanunlarına göre kurulmuş özel hukuk tüzel kişisi zararına olarak,\n\nİşlenmesi durumunda, yukarıdaki fıkra hükmü uygulanmaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-20",
+      "article": "Madde 20",
+      "title": "Ceza sorumluluğunun şahsiliği",
+      "text": "(1) Ceza sorumluluğu şahsidir. Kimse başkasının fiilinden dolayı sorumlu tutulamaz.\n\n(2) Tüzel kişiler hakkında ceza yaptırımı uygulanamaz. Ancak, suç dolayısıyla kanunda öngörülen güvenlik tedbiri niteliğindeki yaptırımlar saklıdır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-21",
+      "article": "Madde 21",
+      "title": "Kast",
+      "text": "(1) Suçun oluşması kastın varlığına bağlıdır. Kast, suçun kanuni tanımındaki unsurların bilerek ve istenerek gerçekleştirilmesidir.\n\n(2) Kişinin, suçun kanuni tanımındaki unsurların gerçekleşebileceğini öngörmesine rağmen, fiili işlemesi halinde olası kast vardır. Bu halde, ağırlaştırılmış müebbet hapis cezasını gerektiren suçlarda müebbet hapis cezasına, müebbet hapis cezasını gerektiren suçlarda yirmi yıldan yirmibeş yıla kadar hapis cezasına hükmolunur; diğer suçlarda ise temel ceza üçte birden yarısına kadar indirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-22",
+      "article": "Madde 22",
+      "title": "Taksir",
+      "text": "(1) Taksirle işlenen fiiller, kanunun açıkça belirttiği hallerde cezalandırılır.\n\n(2) Taksir, dikkat ve özen yükümlülüğüne aykırılık dolayısıyla, bir davranışın suçun kanuni tanımında belirtilen neticesi öngörülmeyerek gerçekleştirilmesidir.\n\n(3) Kişinin öngördüğü neticeyi istememesine karşın, neticenin meydana gelmesi halinde bilinçli taksir vardır; bu halde taksirli suça ilişkin ceza üçte birden yarısına kadar artırılır.\n\n(4) Taksirle işlenen suçtan dolayı verilecek olan ceza failin kusuruna göre belirlenir.\n\n(5) Birden fazla kişinin taksirle işlediği suçlarda, herkes kendi kusurundan dolayı sorumlu olur. Her failin cezası kusuruna göre ayrı ayrı belirlenir.\n\n(6) Taksirli hareket sonucu neden olunan netice, münhasıran failin kişisel ve ailevi durumu bakımından, artık bir cezanın hükmedilmesini gereksiz kılacak derecede mağdur olmasına yol açmışsa ceza verilmez; bilinçli taksir halinde verilecek ceza yarıdan altıda bire kadar indirilebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-23",
+      "article": "Madde 23",
+      "title": "Netice sebebiyle ağırlaşmış suç",
+      "text": "(1) Bir fiilin, kastedilenden daha ağır veya başka bir neticenin oluşumuna sebebiyet vermesi halinde, kişinin bundan dolayı sorumlu tutulabilmesi için bu netice bakımından en azından taksirle hareket etmesi gerekir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-24",
+      "article": "Madde 24",
+      "title": "Kanunun hükmü ve amirin emri",
+      "text": "(1) Kanunun hükmünü yerine getiren kimseye ceza verilmez.\n\n(2) Yetkili bir merciden verilip, yerine getirilmesi görev gereği zorunlu olan bir emri uygulayan sorumlu olmaz.\n\n(3) Konusu suç teşkil eden emir hiçbir surette yerine getirilemez. Aksi takdirde yerine getiren ile emri veren sorumlu olur.\n\n(4) Emrin, hukuka uygunluğunun denetlenmesinin kanun tarafından engellendiği hallerde, yerine getirilmesinden emri veren sorumlu olur.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-25",
+      "article": "Madde 25",
+      "title": "Meşru savunma ve zorunluluk hali",
+      "text": "(1) Gerek kendisine ve gerek başkasına ait bir hakka yönelmiş, gerçekleşen, gerçekleşmesi veya tekrarı muhakkak olan haksız bir saldırıyı o anda hal ve koşullara göre saldırı ile orantılı biçimde defetmek zorunluluğu ile işlenen fiillerden dolayı faile ceza verilmez.\n\n(2) Gerek kendisine gerek başkasına ait bir hakka yönelik olup, bilerek neden olmadığı ve başka suretle korunmak olanağı bulunmayan ağır ve muhakkak bir tehlikeden kurtulmak veya başkasını kurtarmak zorunluluğu ile ve tehlikenin ağırlığı ile konu ve kullanılan vasıta arasında orantı bulunmak koşulu ile işlenen fiillerden dolayı faile ceza verilmez.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-26",
+      "article": "Madde 26",
+      "title": "Hakkın kullanılması ve ilgilinin rızası",
+      "text": "(1) Hakkını kullanan kimseye ceza verilmez.\n\n(2) Kişinin üzerinde mutlak surette tasarruf edebileceği bir hakkına ilişkin olmak üzere, açıkladığı rızası çerçevesinde işlenen fiilden dolayı kimseye ceza verilmez.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-27",
+      "article": "Madde 27",
+      "title": "Sınırın aşılması",
+      "text": "(1) Ceza sorumluluğunu kaldıran nedenlerde sınırın kast olmaksızın aşılması halinde, fiil taksirle işlendiğinde de cezalandırılıyorsa, taksirli suç için kanunda yazılı cezanın altıda birinden üçte birine kadarı indirilerek hükmolunur.\n\n(2) Meşru savunmada sınırın aşılması mazur görülebilecek bir heyecan, korku veya telaştan ileri gelmiş ise faile ceza verilmez.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-28",
+      "article": "Madde 28",
+      "title": "Cebir ve şiddet, korkutma ve tehdit",
+      "text": "(1) Karşı koyamayacağı veya kurtulamayacağı cebir ve şiddet veya muhakkak ve ağır bir korkutma veya tehdit sonucu suç işleyen kimseye ceza verilmez. Bu gibi hallerde cebir ve şiddet, korkutma ve tehdidi kullanan kişi suçun faili sayılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-29",
+      "article": "Madde 29",
+      "title": "Haksız tahrik",
+      "text": "(1) Haksız bir fiilin meydana getirdiği hiddet veya şiddetli elemin etkisi altında suç işleyen kimseye, ağırlaştırılmış müebbet hapis cezası yerine onsekiz yıldan yirmidört yıla ve müebbet hapis cezası yerine oniki yıldan onsekiz yıla kadar hapis cezası verilir. Diğer hallerde verilecek cezanın dörtte birinden dörtte üçüne kadarı indirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-30",
+      "article": "Madde 30",
+      "title": "Hata",
+      "text": "1\n\n(1) Fiilin icrası sırasında suçun kanuni tanımındaki maddi unsurları bilmeyen bir kimse, kasten hareket etmiş olmaz. Bu hata dolayısıyla taksirli sorumluluk hali saklıdır.\n\n(2) Bir suçun daha ağır veya daha az cezayı gerektiren nitelikli hallerinin gerçekleştiği hususunda hataya düşen kişi, bu hatasından yararlanır.\n\n(3) Ceza sorumluluğunu kaldıran veya azaltan nedenlere ait koşulların gerçekleştiği hususunda kaçınılmaz bir hataya düşen kişi, bu hatasından yararlanır.\n\n(4) İşlediği fiilin haksızlık oluşturduğu hususunda kaçınılmaz bir hataya düşen kişi, cezalandırılmaz.\n\nEk fıkra: 29/6/2005 t. 5377 s. K. m.4",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-31",
+      "article": "Madde 31",
+      "title": "Yaş küçüklüğü",
+      "text": "1\n\n(1) Fiili işlediği sırada oniki yaşını doldurmamış olan çocukların ceza sorumluluğu yoktur. Bu kişiler hakkında, ceza kovuşturması yapılamaz; ancak, çocuklara özgü güvenlik tedbirleri uygulanabilir.\n\n(2) Fiili işlediği sırada oniki yaşını doldurmuş olup da onbeş yaşını doldurmamış olanların işlediği fiilin hukukî anlam ve sonuçlarını algılayamaması veya davranışlarını yönlendirme yeteneğinin yeterince gelişmemiş olması hâlinde ceza sorumluluğu yoktur. Ancak bu kişiler hakkında çocuklara özgü güvenlik tedbirlerine hükmolunur. İşlediği fiilin hukukî anlam ve sonuçlarını algılama ve bu fiille ilgili olarak davranışlarını yönlendirme yeteneğinin varlığı hâlinde, bu kişiler hakkında suç, ağırlaştırılmış müebbet hapis cezasını gerektirdiği takdirde oniki yıldan onbeş yıla; müebbet hapis cezasını gerektirdiği takdirde dokuz yıldan onbir yıla kadar hapis cezasına hükmolunur. Diğer cezaların yarısı indirilir ve bu hâlde her fiil için verilecek hapis cezası yedi yıldan fazla olamaz.\n\nDeğişik fıkra: 29/6/2005 t. 5377 s. K. m.5\n\n(3) Fiili işlediği sırada onbeş yaşını doldurmuş olup da onsekiz yaşını doldurmamış olan kişiler hakkında suç, ağırlaştırılmış müebbet hapis cezasını gerektirdiği takdirde onsekiz yıldan yirmidört yıla; müebbet hapis cezasını gerektirdiği takdirde oniki yıldan onbeş yıla kadar hapis cezasına hükmolunur. Diğer cezaların üçte biri indirilir ve bu hâlde her fiil için verilecek hapis cezası oniki yıldan fazla olamaz.\n\nDeğişik fıkra: 29/6/2005 t. 5377 s. K. m.5",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-32",
+      "article": "Madde 32",
+      "title": "Akıl hastalığı",
+      "text": "1\n\n(1) Akıl hastalığı nedeniyle, işlediği fiilin hukuki anlam ve sonuçlarını algılayamayan veya bu fiille ilgili olarak davranışlarını yönlendirme yeteneği önemli derecede azalmış olan kişiye ceza verilmez. Ancak, bu kişiler hakkında güvenlik tedbirine hükmolunur.\n\n(2) Birinci fıkrada yazılı derecede olmamakla birlikte işlediği fiille ilgili olarak davranışlarını yönlendirme yeteneği azalmış olan kişiye, ağırlaştırılmış müebbet hapis cezası yerine yirmibeş yıl, müebbet hapis cezası yerine yirmi yıl hapis cezası verilir. Diğer hallerde verilecek ceza, altıda birden fazla olmamak üzere indirilebilir. Kişi hakkında ayrıca akıl hastalarına özgü güvenlik tedbirine hükmolunur.\n\nDeğişik fıkra: 24/12/2025 t. 7571 s. K. m.14",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-33",
+      "article": "Madde 33",
+      "title": "Sağır ve dilsizlik",
+      "text": "(1) Bu Kanunun, fiili işlediği sırada oniki yaşını doldurmamış olan çocuklara ilişkin hükümleri, onbeş yaşını doldurmamış olan sağır ve dilsizler hakkında; oniki yaşını doldurmuş olup da onbeş yaşını doldurmamış olanlara ilişkin hükümleri, onbeş yaşını doldurmuş olup da onsekiz yaşını doldurmamış olan sağır ve dilsizler hakkında; onbeş yaşını doldurmuş olup da onsekiz yaşını doldurmamış olanlara ilişkin hükümleri, onsekiz yaşını doldurmuş olup da yirmibir yaşını doldurmamış olan sağır ve dilsizler hakkında da uygulanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-34",
+      "article": "Madde 34",
+      "title": "Geçici nedenler, alkol veya uyuşturucu madde etkisinde olma",
+      "text": "(1) Geçici bir nedenle ya da irade dışı alınan alkol veya uyuşturucu madde etkisiyle, işlediği fiilin hukuki anlam ve sonuçlarını algılayamayan veya bu fiille ilgili olarak davranışlarını yönlendirme yeteneği önemli derecede azalmış olan kişiye ceza verilmez.\n\n(2) İradi olarak alınan alkol veya uyuşturucu madde etkisinde suç işleyen kişi hakkında birinci fıkra hükmü uygulanmaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-35",
+      "article": "Madde 35",
+      "title": "Suça teşebbüs",
+      "text": "1\n\n(1) Kişi, işlemeyi kastettiği bir suçu elverişli hareketlerle doğrudan doğruya icraya başlayıp da elinde olmayan nedenlerle tamamlayamaz ise teşebbüsten dolayı sorumlu tutulur.\n\n(2) Suça teşebbüs halinde fail, meydana gelen zarar veya tehlikenin ağırlığına göre, ağırlaştırılmış müebbet hapis cezası yerine ondört yıldan yirmibir yıla kadar, müebbet hapis cezası yerine on yıldan onsekiz yıla kadar hapis cezası ile cezalandırılır. Diğer hallerde verilecek cezanın dörtte birinden dörtte üçüne kadarı indirilir.\n\nDeğişik fıkra: 4/06/2025 t. 7550 s. K. m.8",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-36",
+      "article": "Madde 36",
+      "title": "Gönüllü vazgeçme",
+      "text": "(1) Fail, suçun icra hareketlerinden gönüllü vazgeçer veya kendi çabalarıyla suçun tamamlanmasını veya neticenin gerçekleşmesini önlerse, teşebbüsten dolayı cezalandırılmaz; fakat tamam olan kısım esasen bir suç oluşturduğu takdirde, sadece o suça ait ceza ile cezalandırılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-37",
+      "article": "Madde 37",
+      "title": "Faillik",
+      "text": "(1) Suçun kanuni tanımında yer alan fiili birlikte gerçekleştiren kişilerden her biri, fail olarak sorumlu olur.\n\n(2) Suçun işlenmesinde bir başkasını araç olarak kullanan kişi de fail olarak sorumlu tutulur. Kusur yeteneği olmayanları suçun işlenmesinde araç olarak kullanan kişinin cezası, üçte birden yarısına kadar artırılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-38",
+      "article": "Madde 38",
+      "title": "Azmettirme",
+      "text": "(1) Başkasını suç işlemeye azmettiren kişi, işlenen suçun cezası ile cezalandırılır.\n\n(2) Üstsoy ve altsoy ilişkisinden doğan nüfuz kullanılmak suretiyle suça azmettirme halinde, azmettirenin cezası üçte birden yarısına kadar artırılır. Çocukların suça azmettirilmesi halinde, bu fıkra hükmüne göre cezanın artırılabilmesi için üstsoy ve altsoy ilişkisinin varlığı aranmaz.\n\n(3) Azmettirenin belli olmaması halinde, kim olduğunun ortaya çıkmasını sağlayan fail veya diğer suç ortağı hakkında ağırlaştırılmış müebbet hapis cezası yerine yirmi yıldan yirmibeş yıla kadar, müebbet hapis cezası yerine onbeş yıldan yirmi yıla kadar hapis cezasına hükmolunabilir. Diğer hallerde verilecek cezada, üçte bir oranında indirim yapılabilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-39",
+      "article": "Madde 39",
+      "title": "Yardım etme",
+      "text": "(1) Suçun işlenmesine yardım eden kişiye, işlenen suçun ağırlaştırılmış müebbet hapis cezasını gerektirmesi halinde, onbeş yıldan yirmi yıla; müebbet hapis cezasını gerektirmesi halinde, on yıldan onbeş yıla kadar hapis cezası verilir. Diğer hallerde cezanın yarısı indirilir. Ancak, bu durumda verilecek ceza sekiz yılı geçemez.\n\n(2) Aşağıdaki hallerde kişi işlenen suçtan dolayı yardım eden sıfatıyla sorumlu olur:\n\na) Suç işlemeye teşvik etmek veya suç işleme kararını kuvvetlendirmek veya fiilin işlenmesinden sonra yardımda bulunacağını vaat etmek.\n\nb) Suçun nasıl işleneceği hususunda yol göstermek veya fiilin işlenmesinde kullanılan araçları sağlamak.\n\nc) Suçun işlenmesinden önce veya işlenmesi sırasında yardımda bulunarak icrasını kolaylaştırmak.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-40",
+      "article": "Madde 40",
+      "title": "Bağlılık kuralı",
+      "text": "(1) Suça iştirak için kasten ve hukuka aykırı işlenmiş bir fiilin varlığı yeterlidir. Suçun işlenişine iştirak eden her kişi, diğerinin cezalandırılmasını önleyen kişisel nedenler göz önünde bulundurulmaksızın kendi kusurlu fiiline göre cezalandırılır.\n\n(2) Özgü suçlarda, ancak özel faillik niteliğini taşıyan kişi fail olabilir. Bu suçların işlenişine iştirak eden diğer kişiler ise azmettiren veya yardım eden olarak sorumlu tutulur.\n\n(3) Suça iştirakten dolayı sorumlu tutulabilmek için ilgili suçun en azından teşebbüs aşamasına varmış olması gerekir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-41",
+      "article": "Madde 41",
+      "title": "İştirak hâlinde işlenen suçlarda gönüllü vazgeçme",
+      "text": "(1) İştirak halinde işlenen suçlarda, sadece gönüllü vazgeçen suç ortağı, gönüllü vazgeçme hükümlerinden yararlanır.\n\n(2) Suçun;\n\na) Gönüllü vazgeçenin gösterdiği gayreti dışında başka bir sebeple işlenmemiş olması,\n\nb) Gönüllü vazgeçenin bütün gayretine rağmen işlenmiş olması,\n\nHallerinde de gönüllü vazgeçme hükümleri uygulanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-42",
+      "article": "Madde 42",
+      "title": "Bileşik suç",
+      "text": "(1) Biri diğerinin unsurunu veya ağırlaştırıcı nedenini oluşturması dolayısıyla tek fiil sayılan suça bileşik suç denir. Bu tür suçlarda içtima hükümleri uygulanmaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-43",
+      "article": "Madde 43",
+      "title": "Zincirleme suç",
+      "text": "1\n\n(1) Bir suç işleme kararının icrası kapsamında, değişik zamanlarda bir kişiye karşı aynı suçun birden fazla işlenmesi durumunda, bir cezaya hükmedilir. Ancak bu ceza, dörtte birinden dörtte üçüne kadar artırılır. Bir suçun temel şekli ile daha ağır veya daha az cezayı gerektiren nitelikli şekilleri, aynı suç sayılır. Mağduru belli bir kişi olmayan suçlarda da bu fıkra hükmü uygulanır.\n\nDeğişik fıkra: 29/6/2005 t. 5377 s. K. m.6\n\n(2) Aynı suçun birden fazla kişiye karşı tek bir fiille işlenmesi durumunda da, birinci fıkra hükmü uygulanır.\n\n(3) Kasten öldürme, kasten yaralama, işkence ve yağma suçlarında bu madde hükümleri uygulanmaz.\n\nDeğişik fıkra: 29/6/2005 t. 5377 s. K. m.6",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-44",
+      "article": "Madde 44",
+      "title": "Fikri içtima",
+      "text": "(1) İşlediği bir fiil ile birden fazla farklı suçun oluşmasına sebebiyet veren kişi, bunlardan en ağır cezayı gerektiren suçtan dolayı cezalandırılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-45",
+      "article": "Madde 45",
+      "title": "Cezalar",
+      "text": "(1) Suç karşılığında uygulanan yaptırım olarak cezalar, hapis ve adlî para cezalarıdır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-46",
+      "article": "Madde 46",
+      "title": "Hapis cezaları",
+      "text": "(1) Hapis cezaları şunlardır:\n\na) Ağırlaştırılmış müebbet hapis cezası.\n\nb) Müebbet hapis cezası.\n\nc) Süreli hapis cezası.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-47",
+      "article": "Madde 47",
+      "title": "Ağırlaştırılmış müebbet hapis cezası",
+      "text": "1\n\n(1) Ağırlaştırılmış müebbet hapis cezası hükümlünün hayatı boyunca devam eder, kanun ve Cumhurbaşkanınca çıkarılan yönetmelikte belirtilen sıkı güvenlik rejimine göre çektirilir.\n\nDeğişik fıkra: 02/07/2018 t. 700 s. KhK. m.156",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-48",
+      "article": "Madde 48",
+      "title": "Müebbet hapis cezası",
+      "text": "(1) Müebbet hapis cezası, hükümlünün hayatı boyunca devam eder.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-49",
+      "article": "Madde 49",
+      "title": "Süreli hapis cezası",
+      "text": "(1) Süreli hapis cezası, kanunda aksi belirtilmeyen hallerde bir aydan az, yirmi yıldan fazla olamaz.\n\n(2) Hükmedilen bir yıl veya daha az süreli hapis cezası, kısa süreli hapis cezasıdır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-50",
+      "article": "Madde 50",
+      "title": "Kısa süreli hapis cezasına seçenek yaptırımlar",
+      "text": "2\n\n(1) Kısa süreli hapis cezası, suçlunun kişiliğine, sosyal ve ekonomik durumuna, yargılama sürecinde duyduğu pişmanlığa ve suçun işlenmesindeki özelliklere göre;\n\na) Adlî para cezasına,\n\nb) Mağdurun veya kamunun uğradığı zararın aynen iade, suçtan önceki hale getirme veya tazmin suretiyle, tamamen giderilmesine,\n\nc) En az iki yıl süreyle, bir meslek veya sanat edinmeyi sağlamak amacıyla, gerektiğinde barınma imkanı da bulunan bir eğitim kurumuna devam etmeye,\n\nd) Mahkûm olunan cezanın yarısından bir katına kadar süreyle, belirli yerlere gitmekten veya belirli etkinlikleri yapmaktan yasaklanmaya,\n\ne) Sağladığı hak ve yetkiler kötüye kullanılmak suretiyle veya gerektirdiği dikkat ve özen yükümlülüğüne aykırı davranılarak suç işlenmiş olması durumunda; mahkûm olunan cezanın yarısından bir katına kadar süreyle, ilgili ehliyet ve ruhsat belgelerinin geri alınmasına, belli bir meslek ve sanatı yapmaktan yasaklanmaya,\n\nf) Mahkûm olunan cezanın yarısından bir katına kadar süreyle ve gönüllü olmak koşuluyla kamuya yararlı bir işte çalıştırılmaya,\n\nÇevrilebilir.\n\n(2) Suç tanımında hapis cezası ile adlî para cezasının seçenek olarak öngörüldüğü hallerde, hapis cezasına hükmedilmişse; bu ceza artık adlî para cezasına çevrilmez.\n\n(3) Daha önce hapis cezasına mahkûm edilmemiş olmak koşuluyla, mahkûm olunan otuz gün ve daha az süreli hapis cezası ile fiili işlediği tarihte onsekiz yaşını doldurmamış veya altmışbeş yaşını bitirmiş bulunanların mahkûm edildiği bir yıl veya daha az süreli hapis cezası, birinci fıkrada yazılı seçenek yaptırımlardan birine çevrilir.\n\n(4) Taksirli suçlardan dolayı hükmolunan hapis cezası uzun süreli de olsa; bu ceza, diğer koşulların varlığı halinde, birinci fıkranın (a) bendine göre adlî para cezasına çevrilebilir. Ancak, bu hüküm, bilinçli taksir halinde uygulanmaz.\n\n(5) Uygulamada asıl mahkûmiyet, bu madde hükümlerine göre çevrilen adlî para cezası veya tedbirdir.\n\n(6) Hüküm kesinleştikten sonra Cumhuriyet savcılığınca yapılan tebligata rağmen otuz gün içinde seçenek tedbirin gereklerinin yerine getirilmesine başlanmaması veya başlanıp da devam edilmemesi halinde, infaz hâkimliği kısa süreli hapis cezasının tamamen veya kısmen infazına karar verir ve bu karar derhal infaz edilir. Bu durumda, beşinci fıkra hükmü uygulanmaz.\n\nDeğişik fıkra: 14/04/2020 t. 7242 s. K. m.8\n\n(7) Hükmedilen seçenek tedbirin hükümlünün elinde olmayan nedenlerle yerine getirilememesi durumunda, infaz hâkimliğince tedbir değiştirilir.\n\nDeğişik fıkra: 14/04/2020 t. 7242 s. K. m.8",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "tck-51",
+      "article": "Madde 51",
+      "title": "Hapis cezasının ertelenmesi",
+      "text": "1\n\n(1) İşlediği suçtan dolayı iki yıl veya daha az süreyle hapis cezasına mahkûm edilen kişinin cezası ertelenebilir. Bu sürenin üst sınırı, fiili işlediği sırada onsekiz yaşını doldurmamış veya altmışbeş yaşını bitirmiş olan kişiler bakımından üç yıldır. Ancak, erteleme kararının verilebilmesi için kişinin;\n\na) Daha önce kasıtlı bir suçtan dolayı üç aydan fazla hapis cezasına mahkûm edilmemiş olması,\n\nb) Suçu işledikten sonra yargılama sürecinde gösterdiği pişmanlık dolayısıyla tekrar suç işlemeyeceği konusunda mahkemede bir kanaatin oluşması,\n\nGerekir.\n\n(2) Cezanın ertelenmesi, mağdurun veya kamunun uğradığı zararın aynen iade, suçtan önceki hale getirme veya tazmin suretiyle tamamen giderilmesi koşuluna bağlı tutulabilir. Bu durumda, koşul gerçekleşinceye kadar cezanın infaz kurumunda çektirilmesine devam edilir. Koşulun yerine getirilmesi halinde, infaz hâkimi kararıyla hükümlü infaz kurumundan derhal salıverilir.\n\nDeğişik fıkra: 14/04/2020 t. 7242 s. K. m.9\n\n(3) Cezası ertelenen hükümlü hakkında, bir yıldan az, üç yıldan fazla olmamak üzere, bir denetim süresi belirlenir. Bu sürenin alt sınırı, mahkûm olunan ceza süresinden az olamaz.\n\n(4) Denetim süresi içinde;\n\na) Bir meslek veya sanat sahibi olmayan hükümlünün, bu amaçla bir eğitim programına devam etmesine,\n\nb) Bir meslek veya sanat sahibi hükümlünün, bir kamu kurumunda veya özel olarak aynı meslek veya sanatı icra eden bir başkasının gözetimi altında ücret karşılığında çalıştırılmasına,\n\nc) Onsekiz yaşından küçük olan hükümlülerin, bir meslek veya sanat edinmelerini sağlamak amacıyla, gerektiğinde barınma imkanı da bulunan bir eğitim kurumuna devam etmesine,\n\nMahkemece karar verilebilir.\n\n(5) Mahkeme, denetim süresi içinde hükümlüye rehberlik edecek bir uzman kişiyi görevlendirebilir. Bu kişi, kötü alışkanlıklardan kurtulmasını ve sorumluluk bilinciyle iyi bir hayat sürmesini temin hususunda hükümlüye öğütte bulunur; eğitim gördüğü kurum yetkilileri veya nezdinde çalıştığı kişilerle görüşerek, istişarelerde bulunur; hükümlünün davranışları, sosyal uyumu ve sorumluluk bilincindeki gelişme hakkında üçer aylık sürelerle rapor düzenleyerek infaz hâkimine verir.\n\nDeğişik fıkra: 14/04/2020 t. 7242 s. K. m.9\n\n(6) Mahkeme, hükümlünün kişiliğini ve sosyal durumunu göz önünde bulundurarak, denetim süresinin herhangi bir yükümlülük belirlemeden veya uzman kişi görevlendirmeden geçirilmesine de karar verebilir.\n\n(7) Hükümlünün denetim süresi içinde kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, infaz hâkiminin uyarısına rağmen, uymamakta ısrar etmesi halinde; ertelenen cezanın kısmen veya tamamen infaz kurumunda çektirilmesine infaz hâkimliğince karar verilir.\n\nDeğişik fıkra: 14/04/2020 t. 7242 s. K. m.9\n\n(8) Denetim süresi yükümlülüklere uygun veya iyi halli olarak geçirildiği takdirde, ceza infaz edilmiş sayılır.",
+      "source": "mevzuat.gov.tr"
+    }
+  ]
+}

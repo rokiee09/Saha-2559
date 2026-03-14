@@ -1,0 +1,31 @@
+{
+  "kanunlar": [
+    {"id": "pvsk", "code": "2559", "name": "Polis Vazife ve Salahiyet Kanunu", "path": "kanunlar/pvsk.json"},
+    {"id": "emniyet_teskilati", "code": "3201", "name": "Emniyet Teşkilatı Kanunu", "path": "kanunlar/emniyet_teskilati.json"},
+    {"id": "il_idaresi", "code": "5442", "name": "İl İdaresi Kanunu", "path": "kanunlar/il_idaresi.json"},
+    {"id": "cmk", "code": "5271", "name": "Ceza Muhakemesi Kanunu", "path": "kanunlar/cmk.json"},
+    {"id": "tck", "code": "5237", "name": "Türk Ceza Kanunu", "path": "kanunlar/tck.json"},
+    {"id": "kabahatler", "code": "5326", "name": "Kabahatler Kanunu", "path": "kanunlar/kabahatler.json"},
+    {"id": "trafik", "code": "2918", "name": "Karayolları Trafik Kanunu", "path": "kanunlar/trafik.json"},
+    {"id": "toplanti_gosteri", "code": "2911", "name": "Toplantı ve Gösteri Yürüyüşleri Kanunu", "path": "kanunlar/toplanti_gosteri.json"},
+    {"id": "silah", "code": "6136", "name": "Ateşli Silahlar ve Bıçaklar Hakkında Kanun", "path": "kanunlar/silah_kanunu.json"},
+    {"id": "tmk", "code": "3713", "name": "Terörle Mücadele Kanunu", "path": "kanunlar/tmk.json"},
+    {"id": "kacakcilik", "code": "5607", "name": "Kaçakçılıkla Mücadele Kanunu", "path": "kanunlar/kacakcilik.json"},
+    {"id": "kimlik_bildirme", "code": "1774", "name": "Kimlik Bildirme Kanunu", "path": "kanunlar/kimlik_bildirme.json"},
+    {"id": "dmk", "code": "657", "name": "Devlet Memurları Kanunu", "path": "kanunlar/657.json"},
+    {"id": "disiplin", "code": "7068", "name": "Genel Kolluk Disiplin Hükümleri Kanunu", "path": "kanunlar/disiplin.json"}
+  ],
+  "yonetmelikler": [
+    {"id": "adli_arama", "name": "Adli ve Önleme Aramaları Yönetmeliği", "path": "yonetmelikler/adli_arama.json"},
+    {"id": "gozalti", "name": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği", "path": "yonetmelikler/gozalti.json"},
+    {"id": "adli_kolluk", "name": "Adli Kolluk Yönetmeliği", "path": "yonetmelikler/adli_kolluk.json"},
+    {"id": "cevik_kuvvet", "name": "Polis Çevik Kuvvet Yönetmeliği", "path": "yonetmelikler/cevik_kuvvet.json"},
+    {"id": "trafik_denetleme", "name": "Trafik Denetleme Yönetmeliği", "path": "yonetmelikler/trafik_denetleme.json"},
+    {"id": "trafik", "name": "Karayolları Trafik Yönetmeliği", "path": "yonetmelikler/trafik.json"},
+    {"id": "disiplin_kurulu", "name": "Polis Disiplin Kurulları Yönetmeliği", "path": "yonetmelikler/disiplin_kurulu.json"},
+    {"id": "atama", "name": "Emniyet Hizmetleri Sınıfı Personeli Atama ve Yer Değiştirme Yönetmeliği", "path": "yonetmelikler/atama.json"},
+    {"id": "disiplin", "name": "Emniyet Hizmetleri Sınıfı Personeli Disiplin Yönetmeliği", "path": "yonetmelikler/disiplin.json"},
+    {"id": "kimlik_yonetmelik", "name": "Kimlik Bildirme Kanununun Uygulanmasına İlişkin Yönetmelik", "path": "yonetmelikler/kimlik_bildirme.json"},
+    {"id": "toplanti_yonetmelik", "name": "Toplantı ve Gösteri Yürüyüşleri Kanununun Uygulanmasına Dair Yönetmelik", "path": "yonetmelikler/toplanti.json"}
+  ]
+}
