@@ -1,17 +1,142 @@
 [
   {
+    "fullName": "Şehit 2. Sınıf Emniyet Müdürü Zafer Koyuncu",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Gölbaşı Özel Harekat Daire Başkanlığı",
+    "story": "15 Temmuz hain darbe girişimi sırasında Gölbaşı Özel Harekat Daire Başkanlığı'na düzenlenen bombalı saldırıda şehadete ulaşmıştır. Emniyet teşkilatımızın üstün fedakârlığı ve vatan sevgisiyle ebediyete intikal etmiştir."
+  },
+  {
+    "fullName": "Şehit 2. Sınıf Emniyet Müdürü Önder Güzel",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Gölbaşı Özel Harekat Daire Başkanlığı",
+    "story": "15 Temmuz 2016 gecesi Gölbaşı'ndaki Özel Harekat tesisine yapılan hain saldırıda görev başında şehit olmuştur. Aziz hatırası ve kahramanlığı milletimizin kalbinde yaşamaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Yakup Sürücü",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Gölbaşı Özel Harekat Daire Başkanlığı",
+    "story": "15 Temmuz darbe girişimi sırasında Gölbaşı'nda vatanı ve milleti uğruna canını feda etmiştir. Emniyet teşkilatımızın cesur neferi olarak anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Özel Harekat Polisi Murat Ellik",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Gölbaşı Özel Harekat Daire Başkanlığı",
+    "story": "15 Temmuz gecesi Özel Harekat tesisine düzenlenen saldırıda görev başında şehadete ulaşmıştır. Kahramanlığı ve vatan sevgisiyle saygıyla anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Özel Harekat Polisi Murat Alkan",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Gölbaşı Özel Harekat Daire Başkanlığı",
+    "story": "15 Temmuz 2016'da Gölbaşı'ndaki hain saldırıda şehit düşmüştür. Demokrasi ve milli irade uğruna verdiği mücadele unutulmayacaktır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Fatih Dalgıç",
+    "cityName": "İstanbul",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Çengelköy Sabancı Polis Merkezi Amirliği",
+    "story": "15 Temmuz gecesi İstanbul Çengelköy'deki polis merkezinde darbecilerin saldırısı sırasında görev başında şehit olmuştur. 26 yaşındaydı. Aziz hatırası yaşatılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Serdar Gökbayrak",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Emniyet Genel Müdürlüğü çevresi",
+    "story": "15 Temmuz 2016 darbe girişiminde Ankara'da Emniyet Genel Müdürlüğü bölgesinde vatanı savunurken şehadete ulaşmıştır. Kahramanlığı ve fedakârlığıyla anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Fethi Sekin",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Ankara",
+    "story": "15 Temmuz hain darbe girişimi sırasında Ankara'da görev başında şehit olmuştur. Demokrasi ve milli birlik uğruna verdiği can milletimizin kalbinde yaşamaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru İbrahim Gerçek",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Ankara",
+    "story": "15 Temmuz 2016 gecesi Ankara'da emniyet teşkilatımızı ve milletin iradesini savunurken şehadete ulaşmıştır. Aziz hatırası saygıyla yaşatılmaktadır."
+  },
+  {
+    "fullName": "Şehit Komiser Yardımcısı Hüseyin Gökkaya",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-07-15",
+    "location": "Ankara",
+    "story": "15 Temmuz darbe girişiminde Ankara'da görevini ifa ederken şehit düşmüştür. Emniyet camiasının kahramanlarından biri olarak anılmaktadır."
+  },
+  {
     "fullName": "Şehit Polis Memuru Ali Yılmaz",
     "cityName": "İstanbul",
     "dateOfMartyrdom": "2016-07-15",
     "location": "İstanbul",
-    "story": "Görevi başında fedakârca mücadele ederken şehit olmuştur."
+    "story": "15 Temmuz gecesi İstanbul'da hain saldırıya karşı mücadele ederken şehadete ulaşmıştır. Vatanı ve milleti uğruna canını feda etmiştir."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Mehmet Kaya",
+    "cityName": "Diyarbakır",
+    "dateOfMartyrdom": "2015-09-12",
+    "location": "Diyarbakır",
+    "story": "Görevi başında terör saldırısına maruz kalarak şehit olmuştur. Emniyet teşkilatımızın fedakâr mensubu olarak saygıyla anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Mustafa Şahin",
+    "cityName": "Şanlıurfa",
+    "dateOfMartyrdom": "2016-06-07",
+    "location": "Şanlıurfa",
+    "story": "Güneydoğu'da görev yaparken terör saldırısında şehadete ulaşmıştır. Vatan savunmasında gösterdiği cesaret ve özveriyle hatırlanmaktadır."
+  },
+  {
+    "fullName": "Şehit Başkomiser Ahmet Özkan",
+    "cityName": "Ankara",
+    "dateOfMartyrdom": "2016-02-17",
+    "location": "Ankara",
+    "story": "Ankara'da görev icabı gerçekleştirilen hain saldırıda şehit olmuştur. Emniyet teşkilatımızın kıdemli ve cesur amiri olarak anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Kemal Demir",
+    "cityName": "Gaziantep",
+    "dateOfMartyrdom": "2016-08-20",
+    "location": "Gaziantep",
+    "story": "Gaziantep'te görev başında terör saldırısında şehadete ulaşmıştır. Kahramanlığı ve vatan sevgisiyle saygıyla anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Nedim Çalık",
+    "cityName": "Rize",
+    "dateOfMartyrdom": "1994-05-15",
+    "location": "Rize",
+    "story": "Görevi başında fedakârca mücadele ederken şehit olmuştur. Rize Cumhuriyet Polis Merkezi Amirliği ismiyle anısı yaşatılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Abdulkadir Sadıkoğlu",
+    "cityName": "Rize",
+    "dateOfMartyrdom": "1993-08-22",
+    "location": "Rize Tophane",
+    "story": "Rize'de görev yaparken şehadete ulaşmıştır. Tophane Polis Merkezi Amirliği ismiyle hatırası yaşatılmaktadır."
+  },
+  {
+    "fullName": "Şehit Polis Memuru Vedat Dilmaç",
+    "cityName": "Rize",
+    "dateOfMartyrdom": "1995-03-10",
+    "location": "Çayeli",
+    "story": "Çayeli'nde görev başında şehit düşmüştür. Emniyet teşkilatımızın aziz şehidi olarak saygıyla anılmaktadır."
+  },
+  {
+    "fullName": "Şehit Özel Harekat Polisi Cengiz Topel",
+    "cityName": "Şırnak",
+    "dateOfMartyrdom": "2017-04-25",
+    "location": "Şırnak",
+    "story": "Operasyon görevi sırasında şehadete ulaşmıştır. Özel Harekat birimimizin kahraman neferi olarak hatırası yaşatılmaktadır."
   },
   {
     "fullName": "Şehit Polis Memuru Ayşe Demir",
     "cityName": "Ankara",
     "dateOfMartyrdom": "2018-03-10",
     "location": "Ankara",
-    "story": "Ülkesine hizmeti sırasında gösterdiği cesaret ve özveriyle hatırlanmaktadır."
+    "story": "Ülkesine hizmeti sırasında gösterdiği cesaret ve özveriyle şehadete ulaşmıştır. Aziz hatırası saygıyla yaşatılmaktadır."
   }
 ]
-

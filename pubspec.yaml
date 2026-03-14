@@ -25,12 +25,32 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.10
   isar_generator: ^3.1.0+1
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  web:
+    generate: true
+    background_color: "#1a2332"
+    theme_color: "#1a2332"
+  windows:
+    generate: true
+    icon_size: 48
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#1a2332"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"
 
 flutter:
   uses-material-design: true
   assets:
+    - assets/mevzuat/
+    - assets/mevzuat/kanunlar/
+    - assets/mevzuat/yonetmelikler/
     - assets/json/law_articles.json
     - assets/json/city_contacts.json
     - assets/json/martyrs.json
     - assets/json/field_cards.json
+    - assets/images/
+    - assets/images/atatürk.jpg
 

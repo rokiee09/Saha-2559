@@ -1,0 +1,363 @@
+{
+  "law": "5271 Ceza Muhakemesi Kanunu",
+  "source": "mevzuat.gov.tr",
+  "articles": [
+    {
+      "id": "cmk-1",
+      "article": "Madde 1",
+      "title": "Kanunun kapsamı",
+      "text": "(1) Bu Kanun, ceza muhakemesinin nasıl yapılacağı hususundaki kurallar ile bu sürece katılan kişilerin hak, yetki ve yükümlülüklerini düzenler.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-2",
+      "article": "Madde 2",
+      "title": "Tanımlar",
+      "text": "(1) Bu Kanunun uygulanmasında;\n\na) Şüpheli: Soruşturma evresinde, suç şüphesi altında bulunan kişiyi,\n\nb) Sanık: Kovuşturmanın başlamasından itibaren hükmün kesinleşmesine kadar, suç şüphesi altında bulunan kişiyi,\n\nc) Müdafi: Şüpheli veya sanığın ceza muhakemesinde savunmasını yapan avukatı,\n\nd) Vekil: Katılan, suçtan zarar gören veya malen sorumlu kişiyi ceza muhakemesinde temsil eden avukatı,\n\ne) Soruşturma: Kanuna göre yetkili mercilerce suç şüphesinin öğrenilmesinden iddianamenin kabulüne kadar geçen evreyi,\n\nf) Kovuşturma: İddianamenin kabulüyle başlayıp, hükmün kesinleşmesine kadar geçen evreyi,\n\ng) İfade alma: Şüphelinin kolluk görevlileri veya Cumhuriyet savcısı tarafından soruşturma konusu suçla ilgili olarak dinlenmesini,\n\nh) Sorgu: Şüpheli veya sanığın hâkim veya mahkeme tarafından soruşturma veya kovuşturma konusu suçla ilgili olarak dinlenmesini,\n\ni) Malen sorumlu: Yargılama konusu işin hükme bağlanması ve bunun kesinleşmesinden sonra, maddî ve malî sorumluluk taşıyarak hükmün sonuçlarından etkilenecek veya bunlara katlanacak kişiyi,\n\nj) Suçüstü:\n\n1. İşlenmekte olan suçu,\n\n2. Henüz işlenmiş olan fiil ile fiilin işlenmesinden hemen sonra kolluk, suçtan zarar gören veya başkaları tarafından takip edilerek yakalanan kişinin işlediği suçu,\n\n3. Fiilin pek az önce işlendiğini gösteren eşya veya delille yakalanan kimsenin işlediği suçu,\n\nk) Toplu suç: Aralarında iştirak iradesi bulunmasa da üç veya daha fazla kişi tarafından işlenen suçu,\n\nl) Disiplin hapsi: Kısmî bir düzeni korumak amacıyla yaptırım altına alınmış olan fiil dolayısıyla verilen, seçenek yaptırımlara çevrilemeyen, önödeme uygulanamayan, tekerrüre esas olmayan, şartla salıverilme hükümleri uygulanamayan, ertelenemeyen ve adlî sicil kayıtlarına geçirilmeyen hapsi,\n\nİfade eder.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-3",
+      "article": "Madde 3",
+      "title": "Görev",
+      "text": "2\n\n(1) Mahkemelerin görevleri kanunla belirlenir.\n\n(2) Barış zamanında, asker olmayan kişilerin Askeri Ceza Kanununda veya diğer kanunlarda yer alan askerî mahkemelerin yargı yetkisine tabi bir suçu tek başına veya asker kişilerle iştirâk halinde işlemesi durumunda asker olmayan kişilerin soruşturmaları Cumhuriyet savcıları, kovuşturmaları adlî yargı mahkemeleri tarafından yapılır.\n\nMülga fıkra: 02/07/2018 t. 700 s. KhK. m.159",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-4",
+      "article": "Madde 4",
+      "title": "Re'sen görev kararı ve görevde uyuşmazlık",
+      "text": "(1) Davaya bakan mahkeme, görevli olup olmadığına kovuşturma evresinin her aşamasında re'sen karar verebilir. 6 ncı madde hükmü saklıdır.\n\n(2) Görev konusunda mahkemeler arasında uyuşmazlık çıktığında, görevli mahkemeyi ortak yüksek görevli mahkeme belirler.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-5",
+      "article": "Madde 5",
+      "title": "Görevsizlik kararı verilmesi gereken hâl ve sonucu",
+      "text": "(1) İddianamenin kabulünden sonra; işin, davayı gören mahkemenin görevini aştığı veya dışında kaldığı anlaşılırsa, mahkeme bir kararla işi görevli mahkemeye gönderir.\n\n(2) Adlî yargı içerisindeki mahkemeler bakımından verilen görevsizlik kararlarına karşı itiraz yoluna gidilebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-6",
+      "article": "Madde 6",
+      "title": "Görevsizlik kararı verilemeyecek hâl",
+      "text": "1\n\nDeğişik madde: 06/12/2006 t. 5560 s. K. m.16\n\n(1) Duruşmada suçun hukukî niteliğinin değiştiğinden bahisle görevsizlik kararı verilerek dosya alt dereceli mahkemeye gönderilemez.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-7",
+      "article": "Madde 7",
+      "title": "Görevli olmayan hâkim veya mahkemenin işlemleri",
+      "text": "(1) Yenilenmesi mümkün olmayanlar dışında, görevli olmayan hâkim veya mahkemece yapılan işlemler hükümsüzdür.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-8",
+      "article": "Madde 8",
+      "title": "Bağlantı kavramı",
+      "text": "(1) Bir kişi, birden fazla suçtan sanık olur veya bir suçta her ne sıfatla olursa olsun birden fazla sanık bulunursa bağlantı var sayılır.\n\n(2) Suçun işlenmesinden sonra suçluyu kayırma, suç delillerini yok etme, gizleme veya değiştirme fiilleri de bağlantılı suç sayılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-9",
+      "article": "Madde 9",
+      "title": "Davaların birleştirilerek açılması",
+      "text": "(1) Bağlantılı suçlardan her biri değişik mahkemelerin görevine giriyorsa, bunlar hakkında birleştirilmek suretiyle yüksek görevli mahkemede dava açılabilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-10",
+      "article": "Madde 10",
+      "title": "Görülmekte olan davaların birleştirilmesi ve ayrılması",
+      "text": "(1) Kovuşturma evresinin her aşamasında, bağlantılı ceza davalarının birleştirilmesine veya ayrılmasına yüksek görevli mahkemece karar verilebilir.\n\n(2) Birleştirilen davalarda, bu davaları gören mahkemenin tâbi olduğu yargılama usulü uygulanır.\n\n(3) İşin esasına girdikten sonra ayrılan davalara aynı mahkemede devam olunur.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-11",
+      "article": "Madde 11",
+      "title": "Geniş bağlantı sebebiyle birleştirme",
+      "text": "(1) Mahkeme, bakmakta olduğu birden çok dava arasında bağlantı görürse, bu bağlantı 8 inci maddede gösterilen türden olmasa bile, birlikte bakmak ve hükme bağlamak üzere bu davaların birleştirilmesine karar verebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-12",
+      "article": "Madde 12",
+      "title": "Yetkili mahkeme",
+      "text": "1\n\n(1) Davaya bakmak yetkisi, suçun işlendiği yer mahkemesine aittir.\n\n(2) Teşebbüste son icra hareketinin yapıldığı, kesintisiz suçlarda kesintinin gerçekleştiği ve zincirleme suçlarda son suçun işlendiği yer mahkemesi yetkilidir.\n\n(3) Suç, ülkede yayımlanan bir basılı eserle işlenmişse yetki, eserin yayım merkezi olan yer mahkemesine aittir. Ancak, aynı eserin birden çok yerde basılması durumunda suç, eserin yayım merkezi dışındaki baskısında meydana gelmişse, bu suç için eserin basıldığı yer mahkemesi de yetkilidir.\n\n(4) Soruşturulması ve kovuşturulması şikâyete bağlı olan hakaret suçunda eser, mağdurun yerleşim yerinde veya oturduğu yerde dağıtılmışsa, o yer mahkemesi de yetkilidir. Mağdur, suçun işlendiği yer dışında tutuklu veya hükümlü bulunuyorsa, o yer mahkemesi de yetkilidir.\n\n(5) Görsel veya işitsel yayınlarda da bu maddenin üçüncü fıkrası hükmü uygulanır. Görsel ve işitsel yayın, mağdurun yerleşim yerinde ve oturduğu yerde işitilmiş veya görülmüşse o yer mahkemesi de yetkilidir.\n\n(6) Bilişim sistemlerinin, banka veya kredi kurumlarının ya da banka veya kredi kartlarının araç olarak kullanılması suretiyle işlenen suçlarda mağdurun yerleşim yeri mahkemeleri de yetkilidir.\n\nEk fıkra: 08/07/2021 t. 7331 s. K. m.10",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-13",
+      "article": "Madde 13",
+      "title": "Özel yetki",
+      "text": "(1) Suçun işlendiği yer belli değilse, şüpheli veya sanığın yakalandığı yer, yakalanmamışsa yerleşim yeri mahkemesi yetkilidir.\n\n(2) Şüpheli veya sanığın Türkiye'de yerleşim yeri yoksa Türkiye'de en son adresinin bulunduğu yer mahkemesi yetkilidir.\n\n(3) Mahkemenin bu suretle de belirlenmesi olanağı yoksa, ilk usul işleminin yapıldığı yer mahkemesi yetkilidir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-14",
+      "article": "Madde 14",
+      "title": "Yabancı ülkede işlenen suçlarda yetki",
+      "text": "(1) Yabancı ülkede işlenen ve kanun hükümleri uyarınca Türkiye'de soruşturulması ve kovuşturulması gereken suçlarda yetki, 13 üncü maddenin birinci ve ikinci fıkralarına göre belirlenir.\n\n(2) Bununla birlikte Cumhuriyet savcısının, şüphelinin veya sanığın istemi üzerine Yargıtay, suçun işlendiği yere daha yakın olan yer mahkemesine yetki verebilir.\n\n(3) Bu gibi suçlarda şüpheli veya sanık Türkiye'de yakalanmamış, yerleşmemiş veya adresi yoksa; yetkili mahkeme, Adalet Bakanının istemi ve Yargıtay Cumhuriyet Başsavcısının başvurusu üzerine Yargıtay tarafından belirlenir.\n\n(4) Yabancı ülkelerde bulunup da diplomatik bağışıklıktan yararlanan Türk kamu görevlilerinin işledikleri suçlardan dolayı yetkili mahkeme Ankara mahkemesidir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-15",
+      "article": "Madde 15",
+      "title": "Deniz, hava ve demiryolu taşıtlarında veya bu taşıtlarla işlenen suçlarda yetki",
+      "text": "(1) Suç, Türk bayrağını taşıma yetkisine sahip olan bir gemide veya böyle bir taşıt Türkiye dışında iken işlenmişse, geminin ilk uğradığı Türk limanında veya bağlama limanında bulunan mahkeme yetkilidir.\n\n(2) Türk bayrağını taşıma hakkına sahip olan hava taşıtları ile demiryolu taşıtları hakkında da yukarıdaki fıkra hükümleri uygulanır.\n\n(3) Ülke içerisinde deniz, hava veya demiryolu taşıtlarında ya da bu taşıtlarla işlenen suçlarda, bunların ilk ulaştığı yer mahkemesi de yetkilidir.\n\n(4) Çevreyi kirletme suçu, yabancı bayrağı taşıyan bir gemi tarafından Türk kara suları dışında işlendiği takdirde, suçun işlendiği yere en yakın veya geminin Türkiye'de ilk uğradığı limanın bulunduğu yer mahkemesi yetkilidir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-16",
+      "article": "Madde 16",
+      "title": "Bağlantılı suçlarda yetki",
+      "text": "(1) Yukarıdaki maddelere göre her biri değişik mahkemelerin yetkisi içinde bulunan bağlantılı ceza davaları, yetkili mahkemelerden herhangi birisinde birleştirilerek görülebilir.\n\n(2) Bağlantılı ceza davalarının değişik mahkemelerde bakılmasına başlanmış olursa, Cumhuriyet savcılarının istemlerine uygun olmak koşuluyla, mahkemeler arasında oluşacak uyuşma üzerine, bu davaların hepsi veya bir kısmı bu mahkemelerin birinde birleştirilebilir.\n\n(3) Uyuşulmazsa, Cumhuriyet savcısı veya sanığın istemi üzerine ortak yüksek görevli mahkeme birleştirmeye gerek olup olmadığına ve gerek varsa hangi mahkemede birleştirileceğine karar verir.\n\n(4) Birleştirilmiş olan davaların ayrılması da bu suretle olur.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-17",
+      "article": "Madde 17",
+      "title": "Yetkide olumlu veya olumsuz uyuşmazlık",
+      "text": "(1) Birkaç hâkim veya mahkeme arasında olumlu veya olumsuz yetki uyuşmazlığı çıkarsa, ortak yüksek görevli mahkeme, yetkili hâkim veya mahkemeyi belirler.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-18",
+      "article": "Madde 18",
+      "title": "Yetkisizlik iddiası",
+      "text": "(1) Sanık, yetkisizlik iddiasını, ilk derece mahkemelerinde duruşmada sorgusundan, bölge adliye mahkemelerinde incelemenin başlamasından ve duruşmalı işlerde inceleme raporunun okunmasından önce bildirir.\n\n(2) Yetkisizlik iddiasına ilişkin karar, ilk derece mahkemelerinde sanığın sorgusundan önce, bölge adliye mahkemelerinde duruşmasız işlerde incelemenin hemen başlangıcında, duruşmalı işlerde inceleme raporu okunmadan önce verilir. Bu aşamalardan sonra yetkisizlik iddiasında bulunulamayacağı gibi mahkemeler de bu hususta re'sen karar veremez.\n\n(3) Yetkisizlik kararlarına karşı itiraz yoluna gidilebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-19",
+      "article": "Madde 19",
+      "title": "Davanın nakli ve duruşmanın başka yerde yapılması",
+      "text": "1\n\n(1) Yetkili hâkim veya mahkeme, hukukî veya fiilî sebeplerle görevini yerine getiremeyecek hâlde bulunursa; yüksek görevli mahkeme, davanın başka yerde bulunan aynı derecede bir mahkemeye nakline karar verir.\n\n(2) Kovuşturmanın görevli ve yetkili olan mahkemenin bulunduğu yerde yapılması kamu güvenliği için tehlikeli olursa, davanın naklini Adalet Bakanı Yargıtaydan ister.\n\n(3) Mahkeme, fiili sebepler veya güvenlik gerekçesiyle duruşmanın il sınırları içinde başka bir yerde yapılmasına karar verebilir. Bu karara karşı itiraz yolu açıktır.\n\nEk fıkra: 24/11/2016 t. 6763 s. K. m.21",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-20",
+      "article": "Madde 20",
+      "title": "Yetkili olmayan hâkim veya mahkemenin işlemleri",
+      "text": "(1) Yetkili olmayan hâkim veya mahkemece yapılan işlemler, sadece yetkisizlik nedeniyle hükümsüz sayılmaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-21",
+      "article": "Madde 21",
+      "title": "Gecikmesinde sakınca bulunan hâllerde yapılan işlemler",
+      "text": "(1) Bir hâkim veya mahkeme, yetkili olmasa bile, gecikmesinde sakınca bulunan hâllerde, yargı çevresi içerisinde gerekli işlemleri yapar.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-22",
+      "article": "Madde 22",
+      "title": "Hâkimin davaya bakamayacağı hâller",
+      "text": "(1) Hâkim;\n\na) Suçtan kendisi zarar görmüşse,\n\nb) Sonradan kalksa bile şüpheli, sanık veya mağdur ile aralarında evlilik, vesayet veya kayyımlık ilişkisi bulunmuşsa,\n\nc) Şüpheli, sanık veya mağdurun kan veya kayın hısımlığından üstsoy veya altsoyundan biri ise,\n\nd) Şüpheli, sanık veya mağdur ile aralarında evlât edinme bağlantısı varsa,\n\ne) Şüpheli, sanık veya mağdur ile aralarında üçüncü derece dahil kan hısımlığı varsa,\n\nf) Evlilik sona ermiş olsa bile, şüpheli, sanık veya mağdur ile aralarında ikinci derece dahil kayın hısımlığı varsa,\n\ng) Aynı davada Cumhuriyet savcılığı, adlî kolluk görevi, şüpheli veya sanık müdafiliği veya mağdur vekilliği yapmışsa,\n\nh) Aynı davada tanık veya bilirkişi sıfatıyla dinlenmişse,\n\nHâkimlik görevini yapamaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-23",
+      "article": "Madde 23",
+      "title": "Yargılamaya katılamayacak hâkim",
+      "text": "(1) Bir karar veya hükme katılan hâkim, yüksek görevli mahkemece bu hükme ilişkin olarak verilecek karar veya hükme katılamaz.\n\n(2) Aynı işte soruşturma evresinde görev yapmış bulunan hâkim, kovuşturma evresinde görev yapamaz.\n\n(3) Yargılamanın yenilenmesi halinde, önceki yargılamada görev yapan hâkim, aynı işte görev alamaz.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-24",
+      "article": "Madde 24",
+      "title": "Hâkimin reddi sebepleri ve ret isteminde bulunabilecekler",
+      "text": "(1) Hâkimin davaya bakamayacağı hâllerde reddi istenebileceği gibi, tarafsızlığını şüpheye düşürecek diğer sebeplerden dolayı da reddi istenebilir.\n\n(2) Cumhuriyet savcısı; şüpheli, sanık veya bunların müdafii; katılan veya vekili, hâkimin reddi isteminde bulunabilirler.\n\n(3) Bunlardan herhangi biri istediği takdirde, karar veya hükme katılacak hâkimlerin isimleri kendisine bildirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-25",
+      "article": "Madde 25",
+      "title": "Tarafsızlığını şüpheye düşürecek sebeplerden dolayı hâkimin reddi isteminin süresi",
+      "text": "(1) Tarafsızlığını şüpheye düşürecek sebeplerden dolayı bir hâkimin reddi, ilk derece mahkemelerinde sanığın sorgusu başlayıncaya; duruşmalı işlerde bölge adliye mahkemelerinde inceleme raporu ve Yargıtayda görevlendirilen üye veya tetkik hâkimi tarafından yazılmış olan rapor üyelere açıklanıncaya kadar istenebilir. Diğer hâllerde, inceleme başlayıncaya kadar hâkimin reddi istenebilir.\n\n(2) Sonradan ortaya çıkan veya öğrenilen sebeplerle duruşma veya inceleme bitinceye kadar da hâkimin reddi istenebilir. Ancak bu istemin, ret sebebinin öğrenilmesinden itibaren yedi gün içinde yapılması şarttır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-26",
+      "article": "Madde 26",
+      "title": "Ret isteminin usulü",
+      "text": "(1) Hâkimin reddi, mensup olduğu mahkemeye verilecek dilekçeyle veya bu hususta zabıt kâtibine bir tutanak düzenlenmesi için başvurulması suretiyle yapılır.\n\n(2) Ret isteminde bulunan, öğrendiği ret sebeplerinin tümünü bir defada açıklamak ve süresi içinde olguları ile birlikte ortaya koymakla yükümlüdür.\n\n(3) Reddi istenen hâkim, ret sebepleri hakkındaki görüşlerini yazılı olarak bildirir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-27",
+      "article": "Madde 27",
+      "title": "Hâkimin reddi istemine karar verecek mahkeme",
+      "text": "(1) Hâkimin reddi istemine mensup olduğu mahkemece karar verilir. Ancak, reddi istenen hâkim müzakereye katılamaz. Bu nedenle mahkeme teşekkül edemezse bu hususta karar verilmesi;\n\na) Reddi istenen hâkim asliye ceza mahkemesine mensup ise bu mahkemenin yargı çevresi içerisinde bulunan ağır ceza mahkemesine,\n\nb) Reddi istenen hâkim ağır ceza mahkemesine mensup ise o yerde ağır ceza mahkemesinin birden fazla dairesinin bulunması hâlinde, numara olarak kendisini izleyen daireye, son numaralı daire için (1) numaralı daireye; o yerde ağır ceza mahkemesinin tek dairesi bulunması hâlinde ise, en yakın ağır ceza mahkemesine,\n\nAittir.\n\n(2) Ret istemi sulh ceza hâkimine karşı ise, yargı çevresi içinde bulunduğu asliye ceza mahkemesi ve tek hâkime karşı ise, yargı çevresi içerisinde bulunan ağır ceza mahkemesi karar verir.\n\n(3) Bölge adliye mahkemesi ceza dairelerinin başkan ve üyelerinin reddi istemi, reddedilen başkan ve üye katılmaksızın görevli olduğu dairece incelenerek karara bağlanır.\n\n(4) Ret isteminin kabulü halinde, davaya bakmakla bir başka hâkim veya mahkeme görevlendirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-28",
+      "article": "Madde 28",
+      "title": "Ret istemi üzerine verilecek kararlar ve başvurulacak kanun yolları",
+      "text": "(1) Ret isteminin kabulüne ilişkin kararlar kesindir; kabul edilmemesine ilişkin kararlara karşı itiraz yoluna gidilebilir. İtiraz üzerine verilen ret kararı hükümle birlikte incelenir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-29",
+      "article": "Madde 29",
+      "title": "Reddi istenen hâkimin yapabileceği işlemler",
+      "text": "(1) Reddi istenen hâkim, ret hakkında bir karar verilinceye kadar yalnız gecikmesinde sakınca olan işlemleri yapar.\n\n(2) Ancak, hâkimin oturum sırasında reddedilmesi hâlinde, bu konuda bir karar verilebilmesi için oturuma ara vermek gerekse bile ara vermeksizin devam olunur. Şu kadar ki, 216 ncı madde uyarınca tarafların iddia ve sözlerinin dinlenilmesine geçilemez ve ret konusunda bir karar verilmeden reddedilen hâkim tarafından veya onun katılımıyla bir sonraki oturuma başlanamaz.\n\n(3) Ret isteminin kabulüne karar verildiğinde, gecikmesinde sakınca bulunan hâl nedeniyle yapılmış işlemler dışında, duruşma tekrarlanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-30",
+      "article": "Madde 30",
+      "title": "Hâkimin çekinmesi ve inceleme mercii",
+      "text": "(1) Hâkim, yasaklılığını gerektiren sebeplere dayanarak çekindiğinde; merci, bir başka hâkimi veya mahkemeyi davaya bakmakla görevlendirir.\n\n(2) Hâkim, tarafsızlığını şüpheye düşürecek sebepler ileri sürerek çekindiğinde, merci çekinmenin uygun olup olmadığına karar verir. Çekinmenin uygun bulunması halinde, davaya bakmakla bir başka hâkim veya mahkeme görevlendirilir.\n\n(3) Gecikmesinde sakınca bulunan hâllerde yapılan işler hakkında 29 uncu madde hükmü uygulanır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-31",
+      "article": "Madde 31",
+      "title": "Ret isteminin geri çevrilmesi",
+      "text": "(1) Mahkeme, kovuşturma evresinde ileri sürülen hâkimin reddi istemini aşağıdaki durumlarda geri çevirir:\n\na) Ret istemi süresinde yapılmamışsa.\n\nb) Ret sebebi ve delili gösterilmemişse.\n\nc) Ret isteminin duruşmayı uzatmak amacı ile yapıldığı açıkça anlaşılıyorsa.\n\n(2) Bu hâllerde ret istemi, toplu mahkemelerde reddedilen hâkimin müzakereye katılmasıyla, tek hâkimli mahkemelerde de reddedilen hâkimin kendisi tarafından geri çevrilir.\n\n(3) Bu konudaki kararlara karşı itiraz yoluna başvurulabilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-32",
+      "article": "Madde 32",
+      "title": "Zabıt kâtibinin reddi veya çekinmesi",
+      "text": "(1) Bu Bölümde yazılı hükümler zabıt kâtipleri hakkında da uygulanır.\n\n(2) Zabıt kâtibinin reddi veya kendisinin reddini gerektiren sebepleri bildirerek görevden çekinmesi hâlinde gereken karar, yanında çalıştığı mahkeme başkanı veya hâkim tarafından verilir.\n\n(3) Aynı işte zabıt kâtibinin hâkim ile birlikte reddi istemi hakkında veya çekinmelerine karar verecek merci, hâkime göre belirlenir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-33",
+      "article": "Madde 33",
+      "title": "Kararların verilmesi usulü",
+      "text": "(1) Duruşmada verilecek kararlar, Cumhuriyet savcısı, duruşmada hazır bulunan müdafi, vekil ve diğer ilgililer dinlendikten; duruşma dışındaki kararlar, Cumhuriyet savcısının yazılı veya sözlü görüşü alındıktan sonra verilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-34",
+      "article": "Madde 34",
+      "title": "Kararların gerekçeli olması",
+      "text": "(1) Hâkim ve mahkemelerin her türlü kararı, karşı oy dahil, gerekçeli olarak yazılır. Gerekçenin yazımında 230 uncu madde göz önünde bulundurulur. Kararların örneklerinde karşı oylar da gösterilir.\n\n(2) Kararlarda, başvurulabilecek kanun yolu, süresi, mercii ve şekilleri belirtilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-35",
+      "article": "Madde 35",
+      "title": "Kararların açıklanması ve tebliği",
+      "text": "1\n\n(1) İlgili tarafın yüzüne karşı verilen karar kendisine açıklanır ve isterse kararın bir örneği de verilir.\n\n(2) Koruma tedbirlerine ilişkin olanlar hariç, aleyhine kanun yoluna başvurulabilecek hâkim veya mahkeme kararları, hazır bulunamayan ilgilisine tebliğ olunur.\n\nDeğişik fıkra: 25/05/2005 t. 5353 s. K. m.1\n\n(3) İlgili taraf serbest olmayan bir kişi veya tutuklu ise tebliğ edilen karar, kendisine okunup anlatılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-36",
+      "article": "Madde 36",
+      "title": "Tebligat ve yazışma usulü",
+      "text": "(1) Mahkeme başkanı veya hâkim, her türlü tebligatı, tüm gerçek veya özel hukuk tüzel kişileri veya kamu kurum ve kuruluşları ile ilgili yazışmaları yapar.\n\n(2) İnfaz edilecek kararlar, Cumhuriyet Başsavcılığına verilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-37",
+      "article": "Madde 37",
+      "title": "Tebligat usulleri",
+      "text": "(1) Tebligat, bu Kanunda belirtilen özel hükümler saklı kalmak koşuluyla, ilgili kanunda belirtilen hükümlere göre yapılır.\n\n(2) Uluslararası andlaşmalar, yazılı belgelerin doğrudan doğruya postayla veya diğer iletişim araçlarıyla gönderilmesini kabul ettiğinde; yurt dışına yapılan tebligat, iadeli taahhütlü posta veya diğer iletişim araçları ile gerçekleştirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-38",
+      "article": "Madde 38",
+      "title": "Cumhuriyet Başsavcılığına yapılan tebligat",
+      "text": "(1) Cumhuriyet Başsavcılığına yapılan tebligat, tebliği gereken evrakın aslının verilmesi suretiyle olur. Tebliğ ile bir süre işlemeye başlıyorsa verildiği gün, Cumhuriyet Başsavcılığı tarafından evrakın aslına yazılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-38a",
+      "article": "Madde 38/A",
+      "title": "Elektronik işlemler",
+      "text": "1\n\nEk madde: 02/07/2012 t. 6352 s. K. m.95\n\n(1) Her türlü ceza muhakemesi işlemlerinde Ulusal Yargı Ağı Bilişim Sistemi (UYAP) kullanılır. Bu işlemlere ilişkin her türlü veri, bilgi, belge ve karar, UYAP vasıtasıyla işlenir, kaydedilir ve saklanır.\n\n(2) Kanunlarda gösterilen istisnalar hariç olmak üzere, dosyalar güvenli elektronik imza kullanılarak UYAP’tan incelenebilir ve her türlü ceza muhakemesi işlemi yapılabilir.\n\n(3) Bu Kanun kapsamında fiziki olarak hazırlanması öngörülen her türlü belge ve karar elektronik ortamda düzenlenebilir, işlenebilir, saklanabilir ve güvenli elektronik imza ile imzalanabilir.\n\n(4) Güvenli elektronik imza ile imzalanan belge ve kararlar diğer kişi veya kurumlara elektronik ortamda gönderilir. Güvenli elektronik imza ile imzalanarak gönderilen belge veya kararlar, gerekmedikçe fiziki olarak ayrıca düzenlenmez ve ilgili kurum ve kişilere gönderilmez.\n\n(5) Elektronik imzalı belgenin elle atılan imzalı belgeyle çelişmesi halinde UYAP’ta kayıtlı olan güvenli elektronik imzalı belge geçerli kabul edilir.\n\n(6) Güvenli elektronik imza ile imzalanan belge ve kararlarda, mühürleme işlemi ile kanunlarda birden fazla nüshanın düzenlenmesini öngören hükümler uygulanmaz.\n\n(7) Zorunlu nedenlerle fiziki olarak düzenlenmiş belge veya kararlar, yetkili kişilerce taranarak UYAP’a aktarılır ve gerektiğinde ilgili birimlere elektronik ortamda gönderilir.\n\n(8) Elektronik ortamdan fiziki örnek çıkartılması gereken hallerde tutanak veya belgenin aslının aynı olduğu belirtilerek hâkim, Cumhuriyet savcısı veya görevlendirilen yetkili kişi tarafından imzalanır ve mühürlenir.\n\n(9) Elektronik ortamda yapılan işlemlerde süre gün sonunda biter.\n\n(10) Yargı birimlerinin ihtiyaç duyduğu nüfus, tapu, adlî sicil kaydı gibi dış bilişim sistemlerinden UYAP vasıtasıyla temin edilen bilgi, belge ve kayıtlar, zorunlu olmadıkça ayrıca fiziki olarak istenilmez. UYAP’tan dış bilişim sistemlerine gönderilen bilgi ve belgeler ayrıca zorunlu olmadıkça fiziki ortamda gönderilmez.\n\n(11) Ceza muhakemesi işlemlerinin UYAP’ta yapılmasına dair usul ve esaslar, Adalet Bakanlığı tarafından çıkarılacak yönetmelikle düzenlenir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-39",
+      "article": "Madde 39",
+      "title": "Sürelerin hesaplanması",
+      "text": "(1) Gün ile belirlenen süreler, tebligatın yapıldığının ertesi günü işlemeye başlar.\n\n(2) Süre, hafta olarak belirlenmiş ise, tebligatın yapıldığı günün, son haftada isim itibarıyla karşılığı olan günün mesai saati bitiminde sona erer.\n\n(3) Süre, ay olarak belirlenmiş ise tebligatın yapıldığı günün, son ayda sayı itibarıyla karşılığı olan günün mesai saati bitiminde sona erer. Son bulduğu ayda sayı itibarıyla karşılığı olan gün yoksa; süre, ayın son günü mesai saati bitiminde sona erer.\n\n(4) Son gün bir tatile rastlarsa süre, tatilin ertesi günü biter.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-40",
+      "article": "Madde 40",
+      "title": "Eski hâle getirme",
+      "text": "(1) Kusuru olmaksızın bir süreyi geçirmiş olan kişi, eski hale getirme isteminde bulunabilir.\n\n(2) Kanun yoluna başvuru hakkı kendisine bildirilmemesi halinde de, kişi kusursuz sayılır.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-41",
+      "article": "Madde 41",
+      "title": "Eski hâle getirme dilekçesi",
+      "text": "1\n\n(1) Eski hâle getirme dilekçesi, engelin kalkmasından itibaren iki hafta içinde, süreye uyulduğunda usule ilişkin işlemleri yapacak olan mahkemeye verilir.\n\nBu hükmün yürürlük tarihi: 01.06.2024\n\nDeğişik fıkra: 2/03/2024 t. 7499 s. K. m.37\n\n(2) Dilekçe sahibi, sürenin geçmesinde kusuru olmadığına ilişkin olguları, varsa belgelerini de ekleyerek açıklar. Dilekçe verildiği anda usule ilişkin yapılamayan işlemler de yerine getirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-42",
+      "article": "Madde 42",
+      "title": "Eski hâle getirme dilekçesi üzerine verilecek karar",
+      "text": "(1) Süresi içinde usul işlemi yapılsaydı, esasa hangi mahkeme hükmedecek idiyse, eski hâle getirme dilekçesi hakkında da o mahkeme karar verir.\n\n(2) Eski hâle getirme isteminin kabulüne ilişkin karar kesindir; reddine ilişkin karara karşı itiraz yoluna gidilebilir.\n\n(3) Eski hâle getirme dilekçesi, kararın yerine getirilmesini durdurmaz; ancak, mahkeme yerine getirmeyi erteleyebilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-43",
+      "article": "Madde 43",
+      "title": "Tanıkların çağrılması",
+      "text": "(1) Tanıklar çağrı kâğıdı ile çağrılır. Çağrı kâğıdında gelmemenin sonuçları bildirilir. Tutuklu işlerde tanıklar için zorla getirme kararı verilebilir. Karar yazısında bu yoldan getirilmenin nedenleri gösterilir ve bunlara çağrı kâğıdı ile gelen tanıklar hakkındaki işlem uygulanır.\n\n(2) Bu çağrı telefon, telgraf, faks, elektronik posta gibi araçlardan yararlanılmak suretiyle de yapılabilir. Ancak, çağrı kâğıdına bağlanan sonuçlar, bu durumda uygulanmaz.\n\n(3) Mahkeme, duruşmanın devamı sırasında hemen dinlenilmesi gerekli görülen tanıkların belirteceği gün ve saatte hazır bulundurulmasını görevlilere yazılı olarak emredebilir.\n\n(4) Cumhurbaşkanı kendi takdiri ile tanıklıktan çekinebilir. Tanıklık yapmayı istemesi halinde beyanı konutunda alınabilir ya da yazılı olarak gönderebilir.\n\n(5) Bu madde hükümleri, kişinin ancak Cumhuriyet savcısı, hâkim veya mahkeme önünde tanık olarak dinlenmesi halinde uygulanabilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-44",
+      "article": "Madde 44",
+      "title": "Çağrıya uymayan tanıklar",
+      "text": "1\n\n(1) Usulüne uygun olarak çağrılıp da mazeretini bildirmeksizin gelmeyen tanıklar zorla getirilir ve gelmemelerinin sebep olduğu giderler takdir edilerek, kamu alacaklarının tahsili usulüne göre ödettirilir. Zorla getirilen tanık evvelce gelmemesini haklı gösterecek sebepleri sonradan bildirirse aleyhine hükmedilen giderler kaldırılır. Zorla getirme kararı; telefon, telgraf, faks, elektronik posta gibi iletişim bilgilerinin dosyada bulunması hâlinde bu araçlardan yararlanılmak suretiyle de tanığa bildirilir.\n\nBu hükmün yürürlük tarihi: 01.09.2021\n\nDeğişik fıkra: 08/07/2021 t. 7331 s. K. m.11\n\n(2) Fiilî hizmette bulunan askerler hakkındaki zorla getirme kararı askerî makamlar aracılığıyla infaz olunur.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-45",
+      "article": "Madde 45",
+      "title": "Tanıklıktan çekinme",
+      "text": "(1) Aşağıdaki kimseler tanıklıktan çekinebilir:\n\na) Şüpheli veya sanığın nişanlısı.\n\nb) Evlilik bağı kalmasa bile şüpheli veya sanığın eşi.\n\nc) Şüpheli veya sanığın kan hısımlığından veya kayın hısımlığından üstsoy veya altsoyu.\n\nd) Şüpheli veya sanığın üçüncü derece dahil kan veya ikinci derece dahil kayın hısımları.\n\ne) Şüpheli veya sanıkla aralarında evlâtlık bağı bulunanlar.\n\n(2) Yaş küçüklüğü, akıl hastalığı veya akıl zayıflığı nedeniyle tanıklıktan çekinmenin önemini anlayabilecek durumda olmayanlar, kanunî temsilcilerinin rızalarıyla tanık olarak dinlenebilirler. Kanunî temsilci şüpheli veya sanık ise, bu kişilerin çekinmeleri konusunda karar veremez.\n\n(3) Tanıklıktan çekinebilecek olan kimselere, dinlenmeden önce tanıklıktan çekinebilecekleri bildirilir. Bu kimseler, dinlenirken de her zaman tanıklıktan çekinebilirler.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-46",
+      "article": "Madde 46",
+      "title": "Meslek ve sürekli uğraşıları sebebiyle tanıklıktan çekinme",
+      "text": "(1) Meslekleri ve sürekli uğraşıları sebebiyle tanıklıktan çekinebilecekler ile çekinme konu ve koşulları şunlardır:\n\na) Avukatlar veya stajyerleri veya yardımcılarının, bu sıfatları dolayısıyla veya yüklendikleri yargı görevi sebebiyle öğrendikleri bilgiler.\n\nb) Hekimler, diş hekimleri, eczacılar, ebeler ve bunların yardımcıları ve diğer bütün tıp meslek veya sanatları mensuplarının, bu sıfatları dolayısıyla hastaları ve bunların yakınları hakkında öğrendikleri bilgiler.\n\nc) Malî işlerde görevlendirilmiş müşavirler ve noterlerin bu sıfatları dolayısıyla hizmet verdikleri kişiler hakkında öğrendikleri bilgiler.\n\n(2) Yukarıdaki fıkranın (a) bendinde belirtilenler dışında kalan kişiler, ilgilinin rızasının varlığı halinde, tanıklıktan çekinemez.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-47",
+      "article": "Madde 47",
+      "title": "Devlet sırrı niteliğindeki bilgilerle ilgili tanıklık",
+      "text": "(1) Bir suç olgusuna ilişkin bilgiler, Devlet sırrı olarak mahkemeye karşı gizli tutulamaz. Açıklanması, Devletin dış ilişkilerine, milli savunmasına ve milli güvenliğine zarar verebilecek; anayasal düzeni ve dış ilişkilerinde tehlike yaratabilecek nitelikteki bilgiler, Devlet sırrı sayılır.\n\n(2) Tanıklık konusu bilgilerin Devlet sırrı niteliğini taşıması halinde; tanık, sadece mahkeme hâkimi veya heyeti tarafından zâbıt kâtibi dahi olmaksızın dinlenir. Hâkim veya mahkeme başkanı, daha sonra, bu tanık açıklamalarından, sadece yüklenen suçu açıklığa kavuşturabilecek nitelikte olan bilgileri tutanağa kaydettirir.\n\n(3) Bu madde hükmü, hapis cezasının alt sınırı beş yıl veya daha fazla olan suçlarla ilgili olarak uygulanır.\n\n(4) Cumhurbaşkanının tanıklığı söz konusu olduğunda sırrın niteliğini ve mahkemeye bildirilmesi hususunu kendisi takdir eder.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-48",
+      "article": "Madde 48",
+      "title": "Kendisi veya yakınları aleyhine tanıklıktan çekinme",
+      "text": "(1) Tanık, kendisini veya 45 inci maddenin birinci fıkrasında gösterilen kişileri ceza kovuşturmasına uğratabilecek nitelikte olan sorulara cevap vermekten çekinebilir. Tanığa cevap vermekten çekinebileceği önceden bildirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-49",
+      "article": "Madde 49",
+      "title": "Tanıklıktan çekinme sebebinin bildirilmesi",
+      "text": "(1) Mahkeme başkanı veya hâkim veya Cumhuriyet savcısı tarafından gerekli görüldüğünde 45, 46 ve 48 inci maddelerde gösterilen hâllerde tanık, tanıklıktan çekinmesinin dayanağını oluşturan olguları bildirir ve bu hususta gerektiğinde kendisine yemin verdirilir.",
+      "source": "mevzuat.gov.tr"
+    },
+    {
+      "id": "cmk-50",
+      "article": "Madde 50",
+      "title": "Yemin verilmeyen tanıklar",
+      "text": "(1) Aşağıdaki kimseler yeminsiz dinlenir:\n\na) Dinlenme sırasında onbeş yaşını doldurmamış olanlar.\n\nb) Ayırt etme gücüne sahip olmamaları nedeniyle yeminin niteliği ve önemini kavrayamayanlar.\n\nc) Soruşturma veya kovuşturma konusu suçlara iştirakten veya bu suçlar nedeniyle suçluyu kayırmaktan ya da suç delillerini yok etme, gizleme veya değiştirmekten şüpheli, sanık veya hükümlü olanlar.",
+      "source": "mevzuat.gov.tr"
+    }
+  ]
+}

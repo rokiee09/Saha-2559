@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import '../../data/models/law_article.dart';
 import 'law_article_provider.dart';
 import 'law_search_controller.dart';
 
@@ -33,6 +33,15 @@ class _LawDetailPageState extends ConsumerState<LawDetailPage> {
 
           final title =
               '${article.lawName} - Madde ${article.articleNumber.toString()}';
+
+          final officialText = article.officialText.trim().isNotEmpty
+              ? article.officialText
+              : article.plainSummary.trim().isNotEmpty
+                  ? article.plainSummary
+                  : 'Bu madde için resmî metin henüz eklenmemiş.';
+          final plainSummary = article.plainSummary.trim().isNotEmpty
+              ? article.plainSummary
+              : 'Bu madde için özet henüz eklenmemiş.';
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16),
@@ -76,33 +85,30 @@ class _LawDetailPageState extends ConsumerState<LawDetailPage> {
                 _buildSection(
                   context,
                   'Resmî Metin',
-                  article.officialText,
+                  officialText,
                 ),
                 _buildSection(
                   context,
                   'Özet (Sade Dil)',
-                  article.plainSummary,
+                  plainSummary,
                 ),
-                if (article.fieldExample != null &&
-                    article.fieldExample!.trim().isNotEmpty)
-                  _buildSection(
-                    context,
-                    'Saha Örneği',
-                    article.fieldExample!,
-                  ),
-                if (article.commonMistakes != null &&
-                    article.commonMistakes!.trim().isNotEmpty)
-                  _buildSection(
-                    context,
-                    'Sık Yapılan Hatalar',
-                    article.commonMistakes!,
-                  ),
-                if (article.sourceUrl != null)
-                  _buildSection(
-                    context,
-                    'Kaynak',
-                    article.sourceUrl!,
-                  ),
+                _buildSection(
+                  context,
+                  'Saha Örneği',
+                  article.fieldExample?.trim().isEmpty ?? true
+                      ? 'Saha örneği eklenmemiş.'
+                      : article.fieldExample!,
+                ),
+                _buildSection(
+                  context,
+                  'Sık Yapılan Hatalar',
+                  article.commonMistakes?.trim().isEmpty ?? true
+                      ? 'Bu madde için sık hatalar listesi eklenmemiş.'
+                      : article.commonMistakes!,
+                ),
+                if (article.sourceUrl != null &&
+                    article.sourceUrl!.trim().isNotEmpty)
+                  _buildSourceLink(context, article.sourceUrl!),
                 if (article.lastUpdated != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
@@ -151,13 +157,50 @@ class _LawDetailPageState extends ConsumerState<LawDetailPage> {
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
-          Text(content),
+          Text(
+            content,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSourceLink(BuildContext context, String url) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Kaynak',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          const SizedBox(height: 8),
+          InkWell(
+            onTap: () async {
+              final uri = Uri.parse(url);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              }
+            },
+            child: Text(
+              url,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    decoration: TextDecoration.underline,
+                  ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
