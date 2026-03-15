@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/widgets/primary_card.dart';
-import '../../data/models/mevzuat_article.dart';
 import 'mevzuat_article_detail_page.dart';
 import 'mevzuat_provider.dart';
 
@@ -74,7 +73,7 @@ class MevzuatPage extends ConsumerWidget {
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
                 child: TextField(
                   decoration: const InputDecoration(
-                    hintText: '🔎 Kanun adı, madde no veya kelime ara',
+                    hintText: 'Kanun veya yönetmelik adı ara',
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24)),
@@ -97,7 +96,7 @@ class MevzuatPage extends ConsumerWidget {
               if (items.isEmpty && tab == MevzuatTab.favoriler) {
                 return const Center(
                   child: Text(
-                    'Henüz favori madde eklenmedi.\nMaddelere yıldız ile favori ekleyebilirsiniz.',
+                    'Henüz favori mevzuat eklenmedi.\nKanun ve yönetmelikleri yıldız ile favorilere ekleyebilirsiniz.',
                     textAlign: TextAlign.center,
                   ),
                 );
@@ -109,8 +108,8 @@ class MevzuatPage extends ConsumerWidget {
                 padding: const EdgeInsets.all(16),
                 itemCount: items.length,
                 itemBuilder: (context, index) {
-                  final article = items[index];
-                  return _MevzuatArticleTile(article: article);
+                  final entry = items[index];
+                  return _MevzuatEntryTile(entry: entry);
                 },
               );
             },
@@ -142,44 +141,30 @@ class _TabChip extends StatelessWidget {
   }
 }
 
-class _MevzuatArticleTile extends ConsumerWidget {
-  final MevzuatArticle article;
+class _MevzuatEntryTile extends ConsumerWidget {
+  final MevzuatEntry entry;
 
-  const _MevzuatArticleTile({required this.article});
+  const _MevzuatEntryTile({required this.entry});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final favoritesAsync = ref.watch(mevzuatFavoritesProvider);
-    final isFavorite = favoritesAsync.valueOrNull?.contains(article.id) ?? false;
+    final isFavorite = favoritesAsync.valueOrNull?.contains(entry.id) ?? false;
 
     return PrimaryCard(
       onTap: () {
         Navigator.of(context).push(
-          fadeRoute(MevzuatArticleDetailPage(articleId: article.id)),
+          fadeRoute(MevzuatArticleDetailPage(entryId: entry.id)),
         );
       },
       child: ListTile(
         title: Text(
-          article.displaySubtitle,
+          entry.displayTitle,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (article.title.isNotEmpty)
-              Text(
-                article.title,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-              ),
-            Text(
-              article.text,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
+        subtitle: Text(
+          entry.categoryLabel,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         trailing: IconButton(
           icon: Icon(
@@ -189,7 +174,7 @@ class _MevzuatArticleTile extends ConsumerWidget {
                 : null,
           ),
           onPressed: () async {
-            await mevzuatToggleFavorite(ref, article.id);
+            await mevzuatToggleFavorite(ref, entry.id);
           },
         ),
       ),

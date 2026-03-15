@@ -28,12 +28,14 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 onPageChanged: (i) => setState(() => _index = i),
                 children: [
                   _buildPage(
-                    title: 'Sahada Yalnız Değilsin',
-                    description: 'Mevzuat, saha kartları ve pratik örnekler tek uygulamada.',
+                    title: 'Resmî Mevzuat Kütüphanesi',
+                    description:
+                        'Kanunlar, yönetmelikler ve kurumsal içerikler tek uygulamada.',
                   ),
                   _buildPage(
                     title: 'Offline Çalışma',
-                    description: 'İnternet olmasa da mevzuat ve içeriklere eriş.',
+                    description:
+                        'İnternet olmasa da mevzuat metinlerine ve temel kurumsal bilgilere eriş.',
                   ),
                   _buildDisclaimerPage(),
                 ],

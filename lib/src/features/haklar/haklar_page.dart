@@ -50,8 +50,8 @@ class HaklarPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Polis personelinin maaş, izin, sağlık, disiplin itirazı ve diğer hakları 2559 sayılı Polis Vazife ve Salahiyet Kanunu ile 657 sayılı DMK ve ilgili mevzuatla güvence altındadır. '
-                    'Kartlara dokunarak her hakla ilgili detaylı açıklama, ilgili mevzuat ve özet bilgiye ulaşabilirsiniz.',
+                    'Bu bölümde polis personelinin özlük, izin, sağlık ve disiplin mevzuatına ilişkin bilgilendirici içerikler yer alır. '
+                    'Kartlara dokunarak ilgili mevzuat başlıklarına ve özet açıklamalara ulaşabilirsiniz.',
                   ),
                 ],
               ),

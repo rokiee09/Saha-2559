@@ -11,7 +11,7 @@ class ContactsPage extends ConsumerWidget {
     final contactsAsync = ref.watch(cityContactsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('İl İletişim')),
+      appBar: AppBar(title: const Text('İl Emniyet Müdürlükleri')),
       body: contactsAsync.when(
         data: (cities) {
           if (cities.isEmpty) {
