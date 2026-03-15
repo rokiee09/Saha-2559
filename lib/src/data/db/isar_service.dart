@@ -1,8 +1,6 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../models/law_article.dart';
-import '../models/field_card.dart';
 import '../models/unit_info.dart';
 import '../models/city_contact.dart';
 import '../models/martyr.dart';
@@ -16,8 +14,6 @@ class IsarService {
     final dir = await getApplicationDocumentsDirectory();
     _isar = await Isar.open(
       [
-        LawArticleSchema,
-        FieldCardSchema,
         UnitInfoSchema,
         CityContactSchema,
         MartyrSchema,

@@ -14,7 +14,7 @@ class PolisMevzuatApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Saha 2559',
+      title: 'Polis Mevzuat Kütüphanesi',
       theme: buildLightTheme(),
       darkTheme: buildDarkTheme(),
       themeMode: themeMode,

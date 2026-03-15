@@ -1,31 +1,269 @@
 {
   "kanunlar": [
-    {"id": "pvsk", "code": "2559", "name": "Polis Vazife ve Salahiyet Kanunu", "path": "kanunlar/pvsk.json"},
-    {"id": "emniyet_teskilati", "code": "3201", "name": "Emniyet Teşkilatı Kanunu", "path": "kanunlar/emniyet_teskilati.json"},
-    {"id": "il_idaresi", "code": "5442", "name": "İl İdaresi Kanunu", "path": "kanunlar/il_idaresi.json"},
-    {"id": "cmk", "code": "5271", "name": "Ceza Muhakemesi Kanunu", "path": "kanunlar/cmk.json"},
-    {"id": "tck", "code": "5237", "name": "Türk Ceza Kanunu", "path": "kanunlar/tck.json"},
-    {"id": "kabahatler", "code": "5326", "name": "Kabahatler Kanunu", "path": "kanunlar/kabahatler.json"},
-    {"id": "trafik", "code": "2918", "name": "Karayolları Trafik Kanunu", "path": "kanunlar/trafik.json"},
-    {"id": "toplanti_gosteri", "code": "2911", "name": "Toplantı ve Gösteri Yürüyüşleri Kanunu", "path": "kanunlar/toplanti_gosteri.json"},
-    {"id": "silah", "code": "6136", "name": "Ateşli Silahlar ve Bıçaklar Hakkında Kanun", "path": "kanunlar/silah_kanunu.json"},
-    {"id": "tmk", "code": "3713", "name": "Terörle Mücadele Kanunu", "path": "kanunlar/tmk.json"},
-    {"id": "kacakcilik", "code": "5607", "name": "Kaçakçılıkla Mücadele Kanunu", "path": "kanunlar/kacakcilik.json"},
-    {"id": "kimlik_bildirme", "code": "1774", "name": "Kimlik Bildirme Kanunu", "path": "kanunlar/kimlik_bildirme.json"},
-    {"id": "dmk", "code": "657", "name": "Devlet Memurları Kanunu", "path": "kanunlar/657.json"},
-    {"id": "disiplin", "code": "7068", "name": "Genel Kolluk Disiplin Hükümleri Kanunu", "path": "kanunlar/disiplin.json"}
+    {
+      "id": "kanun-pvsk",
+      "code": "2559",
+      "name": "Polis Vazife ve Salahiyet Kanunu",
+      "path": "kanunlar/pvsk.json"
+    },
+    {
+      "id": "kanun-emniyet_teskilati",
+      "code": "3201",
+      "name": "Emniyet Teşkilatı Kanunu",
+      "path": "kanunlar/emniyet_teskilati.json"
+    },
+    {
+      "id": "kanun-il_idaresi",
+      "code": "5442",
+      "name": "İl İdaresi Kanunu",
+      "path": "kanunlar/il_idaresi.json"
+    },
+    {
+      "id": "kanun-dmk",
+      "code": "657",
+      "name": "Devlet Memurları Kanunu",
+      "path": "kanunlar/657.json"
+    },
+    {
+      "id": "kanun-disiplin",
+      "code": "7068",
+      "name": "Genel Kolluk Disiplin Hükümleri Kanunu",
+      "path": "kanunlar/disiplin.json"
+    },
+    {
+      "id": "kanun-tck",
+      "code": "5237",
+      "name": "Türk Ceza Kanunu",
+      "path": "kanunlar/tck.json"
+    },
+    {
+      "id": "kanun-cmk",
+      "code": "5271",
+      "name": "Ceza Muhakemesi Kanunu",
+      "path": "kanunlar/cmk.json"
+    },
+    {
+      "id": "kanun-kabahatler",
+      "code": "5326",
+      "name": "Kabahatler Kanunu",
+      "path": "kanunlar/kabahatler.json"
+    },
+    {
+      "id": "kanun-tmk",
+      "code": "3713",
+      "name": "Terörle Mücadele Kanunu",
+      "path": "kanunlar/tmk.json"
+    },
+    {
+      "id": "kanun-kacakcilik",
+      "code": "5607",
+      "name": "Kaçakçılıkla Mücadele Kanunu",
+      "path": "kanunlar/kacakcilik.json"
+    },
+    {
+      "id": "kanun-silah",
+      "code": "6136",
+      "name": "Ateşli Silahlar ve Bıçaklar Hakkında Kanun",
+      "path": "kanunlar/silah_kanunu.json"
+    },
+    {
+      "id": "kanun-uyusturucu_murakabesi",
+      "code": "2313",
+      "name": "Uyuşturucu Maddelerin Murakabesi Hakkında Kanun",
+      "path": "kanunlar/2313.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2313&MevzuatTertip=3&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-yardim_toplama",
+      "code": "2860",
+      "name": "Yardım Toplama Kanunu",
+      "path": "kanunlar/2860.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2860&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-kultur_tabiat_varliklari",
+      "code": "2863",
+      "name": "Kültür ve Tabiat Varlıklarını Koruma Kanunu",
+      "path": "kanunlar/2863.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2863&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-orman",
+      "code": "6831",
+      "name": "Orman Kanunu",
+      "path": "kanunlar/6831.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/Metin1.Aspx?MevzuatIliski=0&MevzuatKod=1.3.6831&No=6831&Tertip=3&Tur=1&sourceXmlSearch=orman"
+    },
+    {
+      "id": "kanun-cevre",
+      "code": "2872",
+      "name": "Çevre Kanunu",
+      "path": "kanunlar/2872.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2872&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-mal_bildirimi",
+      "code": "3628",
+      "name": "Mal Bildiriminde Bulunulması, Rüşvet ve Yolsuzluklarla Mücadele Kanunu",
+      "path": "kanunlar/3628.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=3628&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-kimlik_bildirme",
+      "code": "1774",
+      "name": "Kimlik Bildirme Kanunu",
+      "path": "kanunlar/kimlik_bildirme.json"
+    },
+    {
+      "id": "kanun-ozel_guvenlik",
+      "code": "5188",
+      "name": "Özel Güvenlik Hizmetlerine Dair Kanun",
+      "path": "kanunlar/5188.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=5188&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-pasaport",
+      "code": "5682",
+      "name": "Pasaport Kanunu",
+      "path": "kanunlar/5682.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=5682&MevzuatTertip=3&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-yabancilar_ikamet",
+      "code": "5683",
+      "name": "Yabancıların Türkiye'de İkamet ve Seyahatleri Hakkında Kanun",
+      "path": "kanunlar/5683.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/"
+    },
+    {
+      "id": "kanun-yuk",
+      "code": "6458",
+      "name": "Yabancılar ve Uluslararası Koruma Kanunu",
+      "path": "kanunlar/6458.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=6458&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-trafik",
+      "code": "2918",
+      "name": "Karayolları Trafik Kanunu",
+      "path": "kanunlar/trafik.json"
+    },
+    {
+      "id": "kanun-toplanti_gosteri",
+      "code": "2911",
+      "name": "Toplantı ve Gösteri Yürüyüşleri Kanunu",
+      "path": "kanunlar/toplanti_gosteri.json"
+    },
+    {
+      "id": "kanun-umumi_hifzissihha",
+      "code": "1593",
+      "name": "Umumi Hıfzıssıhha Kanunu",
+      "path": "kanunlar/1593.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=1593&MevzuatTertip=3&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-ohal",
+      "code": "2935",
+      "name": "Olağanüstü Hal Kanunu",
+      "path": "kanunlar/2935.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2935&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-mit",
+      "code": "2937",
+      "name": "Milli İstihbarat Teşkilatı Kanunu",
+      "path": "kanunlar/2937.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2937&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-jandarma",
+      "code": "2803",
+      "name": "Jandarma Teşkilat, Görev ve Yetkileri Kanunu",
+      "path": "kanunlar/2803.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2803&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-sahil_guvenlik",
+      "code": "2692",
+      "name": "Sahil Güvenlik Komutanlığı Kanunu",
+      "path": "kanunlar/2692.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2692&MevzuatTertip=5&MevzuatTur=1"
+    }
   ],
   "yonetmelikler": [
-    {"id": "adli_arama", "name": "Adli ve Önleme Aramaları Yönetmeliği", "path": "yonetmelikler/adli_arama.json"},
-    {"id": "gozalti", "name": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği", "path": "yonetmelikler/gozalti.json"},
-    {"id": "adli_kolluk", "name": "Adli Kolluk Yönetmeliği", "path": "yonetmelikler/adli_kolluk.json"},
-    {"id": "cevik_kuvvet", "name": "Polis Çevik Kuvvet Yönetmeliği", "path": "yonetmelikler/cevik_kuvvet.json"},
-    {"id": "trafik_denetleme", "name": "Trafik Denetleme Yönetmeliği", "path": "yonetmelikler/trafik_denetleme.json"},
-    {"id": "trafik", "name": "Karayolları Trafik Yönetmeliği", "path": "yonetmelikler/trafik.json"},
-    {"id": "disiplin_kurulu", "name": "Polis Disiplin Kurulları Yönetmeliği", "path": "yonetmelikler/disiplin_kurulu.json"},
-    {"id": "atama", "name": "Emniyet Hizmetleri Sınıfı Personeli Atama ve Yer Değiştirme Yönetmeliği", "path": "yonetmelikler/atama.json"},
-    {"id": "disiplin", "name": "Emniyet Hizmetleri Sınıfı Personeli Disiplin Yönetmeliği", "path": "yonetmelikler/disiplin.json"},
-    {"id": "kimlik_yonetmelik", "name": "Kimlik Bildirme Kanununun Uygulanmasına İlişkin Yönetmelik", "path": "yonetmelikler/kimlik_bildirme.json"},
-    {"id": "toplanti_yonetmelik", "name": "Toplantı ve Gösteri Yürüyüşleri Kanununun Uygulanmasına Dair Yönetmelik", "path": "yonetmelikler/toplanti.json"}
+    {
+      "id": "yonetmelik-adli_arama",
+      "name": "Adli ve Önleme Aramaları Yönetmeliği",
+      "path": "yonetmelikler/adli_arama.json"
+    },
+    {
+      "id": "yonetmelik-gozalti",
+      "name": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği",
+      "path": "yonetmelikler/gozalti.json"
+    },
+    {
+      "id": "yonetmelik-adli_kolluk",
+      "name": "Adli Kolluk Yönetmeliği",
+      "path": "yonetmelikler/adli_kolluk.json"
+    },
+    {
+      "id": "yonetmelik-trafik",
+      "name": "Karayolları Trafik Yönetmeliği",
+      "path": "yonetmelikler/trafik.json"
+    },
+    {
+      "id": "yonetmelik-cevik_kuvvet",
+      "name": "Polis Çevik Kuvvet Yönetmeliği",
+      "path": "yonetmelikler/cevik_kuvvet.json"
+    },
+    {
+      "id": "yonetmelik-disiplin_kurullari",
+      "name": "Polis Disiplin Kurulları Yönetmeliği",
+      "path": "yonetmelikler/disiplin_kurulu.json"
+    },
+    {
+      "id": "yonetmelik-atama",
+      "name": "Emniyet Hizmetleri Sınıfı Personeli Atama ve Yer Değiştirme Yönetmeliği",
+      "path": "yonetmelikler/atama.json"
+    },
+    {
+      "id": "yonetmelik-disiplin",
+      "name": "Emniyet Hizmetleri Sınıfı Personeli Disiplin Yönetmeliği",
+      "path": "yonetmelikler/disiplin.json"
+    },
+    {
+      "id": "yonetmelik-pomem",
+      "name": "Polis Meslek Eğitim Merkezleri Yönetmeliği",
+      "path": "yonetmelikler/pomem.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=20915&MevzuatTertip=5&MevzuatTur=7"
+    },
+    {
+      "id": "yonetmelik-pmyo",
+      "name": "Polis Meslek Yüksekokulları Yönetmeliği",
+      "path": "yonetmelikler/pmyo.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/"
+    },
+    {
+      "id": "yonetmelik-kimlik_bildirme",
+      "name": "Kimlik Bildirme Kanununun Uygulanmasına İlişkin Yönetmelik",
+      "path": "yonetmelikler/kimlik_bildirme.json"
+    },
+    {
+      "id": "yonetmelik-toplanti",
+      "name": "Toplantı ve Gösteri Yürüyüşleri Kanununun Uygulanmasına Dair Yönetmelik",
+      "path": "yonetmelikler/toplanti.json"
+    },
+    {
+      "id": "yonetmelik-pasaport",
+      "name": "Pasaport Kanunu Uygulama Yönetmeliği",
+      "path": "yonetmelikler/pasaport_uygulama.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/"
+    },
+    {
+      "id": "yonetmelik-yuk",
+      "name": "Yabancılar ve Uluslararası Koruma Kanunu Uygulama Yönetmeliği",
+      "path": "yonetmelikler/yuk_uygulama.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=21460&MevzuatTertip=5&MevzuatTur=7"
+    }
   ]
 }

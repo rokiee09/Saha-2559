@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 import '../../common/routing/transitions.dart';
 import '../../common/widgets/primary_card.dart';
 import '../martyrs/martyrs_page.dart';
-import 'ataturk_page.dart';
-import 'mesleki_etik_page.dart';
 import 'onemli_gunler_page.dart';
 import 'polis_andi_page.dart';
-import 'kariyer_rehberi_page.dart';
 import 'polis_tarihi_page.dart';
-import 'rutbe_teskilat_page.dart';
 
 class KulturPage extends StatelessWidget {
   const KulturPage({super.key});
@@ -24,22 +20,14 @@ class KulturPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
             child: Text(
-              'Polis tarihi, teşkilat, değerler ve önemli günler.',
+              'Polis tarihine ve meslek kültürüne ilişkin temel içerikler.',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
           _cultureCard(
             context,
-            title: 'Atatürk Köşesi',
-            subtitle: 'Atatürk\'ün polislikle ilgili sözleri ve hatırası',
-            icon: Icons.flag,
-            color: Colors.red,
-            onTap: () => Navigator.of(context).push(fadeRoute(const AtaturkPage())),
-          ),
-          _cultureCard(
-            context,
             title: 'Polis Tarihi',
-            subtitle: '1845 kuruluş, reformlar, terörle mücadele, teşkilat evrimi',
+            subtitle: 'Kuruluş süreci, Cumhuriyet dönemi ve kurumsal gelişim',
             icon: Icons.history_edu,
             color: Colors.indigo,
             onTap: () => Navigator.of(context).push(fadeRoute(const PolisTarihiPage())),
@@ -53,30 +41,6 @@ class KulturPage extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const MartyrsPage()),
             ),
-          ),
-          _cultureCard(
-            context,
-            title: 'Rütbe ve Teşkilat Yapısı',
-            subtitle: 'Polis memurundan Emniyet Genel Müdürüne, teşkilat hiyerarşisi',
-            icon: Icons.badge,
-            color: Colors.blue,
-            onTap: () => Navigator.of(context).push(fadeRoute(const RutbeTeskilatPage())),
-          ),
-          _cultureCard(
-            context,
-            title: 'Rütbe & Kariyer Rehberi',
-            subtitle: 'Terfi şartları, sınav sistemi, branş birimleri – aday polisler için',
-            icon: Icons.trending_up,
-            color: Colors.deepPurple,
-            onTap: () => Navigator.of(context).push(fadeRoute(const KariyerRehberiPage())),
-          ),
-          _cultureCard(
-            context,
-            title: 'Mesleki Etik & Değerler',
-            subtitle: 'Vatanseverlik, dürüstlük, adalet, cesaret, etik, takım ruhu',
-            icon: Icons.handshake,
-            color: Colors.purple,
-            onTap: () => Navigator.of(context).push(fadeRoute(const MeslekiEtikPage())),
           ),
           _cultureCard(
             context,

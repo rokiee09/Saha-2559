@@ -1,5 +1,5 @@
 name: saha_2559
-description: Saha 2559 - Polis mevzuat, saha, haklar, teşkilat ve kültür için offline Flutter uygulaması.
+description: Polis mevzuat, haklar, teşkilat ve kültür için offline Flutter uygulaması.
 publish_to: "none"
 
 version: 1.0.0+1
@@ -47,10 +47,8 @@ flutter:
     - assets/mevzuat/
     - assets/mevzuat/kanunlar/
     - assets/mevzuat/yonetmelikler/
-    - assets/json/law_articles.json
     - assets/json/city_contacts.json
     - assets/json/martyrs.json
-    - assets/json/field_cards.json
     - assets/images/
     - assets/images/atatürk.jpg
 

@@ -94,31 +94,6 @@ Sağlık ve emeklilik işlemleri kurum personel birimi ve SGK/Emekli Sandığı 
     iconKey: 'health',
   ),
   RightItem(
-    title: 'Mesleki Gelişim',
-    shortDescription:
-        'Hizmet içi eğitim, kurs ve kariyer gelişimi için fırsatlar sunulur.',
-    fullContent: '''Polis personelinin mesleki gelişimi, hizmet içi eğitim ve kariyer yönetimi mevzuatı ile desteklenir.
-
-• Hizmet içi eğitim: Polis Akademisi ve EGM Eğitim Dairesi Başkanlığı bünyesinde zorunlu ve isteğe bağlı eğitimler düzenlenir; konular asayiş, trafik, kriminal, insan hakları vb. alanları kapsar.
-• Kurs ve sertifikasyon: Uzmanlık kursları, dil kursları ve sertifika programlarına katılım usul ve esasları yönetmelikle belirlenir.
-• Kariyer ve terfi: Rütbe ilerlemesi, sınav ve değerlendirme kriterleri 2559 ve 657 sayılı Kanun ile Polis Kariyer Yönetmeliği hükümlerine tabidir.
-• Atama ve yer değişikliği: İl içi ve il dışı atamalar, açık kadro ve tercih usulü yönetmelikle düzenlenir; zorunlu çalışma süreleri ve tazminat koşulları mevzuatta yer alır.
-
-Eğitim ve kariyer başvuruları resmi yazı ile yapılır; sonuçlar duyuru ile ilan edilir.''',
-    legalRefs: [
-      '2559 sayılı Polis Vazife ve Salahiyet Kanunu',
-      '657 sayılı Devlet Memurları Kanunu',
-      'Polis Kariyer Yönetmeliği',
-      'Hizmet İçi Eğitim Yönetmeliği',
-    ],
-    keyPoints: [
-      'Hizmet içi eğitim zorunlu ve isteğe bağlı modülleri kapsar.',
-      'Terfi ve atama sınav ve değerlendirme ile yapılır.',
-      'Atama ve yer değişikliği yönetmelik usulüne tabidir.',
-    ],
-    iconKey: 'school',
-  ),
-  RightItem(
     title: 'Sendika ve Grev Yasağı',
     shortDescription:
         'Emniyet personeli sendika kuramaz ve sendikaya üye olamaz; grev yasaktır. Hak arama bireysel idari ve yargı yoluyla yapılır.',
@@ -167,30 +142,5 @@ Hukuki destek için baro veya avukat ile iletişime geçilebilir.''',
       'İdari yargı yolu açıktır.',
     ],
     iconKey: 'gavel',
-  ),
-  RightItem(
-    title: 'Görev ve Yetki',
-    shortDescription:
-        'Görev tanımı, yetki sınırları ve sorumluluklar kanun ve yönetmeliklerle belirlenir.',
-    fullContent: '''Polisin görev ve yetkileri 2559 sayılı Polis Vazife ve Salahiyet Kanunu (PVSK) ile 5271 sayılı CMK ve diğer kanunlarda tanımlıdır.
-
-• Görev alanı: Kamu düzeni, can ve mal güvenliği, suçun önlenmesi ve soruşturma yardımı; görev süresi ve coğrafi sınır mevzuatta belirtilir.
-• Yetki kaynağı: Her yetki (kimlik sorma, yakalama, arama, zor kullanma vb.) kanun maddesine dayanır; yetki aşımı hukuki ve cezai sorumluluk doğurur.
-• Emir ve itaat: Amirinin kanuna uygun emirlerini yerine getirmekle yükümlüdür; hukuka aykırı emir verilmemeli, verilirse yerine getirilmez ve üst makama bildirilir (PVSK m.17).
-• Sorumluluk: Görev sırasında işlenen kusurlu fiiller disiplin ve ceza hukuku kapsamında değerlendirilir; masumiyet karinesi ve savunma hakkı esastır.
-• Görev dışı talep: Görev ve yetki dışındaki talepler yerine getirilmez; zorlama ve baskı şikâyet konusu yapılabilir.
-
-Detay için Mevzuat sekmesinde PVSK ve CMK maddelerine bakınız.''',
-    legalRefs: [
-      '2559 sayılı Polis Vazife ve Salahiyet Kanunu',
-      '5271 sayılı Ceza Muhakemesi Kanunu',
-      'Polis Görev ve Yetki Yönetmelikleri',
-    ],
-    keyPoints: [
-      'Yetki kanunda yazılı olmalıdır; yetki aşımı sorumluluk doğurur.',
-      'Hukuka aykırı emir yerine getirilmez, üste bildirilir.',
-      'Görev dışı taleplere itaat zorunluluğu yoktur.',
-    ],
-    iconKey: 'badge',
   ),
 ];

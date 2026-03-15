@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../kultur/rutbe_teskilat_page.dart';
+import 'birimler_page.dart';
 import '../contacts/contacts_page.dart';
-import '../martyrs/martyrs_page.dart';
-import '../saha/trafik_ceza_page.dart';
-import '../settings/settings_page.dart';
+import 'teskilat_yapisi_page.dart';
 
 class TeskilatPage extends StatelessWidget {
   const TeskilatPage({super.key});
@@ -23,59 +23,56 @@ class TeskilatPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Teşkilat Yapısı ve İletişim',
+                    'Emniyet Teşkilatı',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Trafik ceza hesaplayıcı, il emniyet müdürlükleri, şehitlerimiz ve uygulama ayarlarına buradan ulaşabilirsiniz. '
-                    '81 il iletişim bilgileri ve saygı listesi güncel tutulmaktadır.',
+                    'Bu bölümde Emniyet Genel Müdürlüğü yapısı, birimler, rütbeler ve il emniyet müdürlüklerinin iletişim bilgileri yer alır.',
                   ),
                 ],
               ),
             ),
           ),
           _TeskilatCard(
-            icon: Icons.traffic,
-            title: 'Trafik Ceza Hesaplayıcı',
-            subtitle: 'Ceza maddesi seç → Para cezası, puan ve araç bağlama bilgisi',
+            icon: Icons.account_balance,
+            title: 'EGM Yapısı',
+            subtitle: 'Merkez, taşra ve eğitim teşkilatı hakkında genel bilgi',
             onTap: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const TrafikCezaPage()),
+                MaterialPageRoute(builder: (_) => const TeskilatYapisiPage()),
+              );
+            },
+          ),
+          _TeskilatCard(
+            icon: Icons.apartment,
+            title: 'Birimler',
+            subtitle: 'Temel hizmet birimleri ve kurumsal görev alanları',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const BirimlerPage()),
+              );
+            },
+          ),
+          _TeskilatCard(
+            icon: Icons.badge,
+            title: 'Rütbeler',
+            subtitle: 'Emniyet teşkilatındaki rütbe sıralaması ve genel yapı',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const RutbeTeskilatPage()),
               );
             },
           ),
           _TeskilatCard(
             icon: Icons.map,
-            title: 'İl İletişim',
-            subtitle: '81 il listesi, tek dokunuşla ara ve kaynak gör',
+            title: 'İl Emniyet Müdürlükleri',
+            subtitle: '81 il için iletişim bilgileri ve resmî kaynak bağlantıları',
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const ContactsPage()),
-              );
-            },
-          ),
-          _TeskilatCard(
-            icon: Icons.shield,
-            title: 'Şehitler',
-            subtitle:
-                'İl filtresi ve isim arama ile saygı odaklı şehitler listesi',
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const MartyrsPage()),
-              );
-            },
-          ),
-          _TeskilatCard(
-            icon: Icons.settings,
-            title: 'Ayarlar',
-            subtitle:
-                'Gizlilik, disclaimer, offline paket ve tema ayarlarını yönet',
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const SettingsPage()),
               );
             },
           ),

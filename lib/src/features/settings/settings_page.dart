@@ -38,7 +38,7 @@ class SettingsPage extends ConsumerWidget {
           const Divider(height: 0),
           ListTile(
             title: const Text('Offline paket indir / güncelle'),
-            subtitle: const Text('Mevzuat ve diğer içerikleri cihaza kaydet'),
+            subtitle: const Text('Mevzuat metinleri ve kurumsal içerikleri cihaza kaydet'),
             trailing: const Icon(Icons.download),
             onTap: () async {
               await OfflineImportService.importAll();
