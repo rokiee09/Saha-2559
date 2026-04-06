@@ -15,7 +15,7 @@ extension GetCityContactCollection on Isar {
 
 const CityContactSchema = CollectionSchema(
   name: r'CityContact',
-  id: 4,
+  id: 1004,
   properties: {
     r'address': PropertySchema(
       id: 0,
@@ -27,13 +27,18 @@ const CityContactSchema = CollectionSchema(
       name: r'cityName',
       type: IsarType.string,
     ),
-    r'phone': PropertySchema(
+    r'directorName': PropertySchema(
       id: 2,
+      name: r'directorName',
+      type: IsarType.string,
+    ),
+    r'phone': PropertySchema(
+      id: 3,
       name: r'phone',
       type: IsarType.string,
     ),
     r'sourceUrl': PropertySchema(
-      id: 3,
+      id: 4,
       name: r'sourceUrl',
       type: IsarType.string,
     )
@@ -65,6 +70,12 @@ int _cityContactEstimateSize(
     }
   }
   bytesCount += 3 + object.cityName.length * 3;
+  {
+    final value = object.directorName;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   bytesCount += 3 + object.phone.length * 3;
   {
     final value = object.sourceUrl;
@@ -83,8 +94,9 @@ void _cityContactSerialize(
 ) {
   writer.writeString(offsets[0], object.address);
   writer.writeString(offsets[1], object.cityName);
-  writer.writeString(offsets[2], object.phone);
-  writer.writeString(offsets[3], object.sourceUrl);
+  writer.writeString(offsets[2], object.directorName);
+  writer.writeString(offsets[3], object.phone);
+  writer.writeString(offsets[4], object.sourceUrl);
 }
 
 CityContact _cityContactDeserialize(
@@ -96,9 +108,10 @@ CityContact _cityContactDeserialize(
   final object = CityContact();
   object.address = reader.readStringOrNull(offsets[0]);
   object.cityName = reader.readString(offsets[1]);
+  object.directorName = reader.readStringOrNull(offsets[2]);
   object.id = id;
-  object.phone = reader.readString(offsets[2]);
-  object.sourceUrl = reader.readStringOrNull(offsets[3]);
+  object.phone = reader.readString(offsets[3]);
+  object.sourceUrl = reader.readStringOrNull(offsets[4]);
   return object;
 }
 
@@ -114,8 +127,10 @@ P _cityContactDeserializeProp<P>(
     case 1:
       return (reader.readString(offset)) as P;
     case 2:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 3:
+      return (reader.readString(offset)) as P;
+    case 4:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -502,6 +517,160 @@ extension CityContactQueryFilter
     });
   }
 
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'directorName',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'directorName',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameEqualTo(
+    String? value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameGreaterThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameLessThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameBetween(
+    String? lower,
+    String? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'directorName',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'directorName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'directorName',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'directorName',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterFilterCondition>
+      directorNameIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'directorName',
+        value: '',
+      ));
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QAfterFilterCondition> idEqualTo(
       Id value) {
     return QueryBuilder.apply(this, (query) {
@@ -874,6 +1043,19 @@ extension CityContactQuerySortBy
     });
   }
 
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> sortByDirectorName() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'directorName', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterSortBy>
+      sortByDirectorNameDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'directorName', Sort.desc);
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QAfterSortBy> sortByPhone() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'phone', Sort.asc);
@@ -922,6 +1104,19 @@ extension CityContactQuerySortThenBy
   QueryBuilder<CityContact, CityContact, QAfterSortBy> thenByCityNameDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'cityName', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterSortBy> thenByDirectorName() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'directorName', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CityContact, CityContact, QAfterSortBy>
+      thenByDirectorNameDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'directorName', Sort.desc);
     });
   }
 
@@ -978,6 +1173,13 @@ extension CityContactQueryWhereDistinct
     });
   }
 
+  QueryBuilder<CityContact, CityContact, QDistinct> distinctByDirectorName(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'directorName', caseSensitive: caseSensitive);
+    });
+  }
+
   QueryBuilder<CityContact, CityContact, QDistinct> distinctByPhone(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -1010,6 +1212,12 @@ extension CityContactQueryProperty
   QueryBuilder<CityContact, String, QQueryOperations> cityNameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'cityName');
+    });
+  }
+
+  QueryBuilder<CityContact, String?, QQueryOperations> directorNameProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'directorName');
     });
   }
 

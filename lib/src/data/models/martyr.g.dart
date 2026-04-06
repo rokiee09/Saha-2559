@@ -15,7 +15,7 @@ extension GetMartyrCollection on Isar {
 
 const MartyrSchema = CollectionSchema(
   name: r'Martyr',
-  id: 5,
+  id: 1005,
   properties: {
     r'cityName': PropertySchema(
       id: 0,
