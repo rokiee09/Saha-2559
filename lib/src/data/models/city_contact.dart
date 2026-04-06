@@ -10,5 +10,7 @@ class CityContact {
   late String phone;
   String? address;
   String? sourceUrl;
+  /// Örn. "Sayın Volkan Sazak — İl Emniyet Müdürü"
+  String? directorName;
 }
 

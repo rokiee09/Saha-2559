@@ -15,7 +15,7 @@ extension GetUnitInfoCollection on Isar {
 
 const UnitInfoSchema = CollectionSchema(
   name: r'UnitInfo',
-  id: 3,
+  id: 1003,
   properties: {
     r'address': PropertySchema(
       id: 0,

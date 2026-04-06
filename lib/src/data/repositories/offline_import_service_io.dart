@@ -24,7 +24,8 @@ class OfflineImportService {
         ..cityName = map['cityName'] as String
         ..phone = map['phone'] as String
         ..address = map['address'] as String?
-        ..sourceUrl = map['sourceUrl'] as String?;
+        ..sourceUrl = map['sourceUrl'] as String?
+        ..directorName = map['directorName'] as String?;
       return c;
     }).toList(growable: false);
 
