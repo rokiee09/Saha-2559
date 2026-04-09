@@ -1,0 +1,24 @@
+{
+  "sonGuncelleme": "2026-03-07",
+  "genelUyari": "Katsayılar her bütçe döneminde Resmî Gazete ve Merkezi Yönetim Bütçe Kanunu ek cetvelleriyle güncellenir; bu dosyayı el ile güncellemeniz gerekir. Aşağıdaki ekran, bilgisayardaki MAHEP benzeri araçlardaki gibi kalemleri satır satır toplar; vergi dilimi ve kesintiler gerçek bordrodaki gibi tek tek değil, JSON’daki tek tahmini net oranıyla özetlenir.",
+  "formulAciklama": "Brüt = taban + (gösterge puanı × memur aylık katsayısı) + ek gösterge + kıdem + ÖHT + dil + ek ödeme + aile + çocuk (TL). Tahmini net = brüt × (tahmini net oranı). Kesin tutar için kurum bordrosu veya resmi hesap programı esas alınır.",
+  "donemler": [
+    {
+      "id": "2026_ocak_haziran_ornek",
+      "etiket": "2026 Ocak-Haziran (%18,6) — katsayı: JSON (RG ile doğrulayın)",
+      "memurAylikKatsayisi": 0.352397,
+      "tabanAylik": 22164.82,
+      "tahminiNetOrani": 0.73,
+      "kaynakNot": "6360 sayılı Cumhurbaşkanı Kararı ve ekleri yayımlandıkça bu alanlar güncellenir."
+    },
+    {
+      "id": "2025_temmuz_aralik_ornek",
+      "etiket": "2025 Temmuz-Aralık — katsayı: JSON (RG ile doğrulayın)",
+      "memurAylikKatsayisi": 0.333417,
+      "tabanAylik": 20952.67,
+      "tahminiNetOrani": 0.72,
+      "kaynakNot": "Önceki dönem örnek değerleri; arşiv karşılaştırması için."
+    }
+  ],
+  "varsayilanDonem": "2026_ocak_haziran_ornek"
+}

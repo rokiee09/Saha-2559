@@ -48,6 +48,7 @@ flutter:
     - assets/mevzuat/kanunlar/
     - assets/mevzuat/yonetmelikler/
     - assets/json/city_contacts.json
+    - assets/json/maas_katsayilari.json
     - assets/json/martyrs.json
     - assets/images/
     - assets/images/atatürk.jpg

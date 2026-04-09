@@ -200,7 +200,7 @@ final mevzuatFavoritesProvider = FutureProvider<Set<String>>((ref) async {
   return (list ?? []).toSet();
 });
 
-Future<void> mevzuatToggleFavorite(Ref ref, String entryId) async {
+Future<void> mevzuatToggleFavorite(WidgetRef ref, String entryId) async {
   final prefs = await SharedPreferences.getInstance();
   final list = prefs.getStringList(_favoritesKey) ?? [];
   final set = list.toSet();
