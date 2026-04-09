@@ -188,6 +188,97 @@
       "name": "Sahil Güvenlik Komutanlığı Kanunu",
       "path": "kanunlar/2692.json",
       "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2692&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-sgk",
+      "code": "5510",
+      "name": "Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu",
+      "path": "kanunlar/5510.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=5510&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-harcirah",
+      "code": "6245",
+      "name": "Harcırah Kanunu",
+      "path": "kanunlar/6245.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=6245&MevzuatTertip=3&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-sendika",
+      "code": "4688",
+      "name": "Kamu Görevlileri Sendikaları ve Toplu Sözleşme Kanunu",
+      "path": "kanunlar/4688.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=4688&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-kvkk",
+      "code": "6698",
+      "name": "Kişisel Verilerin Korunması Kanunu",
+      "path": "kanunlar/6698.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=6698&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-guvenlik_sorusturma",
+      "code": "7315",
+      "name": "Güvenlik Soruşturması ve Arşiv Araştırması Kanunu",
+      "path": "kanunlar/7315.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=7315&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-bilgi_edinme",
+      "code": "4982",
+      "name": "Bilgi Edinme Hakkı Kanunu",
+      "path": "kanunlar/4982.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=4982&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-iyuk",
+      "code": "2577",
+      "name": "İdari Yargılama Usulü Kanunu",
+      "path": "kanunlar/2577.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2577&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-idari_yargi_yerleri",
+      "code": "2576",
+      "name": "Bölge İdare Mahkemeleri, İdare Mahkemeleri ve Vergi Mahkemelerinin Kuruluşu ve Görevleri Hakkında Kanun",
+      "path": "kanunlar/2576.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2576&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-kamu_denetci",
+      "code": "6328",
+      "name": "Kamu Denetçiliği Kurumu Kanunu",
+      "path": "kanunlar/6328.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=6328&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-tihek",
+      "code": "6701",
+      "name": "Türkiye İnsan Hakları ve Eşitlik Kurumu Kanunu",
+      "path": "kanunlar/6701.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=6701&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-nakdi_tazminat",
+      "code": "2330",
+      "name": "Nakdi Tazminat ve Aylık Bağlanması Hakkında Kanun",
+      "path": "kanunlar/2330.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=2330&MevzuatTertip=5&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-emekli_sandigi",
+      "code": "5434",
+      "name": "Türkiye Cumhuriyeti Emekli Sandığı Kanunu",
+      "path": "kanunlar/5434.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=5434&MevzuatTertip=3&MevzuatTur=1"
+    },
+    {
+      "id": "kanun-polis_yuksek_ogretim",
+      "code": "4652",
+      "name": "Polis Yüksek Öğretim Kanunu",
+      "path": "kanunlar/4652.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=4652&MevzuatTertip=5&MevzuatTur=1"
     }
   ],
   "yonetmelikler": [
@@ -264,6 +355,18 @@
       "name": "Yabancılar ve Uluslararası Koruma Kanunu Uygulama Yönetmeliği",
       "path": "yonetmelikler/yuk_uygulama.json",
       "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=21460&MevzuatTertip=5&MevzuatTur=7"
+    },
+    {
+      "id": "yonetmelik-guvenlik_sorusturma",
+      "name": "Güvenlik Soruşturması ve Arşiv Araştırması Yapılmasına Dair Yönetmelik",
+      "path": "yonetmelikler/guvenlik_sorusturma.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=5649&MevzuatTertip=5&MevzuatTur=21"
+    },
+    {
+      "id": "yonetmelik-trafik_idari_ceza_tutanak",
+      "name": "Trafik İdari Para Cezası Karar Tutanaklarının Düzenlenmesinde, Tahsilinde ve Takibinde Uygulanacak Usul ve Esaslar Hakkında Yönetmelik",
+      "path": "yonetmelikler/trafik_denetleme.json",
+      "sourceUrl": "https://www.mevzuat.gov.tr/anasayfa/MevzuatFihristDetayIframe?MevzuatNo=14878&MevzuatTertip=5&MevzuatTur=7"
     }
   ]
 }

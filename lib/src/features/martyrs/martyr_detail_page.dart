@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/models/martyr.dart';
 import 'martyr_provider.dart';
 
 class MartyrDetailPage extends ConsumerWidget {
