@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/constants/app_disclaimer.dart';
 import '../root_gate.dart';
 import '../../data/repositories/preference_repository.dart';
 
@@ -28,9 +29,10 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 onPageChanged: (i) => setState(() => _index = i),
                 children: [
                   _buildPage(
-                    title: 'Resmî Mevzuat Kütüphanesi',
+                    title: 'Bilgilendirme amaçlı mevzuat',
                     description:
-                        'Kanunlar, yönetmelikler ve kurumsal içerikler tek uygulamada.',
+                        'Kanun, yönetmelik, teşkilat, özet haklar ve kültür içerikleri. '
+                        'Sahada işlem yönlendirmesi yapmaz; yalnızca metin ve genel bilgi sunar.',
                   ),
                   _buildPage(
                     title: 'Offline Çalışma',
@@ -119,9 +121,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
           ),
           const SizedBox(height: 12),
           const Text(
-            'Bu uygulama bilgilendirme amaçlıdır. Resmî mevzuat ve talimatlar her zaman önceliklidir. '
-            'Uygulama geliştiricileri ve içerik üreticileri, uygulama kullanımından doğabilecek sonuçlardan '
-            'sorumlu tutulamaz.',
+            kAppFullDisclaimer,
           ),
           const SizedBox(height: 16),
           CheckboxListTile(

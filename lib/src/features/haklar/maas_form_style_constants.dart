@@ -1,10 +1,6 @@
-/// OzkanSoft MAHEP — https://www.ozkansoft.com/mahep.php
-/// Resmi değildir; uygulama bu adresi yalnızca kullanıcıyı orijinal araca yönlendirmek için kullanır.
+/// Memur maaş giriş formunda kullanılan yaygın etiketler (emniyet ağırlıklı ünvan örnekleri).
 
-const String kOzkanMahepUrl = 'https://www.ozkansoft.com/mahep.php';
-
-/// Sitedeki “Kadro (Görev) Ünvanı” listesinden emniyet / polis ile ilgili başlıklar (tam liste sitede).
-const List<String> kMahepPolisEmniyetUnvanlari = [
+const List<String> kPolisEmniyetUnvanlari = [
   'Polis Memuru',
   'Komiser Yardımcısı',
   'Komiser',
@@ -29,7 +25,7 @@ const List<String> kMahepPolisEmniyetUnvanlari = [
   'Memur',
 ];
 
-const List<String> kMahepAylar12 = [
+const List<String> kAylar12 = [
   'Ocak',
   'Şubat',
   'Mart',

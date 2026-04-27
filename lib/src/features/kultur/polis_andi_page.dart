@@ -1,64 +1,61 @@
 import 'package:flutter/material.dart';
 
+import '../../common/widgets/police_filigran_layer.dart';
+
 class PolisAndiPage extends StatelessWidget {
   const PolisAndiPage({super.key});
 
   static const _oathText = '''
-Devletimin ve milletimin önünde, namusum ve şerefim üzerine and içerim ki:
-
-• Türkiye Cumhuriyeti Anayasasına, Atatürk ilke ve inkılaplarına, anayasal düzene ve kanunlara sadakatten ayrılmayacağıma,
-
-• Türk milletinin milli menfaatlerini, demokratik, laik ve sosyal hukuk devleti olan Türkiye Cumhuriyeti\'nin varlığını, bağımsızlığını ve ülke bütünlüğünü her şeyin üzerinde tutacağıma,
-
-• Görevimi, tarafsızlık ve eşitlik ilkelerine uygun olarak yapacağıma,
-
-• İnsan haklarına saygılı olacağıma,
-
-• Görevime hiçbir etki altında kalmadan, siyasi düşünce ve inançlara karşı tarafsız davranarak, dil, ırk, cinsiyet, siyasi düşünce, felsefi inanç, din ve mezhep ayrımı yapmadan yerine getireceğime,
-
-• Devlet sırlarını mesleğim gereği öğrendiğim kişisel ve ailevi sırları açıklamayacağıma, görevden ayrılsam bile bu sırları saklayacağıma,
-
-• Görevimi yaparken kanunlara ve nizamlara tam riayet edeceğime,
-
-• Her zaman halkın hizmetinde ve yardımında bulunacağıma,
-
-• Emirlere itaat edeceğime,
-
-Namussuz, şerefsiz bir hareketim olmayacağına, bu andımı hiçbir çıkar ve tesir altında kalmadan tam bir sadakat ve vicdani kanaatle yerine getireceğime,
-
-Allah\'a and içerim.
+Türkiye Cumhuriyeti Anayasasına, Atatürk ilke ve inkılâplarına, anayasada ifadesi bulunan Türk bayrağının altındaki şerefli Türk polisine, Türkiye Cumhuriyeti Devletine ve Türk milletine sadakatle bağlı kalacağıma, polislik mesleğinin onuruna ve polislik mesleğinin gerektirdiği tüm yükümlülüklere uygun hareket edeceğime, polislik mesleğini icra ederken kanunların bana verdiği yetkileri, vatandaşların huzuru, devletin güvenliği için, hiçbir etki altında kalmadan, adaletle, dürüstlükle ve objektiflikle kullanacağıma, namusum ve şerefim üzerine ant içerim
 ''';
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(title: const Text('Polis Andı')),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-              color: Theme.of(context).colorScheme.surfaceContainerHighest,
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  _oathText.trim(),
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        height: 1.5,
-                      ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          const PoliceFiligranLayer(),
+          ColoredBox(color: cs.surface.withValues(alpha: 0.88)),
+          SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                child: Column(
+                  children: [
+                    Text(
+                      'Polis Andı',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.2,
+                          ),
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      _oathText.trim(),
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            height: 1.6,
+                            color: cs.onSurface,
+                          ),
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'Göreve başlarken okunan and metnidir. Yürürlükteki düzenlemelerde değişiklik olması halinde resmî kaynak esas alınmalıdır.',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: cs.onSurfaceVariant,
+                            height: 1.4,
+                          ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-            Text(
-              'Polis andı, göreve başlarken yapılan yemin metnidir. İlgili mevzuatta düzenlenir.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

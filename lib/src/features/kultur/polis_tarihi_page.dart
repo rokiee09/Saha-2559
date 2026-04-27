@@ -38,7 +38,7 @@ class PolisTarihiPage extends StatelessWidget {
               context,
               'Terörle Mücadele',
               '1980\'lerden itibaren terörle mücadele polis teşkilatının öncelikli görev alanlarından biri oldu. '
-              'Özel Harekat birimleri, istihbarat ve sahada yürütülen operasyonlarla bu alan kurumsal bir deneyim kazandı. '
+              'Özel Harekat birimleri, istihbarat ve görev yerinde yürütülen operasyonlarla bu alan kurumsal bir deneyim kazandı. '
               'Şehitlerimiz bu süreçte vazife uğruna canlarını feda eden kahramanlardır.',
             ),
             _buildSection(

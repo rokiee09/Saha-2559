@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/constants/app_disclaimer.dart';
 import '../../data/repositories/offline_import_service.dart';
 import 'theme_controller.dart';
 
@@ -21,9 +23,8 @@ class SettingsPage extends ConsumerWidget {
           ),
           const Divider(height: 0),
           const ListTile(
-            title: Text('Disclaimer'),
-            subtitle:
-                Text('Uygulama bilgilendirme amaçlıdır, resmî mevzuat önceliklidir.'),
+            title: Text('Bilgilendirme'),
+            subtitle: Text(kAppFullDisclaimer),
           ),
           const Divider(height: 0),
           SwitchListTile(
@@ -36,19 +37,23 @@ class SettingsPage extends ConsumerWidget {
             },
           ),
           const Divider(height: 0),
-          ListTile(
-            title: const Text('Offline paket indir / güncelle'),
-            subtitle: const Text('Mevzuat metinleri ve kurumsal içerikleri cihaza kaydet'),
-            trailing: const Icon(Icons.download),
-            onTap: () async {
-              await OfflineImportService.importAll();
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Offline paket güncellendi.')),
-                );
-              }
-            },
-          ),
+          if (!kIsWeb)
+            ListTile(
+              title: const Text('Yerel veri içe aktar'),
+              subtitle: const Text(
+                'İl iletişim ve şehit listeleri JSON’dan cihaz veritabanına yazılır. '
+                'Mevzuat metinleri uygulama paketindeki dosyalardan okunur.',
+              ),
+              trailing: const Icon(Icons.download),
+              onTap: () async {
+                await OfflineImportService.importAll();
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Yerel veri güncellendi.')),
+                  );
+                }
+              },
+            ),
         ],
       ),
     );

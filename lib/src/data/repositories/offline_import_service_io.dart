@@ -43,9 +43,7 @@ class OfflineImportService {
       final map = e as Map<String, dynamic>;
       final m = Martyr()
         ..fullName = map['fullName'] as String
-        ..cityName = map['cityName'] as String
-        ..location = map['location'] as String?
-        ..story = map['story'] as String?;
+        ..cityName = map['cityName'] as String;
 
       final dateRaw = map['dateOfMartyrdom'];
       if (dateRaw is String && dateRaw.isNotEmpty) {

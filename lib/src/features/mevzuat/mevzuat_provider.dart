@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Mevzuat metinleri tüm platformlarda assets içi JSON’dan okunur (web dahil; Isar bu modülde yok).
 const _catalogPath = 'assets/mevzuat/catalog.json';
 const _basePath = 'assets/mevzuat/';
 const _favoritesKey = 'mevzuat_favorites';
@@ -90,7 +91,34 @@ class MevzuatEntry {
   }
 
   String get categoryLabel => category == 'kanun' ? 'Kanun' : 'Yönetmelik';
+
+  /// Katalog id son segmenti, kart üst etiket (ör. pvsk -> PVSK)
+  String get catalogTag {
+    final parts = id.split('-');
+    if (parts.isEmpty) return '';
+    return parts.last.replaceAll('_', ' ').toUpperCase();
+  }
 }
+
+/// JSON’dan madde sayısı ve son inceleme (liste kartları; önbelleksiz, hafif okuma)
+final mevzuatEntryMetaProvider =
+    FutureProvider.autoDispose.family<({int maddeCount, String? lastReview}), String>((
+  ref,
+  entryId,
+) async {
+  final entry = await ref.watch(mevzuatEntryProvider(entryId).future);
+  if (entry == null) return (maddeCount: 0, lastReview: null);
+  try {
+    final str = await rootBundle.loadString(_basePath + entry.path);
+    final map = jsonDecode(str) as Map<String, dynamic>;
+    final n = (map['articles'] as List<dynamic>?)?.length ?? 0;
+    final last = map['lastContentReview'] as String? ??
+        map['sonKontrolTarihi'] as String?;
+    return (maddeCount: n, lastReview: last);
+  } catch (_) {
+    return (maddeCount: 0, lastReview: null);
+  }
+});
 
 class MevzuatSection {
   final String id;
@@ -98,6 +126,7 @@ class MevzuatSection {
   final String title;
   final String text;
   final String source;
+  final String? lastReviewed;
 
   const MevzuatSection({
     required this.id,
@@ -105,6 +134,7 @@ class MevzuatSection {
     required this.title,
     required this.text,
     required this.source,
+    this.lastReviewed,
   });
 
   factory MevzuatSection.fromJson(Map<String, dynamic> json) {
@@ -114,6 +144,7 @@ class MevzuatSection {
       title: json['title'] as String? ?? '',
       text: json['text'] as String? ?? '',
       source: json['source'] as String? ?? 'mevzuat.gov.tr',
+      lastReviewed: json['lastReviewed'] as String? ?? json['sonKontrolTarihi'] as String?,
     );
   }
 }
@@ -122,12 +153,14 @@ class MevzuatDocumentData {
   final String law;
   final String source;
   final String sourceUrl;
+  final String? lastContentReview;
   final List<MevzuatSection> sections;
 
   const MevzuatDocumentData({
     required this.law,
     required this.source,
     required this.sourceUrl,
+    this.lastContentReview,
     required this.sections,
   });
 
@@ -136,10 +169,13 @@ class MevzuatDocumentData {
     required MevzuatEntry entry,
   }) {
     final rawSections = (json['articles'] as List<dynamic>?) ?? [];
+    final lastRoot = json['lastContentReview'] as String? ??
+        json['sonKontrolTarihi'] as String?;
     return MevzuatDocumentData(
       law: json['law'] as String? ?? entry.name,
       source: json['source'] as String? ?? 'mevzuat.gov.tr',
       sourceUrl: json['sourceUrl'] as String? ?? entry.sourceUrl,
+      lastContentReview: lastRoot,
       sections: rawSections
           .map((e) => MevzuatSection.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -151,6 +187,7 @@ class MevzuatDocumentData {
       law: entry.name,
       source: 'mevzuat.gov.tr',
       sourceUrl: entry.sourceUrl,
+      lastContentReview: null,
       sections: const [],
     );
   }

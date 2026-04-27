@@ -68,7 +68,7 @@ class MaasKatsayiFile {
   }
 }
 
-/// MAHEP tarzı bordro satırları + tahmini net (tek oran; kesin değil).
+/// Bordro satırları + tahmini net (tek oran; kesin değil).
 class MaasHesapSonucu {
   final double tabanAylik;
   final double gostergeAyligi;
