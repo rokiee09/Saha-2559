@@ -23,12 +23,12 @@ void _showCityContactDetail(BuildContext context, CityContact city) {
               ),
               const SizedBox(height: 12),
             ],
-            Text('Telefon: ${city.phone}'),
             if (city.address != null && city.address!.isNotEmpty)
               Padding(
-                padding: const EdgeInsets.only(top: 8),
+                padding: const EdgeInsets.only(bottom: 8),
                 child: Text('Adres: ${city.address}'),
               ),
+            Text('Telefon: ${city.phone}'),
           ],
         ),
       ),
@@ -48,7 +48,7 @@ void _showCityContactDetail(BuildContext context, CityContact city) {
         FilledButton(
           onPressed: () {
             Navigator.pop(ctx);
-            callPhone(city.phone);
+            callPhone(city.phone, context: context);
           },
           child: const Text('Ara'),
         ),
@@ -65,7 +65,9 @@ class ContactsPage extends ConsumerWidget {
     final contactsAsync = ref.watch(cityContactsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('İl Emniyet Müdürlükleri')),
+      appBar: AppBar(
+        title: const Text('İl Emniyet Müdürlükleri'),
+      ),
       body: contactsAsync.when(
         data: (cities) {
           if (cities.isEmpty) {
@@ -86,40 +88,52 @@ class ContactsPage extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(city.phone),
+                      if (city.address != null &&
+                          city.address!.trim().isNotEmpty)
+                        Text(
+                          'Adres: ${city.address}',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                height: 1.35,
+                              ),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                        )
+                      else
+                        Text(
+                          'Adres: (kayıtta yok)',
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Theme.of(context).colorScheme.outline,
+                                fontStyle: FontStyle.italic,
+                              ),
+                        ),
+                      const SizedBox(height: 6),
+                      Text(
+                        'Tel: ${city.phone}',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                       if (city.directorName != null &&
                           city.directorName!.trim().isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(top: 4),
                           child: Text(
-                            city.directorName!,
+                            'Müdür: ${city.directorName}',
                             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  fontWeight: FontWeight.w500,
-                                  color: Theme.of(context).colorScheme.secondary,
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                                 ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      if (city.address != null && city.address!.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 4),
-                          child: Text(
-                            city.address!,
-                            style: Theme.of(context).textTheme.bodySmall,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
                     ],
                   ),
-                  isThreeLine: (city.address != null &&
-                          city.address!.isNotEmpty) ||
-                      (city.directorName != null &&
-                          city.directorName!.trim().isNotEmpty),
+                  isThreeLine: true,
                   trailing: IconButton(
-                    icon: const Icon(Icons.call),
-                    onPressed: () => callPhone(city.phone),
+                    tooltip: 'Ara',
+                    icon: Icon(
+                      Icons.call_outlined,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+                    onPressed: () => callPhone(city.phone, context: context),
                   ),
                   onTap: () => _showCityContactDetail(context, city),
                 ),

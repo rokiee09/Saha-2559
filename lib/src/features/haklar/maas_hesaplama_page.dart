@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import 'maas_form_style_constants.dart';
 import 'maas_katsayi_data.dart';
-import 'mahep_ozkan_constants.dart';
 
-/// OzkanSoft MAHEP (mahep.php) düzenine göre alan grupları.
-/// Kesin hesap aynı motor değildir; birebir sonuç için siteyi açın.
+/// Yaygın memur maaş / bordro giriş formu düzenine benzer alan grupları.
+/// Kesin net ve kesintiler kurum bordrosu ve güncel mevzuata bağlıdır.
 class MaasHesaplamaPage extends StatefulWidget {
   const MaasHesaplamaPage({super.key});
 
@@ -40,7 +39,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   Object? _loadErr;
 
   int _ayIndex = 0;
-  String _kadroUnvan = kMahepPolisEmniyetUnvanlari.first;
+  String _kadroUnvan = kPolisEmniyetUnvanlari.first;
   int _derece = 5;
   int _kademe = 1;
   int _kidemYili = 0;
@@ -128,13 +127,6 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     return double.tryParse(t) ?? 0;
   }
 
-  Future<void> _acOzkanMahep() async {
-    final u = Uri.parse(kOzkanMahepUrl);
-    if (await canLaunchUrl(u)) {
-      await launchUrl(u, mode: LaunchMode.externalApplication);
-    }
-  }
-
   void _hesapla() {
     final f = _file;
     final id = _donemId;
@@ -183,7 +175,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _kiraCtrl.text = '0';
       _digerKesintiCtrl.text = '0';
       _ayIndex = 0;
-      _kadroUnvan = kMahepPolisEmniyetUnvanlari.first;
+      _kadroUnvan = kPolisEmniyetUnvanlari.first;
       _derece = 5;
       _kademe = 1;
       _kidemYili = 0;
@@ -232,7 +224,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   Widget build(BuildContext context) {
     if (_loadErr != null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Maaş hesaplama')),
+        appBar: AppBar(title: const Text('Tahmini maaş bilgisi')),
         body: Center(child: Text('Veri yüklenemedi: $_loadErr')),
       );
     }
@@ -250,9 +242,9 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('MAHEP — Maaş hesaplama'),
+            const Text('Tahmini maaş bilgisi'),
             Text(
-              'OzkanSoft mahep.php düzeni',
+              'Bordro formuna benzer giriş; sonuç tahmindir',
               style: TextStyle(
                 fontSize: 12.5,
                 fontWeight: FontWeight.w500,
@@ -279,22 +271,20 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'OzkanSoft MAHEP v0.5b',
+                      'Önemli uyarı',
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                             fontWeight: FontWeight.w800,
+                            color: cs.error,
                           ),
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Birebir aynı hesap motoru ve 250+ ünvan tablosu yalnızca sitede çalışır. '
-                      'Kesin sonuç için aşağıdaki düğme ile orijinal sayfayı açın.',
+                      'Bu ekran yalnızca bilgilendirme amaçlı tahmini tutarlar üretir; hukuken ve mali olarak '
+                      'hiçbir bağlayıcılığı yoktur. Uygulama paketindeki katsayı ve parametreler '
+                      'güncel olmayabilir; güncellemeleri kaçırıldığında sonuçlar ciddi şekilde sapar. '
+                      'Kesin ve güncel maaş bilgisi yalnızca kurum bordronuz ve resmî duyurulardadır. '
+                      'Borç-alacak, kredi veya işlem yapmayınız; bu ekrana güvenmeyiniz.',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.45),
-                    ),
-                    const SizedBox(height: 12),
-                    FilledButton.icon(
-                      onPressed: _acOzkanMahep,
-                      icon: const Icon(Icons.open_in_new),
-                      label: const Text('ozkansoft.com/mahep.php sitesini aç'),
                     ),
                   ],
                 ),
@@ -310,7 +300,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ),
             const SizedBox(height: 4),
             Text(
-              'Kesin sonuçlar için doğru ve eksiksiz bilgi girişi yapmalısınız! (OzkanSoft notu)',
+              'Kesin sonuçlar için doğru ve eksiksiz bilgi girişi yapmalısınız.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontStyle: FontStyle.italic,
                     height: 1.35,
@@ -324,7 +314,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35)),
             const SizedBox(height: 16),
 
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Bütçe dönemi seçimi',
               DropdownButtonFormField<String>(
@@ -347,7 +337,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ],
             ],
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Hesaplanacak ay seçimi',
               DropdownButtonFormField<int>(
@@ -355,14 +345,14 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 isExpanded: true,
                 decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
                 items: [
-                  for (var i = 0; i < kMahepAylar12.length; i++)
-                    DropdownMenuItem(value: i, child: Text(kMahepAylar12[i])),
+                  for (var i = 0; i < kAylar12.length; i++)
+                    DropdownMenuItem(value: i, child: Text(kAylar12[i])),
                 ],
                 onChanged: (v) => setState(() => _ayIndex = v ?? 0),
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Kadro (görev) ünvanı seçimi',
               DropdownButtonFormField<String>(
@@ -371,17 +361,17 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 decoration: const InputDecoration(
                   isDense: true,
                   border: OutlineInputBorder(),
-                  helperText: 'Sitedeki tam liste için web’i açın; göstergeyi elle girin.',
+                  helperText: 'Tam ünvan listesi kurum kadro cetvelindedir; göstergeyi elle girin.',
                 ),
                 items: [
-                  for (final u in kMahepPolisEmniyetUnvanlari)
+                  for (final u in kPolisEmniyetUnvanlari)
                     DropdownMenuItem(value: u, child: Text(u, overflow: TextOverflow.ellipsis)),
                 ],
                 onChanged: (v) => setState(() => _kadroUnvan = v ?? _kadroUnvan),
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Derece / kademe (ödemeye esas)',
               Row(
@@ -407,7 +397,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Kıdem yılı / göreve başlama ayı',
               Row(
@@ -433,8 +423,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                       value: _kidemAyIndex,
                       decoration: const InputDecoration(labelText: 'Ay', border: OutlineInputBorder()),
                       items: [
-                        for (var i = 0; i < kMahepAylar12.length; i++)
-                          DropdownMenuItem(value: i, child: Text(kMahepAylar12[i])),
+                        for (var i = 0; i < kAylar12.length; i++)
+                          DropdownMenuItem(value: i, child: Text(kAylar12[i])),
                       ],
                       onChanged: (v) => setState(() => _kidemAyIndex = v ?? 0),
                     ),
@@ -443,7 +433,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Medeni hal / eş durumu',
               DropdownButtonFormField<int>(
@@ -458,7 +448,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Çocuk yardımı (0–6 / 7+)',
               Row(
@@ -484,7 +474,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ),
             ),
             const SizedBox(height: 12),
-            _ozkanRow(
+            _bilgiSatiri(
               context,
               'Sendika üyeliği',
               DropdownButtonFormField<int>(
@@ -505,7 +495,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ),
             const SizedBox(height: 6),
             Text(
-              'OzkanSoft ünvan seçimine göre göstergeyi otomatik getirmez; toplam gösterge ve tutarları cetvelden girin. '
+              'Ünvan seçimi yalnızca bilgi amaçlıdır; gösterge puanı otomatik gelmez. Toplam gösterge ve tutarları cetvelden girin. '
               'Aşağıdaki TL alanları çevrimdışı toplam içindir.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35),
             ),
@@ -546,7 +536,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 const SizedBox(height: 8),
                 _numField(context, _ozelSaglikCtrl, 'Özel sağlık sig. primi vergi indirimi (TL)'),
                 const SizedBox(height: 8),
-                _ozkanRow(
+                _bilgiSatiri(
                   context,
                   'Gelir vergisi oranı seçimi',
                   DropdownButtonFormField<int>(
@@ -627,7 +617,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               ),
               const SizedBox(height: 6),
               Text(
-                'Kadro: $_kadroUnvan · Ay: ${kMahepAylar12[_ayIndex]} · '
+                'Kadro: $_kadroUnvan · Ay: ${kAylar12[_ayIndex]} · '
                 'Derece/ kademe: $_derece / $_kademe · Medeni: ${_medeniEtiketler[_medeniHal]}',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
@@ -637,14 +627,14 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
 
             const SizedBox(height: 28),
             Text(
-              'NOTLAR (OzkanSoft)',
+              'NOTLAR',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 8),
             Text(
-              '1. Burada yer alan bilgiler sadece bilgilendirme amaçlıdır. Yanlış veya eksik bilgi girilmesi sonucu '
-              'oluşabilecek hatalardan uygulama sorumlu değildir.\n\n'
-              '2. “Bilgi girişi” alanında değişiklikten sonra tekrar HESAPLA’ya basınız.',
+              '1. Burada yer alan bilgiler yalnızca bilgilendirme amaçlıdır; yanlış veya eksik girişten doğan '
+              'hatalardan uygulama sorumlu tutulamaz.\n\n'
+              '2. Bilgi girişinde değişiklik yaptıktan sonra sonucu güncellemek için tekrar HESAPLA’ya basınız.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.45),
             ),
           ],
@@ -653,7 +643,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     );
   }
 
-  Widget _ozkanRow(BuildContext context, String label, Widget field) {
+  Widget _bilgiSatiri(BuildContext context, String label, Widget field) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -793,8 +783,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ],
             const SizedBox(height: 12),
             Text(
-              'Gelişmiş alanlardaki GV/DV tutarları ve sendika seçimi, OzkanSoft’taki gibi otomatik işlenmez; '
-              'tam hesap için sitedeki MAHEP’i kullanın.',
+              'Gelişmiş alanlardaki GV/DV tutarları ve sendika seçimi bu özet hesapta otomatik işlenmez; '
+              'kesin kesinti ve net için kurum bordrosunu esas alın.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.4),
             ),
           ],

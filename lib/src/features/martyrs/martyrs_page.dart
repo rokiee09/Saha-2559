@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/widgets/turkish_flag_circle_icon.dart';
 import '../../data/models/martyr.dart';
 import 'martyrs_controller.dart';
 import 'martyr_detail_page.dart';
@@ -21,29 +22,53 @@ class MartyrsPage extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
             child: Card(
-              color: Theme.of(context).colorScheme.surfaceContainerHighest,
+              elevation: 0,
+              color: Theme.of(context).colorScheme.primaryContainer
+                  .withValues(alpha: 0.4),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
                       'Kahramanlar can verir, yurdu yaşatmak için.',
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            height: 1.45,
                             fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.italic,
                           ),
-                      textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 10),
                     Text(
-                      '— Nihal Atsız',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Theme.of(context).colorScheme.onSurfaceVariant,
-                          ),
-                      textAlign: TextAlign.center,
+                      'Nihal Atsız',
+                      textAlign: TextAlign.end,
+                      style:
+                          Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                fontStyle: FontStyle.italic,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSurfaceVariant,
+                              ),
                     ),
                   ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Card(
+              color: Theme.of(context).colorScheme.surfaceContainerHighest,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                child: Text(
+                  'Ad, ünvan, şehit olma tarihi ve (varsa) il alanları uygulama verisinde tutulur. '
+                  'Son dönem kayıtları, isim ve tarih bakımından egm.gov.tr üzerindeki “Şehitlerimiz” listesiyle eşleştirilmiştir; '
+                  'o sayfada il ayrıntısı olmayan girdilerde il alanı “Belirtilmedi” olabilir. '
+                  'Güncel ve tam resmî bilgi için https://www.egm.gov.tr/sehitlerimiz adresini esas alınız.',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.4),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -166,6 +191,8 @@ class _MartyrListItem extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+          leading: const TurkishFlagAssetCircleIcon(size: 44),
           title: Text(martyr.fullName),
           subtitle: Text(
             [

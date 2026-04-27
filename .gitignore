@@ -32,6 +32,8 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+# Yerel yedek build klasörleri
+build_locked_*/
 
 # Symbolication related
 app.*.symbols

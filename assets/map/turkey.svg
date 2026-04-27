@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <!-- T?klanabilir path id = 2 haneli plaka (01-81). G�rsel: assets/images/Turkey_provinces_blank_gray.svg.png -->
+  <!-- T�m illeri ekleyince bu viewBox (1000x500) ve PNG ile hizal? tutun. -->
+  <path id="34" fill="none" stroke="none" d="M 40 80 L 220 80 L 220 240 L 40 240 Z"/>
+  <path id="06" fill="none" stroke="none" d="M 260 60 L 420 60 L 420 220 L 260 220 Z"/>
+  <path id="35" fill="none" stroke="none" d="M 450 120 L 620 120 L 620 320 L 450 320 Z"/>
+  <path id="16" fill="none" stroke="none" d="M 120 280 L 300 280 L 300 420 L 120 420 Z"/>
+  <path id="07" fill="none" stroke="none" d="M 480 40 L 680 40 L 680 180 L 480 180 Z"/>
+</svg>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/widgets/turkish_flag_circle_icon.dart';
 import 'martyr_provider.dart';
 
 class MartyrDetailPage extends ConsumerWidget {
@@ -13,7 +14,7 @@ class MartyrDetailPage extends ConsumerWidget {
     final martyrAsync = ref.watch(martyrProvider(martyrId));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Şehit Detayı')),
+      appBar: AppBar(title: const Text('Kayıt')),
       body: martyrAsync.when(
         data: (martyr) {
           if (martyr == null) {
@@ -26,41 +27,31 @@ class MartyrDetailPage extends ConsumerWidget {
                   .toIso8601String()
                   .split("T")
                   .first
-              : null;
+              : '—';
 
-          return Padding(
+          return SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  martyr.fullName,
-                  style: Theme.of(context).textTheme.headlineSmall,
+                _RowLabel(
+                  label: 'Ad soyad / ünvan (kayıtlı metin)',
+                  value: martyr.fullName,
+                  strong: true,
+                  valueLeading: const TurkishFlagAssetCircleIcon(size: 48),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
+                _RowLabel(label: 'İl', value: martyr.cityName),
+                const SizedBox(height: 12),
+                _RowLabel(label: 'Tarih', value: dateText),
+                const SizedBox(height: 20),
                 Text(
-                  [
-                    martyr.cityName,
-                    if (dateText != null) dateText,
-                    if (martyr.location != null && martyr.location!.isNotEmpty)
-                      martyr.location!,
-                  ].join(' • '),
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(height: 24),
-                Text(
-                  'Anısına',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                const SizedBox(height: 8),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Text(
-                      martyr.story ??
-                          'Bu alan, şehidimizin hayatı ve hatırasına dair saygı odaklı bilgileri içerir.',
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ),
+                  'Bu alanda anı metni veya yorum yoktur. '
+                  'Güncel ve eksiksiz resmî kayıt için kurum duyuruları esas alınmalıdır.',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        height: 1.4,
+                      ),
                 ),
               ],
             ),
@@ -73,3 +64,60 @@ class MartyrDetailPage extends ConsumerWidget {
   }
 }
 
+class _RowLabel extends StatelessWidget {
+  const _RowLabel({
+    required this.label,
+    required this.value,
+    this.strong = false,
+    this.valueLeading,
+  });
+
+  final String label;
+  final String value;
+  final bool strong;
+  final Widget? valueLeading;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+        ),
+        const SizedBox(height: 4),
+        valueLeading != null
+            ? Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 2, right: 10),
+                    child: valueLeading!,
+                  ),
+                  Expanded(
+                    child: SelectableText(
+                      value,
+                      style: strong
+                          ? Theme.of(context).textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              )
+                          : Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                ],
+              )
+            : SelectableText(
+                value,
+                style: strong
+                    ? Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        )
+                    : Theme.of(context).textTheme.bodyLarge,
+              ),
+      ],
+    );
+  }
+}

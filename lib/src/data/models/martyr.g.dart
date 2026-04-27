@@ -14,8 +14,8 @@ extension GetMartyrCollection on Isar {
 }
 
 const MartyrSchema = CollectionSchema(
-  name: r'Martyr',
-  id: 1005,
+  name: r'EmniyetMartyr',
+  id: -7358137696273628160,
   properties: {
     r'cityName': PropertySchema(
       id: 0,
@@ -30,16 +30,6 @@ const MartyrSchema = CollectionSchema(
     r'fullName': PropertySchema(
       id: 2,
       name: r'fullName',
-      type: IsarType.string,
-    ),
-    r'location': PropertySchema(
-      id: 3,
-      name: r'location',
-      type: IsarType.string,
-    ),
-    r'story': PropertySchema(
-      id: 4,
-      name: r'story',
       type: IsarType.string,
     )
   },
@@ -65,18 +55,6 @@ int _martyrEstimateSize(
   var bytesCount = offsets.last;
   bytesCount += 3 + object.cityName.length * 3;
   bytesCount += 3 + object.fullName.length * 3;
-  {
-    final value = object.location;
-    if (value != null) {
-      bytesCount += 3 + value.length * 3;
-    }
-  }
-  {
-    final value = object.story;
-    if (value != null) {
-      bytesCount += 3 + value.length * 3;
-    }
-  }
   return bytesCount;
 }
 
@@ -89,8 +67,6 @@ void _martyrSerialize(
   writer.writeString(offsets[0], object.cityName);
   writer.writeDateTime(offsets[1], object.dateOfMartyrdom);
   writer.writeString(offsets[2], object.fullName);
-  writer.writeString(offsets[3], object.location);
-  writer.writeString(offsets[4], object.story);
 }
 
 Martyr _martyrDeserialize(
@@ -104,8 +80,6 @@ Martyr _martyrDeserialize(
   object.dateOfMartyrdom = reader.readDateTimeOrNull(offsets[1]);
   object.fullName = reader.readString(offsets[2]);
   object.id = id;
-  object.location = reader.readStringOrNull(offsets[3]);
-  object.story = reader.readStringOrNull(offsets[4]);
   return object;
 }
 
@@ -122,10 +96,6 @@ P _martyrDeserializeProp<P>(
       return (reader.readDateTimeOrNull(offset)) as P;
     case 2:
       return (reader.readString(offset)) as P;
-    case 3:
-      return (reader.readStringOrNull(offset)) as P;
-    case 4:
-      return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
   }
@@ -601,298 +571,6 @@ extension MartyrQueryFilter on QueryBuilder<Martyr, Martyr, QFilterCondition> {
       ));
     });
   }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationIsNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'location',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationIsNotNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'location',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationEqualTo(
-    String? value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationGreaterThan(
-    String? value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        include: include,
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationLessThan(
-    String? value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.lessThan(
-        include: include,
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationBetween(
-    String? lower,
-    String? upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.between(
-        property: r'location',
-        lower: lower,
-        includeLower: includeLower,
-        upper: upper,
-        includeUpper: includeUpper,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationContains(
-      String value,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.contains(
-        property: r'location',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationMatches(
-      String pattern,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.matches(
-        property: r'location',
-        wildcard: pattern,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'location',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> locationIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'location',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyIsNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'story',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyIsNotNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'story',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyEqualTo(
-    String? value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyGreaterThan(
-    String? value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        include: include,
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyLessThan(
-    String? value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.lessThan(
-        include: include,
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyBetween(
-    String? lower,
-    String? upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.between(
-        property: r'story',
-        lower: lower,
-        includeLower: includeLower,
-        upper: upper,
-        includeUpper: includeUpper,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyContains(
-      String value,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.contains(
-        property: r'story',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyMatches(
-      String pattern,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.matches(
-        property: r'story',
-        wildcard: pattern,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'story',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterFilterCondition> storyIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'story',
-        value: '',
-      ));
-    });
-  }
 }
 
 extension MartyrQueryObject on QueryBuilder<Martyr, Martyr, QFilterCondition> {}
@@ -933,30 +611,6 @@ extension MartyrQuerySortBy on QueryBuilder<Martyr, Martyr, QSortBy> {
   QueryBuilder<Martyr, Martyr, QAfterSortBy> sortByFullNameDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'fullName', Sort.desc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> sortByLocation() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'location', Sort.asc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> sortByLocationDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'location', Sort.desc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> sortByStory() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'story', Sort.asc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> sortByStoryDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'story', Sort.desc);
     });
   }
 }
@@ -1009,30 +663,6 @@ extension MartyrQuerySortThenBy on QueryBuilder<Martyr, Martyr, QSortThenBy> {
       return query.addSortBy(r'id', Sort.desc);
     });
   }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> thenByLocation() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'location', Sort.asc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> thenByLocationDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'location', Sort.desc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> thenByStory() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'story', Sort.asc);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QAfterSortBy> thenByStoryDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'story', Sort.desc);
-    });
-  }
 }
 
 extension MartyrQueryWhereDistinct on QueryBuilder<Martyr, Martyr, QDistinct> {
@@ -1053,20 +683,6 @@ extension MartyrQueryWhereDistinct on QueryBuilder<Martyr, Martyr, QDistinct> {
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'fullName', caseSensitive: caseSensitive);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QDistinct> distinctByLocation(
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'location', caseSensitive: caseSensitive);
-    });
-  }
-
-  QueryBuilder<Martyr, Martyr, QDistinct> distinctByStory(
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'story', caseSensitive: caseSensitive);
     });
   }
 }
@@ -1093,18 +709,6 @@ extension MartyrQueryProperty on QueryBuilder<Martyr, Martyr, QQueryProperty> {
   QueryBuilder<Martyr, String, QQueryOperations> fullNameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'fullName');
-    });
-  }
-
-  QueryBuilder<Martyr, String?, QQueryOperations> locationProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'location');
-    });
-  }
-
-  QueryBuilder<Martyr, String?, QQueryOperations> storyProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'story');
     });
   }
 }

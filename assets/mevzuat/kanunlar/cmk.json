@@ -1,6 +1,8 @@
 {
   "law": "5271 Ceza Muhakemesi Kanunu",
   "source": "mevzuat.gov.tr",
+  "sourceUrl": "https://www.mevzuat.gov.tr",
+  "lastContentReview": "2024-12-15",
   "articles": [
     {
       "id": "cmk-1",

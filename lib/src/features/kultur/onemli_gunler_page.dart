@@ -194,7 +194,7 @@ class OnemliGunDetayPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
-              height: 220,
+              height: 280,
               child: _buildHero(context),
             ),
             Padding(
@@ -242,7 +242,7 @@ class OnemliGunDetayPage extends StatelessWidget {
   }
 }
 
-/// 10 Kasım: matem havasında Atatürk resmi (koyu overlay).
+/// 10 Kasım: üstte portre daha net; metin okunur kalsın diye aşağı doğru koyulaşan gölge.
 class _AtaturkMatemHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -250,12 +250,25 @@ class _AtaturkMatemHero extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         Image.asset(
-          'assets/images/atatürk.jpg',
+          'assets/images/ataturk_matem.jpg',
           fit: BoxFit.cover,
+          alignment: const Alignment(0, -0.2),
+          filterQuality: FilterQuality.medium,
         ),
-        // Matem için koyu overlay
-        Container(
-          color: Colors.black.withOpacity(0.6),
+        Positioned.fill(
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withValues(alpha: 0.2),
+                  Colors.black.withValues(alpha: 0.5),
+                ],
+                stops: const [0.0, 1.0],
+              ),
+            ),
+          ),
         ),
         Center(
           child: Column(

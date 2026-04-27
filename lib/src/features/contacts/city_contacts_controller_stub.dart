@@ -1,9 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/material.dart' show BuildContext;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../common/phone/phone_dial_handler.dart';
 import '../../data/models/city_contact.dart';
 
 final cityContactsProvider =
@@ -23,9 +26,16 @@ final cityContactsProvider =
   }).toList();
 });
 
-Future<void> callPhone(String phone) async {
+Future<void> callPhone(String phone, {BuildContext? context}) async {
+  if (kIsWeb) {
+    if (context == null || !context.mounted) {
+      return;
+    }
+    await dialOrShowNumberDialog(context, phone: phone, placeName: 'İl emniyet');
+    return;
+  }
   final uri = Uri(scheme: 'tel', path: phone.replaceAll(' ', ''));
-  await launchUrl(uri);
+  await launchUrl(uri, mode: LaunchMode.externalApplication);
 }
 
 Future<void> openSourceUrl(String url) async {

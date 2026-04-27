@@ -1,4 +1,4 @@
-// Web'de şehit listesi ve detayı assets/json/martyrs.json'dan yüklenir.
+// Web'de şehit listesi assets/json/martyrs.json'dan; Isar yok.
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
@@ -19,9 +19,7 @@ List<Martyr> _parseMartyrsFromJson(String jsonStr) {
     final m = Martyr()
       ..id = i + 1
       ..fullName = map['fullName'] as String
-      ..cityName = map['cityName'] as String
-      ..location = map['location'] as String?
-      ..story = map['story'] as String?;
+      ..cityName = map['cityName'] as String;
 
     final dateRaw = map['dateOfMartyrdom'];
     if (dateRaw is String && dateRaw.toString().trim().isNotEmpty) {
