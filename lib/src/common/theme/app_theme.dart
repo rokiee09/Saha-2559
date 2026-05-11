@@ -29,8 +29,7 @@ ThemeData buildLightTheme() {
     outlineVariant: Color(0xFFE1E5EC),
   );
 
-  return _baseTheme(
-    ThemeData(
+  var light = ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: scheme,
@@ -53,7 +52,8 @@ ThemeData buildLightTheme() {
       ),
       cardTheme: CardThemeData(
         color: Colors.white,
-        elevation: 0,
+        elevation: 1,
+        shadowColor: Colors.black.withValues(alpha: 0.07),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
           side: BorderSide(color: scheme.outlineVariant, width: 1),
@@ -84,9 +84,16 @@ ThemeData buildLightTheme() {
         hintStyle: TextStyle(color: scheme.onSurfaceVariant.withValues(alpha: 0.75)),
         isDense: true,
       ),
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+          minimumSize: const Size(48, 48),
+          tapTargetSize: MaterialTapTargetSize.padded,
+        ),
+      ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: Colors.white,
-        elevation: 0,
+        elevation: 3,
+        shadowColor: Colors.black26,
         height: 64,
         indicatorColor: navy.withValues(alpha: 0.12),
         surfaceTintColor: Colors.transparent,
@@ -104,9 +111,31 @@ ThemeData buildLightTheme() {
           ),
         ),
       ),
-    ),
-    isDark: false,
   );
+
+  light = light.copyWith(
+    textTheme: light.textTheme.copyWith(
+      bodyLarge: light.textTheme.bodyLarge?.copyWith(height: 1.52, letterSpacing: 0.15),
+      bodyMedium: light.textTheme.bodyMedium?.copyWith(height: 1.42),
+      titleMedium: light.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.2,
+      ),
+    ),
+    snackBarTheme: SnackBarThemeData(
+      behavior: SnackBarBehavior.floating,
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      backgroundColor: scheme.inverseSurface,
+      contentTextStyle: TextStyle(color: scheme.onInverseSurface, height: 1.35),
+    ),
+    listTileTheme: const ListTileThemeData(
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      minVerticalPadding: 12,
+    ),
+  );
+
+  return _baseTheme(light, isDark: false);
 }
 
 Color outlineLine({required bool isDark}) {
@@ -137,8 +166,7 @@ ThemeData buildDarkTheme() {
     outlineVariant: PoliceColors.outlineMuted.withValues(alpha: 0.3),
   );
 
-  return _baseTheme(
-    ThemeData(
+  var dark = ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
       colorScheme: scheme,
@@ -161,13 +189,20 @@ ThemeData buildDarkTheme() {
           ),
         ),
       ),
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+          minimumSize: const Size(48, 48),
+          tapTargetSize: MaterialTapTargetSize.padded,
+        ),
+      ),
       cardTheme: CardThemeData(
         color: PoliceColors.surfaceDarkElevated,
-        elevation: 0,
+        elevation: 2.5,
+        shadowColor: Colors.black.withValues(alpha: 0.45),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
           side: BorderSide(
-            color: scheme.outlineVariant.withValues(alpha: 0.5),
+            color: scheme.outlineVariant.withValues(alpha: 0.75),
             width: 1,
           ),
         ),
@@ -198,7 +233,8 @@ ThemeData buildDarkTheme() {
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: PoliceColors.surfaceDark,
-        elevation: 0,
+        elevation: 12,
+        shadowColor: Colors.black.withValues(alpha: 0.55),
         height: 64,
         indicatorColor: gold.withValues(alpha: 0.1),
         surfaceTintColor: Colors.transparent,
@@ -216,7 +252,35 @@ ThemeData buildDarkTheme() {
           ),
         ),
       ),
-    ),
-    isDark: true,
   );
+
+  dark = dark.copyWith(
+    textTheme: dark.textTheme.copyWith(
+      bodyLarge: dark.textTheme.bodyLarge?.copyWith(height: 1.55, letterSpacing: 0.15),
+      bodyMedium: dark.textTheme.bodyMedium?.copyWith(height: 1.45),
+      titleMedium: dark.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.2,
+      ),
+    ),
+    snackBarTheme: SnackBarThemeData(
+      behavior: SnackBarBehavior.floating,
+      elevation: 8,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      backgroundColor: PoliceColors.surfaceDarkElevated,
+      contentTextStyle: TextStyle(
+        color: PoliceColors.titleOnDark,
+        height: 1.38,
+        fontSize: 14,
+      ),
+      insetPadding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+      actionTextColor: PoliceColors.primaryBlue,
+    ),
+    listTileTheme: const ListTileThemeData(
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      minVerticalPadding: 12,
+    ),
+  );
+
+  return _baseTheme(dark, isDark: true);
 }

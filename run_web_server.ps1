@@ -3,11 +3,10 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
-if (Test-Path "build") {
-  Remove-Item -Recurse -Force "build" -ErrorAction SilentlyContinue
-}
+# build/ klasorunu temizlemeyin: ilk derleme gereksiz uzar.
 
 Write-Host "=== flutter run -d web-server (el ile tarayici) ===" -ForegroundColor Cyan
+Write-Host "(Chrome'un otomatik acilmasi icin yerine run_web_chrome.ps1 kullanabilirsiniz.)" -ForegroundColor Gray
 flutter pub get
 # Sabit port; cakisma olursa --web-port=8090 deneyin
 flutter run -d web-server --web-hostname=localhost --web-port=8080 --no-web-resources-cdn

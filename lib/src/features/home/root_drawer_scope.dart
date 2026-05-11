@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// [HomeShell] çekmecesini açmak için; sekme kök sayfalarının AppBar'ından erişilir.
+/// [HomeShell] ana menüsünü (modal alt sayfa) açmak için.
 class RootDrawerIntent extends InheritedWidget {
   const RootDrawerIntent({
     super.key,
-    required this.openDrawer,
+    required this.openMainMenu,
     required super.child,
   });
 
-  final VoidCallback openDrawer;
+  final VoidCallback openMainMenu;
 
   static RootDrawerIntent? maybeOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<RootDrawerIntent>();
@@ -16,7 +16,7 @@ class RootDrawerIntent extends InheritedWidget {
 
   @override
   bool updateShouldNotify(RootDrawerIntent oldWidget) {
-    return openDrawer != oldWidget.openDrawer;
+    return openMainMenu != oldWidget.openMainMenu;
   }
 }
 
@@ -29,8 +29,8 @@ class HomeDrawerButton extends StatelessWidget {
     if (intent == null) return const SizedBox.shrink();
     return IconButton(
       icon: const Icon(Icons.menu_rounded),
-      tooltip: 'Bölümler ve ayarlar',
-      onPressed: intent.openDrawer,
+      tooltip: 'Menü',
+      onPressed: intent.openMainMenu,
     );
   }
 }

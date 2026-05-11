@@ -8,6 +8,92 @@ import 'package:shared_preferences/shared_preferences.dart';
 const _catalogPath = 'assets/mevzuat/catalog.json';
 const _basePath = 'assets/mevzuat/';
 const _favoritesKey = 'mevzuat_favorites';
+const _recentKey = 'mevzuat_recent_views_v1';
+
+/// Polis kullanımı için önde gösterilen kanun kodları (catalog.code)
+const kanunPopularCodesOrdered = ['2559', '7068', '657'];
+
+/// Diğer grupta özellikle vurgulanan örnekler (geri kalan hep “diğer”)
+const kanunHighlightedOtherExamples = {'3201', '5442'};
+
+/// Liste kartı ↔ detay AppBar Hero etiketi.
+String mevzuatLawHeroTag(String entryId) => 'mevzuat-law-$entryId';
+
+/// 5271 CMK katalog kimliği (okuma tipografisi için).
+const mevzuatCmkCatalogEntryId = 'kanun-cmk';
+
+Future<void> mevzuatRecordRecent(
+  WidgetRef ref,
+  String entryId,
+  String articleLabel,
+) async {
+  final prefs = await SharedPreferences.getInstance();
+  final raw = prefs.getString(_recentKey);
+  var list = <Map<String, dynamic>>[];
+  if (raw != null && raw.isNotEmpty) {
+    try {
+      final dec = jsonDecode(raw);
+      if (dec is List) {
+        list = dec.whereType<Map<String, dynamic>>().toList();
+      }
+    } catch (_) {}
+  }
+  list.removeWhere((e) => e['entryId'] == entryId);
+  list.insert(0, {
+    'entryId': entryId,
+    'madde': articleLabel,
+    'ts': DateTime.now().millisecondsSinceEpoch,
+  });
+  if (list.length > 8) {
+    list = list.sublist(0, 8);
+  }
+  await prefs.setString(_recentKey, jsonEncode(list));
+  ref.read(mevzuatRecentVersionProvider.notifier).state++;
+}
+
+final mevzuatRecentVersionProvider = StateProvider<int>((ref) => 0);
+
+final mevzuatRecentItemsProvider =
+    FutureProvider.autoDispose<List<MevzuatRecentItem>>((ref) async {
+  ref.watch(mevzuatRecentVersionProvider);
+  final prefs = await SharedPreferences.getInstance();
+  final raw = prefs.getString(_recentKey);
+  if (raw == null || raw.isEmpty) {
+    return [];
+  }
+  try {
+    final dec = jsonDecode(raw) as List<dynamic>;
+    final catalog = await ref.watch(mevzuatCatalogProvider.future);
+    final all = <MevzuatEntry>[...catalog.kanunlar, ...catalog.yonetmelikler];
+    final idToEntry = {for (final e in all) e.id: e};
+    final out = <MevzuatRecentItem>[];
+    for (final row in dec) {
+      if (row is! Map<String, dynamic>) {
+        continue;
+      }
+      final id = row['entryId'] as String? ?? '';
+      final madde = row['madde'] as String? ?? '';
+      final e = idToEntry[id];
+      if (e == null || madde.isEmpty) {
+        continue;
+      }
+      out.add(MevzuatRecentItem(entry: e, maddeLabel: madde));
+    }
+    return out;
+  } catch (_) {
+    return [];
+  }
+});
+
+class MevzuatRecentItem {
+  final MevzuatEntry entry;
+  final String maddeLabel;
+
+  const MevzuatRecentItem({
+    required this.entry,
+    required this.maddeLabel,
+  });
+}
 
 final mevzuatCatalogProvider =
     FutureProvider<MevzuatCatalog>((ref) async {
@@ -237,17 +323,74 @@ final mevzuatFavoritesProvider = FutureProvider<Set<String>>((ref) async {
   return (list ?? []).toSet();
 });
 
-Future<void> mevzuatToggleFavorite(WidgetRef ref, String entryId) async {
+const _sectionNotesKey = 'mevzuat_section_notes_v1';
+
+final mevzuatNotesVersionProvider = StateProvider<int>((ref) => 0);
+
+String mevzuatSectionNoteStorageKey(String entryId, String sectionId) =>
+    '$entryId::$sectionId';
+
+Future<Map<String, String>> _loadSectionNotes() async {
+  final prefs = await SharedPreferences.getInstance();
+  final raw = prefs.getString(_sectionNotesKey);
+  if (raw == null || raw.isEmpty) {
+    return {};
+  }
+  try {
+    final dec = jsonDecode(raw);
+    if (dec is Map) {
+      return dec.map(
+        (k, v) => MapEntry(k.toString(), v?.toString() ?? ''),
+      );
+    }
+  } catch (_) {}
+  return {};
+}
+
+/// Kişisel madde notları (yalnızca cihazda, SharedPreferences).
+final mevzuatSectionNotesMapProvider =
+    FutureProvider<Map<String, String>>((ref) async {
+  ref.watch(mevzuatNotesVersionProvider);
+  final map = await _loadSectionNotes();
+  map.removeWhere((_, v) => v.trim().isEmpty);
+  return map;
+});
+
+Future<void> mevzuatSaveSectionNote(
+  WidgetRef ref,
+  String entryId,
+  String sectionId,
+  String text,
+) async {
+  final key = mevzuatSectionNoteStorageKey(entryId, sectionId);
+  final prefs = await SharedPreferences.getInstance();
+  final map = await _loadSectionNotes();
+  final trimmed = text.trim();
+  if (trimmed.isEmpty) {
+    map.remove(key);
+  } else {
+    map[key] = trimmed;
+  }
+  await prefs.setString(_sectionNotesKey, jsonEncode(map));
+  ref.read(mevzuatNotesVersionProvider.notifier).state++;
+}
+
+/// Tamamlandıktan sonra kayıt favorilerde mi (SnackBar / geri bildirim için).
+Future<bool> mevzuatToggleFavorite(WidgetRef ref, String entryId) async {
   final prefs = await SharedPreferences.getInstance();
   final list = prefs.getStringList(_favoritesKey) ?? [];
   final set = list.toSet();
+  final bool nowFavorite;
   if (set.contains(entryId)) {
     set.remove(entryId);
+    nowFavorite = false;
   } else {
     set.add(entryId);
+    nowFavorite = true;
   }
   await prefs.setStringList(_favoritesKey, set.toList());
   ref.read(mevzuatFavoritesVersionProvider.notifier).state++;
+  return nowFavorite;
 }
 
 final mevzuatSearchResultsProvider =

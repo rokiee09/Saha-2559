@@ -1,5 +1,5 @@
-name: saha_2559
-description: SAHA 2559 — polis mevzuat, haklar, teşkilat ve kültür offline uygulaması.
+name: coderipple
+description: SAHA 2559 — polis mevzuat, haklar, teşkilat ve kültür offline uygulaması. Mağaza yayın markası Coderipple.
 publish_to: "none"
 
 version: 1.0.0+1
@@ -21,6 +21,8 @@ dependencies:
   url_launcher: ^6.3.1
   flutter_svg: ^2.0.10+1
   xml: ^6.5.0
+  share_plus: ^10.1.4
+  phosphor_flutter: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +56,7 @@ flutter:
     - assets/json/maas_katsayilari.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg
+    - assets/kultur/
     - assets/images/
     - assets/images/ataturk_matem.jpg
     - assets/icon/app_icon.png

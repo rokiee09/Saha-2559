@@ -43,7 +43,7 @@ class _PoliceSurfaceCardState extends State<PoliceSurfaceCard> {
     final g1 = _lerpTowardWhite(PoliceSurfaceCard.cBot, _pressed ? 0.06 : 0);
 
     final left = widget.selected
-        ? const BorderSide(color: PoliceColors.gold, width: 3)
+        ? BorderSide(color: PoliceColors.accentMix(0.55), width: 2)
         : BorderSide(color: PoliceSurfaceCard.borderSubtle, width: 1);
     final side = BorderSide(
       color: PoliceSurfaceCard.borderSubtle,

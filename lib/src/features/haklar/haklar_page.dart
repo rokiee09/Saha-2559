@@ -8,6 +8,7 @@ import 'haklar_data.dart';
 import 'haklar_detail_page.dart';
 import 'haklar_provider.dart';
 import 'maas_hesaplama_page.dart';
+import 'vardiya/vardiya_hesaplama_page.dart';
 const _haklarDisclaimer =
     'Aşağıdaki başlıklar yürürlükteki kanun ve yönetmeliklere dayalı özetlerdir; güncel metin, resmî kaynak, Emniyet duyuruları ve kurum işlemi esas alınır.';
 
@@ -145,6 +146,16 @@ class HaklarPage extends ConsumerWidget {
               child: _MaasEntryCard(
                 onTap: () => Navigator.of(context).push(
                   fadeRoute(const MaasHesaplamaPage()),
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(12, 10, 12, 0),
+            sliver: SliverToBoxAdapter(
+              child: _VardiyaEntryCard(
+                onTap: () => Navigator.of(context).push(
+                  fadeRoute(const VardiyaHesaplamaPage()),
                 ),
               ),
             ),
@@ -451,6 +462,79 @@ class _HaklarFrameworkCard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _VardiyaEntryCard extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const _VardiyaEntryCard({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: cs.primary.withValues(alpha: 0.22)),
+      ),
+      child: Material(
+        color: cs.primary.withValues(alpha: 0.04),
+        child: InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: cs.primary.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: cs.primary.withValues(alpha: 0.2)),
+                  ),
+                  child: Icon(
+                    Icons.calendar_view_month_rounded,
+                    color: cs.primary,
+                    size: 28,
+                  ),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Vardiya hesaplama',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                              color: PoliceColors.gold,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 0.15,
+                            ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        '10 vardiya türü; seçim cihazda saklanır, sunucuya gönderilmez.',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              height: 1.38,
+                              color: cs.onSurface.withValues(alpha: 0.82),
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: cs.primary.withValues(alpha: 0.75),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
