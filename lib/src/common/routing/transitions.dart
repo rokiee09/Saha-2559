@@ -8,4 +8,3 @@ PageRouteBuilder<T> fadeRoute<T>(Widget page) {
     ),
   );
 }
-

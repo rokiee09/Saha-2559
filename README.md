@@ -1,4 +1,4 @@
-# Saha 2559
+# SAHA 2559 (yayın markası: Coderipple)
 
 Polis mevzuat, saha, haklar, teşkilat ve kültür bilgilerini **offline** olarak sunan Flutter uygulaması.
 

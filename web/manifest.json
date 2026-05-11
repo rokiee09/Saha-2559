@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#1a2332",
     "theme_color": "#1a2332",
-    "description": "A new Flutter project.",
+    "description": "Polis mevzuat, haklar, teşkilat ve kültür offline uygulaması. Yayın: Coderipple.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

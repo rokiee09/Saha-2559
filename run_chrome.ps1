@@ -15,10 +15,9 @@ foreach ($p in $candidates) {
   }
 }
 
-if (Test-Path "build") {
-  Remove-Item -Recurse -Force "build" -ErrorAction SilentlyContinue
-}
+# build/ klasorunu temizlemeyin: ilk derleme uzar, Windows'ta klasor kilidi/hata daha sik gorulur.
 
 Write-Host "=== flutter run -d chrome ===" -ForegroundColor Cyan
+Write-Host "(Ilk derlemede dakikalar surebilir. Chrome otomatik acilmazsa: run_web_chrome.ps1 kullan.)" -ForegroundColor Gray
 flutter pub get
 flutter run -d chrome --no-web-resources-cdn
