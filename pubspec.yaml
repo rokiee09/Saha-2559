@@ -32,14 +32,6 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   flutter_launcher_icons: ^0.14.3
 
-# isar_flutter_libs 3.1.0+1, AGP 8'in zorunlu kıldığı "namespace" değerini tanımlamadığı
-# için "Namespace not specified" hatası verir. Paketi local_plugins/ altına kopyalayıp
-# android/build.gradle içine namespace ekledik ve aşağıdaki override ile yerel sürümü
-# kullanıyoruz. Sürüm 3.1.0+1 ile aynıdır; yalnızca Android build uyumluluğu eklenmiştir.
-dependency_overrides:
-  isar_flutter_libs:
-    path: local_plugins/isar_flutter_libs
-
 flutter_launcher_icons:
   android: true
   ios: false
@@ -68,4 +60,12 @@ flutter:
     - assets/images/
     - assets/images/ataturk_matem.jpg
     - assets/icon/app_icon.png
+
+# isar_flutter_libs 3.1.0+1, AGP 8'in zorunlu kıldığı "namespace" değerini tanımlamadığı
+# için "Namespace not specified" hatası verir. Paketi local_plugins/ altına kopyalayıp
+# android/build.gradle içine namespace ekledik ve aşağıdaki override ile yerel sürümü
+# kullanıyoruz. Sürüm 3.1.0+1 ile aynıdır; yalnızca Android build uyumluluğu eklenmiştir.
+dependency_overrides:
+  isar_flutter_libs:
+    path: local_plugins/isar_flutter_libs
 
