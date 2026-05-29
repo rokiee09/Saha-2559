@@ -27,10 +27,13 @@ migrate_working_dir/
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 /build/
+/android/build/
+/android/app/build/
 /coverage/
 # Yerel yedek build klasörleri
 build_locked_*/
@@ -45,3 +48,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Release imzalama gizli dosyaları — ASLA depoya eklenmez
+/android/key.properties
+**/*.jks
+**/*.keystore
+/android/app/upload-keystore.jks
