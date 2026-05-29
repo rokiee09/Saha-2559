@@ -36,20 +36,22 @@ bu veriler cihazınızdan kaldırılır.
 
 ## İnternet erişimi
 
-Uygulama, mevzuat metinlerini uygulama paketindeki dosyalardan okur ve sürekli internet
-gerektirmez. İnternet izni yalnızca şu **isteğe bağlı** ve sizin başlattığınız durumlarda kullanılır:
+Uygulama, mevzuat metinlerini uygulama paketindeki dosyalardan okur ve **internet izni istemez**
+(Android `INTERNET` izni dahi talep edilmez). Uygulamanın kendisi hiçbir ağ bağlantısı kurmaz.
 
-- Resmî kaynak bağlantısını (ör. mevzuat.gov.tr) tarayıcıda **açmak istediğinizde**,
-- Bir iletişim numarasını telefon uygulamasında **aramak istediğinizde**.
+Yalnızca **siz dokunduğunuzda**, işletim sisteminin harici uygulamaları aracılığıyla:
 
-Bu işlemler yalnızca sizin dokunmanızla, harici uygulamalar (tarayıcı / telefon) aracılığıyla
-gerçekleşir; bu uygulamaların kendi gizlilik politikaları geçerlidir.
+- Resmî kaynak bağlantısı (ör. mevzuat.gov.tr) **tarayıcıda** açılabilir,
+- Bir iletişim numarası **telefon uygulamasında** aranabilir,
+- Destek e-postası **e-posta uygulamasında** başlatılabilir.
+
+Bu işlemler bu uygulama tarafından değil, açılan harici uygulamalar (tarayıcı / telefon / e-posta)
+tarafından gerçekleştirilir; o uygulamaların kendi gizlilik politikaları geçerlidir.
 
 ## İzinler
 
-- **İnternet (`INTERNET`)**: Yalnızca yukarıda açıklanan harici bağlantı/arama işlemleri için.
-
-Uygulama; konum, kişiler, kamera, mikrofon, takvim veya benzeri hassas izinleri istemez.
+Uygulama; internet, konum, kişiler, kamera, mikrofon, takvim veya benzeri hiçbir hassas izni
+istemez. (Hassas izin talebi yoktur.)
 
 ## Çocukların gizliliği
 

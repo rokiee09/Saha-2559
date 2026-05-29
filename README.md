@@ -213,8 +213,8 @@ Madde dosyası:
 
 ## Gizlilik
 
-Uygulama hesap istemez, kişisel verileri sunucuya göndermez, reklam/analitik içermez.
-Tüm tercih ve notlar cihazda saklanır. Ayrıntılar: [PRIVACY.md](PRIVACY.md).
+Uygulama **internet izni dahi istemez**, kişisel verileri sunucuya göndermez, reklam/analitik
+içermez. Tüm tercih ve notlar cihazda saklanır. Ayrıntılar: [PRIVACY.md](PRIVACY.md).
 
 ## Katkı
 

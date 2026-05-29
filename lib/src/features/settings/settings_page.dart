@@ -11,6 +11,7 @@ import '../../common/theme/police_colors.dart';
 import '../../data/repositories/offline_import_service.dart';
 import '../../data/repositories/preference_repository.dart';
 import '../legal/user_agreement_viewer_page.dart';
+import 'data_freshness_page.dart';
 import 'reading_scale_controller.dart';
 import 'theme_controller.dart';
 
@@ -95,6 +96,25 @@ class SettingsPage extends ConsumerWidget {
           const ListTile(
             title: Text('Veri ve gizlilik özeti'),
             subtitle: Text(kAppOfflineDataSummary),
+          ),
+          const Divider(height: 0),
+          ListTile(
+            leading: Icon(
+              Icons.update_rounded,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Veri güncelliği'),
+            subtitle: const Text(
+              'Kaynak, son içerik kontrol tarihleri ve resmî kaynağa erişim',
+            ),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () {
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const DataFreshnessPage(),
+                ),
+              );
+            },
           ),
           const Divider(height: 0),
           ListTile(
