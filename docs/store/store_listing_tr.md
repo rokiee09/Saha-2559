@@ -19,9 +19,9 @@ Polis mevzuat, haklar, teşkilat ve kültür — çevrimdışı başvuru kaynağ
 
 ```
 SAHA 2559, polis mevzuatı ve referans bilgilerini internet bağlantısı olmadan
-sunan bir bilgilendirme uygulamasıdır. Kanun ve yönetmelik metinleri uygulamayla
-birlikte gelir; metroda, nöbet boşluğunda veya zayıf çekimde de madde arayıp
-okuyabilirsiniz.
+sunan BAĞIMSIZ bir bilgilendirme uygulamasıdır. Resmî bir kurum uygulaması değildir.
+Kanun ve yönetmelik metinleri uygulamayla birlikte gelir; metroda, nöbet boşluğunda
+veya zayıf çekimde de madde arayıp okuyabilirsiniz.
 
 DÖRT ANA HAT
 • Mevzuat: Kanun ve yönetmelik metinleri, hızlı madde arama, favoriler, son
@@ -36,6 +36,7 @@ EK OLARAK
 • Yerel "saha defteri" notları — yalnızca cihazınızda.
 
 GİZLİLİK ÖNCELİKLİ
+• İnternet izni dahi istemez; uygulama hiçbir ağ bağlantısı kurmaz.
 • Hesap gerektirmez, kayıt istemez.
 • Kişisel verilerinizi sunucuya göndermez; reklam ve takip (analitik) içermez.
 • Favori, not ve tercihleriniz yalnızca cihazınızda saklanır.

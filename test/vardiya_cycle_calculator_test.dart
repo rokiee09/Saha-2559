@@ -98,5 +98,41 @@ void main() {
       expect(result.tallies.off, 15);
       expect(result.tallies.gece, 0);
     });
+
+    test('artık yıl Şubat ayı 29 gün döner', () {
+      final result = buildVardiyaMonthSchedule(
+        year: 2024, // artık yıl
+        month: 2,
+        anchorLocalDate: DateTime(2024, 1, 1),
+        shiftId: '11',
+      );
+      expect(result.cells, hasLength(29));
+    });
+
+    test('Aralık (ay/yıl sonu) doğru gün sayısı ve kalıp sürekliliği', () {
+      // 11 kalıbı: ofset (gün - referans) çift ise iş, tek ise dinlenme.
+      final result = buildVardiyaMonthSchedule(
+        year: 2026,
+        month: 12,
+        anchorLocalDate: DateTime(2026, 1, 1),
+        shiftId: '11',
+      );
+      expect(result.cells, hasLength(31));
+
+      // 1 Ocak referans (iş). 31 Aralık'a kadar geçen gün farkı 364 (çift) → iş.
+      final dec31 = result.cells.last;
+      expect(dec31.date, DateTime(2026, 12, 31));
+      expect(dec31.kind, VardiyaCalendarDayKind.work);
+    });
+
+    test('yıl sonunu aşan illüstratif gün üretimi tutarlı uzunlukta', () {
+      final days = buildVardiyaIllustrativeDays(
+        anchorLocalDate: DateTime(2026, 12, 28),
+        shiftId: 'cakma_12_36',
+        dayCount: 14, // yıl sınırını aşar (2027'ye taşar)
+      );
+      expect(days, hasLength(14));
+      expect(days.last.date, DateTime(2027, 1, 10));
+    });
   });
 }

@@ -64,6 +64,59 @@ void main() {
       expect(r.tahminiKesinti, closeTo(750, 1e-9));
     });
 
+    test('boş/eksik JSON varsayılanlarla patlamaz', () {
+      final donem = MaasDonemData.fromJson(const {});
+      expect(donem.memurAylikKatsayisi, 0);
+      expect(donem.tabanAylik, 0);
+
+      // Sıfır katsayı ve sıfır taban → tüm sonuçlar 0, hata yok.
+      final r = hesaplaMaas(
+        donem: donem,
+        gostergePuan: 0,
+        ekGostergeTl: 0,
+      );
+      expect(r.brut, 0);
+      expect(r.tahminiNet, 0);
+      expect(r.tahminiKesinti, 0);
+    });
+
+    test('negatif girişlerde exception fırlatmaz', () {
+      final donem = MaasDonemData(
+        id: 't',
+        etiket: 'test',
+        memurAylikKatsayisi: 0.5,
+        tabanAylik: -100,
+        tahminiNetOrani: 0.7,
+      );
+
+      expect(
+        () => hesaplaMaas(
+          donem: donem,
+          gostergePuan: -50,
+          ekGostergeTl: -10,
+          kidemAyligi: -5,
+        ),
+        returnsNormally,
+      );
+
+      final r = hesaplaMaas(
+        donem: donem,
+        gostergePuan: -50,
+        ekGostergeTl: -10,
+      );
+      // -100 + (-50*0.5) + (-10) = -135
+      expect(r.brut, closeTo(-135, 1e-9));
+      // net = brüt * oran; kesinti = brüt - net (tutarlı kalmalı)
+      expect(r.tahminiKesinti, closeTo(r.brut - r.tahminiNet, 1e-9));
+    });
+
+    test('boş katsayı dosyası güvenli ayrıştırılır', () {
+      final file = MaasKatsayiFile.fromJson(const {});
+      expect(file.donemler, isEmpty);
+      expect(file.donemById('herhangi'), isNull);
+      expect(file.varsayilanDonem, '');
+    });
+
     test('tüm tazminat/yardım kalemleri brüte eklenir', () {
       final donem = MaasDonemData(
         id: 't',

@@ -45,18 +45,25 @@ Play Console gereksinimleri:
 5. Vardiya/nöbet takvimi
 6. Teşkilat veya kültür ekranı
 
-Ekran görüntüsü almak için:
+> NOT: Ekran görüntüleri gerçek uygulamadan alınmalıdır (yapay/temsilî görsel kullanmayın;
+> Play politikası gereği gerçek arayüzü yansıtmalıdır).
+
+Ekran görüntüsü almanın iki yolu:
+
+**A) Cihaz/emülatörde `flutter screenshot` (önerilir)**
 
 ```bash
-# Web önizleme (hızlı): tarayıcı penceresini dikey/uygun boyuta getirip yakalayın
-flutter run -d chrome
-
-# Gerçek cihaz/emülatör (mağaza için önerilir)
-flutter run -d android
+flutter run -d android        # bir terminalde çalışır durumda bırakın
+# çıktıdaki "A Dart VM Service ... is available at: http://127.0.0.1:PORT/XXXX="
+# adresini alıp ikinci bir terminalde her ekran için:
+flutter screenshot --out=docs/store/screenshots/01-anasayfa.png --vm-service-url=http://127.0.0.1:PORT/XXXX=
 ```
 
-Çıktıları `docs/store/screenshots/` altına `01-anasayfa.png`, `02-mevzuat.png` gibi
-sıralı adlarla koyun.
+**B) Cihazın kendi ekran görüntüsü tuşları**
+Uygulamayı `flutter run -d android` ile açın, ilgili ekrana gelin, cihazın ekran görüntüsü
+kısayolunu kullanın, dosyayı `docs/store/screenshots/` altına kopyalayın.
+
+Çıktıları `01-anasayfa.png`, `02-mevzuat.png` gibi sıralı adlarla kaydedin.
 
 ## 4) Yayın öncesi kontrol listesi
 

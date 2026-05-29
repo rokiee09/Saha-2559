@@ -34,5 +34,8 @@ jobs:
       - name: Analyze
         run: flutter analyze --no-fatal-infos
 
+      - name: Validate mevzuat data
+        run: dart run tool/validate_mevzuat.dart
+
       - name: Run tests
         run: flutter test
