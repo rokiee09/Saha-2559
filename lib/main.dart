@@ -35,8 +35,18 @@ Future<void> main() async {
   ]);
 
   // Ürün hedefi mobil; web derlemesi kullanılmıyorsa Isar yine güvenli şekilde atlanır.
+  // Isar başlatma; native kütüphane yüklenemese (ör. eski cihaz, beklenmedik ABI)
+  // veya beklenenden uzun sürse bile uygulamayı açılış ekranında kilitlemeyiz.
+  // Isar yalnızca şehit/iletişim verileri için kullanılır; başarısızlıkta bu sayfalar
+  // kendi hata durumunu gösterir, geri kalan modüller (mevzuat/haklar/vardiya/kültür)
+  // sorunsuz çalışır.
   if (!kIsWeb) {
-    await IsarService.init();
+    try {
+      await IsarService.init().timeout(const Duration(seconds: 10));
+    } catch (error, stackTrace) {
+      debugPrint('IsarService.init() başarısız; uygulama Isar olmadan açılıyor: $error');
+      debugPrintStack(stackTrace: stackTrace);
+    }
   }
 
   runApp(const ProviderScope(child: PolisMevzuatApp()));

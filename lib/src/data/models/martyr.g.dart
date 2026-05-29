@@ -15,7 +15,7 @@ extension GetMartyrCollection on Isar {
 
 const MartyrSchema = CollectionSchema(
   name: r'EmniyetMartyr',
-  id: -7358137696273628160,
+  id: -7358137696273628479,
   properties: {
     r'cityName': PropertySchema(
       id: 0,
@@ -44,7 +44,7 @@ const MartyrSchema = CollectionSchema(
   getId: _martyrGetId,
   getLinks: _martyrGetLinks,
   attach: _martyrAttach,
-  version: '3.1.0+1',
+  version: '3.2.1',
 );
 
 int _martyrEstimateSize(

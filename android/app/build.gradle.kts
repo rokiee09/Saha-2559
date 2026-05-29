@@ -35,7 +35,8 @@ android {
 
     defaultConfig {
         applicationId = "com.coderipple.saha2559"
-        minSdk = flutter.minSdkVersion
+        // isar_community_flutter_libs en az Android 6.0 (API 23) gerektirir.
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
