@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' show BuildContext;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:isar/isar.dart';
+import 'package:isar_community/isar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../data/db/isar_service.dart';

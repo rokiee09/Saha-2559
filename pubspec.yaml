@@ -13,8 +13,13 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^2.5.1
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
+  # Isar topluluk çatalı (isar_community): orijinal 3.1.0 bakımsız ve native .so
+  # dosyaları 16 KB sayfa boyutunu desteklemediği için Android 15+ / Google Play
+  # (1 Kasım 2025 sonrası) uyumsuzdu. Topluluk sürümü API olarak birebir aynıdır.
+  # 16 KB + namespace desteği 3.2.0'dan beri var. 3.3.2 generator'ı Dart >=3.9.0
+  # istediği için, mevcut Dart 3.7.2 ile uyumlu en yüksek sürüme (3.3.1) sabitliyoruz.
+  isar_community: 3.2.1
+  isar_community_flutter_libs: 3.2.1
   path_provider: ^2.1.4
   path_drawing: ^1.0.1
   shared_preferences: ^2.3.2
@@ -29,7 +34,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
   build_runner: ^2.4.10
-  isar_generator: ^3.1.0+1
+  isar_community_generator: 3.2.1
   flutter_launcher_icons: ^0.14.3
 
 flutter_launcher_icons:
@@ -60,12 +65,4 @@ flutter:
     - assets/images/
     - assets/images/ataturk_matem.jpg
     - assets/icon/app_icon.png
-
-# isar_flutter_libs 3.1.0+1, AGP 8'in zorunlu kıldığı "namespace" değerini tanımlamadığı
-# için "Namespace not specified" hatası verir. Paketi local_plugins/ altına kopyalayıp
-# android/build.gradle içine namespace ekledik ve aşağıdaki override ile yerel sürümü
-# kullanıyoruz. Sürüm 3.1.0+1 ile aynıdır; yalnızca Android build uyumluluğu eklenmiştir.
-dependency_overrides:
-  isar_flutter_libs:
-    path: local_plugins/isar_flutter_libs
 

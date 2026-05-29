@@ -15,8 +15,7 @@ extension GetCityContactCollection on Isar {
 
 const CityContactSchema = CollectionSchema(
   name: r'CityContact',
-  // JS/web: Isar üretilen id; web derlemesinde tam sayı aralığına uyum
-  id: -4931501141624971264,
+  id: -4931501141624971755,
   properties: {
     r'address': PropertySchema(
       id: 0,
@@ -55,7 +54,7 @@ const CityContactSchema = CollectionSchema(
   getId: _cityContactGetId,
   getLinks: _cityContactGetLinks,
   attach: _cityContactAttach,
-  version: '3.1.0+1',
+  version: '3.2.1',
 );
 
 int _cityContactEstimateSize(
