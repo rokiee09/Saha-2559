@@ -1,0 +1,20 @@
+# Release imzalama yapılandırması — ÖRNEK
+#
+# 1) Bu dosyayı "key.properties" adıyla kopyalayın (aynı klasöre: android/key.properties).
+# 2) Bir release keystore (.jks) oluşturun:
+#
+#    keytool -genkey -v -keystore upload-keystore.jks \
+#      -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+#
+#    (Windows PowerShell'de tek satır olarak; keytool JDK ile gelir.)
+#
+# 3) Aşağıdaki değerleri kendi anahtarınıza göre doldurun.
+# 4) key.properties ve .jks dosyaları .gitignore ile korunur; DEPOYA EKLEMEYİN,
+#    yedeğini güvenli bir yerde saklayın. Bu anahtarı kaybederseniz uygulamayı
+#    Play Store'da güncelleyemezsiniz.
+
+storePassword=DEGISTIR_keystore_sifresi
+keyPassword=DEGISTIR_anahtar_sifresi
+keyAlias=upload
+# storeFile, android/ klasörüne göre göreli ya da mutlak yol olabilir.
+storeFile=upload-keystore.jks

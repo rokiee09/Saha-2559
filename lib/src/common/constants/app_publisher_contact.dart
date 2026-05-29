@@ -6,7 +6,7 @@ library app_publisher_contact;
 import 'app_branding.dart';
 
 /// Uygulama ve sözleşmede görünen geliştirici adı.
-const String kLegalPublisherDisplayName = 'Burak';
+const String kLegalPublisherDisplayName = 'Coderipple';
 
 /// Şirket unvanı veya ticari işletme adı. Boş bırakılırsa metinde yalnızca
 /// [kLegalPublisherDisplayName] kullanılır.
@@ -14,7 +14,9 @@ const String kLegalPublisherLegalEntity = '';
 
 /// Destek ve hukuki bildirimler için e-posta. Mağaza ile aynı adresi kullanmanız önerilir.
 /// Boş bırakılırsa sözleşmede yalnızca mağaza kanalı ve yayımcı adı yer alır.
-const String kSupportEmail = '';
+///
+/// Gizlilik politikası, store açıklaması ve kullanıcı sözleşmesi bu tek değeri kullanır.
+const String kSupportEmail = 'anddeneme01@gmail.com';
 
 /// Başlık altı kısa satır (sözleşme özeti).
 String legalPublisherSummaryLine() {
