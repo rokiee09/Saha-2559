@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="splash_background">#0A1F44</color>
+    <!-- Adaptif launcher ikonu arka planı (pubspec adaptive_icon_background ile uyumlu). -->
+    <color name="ic_launcher_background">#1a2332</color>
 </resources>
