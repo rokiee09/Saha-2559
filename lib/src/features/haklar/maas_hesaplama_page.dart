@@ -28,6 +28,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   final _yemekCtrl = TextEditingController(text: '0');
   final _ek28Ctrl = TextEditingController(text: '0');
   final _ozelSaglikCtrl = TextEditingController(text: '0');
+  final _ilksanCtrl = TextEditingController(text: '0');
+  final _kefaletCtrl = TextEditingController(text: '0');
   final _nafakaCtrl = TextEditingController(text: '0');
   final _icraCtrl = TextEditingController(text: '0');
   final _kiraCtrl = TextEditingController(text: '0');
@@ -49,6 +51,15 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   int _cocuk7 = 0;
   int _sendika = 0;
   int _gvOraniSecim = 0;
+  int _besOrani = 0;
+  int _ilksan = 0;
+  int _raporluGun = 0;
+  int _engelliCocuk06 = 0;
+  int _engelliCocuk7 = 0;
+  int _engellilikIndirimi = 0;
+  int _tkky = 0;
+  bool _sosyalCalismaGorevi = false;
+  bool _yabanciDilKurumYarari = false;
 
   static const _medeniEtiketler = [
     'Bekar',
@@ -74,6 +85,27 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     '%20',
     '%27',
     '%35',
+  ];
+
+  static const _ilksanEtiketleri = [
+    'Yok',
+    'Var',
+    'Var (derece terfisi alınan ay)',
+  ];
+
+  static const _engellilikEtiketleri = [
+    'Yok',
+    '%80 (1. derece)',
+    '%60 (2. derece)',
+    '%40 (3. derece)',
+  ];
+
+  static const _tkkyEtiketleri = [
+    'Yok',
+    'TKKY - giriş aidatı',
+    'TKKY - aylık aidat',
+    'Giriş aidatı',
+    'Aylık aidat',
   ];
 
   @override
@@ -115,6 +147,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     _yemekCtrl.dispose();
     _ek28Ctrl.dispose();
     _ozelSaglikCtrl.dispose();
+    _ilksanCtrl.dispose();
+    _kefaletCtrl.dispose();
     _nafakaCtrl.dispose();
     _icraCtrl.dispose();
     _kiraCtrl.dispose();
@@ -126,6 +160,29 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     final t = s.trim().replaceAll('.', '').replaceAll(',', '.');
     return double.tryParse(t) ?? 0;
   }
+
+  double _gvOrani() => switch (_gvOraniSecim) {
+        1 => 0.15,
+        2 => 0.20,
+        3 => 0.27,
+        4 => 0.35,
+        _ => 0.15,
+      };
+
+  double _sendikaOrani() => switch (_sendika) {
+        1 => 0.004,
+        2 => 0.005,
+        3 => 0.006,
+        4 => 0.007,
+        5 => 0.008,
+        _ => 0,
+      };
+
+  double _sendikaTabanOrani() => switch (_sendika) {
+        6 => 0.011,
+        7 => 0.015,
+        _ => 0,
+      };
 
   void _hesapla() {
     final f = _file;
@@ -150,6 +207,17 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
         ekOdeme: ekToplu,
         aileYardimi: _parseTr(_aileCtrl.text),
         cocukYardimi: _parseTr(_cocukCtrl.text),
+        gvIstisnasi: _parseTr(_gvIstisnaCtrl.text),
+        dvIstisnaMatrahi: _parseTr(_dvIstisnaCtrl.text),
+        ozelSaglikPrimi: _parseTr(_ozelSaglikCtrl.text),
+        gelirVergisiOrani: _gvOrani(),
+        sendikaKesintiOrani: _sendikaOrani(),
+        sendikaTabanAylikKesintiOrani: _sendikaTabanOrani(),
+        besKesintiOrani: _besOrani / 100,
+        ilksanKesintisi: _parseTr(_ilksanCtrl.text),
+        kefaletKesintisi: _parseTr(_kefaletCtrl.text),
+        raporluGun: _raporluGun.toDouble(),
+        digerKesintiler: _nafakaToplami(),
       );
     });
   }
@@ -170,6 +238,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _yemekCtrl.text = '0';
       _ek28Ctrl.text = '0';
       _ozelSaglikCtrl.text = '0';
+      _ilksanCtrl.text = '0';
+      _kefaletCtrl.text = '0';
       _nafakaCtrl.text = '0';
       _icraCtrl.text = '0';
       _kiraCtrl.text = '0';
@@ -185,6 +255,15 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _cocuk7 = 0;
       _sendika = 0;
       _gvOraniSecim = 0;
+      _besOrani = 0;
+      _ilksan = 0;
+      _raporluGun = 0;
+      _engelliCocuk06 = 0;
+      _engelliCocuk7 = 0;
+      _engellilikIndirimi = 0;
+      _tkky = 0;
+      _sosyalCalismaGorevi = false;
+      _yabanciDilKurumYarari = false;
       _sonuc = null;
     });
   }
@@ -205,10 +284,21 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _yemekCtrl.text = '0';
       _ek28Ctrl.text = '0';
       _ozelSaglikCtrl.text = '0';
+      _ilksanCtrl.text = '0';
+      _kefaletCtrl.text = '0';
       _nafakaCtrl.text = '0';
       _icraCtrl.text = '0';
       _kiraCtrl.text = '0';
       _digerKesintiCtrl.text = '0';
+      _besOrani = 0;
+      _ilksan = 0;
+      _raporluGun = 0;
+      _engelliCocuk06 = 0;
+      _engelliCocuk7 = 0;
+      _engellilikIndirimi = 0;
+      _tkky = 0;
+      _sosyalCalismaGorevi = false;
+      _yabanciDilKurumYarari = false;
       _sonuc = null;
     });
   }
@@ -248,7 +338,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               style: TextStyle(
                 fontSize: 12.5,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).appBarTheme.foregroundColor?.withValues(alpha: 0.9),
+                color: Theme.of(context)
+                    .appBarTheme
+                    .foregroundColor
+                    ?.withValues(alpha: 0.9),
               ),
             ),
           ],
@@ -284,7 +377,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                       'güncel olmayabilir; güncellemeleri kaçırıldığında sonuçlar ciddi şekilde sapar. '
                       'Kesin ve güncel maaş bilgisi yalnızca kurum bordronuz ve resmî duyurulardadır. '
                       'Borç-alacak, kredi veya işlem yapmayınız; bu ekrana güvenmeyiniz.',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.45),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(height: 1.45),
                     ),
                   ],
                 ),
@@ -311,19 +407,24 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 style: Theme.of(context).textTheme.labelSmall),
             const SizedBox(height: 6),
             Text(f.genelUyari,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35)),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(height: 1.35)),
             const SizedBox(height: 16),
-
             _bilgiSatiri(
               context,
               'Bütçe dönemi seçimi',
               DropdownButtonFormField<String>(
                 value: _donemId,
                 isExpanded: true,
-                decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                    isDense: true, border: OutlineInputBorder()),
                 items: [
                   for (final p in f.donemler)
-                    DropdownMenuItem(value: p.id, child: Text(p.etiket, overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(
+                        value: p.id,
+                        child: Text(p.etiket, overflow: TextOverflow.ellipsis)),
                 ],
                 onChanged: (v) => setState(() => _donemId = v),
               ),
@@ -333,7 +434,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               _katsayiOzet(context, d),
               if (d.kaynakNot != null) ...[
                 const SizedBox(height: 8),
-                Text(d.kaynakNot!, style: Theme.of(context).textTheme.bodySmall),
+                Text(d.kaynakNot!,
+                    style: Theme.of(context).textTheme.bodySmall),
               ],
             ],
             const SizedBox(height: 12),
@@ -343,7 +445,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               DropdownButtonFormField<int>(
                 value: _ayIndex,
                 isExpanded: true,
-                decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                    isDense: true, border: OutlineInputBorder()),
                 items: [
                   for (var i = 0; i < kAylar12.length; i++)
                     DropdownMenuItem(value: i, child: Text(kAylar12[i])),
@@ -361,13 +464,17 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 decoration: const InputDecoration(
                   isDense: true,
                   border: OutlineInputBorder(),
-                  helperText: 'Tam ünvan listesi kurum kadro cetvelindedir; göstergeyi elle girin.',
+                  helperText:
+                      'Tam ünvan listesi kurum kadro cetvelindedir; göstergeyi elle girin.',
                 ),
                 items: [
                   for (final u in kPolisEmniyetUnvanlari)
-                    DropdownMenuItem(value: u, child: Text(u, overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(
+                        value: u,
+                        child: Text(u, overflow: TextOverflow.ellipsis)),
                 ],
-                onChanged: (v) => setState(() => _kadroUnvan = v ?? _kadroUnvan),
+                onChanged: (v) =>
+                    setState(() => _kadroUnvan = v ?? _kadroUnvan),
               ),
             ),
             const SizedBox(height: 12),
@@ -379,17 +486,27 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   Expanded(
                     child: DropdownButtonFormField<int>(
                       value: _derece,
-                      decoration: const InputDecoration(labelText: 'Derece', border: OutlineInputBorder()),
-                      items: [for (var i = 1; i <= 9; i++) DropdownMenuItem(value: i, child: Text('$i'))],
+                      decoration: const InputDecoration(
+                          labelText: 'Derece', border: OutlineInputBorder()),
+                      items: [
+                        for (var i = 1; i <= 9; i++)
+                          DropdownMenuItem(value: i, child: Text('$i'))
+                      ],
                       onChanged: (v) => setState(() => _derece = v ?? 1),
                     ),
                   ),
-                  const Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Text('/')),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: Text('/')),
                   Expanded(
                     child: DropdownButtonFormField<int>(
                       value: _kademe,
-                      decoration: const InputDecoration(labelText: 'Kademe', border: OutlineInputBorder()),
-                      items: [for (var i = 1; i <= 9; i++) DropdownMenuItem(value: i, child: Text('$i'))],
+                      decoration: const InputDecoration(
+                          labelText: 'Kademe', border: OutlineInputBorder()),
+                      items: [
+                        for (var i = 1; i <= 9; i++)
+                          DropdownMenuItem(value: i, child: Text('$i'))
+                      ],
                       onChanged: (v) => setState(() => _kademe = v ?? 1),
                     ),
                   ),
@@ -407,7 +524,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                     flex: 2,
                     child: DropdownButtonFormField<int>(
                       value: _kidemYili.clamp(0, 25),
-                      decoration: const InputDecoration(labelText: 'Yıl', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'Yıl', border: OutlineInputBorder()),
                       items: [
                         for (var i = 0; i <= 24; i++)
                           DropdownMenuItem(value: i, child: Text('$i')),
@@ -421,7 +539,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                     flex: 3,
                     child: DropdownButtonFormField<int>(
                       value: _kidemAyIndex,
-                      decoration: const InputDecoration(labelText: 'Ay', border: OutlineInputBorder()),
+                      decoration: const InputDecoration(
+                          labelText: 'Ay', border: OutlineInputBorder()),
                       items: [
                         for (var i = 0; i < kAylar12.length; i++)
                           DropdownMenuItem(value: i, child: Text(kAylar12[i])),
@@ -439,10 +558,12 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               DropdownButtonFormField<int>(
                 value: _medeniHal,
                 isExpanded: true,
-                decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                    isDense: true, border: OutlineInputBorder()),
                 items: [
                   for (var i = 0; i < _medeniEtiketler.length; i++)
-                    DropdownMenuItem(value: i, child: Text(_medeniEtiketler[i])),
+                    DropdownMenuItem(
+                        value: i, child: Text(_medeniEtiketler[i])),
                 ],
                 onChanged: (v) => setState(() => _medeniHal = v ?? 0),
               ),
@@ -456,8 +577,12 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   Expanded(
                     child: DropdownButtonFormField<int>(
                       value: _cocuk06,
-                      decoration: const InputDecoration(labelText: '0–6', border: OutlineInputBorder()),
-                      items: [for (var i = 0; i <= 6; i++) DropdownMenuItem(value: i, child: Text('$i'))],
+                      decoration: const InputDecoration(
+                          labelText: '0–6', border: OutlineInputBorder()),
+                      items: [
+                        for (var i = 0; i <= 6; i++)
+                          DropdownMenuItem(value: i, child: Text('$i'))
+                      ],
                       onChanged: (v) => setState(() => _cocuk06 = v ?? 0),
                     ),
                   ),
@@ -465,8 +590,12 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   Expanded(
                     child: DropdownButtonFormField<int>(
                       value: _cocuk7,
-                      decoration: const InputDecoration(labelText: '7+', border: OutlineInputBorder()),
-                      items: [for (var i = 0; i <= 9; i++) DropdownMenuItem(value: i, child: Text('$i'))],
+                      decoration: const InputDecoration(
+                          labelText: '7+', border: OutlineInputBorder()),
+                      items: [
+                        for (var i = 0; i <= 9; i++)
+                          DropdownMenuItem(value: i, child: Text('$i'))
+                      ],
                       onChanged: (v) => setState(() => _cocuk7 = v ?? 0),
                     ),
                   ),
@@ -480,10 +609,14 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
               DropdownButtonFormField<int>(
                 value: _sendika,
                 isExpanded: true,
-                decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                    isDense: true, border: OutlineInputBorder()),
                 items: [
                   for (var i = 0; i < _sendikaEtiketler.length; i++)
-                    DropdownMenuItem(value: i, child: Text(_sendikaEtiketler[i], overflow: TextOverflow.ellipsis)),
+                    DropdownMenuItem(
+                        value: i,
+                        child: Text(_sendikaEtiketler[i],
+                            overflow: TextOverflow.ellipsis)),
                 ],
                 onChanged: (v) => setState(() => _sendika = v ?? 0),
               ),
@@ -491,16 +624,21 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             const SizedBox(height: 20),
             Text(
               'UYGULAMA İÇİ BRÜT KALEMLERİ (TL)',
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 6),
             Text(
               'Ünvan seçimi yalnızca bilgi amaçlıdır; gösterge puanı otomatik gelmez. Toplam gösterge ve tutarları cetvelden girin. '
               'Aşağıdaki TL alanları çevrimdışı toplam içindir.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35),
+              style:
+                  Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35),
             ),
             const SizedBox(height: 12),
-            _numField(context, _gostergeCtrl, 'Toplam gösterge puanı', hint: '1350'),
+            _numField(context, _gostergeCtrl, 'Toplam gösterge puanı',
+                hint: '1350'),
             const SizedBox(height: 10),
             _numField(context, _ekGostergeCtrl, 'Ek gösterge (TL)'),
             const SizedBox(height: 10),
@@ -515,26 +653,221 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             _numField(context, _aileCtrl, 'Aile yardımı (TL)'),
             const SizedBox(height: 10),
             _numField(context, _cocukCtrl, 'Çocuk yardımı (brüt TL, cetvel)'),
-
             const SizedBox(height: 8),
             ExpansionTile(
               title: Text(
                 'GELİŞMİŞ SEÇİMLER',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(fontWeight: FontWeight.w800),
               ),
               childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 12),
               children: [
-                _numField(context, _gvIstisnaCtrl, 'GV istisnası (faydalanılan, TL)'),
+                _numField(
+                    context, _gvIstisnaCtrl, 'GV istisnası (faydalanılan, TL)'),
                 const SizedBox(height: 8),
-                _numField(context, _dvIstisnaCtrl, 'DV istisna uyg. matrahı (faydalanılan, TL)'),
+                _numField(context, _dvIstisnaCtrl,
+                    'DV istisna uyg. matrahı (faydalanılan, TL)'),
                 const SizedBox(height: 8),
-                _numField(context, _sosyalDengeCtrl, 'Sosyal denge tazminatı (TL)'),
+                _numField(
+                    context, _sosyalDengeCtrl, 'Sosyal denge tazminatı (TL)'),
                 const SizedBox(height: 8),
                 _numField(context, _yemekCtrl, 'Yemek yardımı (TL)'),
                 const SizedBox(height: 8),
                 _numField(context, _ek28Ctrl, 'Ek tazminat (28/B) (TL)'),
                 const SizedBox(height: 8),
-                _numField(context, _ozelSaglikCtrl, 'Özel sağlık sig. primi vergi indirimi (TL)'),
+                _numField(context, _ozelSaglikCtrl,
+                    'Özel sağlık sig. primi vergi indirimi (TL)'),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'Oto. kat. BES üyeliği',
+                  DropdownButtonFormField<int>(
+                    value: _besOrani,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      border: OutlineInputBorder(),
+                    ),
+                    items: [
+                      const DropdownMenuItem(value: 0, child: Text('Yok')),
+                      for (var i = 3; i <= 100; i++)
+                        DropdownMenuItem(
+                          value: i,
+                          child: Text('Var (kesinti oranı: %$i)'),
+                        ),
+                    ],
+                    onChanged: (v) => setState(() => _besOrani = v ?? 0),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'İLKSAN üyeliği',
+                  DropdownButtonFormField<int>(
+                    value: _ilksan,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      border: OutlineInputBorder(),
+                    ),
+                    items: [
+                      for (var i = 0; i < _ilksanEtiketleri.length; i++)
+                        DropdownMenuItem(
+                          value: i,
+                          child: Text(_ilksanEtiketleri[i]),
+                        ),
+                    ],
+                    onChanged: (v) => setState(() => _ilksan = v ?? 0),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                _numField(
+                  context,
+                  _ilksanCtrl,
+                  'İLKSAN kesintisi (TL)',
+                  helper: 'Varsa bordro/MAHEP tutarını girin.',
+                ),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'Raporlu gün sayısı (7+)',
+                  DropdownButtonFormField<int>(
+                    value: _raporluGun,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      border: OutlineInputBorder(),
+                    ),
+                    items: [
+                      for (var i = 0; i <= 31; i++)
+                        DropdownMenuItem(value: i, child: Text('$i')),
+                    ],
+                    onChanged: (v) => setState(() => _raporluGun = v ?? 0),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'Engelli çocuk yardımı (0-6 / 7+)',
+                  Row(
+                    children: [
+                      Expanded(
+                        child: DropdownButtonFormField<int>(
+                          value: _engelliCocuk06,
+                          decoration: const InputDecoration(
+                            labelText: '0-6',
+                            border: OutlineInputBorder(),
+                          ),
+                          items: [
+                            for (var i = 0; i <= 6; i++)
+                              DropdownMenuItem(value: i, child: Text('$i')),
+                          ],
+                          onChanged: (v) =>
+                              setState(() => _engelliCocuk06 = v ?? 0),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: DropdownButtonFormField<int>(
+                          value: _engelliCocuk7,
+                          decoration: const InputDecoration(
+                            labelText: '7+',
+                            border: OutlineInputBorder(),
+                          ),
+                          items: [
+                            for (var i = 0; i <= 9; i++)
+                              DropdownMenuItem(value: i, child: Text('$i')),
+                          ],
+                          onChanged: (v) =>
+                              setState(() => _engelliCocuk7 = v ?? 0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Engelli çocuk yardımının bordro tutarını çocuk yardımı TL alanına ekleyin.',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontStyle: FontStyle.italic,
+                        color: cs.onSurface.withValues(alpha: 0.75),
+                      ),
+                ),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'Engellilik indirimi derecesi',
+                  DropdownButtonFormField<int>(
+                    value: _engellilikIndirimi,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      border: OutlineInputBorder(),
+                    ),
+                    items: [
+                      for (var i = 0; i < _engellilikEtiketleri.length; i++)
+                        DropdownMenuItem(
+                          value: i,
+                          child: Text(_engellilikEtiketleri[i]),
+                        ),
+                    ],
+                    onChanged: (v) =>
+                        setState(() => _engellilikIndirimi = v ?? 0),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Engellilik indirimi tutarını GV istisnası alanına girerek nete yansıtın.',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontStyle: FontStyle.italic,
+                        color: cs.onSurface.withValues(alpha: 0.75),
+                      ),
+                ),
+                const SizedBox(height: 8),
+                _bilgiSatiri(
+                  context,
+                  'TKKY görevi / kefalet aidatı',
+                  DropdownButtonFormField<int>(
+                    value: _tkky,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      border: OutlineInputBorder(),
+                    ),
+                    items: [
+                      for (var i = 0; i < _tkkyEtiketleri.length; i++)
+                        DropdownMenuItem(
+                            value: i, child: Text(_tkkyEtiketleri[i])),
+                    ],
+                    onChanged: (v) => setState(() => _tkky = v ?? 0),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                _numField(
+                  context,
+                  _kefaletCtrl,
+                  'Kefalet aidatı / TKKY kesintisi (TL)',
+                  helper: 'Seçim varsa tutarı burada hesaba dahil edilir.',
+                ),
+                const SizedBox(height: 8),
+                SwitchListTile.adaptive(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Sosyal çalışma görevlisi görevi'),
+                  subtitle: const Text(
+                      'Bilgi amaçlı seçim; ilave tutarı ilgili TL alanına girin.'),
+                  value: _sosyalCalismaGorevi,
+                  onChanged: (v) => setState(() => _sosyalCalismaGorevi = v),
+                ),
+                SwitchListTile.adaptive(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Yabancı dil bilgisi kurum yararına'),
+                  subtitle: const Text(
+                      'Dil tazminatı tutarını yukarıdaki TL alanına girin.'),
+                  value: _yabanciDilKurumYarari,
+                  onChanged: (v) => setState(() => _yabanciDilKurumYarari = v),
+                ),
                 const SizedBox(height: 8),
                 _bilgiSatiri(
                   context,
@@ -542,18 +875,20 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   DropdownButtonFormField<int>(
                     value: _gvOraniSecim,
                     isExpanded: true,
-                    decoration: const InputDecoration(isDense: true, border: OutlineInputBorder()),
+                    decoration: const InputDecoration(
+                        isDense: true, border: OutlineInputBorder()),
                     items: [
                       for (var i = 0; i < _gvOranEtiketleri.length; i++)
-                        DropdownMenuItem(value: i, child: Text(_gvOranEtiketleri[i])),
+                        DropdownMenuItem(
+                            value: i, child: Text(_gvOranEtiketleri[i])),
                     ],
                     onChanged: (v) => setState(() => _gvOraniSecim = v ?? 0),
                   ),
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'GV istisnası ve oran seçimi bu çevrimdışı özet hesapta yalnızca kayıt amaçlıdır; '
-                  'otomatik vergi dilimi yok.',
+                  'GV/DV istisnası, özel sağlık indirimi, BES, sendika, rapor, İLKSAN ve kefalet alanları '
+                  'sonuçtaki tahmini kesinti hesabına yansıtılır. Kesin bordro kurum parametresine bağlıdır.',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontStyle: FontStyle.italic,
                         color: cs.onSurface.withValues(alpha: 0.75),
@@ -561,11 +896,13 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 ),
               ],
             ),
-
             ExpansionTile(
               title: Text(
                 'NAFAKA / İCRA / KİRA / DİĞER KESİNTİ',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(fontWeight: FontWeight.w800),
               ),
               childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 12),
               children: [
@@ -578,15 +915,19 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 _numField(context, _digerKesintiCtrl, 'Diğer kesintiler (TL)'),
               ],
             ),
-
             const SizedBox(height: 8),
             Text(f.formulAciklama,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(fontStyle: FontStyle.italic)),
-
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontStyle: FontStyle.italic)),
             const SizedBox(height: 16),
             Text(
               'İŞLEMLER',
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 8),
             Wrap(
@@ -608,12 +949,14 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 ),
               ],
             ),
-
             if (_sonuc != null && d != null) ...[
               const SizedBox(height: 24),
               Text(
                 'ÖZET (çevrimdışı tahmini)',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 6),
               Text(
@@ -622,20 +965,24 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               const SizedBox(height: 12),
-              _bordroTablosu(context, _sonuc!, d, _nafakaToplami(), _gvOraniSecim),
+              _bordroTablosu(
+                  context, _sonuc!, d, _nafakaToplami(), _gvOraniSecim),
             ],
-
             const SizedBox(height: 28),
             Text(
               'NOTLAR',
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 8),
             Text(
               '1. Burada yer alan bilgiler yalnızca bilgilendirme amaçlıdır; yanlış veya eksik girişten doğan '
               'hatalardan uygulama sorumlu tutulamaz.\n\n'
               '2. Bilgi girişinde değişiklik yaptıktan sonra sonucu güncellemek için tekrar HESAPLA’ya basınız.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.45),
+              style:
+                  Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.45),
             ),
           ],
         ),
@@ -663,7 +1010,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.7),
+        color: Theme.of(context)
+            .colorScheme
+            .surfaceContainerHighest
+            .withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -671,9 +1021,11 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
         children: [
           _kv(context, 'Taban aylık (cetvel)', _tryFormat(d.tabanAylik)),
           const SizedBox(height: 6),
-          _kv(context, 'Memur aylık katsayısı', d.memurAylikKatsayisi.toStringAsFixed(6)),
+          _kv(context, 'Memur aylık katsayısı',
+              d.memurAylikKatsayisi.toStringAsFixed(6)),
           const SizedBox(height: 6),
-          _kv(context, 'Tahmini net oranı (JSON)', '%${(d.tahminiNetOrani * 100).toStringAsFixed(1)}'),
+          _kv(context, 'Tahmini net oranı (JSON)',
+              '%${(d.tahminiNetOrani * 100).toStringAsFixed(1)}'),
         ],
       ),
     );
@@ -692,7 +1044,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
           child: Text(
             v,
             textAlign: TextAlign.end,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall
+                ?.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
       ],
@@ -739,8 +1094,6 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       MapEntry('Çocuk yardımı', s.cocukYardimi),
     ];
 
-    final netIc = (s.tahminiNet - nafakaToplam).clamp(0.0, double.infinity);
-
     return Card(
       elevation: 2,
       color: cs.primaryContainer.withValues(alpha: 0.22),
@@ -760,15 +1113,62 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             _bordroSatir(
               context,
               'Tahmini kesintiler (özet oran %${((1 - d.tahminiNetOrani) * 100).toStringAsFixed(1)})',
+              s.brut * (1 - d.tahminiNetOrani),
+            ),
+            const SizedBox(height: 8),
+            if (s.vergiIstisnaEtkisi > 0) ...[
+              _bordroSatir(
+                context,
+                'GV/DV istisnası etkisi',
+                s.vergiIstisnaEtkisi,
+              ),
+              const SizedBox(height: 8),
+            ],
+            if (s.ozelSaglikVergiEtkisi > 0) ...[
+              _bordroSatir(
+                context,
+                'Özel sağlık sig. vergi etkisi',
+                s.ozelSaglikVergiEtkisi,
+              ),
+              const SizedBox(height: 8),
+            ],
+            if (s.raporKesintisi > 0) ...[
+              _bordroSatir(context, 'Raporlu gün kesintisi', -s.raporKesintisi),
+              const SizedBox(height: 8),
+            ],
+            if (s.sendikaKesintisi > 0) ...[
+              _bordroSatir(context, 'Sendika kesintisi', -s.sendikaKesintisi),
+              const SizedBox(height: 8),
+            ],
+            if (s.besKesintisi > 0) ...[
+              _bordroSatir(context, 'Otomatik BES kesintisi', -s.besKesintisi),
+              const SizedBox(height: 8),
+            ],
+            if (s.ilksanKesintisi > 0) ...[
+              _bordroSatir(context, 'İLKSAN kesintisi', -s.ilksanKesintisi),
+              const SizedBox(height: 8),
+            ],
+            if (s.kefaletKesintisi > 0) ...[
+              _bordroSatir(
+                  context, 'Kefalet / TKKY kesintisi', -s.kefaletKesintisi),
+              const SizedBox(height: 8),
+            ],
+            _bordroSatir(
+              context,
+              'Tahmini toplam bordro kesintisi',
               s.tahminiKesinti,
+              vurgu: true,
             ),
             const SizedBox(height: 8),
             if (nafakaToplam > 0) ...[
-              _bordroSatir(context, 'Tahmini net (özet)', s.tahminiNet, vurgu: true),
+              _bordroSatir(context, 'Tahmini bordro neti', s.tahminiNet,
+                  vurgu: true),
               const SizedBox(height: 8),
-              _bordroSatir(context, 'Nafaka / icra / kira / diğer (düşülür)', -nafakaToplam),
+              _bordroSatir(context, 'Nafaka / icra / kira / diğer (düşülür)',
+                  -nafakaToplam),
               const SizedBox(height: 8),
-              _bordroSatir(context, 'Tahmini elde kalan', netIc, buyuk: true),
+              _bordroSatir(context, 'Tahmini elde kalan', s.eldeKalan,
+                  buyuk: true),
             ] else
               _bordroSatir(context, 'Tahmini net', s.tahminiNet, buyuk: true),
             if (gvSecim != 0) ...[
@@ -783,9 +1183,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ],
             const SizedBox(height: 12),
             Text(
-              'Gelişmiş alanlardaki GV/DV tutarları ve sendika seçimi bu özet hesapta otomatik işlenmez; '
-              'kesin kesinti ve net için kurum bordrosunu esas alın.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.4),
+              'Diğer veriler bölümü MAHEP alanlarına yakın bir yerel modeldir. Kurum bordrosundaki özel '
+              'unvan katsayıları, vergi matrahı ve kesinti ayrıntıları değişebileceğinden sonuç tahminidir.',
+              style:
+                  Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.4),
             ),
           ],
         ),
@@ -801,9 +1202,15 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
     bool buyuk = false,
   }) {
     final style = buyuk
-        ? Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800)
+        ? Theme.of(context)
+            .textTheme
+            .titleMedium
+            ?.copyWith(fontWeight: FontWeight.w800)
         : vurgu
-            ? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w700)
+            ? Theme.of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(fontWeight: FontWeight.w700)
             : Theme.of(context).textTheme.bodyMedium;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -812,7 +1219,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
           flex: 5,
           child: Text(
             label,
-            style: style?.copyWith(fontWeight: vurgu || buyuk ? FontWeight.w700 : null),
+            style: style?.copyWith(
+                fontWeight: vurgu || buyuk ? FontWeight.w700 : null),
           ),
         ),
         Expanded(
