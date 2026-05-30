@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/text/tr_text.dart';
 import '../../../common/theme/police_colors.dart';
 import 'disiplin_rehberi_data.dart';
 
@@ -22,24 +23,14 @@ class _DisiplinRehberiPageState extends State<DisiplinRehberiPage> {
     super.dispose();
   }
 
-  String _fold(String s) => s
-      .toLowerCase()
-      .replaceAll('ı', 'i')
-      .replaceAll('İ', 'i')
-      .replaceAll('ş', 's')
-      .replaceAll('ğ', 'g')
-      .replaceAll('ü', 'u')
-      .replaceAll('ö', 'o')
-      .replaceAll('ç', 'c');
-
   List<DisiplinFiil> get _filtered {
-    final q = _fold(_query.trim());
+    final q = trFold(_query.trim());
     if (q.isEmpty) return kDisiplinFiilleri;
     return kDisiplinFiilleri.where((f) {
-      if (_fold(f.baslik).contains(q)) return true;
-      if (_fold(f.ceza.label).contains(q)) return true;
-      if (_fold(f.dayanak).contains(q)) return true;
-      return f.anahtarlar.any((k) => _fold(k).contains(q));
+      if (trFold(f.baslik).contains(q)) return true;
+      if (trFold(f.ceza.label).contains(q)) return true;
+      if (trFold(f.dayanak).contains(q)) return true;
+      return f.anahtarlar.any((k) => trFold(k).contains(q));
     }).toList();
   }
 

@@ -31,7 +31,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
   int _index = 0;
 
   /// Sadece ziyaret edilen sekmeler kurulur; açılış ve bellek (mobil) için.
-  /// 0: Ana Sayfa, 1: Asistan, 2: Görevlerim, 3: Mevzuat, 4: Araçlar.
+  /// 0: Ana Sayfa, 1: Asistan, 2: Profilim, 3: Mevzuat, 4: Araçlar.
   final List<Widget?> _tabPages = List<Widget?>.filled(5, null);
 
   @override
@@ -110,8 +110,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
                     const BorderRadius.vertical(top: Radius.circular(22)),
                 border: Border(
                   top: BorderSide(
-                    color:
-                        PoliceColors.outlineMuted.withValues(alpha: 0.48),
+                    color: PoliceColors.outlineMuted.withValues(alpha: 0.48),
                   ),
                 ),
                 boxShadow: [
@@ -264,7 +263,9 @@ class _HomeMainMenuBody extends StatelessWidget {
     const headerNavy = PoliceColors.navy;
     final headerEnd = Color.lerp(
       headerNavy,
-      bright == Brightness.light ? const Color(0xFF152A55) : PoliceColors.surfaceDark,
+      bright == Brightness.light
+          ? const Color(0xFF152A55)
+          : PoliceColors.surfaceDark,
       0.4,
     )!;
 
@@ -274,122 +275,122 @@ class _HomeMainMenuBody extends StatelessWidget {
         controller: scrollController,
         padding: EdgeInsets.zero,
         children: [
-            // DrawerHeader sabit ~160 px; logo + iki satır metni sigdirmiyor — taşıma yapar.
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [headerNavy, headerEnd],
-                ),
+          // DrawerHeader sabit ~160 px; logo + iki satır metni sigdirmiyor — taşıma yapar.
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [headerNavy, headerEnd],
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    'assets/icon/app_icon.png',
-                    height: 52,
-                    width: 52,
-                    fit: BoxFit.contain,
-                    filterQuality: FilterQuality.high,
-                    errorBuilder: (_, __, ___) => Icon(
-                      Icons.shield_outlined,
-                      size: 46,
-                      color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
-                    ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(
+                  'assets/icon/app_icon.png',
+                  height: 52,
+                  width: 52,
+                  fit: BoxFit.contain,
+                  filterQuality: FilterQuality.high,
+                  errorBuilder: (_, __, ___) => Icon(
+                    Icons.shield_outlined,
+                    size: 46,
+                    color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
                   ),
-                  const SizedBox(height: 10),
-                  Text(
-                    kAppDisplayName,
-                    style: tt.titleMedium?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    kDrawerIntroParagraph,
-                    style: tt.bodySmall?.copyWith(
-                      color: Colors.white.withValues(alpha: 0.92),
-                      height: 1.35,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Divider(
-              height: 1,
-              thickness: 1,
-              color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
-            ),
-            DrawerMevzuatShortcuts(onOpenEntry: onOpenMevzuatEntry),
-            _DrawerTile(
-              selected: selectedIndex == 0,
-              icon: Icons.home_outlined,
-              title: kNavHomeLabel,
-              subtitle: 'Özet ekran ve sık kullanılanlar',
-              onTap: () => onSelect(0),
-            ),
-            _DrawerTile(
-              selected: selectedIndex == 1,
-              icon: Icons.auto_awesome_outlined,
-              title: 'Asistan',
-              subtitle: 'Soru yaz, ilgili kanun maddesini bul (offline)',
-              onTap: () => onSelect(1),
-            ),
-            _DrawerTile(
-              selected: selectedIndex == 2,
-              icon: Icons.checklist_rounded,
-              title: 'Görevlerim',
-              subtitle: 'İzin, maaş, vardiya ve kişisel kayıtların',
-              onTap: () => onSelect(2),
-            ),
-            _DrawerTile(
-              selected: selectedIndex == 3,
-              icon: Icons.menu_book_outlined,
-              title: 'Mevzuat',
-              subtitle: 'Kanunlar, yönetmelikler, arama ve favoriler',
-              onTap: () => onSelect(3),
-            ),
-            _DrawerTile(
-              selected: selectedIndex == 4,
-              icon: Icons.handyman_outlined,
-              title: 'Araçlar',
-              subtitle: 'Hesaplayıcılar, saha defteri, teşkilat ve kültür',
-              onTap: () => onSelect(4),
-            ),
-            Divider(
-              height: 1,
-              thickness: 1,
-              indent: 12,
-              endIndent: 12,
-              color: PoliceColors.outlineMuted.withValues(alpha: 0.52),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.settings_outlined,
-                color: cs.onSurfaceVariant,
-              ),
-              title: Text(
-                'Ayarlar',
-                style: TextStyle(
-                  color: cs.onSurface,
-                  fontWeight: FontWeight.w600,
                 ),
-              ),
-              subtitle: Text(
-                'Tema, gizlilik ve offline içerik',
-                style: tt.bodySmall?.copyWith(
-                  color: cs.onSurfaceVariant.withValues(alpha: 0.88),
+                const SizedBox(height: 10),
+                Text(
+                  kAppDisplayName,
+                  style: tt.titleMedium?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              onTap: onOpenSettings,
+                const SizedBox(height: 6),
+                Text(
+                  kDrawerIntroParagraph,
+                  style: tt.bodySmall?.copyWith(
+                    color: Colors.white.withValues(alpha: 0.92),
+                    height: 1.35,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Divider(
+            height: 1,
+            thickness: 1,
+            color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
+          ),
+          DrawerMevzuatShortcuts(onOpenEntry: onOpenMevzuatEntry),
+          _DrawerTile(
+            selected: selectedIndex == 0,
+            icon: Icons.home_outlined,
+            title: kNavHomeLabel,
+            subtitle: 'Özet ekran ve sık kullanılanlar',
+            onTap: () => onSelect(0),
+          ),
+          _DrawerTile(
+            selected: selectedIndex == 1,
+            icon: Icons.auto_awesome_outlined,
+            title: 'Asistan',
+            subtitle: 'Soru yaz, ilgili kanun maddesini bul (offline)',
+            onTap: () => onSelect(1),
+          ),
+          _DrawerTile(
+            selected: selectedIndex == 2,
+            icon: Icons.checklist_rounded,
+            title: 'Profilim',
+            subtitle: 'İzin, maaş, vardiya ve kişisel kayıtların',
+            onTap: () => onSelect(2),
+          ),
+          _DrawerTile(
+            selected: selectedIndex == 3,
+            icon: Icons.menu_book_outlined,
+            title: 'Mevzuat',
+            subtitle: 'Kanunlar, yönetmelikler, arama ve favoriler',
+            onTap: () => onSelect(3),
+          ),
+          _DrawerTile(
+            selected: selectedIndex == 4,
+            icon: Icons.handyman_outlined,
+            title: 'Araçlar',
+            subtitle: 'Hesaplayıcılar, saha defteri, teşkilat ve kültür',
+            onTap: () => onSelect(4),
+          ),
+          Divider(
+            height: 1,
+            thickness: 1,
+            indent: 12,
+            endIndent: 12,
+            color: PoliceColors.outlineMuted.withValues(alpha: 0.52),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.settings_outlined,
+              color: cs.onSurfaceVariant,
+            ),
+            title: Text(
+              'Ayarlar',
+              style: TextStyle(
+                color: cs.onSurface,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            subtitle: Text(
+              'Tema, gizlilik ve offline içerik',
+              style: tt.bodySmall?.copyWith(
+                color: cs.onSurfaceVariant.withValues(alpha: 0.88),
+              ),
+            ),
+            onTap: onOpenSettings,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -533,7 +534,8 @@ class DrawerMevzuatShortcuts extends ConsumerWidget {
                         dense: true,
                         leading: Icon(
                           Icons.bookmark_rounded,
-                          color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
+                          color:
+                              PoliceColors.primaryBlue.withValues(alpha: 0.95),
                         ),
                         title: Text(
                           e.displayTitle,

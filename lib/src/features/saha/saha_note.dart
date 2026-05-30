@@ -7,6 +7,7 @@ class SahaNote {
     required this.createdAtMs,
     required this.updatedAtMs,
     this.tags = const [],
+    this.imagePaths = const [],
   });
 
   final String id;
@@ -19,6 +20,9 @@ class SahaNote {
   /// Serbest etiketler (Araç/Şahıs/Adres/Olay vb.). Geriye dönük uyumlu.
   final List<String> tags;
 
+  /// İsteğe bağlı eklenen görüntüler (cihazdaki tam yollar).
+  final List<String> imagePaths;
+
   Map<String, dynamic> toJson() => {
         'id': id,
         'categoryId': categoryId,
@@ -27,12 +31,17 @@ class SahaNote {
         'createdAtMs': createdAtMs,
         'updatedAtMs': updatedAtMs,
         'tags': tags,
+        'imagePaths': imagePaths,
       };
 
   factory SahaNote.fromJson(Map<String, dynamic> j) {
     final rawTags = j['tags'];
     final tags = rawTags is List
         ? rawTags.map((e) => e.toString()).where((e) => e.isNotEmpty).toList()
+        : const <String>[];
+    final rawImgs = j['imagePaths'];
+    final imgs = rawImgs is List
+        ? rawImgs.map((e) => e.toString()).where((e) => e.isNotEmpty).toList()
         : const <String>[];
     return SahaNote(
       id: j['id'] as String? ?? '',
@@ -42,6 +51,7 @@ class SahaNote {
       createdAtMs: (j['createdAtMs'] as num?)?.toInt() ?? 0,
       updatedAtMs: (j['updatedAtMs'] as num?)?.toInt() ?? 0,
       tags: tags,
+      imagePaths: imgs,
     );
   }
 
@@ -53,6 +63,7 @@ class SahaNote {
     int? createdAtMs,
     int? updatedAtMs,
     List<String>? tags,
+    List<String>? imagePaths,
   }) {
     return SahaNote(
       id: id ?? this.id,
@@ -62,6 +73,7 @@ class SahaNote {
       createdAtMs: createdAtMs ?? this.createdAtMs,
       updatedAtMs: updatedAtMs ?? this.updatedAtMs,
       tags: tags ?? this.tags,
+      imagePaths: imagePaths ?? this.imagePaths,
     );
   }
 }

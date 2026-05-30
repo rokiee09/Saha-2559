@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'saha_note.dart';
@@ -54,10 +56,53 @@ Future<void> sahaUpsertNote(WidgetRef ref, SahaNote note) async {
 }
 
 Future<void> sahaDeleteNote(WidgetRef ref, String id) async {
-  final all = (await _loadAllSorted()).where((e) => e.id != id).toList();
-  await _saveAll(all);
+  final all = await _loadAllSorted();
+  for (final e in all.where((e) => e.id == id)) {
+    for (final path in e.imagePaths) {
+      await sahaDeleteImageFile(path);
+    }
+  }
+  await _saveAll(all.where((e) => e.id != id).toList());
   ref.read(sahaNotesVersionProvider.notifier).state++;
 }
 
 String sahaGenerateNoteId() =>
     'saha_${DateTime.now().microsecondsSinceEpoch}';
+
+Future<Directory> _imgDir() async {
+  final docs = await getApplicationDocumentsDirectory();
+  final dir = Directory('${docs.path}${Platform.pathSeparator}saha_img');
+  if (!await dir.exists()) {
+    await dir.create(recursive: true);
+  }
+  return dir;
+}
+
+String _extOf(String path) {
+  final dot = path.lastIndexOf('.');
+  final slash = path.lastIndexOf(RegExp(r'[\\/]'));
+  if (dot > slash && dot != -1) {
+    final ext = path.substring(dot);
+    if (ext.length <= 5) return ext;
+  }
+  return '.jpg';
+}
+
+/// Seçilen/çekilen görüntüyü uygulama klasörüne kopyalar ve yeni yolu döndürür.
+Future<String> sahaSaveImage(String sourcePath) async {
+  final dir = await _imgDir();
+  final ext = _extOf(sourcePath);
+  final dest =
+      '${dir.path}${Platform.pathSeparator}img_${DateTime.now().microsecondsSinceEpoch}$ext';
+  await File(sourcePath).copy(dest);
+  return dest;
+}
+
+Future<void> sahaDeleteImageFile(String path) async {
+  try {
+    final f = File(path);
+    if (await f.exists()) await f.delete();
+  } catch (_) {
+    // Dosya yoksa/erişilemiyorsa sessiz geç.
+  }
+}

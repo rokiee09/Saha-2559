@@ -70,7 +70,7 @@ class IzinTakipPage extends ConsumerWidget {
               const SizedBox(height: 16),
               Text(
                 'Hatırlatma bu sayfa açıkken gösterilir. İzin günleri İzinlerim '
-                '(Görevlerim) bölümünden eklenir; veriler cihazda kalır.',
+                '(Profilim) bölümünden eklenir; veriler cihazda kalır.',
                 style: TextStyle(
                   color: PoliceColors.textMuted.withValues(alpha: 0.8),
                   fontSize: 11.5,
@@ -95,7 +95,8 @@ class _EmptyState extends StatelessWidget {
       decoration: BoxDecoration(
         color: PoliceColors.surfaceDark,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: PoliceColors.outlineMuted.withValues(alpha: 0.5)),
+        border:
+            Border.all(color: PoliceColors.outlineMuted.withValues(alpha: 0.5)),
       ),
       child: Column(
         children: [
@@ -115,7 +116,7 @@ class _EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            'Görevlerim → İzinlerim bölümünden "İzin başlat" ile bir izin '
+            'Profilim → İzinlerim bölümünden "İzin başlat" ile bir izin '
             'oluştur; burada geri sayım ve işe başlama tarihi görünür.',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -209,7 +210,9 @@ class _CountdownCard extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    basladi ? Icons.flight_rounded : Icons.flight_takeoff_rounded,
+                    basladi
+                        ? Icons.flight_rounded
+                        : Icons.flight_takeoff_rounded,
                     color: PoliceColors.gold,
                     size: 22,
                   ),
@@ -299,7 +302,8 @@ class _InfoRow extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 18, color: PoliceColors.primaryBlue.withValues(alpha: 0.95)),
+        Icon(icon,
+            size: 18, color: PoliceColors.primaryBlue.withValues(alpha: 0.95)),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
@@ -326,9 +330,8 @@ class _TakipTile extends StatelessWidget {
     final kalan = izinBaslangicaKalanGun(record);
     final donuse = iseDonuseKalanGun(record);
     final basladi = kalan <= 0;
-    final durum = basladi
-        ? 'Sürüyor · dönüşe $donuse gün'
-        : '$kalan gün sonra başlıyor';
+    final durum =
+        basladi ? 'Sürüyor · dönüşe $donuse gün' : '$kalan gün sonra başlıyor';
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
@@ -337,7 +340,8 @@ class _TakipTile extends StatelessWidget {
         decoration: BoxDecoration(
           color: PoliceColors.surfaceDark,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: PoliceColors.outlineMuted.withValues(alpha: 0.5)),
+          border: Border.all(
+              color: PoliceColors.outlineMuted.withValues(alpha: 0.5)),
         ),
         child: Row(
           children: [

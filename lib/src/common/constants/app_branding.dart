@@ -10,7 +10,7 @@ const String kAppTagline =
 
 /// Çekmece üstü tanıtım metni.
 const String kDrawerIntroParagraph =
-    'Ana Sayfa, Asistan, Görevlerim, Mevzuat ve Araçlar. '
+    'Ana Sayfa, Asistan, Profilim, Mevzuat ve Araçlar. '
     'Alttaki sekmelerden geç; Asistan’a yaz, ilgili maddeyi bul.';
 
 /// Ana sayfa — dört modül kartının üst başlığı.

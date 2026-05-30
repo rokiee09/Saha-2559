@@ -282,6 +282,7 @@ class IzinPage extends ConsumerWidget {
           builder: (ctx, setS) {
             final days = int.tryParse(daysC.text.trim()) ?? 0;
             final isYillik = type == LeaveType.yillik;
+            final isRapor = type == LeaveType.rapor;
             final km = (isYillik && fromCity != null && toCity != null)
                 ? ilMesafeKm(fromCity!, toCity!)
                 : 0;
@@ -349,6 +350,10 @@ class IzinPage extends ConsumerWidget {
                     ),
                     onChanged: (_) => setS(() {}),
                   ),
+                  if (isRapor) ...[
+                    const SizedBox(height: 12),
+                    _RaporInfo(days: days),
+                  ],
                   if (isYillik) ...[
                     const SizedBox(height: 16),
                     Text(
@@ -900,6 +905,78 @@ class _StartPreview extends StatelessWidget {
                 : 'Gün gir → işe başlama tarihi hesaplanır',
             strong: true,
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RaporInfo extends StatelessWidget {
+  const _RaporInfo({required this.days});
+  final int days;
+
+  @override
+  Widget build(BuildContext context) {
+    final heyet = raporHeyetGerekir(days);
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: PoliceColors.gold.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: PoliceColors.gold.withValues(alpha: 0.4)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.info_outline_rounded,
+                  size: 18, color: PoliceColors.gold.withValues(alpha: 0.95)),
+              const SizedBox(width: 8),
+              const Expanded(
+                child: Text(
+                  'Rapor, yıllık izin süresinden düşülmez.',
+                  style: TextStyle(
+                    color: PoliceColors.titleOnDark,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 13.5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            '• 10 günü aşan raporlar heyet raporudur.\n'
+            '• 10 gün ve altı tek hekim tarafından verilir.',
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.95),
+              fontSize: 12.5,
+              height: 1.4,
+            ),
+          ),
+          if (days > 0) ...[
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              decoration: BoxDecoration(
+                color: (heyet ? Colors.orange : PoliceColors.primaryBlue)
+                    .withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                heyet
+                    ? '$days gün → Heyet raporu gerekir'
+                    : '$days gün → Tek hekim raporu yeterli',
+                style: TextStyle(
+                  color: heyet ? Colors.orange.shade200 : PoliceColors.primaryBlue,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 12.5,
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );
