@@ -6,13 +6,13 @@ enum VardiyaCalendarDayKind {
   /// Dinlenme / nöbet dışı gün özeti.
   rest,
 
-  /// Çakma 12/36: takvim gününde gündüz nöbet bandı (12 saat görev) hâkim.
+  /// Faz tabanlı (gerçek/çakma 12/36) düzende gündüz nöbeti başlayan gün.
   cakmaDayDuty,
 
-  /// Çakma 12/36: takvim gününde gece nöbet bandı (12 saat görev) hâkim.
+  /// Faz tabanlı düzende gece nöbeti başlayan gün.
   cakmaNightDuty,
 
-  /// Çakma 12/36: gündüz ile gece blokları arasındaki 24 saatlik geçiş dinlenmesine denk gelen gün.
+  /// Faz tabanlı düzende gündüz↔gece geçişindeki dinlenme günü (özet).
   cakmaTransitionRest,
 }
 
@@ -50,45 +50,83 @@ class VardiyaMonthTallies {
   final int off;
 }
 
-/// Çakma 12/36 örnek zaman çizelgesi — blok uzunlukları birime göre değişebilir; cetvelle doğrulanmalıdır.
-///
-/// İç kurallar: her **gündüz** birimi 12 saat görev + 12 saat dinlenme; her **gece** birimi 12 saat görev + 36 saat dinlenme.
-/// Bir **gündüz** bloğu ile **gece** bloğu arasında (veya tam tersi) 24 saatlik geçiş dinlenmesi eklenir.
-/// Büyük döngü sonunda tekrar başa dönülmeden önce de bir geçiş dinlenmesi konur (örnek son blok gece ise).
-///
-/// [kCakmaFirstRotationDescription]: kullanıcı tarifi — haftanın günleri değil, üst üste kaç “gündüz/gece birimi”.
-const String kCakmaFirstRotationDescription =
-    '3 gündüz → 12 gece → 5 gündüz → 10 gece → 6 gündüz → 9 gece';
-
-const int kCakmaFirstDayDutyStartHour = 8;
-
-class _CakmaPhase {
-  const _CakmaPhase({
-    required this.dayMode,
-    required this.innerCycles,
+/// Somut bir nöbet bloğu: başlangıç–bitiş saatleri ve gündüz/gece bilgisi.
+class VardiyaShiftInstance {
+  const VardiyaShiftInstance({
+    required this.start,
+    required this.end,
+    required this.night,
   });
 
-  /// true: her birim (12 saat görev + 12 saat dinlenme); false: (12 + 36).
-  final bool dayMode;
-
-  /// Üst üste kaç birim (kullanıcının “X gün gündüz / gece” dediği sayı).
-  final int innerCycles;
+  final DateTime start;
+  final DateTime end;
+  final bool night;
 }
 
-/// Tek tam tur — sıra sabit; başka birime göre düzenlenecekse bu liste güncellenir.
-const List<_CakmaPhase> _cakmaPhases = [
-  _CakmaPhase(dayMode: true, innerCycles: 3),
-  _CakmaPhase(dayMode: false, innerCycles: 12),
-  _CakmaPhase(dayMode: true, innerCycles: 5),
-  _CakmaPhase(dayMode: false, innerCycles: 10),
-  _CakmaPhase(dayMode: true, innerCycles: 6),
-  _CakmaPhase(dayMode: false, innerCycles: 9),
-];
+// ---------------------------------------------------------------------------
+// Faz tabanlı (gerçek / çakma 12/36) düzen tanımları
+// ---------------------------------------------------------------------------
+
+/// Tek bir faz: gündüz mü gece mi, kaç gün sürer, görev/dinlenme ve faz sonu
+/// geçiş dinlenmesi (saat).
+class _PhaseDef {
+  const _PhaseDef({
+    required this.night,
+    required this.days,
+    required this.workHours,
+    required this.restHours,
+    required this.transitionHours,
+  });
+
+  final bool night;
+  final int days;
+  final int workHours;
+  final int restHours;
+  final int transitionHours;
+}
+
+/// Gündüz nöbeti 08:00–20:00, gece nöbeti 20:00–08:00 kabul edilir.
+const int kDayShiftStartHour = 8;
+const int kNightShiftStartHour = 20;
+
+/// Geriye dönük uyumluluk: gündüz nöbet başlangıç saati (08:00).
+const int kCakmaFirstDayDutyStartHour = kDayShiftStartHour;
+
+/// Test/etiket uyumluluğu için kısa kalıp tarifi.
+const String kCakmaFirstRotationDescription =
+    '5 gündüz (12 saat görev / 12 saat dinlenme) → 10 gece (12 saat görev / 36 saat dinlenme)';
+
+/// Faz tabanlı düzenler. Her düzende tam olarak bir gündüz ve bir gece fazı bulunur.
+const Map<String, List<_PhaseDef>> _phasedShifts = {
+  // Gerçek 12/36: 15 gün gece, 24 saat geçiş, 15 gün gündüz, 48 saat geçiş.
+  'gercek_12_36': [
+    _PhaseDef(night: true, days: 15, workHours: 12, restHours: 36, transitionHours: 24),
+    _PhaseDef(night: false, days: 15, workHours: 12, restHours: 36, transitionHours: 48),
+  ],
+  // Çakma 12/36: 5 gün gündüz (12/12), 10 gün gece (12/36).
+  'cakma_12_36': [
+    _PhaseDef(night: false, days: 5, workHours: 12, restHours: 12, transitionHours: 24),
+    _PhaseDef(night: true, days: 10, workHours: 12, restHours: 36, transitionHours: 24),
+  ],
+};
+
+/// Faz tabanlı (gündüz/gece + somut saat) düzen mi?
+bool isPhasedDayNightShift(String shiftId) => _phasedShifts.containsKey(shiftId);
+
+/// Kullanıcı seçim yapmadıysa varsayılan başlangıç: gerçek→gece, çakma→gündüz.
+bool defaultStartNight(String shiftId) => shiftId == 'gercek_12_36';
+
+/// Bu düzende kullanıcıya "gündüz mü gece mi başladın?" seçimi sunulur mu?
+bool supportsStartModeChoice(String shiftId) => isPhasedDayNightShift(shiftId);
+
+// ---------------------------------------------------------------------------
+// Basit (pattern) düzenler — değişmedi
+// ---------------------------------------------------------------------------
 
 /// Her vardiya türü için tekrarlayan örnek kalıp (referans günü = dizinin 0. indeksi, iş günü).
-/// Çakma 12/36 için boş liste döner; [buildVardiyaIllustrativeDays] özel yolu kullanır.
+/// Faz tabanlı düzenler için boş liste döner; özel saat simülasyonu kullanılır.
 List<VardiyaCalendarDayKind> vardiyaCyclePatternFor(String shiftId) {
-  if (shiftId == 'cakma_12_36') return const [];
+  if (isPhasedDayNightShift(shiftId)) return const [];
   return List<VardiyaCalendarDayKind>.from(
     _patterns[shiftId] ?? _defaultPattern,
   );
@@ -97,15 +135,14 @@ List<VardiyaCalendarDayKind> vardiyaCyclePatternFor(String shiftId) {
 /// Tek döngü özeti (ör. "İş → Din → Din").
 String vardiyaPatternShortLabel(String shiftId) {
   if (shiftId == 'cakma_12_36') {
-    return 'Çakma blokları (örnek): $kCakmaFirstRotationDescription '
-        '(bloklar arası mod değişiminde +24 saat geçiş dinlenmesi)';
+    return 'Çakma blokları (örnek): $kCakmaFirstRotationDescription';
+  }
+  if (shiftId == 'gercek_12_36') {
+    return '15 gün gece (12/36) → 24 saat geçiş → 15 gün gündüz (12/36) → 48 saat geçiş';
   }
   final p = vardiyaCyclePatternFor(shiftId);
   return p
-      .map(
-        (k) =>
-            k == VardiyaCalendarDayKind.work ? 'İş' : 'Din',
-      )
+      .map((k) => k == VardiyaCalendarDayKind.work ? 'İş' : 'Din')
       .join(' → ');
 }
 
@@ -113,11 +150,14 @@ String vardiyaPatternShortLabel(String shiftId) {
 List<VardiyaDaySlot> buildVardiyaIllustrativeDays({
   required DateTime anchorLocalDate,
   required String shiftId,
+  bool? startNight,
   int dayCount = 21,
 }) {
-  if (shiftId == 'cakma_12_36') {
-    return _buildCakma1236IllustrativeDays(
+  if (isPhasedDayNightShift(shiftId)) {
+    return _buildPhasedIllustrativeDays(
       anchorLocalDate: anchorLocalDate,
+      shiftId: shiftId,
+      startNight: startNight ?? defaultStartNight(shiftId),
       dayCount: dayCount,
     );
   }
@@ -135,69 +175,159 @@ List<VardiyaDaySlot> buildVardiyaIllustrativeDays({
 
   for (var i = 0; i < dayCount; i++) {
     final d = anchor.add(Duration(days: i));
-    out.add(
-      VardiyaDaySlot(
-        date: d,
-        kind: pattern[i % n],
-      ),
-    );
+    out.add(VardiyaDaySlot(date: d, kind: pattern[i % n]));
   }
   return out;
 }
 
-List<_HourSegment> _buildCakmaSegmentsCovering({
-  required DateTime anchorDayMidnight,
-  required DateTime coverUntil,
-}) {
-  final simStart = DateTime(
-    anchorDayMidnight.year,
-    anchorDayMidnight.month,
-    anchorDayMidnight.day,
-    kCakmaFirstDayDutyStartHour,
-  );
-  final builder = _CakmaTimelineBuilder(simStart);
-  while (builder.cursor.isBefore(coverUntil)) {
-    builder.appendFullCakmaRotation(_cakmaPhases);
-  }
-  return builder.segments;
+// ---------------------------------------------------------------------------
+// Faz tabanlı saat çizelgesi simülasyonu
+// ---------------------------------------------------------------------------
+
+enum _SegKind { dayWork, nightWork, rest, transitionRest }
+
+class _Seg {
+  _Seg(this.start, this.end, this.kind);
+  final DateTime start;
+  final DateTime end;
+  final _SegKind kind;
 }
 
-VardiyaCalendarDayKind _classifyCakmaCalendarDay(
-  DateTime cal0Midnight,
-  List<_HourSegment> segments,
-) {
-  final cal1 = cal0Midnight.add(const Duration(days: 1));
+/// Referans gününden başlayıp [coverUntil]'e kadar nöbet/dinlenme bloklarını üretir.
+List<_Seg> _buildPhasedSegments({
+  required DateTime anchorMidnight,
+  required String shiftId,
+  required bool startNight,
+  required DateTime coverUntil,
+}) {
+  final phases = _phasedShifts[shiftId]!;
+  final startIndex = phases.indexWhere((p) => p.night == startNight);
+  final segs = <_Seg>[];
 
-  var dw = 0.0, nw = 0.0, tr = 0.0;
+  var cursor = DateTime(
+    anchorMidnight.year,
+    anchorMidnight.month,
+    anchorMidnight.day,
+    startNight ? kNightShiftStartHour : kDayShiftStartHour,
+  );
 
-  for (final seg in segments) {
-    final m = _overlapMinutes(seg.start, seg.end, cal0Midnight, cal1);
-    if (m <= 0) continue;
-    switch (seg.kind) {
-      case _CakmaSegKind.dayWork:
-        dw += m;
+  var idx = startIndex < 0 ? 0 : startIndex;
+  var safety = 0;
+  while (cursor.isBefore(coverUntil) && safety < 100000) {
+    final phase = phases[idx];
+    final phaseEnd = cursor.add(Duration(days: phase.days));
+    while (safety < 100000) {
+      safety++;
+      final workStart = cursor;
+      final workEnd = workStart.add(Duration(hours: phase.workHours));
+      segs.add(_Seg(
+        workStart,
+        workEnd,
+        phase.night ? _SegKind.nightWork : _SegKind.dayWork,
+      ));
+      final nextStart = workEnd.add(Duration(hours: phase.restHours));
+      if (nextStart.isBefore(phaseEnd)) {
+        segs.add(_Seg(workEnd, nextStart, _SegKind.rest));
+        cursor = nextStart;
+      } else {
+        final transEnd = workEnd.add(Duration(hours: phase.transitionHours));
+        segs.add(_Seg(workEnd, transEnd, _SegKind.transitionRest));
+        cursor = transEnd;
         break;
-      case _CakmaSegKind.nightWork:
-        nw += m;
-        break;
-      case _CakmaSegKind.transitionRest:
-        tr += m;
-        break;
-      case _CakmaSegKind.dayRest:
-      case _CakmaSegKind.nightRest:
-        break;
+      }
+    }
+    idx = (idx + 1) % phases.length;
+  }
+  return segs;
+}
+
+/// Bir nöbet bloğunun "ait olduğu" takvim günü = başladığı gün
+/// (gece nöbeti ertesi sabah bitse de başladığı güne yazılır).
+List<VardiyaDaySlot> _buildPhasedIllustrativeDays({
+  required DateTime anchorLocalDate,
+  required String shiftId,
+  required bool startNight,
+  int dayCount = 21,
+}) {
+  final anchorDay = DateTime(
+    anchorLocalDate.year,
+    anchorLocalDate.month,
+    anchorLocalDate.day,
+  );
+  final lastDate = anchorDay.add(Duration(days: dayCount - 1));
+  final segs = _buildPhasedSegments(
+    anchorMidnight: anchorDay,
+    shiftId: shiftId,
+    startNight: startNight,
+    coverUntil: lastDate.add(const Duration(days: 2)),
+  );
+
+  final dutyByDay = _dutyDaysFromSegments(segs);
+  final out = <VardiyaDaySlot>[];
+  for (var i = 0; i < dayCount; i++) {
+    final d = anchorDay.add(Duration(days: i));
+    out.add(VardiyaDaySlot(
+      date: d,
+      kind: dutyByDay[_dayKey(d)] ?? VardiyaCalendarDayKind.rest,
+    ));
+  }
+  return out;
+}
+
+/// Çalışma bloklarının başladığı günleri gündüz/gece olarak işaretler.
+Map<int, VardiyaCalendarDayKind> _dutyDaysFromSegments(List<_Seg> segs) {
+  final map = <int, VardiyaCalendarDayKind>{};
+  for (final s in segs) {
+    if (s.kind == _SegKind.dayWork || s.kind == _SegKind.nightWork) {
+      map[_dayKey(s.start)] = s.kind == _SegKind.dayWork
+          ? VardiyaCalendarDayKind.cakmaDayDuty
+          : VardiyaCalendarDayKind.cakmaNightDuty;
     }
   }
+  return map;
+}
 
-  if (dw > 0 || nw > 0) {
-    return dw >= nw
-        ? VardiyaCalendarDayKind.cakmaDayDuty
-        : VardiyaCalendarDayKind.cakmaNightDuty;
+int _dayKey(DateTime d) => d.year * 10000 + d.month * 100 + d.day;
+
+/// Bugünden (veya [from]) itibaren ilk [count] somut nöbet bloğu (saatli).
+/// Yalnızca faz tabanlı düzenlerde anlamlıdır; aksi halde boş döner.
+List<VardiyaShiftInstance> buildVardiyaUpcomingShifts({
+  required DateTime anchorLocalDate,
+  required String shiftId,
+  bool? startNight,
+  DateTime? from,
+  int count = 8,
+}) {
+  if (!isPhasedDayNightShift(shiftId)) return const [];
+
+  final anchorDay = DateTime(
+    anchorLocalDate.year,
+    anchorLocalDate.month,
+    anchorLocalDate.day,
+  );
+  final fromTs = from ?? anchorDay;
+  final fromDay = DateTime(fromTs.year, fromTs.month, fromTs.day);
+  final base = fromDay.isAfter(anchorDay) ? fromDay : anchorDay;
+
+  final segs = _buildPhasedSegments(
+    anchorMidnight: anchorDay,
+    shiftId: shiftId,
+    startNight: startNight ?? defaultStartNight(shiftId),
+    coverUntil: base.add(const Duration(days: 200)),
+  );
+
+  final out = <VardiyaShiftInstance>[];
+  for (final s in segs) {
+    if (s.kind != _SegKind.dayWork && s.kind != _SegKind.nightWork) continue;
+    if (s.end.isBefore(base)) continue;
+    out.add(VardiyaShiftInstance(
+      start: s.start,
+      end: s.end,
+      night: s.kind == _SegKind.nightWork,
+    ));
+    if (out.length >= count) break;
   }
-  if (tr >= 12 * 60) {
-    return VardiyaCalendarDayKind.cakmaTransitionRest;
-  }
-  return VardiyaCalendarDayKind.rest;
+  return out;
 }
 
 /// [year]/[month] için günlük hücreler ve ay içi özet (referanstan önceki günlük null).
@@ -206,6 +336,7 @@ VardiyaCalendarDayKind _classifyCakmaCalendarDay(
   required int month,
   required DateTime anchorLocalDate,
   required String shiftId,
+  bool? startNight,
 }) {
   final anchorDay = DateTime(
     anchorLocalDate.year,
@@ -214,15 +345,18 @@ VardiyaCalendarDayKind _classifyCakmaCalendarDay(
   );
 
   final lastDay = DateTime(year, month + 1, 0).day;
-  final monthEnd = DateTime(year, month, lastDay);
-  final coverUntil = monthEnd.add(const Duration(days: 2));
 
-  List<_HourSegment>? cakmaSegments;
-  if (shiftId == 'cakma_12_36') {
-    cakmaSegments = _buildCakmaSegmentsCovering(
-      anchorDayMidnight: anchorDay,
+  Map<int, VardiyaCalendarDayKind>? dutyByDay;
+  if (isPhasedDayNightShift(shiftId)) {
+    final monthEnd = DateTime(year, month, lastDay);
+    final coverUntil = monthEnd.add(const Duration(days: 2));
+    final segs = _buildPhasedSegments(
+      anchorMidnight: anchorDay,
+      shiftId: shiftId,
+      startNight: startNight ?? defaultStartNight(shiftId),
       coverUntil: coverUntil,
     );
+    dutyByDay = _dutyDaysFromSegments(segs);
   }
 
   final pattern = vardiyaCyclePatternFor(shiftId);
@@ -240,8 +374,8 @@ VardiyaCalendarDayKind _classifyCakmaCalendarDay(
     }
 
     late final VardiyaCalendarDayKind kind;
-    if (shiftId == 'cakma_12_36') {
-      kind = _classifyCakmaCalendarDay(cal0, cakmaSegments!);
+    if (isPhasedDayNightShift(shiftId)) {
+      kind = dutyByDay![_dayKey(cal0)] ?? VardiyaCalendarDayKind.rest;
     } else {
       if (pattern.isEmpty) {
         cells.add(VardiyaMonthCell(date: cal0, kind: null));
@@ -270,7 +404,7 @@ void _accumulateMonthTally(
   VardiyaCalendarDayKind kind,
   void Function(int gun, int gece, int off) add,
 ) {
-  if (shiftId == 'cakma_12_36') {
+  if (isPhasedDayNightShift(shiftId)) {
     switch (kind) {
       case VardiyaCalendarDayKind.cakmaDayDuty:
         add(1, 0, 0);
@@ -300,95 +434,6 @@ void _accumulateMonthTally(
   }
 }
 
-List<VardiyaDaySlot> _buildCakma1236IllustrativeDays({
-  required DateTime anchorLocalDate,
-  int dayCount = 21,
-}) {
-  final anchorDay = DateTime(
-    anchorLocalDate.year,
-    anchorLocalDate.month,
-    anchorLocalDate.day,
-  );
-
-  final lastDate = anchorDay.add(Duration(days: dayCount - 1));
-  final segments = _buildCakmaSegmentsCovering(
-    anchorDayMidnight: anchorDay,
-    coverUntil: lastDate.add(const Duration(days: 2)),
-  );
-
-  final out = <VardiyaDaySlot>[];
-  for (var i = 0; i < dayCount; i++) {
-    final cal0 = anchorDay.add(Duration(days: i));
-    final kind = _classifyCakmaCalendarDay(cal0, segments);
-    out.add(VardiyaDaySlot(date: cal0, kind: kind));
-  }
-  return out;
-}
-
-double _overlapMinutes(DateTime a0, DateTime a1, DateTime b0, DateTime b1) {
-  final s = a0.isAfter(b0) ? a0 : b0;
-  final e = a1.isBefore(b1) ? a1 : b1;
-  if (!e.isAfter(s)) return 0;
-  return e.difference(s).inMinutes.toDouble();
-}
-
-enum _CakmaSegKind {
-  dayWork,
-  dayRest,
-  transitionRest,
-  nightWork,
-  nightRest,
-}
-
-class _HourSegment {
-  _HourSegment({
-    required this.start,
-    required this.end,
-    required this.kind,
-  });
-
-  final DateTime start;
-  final DateTime end;
-  final _CakmaSegKind kind;
-}
-
-class _CakmaTimelineBuilder {
-  _CakmaTimelineBuilder(this.cursor);
-
-  DateTime cursor;
-  final List<_HourSegment> segments = [];
-
-  void _emit(_CakmaSegKind kind, int hours) {
-    final start = cursor;
-    cursor = cursor.add(Duration(hours: hours));
-    segments.add(_HourSegment(start: start, end: cursor, kind: kind));
-  }
-
-  /// Bir tam çakma turu; [phases] birinden diğerine geçerken 24 saat geçiş dinlenmesi eklenir,
-  /// tur sonunda başa dönmek için bir geçiş daha (örnek son faz gece olduğu sürece).
-  void appendFullCakmaRotation(List<_CakmaPhase> phases) {
-    _CakmaPhase? prev;
-    for (final block in phases) {
-      if (prev != null && prev.dayMode != block.dayMode) {
-        _emit(_CakmaSegKind.transitionRest, 24);
-      }
-      if (block.dayMode) {
-        for (var i = 0; i < block.innerCycles; i++) {
-          _emit(_CakmaSegKind.dayWork, 12);
-          _emit(_CakmaSegKind.dayRest, 12);
-        }
-      } else {
-        for (var i = 0; i < block.innerCycles; i++) {
-          _emit(_CakmaSegKind.nightWork, 12);
-          _emit(_CakmaSegKind.nightRest, 36);
-        }
-      }
-      prev = block;
-    }
-    _emit(_CakmaSegKind.transitionRest, 24);
-  }
-}
-
 const List<VardiyaCalendarDayKind> _defaultPattern = [
   VardiyaCalendarDayKind.work,
   VardiyaCalendarDayKind.rest,
@@ -399,12 +444,6 @@ final Map<String, List<VardiyaCalendarDayKind>> _patterns = {
   // 12 çalış / 24 dinlen — sık kullanılan özet: 1 iş günü, 2 dinlenme günü.
   '12_24': [
     VardiyaCalendarDayKind.work,
-    VardiyaCalendarDayKind.rest,
-    VardiyaCalendarDayKind.rest,
-  ],
-  'gercek_12_36': [
-    VardiyaCalendarDayKind.work,
-    VardiyaCalendarDayKind.rest,
     VardiyaCalendarDayKind.rest,
     VardiyaCalendarDayKind.rest,
   ],

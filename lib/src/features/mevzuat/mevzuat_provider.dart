@@ -11,10 +11,11 @@ const _favoritesKey = 'mevzuat_favorites';
 const _recentKey = 'mevzuat_recent_views_v1';
 
 /// Polis kullanımı için önde gösterilen kanun kodları (catalog.code)
-const kanunPopularCodesOrdered = ['2559', '7068', '657'];
+/// PVSK, CMK, TCK, DMK 657, Emniyet Teşkilatı Kanunu.
+const kanunPopularCodesOrdered = ['2559', '5271', '5237', '657', '3201'];
 
 /// Diğer grupta özellikle vurgulanan örnekler (geri kalan hep “diğer”)
-const kanunHighlightedOtherExamples = {'3201', '5442'};
+const kanunHighlightedOtherExamples = {'7068', '2918'};
 
 /// Liste kartı ↔ detay AppBar Hero etiketi.
 String mevzuatLawHeroTag(String entryId) => 'mevzuat-law-$entryId';
@@ -306,6 +307,66 @@ final mevzuatDocumentContentProvider =
   } catch (_) {
     return MevzuatDocumentData.empty(entry);
   }
+});
+
+/// Ana sayfadaki "Günün maddesi" kartı için seçilen madde + 30 sn özet.
+class GununMaddesi {
+  const GununMaddesi({
+    required this.entry,
+    required this.section,
+    required this.ozet,
+  });
+
+  final MevzuatEntry entry;
+  final MevzuatSection section;
+  final String ozet;
+
+  String get maddeLabel {
+    final art = section.article.trim();
+    if (art.isEmpty) return section.title;
+    final hasMadde = art.toLowerCase().contains('madde');
+    final prefix = hasMadde ? art : 'Madde $art';
+    return section.title.isEmpty ? prefix : '$prefix · ${section.title}';
+  }
+}
+
+String _gununOzet(String text) {
+  final clean = text.replaceAll(RegExp(r'\s+'), ' ').trim();
+  if (clean.length <= 160) return clean;
+  final cut = clean.substring(0, 160);
+  final lastStop = cut.lastIndexOf(RegExp(r'[.!?]'));
+  if (lastStop >= 80) return cut.substring(0, lastStop + 1);
+  final lastSpace = cut.lastIndexOf(' ');
+  return '${cut.substring(0, lastSpace > 0 ? lastSpace : cut.length)}…';
+}
+
+/// Tarihe göre değişen "günün maddesi" — popüler kanunlardan rastgele bir madde.
+final gununMaddesiProvider =
+    FutureProvider.autoDispose<GununMaddesi?>((ref) async {
+  final catalog = await ref.watch(mevzuatCatalogProvider.future);
+  final kanunlar = catalog.kanunlar;
+  if (kanunlar.isEmpty) return null;
+
+  // Popüler kanunları öne al; yoksa tüm kanunlar.
+  final popular = kanunlar
+      .where((e) => kanunPopularCodesOrdered.contains(e.code))
+      .toList();
+  final pool = popular.isNotEmpty ? popular : kanunlar;
+
+  final daySeed = DateTime.now().difference(DateTime(2020)).inDays;
+  final entry = pool[daySeed % pool.length];
+
+  final doc = await ref.watch(mevzuatDocumentContentProvider(entry.id).future);
+  final sections =
+      doc.sections.where((s) => s.text.trim().length >= 30).toList();
+  if (sections.isEmpty) return null;
+
+  final section = sections[(daySeed ~/ pool.length) % sections.length];
+  return GununMaddesi(
+    entry: entry,
+    section: section,
+    ozet: _gununOzet(section.text),
+  );
 });
 
 final mevzuatSearchQueryProvider = StateProvider<String>((ref) => '');

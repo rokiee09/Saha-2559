@@ -9,10 +9,20 @@ import '../../common/widgets/search_highlight.dart';
 import 'mevzuat_law_hero_badge.dart';
 import 'mevzuat_provider.dart';
 
+/// Belge okuma kipi: Özet (kısa) veya Tam Metin (tümü açık).
+enum DocReadMode { ozet, tamMetin }
+
 class MevzuatArticleDetailPage extends ConsumerStatefulWidget {
-  const MevzuatArticleDetailPage({super.key, required this.entryId});
+  const MevzuatArticleDetailPage({
+    super.key,
+    required this.entryId,
+    this.focusSectionId,
+  });
 
   final String entryId;
+
+  /// Asistan/akıllı arama "Kaynağa Git" ile gelindiğinde açılacak madde.
+  final String? focusSectionId;
 
   @override
   ConsumerState<MevzuatArticleDetailPage> createState() =>
@@ -24,14 +34,40 @@ class _MevzuatArticleDetailPageState
   String _inPageQuery = '';
   bool _comfortReading = false;
   bool _deepNight = false;
+  DocReadMode _readMode = DocReadMode.ozet;
+  String? _focusSectionId;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusSectionId = widget.focusSectionId;
+    // Belirli bir maddeye yönlendirildiyse tam metni göster (kısaltma yok).
+    if (_focusSectionId != null) {
+      _readMode = DocReadMode.tamMetin;
+    }
+  }
 
   String _reviewLine(MevzuatDocumentData content, MevzuatSection s) {
     return s.lastReviewed ?? content.lastContentReview ?? '—';
   }
 
+  MevzuatSection? _focusSection(MevzuatDocumentData content) {
+    final id = _focusSectionId;
+    if (id == null) return null;
+    for (final s in content.sections) {
+      if (s.id == id) return s;
+    }
+    return null;
+  }
+
   List<MevzuatSection> _filteredSections(MevzuatDocumentData content) {
     final q = _inPageQuery.trim().toLowerCase();
-    if (q.isEmpty) return content.sections;
+    if (q.isEmpty) {
+      // Derin link: sadece hedef madde gösterilir ("Tüm metin" ile açılır.)
+      final focus = _focusSection(content);
+      if (focus != null) return [focus];
+      return content.sections;
+    }
     return content.sections
         .where(
           (s) =>
@@ -89,7 +125,10 @@ class _MevzuatArticleDetailPageState
                   ),
                 ),
                 onSubmitted: (v) {
-                  setState(() => _inPageQuery = v);
+                  setState(() {
+                    _inPageQuery = v;
+                    _focusSectionId = null;
+                  });
                   Navigator.pop(ctx);
                 },
               ),
@@ -106,7 +145,10 @@ class _MevzuatArticleDetailPageState
                   const Spacer(),
                   FilledButton(
                     onPressed: () {
-                      setState(() => _inPageQuery = controller.text);
+                      setState(() {
+                        _inPageQuery = controller.text;
+                        _focusSectionId = null;
+                      });
                       Navigator.pop(ctx);
                     },
                     child: const Text('Ara'),
@@ -187,6 +229,8 @@ class _MevzuatArticleDetailPageState
             final filtered = _filteredSections(content);
             final q = _inPageQuery.trim();
             final showSearchBanner = q.isNotEmpty;
+            final focusSection = _focusSection(content);
+            final showFocusBanner = focusSection != null && q.isEmpty;
             final scaffoldBg = _deepNight
                 ? PoliceColors.readerNightBackground
                 : PoliceColors.mevzuatScreenBackground;
@@ -346,6 +390,57 @@ class _MevzuatArticleDetailPageState
                         ),
                         SliverToBoxAdapter(
                           child: Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                            child: SegmentedButton<DocReadMode>(
+                              showSelectedIcon: false,
+                              style: ButtonStyle(
+                                visualDensity: VisualDensity.compact,
+                                textStyle: const WidgetStatePropertyAll(
+                                  TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                foregroundColor: WidgetStateProperty.resolveWith(
+                                  (states) =>
+                                      states.contains(WidgetState.selected)
+                                          ? PoliceColors.titleOnDark
+                                          : PoliceColors.mevzuatMetaGrey,
+                                ),
+                                backgroundColor: WidgetStateProperty.resolveWith(
+                                  (states) =>
+                                      states.contains(WidgetState.selected)
+                                          ? PoliceColors.primaryBlue
+                                              .withValues(alpha: 0.28)
+                                          : Colors.transparent,
+                                ),
+                                side: WidgetStatePropertyAll(
+                                  BorderSide(
+                                    color: PoliceColors.outlineMuted
+                                        .withValues(alpha: 0.55),
+                                  ),
+                                ),
+                              ),
+                              segments: const [
+                                ButtonSegment(
+                                  value: DocReadMode.ozet,
+                                  label: Text('Özet'),
+                                  icon: Icon(Icons.short_text_rounded, size: 18),
+                                ),
+                                ButtonSegment(
+                                  value: DocReadMode.tamMetin,
+                                  label: Text('Tam Metin'),
+                                  icon: Icon(Icons.notes_rounded, size: 18),
+                                ),
+                              ],
+                              selected: {_readMode},
+                              onSelectionChanged: (s) =>
+                                  setState(() => _readMode = s.first),
+                            ),
+                          ),
+                        ),
+                        SliverToBoxAdapter(
+                          child: Padding(
                             padding: const EdgeInsets.fromLTRB(16, 10, 16, 4),
                             child: Wrap(
                               spacing: 8,
@@ -397,6 +492,49 @@ class _MevzuatArticleDetailPageState
                             ),
                           ),
                         ),
+                        if (showFocusBanner)
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                              child: Material(
+                                color: PoliceColors.gold.withValues(alpha: 0.14),
+                                borderRadius: BorderRadius.circular(10),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.my_location_rounded,
+                                        size: 18,
+                                        color: PoliceColors.gold,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: Text(
+                                          '${focusSection.article} gösteriliyor.',
+                                          style: const TextStyle(
+                                            color: PoliceColors.mevzuatBodyText,
+                                            fontSize: 13.5,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => setState(
+                                          () => _focusSectionId = null,
+                                        ),
+                                        child: const Text('Tüm metin'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         if (showSearchBanner)
                           SliverToBoxAdapter(
                             child: Padding(
@@ -482,6 +620,9 @@ class _MevzuatArticleDetailPageState
                                 }
                                 final s = filtered[index];
                                 return _ArticleSection(
+                                  key: ValueKey(
+                                    '${s.id}-${_readMode.name}',
+                                  ),
                                   entryId: widget.entryId,
                                   section: s,
                                   review: _reviewLine(content, s),
@@ -490,6 +631,7 @@ class _MevzuatArticleDetailPageState
                                   comfortReading: _comfortReading,
                                   deepNight: _deepNight,
                                   cmkReadingBoost: cmkBoost,
+                                  summaryMode: _readMode == DocReadMode.ozet,
                                 );
                               },
                               childCount: filtered.length + 2,
@@ -604,6 +746,7 @@ class _MevzuatRecentRecorderState extends ConsumerState<_MevzuatRecentRecorder> 
 
 class _ArticleSection extends ConsumerWidget {
   const _ArticleSection({
+    super.key,
     required this.entryId,
     required this.section,
     required this.review,
@@ -612,6 +755,7 @@ class _ArticleSection extends ConsumerWidget {
     required this.comfortReading,
     required this.deepNight,
     required this.cmkReadingBoost,
+    required this.summaryMode,
   });
 
   final String entryId;
@@ -622,6 +766,7 @@ class _ArticleSection extends ConsumerWidget {
   final bool comfortReading;
   final bool deepNight;
   final bool cmkReadingBoost;
+  final bool summaryMode;
 
   Future<void> _openNoteEditor(BuildContext context, WidgetRef ref) async {
     final map = await ref.read(mevzuatSectionNotesMapProvider.future);
@@ -888,14 +1033,11 @@ class _ArticleSection extends ConsumerWidget {
                       },
                       orElse: () => const SizedBox.shrink(),
                     ),
-                  SelectableText.rich(
-                    TextSpan(
-                      children: highlightTextSpans(
-                        text: section.text,
-                        query: hq,
-                        baseStyle: bodyStyle,
-                      ),
-                    ),
+                  _ExpandableArticleBody(
+                    text: section.text,
+                    query: hq,
+                    baseStyle: bodyStyle,
+                    summaryMode: summaryMode,
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -1022,6 +1164,107 @@ Future<void> _copyFirstMevzuatSection(
   if (context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('İlk madde panoya kopyalandı.')),
+    );
+  }
+}
+
+/// Özet kipinde madde gövdesini ilk cümlelere kısaltır; "Devamı" ile açar.
+class _ExpandableArticleBody extends StatefulWidget {
+  const _ExpandableArticleBody({
+    required this.text,
+    required this.query,
+    required this.baseStyle,
+    required this.summaryMode,
+  });
+
+  final String text;
+  final String query;
+  final TextStyle baseStyle;
+  final bool summaryMode;
+
+  @override
+  State<_ExpandableArticleBody> createState() => _ExpandableArticleBodyState();
+}
+
+class _ExpandableArticleBodyState extends State<_ExpandableArticleBody> {
+  bool _expanded = false;
+
+  static const int _summaryChars = 240;
+
+  /// Metni ilk cümle(ler)e ya da yaklaşık [_summaryChars] karaktere kısaltır.
+  String _summary(String text) {
+    final clean = text.replaceAll(RegExp(r'\s+'), ' ').trim();
+    if (clean.length <= _summaryChars) return clean;
+    final cut = clean.substring(0, _summaryChars);
+    final lastDot = cut.lastIndexOf('. ');
+    if (lastDot > 90) {
+      return clean.substring(0, lastDot + 1);
+    }
+    return '${cut.trimRight()}…';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final clean = widget.text.replaceAll(RegExp(r'\s+'), ' ').trim();
+    final showSummary = widget.summaryMode && !_expanded;
+    final isTruncatable = clean.length > _summaryChars;
+
+    if (!showSummary || !isTruncatable) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SelectableText.rich(
+            TextSpan(
+              children: highlightTextSpans(
+                text: widget.text,
+                query: widget.query,
+                baseStyle: widget.baseStyle,
+              ),
+            ),
+          ),
+          if (widget.summaryMode && isTruncatable && _expanded)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                onPressed: () => setState(() => _expanded = false),
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: const Text('Daha az'),
+              ),
+            ),
+        ],
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text.rich(
+          TextSpan(
+            children: highlightTextSpans(
+              text: _summary(widget.text),
+              query: widget.query,
+              baseStyle: widget.baseStyle,
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton.icon(
+            onPressed: () => setState(() => _expanded = true),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              minimumSize: Size.zero,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+            icon: const Icon(Icons.unfold_more_rounded, size: 18),
+            label: const Text('Devamını oku'),
+          ),
+        ),
+      ],
     );
   }
 }

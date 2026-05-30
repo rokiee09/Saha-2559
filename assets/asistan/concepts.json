@@ -1,0 +1,213 @@
+{
+  "_note": "Asistan kavram/eş-anlam haritası. Tamamen offline. refs içindeki sectionId paket içi mevzuat JSON'larında bulunmazsa çalışma anında düşürülür; answer bilgilendirme amaçlıdır, hukuki görüş değildir.",
+  "concepts": [
+    {
+      "id": "zor-kullanma",
+      "label": "Zor kullanma",
+      "triggers": [
+        "zor kullanma",
+        "zor kullanmak",
+        "silah kullanma",
+        "silah ne zaman",
+        "ne zaman silah",
+        "guc kullanma",
+        "orantili guc",
+        "polis silah"
+      ],
+      "expand": ["silah", "zor", "kullan", "mukavemet", "orantili", "mudafaa", "taarruz"],
+      "answer": "Polisin silah kullanma yetkisi PVSK md. 16'da sınırlı sayıda halde tanımlanır: meşru müdafaa; başkasının ırz veya canına yönelik saldırıyı savma; yakalanan/tutuklu kişinin kaçması ya da saldırması; göreve silahlı veya toplu mukavemet gibi durumlar. Her halde 'başka çare kalmaması' ve orantılılık aranır.",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-16", "label": "PVSK Madde 16 · Silah kullanma"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17 · Mukavemet edenler"}
+      ]
+    },
+    {
+      "id": "durdurma-kimlik",
+      "label": "Durdurma / kimlik",
+      "triggers": [
+        "durdurma",
+        "kimlik sorma",
+        "kimlik sor",
+        "durdurabilir",
+        "gerekcesiz durdurma",
+        "makul sebep durdurma",
+        "arac durdurma"
+      ],
+      "expand": ["durdur", "kimlik", "makul", "sebep", "arac"],
+      "answer": "PVSK md. 4/A'ya göre polis; bir suç veya kabahati önlemek, kaçan faili yakalamak, hakkında yakalama/zorla getirme kararı olan kişiyi tespit etmek ya da bir tehlikeyi önlemek amacıyla kişi ve araçları durdurabilir. Durdurma için makul bir sebep gerekir; süreklilik ve keyfilik oluşturacak şekilde yapılamaz.",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-4a", "label": "PVSK Madde 4/A · Durdurma ve Kimlik Sorma"}
+      ]
+    },
+    {
+      "id": "yakalama",
+      "label": "Yakalama",
+      "triggers": [
+        "yakalama",
+        "yakalayabilir",
+        "kimi yakalar",
+        "yakalanan",
+        "gozalti",
+        "sarhos yakalama",
+        "yakalama avukat"
+      ],
+      "expand": ["yakala", "gozalti", "nezaret", "mukavemet", "sarhos"],
+      "answer": "PVSK; kamunun huzurunu bozan sarhoşların (md.13) ve polisin emrine itaatsizlik edip mukavemet edenlerin (md.17) yakalanıp 24 saat içinde adliyeye sevkini düzenler. Suçüstü ve yakalama usulleri ile yakalanan kişinin müdafi hakları ayrıca Ceza Muhakemesi Kanunu'nda yer alır.",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-13", "label": "PVSK Madde 13 · Yakalama (sarhoşluk)"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17 · Mukavemet edenler"}
+      ]
+    },
+    {
+      "id": "arama",
+      "label": "Arama / el koyma",
+      "triggers": [
+        "arama",
+        "el koyma",
+        "ust aramasi",
+        "arama karari",
+        "onleme aramasi",
+        "adli arama"
+      ],
+      "expand": ["arama", "el koy", "musadere", "zapt", "onleme"],
+      "answer": "Adli ve önleme aramalarının usul ve esasları Adli ve Önleme Aramaları Yönetmeliği'nde düzenlenir. PVSK md. 9, kanuna aykırı taşınan silah ve tehlikeli eşyaya el koyma yetkisi verir.",
+      "refs": [
+        {"entryId": "yonetmelik-adli_arama", "sectionId": "aay-1", "label": "Adli ve Önleme Aramaları Yönetmeliği"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-9", "label": "PVSK Madde 9 · El koyma"}
+      ]
+    },
+    {
+      "id": "ifade-alma",
+      "label": "İfade alma",
+      "triggers": [
+        "ifade alma",
+        "ifade",
+        "ifadeye cagirma",
+        "ifade alinmasi",
+        "beyan alma"
+      ],
+      "expand": ["ifade", "beyan", "cagir"],
+      "answer": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği bu işlemlerin usul ve esaslarını belirler. PVSK md. 15 uyarınca polis, tahkikatta ifadesine başvurulacak kişileri çağırabilir ve gerekeni sorabilir.",
+      "refs": [
+        {"entryId": "yonetmelik-gozalti", "sectionId": "gy-1", "label": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-15", "label": "PVSK Madde 15 · İfadeye çağırma"}
+      ]
+    },
+    {
+      "id": "konut-dokunulmazligi",
+      "label": "Eve girme",
+      "triggers": [
+        "eve girme",
+        "konut",
+        "konut dokunulmazligi",
+        "eve girebilir",
+        "kapiyi kirma"
+      ],
+      "expand": ["ev", "konut", "gir", "tehlike"],
+      "answer": "PVSK md. 20'ye göre polis; istimdat, yangın, su baskını, boğulma gibi büyük tehlikelerin haber verilmesi veya görülmesi hâlinde ya da ağır cezalı bir suçun işlenmesini/devamını önlemek için evlere girebilir.",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-20", "label": "PVSK Madde 20 · Eve girme"}
+      ]
+    },
+    {
+      "id": "yillik-izin",
+      "label": "Yıllık izin",
+      "triggers": [
+        "yillik izin",
+        "izin kac gun",
+        "yillik izin kac gun",
+        "izin hakki",
+        "kac gun izin"
+      ],
+      "expand": ["izin", "yillik", "gun"],
+      "answer": "657 sayılı Kanun md. 102: hizmeti 10 yıldan az olan memura 20 gün, 10 yıl ve üzeri olana 30 gün yıllık izin verilir. Zorunlu hâllerde gidiş-dönüş için en çok ikişer gün eklenebilir.",
+      "refs": [
+        {"entryId": "kanun-dmk", "sectionId": "dmk-102", "label": "657 DMK Madde 102 · Yıllık izin"}
+      ]
+    },
+    {
+      "id": "refakat-izni",
+      "label": "Refakat izni",
+      "triggers": [
+        "refakat izni",
+        "refakat",
+        "refakat kac gun",
+        "hasta yakini izni"
+      ],
+      "expand": ["refakat", "hasta", "izin"],
+      "answer": "657 sayılı Kanun md. 105 son fıkrası: ana, baba, eş, çocuk veya kardeşin ağır kazası ya da uzun süren hastalığında, sağlık kurulu raporuyla belgelenmek şartıyla, aylık ve özlük hakları korunarak 3 aya kadar refakat izni verilir; gerektiğinde bir katına kadar uzatılır.",
+      "refs": [
+        {"entryId": "kanun-dmk", "sectionId": "dmk-105", "label": "657 DMK Madde 105 · Hastalık ve refakat izni"}
+      ]
+    },
+    {
+      "id": "dogum-babalik-sut",
+      "label": "Doğum / babalık izni",
+      "triggers": [
+        "dogum izni",
+        "babalik izni",
+        "sut izni",
+        "analik izni",
+        "mazeret izni",
+        "evlilik izni",
+        "olum izni"
+      ],
+      "expand": ["dogum", "babalik", "sut", "analik", "mazeret"],
+      "answer": "657 sayılı Kanun md. 104: kadın memura toplam 16 hafta analık izni; eşi doğum yapan memura 10 gün babalık izni; evlilik veya yakının ölümünde 7 gün mazeret izni; ayrıca süt izni (ilk 6 ay günde 3 saat, ikinci 6 ay 1,5 saat) verilir.",
+      "refs": [
+        {"entryId": "kanun-dmk", "sectionId": "dmk-104", "label": "657 DMK Madde 104 · Mazeret/doğum/süt izni"}
+      ]
+    },
+    {
+      "id": "ayliksiz-izin",
+      "label": "Aylıksız izin",
+      "triggers": [
+        "ayliksiz izin",
+        "ucretsiz izin",
+        "ayliksiz izin kac",
+        "muvazzaf askerlik izni"
+      ],
+      "expand": ["ayliksiz", "ucretsiz", "izin"],
+      "answer": "657 sayılı Kanun md. 108: sağlık, doğum, evlat edinme, eş durumu ve 5 hizmet yılını dolduranlar için talebe bağlı aylıksız izin hâlleri düzenlenir; muvazzaf askerlikte memur, görev yeri saklı kalarak aylıksız izinli sayılır.",
+      "refs": [
+        {"entryId": "kanun-dmk", "sectionId": "dmk-108", "label": "657 DMK Madde 108 · Aylıksız izin"}
+      ]
+    },
+    {
+      "id": "disiplin",
+      "label": "Disiplin",
+      "triggers": [
+        "disiplin",
+        "disiplin cezasi",
+        "uyarma",
+        "kinama",
+        "ayliktan kesme",
+        "meslekten cikarma",
+        "disiplin sorusturmasi"
+      ],
+      "expand": ["disiplin", "ceza", "uyarma", "kinama", "sorusturma"],
+      "answer": "Genel kolluk personelinin disiplin suç ve cezaları 7068 sayılı Kanun'da düzenlenir (uyarmadan meslekten çıkarmaya kadar). Ceza türü fiilin ağırlığına göre belirlenir; savunma hakkı ve itiraz yolu esastır.",
+      "refs": [
+        {"entryId": "kanun-disiplin", "label": "7068 Genel Kolluk Disiplin Hükümleri Kanunu"}
+      ]
+    },
+    {
+      "id": "mukavemet-hakaret",
+      "label": "Mukavemet / hakaret",
+      "triggers": [
+        "mukavemet",
+        "direnme",
+        "polise direnme",
+        "gorevi engelleme",
+        "polise hakaret",
+        "memura hakaret",
+        "memura mukavemet"
+      ],
+      "expand": ["mukavemet", "direnme", "karsi koyma", "hakaret"],
+      "answer": "PVSK md. 17: polisin kanuni emrine itaatsizlik eden veya görev sırasında mukavemet edenler karakola götürülüp 24 saat içinde adliyeye verilir. Göreve karşı direnme ve kamu görevlisine hakaret fiilleri ayrıca Türk Ceza Kanunu'nda suç olarak düzenlenir.",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17 · Mukavemet edenler"}
+      ]
+    }
+  ]
+}

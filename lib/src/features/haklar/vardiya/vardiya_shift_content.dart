@@ -13,15 +13,19 @@ const Map<String, String> _vardiyaDescriptions = {
       'Uygulama; kavramsal olarak “bir gün çalış, iki gün dinlen” düzenine yaklaşan düzenleri hatırlatmanız için özet anlatır.\n\n'
       'Pratikte mesai başlangıç ve bitiş saatleri, hafta içi–hafta sonu ayrımı ve fazla mesai kurum içi yönergelere göre değişir.',
   'cakma_12_36':
-      'Çakma düzende uzun vadede üst üste farklı uzunlukta gündüz ve gece blokları gelebilir; haftanın belirli günleri değil, '
-      'blok içi “birim” sayısı (örnek: 3 gündüz birimi → 12 gece birimi → 5 gündüz → 10 gece → 6 gündüz → 9 gece gibi tekrarlayan bir sıra) ile düşünülür.\n\n'
-      'Her gündüz biriminde on iki saat görev ve on iki saat dinlenme; gece biriminde on iki saat görev ve otuz altı saat dinlenme; '
-      'bloklar arasında mod değişiminde ise örnek modele göre yirmi dört saatlik geçiş dinlenmesi eklenir.\n\n'
-      'Bu ekrandaki çizelge yalnızca örnektir; rakamlar biriminize göre kodda güncellenebilir. Kesin nöbet sırası cetvel ve emir ile doğrulanmalıdır.',
+      'Çakma 12/36 örnek modelde sıra iki bloktan oluşur: önce 5 gün gündüz, sonra 10 gün gece.\n\n'
+      'Gündüz bloğunda her gün 12 saat görev (08:00–20:00) ve 12 saat dinlenme vardır; yani gündüzler peş peşe günlük gelir. '
+      'Gece bloğunda ise 12 saat görev (20:00–08:00) ve 36 saat dinlenme uygulanır; yani gece nöbetleri gün aşırı düşer.\n\n'
+      'Yukarıdaki “gündüz / gece başla” seçimi, çizelgenin hangi blokla başladığını belirler. '
+      'Bu ekran örnektir; blok günleri ve saatler biriminize göre değişebilir, kesin sıra cetvel ve emir ile doğrulanmalıdır.',
   'gercek_12_36':
-      'On iki saat görev, otuz altı saat dinlenme döngüsü olarak adlandırılan düzenlerde kutuplu (iş–dinlenme) günler belirginleşir. '
-      'Tatiller, tatil çalışması ve yer değiştirme günleri çizelgeyi değiştirir.\n\n'
-      'Uygulama çıktısı tahmindir; bordro ve özlük işlemleri için resmî kayıtlar esas alınmalıdır.',
+      'Gerçek (orijinal) 12/36 örnek modelde 15 gün gece, 15 gün gündüz blokları birbirini izler. '
+      'Hem gündüz hem gece nöbetinde 12 saat görev, 36 saat dinlenme vardır; bu nedenle nöbetler gün aşırı düşer '
+      '(bugün gece çalıştıysan yarın istirahat, ertesi gün yine gece...).\n\n'
+      'Gece nöbeti 20:00’de başlar, ertesi gün 08:00’de biter; gündüz nöbeti 08:00–20:00 arasıdır. '
+      'Geceden gündüze geçerken bloğun sonunda 24 saat, gündüzden geceye geçerken 48 saat dinlenme bırakılır.\n\n'
+      'Yukarıdan “gündüz mü gece mi başladın” seçer ve referans tarihini girersen, sana çıkacak çalışma saatleri ve aylık çizelge hesaplanır. '
+      'Çıktı örnektir; bordro ve özlük işlemleri için resmî kayıtlar esastır.',
   '24_48':
       'Yirmi dört saat kesintisiz veya blok halinde görev, kırk sekiz saat dinlenme mantığıyla çalışan nöbet tiplerinde '
       'fiziksel ve yasal yorgunluk sınırları ayrıca düzenlenir.\n\n'

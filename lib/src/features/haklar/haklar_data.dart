@@ -101,7 +101,7 @@ const List<RightItem> rightsData = [
       'Polis Personeli İzin Yönetmeliği — Emniyet uygulaması: talep, onay, nöbet ve yol usulü.',
     ],
     keyPoints: [
-      'Yıllık: 1–10 yıl (dahil) 20 gün, 10 yıldan sonra 30 gün; kullanım amirin uygun gördüğü zamanda (m. 102–103).',
+      'Yıllık: hizmeti 10 yıldan az olana 20 gün, 10 yıl ve üzeri olana 30 gün; kullanım amirin uygun gördüğü zamanda (m. 102–103).',
       'Mazeret, doğum ve süt: m. 104; vaka başına gün/hafta oranları kanunda (güncel metin).',
       'Hastalık: tek hekim, bir defada en fazla 10 gün; aynı hastalıkta toplam 20 gün aşımında kurul raporu; m. 105.',
       'Refakat: ağır hasta eş, çocuk, ana, baba; hayati tehlike ve kurul raporu; m. 105.',

@@ -16,11 +16,11 @@ class PolisMainNavigationBar extends StatelessWidget {
   final ValueChanged<int> onDestinationSelected;
 
   static final List<({IconData icon, String label})> _items = [
-    (icon: PhosphorIconsRegular.squaresFour, label: kNavHomeLabel),
+    (icon: PhosphorIconsRegular.house, label: kNavHomeLabel),
+    (icon: PhosphorIconsRegular.sparkle, label: 'Asistan'),
+    (icon: PhosphorIconsRegular.listChecks, label: 'Görevlerim'),
     (icon: PhosphorIconsRegular.books, label: 'Mevzuat'),
-    (icon: PhosphorIconsRegular.buildings, label: 'Teşkilat'),
-    (icon: PhosphorIconsRegular.scales, label: 'Haklar'),
-    (icon: PhosphorIconsRegular.palette, label: 'Kültür'),
+    (icon: PhosphorIconsRegular.wrench, label: 'Araçlar'),
   ];
 
   @override

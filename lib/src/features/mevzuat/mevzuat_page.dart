@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import '../../common/widgets/search_highlight.dart';
+import '../asistan/asistan_provider.dart';
 import '../home/root_drawer_scope.dart';
 import 'mevzuat_article_detail_page.dart';
 import 'mevzuat_law_hero_badge.dart';
@@ -62,6 +63,11 @@ class _MevzuatPageState extends ConsumerState<MevzuatPage>
     final tab = ref.watch(mevzuatSearchTabProvider);
     final query = ref.watch(mevzuatSearchQueryProvider);
     final recentAsync = ref.watch(mevzuatRecentItemsProvider);
+    final smartConcept = ref.watch(asistanConceptsProvider).maybeWhen(
+          data: (cs) =>
+              query.trim().isEmpty ? null : asistanMatchConcept(query, cs),
+          orElse: () => null,
+        );
 
     return Scaffold(
       backgroundColor: PoliceColors.mevzuatScreenBackground,
@@ -98,12 +104,25 @@ class _MevzuatPageState extends ConsumerState<MevzuatPage>
                 scrollChild = CustomScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   slivers: [
+                    if (smartConcept != null)
+                      SliverToBoxAdapter(
+                        child: _SmartConceptCard(concept: smartConcept),
+                      ),
                     SliverFillRemaining(
                       hasScrollBody: false,
                       child: Center(
-                        child: Text(
-                          'Sonuç bulunamadı.',
-                          style: TextStyle(color: PoliceColors.mevzuatTitleGrey),
+                        child: Padding(
+                          padding: const EdgeInsets.all(24),
+                          child: Text(
+                            smartConcept != null
+                                ? 'Kanun adında doğrudan eşleşme yok; yukarıdaki akıllı sonuçtan ilgili maddeye gidebilirsin.'
+                                : 'Sonuç bulunamadı.',
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              color: PoliceColors.mevzuatTitleGrey,
+                              height: 1.45,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -279,6 +298,10 @@ class _MevzuatPageState extends ConsumerState<MevzuatPage>
                         ),
                       ),
                     ),
+                    if (smartConcept != null)
+                      SliverToBoxAdapter(
+                        child: _SmartConceptCard(concept: smartConcept),
+                      ),
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(12, 4, 12, 8),
@@ -931,6 +954,160 @@ class _MevzuatLawCard extends ConsumerWidget {
                 ],
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Akıllı Mevzuat: kavram eşleşince çok-kanunlu ilgili maddeleri gösterir.
+class _SmartConceptCard extends ConsumerWidget {
+  const _SmartConceptCard({required this.concept});
+
+  final AsistanConcept concept;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final catalog = ref.watch(mevzuatCatalogProvider).valueOrNull;
+    final entryIds = <String>{
+      if (catalog != null)
+        for (final e in [...catalog.kanunlar, ...catalog.yonetmelikler]) e.id,
+    };
+    final refs = concept.refs
+        .where((r) => entryIds.isEmpty || entryIds.contains(r.entryId))
+        .toList();
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 4),
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(
+            color: PoliceColors.primaryBlue.withValues(alpha: 0.45),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.auto_awesome_rounded,
+                  size: 18,
+                  color: PoliceColors.gold.withValues(alpha: 0.95),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Akıllı sonuç · ${concept.label}',
+                    style: const TextStyle(
+                      color: PoliceColors.gold,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 13.5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              concept.answer,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: PoliceColors.mevzuatBodyText.withValues(alpha: 0.95),
+                height: 1.45,
+                fontSize: 13.5,
+              ),
+            ),
+            if (refs.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              Text(
+                'İlgili kanunlar',
+                style: TextStyle(
+                  color: PoliceColors.mevzuatMetaGrey.withValues(alpha: 0.95),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 11.5,
+                  letterSpacing: 0.3,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (final r in refs)
+                    _SmartRefChip(
+                      label: r.label,
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        Navigator.of(context).push(
+                          fadeRoute(
+                            MevzuatArticleDetailPage(
+                              entryId: r.entryId,
+                              focusSectionId: r.sectionId,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                ],
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SmartRefChip extends StatelessWidget {
+  const _SmartRefChip({required this.label, required this.onTap});
+
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: PoliceColors.mevzuatListCard,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: PoliceColors.primaryBlue.withValues(alpha: 0.5),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: PoliceColors.primaryBlue,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12.5,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 4),
+              const Icon(
+                Icons.arrow_forward_rounded,
+                size: 14,
+                color: PoliceColors.primaryBlue,
+              ),
+            ],
           ),
         ),
       ),

@@ -12,9 +12,11 @@ import '../mevzuat/mevzuat_article_detail_page.dart';
 import '../mevzuat/mevzuat_favorites_page.dart';
 import '../mevzuat/mevzuat_provider.dart';
 import '../mevzuat/mevzuat_page.dart';
-import '../haklar/haklar_page.dart';
-import '../teskilat/teskilat_page.dart';
-import '../kultur/kultur_page.dart';
+import '../haklar/vardiya/vardiya_hesaplama_page.dart';
+import '../asistan/asistan_page.dart';
+import '../gorevlerim/gorevlerim_page.dart';
+import '../gorevlerim/izin/izin_page.dart';
+import '../araclar/araclar_page.dart';
 import 'dashboard_page.dart';
 import 'root_drawer_scope.dart';
 
@@ -29,7 +31,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
   int _index = 0;
 
   /// Sadece ziyaret edilen sekmeler kurulur; açılış ve bellek (mobil) için.
-  /// 0: Ana sayfa (dashboard), 1–4: Mevzuat … Kültür.
+  /// 0: Ana Sayfa, 1: Asistan, 2: Görevlerim, 3: Mevzuat, 4: Araçlar.
   final List<Widget?> _tabPages = List<Widget?>.filled(5, null);
 
   @override
@@ -45,10 +47,10 @@ class _HomeShellState extends ConsumerState<HomeShell> {
   Widget _buildLazyTab(int i) {
     return switch (i) {
       0 => _tabWithRepaint(_buildDashboardPage()),
-      1 => _tabWithRepaint(const MevzuatPage()),
-      2 => _tabWithRepaint(const TeskilatPage()),
-      3 => _tabWithRepaint(const HaklarPage()),
-      4 => _tabWithRepaint(const KulturPage()),
+      1 => _tabWithRepaint(const AsistanPage()),
+      2 => _tabWithRepaint(const GorevlerimPage()),
+      3 => _tabWithRepaint(const MevzuatPage()),
+      4 => _tabWithRepaint(const AraclarPage()),
       _ => const SizedBox.shrink(),
     };
   }
@@ -64,18 +66,19 @@ class _HomeShellState extends ConsumerState<HomeShell> {
           fadeRoute(MevzuatArticleDetailPage(entryId: r.entry.id)),
         );
       },
-      onOpenModule: (m) {
-        final tab = switch (m) {
-          DashboardModule.mevzuat => 1,
-          DashboardModule.teskilat => 2,
-          DashboardModule.haklar => 3,
-          DashboardModule.kultur => 4,
-        };
-        _goToTab(tab);
+      onOpenAsistan: () => _goToTab(1),
+      onOpenMevzuat: () => _goToTab(3),
+      onOpenIzin: () {
+        Navigator.of(context).push(fadeRoute(const IzinPage()));
       },
-      onOpenGununMaddesi: (id) {
+      onOpenVardiya: () {
+        Navigator.of(context).push(fadeRoute(const VardiyaHesaplamaPage()));
+      },
+      onOpenGununMaddesi: (id, {sectionId}) {
         Navigator.of(context).push(
-          fadeRoute(MevzuatArticleDetailPage(entryId: id)),
+          fadeRoute(
+            MevzuatArticleDetailPage(entryId: id, focusSectionId: sectionId),
+          ),
         );
       },
       onOpenFavorites: () {
@@ -149,7 +152,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
                       },
                       onOpenMevzuatEntry: (entryId) {
                         Navigator.of(sheetCtx).pop();
-                        _goToTab(1);
+                        _goToTab(3);
                         WidgetsBinding.instance.addPostFrameCallback((_) {
                           if (!mounted) return;
                           nav.push(
@@ -189,7 +192,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  ColoredBox(color: PoliceColors.backgroundDark),
+                  const ColoredBox(color: PoliceColors.backgroundDark),
                   const PoliceFiligranLayer(),
                   IndexedStack(
                     index: _index,
@@ -325,37 +328,37 @@ class _HomeMainMenuBody extends StatelessWidget {
             DrawerMevzuatShortcuts(onOpenEntry: onOpenMevzuatEntry),
             _DrawerTile(
               selected: selectedIndex == 0,
-              icon: Icons.dashboard_outlined,
+              icon: Icons.home_outlined,
               title: kNavHomeLabel,
               subtitle: 'Özet ekran ve sık kullanılanlar',
               onTap: () => onSelect(0),
             ),
             _DrawerTile(
               selected: selectedIndex == 1,
-              icon: Icons.menu_book_outlined,
-              title: 'Mevzuat',
-              subtitle: 'Kanunlar, yönetmelikler, arama ve favoriler',
+              icon: Icons.auto_awesome_outlined,
+              title: 'Asistan',
+              subtitle: 'Soru yaz, ilgili kanun maddesini bul (offline)',
               onTap: () => onSelect(1),
             ),
             _DrawerTile(
               selected: selectedIndex == 2,
-              icon: Icons.apartment_outlined,
-              title: 'Teşkilat',
-              subtitle: 'Yapı, birimler ve il listesi',
+              icon: Icons.checklist_rounded,
+              title: 'Görevlerim',
+              subtitle: 'İzin, maaş, vardiya ve kişisel kayıtların',
               onTap: () => onSelect(2),
             ),
             _DrawerTile(
               selected: selectedIndex == 3,
-              icon: Icons.description_outlined,
-              title: 'Haklar',
-              subtitle: 'Özet haklar ve tahmini maaş bilgisi',
+              icon: Icons.menu_book_outlined,
+              title: 'Mevzuat',
+              subtitle: 'Kanunlar, yönetmelikler, arama ve favoriler',
               onTap: () => onSelect(3),
             ),
             _DrawerTile(
               selected: selectedIndex == 4,
-              icon: Icons.auto_stories_outlined,
-              title: 'Kültür',
-              subtitle: 'Tarih, şehitler, tören ve önemli günler',
+              icon: Icons.handyman_outlined,
+              title: 'Araçlar',
+              subtitle: 'Hesaplayıcılar, saha defteri, teşkilat ve kültür',
               onTap: () => onSelect(4),
             ),
             Divider(

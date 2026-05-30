@@ -12,10 +12,16 @@ class SahaEditorPage extends ConsumerStatefulWidget {
     super.key,
     required this.categoryId,
     this.existing,
+    this.initialTitle,
+    this.initialBody,
   });
 
   final String categoryId;
   final SahaNote? existing;
+
+  /// Yeni kayıt (existing == null) için ön-doldurulacak başlık/içerik.
+  final String? initialTitle;
+  final String? initialBody;
 
   @override
   ConsumerState<SahaEditorPage> createState() => _SahaEditorPageState();
@@ -24,12 +30,18 @@ class SahaEditorPage extends ConsumerStatefulWidget {
 class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
   late final TextEditingController _titleCtrl;
   late final TextEditingController _bodyCtrl;
+  late final Set<String> _tags;
 
   @override
   void initState() {
     super.initState();
-    _titleCtrl = TextEditingController(text: widget.existing?.title ?? '');
-    _bodyCtrl = TextEditingController(text: widget.existing?.body ?? '');
+    _titleCtrl = TextEditingController(
+      text: widget.existing?.title ?? widget.initialTitle ?? '',
+    );
+    _bodyCtrl = TextEditingController(
+      text: widget.existing?.body ?? widget.initialBody ?? '',
+    );
+    _tags = {...?widget.existing?.tags};
   }
 
   @override
@@ -49,11 +61,13 @@ class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
       return;
     }
     final now = DateTime.now().millisecondsSinceEpoch;
+    final tags = _tags.toList();
     final note = widget.existing != null
         ? widget.existing!.copyWith(
             title: title.isEmpty ? widget.existing!.title : title,
             body: body,
             updatedAtMs: now,
+            tags: tags,
           )
         : SahaNote(
             id: sahaGenerateNoteId(),
@@ -62,6 +76,7 @@ class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
             body: body,
             createdAtMs: now,
             updatedAtMs: now,
+            tags: tags,
           );
     await HapticFeedback.lightImpact();
     await sahaUpsertNote(ref, note);
@@ -181,6 +196,51 @@ class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
               fillColor: PoliceColors.surfaceDark,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
             ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'Etiketler',
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.95),
+              fontWeight: FontWeight.w700,
+              fontSize: 13,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 4,
+            children: [
+              for (final tag in SahaTag.all)
+                FilterChip(
+                  label: Text(tag.label),
+                  selected: _tags.contains(tag.id),
+                  showCheckmark: true,
+                  backgroundColor: PoliceColors.surfaceDark,
+                  selectedColor:
+                      PoliceColors.primaryBlue.withValues(alpha: 0.28),
+                  checkmarkColor: PoliceColors.titleOnDark,
+                  labelStyle: TextStyle(
+                    color: _tags.contains(tag.id)
+                        ? PoliceColors.titleOnDark
+                        : PoliceColors.textMuted,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  side: BorderSide(
+                    color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
+                  ),
+                  onSelected: (sel) {
+                    HapticFeedback.selectionClick();
+                    setState(() {
+                      if (sel) {
+                        _tags.add(tag.id);
+                      } else {
+                        _tags.remove(tag.id);
+                      }
+                    });
+                  },
+                ),
+            ],
           ),
           const SizedBox(height: 16),
           Text(

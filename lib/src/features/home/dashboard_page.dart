@@ -5,36 +5,66 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
+import '../gorevlerim/izin/izin_provider.dart';
+import '../haklar/vardiya/vardiya_cycle_calculator.dart';
+import '../haklar/vardiya/vardiya_today_provider.dart';
 import '../mevzuat/mevzuat_provider.dart';
-import '../saha/saha_categories.dart';
-import '../saha/saha_category_page.dart';
-import '../saha/saha_store.dart';
 
-enum DashboardModule { mevzuat, teskilat, haklar, kultur }
+/// Madde aç: opsiyonel [sectionId] verilirse o maddeye derin link.
+typedef OpenMaddeCallback = void Function(String entryId, {String? sectionId});
 
-/// Ana “dashboard”: hızlı erişim, günün maddesi.
+/// Ana sayfa: günlük işe yarayanlar — son baktığın madde, hızlı geçişler,
+/// izin durumu ve günün seçkisi. Az kart, net akış.
 class DashboardPage extends ConsumerWidget {
   const DashboardPage({
     super.key,
     required this.onContinueReading,
-    required this.onOpenModule,
     required this.onOpenGununMaddesi,
     required this.onOpenFavorites,
+    required this.onOpenAsistan,
+    required this.onOpenIzin,
+    required this.onOpenVardiya,
+    required this.onOpenMevzuat,
   });
 
   final VoidCallback onContinueReading;
-  final void Function(DashboardModule module) onOpenModule;
-  final ValueChanged<String> onOpenGununMaddesi;
+  final OpenMaddeCallback onOpenGununMaddesi;
   final VoidCallback onOpenFavorites;
+  final VoidCallback onOpenAsistan;
+  final VoidCallback onOpenIzin;
+  final VoidCallback onOpenVardiya;
+  final VoidCallback onOpenMevzuat;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final catalogAsync = ref.watch(mevzuatCatalogProvider);
     final hasRecentToContinue = ref.watch(mevzuatRecentItemsProvider).maybeWhen(
           data: (list) => list.isNotEmpty,
           orElse: () => false,
         );
     final recentAsync = ref.watch(mevzuatRecentItemsProvider);
+
+    final izinRecords =
+        ref.watch(izinRecordsProvider).valueOrNull ?? const <LeaveRecord>[];
+    final serviceYears = ref.watch(hizmetYiliProvider).valueOrNull ?? 0;
+    final izinDevir =
+        ref.watch(izinDevirProvider).valueOrNull ?? (yillik: 0, yol: 0);
+    final izinDurum = computeYillikDurum(
+      records: izinRecords,
+      serviceYears: serviceYears,
+      devirYillik: izinDevir.yillik,
+      devirYol: izinDevir.yol,
+    );
+    final kalanYillik = izinDurum.kalanYillik;
+    final izinSubtitle = serviceYears <= 0
+        ? 'İzin günlerini takip et'
+        : (kalanYillik >= 0
+            ? '$kalanYillik gün yıllık izin kaldı'
+            : 'Yıllık izin aşıldı');
+
+    final vardiyaToday = ref.watch(vardiyaTodayProvider).valueOrNull;
+    final upcomingLeave = izinRecords.isEmpty
+        ? null
+        : izinAktifVeyaYaklasan(izinRecords);
 
     return ColoredBox(
       color: PoliceColors.backgroundDark,
@@ -82,6 +112,13 @@ class DashboardPage extends ConsumerWidget {
                         ),
                   ),
                   const SizedBox(height: 20),
+                  _DutyTodayPanel(
+                    vardiya: vardiyaToday,
+                    leave: upcomingLeave,
+                    onOpenVardiya: onOpenVardiya,
+                    onOpenIzin: onOpenIzin,
+                  ),
+                  const SizedBox(height: 20),
                   if (hasRecentToContinue) ...[
                     _ActionPill(
                       icon: PhosphorIconsRegular.playCircle,
@@ -101,7 +138,7 @@ class DashboardPage extends ConsumerWidget {
                       if (recent.isEmpty) return const SizedBox.shrink();
                       return _DashboardRecentStrip(
                         items: recent,
-                        onOpenEntry: onOpenGununMaddesi,
+                        onOpenEntry: (id) => onOpenGununMaddesi(id),
                       );
                     },
                     loading: () => const SizedBox.shrink(),
@@ -130,10 +167,8 @@ class DashboardPage extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  const _SahaLocalGridSection(),
-                  const SizedBox(height: 20),
                   Text(
-                    kDashboardChannelsTitle,
+                    'Hızlı geçiş',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: PoliceColors.titleOnDark,
                           fontWeight: FontWeight.w700,
@@ -143,25 +178,25 @@ class DashboardPage extends ConsumerWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: _SectorCard(
-                          icon: PhosphorIconsRegular.bookBookmark,
-                          title: 'Mevzuat',
-                          subtitle: 'Kanun ve yönetmelikler',
+                        child: _HomeQuickCard(
+                          icon: PhosphorIconsRegular.sparkle,
+                          title: 'Asistan',
+                          subtitle: 'Yaz, kanunu bul',
                           onTap: () {
                             HapticFeedback.selectionClick();
-                            onOpenModule(DashboardModule.mevzuat);
+                            onOpenAsistan();
                           },
                         ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _SectorCard(
-                          icon: PhosphorIconsRegular.scales,
-                          title: 'Haklar',
-                          subtitle: 'Özet haklar ve araçlar',
+                        child: _HomeQuickCard(
+                          icon: PhosphorIconsRegular.bookBookmark,
+                          title: 'Mevzuat',
+                          subtitle: 'Kanun ve yönetmelik',
                           onTap: () {
                             HapticFeedback.selectionClick();
-                            onOpenModule(DashboardModule.haklar);
+                            onOpenMevzuat();
                           },
                         ),
                       ),
@@ -171,39 +206,32 @@ class DashboardPage extends ConsumerWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: _SectorCard(
-                          icon: PhosphorIconsRegular.buildings,
-                          title: 'Teşkilat',
-                          subtitle: 'Yapı ve birimler',
+                        child: _HomeQuickCard(
+                          icon: PhosphorIconsRegular.calendarBlank,
+                          title: 'İzinlerim',
+                          subtitle: izinSubtitle,
                           onTap: () {
                             HapticFeedback.selectionClick();
-                            onOpenModule(DashboardModule.teskilat);
+                            onOpenIzin();
                           },
                         ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _SectorCard(
-                          icon: PhosphorIconsRegular.palette,
-                          title: 'Kültür',
-                          subtitle: 'Tarih ve tören',
+                        child: _HomeQuickCard(
+                          icon: PhosphorIconsRegular.calendarCheck,
+                          title: 'Vardiyam',
+                          subtitle: 'Vardiya türünü seç',
                           onTap: () {
                             HapticFeedback.selectionClick();
-                            onOpenModule(DashboardModule.kultur);
+                            onOpenVardiya();
                           },
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 28),
-                  catalogAsync.when(
-                    loading: () => const SizedBox(height: 120),
-                    error: (_, __) => const SizedBox.shrink(),
-                    data: (cat) => _GununMaddesiCard(
-                      catalog: cat,
-                      onTapEntry: onOpenGununMaddesi,
-                    ),
-                  ),
+                  _GununMaddesiCard(onTapEntry: onOpenGununMaddesi),
                   const SizedBox(height: 24),
                 ],
               ),
@@ -215,76 +243,191 @@ class DashboardPage extends ConsumerWidget {
   }
 }
 
-class _SahaLocalGridSection extends ConsumerWidget {
-  const _SahaLocalGridSection();
+String _dp2(int v) => v.toString().padLeft(2, '0');
+String _hhmm(DateTime d) => '${_dp2(d.hour)}:${_dp2(d.minute)}';
+String _ddmm(DateTime d) => '${_dp2(d.day)}.${_dp2(d.month)}';
+
+String _humanDuration(Duration d) {
+  if (d.isNegative) return '0 dk';
+  if (d.inHours < 1) return '${d.inMinutes} dk';
+  if (d.inHours < 24) {
+    final mins = d.inMinutes % 60;
+    return mins == 0 ? '${d.inHours} sa' : '${d.inHours} sa $mins dk';
+  }
+  return '${d.inDays} gün';
+}
+
+/// "Bugün görevdeyim" paneli: bugünkü vardiya + kalan süre + yaklaşan izin.
+class _DutyTodayPanel extends StatelessWidget {
+  const _DutyTodayPanel({
+    required this.vardiya,
+    required this.leave,
+    required this.onOpenVardiya,
+    required this.onOpenIzin,
+  });
+
+  final VardiyaTodayStatus? vardiya;
+  final LeaveRecord? leave;
+  final VoidCallback onOpenVardiya;
+  final VoidCallback onOpenIzin;
+
+  ({String title, String detail, IconData icon, Color color}) _vardiyaLine() {
+    final v = vardiya;
+    final now = DateTime.now();
+    if (v == null) {
+      return (
+        title: 'Vardiya seçili değil',
+        detail: 'Vardiya türünü seç',
+        icon: PhosphorIconsRegular.calendarPlus,
+        color: PoliceColors.textMuted,
+      );
+    }
+    if (!v.configured) {
+      return (
+        title: v.title,
+        detail: 'Referans tarihi seç',
+        icon: PhosphorIconsRegular.calendarPlus,
+        color: PoliceColors.textMuted,
+      );
+    }
+    if (v.phased) {
+      final active = v.active;
+      if (active != null) {
+        final rem = active.end.difference(now);
+        return (
+          title: active.night ? 'Gece nöbeti' : 'Gündüz nöbeti',
+          detail: 'Şu an görevde · bitiş ${_hhmm(active.end)} '
+              '(≈${_humanDuration(rem)})',
+          icon: active.night
+              ? PhosphorIconsFill.moon
+              : PhosphorIconsFill.sun,
+          color: active.night
+              ? const Color(0xFF9C8CF0)
+              : PoliceColors.gold,
+        );
+      }
+      final next = v.next;
+      if (next != null) {
+        final rem = next.start.difference(now);
+        return (
+          title: next.night ? 'Sıradaki: gece' : 'Sıradaki: gündüz',
+          detail: '${_ddmm(next.start)} ${_hhmm(next.start)} '
+              'başlıyor (≈${_humanDuration(rem)} sonra)',
+          icon: PhosphorIconsRegular.clock,
+          color: PoliceColors.primaryBlue,
+        );
+      }
+      return (
+        title: v.title,
+        detail: 'Yaklaşan nöbet bulunamadı',
+        icon: PhosphorIconsRegular.calendarCheck,
+        color: PoliceColors.textMuted,
+      );
+    }
+    // Basit kalıp düzen.
+    final kind = v.todayKind;
+    final isWork = kind == VardiyaCalendarDayKind.work;
+    return (
+      title: isWork ? 'Bugün görev günü' : 'Bugün dinlenme',
+      detail: v.title,
+      icon: isWork
+          ? PhosphorIconsFill.shieldCheck
+          : PhosphorIconsRegular.coffee,
+      color: isWork ? PoliceColors.gold : PoliceColors.primaryBlue,
+    );
+  }
+
+  ({String title, String detail}) _leaveLine() {
+    final r = leave;
+    if (r == null) {
+      return (title: 'Yaklaşan izin yok', detail: 'İzin planla');
+    }
+    final toStart = izinBaslangicaKalanGun(r);
+    if (toStart > 0) {
+      final yer = r.toCity.isNotEmpty ? ' · ${r.toCity}' : '';
+      return (
+        title: '${r.type.label} yaklaşıyor',
+        detail: '${_ddmm(r.start)} başlıyor · $toStart gün kaldı$yer',
+      );
+    }
+    final toReturn = iseDonuseKalanGun(r);
+    return (
+      title: 'İzindesin',
+      detail: 'İşe dönüş ${_ddmm(r.returnDate)} · $toReturn gün kaldı',
+    );
+  }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final notesAsync = ref.watch(sahaNotesProvider);
-    final counts = notesAsync.maybeWhen(
-      data: (notes) {
-        final m = <String, int>{};
-        for (final n in notes) {
-          m.update(n.categoryId, (c) => c + 1, ifAbsent: () => 1);
-        }
-        return m;
-      },
-      orElse: () => <String, int>{},
-    );
-
+  Widget build(BuildContext context) {
+    final v = _vardiyaLine();
+    final l = _leaveLine();
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            PoliceColors.primaryBlue.withValues(alpha: 0.28),
-            PoliceColors.surfaceDark.withValues(alpha: 0.95),
-          ],
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.35),
         ),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            blurRadius: 14,
+            offset: const Offset(0, 6),
+          ),
+        ],
       ),
-      padding: const EdgeInsets.fromLTRB(14, 16, 14, 16),
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 6),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            kSahaHubTitle,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+          Row(
+            children: [
+              PhosphorIcon(
+                PhosphorIconsFill.shieldStar,
+                color: PoliceColors.gold,
+                size: 18,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'Bugün görevdeyim',
+                style: TextStyle(
                   color: PoliceColors.titleOnDark,
                   fontWeight: FontWeight.w800,
+                  fontSize: 14.5,
                 ),
+              ),
+            ],
           ),
-          const SizedBox(height: 4),
-          Text(
-            kSahaHubSubtitle,
-            style: TextStyle(
-              color: PoliceColors.textMuted.withValues(alpha: 0.92),
-              fontSize: 12.5,
-              height: 1.3,
-            ),
+          const SizedBox(height: 6),
+          _DutyRow(
+            icon: v.icon,
+            iconColor: v.color,
+            title: v.title,
+            detail: v.detail,
+            onTap: onOpenVardiya,
           ),
-          const SizedBox(height: 14),
-          LayoutBuilder(
-            builder: (context, c) {
-              final n = c.maxWidth >= 340 ? 4 : 3;
-              return GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: n,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 0.74,
-                children: [
-                  for (final cat in SahaCategoryDef.all)
-                    _SahaGridTile(
-                      category: cat,
-                      noteCount: counts[cat.id] ?? 0,
-                    ),
-                ],
-              );
-            },
+          Divider(
+            height: 1,
+            color: PoliceColors.outlineMuted.withValues(alpha: 0.4),
+          ),
+          _DutyRow(
+            icon: PhosphorIconsRegular.airplaneTilt,
+            iconColor: leave == null
+                ? PoliceColors.textMuted
+                : PoliceColors.primaryBlue,
+            title: l.title,
+            detail: l.detail,
+            onTap: onOpenIzin,
+          ),
+          Divider(
+            height: 1,
+            color: PoliceColors.outlineMuted.withValues(alpha: 0.4),
+          ),
+          const _DutyRow(
+            icon: PhosphorIconsRegular.mapPinLine,
+            iconColor: PoliceColors.textMuted,
+            title: 'Tayin dönemi',
+            detail: 'Veri eklenince aktif olacak',
           ),
         ],
       ),
@@ -292,112 +435,68 @@ class _SahaLocalGridSection extends ConsumerWidget {
   }
 }
 
-class _SahaGridTile extends StatelessWidget {
-  const _SahaGridTile({
-    required this.category,
-    required this.noteCount,
+class _DutyRow extends StatelessWidget {
+  const _DutyRow({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.detail,
+    this.onTap,
   });
 
-  final SahaCategoryDef category;
-  final int noteCount;
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final String detail;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.white.withValues(alpha: 0.06),
-      borderRadius: BorderRadius.circular(14),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: () {
-          HapticFeedback.selectionClick();
-          Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (_) => SahaCategoryPage(categoryId: category.id),
-            ),
-          );
-        },
-        child: Ink(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: PoliceColors.primaryBlue.withValues(alpha: 0.25),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(6, 8, 6, 6),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                clipBehavior: Clip.none,
-                alignment: Alignment.center,
+    return InkWell(
+      onTap: onTap == null
+          ? null
+          : () {
+              HapticFeedback.selectionClick();
+              onTap!();
+            },
+      borderRadius: BorderRadius.circular(10),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 11),
+        child: Row(
+          children: [
+            PhosphorIcon(icon, color: iconColor, size: 22),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PhosphorIcon(
-                    category.icon,
-                    color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
-                    size: 26,
-                  ),
-                  if (noteCount > 0)
-                    Positioned(
-                      right: -10,
-                      top: -8,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: PoliceColors.primaryBlue,
-                          borderRadius: BorderRadius.circular(9),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.35),
-                              blurRadius: 4,
-                              offset: const Offset(0, 1),
-                            ),
-                          ],
-                        ),
-                        constraints: const BoxConstraints(minWidth: 18),
-                        child: Text(
-                          noteCount > 99 ? '99+' : '$noteCount',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w800,
-                            height: 1.05,
-                          ),
-                        ),
-                      ),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      color: PoliceColors.titleOnDark,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
                     ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    detail,
+                    style: TextStyle(
+                      color: PoliceColors.textMuted,
+                      fontSize: 12.5,
+                      height: 1.3,
+                    ),
+                  ),
                 ],
               ),
-              const SizedBox(height: 6),
-              Text(
-                category.title,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: PoliceColors.titleOnDark,
-                  fontSize: 11.5,
-                  fontWeight: FontWeight.w600,
-                  height: 1.15,
-                ),
+            ),
+            if (onTap != null)
+              PhosphorIcon(
+                PhosphorIconsRegular.caretRight,
+                color: PoliceColors.textMuted.withValues(alpha: 0.7),
+                size: 18,
               ),
-              const SizedBox(height: 2),
-              Text(
-                noteCount == 0 ? 'Kayıt yok' : '$noteCount kayıt',
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: noteCount > 0
-                      ? PoliceColors.primaryBlue.withValues(alpha: 0.85)
-                      : PoliceColors.textMuted.withValues(alpha: 0.65),
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                  height: 1.1,
-                ),
-              ),
-            ],
-          ),
+          ],
         ),
       ),
     );
@@ -493,8 +592,8 @@ class _ActionPill extends StatelessWidget {
   }
 }
 
-class _SectorCard extends StatefulWidget {
-  const _SectorCard({
+class _HomeQuickCard extends StatefulWidget {
+  const _HomeQuickCard({
     required this.icon,
     required this.title,
     required this.subtitle,
@@ -507,10 +606,10 @@ class _SectorCard extends StatefulWidget {
   final VoidCallback onTap;
 
   @override
-  State<_SectorCard> createState() => _SectorCardState();
+  State<_HomeQuickCard> createState() => _HomeQuickCardState();
 }
 
-class _SectorCardState extends State<_SectorCard> {
+class _HomeQuickCardState extends State<_HomeQuickCard> {
   double _scale = 1;
 
   @override
@@ -575,29 +674,28 @@ class _SectorCardState extends State<_SectorCard> {
   }
 }
 
-class _GununMaddesiCard extends StatelessWidget {
-  const _GununMaddesiCard({
-    required this.catalog,
-    required this.onTapEntry,
-  });
+class _GununMaddesiCard extends ConsumerWidget {
+  const _GununMaddesiCard({required this.onTapEntry});
 
-  final MevzuatCatalog catalog;
-  final ValueChanged<String> onTapEntry;
+  final OpenMaddeCallback onTapEntry;
 
   @override
-  Widget build(BuildContext context) {
-    final kanunlar = catalog.kanunlar;
-    if (kanunlar.isEmpty) return const SizedBox.shrink();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final maddeAsync = ref.watch(gununMaddesiProvider);
+    final madde = maddeAsync.valueOrNull;
+    if (madde == null) return const SizedBox.shrink();
 
-    final daySeed = DateTime.now().difference(DateTime(2020)).inDays;
-    final pick = kanunlar[daySeed % kanunlar.length];
+    final code = madde.entry.code;
+    final lawLabel = (code != null && code.trim().isNotEmpty)
+        ? '$code · ${madde.entry.name}'
+        : madde.entry.name;
 
     return Material(
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
           HapticFeedback.lightImpact();
-          onTapEntry(pick.id);
+          onTapEntry(madde.entry.id, sectionId: madde.section.id);
         },
         borderRadius: BorderRadius.circular(20),
         child: Ink(
@@ -642,34 +740,65 @@ class _GununMaddesiCard extends StatelessWidget {
                           fontWeight: FontWeight.w800,
                         ),
                   ),
+                  const Spacer(),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Text(
+                      '30 sn özet',
+                      style: TextStyle(
+                        color: PoliceColors.titleOnDark,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 12),
               Text(
-                pick.displayTitle,
+                lawLabel,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: PoliceColors.primaryBlue,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 12.5,
+                  letterSpacing: 0.2,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                madde.maddeLabel,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   color: PoliceColors.titleOnDark,
                   fontWeight: FontWeight.w700,
-                  fontSize: 17,
+                  fontSize: 16,
                   height: 1.25,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
-                kDailyPickSubtitle,
+                madde.ozet,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: PoliceColors.textMuted,
                   fontSize: 13,
-                  height: 1.4,
+                  height: 1.42,
                 ),
               ),
               const SizedBox(height: 12),
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  'Aç →',
+                  'Tam metni aç →',
                   style: TextStyle(
                     color: PoliceColors.primaryBlue,
                     fontWeight: FontWeight.w700,
