@@ -10,8 +10,8 @@ const String kAppTagline =
 
 /// Çekmece üstü tanıtım metni.
 const String kDrawerIntroParagraph =
-    'Mevzuat, teşkilat, haklar ve kültür dört ana hat. '
-    'Alttaki sekmelerden geç; ana sayfada son baktığın maddeyi sürdür.';
+    'Ana Sayfa, Asistan, Görevlerim, Mevzuat ve Araçlar. '
+    'Alttaki sekmelerden geç; Asistan’a yaz, ilgili maddeyi bul.';
 
 /// Ana sayfa — dört modül kartının üst başlığı.
 const String kDashboardChannelsTitle = 'Ana hatlar';
@@ -22,7 +22,7 @@ const String kSahaHubSubtitle =
     'Bu defter yalnızca bu telefonda — giriş kaydı tutulmaz, buluta çıkmaz.';
 
 /// Alt gezinme: ilk sekme etiketi.
-const String kNavHomeLabel = 'Özet';
+const String kNavHomeLabel = 'Ana Sayfa';
 
 /// Ana sayfa favori kısayolu.
 const String kFavoritesShortcutLabel = 'Favorilerim';

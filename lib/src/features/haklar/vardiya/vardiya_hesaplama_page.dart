@@ -61,14 +61,14 @@ class VardiyaHesaplamaPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 14, 12, 24),
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 20),
         child: GridView.builder(
           physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            childAspectRatio: 0.92,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 2.5,
           ),
           itemCount: VardiyaTur.all.length,
           itemBuilder: (context, i) {
@@ -97,70 +97,56 @@ class _VardiyaTypeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(14),
-      elevation: 2,
-      shadowColor: Colors.black.withValues(alpha: 0.12),
+      borderRadius: BorderRadius.circular(12),
+      elevation: 1.5,
+      shadowColor: Colors.black.withValues(alpha: 0.10),
       child: InkWell(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Ink(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(12),
             border: Border(
-              top: BorderSide(color: tur.topColor, width: 4),
+              left: BorderSide(color: tur.topColor, width: 4),
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 12, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            padding: const EdgeInsets.fromLTRB(10, 8, 6, 8),
+            child: Row(
               children: [
+                Container(
+                  width: 38,
+                  height: 38,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF0F3F8),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: tur.icon != null
+                      ? Icon(tur.icon, size: 21, color: tur.topColor)
+                      : Text(
+                          tur.emoji!,
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                ),
+                const SizedBox(width: 9),
                 Expanded(
-                  child: Center(
-                    child: Container(
-                      width: 56,
-                      height: 56,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF0F3F8),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: tur.icon != null
-                          ? Icon(
-                              tur.icon,
-                              size: 30,
-                              color: tur.topColor,
-                            )
-                          : Text(
-                              tur.emoji!,
-                              style: const TextStyle(fontSize: 30),
-                            ),
+                  child: Text(
+                    tur.title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w800,
+                      color: Color(0xFF1A1D23),
+                      height: 1.15,
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        tur.title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xFF1A1D23),
-                          height: 1.2,
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      Icons.chevron_right_rounded,
-                      size: 22,
-                      color: Colors.grey.shade400,
-                    ),
-                  ],
+                Icon(
+                  Icons.chevron_right_rounded,
+                  size: 20,
+                  color: Colors.grey.shade400,
                 ),
               ],
             ),

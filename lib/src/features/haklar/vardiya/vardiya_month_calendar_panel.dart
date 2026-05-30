@@ -275,7 +275,7 @@ class _MonthDayTile extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: shiftId == 'cakma_12_36' ? 9 : 10,
+              fontSize: isPhasedDayNightShift(shiftId) ? 9 : 10,
               fontWeight: FontWeight.w800,
               color: style.labelColor,
             ),
@@ -303,7 +303,7 @@ class _TileStyle {
 }
 
 _TileStyle _tileStyle(VardiyaCalendarDayKind kind, String shiftId) {
-  if (shiftId == 'cakma_12_36') {
+  if (isPhasedDayNightShift(shiftId)) {
     switch (kind) {
       case VardiyaCalendarDayKind.cakmaDayDuty:
         return _TileStyle(

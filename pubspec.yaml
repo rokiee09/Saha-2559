@@ -57,6 +57,7 @@ flutter:
     - assets/mevzuat/
     - assets/mevzuat/kanunlar/
     - assets/mevzuat/yonetmelikler/
+    - assets/asistan/concepts.json
     - assets/json/city_contacts.json
     - assets/json/maas_katsayilari.json
     - assets/json/martyrs.json

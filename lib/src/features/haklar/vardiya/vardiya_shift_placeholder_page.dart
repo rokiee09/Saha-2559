@@ -14,6 +14,34 @@ String _fmtDateTr(DateTime d) {
   return '$dd.$mm.${d.year}';
 }
 
+const List<String> _weekdayShortTr = [
+  '',
+  'Pzt',
+  'Sal',
+  'Çar',
+  'Per',
+  'Cum',
+  'Cmt',
+  'Paz',
+];
+
+String _fmtShiftLine(VardiyaShiftInstance s) {
+  String hhmm(DateTime d) =>
+      '${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}';
+  final startDate =
+      '${s.start.day.toString().padLeft(2, '0')}.${s.start.month.toString().padLeft(2, '0')}';
+  final startWd = _weekdayShortTr[s.start.weekday];
+  final sameDay = s.start.year == s.end.year &&
+      s.start.month == s.end.month &&
+      s.start.day == s.end.day;
+  if (sameDay) {
+    return '$startDate $startWd · ${hhmm(s.start)} – ${hhmm(s.end)}';
+  }
+  final endDate =
+      '${s.end.day.toString().padLeft(2, '0')}.${s.end.month.toString().padLeft(2, '0')}';
+  return '$startDate $startWd ${hhmm(s.start)} → $endDate ${hhmm(s.end)}';
+}
+
 /// Seçilen vardiya türü: bilgilendirici metin, referans tarihi ve aylık örnek çizelge.
 class VardiyaShiftPlaceholderPage extends StatefulWidget {
   const VardiyaShiftPlaceholderPage({
@@ -30,13 +58,24 @@ class VardiyaShiftPlaceholderPage extends StatefulWidget {
 class _VardiyaShiftPlaceholderPageState extends State<VardiyaShiftPlaceholderPage> {
   int? _anchorMs;
   late DateTime _visibleMonth;
+  late bool _startNight;
+
+  String get _startNightPrefsKey => 'vardiya_startnight_${widget.shiftId}';
 
   @override
   void initState() {
     super.initState();
     final n = DateTime.now();
     _visibleMonth = DateTime(n.year, n.month);
+    _startNight = defaultStartNight(widget.shiftId);
     _refreshAnchor();
+  }
+
+  Future<void> _setStartNight(bool night) async {
+    HapticFeedback.selectionClick();
+    setState(() => _startNight = night);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_startNightPrefsKey, night);
   }
 
   void _snapMonthToAnchor() {
@@ -48,9 +87,11 @@ class _VardiyaShiftPlaceholderPageState extends State<VardiyaShiftPlaceholderPag
   Future<void> _refreshAnchor() async {
     final prefs = await SharedPreferences.getInstance();
     final v = prefs.getInt('vardiya_anchor_${widget.shiftId}');
+    final sn = prefs.getBool(_startNightPrefsKey);
     if (!mounted) return;
     setState(() {
       _anchorMs = v;
+      if (sn != null) _startNight = sn;
       if (v != null) _snapMonthToAnchor();
     });
   }
@@ -119,8 +160,20 @@ class _VardiyaShiftPlaceholderPageState extends State<VardiyaShiftPlaceholderPag
             month: _visibleMonth.month,
             anchorLocalDate: anchorDate,
             shiftId: widget.shiftId,
+            startNight: _startNight,
           )
         : null;
+
+    final upcomingShifts = (anchorDate != null &&
+            supportsStartModeChoice(widget.shiftId))
+        ? buildVardiyaUpcomingShifts(
+            anchorLocalDate: anchorDate,
+            shiftId: widget.shiftId,
+            startNight: _startNight,
+            from: DateTime.now(),
+            count: 8,
+          )
+        : const <VardiyaShiftInstance>[];
 
     return Scaffold(
       backgroundColor: const Color(0xFFE8ECF2),
@@ -216,13 +269,42 @@ class _VardiyaShiftPlaceholderPageState extends State<VardiyaShiftPlaceholderPag
                             color: PoliceColors.onSurfaceLight.withValues(alpha: 0.78),
                           ),
                     ),
+                    if (supportsStartModeChoice(widget.shiftId)) ...[
+                      const SizedBox(height: 14),
+                      Text(
+                        'Bu tarihte hangi vardiyayla başladın?',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.w800,
+                              color: PoliceColors.onSurfaceLight,
+                            ),
+                      ),
+                      const SizedBox(height: 8),
+                      SegmentedButton<bool>(
+                        showSelectedIcon: false,
+                        segments: const [
+                          ButtonSegment<bool>(
+                            value: false,
+                            icon: Icon(Icons.wb_sunny_rounded, size: 18),
+                            label: Text('Gündüz (08–20)'),
+                          ),
+                          ButtonSegment<bool>(
+                            value: true,
+                            icon: Icon(Icons.nightlight_round, size: 18),
+                            label: Text('Gece (20–08)'),
+                          ),
+                        ],
+                        selected: {_startNight},
+                        onSelectionChanged: (s) => _setStartNight(s.first),
+                      ),
+                    ],
                     const SizedBox(height: 12),
-                    if (widget.shiftId == 'cakma_12_36')
+                    if (supportsStartModeChoice(widget.shiftId))
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.only(top: 10),
                         child: Text(
-                          'Çakma örneği: seçtiğiniz günde ilk gündüz nöbetinin başlangıcı varsayılan olarak '
-                          'saat $kCakmaFirstDayDutyStartHour:00 kabul edilir; cetvel saati farklıysa çıkan tablo kayar.',
+                          'Saat kabulü: gündüz nöbeti $kDayShiftStartHour:00–$kNightShiftStartHour:00, '
+                          'gece nöbeti $kNightShiftStartHour:00–${kDayShiftStartHour.toString().padLeft(2, '0')}:00 (ertesi gün). '
+                          'Biriminizin saati farklıysa tablo buna göre kayar.',
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 height: 1.38,
                                 color: PoliceColors.onSurfaceLight.withValues(alpha: 0.72),
@@ -320,6 +402,10 @@ class _VardiyaShiftPlaceholderPageState extends State<VardiyaShiftPlaceholderPag
                 ),
               ),
               const SizedBox(height: 14),
+              if (upcomingShifts.isNotEmpty) ...[
+                _UpcomingShiftsCard(shifts: upcomingShifts),
+                const SizedBox(height: 14),
+              ],
             ] else ...[
               Material(
                 color: Colors.white.withValues(alpha: 0.65),
@@ -405,6 +491,99 @@ class _LegendDot extends StatelessWidget {
   }
 }
 
+class _UpcomingShiftsCard extends StatelessWidget {
+  const _UpcomingShiftsCard({required this.shifts});
+
+  final List<VardiyaShiftInstance> shifts;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      elevation: 2,
+      shadowColor: Colors.black.withValues(alpha: 0.08),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.schedule_rounded,
+                  size: 22,
+                  color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  'Yaklaşan çalışma saatleri',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: PoliceColors.onSurfaceLight,
+                      ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            ...shifts.map((s) => _ShiftRow(shift: s)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ShiftRow extends StatelessWidget {
+  const _ShiftRow({required this.shift});
+
+  final VardiyaShiftInstance shift;
+
+  @override
+  Widget build(BuildContext context) {
+    final night = shift.night;
+    final color = night ? Colors.deepPurple.shade400 : Colors.orange.shade700;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 7),
+      child: Row(
+        children: [
+          Container(
+            width: 34,
+            height: 34,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(9),
+            ),
+            child: Icon(
+              night ? Icons.nightlight_round : Icons.wb_sunny_rounded,
+              size: 18,
+              color: color,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              _fmtShiftLine(shift),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: PoliceColors.onSurfaceLight,
+                  ),
+            ),
+          ),
+          Text(
+            night ? 'Gece' : 'Gündüz',
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  fontWeight: FontWeight.w800,
+                  color: color,
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _CalendarLegend extends StatelessWidget {
   const _CalendarLegend({required this.shiftId});
 
@@ -412,7 +591,7 @@ class _CalendarLegend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (shiftId == 'cakma_12_36') {
+    if (isPhasedDayNightShift(shiftId)) {
       return Wrap(
         spacing: 12,
         runSpacing: 8,
