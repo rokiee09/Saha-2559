@@ -23,8 +23,7 @@ class MaasDonemData {
     return MaasDonemData(
       id: j['id'] as String? ?? '',
       etiket: j['etiket'] as String? ?? '',
-      memurAylikKatsayisi:
-          (j['memurAylikKatsayisi'] as num?)?.toDouble() ?? 0,
+      memurAylikKatsayisi: (j['memurAylikKatsayisi'] as num?)?.toDouble() ?? 0,
       tabanAylik: (j['tabanAylik'] as num?)?.toDouble() ?? 0,
       tahminiNetOrani: (j['tahminiNetOrani'] as num?)?.toDouble() ?? 0.7,
       kaynakNot: j['kaynakNot'] as String?,
@@ -80,8 +79,17 @@ class MaasHesapSonucu {
   final double aileYardimi;
   final double cocukYardimi;
   final double brut;
+  final double vergiIstisnaEtkisi;
+  final double ozelSaglikVergiEtkisi;
+  final double raporKesintisi;
+  final double sendikaKesintisi;
+  final double besKesintisi;
+  final double ilksanKesintisi;
+  final double kefaletKesintisi;
+  final double digerKesintiler;
   final double tahminiKesinti;
   final double tahminiNet;
+  final double eldeKalan;
 
   const MaasHesapSonucu({
     required this.tabanAylik,
@@ -94,8 +102,17 @@ class MaasHesapSonucu {
     required this.aileYardimi,
     required this.cocukYardimi,
     required this.brut,
+    required this.vergiIstisnaEtkisi,
+    required this.ozelSaglikVergiEtkisi,
+    required this.raporKesintisi,
+    required this.sendikaKesintisi,
+    required this.besKesintisi,
+    required this.ilksanKesintisi,
+    required this.kefaletKesintisi,
+    required this.digerKesintiler,
     required this.tahminiKesinti,
     required this.tahminiNet,
+    required this.eldeKalan,
   });
 }
 
@@ -109,6 +126,17 @@ MaasHesapSonucu hesaplaMaas({
   double ekOdeme = 0,
   double aileYardimi = 0,
   double cocukYardimi = 0,
+  double gvIstisnasi = 0,
+  double dvIstisnaMatrahi = 0,
+  double ozelSaglikPrimi = 0,
+  double gelirVergisiOrani = 0.15,
+  double sendikaKesintiOrani = 0,
+  double sendikaTabanAylikKesintiOrani = 0,
+  double besKesintiOrani = 0,
+  double ilksanKesintisi = 0,
+  double kefaletKesintisi = 0,
+  double raporluGun = 0,
+  double digerKesintiler = 0,
 }) {
   final gostergeAyligi = gostergePuan * donem.memurAylikKatsayisi;
   final brut = donem.tabanAylik +
@@ -120,8 +148,34 @@ MaasHesapSonucu hesaplaMaas({
       ekOdeme +
       aileYardimi +
       cocukYardimi;
-  final tahminiNet = brut * donem.tahminiNetOrani;
-  final kesinti = brut - tahminiNet;
+
+  final gvOrani = gelirVergisiOrani.clamp(0.0, 1.0);
+  final vergiIstisnaEtkisi =
+      (gvIstisnasi * gvOrani) + (dvIstisnaMatrahi * 0.00759);
+  final ozelSaglikVergiEtkisi = ozelSaglikPrimi * gvOrani;
+
+  // Raporlu gün MAHEP'teki "7+" alanına karşılık gelir. Kurum bordrosunda
+  // farklı işlenebildiği için burada ÖHT üzerinden günlük yaklaşık kesinti
+  // olarak gösterilir.
+  final raporKesintisi =
+      raporluGun <= 0 ? 0.0 : (ozelHizmetTazminati / 30) * raporluGun;
+  final sendikaKesintisi = (brut * sendikaKesintiOrani) +
+      (donem.tabanAylik * sendikaTabanAylikKesintiOrani);
+  final besKesintisi = brut * besKesintiOrani;
+
+  final ozetKesinti = brut * (1 - donem.tahminiNetOrani);
+  final kesinti = (ozetKesinti -
+          vergiIstisnaEtkisi -
+          ozelSaglikVergiEtkisi +
+          raporKesintisi +
+          sendikaKesintisi +
+          besKesintisi +
+          ilksanKesintisi +
+          kefaletKesintisi)
+      .clamp(0.0, double.infinity);
+  final tahminiNet = (brut - kesinti).clamp(0.0, double.infinity);
+  final eldeKalan = (tahminiNet - digerKesintiler).clamp(0.0, double.infinity);
+
   return MaasHesapSonucu(
     tabanAylik: donem.tabanAylik,
     gostergeAyligi: gostergeAyligi,
@@ -133,14 +187,22 @@ MaasHesapSonucu hesaplaMaas({
     aileYardimi: aileYardimi,
     cocukYardimi: cocukYardimi,
     brut: brut,
+    vergiIstisnaEtkisi: vergiIstisnaEtkisi,
+    ozelSaglikVergiEtkisi: ozelSaglikVergiEtkisi,
+    raporKesintisi: raporKesintisi,
+    sendikaKesintisi: sendikaKesintisi,
+    besKesintisi: besKesintisi,
+    ilksanKesintisi: ilksanKesintisi,
+    kefaletKesintisi: kefaletKesintisi,
+    digerKesintiler: digerKesintiler,
     tahminiKesinti: kesinti,
     tahminiNet: tahminiNet,
+    eldeKalan: eldeKalan,
   );
 }
 
 Future<MaasKatsayiFile> loadMaasKatsayiFile() async {
-  final s =
-      await rootBundle.loadString('assets/json/maas_katsayilari.json');
+  final s = await rootBundle.loadString('assets/json/maas_katsayilari.json');
   final json = jsonDecode(s) as Map<String, dynamic>;
   return MaasKatsayiFile.fromJson(json);
 }
