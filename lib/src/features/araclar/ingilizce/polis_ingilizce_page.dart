@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../../common/text/tr_text.dart';
 import '../../../common/theme/police_colors.dart';
 import 'polis_ingilizce_data.dart';
 
@@ -23,24 +24,14 @@ class _PolisIngilizcePageState extends State<PolisIngilizcePage> {
     super.dispose();
   }
 
-  String _fold(String s) => s
-      .toLowerCase()
-      .replaceAll('ı', 'i')
-      .replaceAll('İ', 'i')
-      .replaceAll('ş', 's')
-      .replaceAll('ğ', 'g')
-      .replaceAll('ü', 'u')
-      .replaceAll('ö', 'o')
-      .replaceAll('ç', 'c');
-
   bool _match(IngilizceKalip k, String q) =>
-      _fold(k.tr).contains(q) ||
-      _fold(k.en).contains(q) ||
-      _fold(k.okunus).contains(q);
+      trFold(k.tr).contains(q) ||
+      trFold(k.en).contains(q) ||
+      trFold(k.okunus).contains(q);
 
   @override
   Widget build(BuildContext context) {
-    final q = _fold(_query.trim());
+    final q = trFold(_query.trim());
     final categories = q.isEmpty
         ? IngilizceKategori.all
         : [

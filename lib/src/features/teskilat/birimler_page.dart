@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../common/text/tr_text.dart';
+
 /// EGM merkez teşkilatı daire başkanlıkları (listeleme; güncel teşkilat EGM’ye tabidir).
 class BirimlerPage extends StatefulWidget {
   const BirimlerPage({super.key});
@@ -39,7 +41,7 @@ class _BirimlerPageState extends State<BirimlerPage> {
   bool _nameMatchesQuery(String n) {
     final q = _search.trim();
     if (q.isEmpty) return true;
-    return n.toLowerCase().contains(q.toLowerCase());
+    return trFold(n).contains(trFold(q));
   }
 
   List<String> _filteredList() {

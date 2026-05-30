@@ -14,16 +14,12 @@ class SahaCategoryDef {
   final IconData icon;
 
   static const List<SahaCategoryDef> all = [
-    SahaCategoryDef(id: 'harcama', title: 'Harcamalarım', icon: PhosphorIconsRegular.wallet),
+    SahaCategoryDef(id: 'notlar', title: 'Notlar', icon: PhosphorIconsRegular.notePencil),
+    SahaCategoryDef(id: 'o1_gider', title: 'O-1 giderleri', icon: PhosphorIconsRegular.receipt),
     SahaCategoryDef(id: 'izin', title: 'İzin takip', icon: PhosphorIconsRegular.calendarBlank),
-    SahaCategoryDef(id: 'rehber', title: 'Rehber', icon: PhosphorIconsRegular.addressBook),
     SahaCategoryDef(id: 'tutanak', title: 'Tutanaklarım', icon: PhosphorIconsRegular.clipboardText),
-    SahaCategoryDef(id: 'arac', title: 'Araç notları', icon: PhosphorIconsRegular.car),
-    SahaCategoryDef(id: 'gozlem', title: 'Gözlem notları', icon: PhosphorIconsRegular.eye),
     SahaCategoryDef(id: 'arama_karari', title: 'Arama kararı', icon: PhosphorIconsRegular.shield),
     SahaCategoryDef(id: 'telsiz', title: 'Telsiz kodları', icon: PhosphorIconsRegular.broadcast),
-    SahaCategoryDef(id: 'kamera', title: 'Kamera notları', icon: PhosphorIconsRegular.camera),
-    SahaCategoryDef(id: 'cay', title: 'Çay ocağı', icon: PhosphorIconsRegular.coffee),
   ];
 
   static SahaCategoryDef? byId(String id) {

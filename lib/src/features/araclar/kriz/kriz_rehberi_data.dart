@@ -52,7 +52,7 @@ const List<KrizSenaryo> kKrizSenaryolari = [
       'Aniden üzerine yürüme veya bağırma.',
       'Yalnız ve teyitsiz söz verme (tutamayacağın vaatler).',
     ],
-    numaralar: ['Acil: 112', 'Polis İmdat: 155'],
+    numaralar: ['Acil: 112'],
   ),
   KrizSenaryo(
     id: 'aile_ici',
@@ -75,7 +75,7 @@ const List<KrizSenaryo> kKrizSenaryolari = [
       'Mağduru failin yanında ifade vermeye zorlama.',
       'Delil ve şikâyet olmadan da resen işlem yapılabileceğini unutma.',
     ],
-    numaralar: ['Acil: 112', 'Polis İmdat: 155', 'ALO 183 Sosyal Destek'],
+    numaralar: ['Acil: 112', 'ALO 183 Sosyal Destek'],
   ),
   KrizSenaryo(
     id: 'cocuk_istismari',
@@ -98,7 +98,7 @@ const List<KrizSenaryo> kKrizSenaryolari = [
       'Şüpheliyle çocuğu yüzleştirme.',
       'Olayı çevreye/medyaya ifşa etme; gizlilik esastır.',
     ],
-    numaralar: ['Acil: 112', 'Polis İmdat: 155', 'ALO 183'],
+    numaralar: ['Acil: 112', 'ALO 183'],
   ),
   KrizSenaryo(
     id: 'trafik_kazasi',
@@ -119,7 +119,7 @@ const List<KrizSenaryo> kKrizSenaryolari = [
       'Yeterli koruma almadan yola çıkma.',
       'Ağır yaralıyı zorunlu olmadıkça hareket ettirme.',
     ],
-    numaralar: ['Acil: 112', 'Polis İmdat: 155'],
+    numaralar: ['Acil: 112'],
   ),
   KrizSenaryo(
     id: 'supheli_paket',
@@ -139,6 +139,6 @@ const List<KrizSenaryo> kKrizSenaryolari = [
       'Cismi kendin incelemeye/taşımaya çalışma.',
       'Yakınında telsiz/cep telefonu ile sinyal verme.',
     ],
-    numaralar: ['Polis İmdat: 155', 'Acil: 112'],
+    numaralar: ['Acil: 112'],
   ),
 ];

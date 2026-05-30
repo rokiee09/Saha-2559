@@ -24,6 +24,7 @@ class _SifreUreticiPageState extends State<SifreUreticiPage> {
   static const _upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
   static const _digits = '23456789';
   static const _symbols = '!@#\$%&*?-_=+';
+  static const _turkish = 'çğıöşüÇĞİÖŞÜ';
 
   /// Karakter uzunluğu aralıkları (sistemlerin sınırına göre).
   static const List<_LenPreset> _lenPresets = [
@@ -43,6 +44,7 @@ class _SifreUreticiPageState extends State<SifreUreticiPage> {
   bool _useLower = true;
   bool _useDigits = true;
   bool _useSymbols = true;
+  bool _useTurkish = false;
   String _password = '';
 
   _LenPreset get _preset => _lenPresets[_lenPresetIndex];
@@ -88,6 +90,7 @@ class _SifreUreticiPageState extends State<SifreUreticiPage> {
       if (_useUpper) _upper,
       if (_useDigits) _digits,
       if (_useSymbols) _symbols,
+      if (_useTurkish) _turkish,
     ];
     if (pools.isEmpty) {
       setState(() => _password = '');
@@ -113,6 +116,7 @@ class _SifreUreticiPageState extends State<SifreUreticiPage> {
     if (_useUpper) pools++;
     if (_useDigits) pools++;
     if (_useSymbols) pools++;
+    if (_useTurkish) pools++;
     final len = _length.round();
     final score = len + pools * 4;
     if (pools == 0) return (label: '—', color: PoliceColors.textMuted);
@@ -403,6 +407,14 @@ class _SifreUreticiPageState extends State<SifreUreticiPage> {
             value: _useSymbols,
             onChanged: (v) {
               setState(() => _useSymbols = v);
+              _generate();
+            },
+          ),
+          _OptionSwitch(
+            label: 'Türkçe harf (çğıöşü…)',
+            value: _useTurkish,
+            onChanged: (v) {
+              setState(() => _useTurkish = v);
               _generate();
             },
           ),

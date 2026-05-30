@@ -12,9 +12,12 @@ import '../kultur/kultur_page.dart';
 import '../saha/saha_categories.dart';
 import '../saha/saha_category_page.dart';
 import '../teskilat/teskilat_page.dart';
+import 'gider/o1_gider_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
 import 'kriz/kriz_rehberi_page.dart';
+import 'sifre/kayitli_sifreler_page.dart';
 import 'sifre_uretici_page.dart';
+import 'telsiz_kodlari_page.dart';
 import 'tutanak/tutanak_page.dart';
 
 /// Araçlar: hesaplayıcılar, yerel saha defteri ve teşkilat/kültür bilgisi
@@ -59,16 +62,23 @@ class AraclarPage extends StatelessWidget {
           _ToolTile(
             icon: PhosphorIconsRegular.password,
             title: 'Şifre üretici',
-            subtitle: 'Cihazda güçlü, rastgele şifre üret; kaydedilmez.',
+            subtitle: 'Cihazda güçlü, rastgele şifre üret veya kasaya kaydet.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const SifreUreticiPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.vault,
+            title: 'Kayıtlı şifreler',
+            subtitle: 'Sisteme/bankaya bağlı şifre kasan (yalnızca cihazda).',
             onTap: () => Navigator.of(context)
-                .push(fadeRoute(const SifreUreticiPage())),
+                .push(fadeRoute(const KayitliSifrelerPage())),
           ),
           _ToolTile(
             icon: PhosphorIconsRegular.clipboardText,
             title: 'Tutanak asistanı',
             subtitle: 'Şablonu doldur, taslak metin üret ve kaydet.',
-            onTap: () => Navigator.of(context)
-                .push(fadeRoute(const TutanakPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const TutanakPage())),
           ),
           const SizedBox(height: 18),
           const _SectionTitle('Yerel saha defteri'),
@@ -94,9 +104,12 @@ class AraclarPage extends StatelessWidget {
                   category: cat,
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(
-                      builder: (_) => cat.id == 'izin'
-                          ? const IzinTakipPage()
-                          : SahaCategoryPage(categoryId: cat.id),
+                      builder: (_) => switch (cat.id) {
+                        'izin' => const IzinTakipPage(),
+                        'o1_gider' => const O1GiderPage(),
+                        'telsiz' => const TelsizKodlariPage(),
+                        _ => SahaCategoryPage(categoryId: cat.id),
+                      },
                     ),
                   ),
                 ),
@@ -115,8 +128,15 @@ class AraclarPage extends StatelessWidget {
             icon: PhosphorIconsRegular.lifebuoy,
             title: 'Kriz rehberi',
             subtitle: 'Kritik olaylarda adım adım kontrol listesi.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const KrizRehberiPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.broadcast,
+            title: 'Telsiz kodları',
+            subtitle: '33-10, protokol ve birim çağrı kodlarını hızlı ara.',
             onTap: () => Navigator.of(context)
-                .push(fadeRoute(const KrizRehberiPage())),
+                .push(fadeRoute(const TelsizKodlariPage())),
           ),
           const SizedBox(height: 18),
           const _SectionTitle('Teşkilat & Kültür'),

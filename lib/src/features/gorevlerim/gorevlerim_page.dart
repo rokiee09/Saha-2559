@@ -4,28 +4,19 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../araclar/gider/o1_gider_page.dart';
 import '../haklar/maas_hesaplama_page.dart';
 import '../haklar/vardiya/vardiya_hesaplama_page.dart';
 import '../home/root_drawer_scope.dart';
-import '../saha/saha_category_page.dart';
 import 'disiplin/disiplin_rehberi_page.dart';
 import 'izin/izin_page.dart';
 import 'kariyer/kariyer_page.dart';
 
-/// Görevlerim: polisin kendi durumu — izin, maaş, vardiya, harcama.
+/// Profilim: polisin kendi durumu — izin, maaş, vardiya, harcama.
 /// Tayin/lojman gibi resmî kriter/puan gerektiren bölümler, yanıltıcı tahmin
 /// üretmemek için veri hazırlanana kadar "hazırlanıyor" olarak işaretlidir.
 class GorevlerimPage extends StatelessWidget {
   const GorevlerimPage({super.key});
-
-  void _openSaha(BuildContext context, String categoryId) {
-    HapticFeedback.selectionClick();
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => SahaCategoryPage(categoryId: categoryId),
-      ),
-    );
-  }
 
   void _comingSoon(BuildContext context, String title, String detail) {
     HapticFeedback.selectionClick();
@@ -96,7 +87,7 @@ class GorevlerimPage extends StatelessWidget {
         leading: const HomeDrawerButton(),
         automaticallyImplyLeading: false,
         title: const Text(
-          'Görevlerim',
+          'Profilim',
           style: TextStyle(
             color: PoliceColors.gold,
             fontSize: 18,
@@ -136,10 +127,13 @@ class GorevlerimPage extends StatelessWidget {
             },
           ),
           _GorevTile(
-            icon: PhosphorIconsRegular.wallet,
-            title: 'Harcamalarım',
-            subtitle: 'Görevle ilgili kişisel harcama notların.',
-            onTap: () => _openSaha(context, 'harcama'),
+            icon: PhosphorIconsRegular.receipt,
+            title: 'O-1 giderleri',
+            subtitle: 'Görev giderlerin ve fişleri (kamera ile ekle).',
+            onTap: () {
+              HapticFeedback.selectionClick();
+              Navigator.of(context).push(fadeRoute(const O1GiderPage()));
+            },
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.scales,
@@ -266,7 +260,8 @@ class _GorevTile extends StatelessWidget {
                                 vertical: 2,
                               ),
                               decoration: BoxDecoration(
-                                color: PoliceColors.gold.withValues(alpha: 0.18),
+                                color:
+                                    PoliceColors.gold.withValues(alpha: 0.18),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: const Text(

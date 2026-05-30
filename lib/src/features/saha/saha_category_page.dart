@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -204,6 +206,53 @@ class _SahaCategoryPageState extends ConsumerState<SahaCategoryPage> {
                                         .withValues(alpha: 0.92),
                                     height: 1.35,
                                     fontSize: 13.5,
+                                  ),
+                                ),
+                              ],
+                              if (n.imagePaths.isNotEmpty) ...[
+                                const SizedBox(height: 10),
+                                SizedBox(
+                                  height: 54,
+                                  child: Row(
+                                    children: [
+                                      for (final path in n.imagePaths.take(4))
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 6),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.file(
+                                              File(path),
+                                              width: 54,
+                                              height: 54,
+                                              fit: BoxFit.cover,
+                                              errorBuilder: (_, __, ___) =>
+                                                  Container(
+                                                width: 54,
+                                                height: 54,
+                                                color:
+                                                    PoliceColors.backgroundDark,
+                                                child: const Icon(
+                                                  Icons.broken_image_rounded,
+                                                  color: PoliceColors.textMuted,
+                                                  size: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (n.imagePaths.length > 4)
+                                        Text(
+                                          '+${n.imagePaths.length - 4}',
+                                          style: TextStyle(
+                                            color: PoliceColors.textMuted
+                                                .withValues(alpha: 0.85),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ],

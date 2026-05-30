@@ -25,6 +25,10 @@ class HomeDrawerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      return const BackButton();
+    }
+
     final intent = RootDrawerIntent.maybeOf(context);
     if (intent == null) return const SizedBox.shrink();
     return IconButton(

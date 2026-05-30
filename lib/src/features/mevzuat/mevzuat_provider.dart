@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../common/text/tr_text.dart';
+
 // Mevzuat metinleri tüm platformlarda assets içi JSON’dan okunur (web dahil; Isar bu modülde yok).
 const _catalogPath = 'assets/mevzuat/catalog.json';
 const _basePath = 'assets/mevzuat/';
@@ -456,7 +458,7 @@ Future<bool> mevzuatToggleFavorite(WidgetRef ref, String entryId) async {
 
 final mevzuatSearchResultsProvider =
     FutureProvider.autoDispose<List<MevzuatEntry>>((ref) async {
-  final query = ref.watch(mevzuatSearchQueryProvider).trim().toLowerCase();
+  final query = trFold(ref.watch(mevzuatSearchQueryProvider).trim());
   final tab = ref.watch(mevzuatSearchTabProvider);
   final catalog = await ref.watch(mevzuatCatalogProvider.future);
   final favorites = await ref.watch(mevzuatFavoritesProvider.future);
@@ -478,7 +480,7 @@ final mevzuatSearchResultsProvider =
   if (query.isEmpty) return filtered;
 
   return filtered.where((a) {
-    final code = a.code?.toLowerCase() ?? '';
-    return a.name.toLowerCase().contains(query) || code.contains(query);
+    final code = trFold(a.code ?? '');
+    return trFold(a.name).contains(query) || code.contains(query);
   }).toList();
 });

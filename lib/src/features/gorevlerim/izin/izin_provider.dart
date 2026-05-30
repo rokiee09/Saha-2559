@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// İzin takibi yalnızca cihazda (SharedPreferences) tutulur; buluta çıkmaz.
 /// Gün sayıları kullanıcının kendi girdiğidir, resmî kayıt değildir.
 
-enum LeaveType { yillik, mazeret, refakat, dogum, diger }
+enum LeaveType { yillik, mazeret, refakat, dogum, rapor, diger }
 
 extension LeaveTypeX on LeaveType {
   String get id => name;
@@ -16,6 +16,7 @@ extension LeaveTypeX on LeaveType {
         LeaveType.mazeret => 'Mazeret izni',
         LeaveType.refakat => 'Refakat izni',
         LeaveType.dogum => 'Doğum izni',
+        LeaveType.rapor => 'Rapor',
         LeaveType.diger => 'Diğer',
       };
 
@@ -26,6 +27,10 @@ extension LeaveTypeX on LeaveType {
     );
   }
 }
+
+/// Rapor süresine göre sınıflandırma: 10 günü aşan rapor heyet raporu,
+/// 10 gün ve altı tek hekim tarafından verilir.
+bool raporHeyetGerekir(int days) => days > 10;
 
 class LeaveRecord {
   final String id;

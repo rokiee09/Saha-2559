@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../common/constants/app_disclaimer.dart';
+import '../../common/text/tr_text.dart';
 import '../../common/theme/police_colors.dart';
 import '../../common/widgets/search_highlight.dart';
 import 'mevzuat_law_hero_badge.dart';
@@ -61,7 +62,7 @@ class _MevzuatArticleDetailPageState
   }
 
   List<MevzuatSection> _filteredSections(MevzuatDocumentData content) {
-    final q = _inPageQuery.trim().toLowerCase();
+    final q = trFold(_inPageQuery.trim());
     if (q.isEmpty) {
       // Derin link: sadece hedef madde gösterilir ("Tüm metin" ile açılır.)
       final focus = _focusSection(content);
@@ -71,9 +72,9 @@ class _MevzuatArticleDetailPageState
     return content.sections
         .where(
           (s) =>
-              s.article.toLowerCase().contains(q) ||
-              s.title.toLowerCase().contains(q) ||
-              s.text.toLowerCase().contains(q),
+              trFold(s.article).contains(q) ||
+              trFold(s.title).contains(q) ||
+              trFold(s.text).contains(q),
         )
         .toList();
   }
