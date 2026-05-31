@@ -9,9 +9,10 @@ const String _vardiyaDefault =
 
 const Map<String, String> _vardiyaDescriptions = {
   '12_24':
-      'On iki saat hizmet, yirmi dört saat dinlenme çevrimine dayanan klasik bir iş–dinlenme örüntüsüdür. '
-      'Uygulama; kavramsal olarak “bir gün çalış, iki gün dinlen” düzenine yaklaşan düzenleri hatırlatmanız için özet anlatır.\n\n'
-      'Pratikte mesai başlangıç ve bitiş saatleri, hafta içi–hafta sonu ayrımı ve fazla mesai kurum içi yönergelere göre değişir.',
+      'On iki saat hizmet, yirmi dört saat dinlenme çevrimine dayanan klasik bir iş–dinlenme örüntüsüdür.\n\n'
+      'Kurulum ekranında bugün gündüz mü, gece mi yoksa istirahat mi olduğunuzu seçersiniz. '
+      'Gündüz nöbeti 08:00–20:00, gece nöbeti 20:00–08:00 (ertesi gün) olarak özetlenir.\n\n'
+      'Pratikte mesai başlangıç ve bitiş saatleri kurum içi yönergelere göre değişir; kesin sıra cetvelden doğrulanmalıdır.',
   'cakma_12_36':
       'Çakma 12/36 örnek modelde sıra iki bloktan oluşur: önce 5 gün gündüz, sonra 10 gün gece.\n\n'
       'Gündüz bloğunda her gün 12 saat görev (08:00–20:00) ve 12 saat dinlenme vardır; yani gündüzler peş peşe günlük gelir. '
@@ -20,19 +21,19 @@ const Map<String, String> _vardiyaDescriptions = {
       'Bu ekran örnektir; blok günleri ve saatler biriminize göre değişebilir, kesin sıra cetvel ve emir ile doğrulanmalıdır.',
   'gercek_12_36':
       'Gerçek (orijinal) 12/36 örnek modelde 15 gün gece, 15 gün gündüz blokları birbirini izler. '
-      'Hem gündüz hem gece nöbetinde 12 saat görev, 36 saat dinlenme vardır; bu nedenle nöbetler gün aşırı düşer '
-      '(bugün gece çalıştıysan yarın istirahat, ertesi gün yine gece...).\n\n'
+      'Hem gündüz hem gece nöbetinde 12 saat görev, 36 saat dinlenme vardır; nöbetler gün aşırı düşer.\n\n'
+      'Kurulumda tarih, grup (1–4), şu anki vardiya (gündüz/gece) ve tablo süresini (5–15 gün) seçersiniz. '
       'Gece nöbeti 20:00’de başlar, ertesi gün 08:00’de biter; gündüz nöbeti 08:00–20:00 arasıdır. '
-      'Geceden gündüze geçerken bloğun sonunda 24 saat, gündüzden geceye geçerken 48 saat dinlenme bırakılır.\n\n'
-      'Yukarıdan “gündüz mü gece mi başladın” seçer ve referans tarihini girersen, sana çıkacak çalışma saatleri ve aylık çizelge hesaplanır. '
-      'Çıktı örnektir; bordro ve özlük işlemleri için resmî kayıtlar esastır.',
+      'Geceden gündüze geçerken 24 saat, gündüzden geceye geçerken 48 saat dinlenme bırakılır.\n\n'
+      'Grup seçimi döngü kaymasını simüle eder. Çıktı örnektir; bordro ve özlük işlemleri için resmî kayıtlar esastır.',
   '24_48':
       'Yirmi dört saat kesintisiz veya blok halinde görev, kırk sekiz saat dinlenme mantığıyla çalışan nöbet tiplerinde '
       'fiziksel ve yasal yorgunluk sınırları ayrıca düzenlenir.\n\n'
       'Bu başlık altında yalnızca kavramsal bilgi sunulur; fiili kalıp içişleri ve sağlık düzenlemeleriyle uyumlu olmalıdır.',
   '8_24':
-      'Sekiz saatlik günlük görev periyotlarının yirmi dört saatlik döngüde tekrarlandığı düzenlerde, '
-      'vardiya başlangıç saati personel grubuna göre kaydırılabilir (sabah–akşam–gece).\n\n'
+      'Sekiz saatlik günlük görev periyotlarının yirmi dört saatlik döngüde tekrarlandığı düzenlerde '
+      'sabah, öğleden sonra ve akşam vardiyaları 08:00–20:00 aralığında özetlenir.\n\n'
+      'Kurulumda bugün hangi vardiyada olduğunuzu veya izinli olup olmadığınızı seçersiniz. '
       'Haftalık çalışma süresi üst sınırları mevzuata ve kurum içi plana bağlıdır.',
   '222':
       '“2 + 2 + 2” ifadesi çoğu zaman ikişer saatlik veya ikişer vardiyalık blokların art arda geldiği özel planları anlatır; '

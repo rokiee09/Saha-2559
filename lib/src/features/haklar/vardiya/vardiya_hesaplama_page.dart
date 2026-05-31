@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../common/routing/transitions.dart';
 import '../../../common/theme/police_colors.dart';
+import 'vardiya_setup_page.dart';
+import 'vardiya_setup_store.dart';
 import 'vardiya_shift_placeholder_page.dart';
 import 'vardiya_shift_types.dart';
+import 'vardiya_ui_widgets.dart';
 
 const _prefsLastShiftId = 'vardiya_last_shift_type_id';
 
-/// Vardiya türü seçim ekranı (2 sütun grid, üst çizgili kartlar).
+/// Vardiya türü seçim ekranı — uygulama koyu temasında.
 class VardiyaHesaplamaPage extends StatelessWidget {
   const VardiyaHesaplamaPage({super.key});
 
@@ -16,18 +20,22 @@ class VardiyaHesaplamaPage extends StatelessWidget {
     HapticFeedback.selectionClick();
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_prefsLastShiftId, id);
+
     if (!context.mounted) return;
-    await Navigator.of(context).push<void>(
-      MaterialPageRoute<void>(
-        builder: (_) => VardiyaShiftPlaceholderPage(shiftId: id),
-      ),
-    );
+    final setup = await VardiyaSetupStore.load(id);
+    if (!context.mounted) return;
+
+    final page = setup.isConfigured
+        ? VardiyaShiftPlaceholderPage(shiftId: id)
+        : VardiyaSetupPage(shiftId: id);
+
+    await Navigator.of(context).push<void>(fadeRoute(page));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE8ECF2),
+      backgroundColor: VardiyaUi.pageBackground,
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
@@ -44,7 +52,7 @@ class VardiyaHesaplamaPage extends StatelessWidget {
                   ),
             ),
             Text(
-              '10 vardiya türü',
+              '10 vardiya türü · durum seç → takvim',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: PoliceColors.titleOnDark.withValues(alpha: 0.72),
                     fontWeight: FontWeight.w500,
@@ -54,10 +62,7 @@ class VardiyaHesaplamaPage extends StatelessWidget {
         ),
         toolbarHeight: 62,
         shape: Border(
-          bottom: BorderSide(
-            color: PoliceColors.accentMix(0.34),
-            width: 1,
-          ),
+          bottom: BorderSide(color: PoliceColors.accentMix(0.34)),
         ),
       ),
       body: Padding(
@@ -68,7 +73,7 @@ class VardiyaHesaplamaPage extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
-            childAspectRatio: 2.5,
+            childAspectRatio: 2.45,
           ),
           itemCount: VardiyaTur.all.length,
           itemBuilder: (context, i) {
@@ -96,18 +101,16 @@ class _VardiyaTypeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: PoliceColors.surfaceDark,
       borderRadius: BorderRadius.circular(12),
-      elevation: 1.5,
-      shadowColor: Colors.black.withValues(alpha: 0.10),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: Border(
-              left: BorderSide(color: tur.topColor, width: 4),
+            border: Border.all(
+              color: tur.topColor.withValues(alpha: 0.45),
             ),
           ),
           child: Padding(
@@ -119,15 +122,12 @@ class _VardiyaTypeCard extends StatelessWidget {
                   height: 38,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF0F3F8),
+                    color: tur.topColor.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: tur.icon != null
                       ? Icon(tur.icon, size: 21, color: tur.topColor)
-                      : Text(
-                          tur.emoji!,
-                          style: const TextStyle(fontSize: 20),
-                        ),
+                      : Text(tur.emoji!, style: const TextStyle(fontSize: 20)),
                 ),
                 const SizedBox(width: 9),
                 Expanded(
@@ -138,7 +138,7 @@ class _VardiyaTypeCard extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 13.5,
                       fontWeight: FontWeight.w800,
-                      color: Color(0xFF1A1D23),
+                      color: PoliceColors.titleOnDark,
                       height: 1.15,
                     ),
                   ),
@@ -146,7 +146,7 @@ class _VardiyaTypeCard extends StatelessWidget {
                 Icon(
                   Icons.chevron_right_rounded,
                   size: 20,
-                  color: Colors.grey.shade400,
+                  color: PoliceColors.textMuted.withValues(alpha: 0.8),
                 ),
               ],
             ),

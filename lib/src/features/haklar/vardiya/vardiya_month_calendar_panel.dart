@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/theme/police_colors.dart';
 import 'vardiya_cycle_calculator.dart';
 
 const List<String> _monthNamesTr = [
@@ -55,10 +56,8 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Material(
-          color: Colors.white,
+          color: PoliceColors.surfaceDark,
           borderRadius: BorderRadius.circular(16),
-          elevation: 2,
-          shadowColor: Colors.black.withValues(alpha: 0.08),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(14, 14, 14, 16),
             child: Column(
@@ -69,7 +68,7 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                     Expanded(
                       child: _SummaryChip(
                         icon: Icons.wb_sunny_rounded,
-                        iconColor: Colors.orange.shade700,
+                        iconColor: PoliceColors.gold,
                         label: 'Gündüz',
                         value: tallies.gun,
                       ),
@@ -77,7 +76,7 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                     Expanded(
                       child: _SummaryChip(
                         icon: Icons.nightlight_round,
-                        iconColor: Colors.deepPurple.shade400,
+                        iconColor: PoliceColors.primaryBlue,
                         label: 'Gece',
                         value: tallies.gece,
                       ),
@@ -85,7 +84,7 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                     Expanded(
                       child: _SummaryChip(
                         icon: Icons.weekend_rounded,
-                        iconColor: Colors.green.shade600,
+                        iconColor: const Color(0xFF4ADE80),
                         label: 'OFF',
                         value: tallies.off,
                       ),
@@ -97,7 +96,8 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: onPrevMonth,
-                      icon: const Icon(Icons.chevron_left_rounded),
+                      icon: const Icon(Icons.chevron_left_rounded,
+                          color: PoliceColors.titleOnDark),
                       tooltip: 'Önceki ay',
                     ),
                     Expanded(
@@ -107,13 +107,14 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w800,
                               letterSpacing: 0.6,
-                              color: const Color(0xFF1A1D23),
+                              color: PoliceColors.titleOnDark,
                             ),
                       ),
                     ),
                     IconButton(
                       onPressed: onNextMonth,
-                      icon: const Icon(Icons.chevron_right_rounded),
+                      icon: const Icon(Icons.chevron_right_rounded,
+                          color: PoliceColors.titleOnDark),
                       tooltip: 'Sonraki ay',
                     ),
                   ],
@@ -129,7 +130,7 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
-                            color: Colors.grey.shade600,
+                            color: PoliceColors.textMuted,
                           ),
                         ),
                       ),
@@ -149,7 +150,7 @@ class VardiyaMonthCalendarPanel extends StatelessWidget {
                   itemBuilder: (context, index) {
                     if (index < leadingBlanks) {
                       return const DecoratedBox(
-                        decoration: BoxDecoration(color: Colors.white),
+                        decoration: BoxDecoration(color: Colors.transparent),
                       );
                     }
                     final day = index - leadingBlanks + 1;
@@ -194,7 +195,7 @@ class _SummaryChip extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,
-            color: Colors.grey.shade700,
+            color: PoliceColors.textMuted,
           ),
         ),
         const SizedBox(height: 2),
@@ -203,7 +204,7 @@ class _SummaryChip extends StatelessWidget {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w800,
-            color: Color(0xFF1A1D23),
+            color: PoliceColors.titleOnDark,
           ),
         ),
       ],
@@ -228,9 +229,9 @@ class _MonthDayTile extends StatelessWidget {
       return Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: PoliceColors.surfaceDarkElevated,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.grey.shade300),
+          border: Border.all(color: PoliceColors.outlineMuted.withValues(alpha: 0.4)),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -240,7 +241,7 @@ class _MonthDayTile extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 13,
-                color: Colors.grey.shade400,
+                color: PoliceColors.textMuted.withValues(alpha: 0.5),
               ),
             ),
           ],
@@ -307,35 +308,35 @@ _TileStyle _tileStyle(VardiyaCalendarDayKind kind, String shiftId) {
     switch (kind) {
       case VardiyaCalendarDayKind.cakmaDayDuty:
         return _TileStyle(
-          bg: Colors.orange.shade100,
-          border: Colors.orange.shade400,
-          numberColor: Colors.orange.shade900,
-          labelColor: Colors.orange.shade900.withValues(alpha: 0.92),
+          bg: PoliceColors.gold.withValues(alpha: 0.18),
+          border: PoliceColors.gold.withValues(alpha: 0.55),
+          numberColor: PoliceColors.gold,
+          labelColor: PoliceColors.gold.withValues(alpha: 0.92),
           shortLabel: 'GÜN',
         );
       case VardiyaCalendarDayKind.cakmaNightDuty:
         return _TileStyle(
-          bg: Colors.deepPurple.shade50,
-          border: Colors.deepPurple.shade300,
-          numberColor: Colors.deepPurple.shade900,
-          labelColor: Colors.deepPurple.shade900.withValues(alpha: 0.92),
+          bg: PoliceColors.primaryBlue.withValues(alpha: 0.18),
+          border: PoliceColors.primaryBlue.withValues(alpha: 0.55),
+          numberColor: PoliceColors.primaryBlue,
+          labelColor: PoliceColors.primaryBlue.withValues(alpha: 0.92),
           shortLabel: 'GECE',
         );
       case VardiyaCalendarDayKind.rest:
       case VardiyaCalendarDayKind.cakmaTransitionRest:
         return _TileStyle(
-          bg: Colors.green.shade100,
-          border: Colors.green.shade400,
-          numberColor: Colors.green.shade900,
-          labelColor: Colors.green.shade900.withValues(alpha: 0.9),
+          bg: const Color(0xFF4ADE80).withValues(alpha: 0.14),
+          border: const Color(0xFF4ADE80).withValues(alpha: 0.45),
+          numberColor: const Color(0xFF4ADE80),
+          labelColor: const Color(0xFF4ADE80).withValues(alpha: 0.9),
           shortLabel: 'İST',
         );
       default:
         return _TileStyle(
-          bg: Colors.blueGrey.shade50,
-          border: Colors.blueGrey.shade200,
-          numberColor: const Color(0xFF1A1D23),
-          labelColor: Colors.blueGrey.shade700,
+          bg: PoliceColors.surfaceDarkElevated,
+          border: PoliceColors.outlineMuted.withValues(alpha: 0.45),
+          numberColor: PoliceColors.titleOnDark,
+          labelColor: PoliceColors.textMuted,
           shortLabel: '—',
         );
     }
@@ -344,26 +345,26 @@ _TileStyle _tileStyle(VardiyaCalendarDayKind kind, String shiftId) {
   switch (kind) {
     case VardiyaCalendarDayKind.work:
       return _TileStyle(
-        bg: Colors.orange.shade100,
-        border: Colors.orange.shade400,
-        numberColor: Colors.orange.shade900,
-        labelColor: Colors.orange.shade900.withValues(alpha: 0.92),
+        bg: PoliceColors.gold.withValues(alpha: 0.18),
+        border: PoliceColors.gold.withValues(alpha: 0.55),
+        numberColor: PoliceColors.gold,
+        labelColor: PoliceColors.gold.withValues(alpha: 0.92),
         shortLabel: 'GÜN',
       );
     case VardiyaCalendarDayKind.rest:
       return _TileStyle(
-        bg: Colors.green.shade100,
-        border: Colors.green.shade400,
-        numberColor: Colors.green.shade900,
-        labelColor: Colors.green.shade900.withValues(alpha: 0.9),
+        bg: const Color(0xFF4ADE80).withValues(alpha: 0.14),
+        border: const Color(0xFF4ADE80).withValues(alpha: 0.45),
+        numberColor: const Color(0xFF4ADE80),
+        labelColor: const Color(0xFF4ADE80).withValues(alpha: 0.9),
         shortLabel: 'İST',
       );
     default:
       return _TileStyle(
-        bg: Colors.blueGrey.shade50,
-        border: Colors.blueGrey.shade200,
-        numberColor: const Color(0xFF1A1D23),
-        labelColor: Colors.blueGrey.shade700,
+        bg: PoliceColors.surfaceDarkElevated,
+        border: PoliceColors.outlineMuted.withValues(alpha: 0.45),
+        numberColor: PoliceColors.titleOnDark,
+        labelColor: PoliceColors.textMuted,
         shortLabel: '—',
       );
   }

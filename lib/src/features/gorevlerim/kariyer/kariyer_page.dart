@@ -81,9 +81,10 @@ class KariyerPage extends ConsumerWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    'Tayin puanı tahmini, doğrulanmış kriter ve ağırlık tablosu '
-                    'eklenince bu kayıtlardan otomatik hesaplanacak. Şimdilik '
-                    'panel yalnızca girdilerini derler.',
+                    'Görev yeri puanları Araçlar veya Tayinim bölümünden '
+                    'incelenebilir. Tayin puanı tahmini, doğrulanmış kriter ve '
+                    'ağırlık tablosu eklendiğinde bu kayıtlardan otomatik '
+                    'hesaplanacak.',
                     style: TextStyle(
                       color: PoliceColors.titleOnDark.withValues(alpha: 0.9),
                       fontSize: 12.5,

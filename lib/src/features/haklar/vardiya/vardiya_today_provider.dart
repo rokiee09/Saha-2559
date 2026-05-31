@@ -2,13 +2,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'vardiya_cycle_calculator.dart';
+import 'vardiya_setup_store.dart';
 import 'vardiya_shift_types.dart';
 
 const _prefsLastShiftId = 'vardiya_last_shift_type_id';
 
 /// Ana sayfadaki "Bugün görevdeyim" paneli için bugünkü vardiya durumu.
-/// Yalnızca cihazdaki vardiya tercihinden (tür + referans + gündüz/gece)
-/// türetilir; resmî çizelge değildir.
 class VardiyaTodayStatus {
   const VardiyaTodayStatus({
     required this.shiftId,
@@ -22,18 +21,10 @@ class VardiyaTodayStatus {
 
   final String shiftId;
   final String title;
-
-  /// Referans tarihi seçilmiş mi (faz tabanlı düzende somut saat için gerekli).
   final bool configured;
   final bool phased;
-
-  /// Faz tabanlı düzende şu an süren nöbet (varsa).
   final VardiyaShiftInstance? active;
-
-  /// Faz tabanlı düzende bir sonraki nöbet (varsa).
   final VardiyaShiftInstance? next;
-
-  /// Basit kalıp düzenlerde bugünün türü (görev/dinlenme).
   final VardiyaCalendarDayKind? todayKind;
 }
 
@@ -45,12 +36,9 @@ final vardiyaTodayProvider =
 
   final tur = VardiyaTur.byId(shiftId);
   final title = tur?.title ?? 'Vardiya';
+  final setup = await VardiyaSetupStore.load(shiftId);
 
-  final anchorMs = prefs.getInt('vardiya_anchor_$shiftId');
-  final startNight =
-      prefs.getBool('vardiya_startnight_$shiftId') ?? defaultStartNight(shiftId);
-
-  if (anchorMs == null) {
+  if (!setup.isConfigured || setup.anchorDate == null) {
     return VardiyaTodayStatus(
       shiftId: shiftId,
       title: title,
@@ -59,17 +47,21 @@ final vardiyaTodayProvider =
     );
   }
 
-  final anchor = DateTime.fromMillisecondsSinceEpoch(anchorMs);
+  final anchor = setup.anchorDate!;
+  final groupOffset =
+      VardiyaSetupStore.groupOffsetDays(shiftId, setup.group);
   final now = DateTime.now();
 
   if (isPhasedDayNightShift(shiftId)) {
     final shifts = buildVardiyaUpcomingShifts(
       anchorLocalDate: anchor,
       shiftId: shiftId,
-      startNight: startNight,
+      startNight: setup.startNight,
       from: DateTime(now.year, now.month, now.day)
           .subtract(const Duration(days: 1)),
       count: 12,
+      groupOffsetDays: groupOffset,
+      cakmaPatternId: setup.cakmaPatternId,
     );
     VardiyaShiftInstance? active;
     VardiyaShiftInstance? next;
@@ -91,8 +83,12 @@ final vardiyaTodayProvider =
     );
   }
 
-  // Basit kalıp düzenler: bugünün görev/dinlenme türü.
-  final anchorDay = DateTime(anchor.year, anchor.month, anchor.day);
+  final effectiveAnchor = anchor.subtract(Duration(days: groupOffset));
+  final anchorDay = DateTime(
+    effectiveAnchor.year,
+    effectiveAnchor.month,
+    effectiveAnchor.day,
+  );
   final today = DateTime(now.year, now.month, now.day);
   if (today.isBefore(anchorDay)) {
     return VardiyaTodayStatus(
@@ -105,8 +101,11 @@ final vardiyaTodayProvider =
   final days = buildVardiyaIllustrativeDays(
     anchorLocalDate: anchor,
     shiftId: shiftId,
-    startNight: startNight,
+    startNight: setup.startNight,
     dayCount: offset + 2,
+    cycleAnchorIndex: setup.cycleIndex,
+    groupOffsetDays: groupOffset,
+    cakmaPatternId: setup.cakmaPatternId,
   );
   VardiyaCalendarDayKind? todayKind;
   for (final d in days) {

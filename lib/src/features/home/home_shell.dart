@@ -345,7 +345,7 @@ class _HomeMainMenuBody extends StatelessWidget {
             selected: selectedIndex == 2,
             icon: Icons.checklist_rounded,
             title: 'Profilim',
-            subtitle: 'İzin, maaş, vardiya ve kişisel kayıtların',
+            subtitle: 'İzin, kariyer, disiplin ve kişisel kayıtların',
             onTap: () => onSelect(2),
           ),
           _DrawerTile(

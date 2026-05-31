@@ -122,15 +122,68 @@ double _haversineKm(double lat1, double lon1, double lat2, double lon2) {
 
 double _deg2rad(double d) => d * math.pi / 180.0;
 
-/// İki il arası tahmini karayolu mesafesi (km). Kuş uçuşu mesafe ~1.27 karayolu
-/// katsayısıyla çarpılır; gerçek mesafe güzergâha göre değişir.
+/// Kuş uçuşu mesafe (km), il koordinatlarından.
+double ilMesafeKusUcusuKm(String fromAd, String toAd) {
+  final a = _ilByAd(fromAd);
+  final b = _ilByAd(toAd);
+  if (a == null || b == null) return 0;
+  if (a.ad == b.ad) return 0;
+  return _haversineKm(a.lat, a.lng, b.lat, b.lng);
+}
+
+String _ilCiftAnahtari(String a, String b) {
+  final s = [a, b]..sort();
+  return '${s[0]}|${s[1]}';
+}
+
+/// KGM / karayolu cetveline yakın bilinen il merkezi mesafeleri (km).
+/// Listede yoksa kuş uçuşu × katsayı ile tahmin edilir.
+const Map<String, int> _mesafeCetvelKm = {
+  'Ankara|İstanbul': 452,
+  'Ankara|İzmir': 580,
+  'Ankara|Antalya': 482,
+  'Ankara|Bursa': 384,
+  'Ankara|Adana': 480,
+  'Ankara|Konya': 258,
+  'Ankara|Samsun': 410,
+  'Ankara|Trabzon': 593,
+  'Ankara|Erzurum': 892,
+  'Ankara|Diyarbakır': 975,
+  'Ankara|Gaziantep': 678,
+  'İstanbul|İzmir': 480,
+  'İzmir|Antalya': 448,
+  'İzmir|Denizli': 220,
+  'İzmir|Bursa': 330,
+  'Bursa|Antalya': 450,
+  'Denizli|Diyarbakır': 1243,
+  'Denizli|Ankara': 482,
+  'Antalya|Adana': 546,
+  'Gaziantep|Şanlıurfa': 148,
+  'Diyarbakır|Gaziantep': 335,
+  'Erzurum|Trabzon': 285,
+  'Samsun|Trabzon': 245,
+};
+
+/// KGM karayolu cetveline yaklaşmak için kuş uçuşu mesafeye göre katsayı (yedek).
+double _karayoluKatsayisi(double straightKm) {
+  if (straightKm <= 0) return 1.27;
+  if (straightKm < 300) return 1.32;
+  if (straightKm < 550) return 1.22;
+  return 1.27;
+}
+
+/// İki il arası tahmini karayolu mesafesi (km).
 int ilMesafeKm(String fromAd, String toAd) {
   final a = _ilByAd(fromAd);
   final b = _ilByAd(toAd);
   if (a == null || b == null) return 0;
   if (a.ad == b.ad) return 0;
+
+  final cetvel = _mesafeCetvelKm[_ilCiftAnahtari(fromAd, toAd)];
+  if (cetvel != null) return cetvel;
+
   final straight = _haversineKm(a.lat, a.lng, b.lat, b.lng);
-  return (straight * 1.27).round();
+  return (straight * _karayoluKatsayisi(straight)).round();
 }
 
 /// Yol izni günü: >600 km → 4 gün, 0<km≤600 → 2 gün, aynı il / mesafe yok → 0.

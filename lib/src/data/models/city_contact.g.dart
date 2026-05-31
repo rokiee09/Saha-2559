@@ -54,7 +54,7 @@ const CityContactSchema = CollectionSchema(
   getId: _cityContactGetId,
   getLinks: _cityContactGetLinks,
   attach: _cityContactAttach,
-  version: '3.2.1',
+  version: '3.3.2',
 );
 
 int _cityContactEstimateSize(
