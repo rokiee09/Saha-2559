@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 /// Tutanak taslakları tamamen cihazda üretilir; resmî form değildir, yalnızca
 /// alan kayıtlarını derli toplu yazmaya yardımcı olur. Üretilen metin kullanıcı
@@ -88,7 +88,8 @@ class TutanakTemplate {
         TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
         TutanakField(key: 'yer', label: 'Yer / birim'),
         TutanakField(key: 'ifadeVeren', label: 'İfade veren'),
-        TutanakField(key: 'sifat', label: 'Sıfatı', hint: 'şüpheli / mağdur / tanık'),
+        TutanakField(
+            key: 'sifat', label: 'Sıfatı', hint: 'şüpheli / mağdur / tanık'),
         TutanakField(key: 'mudafi', label: 'Müdafi (varsa)'),
         TutanakField(key: 'konu', label: 'İsnat / konu'),
         TutanakField(key: 'beyan', label: 'Beyan', multiline: true),
@@ -105,9 +106,11 @@ class TutanakTemplate {
         TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
         TutanakField(key: 'yer', label: 'Olay yeri'),
         TutanakField(key: 'olayTuru', label: 'Olayın türü'),
-        TutanakField(key: 'taraflar', label: 'Taraflar / ilgililer', multiline: true),
+        TutanakField(
+            key: 'taraflar', label: 'Taraflar / ilgililer', multiline: true),
         TutanakField(key: 'ozet', label: 'Olayın özeti', multiline: true),
-        TutanakField(key: 'tedbir', label: 'Alınan tedbir / işlem', multiline: true),
+        TutanakField(
+            key: 'tedbir', label: 'Alınan tedbir / işlem', multiline: true),
       ],
       build: _buildOlay,
     ),

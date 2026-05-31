@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/theme/police_colors.dart';
 import 'gider_editor_page.dart';
@@ -193,8 +193,8 @@ class _O1GiderPageState extends State<O1GiderPage> {
                           Text(
                             _fmtDate(e.tarihMs),
                             style: TextStyle(
-                              color:
-                                  PoliceColors.textMuted.withValues(alpha: 0.85),
+                              color: PoliceColors.textMuted
+                                  .withValues(alpha: 0.85),
                               fontSize: 12,
                             ),
                           ),
@@ -232,7 +232,8 @@ class _O1GiderPageState extends State<O1GiderPage> {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            color: PoliceColors.textMuted.withValues(alpha: 0.8),
+                            color:
+                                PoliceColors.textMuted.withValues(alpha: 0.8),
                             fontSize: 12.5,
                             height: 1.3,
                           ),

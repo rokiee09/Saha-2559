@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
@@ -62,9 +62,8 @@ class DashboardPage extends ConsumerWidget {
             : 'Yıllık izin aşıldı');
 
     final vardiyaToday = ref.watch(vardiyaTodayProvider).valueOrNull;
-    final upcomingLeave = izinRecords.isEmpty
-        ? null
-        : izinAktifVeyaYaklasan(izinRecords);
+    final upcomingLeave =
+        izinRecords.isEmpty ? null : izinAktifVeyaYaklasan(izinRecords);
 
     return ColoredBox(
       color: PoliceColors.backgroundDark,
@@ -298,12 +297,8 @@ class _DutyTodayPanel extends StatelessWidget {
           title: active.night ? 'Gece nöbeti' : 'Gündüz nöbeti',
           detail: 'Şu an görevde · bitiş ${_hhmm(active.end)} '
               '(≈${_humanDuration(rem)})',
-          icon: active.night
-              ? PhosphorIconsFill.moon
-              : PhosphorIconsFill.sun,
-          color: active.night
-              ? const Color(0xFF9C8CF0)
-              : PoliceColors.gold,
+          icon: active.night ? PhosphorIconsFill.moon : PhosphorIconsFill.sun,
+          color: active.night ? const Color(0xFF9C8CF0) : PoliceColors.gold,
         );
       }
       final next = v.next;
@@ -330,9 +325,8 @@ class _DutyTodayPanel extends StatelessWidget {
     return (
       title: isWork ? 'Bugün görev günü' : 'Bugün dinlenme',
       detail: v.title,
-      icon: isWork
-          ? PhosphorIconsFill.shieldCheck
-          : PhosphorIconsRegular.coffee,
+      icon:
+          isWork ? PhosphorIconsFill.shieldCheck : PhosphorIconsRegular.coffee,
       color: isWork ? PoliceColors.gold : PoliceColors.primaryBlue,
     );
   }

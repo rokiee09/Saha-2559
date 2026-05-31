@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/routing/transitions.dart';
 import '../../../common/theme/police_colors.dart';
@@ -86,8 +86,8 @@ class TutanakPage extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color:
-                                PoliceColors.primaryBlue.withValues(alpha: 0.14),
+                            color: PoliceColors.primaryBlue
+                                .withValues(alpha: 0.14),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: PhosphorIcon(

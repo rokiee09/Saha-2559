@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/text/tr_text.dart';
 import '../../../common/theme/police_colors.dart';
@@ -64,9 +64,8 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
 
   Future<void> _tarihSec({required bool baslangic}) async {
     final now = DateTime.now();
-    final initial = baslangic
-        ? (_baslangic ?? now)
-        : (_bitis ?? _baslangic ?? now);
+    final initial =
+        baslangic ? (_baslangic ?? now) : (_bitis ?? _baslangic ?? now);
     final picked = await showDatePicker(
       context: context,
       initialDate: initial,
@@ -78,9 +77,7 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
     setState(() {
       if (baslangic) {
         _baslangic = picked;
-        if (!_halenGorevde &&
-            _bitis != null &&
-            _bitis!.isBefore(picked)) {
+        if (!_halenGorevde && _bitis != null && _bitis!.isBefore(picked)) {
           _bitis = picked;
         }
       } else {
@@ -287,7 +284,8 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                     if (!_halenGorevde)
                       _DateField(
                         hint: 'Görev Bitiş Tarihi',
-                        value: _bitis == null ? null : _tarihFmt.format(_bitis!),
+                        value:
+                            _bitis == null ? null : _tarihFmt.format(_bitis!),
                         onTap: () => _tarihSec(baslangic: false),
                       )
                     else
@@ -371,7 +369,8 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                         'Günlük görev yeri puanı × çalışılan gün sayısı',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: PoliceColors.primaryBlue.withValues(alpha: 0.85),
+                          color:
+                              PoliceColors.primaryBlue.withValues(alpha: 0.85),
                           fontSize: 11.5,
                         ),
                       ),
@@ -636,7 +635,8 @@ class _BilgiPaneli extends StatelessWidget {
                           child: Text(
                             k.$2,
                             style: TextStyle(
-                              color: PoliceColors.textMuted.withValues(alpha: 0.88),
+                              color: PoliceColors.textMuted
+                                  .withValues(alpha: 0.88),
                               fontSize: 12,
                               height: 1.35,
                             ),
@@ -884,9 +884,8 @@ class _KayitTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final gun = kayit.guncelGunSayisi();
     final puan = kayit.guncelToplamPuan();
-    final bitisMetni = kayit.halenGorevde
-        ? 'devam ediyor'
-        : _fmt.format(kayit.bitisKayitli);
+    final bitisMetni =
+        kayit.halenGorevde ? 'devam ediyor' : _fmt.format(kayit.bitisKayitli);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
