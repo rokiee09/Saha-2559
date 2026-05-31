@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/theme/police_colors.dart';
 import 'sifre_store.dart';
@@ -166,103 +166,106 @@ class _KayitliSifrelerPageState extends State<KayitliSifrelerPage> {
           borderRadius: BorderRadius.circular(14),
           onTap: () => _openSheet(existing: e),
           child: Container(
-        padding: const EdgeInsets.fromLTRB(14, 12, 6, 12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(
-            color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
-          ),
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(9),
-              decoration: BoxDecoration(
-                color: PoliceColors.primaryBlue.withValues(alpha: 0.14),
-                borderRadius: BorderRadius.circular(11),
-              ),
-              child: PhosphorIcon(
-                hedef.banka
-                    ? PhosphorIconsRegular.bank
-                    : PhosphorIconsRegular.shieldStar,
-                color: PoliceColors.primaryBlue,
-                size: 22,
+            padding: const EdgeInsets.fromLTRB(14, 12, 6, 12),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(
+                color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
               ),
             ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    e.hedefLabel,
-                    style: const TextStyle(
-                      color: PoliceColors.titleOnDark,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14.5,
-                    ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(9),
+                  decoration: BoxDecoration(
+                    color: PoliceColors.primaryBlue.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(11),
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    revealed ? e.sifre : '••••••••••',
-                    style: const TextStyle(
-                      color: PoliceColors.textMuted,
-                      fontFamily: 'monospace',
-                      fontSize: 14,
-                      letterSpacing: 1.5,
-                    ),
+                  child: PhosphorIcon(
+                    hedef.banka
+                        ? PhosphorIconsRegular.bank
+                        : PhosphorIconsRegular.shieldStar,
+                    color: PoliceColors.primaryBlue,
+                    size: 22,
                   ),
-                  if (e.not.isNotEmpty) ...[
-                    const SizedBox(height: 4),
-                    Text(
-                      e.not,
-                      style: TextStyle(
-                        color: PoliceColors.textMuted.withValues(alpha: 0.75),
-                        fontSize: 11.5,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        e.hedefLabel,
+                        style: const TextStyle(
+                          color: PoliceColors.titleOnDark,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14.5,
+                        ),
                       ),
-                    ),
-                  ],
-                ],
-              ),
+                      const SizedBox(height: 4),
+                      Text(
+                        revealed ? e.sifre : '••••••••••',
+                        style: const TextStyle(
+                          color: PoliceColors.textMuted,
+                          fontFamily: 'monospace',
+                          fontSize: 14,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      if (e.not.isNotEmpty) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          e.not,
+                          style: TextStyle(
+                            color:
+                                PoliceColors.textMuted.withValues(alpha: 0.75),
+                            fontSize: 11.5,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                IconButton(
+                  tooltip: revealed ? 'Gizle' : 'Göster',
+                  visualDensity: VisualDensity.compact,
+                  icon: Icon(
+                    revealed
+                        ? Icons.visibility_off_rounded
+                        : Icons.visibility_rounded,
+                    color: PoliceColors.textMuted,
+                    size: 20,
+                  ),
+                  onPressed: () => setState(() {
+                    if (revealed) {
+                      _revealed.remove(e.id);
+                    } else {
+                      _revealed.add(e.id);
+                    }
+                  }),
+                ),
+                IconButton(
+                  tooltip: 'Kopyala',
+                  visualDensity: VisualDensity.compact,
+                  icon: const Icon(Icons.copy_rounded,
+                      color: PoliceColors.primaryBlue, size: 20),
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: e.sifre));
+                    HapticFeedback.lightImpact();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Şifre panoya kopyalandı')),
+                    );
+                  },
+                ),
+                IconButton(
+                  tooltip: 'Sil',
+                  visualDensity: VisualDensity.compact,
+                  icon: const Icon(Icons.delete_outline_rounded,
+                      color: PoliceColors.textMuted, size: 20),
+                  onPressed: () => _delete(e),
+                ),
+              ],
             ),
-            IconButton(
-              tooltip: revealed ? 'Gizle' : 'Göster',
-              visualDensity: VisualDensity.compact,
-              icon: Icon(
-                revealed ? Icons.visibility_off_rounded : Icons.visibility_rounded,
-                color: PoliceColors.textMuted,
-                size: 20,
-              ),
-              onPressed: () => setState(() {
-                if (revealed) {
-                  _revealed.remove(e.id);
-                } else {
-                  _revealed.add(e.id);
-                }
-              }),
-            ),
-            IconButton(
-              tooltip: 'Kopyala',
-              visualDensity: VisualDensity.compact,
-              icon: const Icon(Icons.copy_rounded,
-                  color: PoliceColors.primaryBlue, size: 20),
-              onPressed: () {
-                Clipboard.setData(ClipboardData(text: e.sifre));
-                HapticFeedback.lightImpact();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Şifre panoya kopyalandı')),
-                );
-              },
-            ),
-            IconButton(
-              tooltip: 'Sil',
-              visualDensity: VisualDensity.compact,
-              icon: const Icon(Icons.delete_outline_rounded,
-                  color: PoliceColors.textMuted, size: 20),
-              onPressed: () => _delete(e),
-            ),
-          ],
-        ),
           ),
         ),
       ),
@@ -336,8 +339,8 @@ class _SifreSheetState extends State<_SifreSheet> {
         hedefId: _hedefId,
         hedefLabel: label,
         sifre: sifre,
-        createdAtMs: existing?.createdAtMs ??
-            DateTime.now().millisecondsSinceEpoch,
+        createdAtMs:
+            existing?.createdAtMs ?? DateTime.now().millisecondsSinceEpoch,
         not: _noteCtrl.text.trim(),
       ),
     );
@@ -392,9 +395,11 @@ class _SifreSheetState extends State<_SifreSheet> {
   InputDecoration _decoration(String label, {String? hint, Widget? suffix}) {
     return InputDecoration(
       labelText: label,
-      labelStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
+      labelStyle:
+          TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
       hintText: hint,
-      hintStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.5)),
+      hintStyle:
+          TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.5)),
       filled: true,
       fillColor: PoliceColors.backgroundDark,
       suffixIcon: suffix,

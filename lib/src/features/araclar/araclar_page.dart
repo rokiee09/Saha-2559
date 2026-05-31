@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
@@ -18,6 +18,7 @@ import 'gorev_puanlari/gorev_puanlari_page.dart';
 import 'harcirah/harcirah_hesaplama_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
 import 'kriz/kriz_rehberi_page.dart';
+import 'lojman/lojman_puani_page.dart';
 import 'sifre/kayitli_sifreler_page.dart';
 import 'sifre_uretici_page.dart';
 import 'telsiz_kodlari_page.dart';
@@ -61,6 +62,13 @@ class AraclarPage extends StatelessWidget {
             subtitle: 'Katsayıya göre tahmini; bağlayıcı değildir.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const MaasHesaplamaPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.houseLine,
+            title: 'Lojman puanı hesaplama',
+            subtitle: 'Aile, hizmet, bekleme ve konut bilgilerine göre puan.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const LojmanPuaniPage())),
           ),
           _ToolTile(
             icon: PhosphorIconsRegular.airplaneTilt,

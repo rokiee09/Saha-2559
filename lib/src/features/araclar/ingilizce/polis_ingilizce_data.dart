@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 /// Polis İngilizcesi: turist/yabancı ile sık kullanılan hazır kalıplar.
 /// Tamamen offline. Okunuşlar yaklaşıktır.

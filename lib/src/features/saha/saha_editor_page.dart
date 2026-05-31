@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/theme/police_colors.dart';
 import 'saha_categories.dart';
@@ -272,12 +272,15 @@ class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
             ),
             decoration: InputDecoration(
               labelText: 'Başlık',
-              labelStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
+              labelStyle: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.9)),
               hintText: 'Kısa başlık…',
-              hintStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.55)),
+              hintStyle: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.55)),
               filled: true,
               fillColor: PoliceColors.surfaceDark,
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
             ),
           ),
           const SizedBox(height: 14),
@@ -293,14 +296,17 @@ class _SahaEditorPageState extends ConsumerState<SahaEditorPage> {
             decoration: InputDecoration(
               alignLabelWithHint: true,
               labelText: 'İçerik',
-              labelStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
+              labelStyle: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.9)),
               hintText: widget.categoryId == 'notlar'
                   ? 'Plaka, kişi/TC, olay yeri, gözlem ve durum notları…'
                   : 'Serbest metin…',
-              hintStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.55)),
+              hintStyle: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.55)),
               filled: true,
               fillColor: PoliceColors.surfaceDark,
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
             ),
           ),
           const SizedBox(height: 16),

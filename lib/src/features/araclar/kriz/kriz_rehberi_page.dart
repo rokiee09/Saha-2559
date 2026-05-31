@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/routing/transitions.dart';
 import '../../../common/theme/police_colors.dart';
@@ -104,8 +104,8 @@ class KrizRehberiPage extends StatelessWidget {
                               Text(
                                 '${s.adimlar.length} adımlık kontrol listesi',
                                 style: TextStyle(
-                                  color:
-                                      PoliceColors.textMuted.withValues(alpha: 0.9),
+                                  color: PoliceColors.textMuted
+                                      .withValues(alpha: 0.9),
                                   fontSize: 12.5,
                                 ),
                               ),
@@ -268,9 +268,8 @@ class _StepTile extends StatelessWidget {
                   height: 24,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: checked
-                        ? PoliceColors.primaryBlue
-                        : Colors.transparent,
+                    color:
+                        checked ? PoliceColors.primaryBlue : Colors.transparent,
                     borderRadius: BorderRadius.circular(7),
                     border: Border.all(
                       color: checked
@@ -301,8 +300,7 @@ class _StepTile extends StatelessWidget {
                           : PoliceColors.titleOnDark,
                       fontSize: 13.8,
                       height: 1.4,
-                      decoration:
-                          checked ? TextDecoration.lineThrough : null,
+                      decoration: checked ? TextDecoration.lineThrough : null,
                     ),
                   ),
                 ),
@@ -362,7 +360,8 @@ class _Block extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('•  ',
-                      style: TextStyle(color: color, fontWeight: FontWeight.w700)),
+                      style:
+                          TextStyle(color: color, fontWeight: FontWeight.w700)),
                   Expanded(
                     child: Text(
                       it,

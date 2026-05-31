@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/theme/police_colors.dart';
 import 'kariyer_provider.dart';
@@ -41,7 +41,8 @@ class KariyerPage extends ConsumerWidget {
         children: [
           _SummaryRow(profil: profil, kayitlar: kayitlar),
           const SizedBox(height: 16),
-          _ProfileCard(profil: profil, onEdit: () => _editProfile(context, ref, profil)),
+          _ProfileCard(
+              profil: profil, onEdit: () => _editProfile(context, ref, profil)),
           const SizedBox(height: 18),
           _Section(
             title: 'Başarı Belgelerim',
@@ -72,7 +73,8 @@ class KariyerPage extends ConsumerWidget {
             decoration: BoxDecoration(
               color: PoliceColors.gold.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: PoliceColors.gold.withValues(alpha: 0.3)),
+              border:
+                  Border.all(color: PoliceColors.gold.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
@@ -501,8 +503,8 @@ class _Section extends StatelessWidget {
                                 if (k.not.isNotEmpty) k.not,
                               ].join(' · '),
                               style: TextStyle(
-                                color:
-                                    PoliceColors.textMuted.withValues(alpha: 0.9),
+                                color: PoliceColors.textMuted
+                                    .withValues(alpha: 0.9),
                                 fontSize: 12.5,
                               ),
                             ),
@@ -547,7 +549,8 @@ class _DialogField extends StatelessWidget {
       style: const TextStyle(color: PoliceColors.titleOnDark),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
+        labelStyle:
+            TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
       ),
     );
   }

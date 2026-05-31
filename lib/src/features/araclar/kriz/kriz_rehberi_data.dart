@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 /// Kriz rehberi: kritik olaylarda adım adım kontrol listeleri.
 /// Bilgilendirme amaçlıdır; resmî protokol, birim talimatı ve mevzuat esastır.

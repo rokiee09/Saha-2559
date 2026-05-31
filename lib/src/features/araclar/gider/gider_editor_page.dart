@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/theme/police_colors.dart';
 import 'gider_models.dart';
@@ -221,7 +221,8 @@ class _GiderEditorPageState extends State<GiderEditorPage> {
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
-        title: Text(widget.existing == null ? 'O-1 gider · Yeni' : 'Gideri düzenle'),
+        title: Text(
+            widget.existing == null ? 'O-1 gider · Yeni' : 'Gideri düzenle'),
         actions: [
           TextButton(
             onPressed: _saving ? null : _save,
@@ -357,8 +358,7 @@ class _GiderEditorPageState extends State<GiderEditorPage> {
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: [
-                for (var i = 0; i < _images.length; i++)
-                  _thumb(_images[i], i),
+                for (var i = 0; i < _images.length; i++) _thumb(_images[i], i),
               ],
             ),
           const SizedBox(height: 16),
@@ -440,9 +440,11 @@ class _GiderEditorPageState extends State<GiderEditorPage> {
   InputDecoration _decoration(String label, {String? hint}) {
     return InputDecoration(
       labelText: label,
-      labelStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
+      labelStyle:
+          TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
       hintText: hint,
-      hintStyle: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.5)),
+      hintStyle:
+          TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.5)),
       filled: true,
       fillColor: PoliceColors.surfaceDark,
       border: OutlineInputBorder(
