@@ -54,7 +54,7 @@ const UnitInfoSchema = CollectionSchema(
   getId: _unitInfoGetId,
   getLinks: _unitInfoGetLinks,
   attach: _unitInfoAttach,
-  version: '3.2.1',
+  version: '3.3.2',
 );
 
 int _unitInfoEstimateSize(

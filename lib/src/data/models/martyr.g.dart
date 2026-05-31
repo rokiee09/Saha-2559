@@ -44,7 +44,7 @@ const MartyrSchema = CollectionSchema(
   getId: _martyrGetId,
   getLinks: _martyrGetLinks,
   attach: _martyrAttach,
-  version: '3.2.1',
+  version: '3.3.2',
 );
 
 int _martyrEstimateSize(

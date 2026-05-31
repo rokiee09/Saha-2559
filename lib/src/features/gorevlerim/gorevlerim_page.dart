@@ -5,14 +5,14 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import '../araclar/gider/o1_gider_page.dart';
-import '../haklar/maas_hesaplama_page.dart';
-import '../haklar/vardiya/vardiya_hesaplama_page.dart';
+import '../araclar/gorev_puanlari/gorev_puani_giris_page.dart';
 import '../home/root_drawer_scope.dart';
 import 'disiplin/disiplin_rehberi_page.dart';
 import 'izin/izin_page.dart';
 import 'kariyer/kariyer_page.dart';
 
-/// Profilim: polisin kendi durumu — izin, maaş, vardiya, harcama.
+/// Profilim: polisin kişisel kayıtları — izin, harcama, kariyer, disiplin.
+/// Maaş/vardiya gibi hesaplayıcılar yalnızca Araçlar sekmesindedir.
 /// Tayin/lojman gibi resmî kriter/puan gerektiren bölümler, yanıltıcı tahmin
 /// üretmemek için veri hazırlanana kadar "hazırlanıyor" olarak işaretlidir.
 class GorevlerimPage extends StatelessWidget {
@@ -108,25 +108,6 @@ class GorevlerimPage extends StatelessWidget {
             },
           ),
           _GorevTile(
-            icon: PhosphorIconsRegular.calculator,
-            title: 'Maaşım',
-            subtitle: 'Katsayıya göre tahmini maaş (bağlayıcı değildir).',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context).push(fadeRoute(const MaasHesaplamaPage()));
-            },
-          ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.calendarCheck,
-            title: 'Vardiyam',
-            subtitle: 'Vardiya kalıbını seç, ayını planla.',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context)
-                  .push(fadeRoute(const VardiyaHesaplamaPage()));
-            },
-          ),
-          _GorevTile(
             icon: PhosphorIconsRegular.receipt,
             title: 'O-1 giderleri',
             subtitle: 'Görev giderlerin ve fişleri (kamera ile ekle).',
@@ -157,16 +138,12 @@ class GorevlerimPage extends StatelessWidget {
           _GorevTile(
             icon: PhosphorIconsRegular.mapPinLine,
             title: 'Tayinim',
-            subtitle: 'Branş, hizmet yılı ve puana göre değerlendirme.',
-            comingSoon: true,
-            onTap: () => _comingSoon(
-              context,
-              'Tayin',
-              'Tayin değerlendirmesi; branş, hizmet yılı ve şark puanı gibi '
-                  'resmî kriterlere dayanır. Yanıltıcı bir tahmin vermemek için '
-                  'bu bölüm, doğrulanmış kriter verisi eklenince açılacak. '
-                  'Kesin sonuç her zaman kurum işlemine bağlıdır.',
-            ),
+            subtitle: 'EGM hizmet puanı hesapla ve kaydet.',
+            onTap: () {
+              HapticFeedback.selectionClick();
+              Navigator.of(context)
+                  .push(fadeRoute(const GorevPuaniGirisPage()));
+            },
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.house,

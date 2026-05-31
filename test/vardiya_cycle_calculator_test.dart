@@ -4,12 +4,12 @@ import 'package:coderipple/src/features/haklar/vardiya/vardiya_cycle_calculator.
 
 void main() {
   group('vardiyaCyclePatternFor', () {
-    test('bilinen 12_24 kalıbı iş + 2 dinlenme döner', () {
+    test('bilinen 12_24 kalıbı gündüz + gece + dinlenme döner', () {
       expect(
         vardiyaCyclePatternFor('12_24'),
         const [
-          VardiyaCalendarDayKind.work,
-          VardiyaCalendarDayKind.rest,
+          VardiyaCalendarDayKind.cakmaDayDuty,
+          VardiyaCalendarDayKind.cakmaNightDuty,
           VardiyaCalendarDayKind.rest,
         ],
       );

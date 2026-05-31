@@ -13,6 +13,9 @@ import '../saha/saha_categories.dart';
 import '../saha/saha_category_page.dart';
 import '../teskilat/teskilat_page.dart';
 import 'gider/o1_gider_page.dart';
+import 'gorev_puanlari/gorev_puani_giris_page.dart';
+import 'gorev_puanlari/gorev_puanlari_page.dart';
+import 'harcirah/harcirah_hesaplama_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
 import 'kriz/kriz_rehberi_page.dart';
 import 'sifre/kayitli_sifreler_page.dart';
@@ -58,6 +61,27 @@ class AraclarPage extends StatelessWidget {
             subtitle: 'Katsayıya göre tahmini; bağlayıcı değildir.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const MaasHesaplamaPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.airplaneTilt,
+            title: 'Yol harcırah hesaplama',
+            subtitle: 'İller arası km, eş/çocuk ve örnek rapor.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const HarcirahHesaplamaPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.mapPin,
+            title: 'Görev puanları cetveli',
+            subtitle: '2025 il / ilçe günlük görev yeri puanları.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const GorevPuanlariPage())),
+          ),
+          _ToolTile(
+            icon: PhosphorIconsRegular.calculator,
+            title: 'Görev puanı hesapla',
+            subtitle: 'EGM hizmet puanı — görev yerleri ve süreleri.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const GorevPuaniGirisPage())),
           ),
           _ToolTile(
             icon: PhosphorIconsRegular.password,
