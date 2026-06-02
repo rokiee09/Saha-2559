@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'src/app.dart';
 import 'src/common/theme/police_colors.dart';
 import 'src/data/db/isar_service.dart';
+import 'src/data/repositories/offline_import_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,9 @@ Future<void> main() async {
   if (!kIsWeb) {
     try {
       await IsarService.init().timeout(const Duration(seconds: 10));
+      // İl emniyet listesi (81 il) — Teşkilat ekranı JSON/Isar için hazır olsun.
+      await OfflineImportService.importCityContacts();
+      await OfflineImportService.importMartyrs();
     } catch (error, stackTrace) {
       debugPrint('IsarService.init() başarısız; uygulama Isar olmadan açılıyor: $error');
       debugPrintStack(stackTrace: stackTrace);

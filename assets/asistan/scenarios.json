@@ -1,0 +1,203 @@
+{
+  "_note": "Polis çalışma asistanı — senaryo tabanlı, offline. Hukuki tavsiye değildir.",
+  "version": 2,
+  "scenarios": [
+    {
+      "id": "zor-kullanma",
+      "domain": "pvsk",
+      "title": "Zor kullanma / silah",
+      "situation": "Görev sırasında kişi direniyor; güç veya silah kullanımı gündeme geliyor.",
+      "triggers": ["zor kullanma", "zor kullanmak", "silah kullanma", "silah ne zaman", "ne zaman silah", "guc kullanma", "orantili guc", "polis silah"],
+      "expand": ["silah", "zor", "kullan", "mukavemet", "orantili", "mudafaa", "taarruz"],
+      "summary": "İlgili mevzuata göre silah ve güç kullanımı PVSK md. 16'da sınırlı sayılı hallerde, başka çare kalmaması ve orantılılık koşuluyla mümkündür.",
+      "appContext": "Olay sonrası Mevzuat'tan PVSK md. 16 tam metnini açıp tutanağınızdaki müdahaleyi bu maddeyle karşılaştırın; Araçlar'daki tutanak şablonlarına not düşebilirsiniz.",
+      "source": "2559 sayılı PVSK · Madde 16 (Silah kullanma)",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-16", "label": "PVSK Madde 16"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17"}
+      ]
+    },
+    {
+      "id": "durdurma-kimlik",
+      "domain": "pvsk",
+      "title": "Durdurma ve kimlik",
+      "situation": "Şüpheli veya araç durdurulacak; kimlik sorma sınırları soruluyor.",
+      "triggers": ["durdurma", "kimlik sorma", "kimlik sor", "durdurabilir", "gerekcesiz durdurma", "makul sebep durdurma", "arac durdurma"],
+      "expand": ["durdur", "kimlik", "makul", "sebep", "arac"],
+      "summary": "İlgili mevzuata göre durdurma; suç önleme, fail yakalama veya tehlike giderme gibi makul sebeplere dayanmalı, keyfi ve sürekli olmamalıdır.",
+      "appContext": "Saha'da PVSK md. 4/A metnini açıp durdurma gerekçenizi bu maddeyle eşleştirin; olay tutanağında sebep ve süreyi net yazın.",
+      "source": "2559 sayılı PVSK · Madde 4/A",
+      "refs": [{"entryId": "kanun-pvsk", "sectionId": "pvsk-4a", "label": "PVSK Madde 4/A"}]
+    },
+    {
+      "id": "yakalama",
+      "domain": "pvsk",
+      "title": "Yakalama ve gözaltı",
+      "situation": "Kişi yakalanacak veya karakola götürülecek; süre ve usul merak ediliyor.",
+      "triggers": ["yakalama", "yakalayabilir", "kimi yakalar", "yakalanan", "gozalti", "sarhos yakalama", "yakalama avukat"],
+      "expand": ["yakala", "gozalti", "nezaret", "mukavemet", "sarhos"],
+      "summary": "İlgili mevzuata göre PVSK'taki yakalama halleri ile CMK'daki yakalama-gözaltı usulleri birlikte uygulanır; müdafi bildirimi CMK'da düzenlenir.",
+      "appContext": "PVSK maddelerini Mevzuat'tan açın; gözaltı süreci için CMK ve İfade Alma Yönetmeliği metinlerine geçiş yapın.",
+      "source": "PVSK md. 13–17 · CMK yakalama hükümleri",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-13", "label": "PVSK Madde 13"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17"},
+        {"entryId": "yonetmelik-gozalti", "sectionId": "gy-1", "label": "Yakalama ve İfade Alma Yönetmeliği"}
+      ]
+    },
+    {
+      "id": "arama",
+      "domain": "pvsk",
+      "title": "Arama / el koyma",
+      "situation": "Üst, araç veya konutta arama/el koyma yapılacak.",
+      "triggers": ["arama", "el koyma", "ust aramasi", "arama karari", "onleme aramasi", "adli arama"],
+      "expand": ["arama", "el koy", "musadere", "zapt", "onleme"],
+      "summary": "İlgili mevzuata göre adli ve önleme aramalarının usulü yönetmelikle; kanuna aykırı silah ve tehlikeli eşyaya el koyma PVSK md. 9 ile düzenlenir.",
+      "appContext": "Arama türünüze göre Adli ve Önleme Aramaları Yönetmeliği ile PVSK md. 9'u Saha Mevzuat'tan yan yana açın.",
+      "source": "Adli ve Önleme Aramaları Yönetmeliği · PVSK md. 9",
+      "refs": [
+        {"entryId": "yonetmelik-adli_arama", "sectionId": "aay-1", "label": "Adli ve Önleme Aramaları Yönetmeliği"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-9", "label": "PVSK Madde 9"}
+      ]
+    },
+    {
+      "id": "ifade-alma",
+      "domain": "pvsk",
+      "title": "İfade alma",
+      "situation": "Şüpheli veya tanık ifadesi alınacak; çağırma ve usul soruluyor.",
+      "triggers": ["ifade alma", "ifade", "ifadeye cagirma", "ifade alinmasi", "beyan alma"],
+      "expand": ["ifade", "beyan", "cagir"],
+      "summary": "İlgili mevzuata göre ifade alma usulleri özel yönetmelikte; polisin çağırma ve sorma yetkisi PVSK md. 15'te yer alır.",
+      "appContext": "İfade tutanağı öncesi Yönetmelik ve PVSK md. 15'i Saha'da açın; Araçlar'daki tutanak şablonlarıyla eşleştirin.",
+      "source": "Yakalama, Gözaltına Alma ve İfade Alma Yönetmeliği · PVSK md. 15",
+      "refs": [
+        {"entryId": "yonetmelik-gozalti", "sectionId": "gy-1", "label": "İfade Alma Yönetmeliği"},
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-15", "label": "PVSK Madde 15"}
+      ]
+    },
+    {
+      "id": "cmk-gozalti-mudafi",
+      "domain": "cmk",
+      "title": "Gözaltı ve müdafi",
+      "situation": "Yakalanan kişiye avukat/müdafi hakkı ne zaman doğar?",
+      "triggers": ["cmk", "müdafi", "mudafi", "avukat hakkı", "gozalti avukat", "yakalama avukat", "savunma hakkı"],
+      "expand": ["cmk", "mudafi", "avukat", "gozalti", "savunma"],
+      "summary": "İlgili mevzuata göre yakalama ve gözaltı sürecinde şüphelinin savunma ve müdafi ile görüşme hakları CMK'da usulen düzenlenir.",
+      "appContext": "CMK ilgili maddelerini Mevzuat'tan açın; gözaltı işlemlerini İfade Alma Yönetmeliği ile birlikte kontrol edin.",
+      "source": "5271 sayılı CMK · yakalama ve gözaltı hükümleri",
+      "refs": [
+        {"entryId": "yonetmelik-gozalti", "sectionId": "gy-1", "label": "Yakalama ve İfade Alma Yönetmeliği"}
+      ]
+    },
+    {
+      "id": "mukavemet-hakaret",
+      "domain": "tck",
+      "title": "Mukavemet / hakaret",
+      "situation": "Göreve direnme veya memura hakaret iddiası var.",
+      "triggers": ["mukavemet", "direnme", "polise direnme", "gorevi engelleme", "polise hakaret", "memura hakaret", "memura mukavemet"],
+      "expand": ["mukavemet", "direnme", "karsi koyma", "hakaret"],
+      "summary": "İlgili mevzuata göre PVSK md. 17 kolluk işlemi; göreve direnme ve hakaret fiilleri ayrıca TCK'da suç olarak tanımlanabilir.",
+      "appContext": "PVSK md. 17 ile TCK ilgili maddelerini Saha'da karşılaştırın; olay tutanağında fiili ayrı ayrı nitelendirin.",
+      "source": "PVSK md. 17 · TCK görev ve hakaret hükümleri",
+      "refs": [
+        {"entryId": "kanun-pvsk", "sectionId": "pvsk-17", "label": "PVSK Madde 17"}
+      ]
+    },
+    {
+      "id": "yillik-izin",
+      "domain": "izin",
+      "title": "Yıllık izin",
+      "situation": "Yıllık izin süresi veya hakkı soruluyor.",
+      "triggers": ["yillik izin", "izin kac gun", "yillik izin kac gun", "izin hakki", "kac gun izin"],
+      "expand": ["izin", "yillik", "gun"],
+      "summary": "İlgili mevzuata göre 657 DMK md. 102: 10 yıldan az hizmette 20 gün, 10 yıl ve üzerinde 30 gün yıllık izin verilir.",
+      "appContext": "Profilim → İzinlerim'de kalan izin günlerinizi takip edin; tam metin için DMK md. 102'yi Mevzuat'tan açın.",
+      "source": "657 sayılı Devlet Memurları Kanunu · Madde 102",
+      "refs": [{"entryId": "kanun-dmk", "sectionId": "dmk-102", "label": "DMK Madde 102"}]
+    },
+    {
+      "id": "refakat-izni",
+      "domain": "izin",
+      "title": "Refakat izni",
+      "situation": "Yakının ağır hastalığı veya kazası nedeniyle refakat izni talep edilecek.",
+      "triggers": ["refakat izni", "refakat", "refakat kac gun", "hasta yakini izni"],
+      "expand": ["refakat", "hasta", "izin"],
+      "summary": "İlgili mevzuata göre DMK md. 105: belirli yakınlar için sağlık kurulu raporuyla en fazla 3 ay refakat izni; uzatım mümkün olabilir.",
+      "appContext": "Profilim → İzinlerim'de refakat kaydı açmayı planlayın; rapor ve başvuru için DMK md. 105 tam metnine bakın.",
+      "source": "657 DMK · Madde 105",
+      "refs": [{"entryId": "kanun-dmk", "sectionId": "dmk-105", "label": "DMK Madde 105"}]
+    },
+    {
+      "id": "dogum-babalik-sut",
+      "domain": "izin",
+      "title": "Doğum / babalık / süt izni",
+      "situation": "Doğum, babalık, süt veya kısa mazeret izni soruluyor.",
+      "triggers": ["dogum izni", "babalik izni", "sut izni", "analik izni", "mazeret izni", "evlilik izni", "olum izni"],
+      "expand": ["dogum", "babalik", "sut", "analik", "mazeret"],
+      "summary": "İlgili mevzuata göre DMK md. 104: analık, babalık, evlilik/ölüm mazereti ve süt izni süreleri kanunda sayılıdır.",
+      "appContext": "İzin türünü Profilim → İzinlerim'de seçip gün sayacını kullanın; süreler için DMK md. 104'ü açın.",
+      "source": "657 DMK · Madde 104",
+      "refs": [{"entryId": "kanun-dmk", "sectionId": "dmk-104", "label": "DMK Madde 104"}]
+    },
+    {
+      "id": "disiplin",
+      "domain": "disiplin",
+      "title": "Disiplin cezası",
+      "situation": "Disiplin soruşturması veya ceza türü hakkında bilgi isteniyor.",
+      "triggers": ["disiplin", "disiplin cezasi", "uyarma", "kinama", "ayliktan kesme", "meslekten cikarma", "disiplin sorusturmasi"],
+      "expand": ["disiplin", "ceza", "uyarma", "kinama", "sorusturma"],
+      "summary": "İlgili mevzuata göre genel kolluk disiplin suç ve cezaları 7068 sayılı Kanun'da; savunma hakkı ve itiraz yolu esastır.",
+      "appContext": "Profilim → Disiplinlerim'de fiil–ceza eşlemesine bakın; tam metin için 7068 sayılı Kanunu Mevzuat'tan açın.",
+      "source": "7068 sayılı Genel Kolluk Disiplin Hükümleri Kanunu",
+      "refs": [{"entryId": "kanun-disiplin", "label": "7068 Disiplin Kanunu"}]
+    },
+    {
+      "id": "gorev-puani-tayin",
+      "domain": "tayin",
+      "title": "Görev puanı ve tayin",
+      "situation": "Tayin döneminde görev puanı nasıl hesaplanır veya kullanılır?",
+      "triggers": ["gorev puani", "görev puanı", "tayin", "atama puani", "hizmet puani", "egm puan", "yer degistirme"],
+      "expand": ["tayin", "puan", "atama", "gorev"],
+      "summary": "İlgili mevzuata göre görev puanı, günlük görev yeri puanı ile çalışılan gün sayısının çarpımıyla oluşur; tayinlerde bu puan esas alınır.",
+      "appContext": "Profilim → Tayinim veya Araçlar → Görev puanı hesapla ile dönem puanınızı tahmin edin; cetvel Araçlar → Görev puanları cetveli'ndedir.",
+      "source": "Emniyet atama ve yer değiştirme yönetmeliği · 2025 görev yeri puanları",
+      "refs": []
+    },
+    {
+      "id": "lojman-puani",
+      "domain": "lojman",
+      "title": "Lojman puanı",
+      "situation": "Lojman tahsisi için puan hesabı veya kriterler soruluyor.",
+      "triggers": ["lojman", "lojman puani", "lojman puanı", "konut tahsis", "barinma"],
+      "expand": ["lojman", "konut", "puan"],
+      "summary": "İlgili mevzuata göre lojman puanı; hizmet süresi, medeni hâl, çocuk sayısı ve özel hâller gibi kriterlerle hesaplanır.",
+      "appContext": "Profilim → Lojmanım veya Araçlar → Lojman puanı hesapla ekranından tahmini puanınızı görün; kesin sonuç kurum işlemine tabidir.",
+      "source": "Lojman yönetmeliği ve personel işlemleri mevzuatı",
+      "refs": []
+    },
+    {
+      "id": "maas-memur",
+      "domain": "maas",
+      "title": "Maaş ve katsayı",
+      "situation": "Tahmini maaş, katsayı veya ödenekler soruluyor.",
+      "triggers": ["maas", "maaş", "katsayi", "katsayı", "memur maasi", "aylik", "ek odeme", "tazminat"],
+      "expand": ["maas", "katsayi", "odeme", "tazminat"],
+      "summary": "İlgili mevzuata göre memur aylığı katsayı, gösterge ve ek ödemelerle hesaplanır; yıllık bütçe kanunu rakamları değişebilir.",
+      "appContext": "Araçlar → Maaş hesaplama ile tahmini aylık görün; bağlayıcı bordro kurumdan tebliğ edilir.",
+      "source": "657 DMK · Memur maaş ve ödenek mevzuatı · yıllık bütçe kanunu",
+      "refs": [{"entryId": "kanun-dmk", "label": "657 DMK"}]
+    },
+    {
+      "id": "konut-dokunulmazligi",
+      "domain": "pvsk",
+      "title": "Konuta girme",
+      "situation": "Acil durum veya suç önleme için konuta girilmesi gündemde.",
+      "triggers": ["eve girme", "konut", "konut dokunulmazligi", "eve girebilir", "kapiyi kirma"],
+      "expand": ["ev", "konut", "gir", "tehlike"],
+      "summary": "İlgili mevzuata göre PVSK md. 20: büyük tehlike veya ağır cezalı suçun önlenmesi gibi hallerde konuta girme mümkündür.",
+      "appContext": "Müdahale öncesi PVSK md. 20'yi Saha'da açıp gerekçenizi maddeyle yazılı hale getirin.",
+      "source": "2559 sayılı PVSK · Madde 20",
+      "refs": [{"entryId": "kanun-pvsk", "sectionId": "pvsk-20", "label": "PVSK Madde 20"}]
+    }
+  ]
+}

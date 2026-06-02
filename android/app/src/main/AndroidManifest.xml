@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sesle tutanak: yalnızca cihazda ses tanıma; metin sunucuya gönderilmez. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <!-- Bu uygulama hiçbir ağ izni istemez. İçerik uygulama paketinden okunur;
          kişisel veri sunucuya gönderilmez. Dış bağlantı/arama yalnızca kullanıcı
          dokununca harici uygulamalarla (tarayıcı/telefon) açılır. -->

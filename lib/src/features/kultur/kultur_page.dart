@@ -9,6 +9,7 @@ import 'ataturk_ve_turk_polisi_page.dart';
 import 'onemli_gunler_page.dart';
 import 'polis_andi_page.dart';
 import 'polis_tarihi_page.dart';
+import 'tesekkur_vefa_page.dart';
 
 class KulturPage extends StatelessWidget {
   const KulturPage({super.key});
@@ -78,6 +79,16 @@ class KulturPage extends StatelessWidget {
             subtitle: '10 Nisan Polis Günü, 15 Temmuz ve diğer tarihler',
             icon: Icons.calendar_today_outlined,
             onTap: () => Navigator.of(context).push(fadeRoute(const OnemliGunlerPage())),
+          ),
+          _cultureCard(
+            context,
+            title: 'Vefa ve Teşekkür',
+            subtitle: 'Şehitlerimiz, kahramanlarımız ve görevdekilere',
+            icon: Icons.favorite_border,
+            isPrimary: false,
+            onTap: () => Navigator.of(context).push(
+              fadeRoute(const TesekkurVefaPage()),
+            ),
           ),
         ],
       ),

@@ -10,6 +10,8 @@ import '../../common/legal/user_agreement_sections.dart';
 import '../../common/theme/police_colors.dart';
 import '../../data/repositories/offline_import_service.dart';
 import '../../data/repositories/preference_repository.dart';
+import '../contacts/city_contacts_controller.dart';
+import '../martyrs/martyrs_controller.dart';
 import '../legal/user_agreement_viewer_page.dart';
 import 'data_freshness_page.dart';
 import 'reading_scale_controller.dart';
@@ -221,6 +223,11 @@ class SettingsPage extends ConsumerWidget {
               trailing: const Icon(Icons.download),
               onTap: () async {
                 await OfflineImportService.importAll();
+                ref.invalidate(cityContactsProvider);
+                ref.invalidate(cityContactPlateCodesProvider);
+                ref.invalidate(martyrsCatalogProvider);
+                ref.invalidate(martyrsFilteredProvider);
+                ref.invalidate(martyrCitiesProvider);
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Yerel veri güncellendi.')),

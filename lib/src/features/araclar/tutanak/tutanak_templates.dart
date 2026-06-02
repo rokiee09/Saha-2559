@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
-/// Tutanak taslakları tamamen cihazda üretilir; resmî form değildir, yalnızca
-/// alan kayıtlarını derli toplu yazmaya yardımcı olur. Üretilen metin kullanıcı
-/// tarafından kontrol edilip düzenlenmelidir.
+/// Tutanak taslakları tamamen cihazda üretilir; resmî form değildir.
 
 class TutanakField {
   const TutanakField({
@@ -11,12 +9,14 @@ class TutanakField {
     required this.label,
     this.hint = '',
     this.multiline = false,
+    this.voiceFriendly = false,
   });
 
   final String key;
   final String label;
   final String hint;
   final bool multiline;
+  final bool voiceFriendly;
 }
 
 class TutanakTemplate {
@@ -38,6 +38,28 @@ class TutanakTemplate {
 
   static const List<TutanakTemplate> all = [
     TutanakTemplate(
+      id: 'kimlik_tespit',
+      title: 'Kimlik Tespit Tutanağı',
+      description: 'Kimlik ve şahıs bilgilerinin tespiti',
+      icon: PhosphorIconsRegular.identificationCard,
+      fields: [
+        TutanakField(key: 'tarih', label: 'Tarih', hint: 'gg.aa.yyyy'),
+        TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
+        TutanakField(key: 'yer', label: 'Yer / adres'),
+        TutanakField(key: 'kisi', label: 'Tespit edilen kişi'),
+        TutanakField(key: 'tc', label: 'T.C. kimlik no (varsa)'),
+        TutanakField(key: 'dogum', label: 'Doğum tarihi / yeri'),
+        TutanakField(key: 'adres', label: 'İkametgah / bildirilen adres'),
+        TutanakField(
+          key: 'tespit',
+          label: 'Tespit edilen bilgiler / açıklama',
+          multiline: true,
+          voiceFriendly: true,
+        ),
+      ],
+      build: _buildKimlikTespit,
+    ),
+    TutanakTemplate(
       id: 'teslim_tesellum',
       title: 'Teslim Tesellüm Tutanağı',
       description: 'Eşya / evrak teslim-tesellümü',
@@ -54,65 +76,95 @@ class TutanakTemplate {
           hint: 'Her satıra bir madde',
           multiline: true,
         ),
-        TutanakField(key: 'aciklama', label: 'Açıklama', multiline: true),
+        TutanakField(
+          key: 'aciklama',
+          label: 'Açıklama',
+          multiline: true,
+          voiceFriendly: true,
+        ),
       ],
       build: _buildTeslim,
     ),
     TutanakTemplate(
-      id: 'bilgi_alma',
-      title: 'Bilgi Alma Tutanağı',
-      description: 'İlgiliden bilgi alma kaydı',
-      icon: PhosphorIconsRegular.chatCircleText,
+      id: 'buluntu_esya',
+      title: 'Buluntu Eşya Tutanağı',
+      description: 'Bulunan eşyanın kaydı ve teslimi',
+      icon: PhosphorIconsRegular.package,
       fields: [
         TutanakField(key: 'tarih', label: 'Tarih', hint: 'gg.aa.yyyy'),
         TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
-        TutanakField(key: 'yer', label: 'Yer / adres'),
-        TutanakField(key: 'kisi', label: 'Bilgisine başvurulan'),
-        TutanakField(key: 'kimlik', label: 'Kimlik / T.C. (varsa)'),
-        TutanakField(key: 'konu', label: 'Konu'),
+        TutanakField(key: 'yer', label: 'Bulunduğu yer'),
+        TutanakField(key: 'bulan', label: 'Bulana / teslim eden'),
         TutanakField(
-          key: 'beyan',
-          label: 'Beyan / alınan bilgi',
+          key: 'esya',
+          label: 'Buluntu eşya tanımı',
           multiline: true,
+          voiceFriendly: true,
+        ),
+        TutanakField(key: 'teslimAlan', label: 'Teslim alan görevli / birim'),
+        TutanakField(
+          key: 'aciklama',
+          label: 'Ek açıklama',
+          multiline: true,
+          voiceFriendly: true,
         ),
       ],
-      build: _buildBilgiAlma,
+      build: _buildBuluntu,
     ),
     TutanakTemplate(
-      id: 'ifade',
-      title: 'İfade Tutanağı',
-      description: 'Şüpheli / mağdur / tanık ifadesi',
-      icon: PhosphorIconsRegular.microphone,
+      id: 'muhafaza_altina_alma',
+      title: 'Muhafaza Altına Alma Tutanağı',
+      description: 'El konulan eşyanın muhafazası',
+      icon: PhosphorIconsRegular.lock,
       fields: [
         TutanakField(key: 'tarih', label: 'Tarih', hint: 'gg.aa.yyyy'),
         TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
         TutanakField(key: 'yer', label: 'Yer / birim'),
-        TutanakField(key: 'ifadeVeren', label: 'İfade veren'),
+        TutanakField(key: 'sahip', label: 'Eşya sahibi / ilgili'),
         TutanakField(
-            key: 'sifat', label: 'Sıfatı', hint: 'şüpheli / mağdur / tanık'),
-        TutanakField(key: 'mudafi', label: 'Müdafi (varsa)'),
-        TutanakField(key: 'konu', label: 'İsnat / konu'),
-        TutanakField(key: 'beyan', label: 'Beyan', multiline: true),
+          key: 'esya',
+          label: 'Muhafaza altına alınan eşya',
+          multiline: true,
+        ),
+        TutanakField(key: 'sebep', label: 'Sebep / dayanak'),
+        TutanakField(
+          key: 'aciklama',
+          label: 'Muhafaza yeri ve işlem',
+          multiline: true,
+          voiceFriendly: true,
+        ),
       ],
-      build: _buildIfade,
+      build: _buildMuhafaza,
     ),
     TutanakTemplate(
-      id: 'olay',
-      title: 'Olay Tutanağı',
-      description: 'Genel olay tespit kaydı',
-      icon: PhosphorIconsRegular.warningCircle,
+      id: 'olay_gorgu_tespit',
+      title: 'Olay Görgü Tespit Tutanağı',
+      description: 'Olay yeri görgü tespiti',
+      icon: PhosphorIconsRegular.eye,
       fields: [
         TutanakField(key: 'tarih', label: 'Tarih', hint: 'gg.aa.yyyy'),
         TutanakField(key: 'saat', label: 'Saat', hint: 'ss:dd'),
         TutanakField(key: 'yer', label: 'Olay yeri'),
         TutanakField(key: 'olayTuru', label: 'Olayın türü'),
         TutanakField(
-            key: 'taraflar', label: 'Taraflar / ilgililer', multiline: true),
-        TutanakField(key: 'ozet', label: 'Olayın özeti', multiline: true),
+          key: 'gorgu',
+          label: 'Görgü tespiti',
+          multiline: true,
+          voiceFriendly: true,
+        ),
         TutanakField(
-            key: 'tedbir', label: 'Alınan tedbir / işlem', multiline: true),
+          key: 'taraflar',
+          label: 'Taraflar / tanıklar',
+          multiline: true,
+        ),
+        TutanakField(
+          key: 'tedbir',
+          label: 'Alınan tedbir',
+          multiline: true,
+          voiceFriendly: true,
+        ),
       ],
-      build: _buildOlay,
+      build: _buildOlayGorgu,
     ),
   ];
 
@@ -132,6 +184,27 @@ String _v(Map<String, String> v, String key, [String fallback = '.....']) {
 String _header(Map<String, String> v) {
   return '${_v(v, 'tarih', 'gg.aa.yyyy')} tarihinde saat '
       '${_v(v, 'saat', 'ss:dd')} sıralarında, ${_v(v, 'yer')} adresinde;';
+}
+
+String _buildKimlikTespit(Map<String, String> v) {
+  return [
+    'KİMLİK TESPİT TUTANAĞI',
+    '',
+    '${_header(v)} ${_v(v, 'kisi')} adlı kişinin kimlik bilgileri '
+        'tespit edilmiştir.',
+    '',
+    'T.C. Kimlik No: ${_v(v, 'tc', '—')}',
+    'Doğum: ${_v(v, 'dogum', '—')}',
+    'Adres: ${_v(v, 'adres', '—')}',
+    '',
+    'Tespit / açıklama:',
+    _v(v, 'tespit'),
+    '',
+    'İşbu tutanak tarafımızca düzenlenerek okunup imza altına alınmıştır.',
+    '',
+    'Tespit Edilen: ${_v(v, 'kisi')}        İmza:',
+    'Görevli:        İmza:',
+  ].join('\n');
 }
 
 String _buildTeslim(Map<String, String> v) {
@@ -165,72 +238,76 @@ String _buildTeslim(Map<String, String> v) {
   ].join('\n');
 }
 
-String _buildBilgiAlma(Map<String, String> v) {
-  final kimlik = v['kimlik']?.trim();
+String _buildBuluntu(Map<String, String> v) {
   return [
-    'BİLGİ ALMA TUTANAĞI',
+    'BULUNTU EŞYA TUTANAĞI',
     '',
-    '${_header(v)} ${_v(v, 'konu')} konusuyla ilgili olarak '
-        '${_v(v, 'kisi')} adlı kişinin bilgisine başvurulmuştur.',
-    if (kimlik != null && kimlik.isNotEmpty) 'Kimlik bilgisi: $kimlik',
+    '${_header(v)} ${_v(v, 'bulan')} tarafından bulunan / teslim edilen eşya '
+        'aşağıda kayda geçirilmiştir.',
     '',
-    'İlgilinin beyanı:',
-    _v(v, 'beyan'),
+    'Buluntu eşya:',
+    _v(v, 'esya'),
     '',
-    'İşbu tutanak tarafımızca düzenlenerek okunup imza altına alınmıştır.',
+    'Teslim alan: ${_v(v, 'teslimAlan')}',
+    if ((v['aciklama'] ?? '').trim().isNotEmpty) ...[
+      '',
+      'Açıklama:',
+      _v(v, 'aciklama'),
+    ],
     '',
-    'Bilgi Veren: ${_v(v, 'kisi')}        İmza:',
-    'Düzenleyen Görevli:        İmza:',
+    'İşbu tutanak düzenlenerek okunup imza altına alınmıştır.',
+    '',
+    'Teslim Eden: ${_v(v, 'bulan')}        İmza:',
+    'Teslim Alan: ${_v(v, 'teslimAlan')}        İmza:',
   ].join('\n');
 }
 
-String _buildIfade(Map<String, String> v) {
-  final mudafi = v['mudafi']?.trim();
+String _buildMuhafaza(Map<String, String> v) {
   return [
-    'İFADE TUTANAĞI',
+    'MUHAFAZA ALTINA ALMA TUTANAĞI',
     '',
-    '${_header(v)} ${_v(v, 'ifadeVeren')} adlı kişi '
-        '${_v(v, 'sifat', 'ilgili')} sıfatıyla, ${_v(v, 'konu')} konusunda '
-        'ifadesi alınmak üzere hazır edilmiştir.',
+    '${_header(v)} ${_v(v, 'sahip')} ile ilgili aşağıdaki eşya '
+        'muhafaza altına alınmıştır.',
     '',
-    'İlgiliye; susma hakkı, müdafi yardımından yararlanma ve yakınlarına '
-        'haber verme hakları ile yüklenen suç (CMK md. 147) bildirilmiştir.',
-    if (mudafi != null && mudafi.isNotEmpty) 'Müdafi: $mudafi',
+    'Sebep / dayanak: ${_v(v, 'sebep')}',
     '',
-    'Beyanı:',
-    _v(v, 'beyan'),
+    'Eşya:',
+    _v(v, 'esya'),
     '',
-    'İşbu tutanak okunarak doğruluğu teyit edilip imza altına alınmıştır.',
+    'Muhafaza işlemi:',
+    _v(v, 'aciklama'),
     '',
-    'İfade Veren: ${_v(v, 'ifadeVeren')}        İmza:',
-    'Müdafi:        İmza:',
-    'Düzenleyen Görevli:        İmza:',
+    'İşbu tutanak düzenlenerek imza altına alınmıştır.',
+    '',
+    'İlgili: ${_v(v, 'sahip')}        İmza:',
+    'Görevli:        İmza:',
   ].join('\n');
 }
 
-String _buildOlay(Map<String, String> v) {
+String _buildOlayGorgu(Map<String, String> v) {
   final taraflar = v['taraflar']?.trim();
   final tedbir = v['tedbir']?.trim();
   return [
-    'OLAY TUTANAĞI',
+    'OLAY GÖRGÜ TESPİT TUTANAĞI',
     '',
-    '${_header(v)} ${_v(v, 'olayTuru')} nitelikli bir olay meydana gelmiştir.',
+    '${_header(v)} ${_v(v, 'olayTuru')} nitelikli olay yerinde görgü tespiti '
+        'yapılmıştır.',
     '',
+    'Görgü tespiti:',
+    _v(v, 'gorgu'),
     if (taraflar != null && taraflar.isNotEmpty) ...[
-      'Taraflar / ilgililer:',
-      taraflar,
       '',
+      'Taraflar / tanıklar:',
+      taraflar,
     ],
-    'Olayın özeti:',
-    _v(v, 'ozet'),
     if (tedbir != null && tedbir.isNotEmpty) ...[
       '',
-      'Alınan tedbir / yapılan işlem:',
+      'Alınan tedbir:',
       tedbir,
     ],
     '',
-    'İşbu tutanak olay yerinde tarafımızca düzenlenerek imza altına alınmıştır.',
+    'İşbu tutanak olay yerinde düzenlenerek imza altına alınmıştır.',
     '',
-    'Düzenleyen Görevliler:        İmza:',
+    'Görevliler:        İmza:',
   ].join('\n');
 }

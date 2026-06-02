@@ -22,7 +22,7 @@ android {
     compileSdk = flutter.compileSdkVersion
     // Bazı eklentiler (ör. Isar) daha yüksek NDK ister; en yüksek sürümü sabitliyoruz
     // (NDK sürümleri geriye dönük uyumludur).
-    ndkVersion = "27.0.12077973"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

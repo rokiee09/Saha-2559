@@ -4,13 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../mevzuat/mevzuat_provider.dart';
+import 'asistan_domain.dart';
 
-/// Asistan, internet kullanmadan yalnızca uygulama paketindeki mevzuat
-/// JSON'ları üzerinde anahtar kelime araması yapar. Üstüne bir kavram/eş-anlam
-/// katmanı (concepts.json) doğal dildeki soruları ilgili maddelere bağlar.
-/// Hukuki görüş veya resmî kaynak değildir; sonuç ilgili maddeye yönlendirir.
+/// Polis çalışma asistanı: offline senaryo + mevzuat yönlendirme.
+/// Genel amaçlı sohbet değildir; hukuki tavsiye vermez.
 
-/// Aranabilir tek bir madde kaydı (kanun/yönetmelik + bölüm).
 class AsistanIndexItem {
   final MevzuatEntry entry;
   final MevzuatSection section;
@@ -18,7 +16,6 @@ class AsistanIndexItem {
   const AsistanIndexItem({required this.entry, required this.section});
 }
 
-/// Bir arama sonucu (skor ile).
 class AsistanHit {
   final MevzuatEntry entry;
   final MevzuatSection section;
@@ -30,7 +27,6 @@ class AsistanHit {
     required this.score,
   });
 
-  /// "Kaynak" satırı: ör. "2559 PVSK · Madde 16".
   String get sourceLabel {
     final code = entry.code?.trim();
     final article = section.article.trim();
@@ -43,7 +39,6 @@ class AsistanHit {
     return '$base · $articleLabel';
   }
 
-  /// Gövdeden kısa bir özet parçası (kart için).
   String snippet([int max = 220]) {
     final t = section.text.replaceAll(RegExp(r'\s+'), ' ').trim();
     if (t.length <= max) return t;
@@ -51,7 +46,6 @@ class AsistanHit {
   }
 }
 
-/// Türkçe duyarlı küçük harfe çevirme (I/İ özel durumları dahil).
 String asistanNormalize(String input) {
   return input
       .replaceAll('İ', 'i')
@@ -59,8 +53,6 @@ String asistanNormalize(String input) {
       .toLowerCase();
 }
 
-/// Aksan/Türkçe karakterleri sadeleştirir (ç→c, ğ→g, ı→i, ö→o, ş→s, ü→u).
-/// Kavram eşleştirmede "güç" ↔ "guc" gibi yazımların tutması için kullanılır.
 String asistanFold(String input) {
   final lower = asistanNormalize(input);
   const map = {
@@ -81,7 +73,6 @@ String asistanFold(String input) {
   return sb.toString();
 }
 
-/// Bir kavramın yönlendirdiği kaynak (kanun/yönetmelik + opsiyonel madde).
 class AsistanRef {
   final String entryId;
   final String? sectionId;
@@ -102,33 +93,78 @@ class AsistanRef {
   }
 }
 
-/// Doğal dildeki soruyu ilgili maddelere bağlayan offline kavram.
-class AsistanConcept {
-  final String id;
-  final String label;
-  final List<String> triggers;
-  final List<String> expand;
-  final String answer;
-  final List<AsistanRef> refs;
-
-  const AsistanConcept({
+/// Senaryo tabanlı çalışma asistanı kaydı.
+class AsistanScenario {
+  const AsistanScenario({
     required this.id,
-    required this.label,
+    required this.domain,
+    required this.title,
+    required this.situation,
     required this.triggers,
     required this.expand,
-    required this.answer,
+    required this.summary,
+    required this.appContext,
+    required this.source,
     required this.refs,
   });
 
-  factory AsistanConcept.fromJson(Map<String, dynamic> json) {
+  final String id;
+  final AsistanDomain domain;
+  final String title;
+  final String situation;
+  final List<String> triggers;
+  final List<String> expand;
+  final String summary;
+  final String appContext;
+  final String source;
+  final List<AsistanRef> refs;
+
+  /// Eski concepts.json uyumluluğu.
+  String get label => title;
+
+  factory AsistanScenario.fromJson(Map<String, dynamic> json) {
     List<String> strList(dynamic v) =>
         (v as List<dynamic>?)?.map((e) => e.toString()).toList() ?? const [];
-    return AsistanConcept(
+
+    final legacyAnswer = json['answer'] as String? ?? '';
+    var summary = (json['summary'] as String? ?? '').trim();
+    if (summary.isEmpty && legacyAnswer.isNotEmpty) {
+      summary = legacyAnswer.length > 280
+          ? '${legacyAnswer.substring(0, 277).trimRight()}…'
+          : legacyAnswer;
+    }
+    if (!summary.startsWith(asistanLegalPrefix)) {
+      summary = '$asistanLegalPrefix, $summary';
+    }
+
+    var appContext = (json['appContext'] as String? ?? '').trim();
+    if (appContext.isEmpty) {
+      appContext =
+          'Saha uygulamasında Mevzuat bölümünden ilgili metni açıp görev kaydınızla karşılaştırın.';
+    }
+
+    var source = (json['source'] as String? ?? '').trim();
+    if (source.isEmpty) {
+      final refs = (json['refs'] as List<dynamic>?) ?? const [];
+      if (refs.isNotEmpty) {
+        final first = refs.first;
+        if (first is Map<String, dynamic>) {
+          source = first['label'] as String? ?? '';
+        }
+      }
+    }
+
+    return AsistanScenario(
       id: json['id'] as String? ?? '',
-      label: json['label'] as String? ?? '',
+      domain: AsistanDomain.fromId(json['domain'] as String?) ??
+          AsistanDomain.mevzuat,
+      title: json['title'] as String? ?? json['label'] as String? ?? '',
+      situation: json['situation'] as String? ?? '',
       triggers: strList(json['triggers']),
       expand: strList(json['expand']),
-      answer: json['answer'] as String? ?? '',
+      summary: summary,
+      appContext: appContext,
+      source: source,
       refs: (json['refs'] as List<dynamic>?)
               ?.whereType<Map<String, dynamic>>()
               .map(AsistanRef.fromJson)
@@ -138,35 +174,50 @@ class AsistanConcept {
   }
 }
 
+/// Eski test ve API uyumluluğu.
+typedef AsistanConcept = AsistanScenario;
+
+const _scenariosPath = 'assets/asistan/scenarios.json';
 const _conceptsPath = 'assets/asistan/concepts.json';
 
-/// concepts.json'u paketten yükler (offline kavram haritası).
-final asistanConceptsProvider =
-    FutureProvider<List<AsistanConcept>>((ref) async {
+Future<List<AsistanScenario>> _loadScenariosFromAsset(String path) async {
+  final str = await rootBundle.loadString(path);
+  final json = jsonDecode(str) as Map<String, dynamic>;
+  final list = (json['scenarios'] as List<dynamic>?) ??
+      (json['concepts'] as List<dynamic>?) ??
+      const [];
+  return list
+      .whereType<Map<String, dynamic>>()
+      .map(AsistanScenario.fromJson)
+      .where((c) => c.triggers.isNotEmpty)
+      .toList();
+}
+
+final asistanScenariosProvider =
+    FutureProvider<List<AsistanScenario>>((ref) async {
   try {
-    final str = await rootBundle.loadString(_conceptsPath);
-    final json = jsonDecode(str) as Map<String, dynamic>;
-    final list = (json['concepts'] as List<dynamic>?) ?? const [];
-    return list
-        .whereType<Map<String, dynamic>>()
-        .map(AsistanConcept.fromJson)
-        .where((c) => c.triggers.isNotEmpty)
-        .toList();
+    return await _loadScenariosFromAsset(_scenariosPath);
   } catch (_) {
-    return const <AsistanConcept>[];
+    try {
+      return await _loadScenariosFromAsset(_conceptsPath);
+    } catch (_) {
+      return const <AsistanScenario>[];
+    }
   }
 });
 
-/// Sorguya en uygun kavramı seçer (en uzun eşleşen tetikleyici kazanır).
-AsistanConcept? asistanMatchConcept(
+/// Eski provider adı.
+final asistanConceptsProvider = asistanScenariosProvider;
+
+AsistanScenario? asistanMatchScenario(
   String rawQuery,
-  List<AsistanConcept> concepts,
+  List<AsistanScenario> scenarios,
 ) {
   final q = asistanFold(rawQuery).replaceAll(RegExp(r'\s+'), ' ').trim();
   if (q.isEmpty) return null;
-  AsistanConcept? best;
+  AsistanScenario? best;
   var bestScore = 0;
-  for (final c in concepts) {
+  for (final c in scenarios) {
     for (final t in c.triggers) {
       final nt = asistanFold(t).trim();
       if (nt.isEmpty) continue;
@@ -187,41 +238,75 @@ AsistanConcept? asistanMatchConcept(
   return best;
 }
 
-/// Asistan cevap kartı verisi: kavram + paket içinde gerçekten bulunan kaynaklar.
-class AsistanAnswer {
-  final AsistanConcept concept;
-  final List<AsistanRef> resolvedRefs;
+AsistanScenario? asistanMatchConcept(
+  String rawQuery,
+  List<AsistanConcept> concepts,
+) =>
+    asistanMatchScenario(rawQuery, concepts);
 
-  const AsistanAnswer({required this.concept, required this.resolvedRefs});
+/// Sorgu uzmanlık alanı içinde mi?
+bool asistanQueryInScope(String raw, List<AsistanScenario> scenarios) {
+  final trimmed = raw.trim();
+  if (trimmed.length < 2) return false;
+  if (asistanMatchScenario(trimmed, scenarios) != null) return true;
+
+  final q = asistanFold(trimmed);
+  for (final d in asistanAllDomains) {
+    for (final k in d.keywords) {
+      final nk = asistanFold(k);
+      if (nk.length >= 2 && q.contains(nk)) return true;
+    }
+  }
+  return false;
 }
 
-/// Sorgu için kavram cevabını üretir; refs paket içinde doğrulanır.
+class AsistanStructuredAnswer {
+  final AsistanScenario scenario;
+  final List<AsistanRef> resolvedRefs;
+
+  const AsistanStructuredAnswer({
+    required this.scenario,
+    required this.resolvedRefs,
+  });
+}
+
+/// Eski cevap tipi.
+typedef AsistanAnswer = AsistanStructuredAnswer;
+
+final asistanScopeProvider = Provider.autoDispose<bool>((ref) {
+  final raw = ref.watch(asistanQueryProvider).trim();
+  if (raw.isEmpty) return true;
+  final scenarios = ref.watch(asistanScenariosProvider).valueOrNull;
+  if (scenarios == null) return true;
+  return asistanQueryInScope(raw, scenarios);
+});
+
 final asistanAnswerProvider =
-    FutureProvider.autoDispose<AsistanAnswer?>((ref) async {
+    FutureProvider.autoDispose<AsistanStructuredAnswer?>((ref) async {
   final raw = ref.watch(asistanQueryProvider).trim();
   if (raw.isEmpty) return null;
-  final concepts = await ref.watch(asistanConceptsProvider.future);
-  final concept = asistanMatchConcept(raw, concepts);
-  if (concept == null) return null;
+  if (!ref.watch(asistanScopeProvider)) return null;
+
+  final scenarios = await ref.watch(asistanScenariosProvider.future);
+  final scenario = asistanMatchScenario(raw, scenarios);
+  if (scenario == null) return null;
 
   final index = await ref.watch(asistanIndexProvider.future);
   final entryIds = <String>{for (final i in index) i.entry.id};
   final sectionIds = <String>{for (final i in index) i.section.id};
 
   final resolved = <AsistanRef>[];
-  for (final r in concept.refs) {
+  for (final r in scenario.refs) {
     if (!entryIds.contains(r.entryId)) continue;
     if (r.sectionId != null && !sectionIds.contains(r.sectionId)) {
-      // Madde paket içinde yoksa belgenin tümüne yönlendir.
       resolved.add(AsistanRef(entryId: r.entryId, label: r.label));
     } else {
       resolved.add(r);
     }
   }
-  return AsistanAnswer(concept: concept, resolvedRefs: resolved);
+  return AsistanStructuredAnswer(scenario: scenario, resolvedRefs: resolved);
 });
 
-/// Tüm mevzuat maddelerini tek seferde yükleyip bellekte tutan dizin.
 final asistanIndexProvider =
     FutureProvider<List<AsistanIndexItem>>((ref) async {
   final catalog = await ref.watch(mevzuatCatalogProvider.future);
@@ -241,25 +326,42 @@ final asistanIndexProvider =
   return out;
 });
 
-/// Asistan arama metni.
 final asistanQueryProvider = StateProvider<String>((ref) => '');
 
-/// Hızlı konu butonları (etiket, arama metni).
-const List<({String label, String query})> asistanQuickTopics = [
-  (label: 'Yakalama', query: 'yakalama gözaltı'),
-  (label: 'Zor kullanma', query: 'zor kullanma'),
-  (label: 'Arama', query: 'arama el koyma'),
-  (label: 'İfade alma', query: 'ifade alma'),
-  (label: 'Disiplin', query: 'disiplin ceza'),
-  (label: 'Durdurma', query: 'durdurma kimlik sorma'),
-  (label: 'Refakat izni', query: 'refakat izni'),
-  (label: 'Yıllık izin', query: 'yıllık izin'),
-];
+/// Seçili uzmanlık alanı (null = tümü).
+final asistanSelectedDomainProvider =
+    StateProvider<AsistanDomain?>((ref) => null);
+
+/// Giriş ekranında gösterilen örnek senaryolar.
+List<AsistanScenario> asistanFeaturedScenarios(List<AsistanScenario> all) {
+  final seen = <AsistanDomain>{};
+  final out = <AsistanScenario>[];
+  for (final s in all) {
+    if (seen.add(s.domain)) out.add(s);
+    if (out.length >= 8) break;
+  }
+  return out;
+}
+
+/// Alan filtresine göre senaryolar.
+List<AsistanScenario> asistanScenariosForDomain(
+  List<AsistanScenario> all,
+  AsistanDomain? domain,
+) {
+  if (domain == null) return all;
+  return all.where((s) => s.domain == domain).toList();
+}
 
 final asistanResultsProvider =
     FutureProvider.autoDispose<List<AsistanHit>>((ref) async {
   final raw = ref.watch(asistanQueryProvider).trim();
   if (raw.isEmpty) return const [];
+  if (!ref.watch(asistanScopeProvider)) return const [];
+
+  final scenarios = await ref.watch(asistanScenariosProvider.future);
+  final structured = asistanMatchScenario(raw, scenarios);
+  // Senaryo eşleşince madde aramasını gizle — mevzuatı kullandırmaya odaklan.
+  if (structured != null) return const [];
 
   final normalized = asistanNormalize(raw);
   final phrase = normalized.replaceAll(RegExp(r'\s+'), ' ').trim();
@@ -271,9 +373,7 @@ final asistanResultsProvider =
       .toList();
   if (tokens.isEmpty) return const [];
 
-  // Kavram eşleşirse eş-anlam genişletme ve ilgili madde önceliklendirmesi.
-  final concepts = await ref.watch(asistanConceptsProvider.future);
-  final concept = asistanMatchConcept(raw, concepts);
+  final concept = structured;
   final expandTokens = <String>{
     if (concept != null)
       for (final e in concept.expand)
@@ -301,26 +401,21 @@ final asistanResultsProvider =
     for (final t in tokens) {
       if (title.contains(t)) score += 6;
       if (ref0.contains(t)) score += 4;
-      // Uzun metinlerin tek kelime tekrarıyla öne çıkmasını engelle.
       final occurrences = t.allMatches(body).length;
       if (occurrences > 0) score += occurrences > 3 ? 3.0 : occurrences.toDouble();
     }
 
-    // Tam ifade eşleşmesi (ör. "zor kullanma") en güçlü sinyal: ilgili
-    // maddeyi (PVSK 16 vb.) gevşek kelime eşleşmelerinin önüne taşır.
     if (isPhrase) {
       if (title.contains(phrase)) score += 40;
       if (ref0.contains(phrase)) score += 25;
       if (body.contains(phrase)) score += 25;
     }
 
-    // Tüm kelimeleri içeren maddeleri öne çıkar.
     final matchedAll = tokens.every(
       (t) => title.contains(t) || body.contains(t) || ref0.contains(t),
     );
     if (matchedAll && tokens.length > 1) score += 8;
 
-    // Kavram eş-anlam genişletmesi: aksan sadeleştirilmiş eşleşme.
     if (expandTokens.isNotEmpty) {
       final foldedTitle = asistanFold(title);
       final foldedBody = asistanFold(body);
@@ -330,7 +425,6 @@ final asistanResultsProvider =
       }
     }
 
-    // Kavramın işaret ettiği maddeyi her zaman en üste taşı.
     if (refSectionIds.contains(item.section.id)) {
       score += 200;
     }
@@ -343,5 +437,5 @@ final asistanResultsProvider =
   }
 
   hits.sort((a, b) => b.score.compareTo(a.score));
-  return hits.length > 30 ? hits.sublist(0, 30) : hits;
+  return hits.length > 5 ? hits.sublist(0, 5) : hits;
 });

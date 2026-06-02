@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/theme/police_colors.dart';
 import '../../common/widgets/turkish_flag_circle_icon.dart';
 import '../../data/models/martyr.dart';
 import 'martyrs_controller.dart';
@@ -16,7 +17,15 @@ class MartyrsPage extends ConsumerWidget {
     final selectedCity = ref.watch(martyrCityFilterProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Şehitler')),
+      backgroundColor: PoliceColors.backgroundDark,
+      appBar: AppBar(
+        backgroundColor: PoliceColors.navy,
+        foregroundColor: PoliceColors.titleOnDark,
+        title: martyrsAsync.maybeWhen(
+          data: (items) => Text('Şehitlerimiz (${items.length})'),
+          orElse: () => const Text('Şehitlerimiz'),
+        ),
+      ),
       body: Column(
         children: [
           Padding(
@@ -168,13 +177,15 @@ class _MartyrListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateText = martyr.dateOfMartyrdom != null
-        ? martyr.dateOfMartyrdom!
-            .toLocal()
-            .toIso8601String()
-            .split("T")
-            .first
-        : null;
+    final dateText = formatMartyrDate(martyr.dateOfMartyrdom);
+    final cityLabel = martyr.cityName.trim().isEmpty ||
+            martyr.cityName.toLowerCase() == 'belirtilmedi'
+        ? null
+        : martyr.cityName;
+    final subtitle = [
+      if (cityLabel != null) cityLabel,
+      if (martyr.dateOfMartyrdom != null) dateText,
+    ].join(' • ');
 
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0, end: 1),
@@ -189,17 +200,26 @@ class _MartyrListItem extends StatelessWidget {
         );
       },
       child: Card(
+        color: PoliceColors.surfaceDark,
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
           leading: const TurkishFlagAssetCircleIcon(size: 44),
-          title: Text(martyr.fullName),
-          subtitle: Text(
-            [
-              martyr.cityName,
-              if (dateText != null) dateText,
-            ].join(' • '),
+          title: Text(
+            martyr.fullName,
+            style: const TextStyle(
+              color: PoliceColors.titleOnDark,
+              fontWeight: FontWeight.w700,
+            ),
           ),
+          subtitle: subtitle.isEmpty
+              ? null
+              : Text(
+                  subtitle,
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.95),
+                  ),
+                ),
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(

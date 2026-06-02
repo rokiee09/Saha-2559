@@ -68,6 +68,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
       },
       onOpenAsistan: () => _goToTab(1),
       onOpenMevzuat: () => _goToTab(3),
+      onOpenProfilim: () => _goToTab(2),
       onOpenIzin: () {
         Navigator.of(context).push(fadeRoute(const IzinPage()));
       },

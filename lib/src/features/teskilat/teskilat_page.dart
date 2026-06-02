@@ -7,6 +7,7 @@ import '../kultur/rutbe_teskilat_page.dart';
 import 'birimler_page.dart';
 import '../contacts/contacts_page.dart';
 import 'teskilat_yapisi_page.dart';
+import '../kultur/tesekkur_vefa_page.dart';
 
 const _kCardMuted = PoliceColors.onDarkMuted;
 const _kCardIcon = Color(0xFF94A3B8);
@@ -97,6 +98,16 @@ class TeskilatPage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const ContactsPage()),
+              );
+            },
+          ),
+          _TeskilatCard(
+            icon: Icons.favorite_border,
+            title: 'Vefa ve Teşekkür',
+            subtitle: 'Şehitlerimiz, kahramanlarımız ve görevdekilere',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const TesekkurVefaPage()),
               );
             },
           ),

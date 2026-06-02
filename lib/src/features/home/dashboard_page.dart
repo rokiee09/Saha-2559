@@ -5,7 +5,10 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/police_siren_accent_bar.dart';
 import '../gorevlerim/izin/izin_provider.dart';
+import '../gorevlerim/kariyer/widgets/gazi_tesekkur_kart.dart';
+import '../gorevlerim/kariyer/widgets/personel_ozet_kart.dart';
 import '../haklar/vardiya/vardiya_cycle_calculator.dart';
 import '../haklar/vardiya/vardiya_today_provider.dart';
 import '../mevzuat/mevzuat_provider.dart';
@@ -25,6 +28,7 @@ class DashboardPage extends ConsumerWidget {
     required this.onOpenIzin,
     required this.onOpenVardiya,
     required this.onOpenMevzuat,
+    required this.onOpenProfilim,
   });
 
   final VoidCallback onContinueReading;
@@ -34,6 +38,7 @@ class DashboardPage extends ConsumerWidget {
   final VoidCallback onOpenIzin;
   final VoidCallback onOpenVardiya;
   final VoidCallback onOpenMevzuat;
+  final VoidCallback onOpenProfilim;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -85,21 +90,9 @@ class DashboardPage extends ConsumerWidget {
                         ),
                   ),
                   const SizedBox(height: 10),
-                  Align(
+                  const Align(
                     alignment: Alignment.centerLeft,
-                    child: Container(
-                      height: 3,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2),
-                        gradient: LinearGradient(
-                          colors: [
-                            PoliceColors.primaryBlue,
-                            PoliceColors.gold.withValues(alpha: 0.88),
-                          ],
-                        ),
-                      ),
-                    ),
+                    child: PoliceSirenAccentBar(),
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -111,6 +104,8 @@ class DashboardPage extends ConsumerWidget {
                         ),
                   ),
                   const SizedBox(height: 20),
+                  const GaziTesekkurKart(),
+                  PersonelOzetKart(onTap: onOpenProfilim),
                   _DutyTodayPanel(
                     vardiya: vardiyaToday,
                     leave: upcomingLeave,
@@ -179,8 +174,8 @@ class DashboardPage extends ConsumerWidget {
                       Expanded(
                         child: _HomeQuickCard(
                           icon: PhosphorIconsRegular.sparkle,
-                          title: 'Asistan',
-                          subtitle: 'Yaz, kanunu bul',
+                          title: 'Çalışma Asistanı',
+                          subtitle: 'Senaryo · mevzuat rehberi',
                           onTap: () {
                             HapticFeedback.selectionClick();
                             onOpenAsistan();
