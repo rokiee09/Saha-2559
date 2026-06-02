@@ -16,6 +16,7 @@ import '../legal/user_agreement_viewer_page.dart';
 import 'data_freshness_page.dart';
 import 'reading_scale_controller.dart';
 import 'theme_controller.dart';
+import 'vault_security_settings.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -98,6 +99,25 @@ class SettingsPage extends ConsumerWidget {
           const ListTile(
             title: Text('Veri ve gizlilik özeti'),
             subtitle: Text(kAppOfflineDataSummary),
+          ),
+          const Divider(height: 0),
+          ListTile(
+            leading: Icon(
+              Icons.enhanced_encryption_outlined,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Yerel kasa güvenliği'),
+            subtitle: const Text(
+              'PIN, biyometrik, şifreli kayıtlar ve cihaz uyarıları',
+            ),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () {
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const VaultSecuritySettings(),
+                ),
+              );
+            },
           ),
           const Divider(height: 0),
           ListTile(

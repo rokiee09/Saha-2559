@@ -86,6 +86,8 @@ class DashboardPage extends ConsumerWidget {
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  const SehitYildonumuDevriyeKart(),
+                  const SizedBox(height: 16),
                   Text(
                     kAppDisplayName,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -110,7 +112,6 @@ class DashboardPage extends ConsumerWidget {
                   ),
                   const SizedBox(height: 20),
                   const GaziTesekkurKart(),
-                  const SehitYildonumuDevriyeKart(),
                   PersonelOzetKart(onTap: onOpenProfilim),
                   const EmeklilikDashboardCard(),
                   _DutyTodayPanel(

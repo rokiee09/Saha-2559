@@ -27,15 +27,20 @@ void main() {
     expect(found.first.fullName, 'A');
   });
 
-  test('marquee ends with gratitude line', () {
+  test('marquee lists martyr names without closing line', () {
     final text = buildSehitDevriyeMarqueeText([
       Martyr()
         ..id = 1
         ..fullName = 'Polis Memuru X'
-        ..cityName = 'Belirtilmedi'
+        ..cityName = 'Ankara'
         ..dateOfMartyrdom = DateTime(2017, 6, 2),
     ]);
     expect(text, contains('Polis Memuru X'));
-    expect(text, contains(sehitDevriyeKapanis));
+    expect(text, contains('Ankara'));
+    expect(text, isNot(contains(sehitDevriyeKapanis)));
+  });
+
+  test('empty marquee is empty', () {
+    expect(buildSehitDevriyeMarqueeText([]), '');
   });
 }

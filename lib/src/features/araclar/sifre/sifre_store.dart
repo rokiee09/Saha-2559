@@ -1,11 +1,9 @@
 import 'dart:convert';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../../security/vault_platform.dart';
 
-/// Kayıtlı şifreler YALNIZCA bu cihazda (SharedPreferences) tutulur; buluta
-/// gönderilmez. Şifreler base64 ile saklanır — bu güçlü bir şifreleme DEĞİLDİR,
-/// yalnızca düz metin okumayı zorlaştırır. Cihaz güvenliği (ekran kilidi)
-/// kullanıcının sorumluluğundadır.
+/// Kayıtlı şifreler yalnızca bu cihazda, kasa AES-256-GCM ile şifrelenir;
+/// sunucuya gönderilmez.
 
 /// Şifrenin kullanılacağı sistem/banka hedefi.
 class SifreHedef {
@@ -107,8 +105,7 @@ class KayitliSifre {
 const _prefsKey = 'sifre_kayitli_v1';
 
 Future<List<KayitliSifre>> sifreLoadAll() async {
-  final prefs = await SharedPreferences.getInstance();
-  final raw = prefs.getString(_prefsKey);
+  final raw = await VaultPlatform.readSensitive(_prefsKey);
   if (raw == null || raw.isEmpty) return [];
   try {
     final dec = jsonDecode(raw);
@@ -124,8 +121,7 @@ Future<List<KayitliSifre>> sifreLoadAll() async {
 }
 
 Future<void> _saveAll(List<KayitliSifre> list) async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setString(
+  await VaultPlatform.writeSensitive(
     _prefsKey,
     jsonEncode(list.map((e) => e.toJson()).toList()),
   );

@@ -2,19 +2,18 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../../security/vault_platform.dart';
 
 import 'gider_models.dart';
 
-/// O-1 gider kayıtları cihazda (SharedPreferences) tutulur; fiş görüntüleri
+/// O-1 gider kayıtları cihazda şifreli kasada tutulur; fiş görüntüleri
 /// uygulamanın özel belge klasöründe (o1_fis/) saklanır. Hiçbir veri buluta
 /// gönderilmez.
 
 const _prefsKey = 'o1_gider_v1';
 
 Future<List<GiderKayit>> giderLoadAll() async {
-  final prefs = await SharedPreferences.getInstance();
-  final raw = prefs.getString(_prefsKey);
+  final raw = await VaultPlatform.readSensitive(_prefsKey);
   if (raw == null || raw.isEmpty) return [];
   try {
     final dec = jsonDecode(raw);
@@ -30,8 +29,7 @@ Future<List<GiderKayit>> giderLoadAll() async {
 }
 
 Future<void> _saveAll(List<GiderKayit> list) async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setString(
+  await VaultPlatform.writeSensitive(
     _prefsKey,
     jsonEncode(list.map((e) => e.toJson()).toList()),
   );
