@@ -4,6 +4,8 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../gorevlerim/atis/atis_takip_page.dart';
+import '../gorevlerim/gunluk/gorev_gunluk_page.dart';
 import '../gorevlerim/izin/izin_takip_page.dart';
 import '../haklar/maas_hesaplama_page.dart';
 import '../haklar/vardiya/vardiya_hesaplama_page.dart';
@@ -12,6 +14,7 @@ import '../kultur/kultur_page.dart';
 import '../saha/saha_categories.dart';
 import '../saha/saha_category_page.dart';
 import '../teskilat/teskilat_page.dart';
+import 'arama/arama_rehberi_page.dart';
 import 'gider/o1_gider_page.dart';
 import 'gorev_puanlari/gorev_puani_giris_page.dart';
 import 'gorev_puanlari/gorev_puanlari_page.dart';
@@ -22,7 +25,7 @@ import 'lojman/lojman_puani_page.dart';
 import 'sifre/kayitli_sifreler_page.dart';
 import 'sifre_uretici_page.dart';
 import 'telsiz_kodlari_page.dart';
-import 'tutanak/tutanak_page.dart';
+import 'tutanak/tutanak_merkezi_page.dart';
 
 /// Araçlar: hesaplayıcılar, yerel saha defteri ve teşkilat/kültür bilgisi
 /// tek bir merkezde. Polisin "işime yarayan araçlar" mantığına göre gruplanır.
@@ -105,13 +108,6 @@ class AraclarPage extends StatelessWidget {
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const KayitliSifrelerPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.clipboardText,
-            title: 'Tutanak asistanı',
-            subtitle: 'Şablonu doldur, taslak metin üret ve kaydet.',
-            onTap: () =>
-                Navigator.of(context).push(fadeRoute(const TutanakPage())),
-          ),
           const SizedBox(height: 18),
           const _SectionTitle('Yerel saha defteri'),
           Text(
@@ -139,7 +135,10 @@ class AraclarPage extends StatelessWidget {
                       builder: (_) => switch (cat.id) {
                         'izin' => const IzinTakipPage(),
                         'o1_gider' => const O1GiderPage(),
-                        'telsiz' => const TelsizKodlariPage(),
+                        'tutanak' => const TutanakMerkeziPage(),
+                        'arama_karari' => const AramaRehberiPage(),
+                        'gorev_gunlugu' => const GorevGunlukPage(),
+                        'atis_takip' => const AtisTakipPage(),
                         _ => SahaCategoryPage(categoryId: cat.id),
                       },
                     ),

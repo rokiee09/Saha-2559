@@ -1,86 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import '../araclar/gider/o1_gider_page.dart';
 import '../araclar/gorev_puanlari/gorev_puani_giris_page.dart';
+import '../araclar/lojman/lojman_puani_page.dart';
 import '../home/root_drawer_scope.dart';
+import 'atis/atis_takip_page.dart';
 import 'disiplin/disiplin_rehberi_page.dart';
+import 'gunluk/gorev_gunluk_page.dart';
 import 'izin/izin_page.dart';
-import 'kariyer/kariyer_page.dart';
+import 'kariyer/basari/basari_page.dart';
+import 'kariyer/egitim/egitim_page.dart';
+import 'kariyer/kariyer_hub_page.dart';
+import 'kariyer/kariyer_ozet_provider.dart';
+import 'kariyer/profil/profil_form.dart';
 
-/// Profilim: polisin kişisel kayıtları — izin, harcama, kariyer, disiplin.
-/// Maaş/vardiya gibi hesaplayıcılar yalnızca Araçlar sekmesindedir.
-/// Tayin/lojman gibi resmî kriter/puan gerektiren bölümler, yanıltıcı tahmin
-/// üretmemek için veri hazırlanana kadar "hazırlanıyor" olarak işaretlidir.
-class GorevlerimPage extends StatelessWidget {
+/// Profilim: kişisel bilgiler + kariyer modülleri.
+class GorevlerimPage extends ConsumerWidget {
   const GorevlerimPage({super.key});
 
-  void _comingSoon(BuildContext context, String title, String detail) {
-    HapticFeedback.selectionClick();
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: PoliceColors.surfaceDark,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (ctx) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const PhosphorIcon(
-                      PhosphorIconsRegular.wrench,
-                      color: PoliceColors.gold,
-                      size: 22,
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        '$title · hazırlanıyor',
-                        style: const TextStyle(
-                          color: PoliceColors.titleOnDark,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  detail,
-                  style: TextStyle(
-                    color: PoliceColors.mevzuatBodyText.withValues(alpha: 0.92),
-                    height: 1.5,
-                    fontSize: 14,
-                  ),
-                ),
-                const SizedBox(height: 18),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: FilledButton(
-                    onPressed: () => Navigator.of(ctx).pop(),
-                    child: const Text('Anladım'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ozetAsync = ref.watch(kariyerOzetProvider);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -98,71 +44,190 @@ class GorevlerimPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 28),
         children: [
+          Text(
+            'Kişisel bilgiler (detaylı)',
+            style: TextStyle(
+              color: PoliceColors.gold.withValues(alpha: 0.95),
+              fontWeight: FontWeight.w800,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Ad, sicil, rütbe, birim, göreve başlama, eğitim ve gazilik durumunu buradan gir. '
+            'Ana sayfada yalnızca rütbe, ad, birim ve eğitim özeti görünür.',
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.85),
+              fontSize: 12.5,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: PoliceColors.surfaceDark,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: PoliceColors.primaryBlue.withValues(alpha: 0.35),
+              ),
+            ),
+            child: const ProfilForm(),
+          ),
+          const SizedBox(height: 20),
+          ozetAsync.when(
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+            data: (ozet) => _MiniOzet(ozet: ozet),
+          ),
+          const SizedBox(height: 18),
+          const _SectionLabel('Kariyer'),
+          _GorevTile(
+            icon: PhosphorIconsRegular.medal,
+            title: 'Başarı Dosyam',
+            subtitle: 'Başarı ve üstün başarı belgeleri',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const BasariPage())),
+          ),
+          _GorevTile(
+            icon: PhosphorIconsRegular.graduationCap,
+            title: 'Eğitim ve Sertifikalarım',
+            subtitle: 'Kurs, sertifika ve diploma kayıtları',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const EgitimPage())),
+          ),
+          _GorevTile(
+            icon: PhosphorIconsRegular.chartLineUp,
+            title: 'Kariyer özeti',
+            subtitle: 'Tüm kariyer verilerinin özeti',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const KariyerHubPage())),
+          ),
+          const SizedBox(height: 18),
+          const _SectionLabel('Görev takibi'),
+          _GorevTile(
+            icon: PhosphorIconsRegular.bookBookmark,
+            title: 'Görev Günlüğüm',
+            subtitle: 'Görev kaydı, takvim ve istatistik.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const GorevGunlukPage())),
+          ),
+          _GorevTile(
+            icon: PhosphorIconsRegular.target,
+            title: 'Atış Takibim',
+            subtitle: '4 dönem atış puanı.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const AtisTakipPage())),
+          ),
+          const SizedBox(height: 18),
+          const _SectionLabel('Diğer'),
           _GorevTile(
             icon: PhosphorIconsRegular.calendarBlank,
             title: 'İzinlerim',
-            subtitle: 'Yıllık, mazeret, refakat ve doğum izni gün sayacı.',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context).push(fadeRoute(const IzinPage()));
-            },
+            subtitle: 'Yıllık, mazeret, refakat izni.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const IzinPage())),
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.receipt,
             title: 'O-1 giderleri',
-            subtitle: 'Görev giderlerin ve fişleri (kamera ile ekle).',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context).push(fadeRoute(const O1GiderPage()));
-            },
+            subtitle: 'Görev giderleri ve fişler.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const O1GiderPage())),
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.scales,
             title: 'Disiplinlerim',
-            subtitle: 'Fiil → olası ceza, savunma süreci ve itiraz yolu.',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context)
-                  .push(fadeRoute(const DisiplinRehberiPage()));
-            },
-          ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.medal,
-            title: 'Kariyerim',
-            subtitle: 'Başarı belgesi, eğitim ve şark görev kayıtların.',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context).push(fadeRoute(const KariyerPage()));
-            },
+            subtitle: 'Fiil rehberi ve savunma süreci.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const DisiplinRehberiPage())),
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.mapPinLine,
             title: 'Tayinim',
-            subtitle: 'EGM hizmet puanı hesapla ve kaydet.',
-            onTap: () {
-              HapticFeedback.selectionClick();
-              Navigator.of(context)
-                  .push(fadeRoute(const GorevPuaniGirisPage()));
-            },
+            subtitle: 'EGM hizmet puanı hesapla.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const GorevPuaniGirisPage())),
           ),
           _GorevTile(
             icon: PhosphorIconsRegular.house,
             title: 'Lojmanım',
-            subtitle: 'Medeni durum ve çocuk sayısına göre puan.',
-            comingSoon: true,
-            onTap: () => _comingSoon(
-              context,
-              'Lojman',
-              'Lojman puanı; medeni durum, çocuk sayısı ve hizmet süresi gibi '
-                  'resmî kriterlere göre hesaplanır. Doğru ve güncel puan '
-                  'cetveli eklendiğinde bu bölüm hesaplama yapacak. Kesin puan '
-                  'kurum işlemine bağlıdır.',
-            ),
+            subtitle: 'Lojman puanı hesaplama.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const LojmanPuaniPage())),
           ),
         ],
       ),
     );
   }
+}
+
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: PoliceColors.titleOnDark,
+          fontWeight: FontWeight.w800,
+          fontSize: 14.5,
+        ),
+      ),
+    );
+  }
+}
+
+class _MiniOzet extends StatelessWidget {
+  const _MiniOzet({required this.ozet});
+
+  final KariyerOzet ozet;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark.withValues(alpha: 0.7),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: PoliceColors.outlineMuted.withValues(alpha: 0.4),
+        ),
+      ),
+      child: Row(
+        children: [
+          _chip('Başarı', '${ozet.basariHesap.basariSayisi}'),
+          _chip('Eğitim',
+              '${ozet.egitimStat.toplamEgitim + ozet.egitimStat.toplamSertifika}'),
+          _chip('Görev', '${ozet.toplamGorev}'),
+          _chip('Atış', '${ozet.atisTamamlanan}/4'),
+        ],
+      ),
+    );
+  }
+
+  Widget _chip(String k, String v) => Expanded(
+        child: Column(
+          children: [
+            Text(v,
+                style: const TextStyle(
+                  color: PoliceColors.titleOnDark,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                )),
+            Text(k,
+                style: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.8),
+                  fontSize: 11,
+                )),
+          ],
+        ),
+      );
 }
 
 class _GorevTile extends StatelessWidget {
@@ -171,14 +236,12 @@ class _GorevTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.onTap,
-    this.comingSoon = false,
   });
 
   final IconData icon;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
-  final bool comingSoon;
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +251,10 @@ class _GorevTile extends StatelessWidget {
         color: PoliceColors.surfaceDark,
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
-          onTap: onTap,
+          onTap: () {
+            HapticFeedback.selectionClick();
+            onTap();
+          },
           borderRadius: BorderRadius.circular(16),
           child: Container(
             padding: const EdgeInsets.all(14),
@@ -217,41 +283,13 @@ class _GorevTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                              title,
-                              style: const TextStyle(
-                                color: PoliceColors.titleOnDark,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 15.5,
-                              ),
-                            ),
-                          ),
-                          if (comingSoon) ...[
-                            const SizedBox(width: 8),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8,
-                                vertical: 2,
-                              ),
-                              decoration: BoxDecoration(
-                                color:
-                                    PoliceColors.gold.withValues(alpha: 0.18),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: const Text(
-                                'Hazırlanıyor',
-                                style: TextStyle(
-                                  color: PoliceColors.gold,
-                                  fontSize: 10.5,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: PoliceColors.titleOnDark,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 15.5,
+                        ),
                       ),
                       const SizedBox(height: 3),
                       Text(

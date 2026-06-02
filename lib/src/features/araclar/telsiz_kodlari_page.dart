@@ -196,7 +196,7 @@ class _HeroCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '33-10 İl Emniyet Müdürü gibi protokol ve birim çağrı kodlarını hızlı ara.',
+                  '33-10 protokol ve şube/büro çağrı kodlarını hızlı ara.',
                   style: TextStyle(
                     color: PoliceColors.textMuted.withValues(alpha: 0.94),
                     fontSize: 12.8,
@@ -266,7 +266,8 @@ class _TelsizCodeCard extends StatelessWidget {
 
   Color get _accent => switch (kod.kategori) {
         TelsizKodKategori.protokol => PoliceColors.gold,
-        TelsizKodKategori.birim => const Color(0xFF94A3B8),
+        TelsizKodKategori.subeMuduru => PoliceColors.primaryBlue,
+        TelsizKodKategori.buroAmiri => const Color(0xFF38BDF8),
       };
 
   @override

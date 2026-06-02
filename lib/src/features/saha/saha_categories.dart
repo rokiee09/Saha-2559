@@ -26,16 +26,20 @@ class SahaCategoryDef {
         icon: PhosphorIconsRegular.calendarBlank),
     SahaCategoryDef(
         id: 'tutanak',
-        title: 'Tutanaklarım',
+        title: 'Tutanak Merkezi',
         icon: PhosphorIconsRegular.clipboardText),
     SahaCategoryDef(
         id: 'arama_karari',
-        title: 'Arama kararı',
-        icon: PhosphorIconsRegular.shield),
+        title: 'Arama Rehberi',
+        icon: PhosphorIconsRegular.magnifyingGlass),
     SahaCategoryDef(
-        id: 'telsiz',
-        title: 'Telsiz kodları',
-        icon: PhosphorIconsRegular.broadcast),
+        id: 'gorev_gunlugu',
+        title: 'Görev Günlüğüm',
+        icon: PhosphorIconsRegular.bookBookmark),
+    SahaCategoryDef(
+        id: 'atis_takip',
+        title: 'Atış Takibim',
+        icon: PhosphorIconsRegular.target),
   ];
 
   static SahaCategoryDef? byId(String id) {

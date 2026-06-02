@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/models/martyr.dart';
-import 'web_martyrs.dart';
+import 'martyrs_controller_stub.dart';
 
 final martyrProvider =
     FutureProvider.family<Martyr?, int>((ref, id) async {
-  final all = await ref.watch(webMartyrsProvider.future);
+  final all = await ref.watch(martyrsCatalogProvider.future);
   for (final m in all) {
     if (m.id == id) return m;
   }

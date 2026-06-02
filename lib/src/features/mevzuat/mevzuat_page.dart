@@ -1014,7 +1014,7 @@ class _SmartConceptCard extends ConsumerWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              concept.answer,
+              concept.summary,
               maxLines: 4,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(

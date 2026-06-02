@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/theme/police_colors.dart';
 import '../../common/widgets/turkish_flag_circle_icon.dart';
 import 'martyr_provider.dart';
+import 'martyrs_controller.dart';
 
 class MartyrDetailPage extends ConsumerWidget {
   final int martyrId;
@@ -14,20 +16,23 @@ class MartyrDetailPage extends ConsumerWidget {
     final martyrAsync = ref.watch(martyrProvider(martyrId));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Kayıt')),
+      backgroundColor: PoliceColors.backgroundDark,
+      appBar: AppBar(
+        backgroundColor: PoliceColors.navy,
+        foregroundColor: PoliceColors.titleOnDark,
+        title: const Text('Şehit kaydı'),
+      ),
       body: martyrAsync.when(
         data: (martyr) {
           if (martyr == null) {
             return const Center(child: Text('Kayıt bulunamadı.'));
           }
 
-          final dateText = martyr.dateOfMartyrdom != null
-              ? martyr.dateOfMartyrdom!
-                  .toLocal()
-                  .toIso8601String()
-                  .split("T")
-                  .first
-              : '—';
+          final dateText = formatMartyrDate(martyr.dateOfMartyrdom);
+          final cityText = martyr.cityName.trim().isEmpty ||
+                  martyr.cityName.toLowerCase() == 'belirtilmedi'
+              ? 'Belirtilmedi'
+              : martyr.cityName;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16),
@@ -35,23 +40,24 @@ class MartyrDetailPage extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 _RowLabel(
-                  label: 'Ad soyad / ünvan (kayıtlı metin)',
+                  label: 'Ad soyad / ünvan',
                   value: martyr.fullName,
                   strong: true,
                   valueLeading: const TurkishFlagAssetCircleIcon(size: 48),
                 ),
                 const SizedBox(height: 16),
-                _RowLabel(label: 'İl', value: martyr.cityName),
+                _RowLabel(label: 'Şehit olma tarihi', value: dateText),
                 const SizedBox(height: 12),
-                _RowLabel(label: 'Tarih', value: dateText),
+                _RowLabel(label: 'İl', value: cityText),
                 const SizedBox(height: 20),
                 Text(
                   'Bu alanda anı metni veya yorum yoktur. '
                   'Güncel ve eksiksiz resmî kayıt için kurum duyuruları esas alınmalıdır.',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                        height: 1.4,
-                      ),
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.95),
+                    height: 1.4,
+                    fontSize: 12.5,
+                  ),
                 ),
               ],
             ),
@@ -84,9 +90,11 @@ class _RowLabel extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+          style: TextStyle(
+            color: PoliceColors.textMuted.withValues(alpha: 0.9),
+            fontSize: 12,
+            fontWeight: FontWeight.w700,
+          ),
         ),
         const SizedBox(height: 4),
         valueLeading != null
@@ -100,22 +108,24 @@ class _RowLabel extends StatelessWidget {
                   Expanded(
                     child: SelectableText(
                       value,
-                      style: strong
-                          ? Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w600,
-                              )
-                          : Theme.of(context).textTheme.bodyLarge,
+                      style: TextStyle(
+                        color: PoliceColors.titleOnDark,
+                        fontWeight: strong ? FontWeight.w800 : FontWeight.w500,
+                        fontSize: strong ? 16 : 15,
+                        height: 1.35,
+                      ),
                     ),
                   ),
                 ],
               )
             : SelectableText(
                 value,
-                style: strong
-                    ? Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        )
-                    : Theme.of(context).textTheme.bodyLarge,
+                style: TextStyle(
+                  color: PoliceColors.titleOnDark,
+                  fontWeight: strong ? FontWeight.w800 : FontWeight.w500,
+                  fontSize: strong ? 16 : 15,
+                  height: 1.35,
+                ),
               ),
       ],
     );
