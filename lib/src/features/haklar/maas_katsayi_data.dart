@@ -137,7 +137,10 @@ MaasHesapSonucu hesaplaMaas({
   double kefaletKesintisi = 0,
   double raporluGun = 0,
   double digerKesintiler = 0,
+  double? tahminiNetOraniOverride,
 }) {
+  final netOrani = (tahminiNetOraniOverride ?? donem.tahminiNetOrani)
+      .clamp(0.0, 1.0);
   final gostergeAyligi = gostergePuan * donem.memurAylikKatsayisi;
   final brut = donem.tabanAylik +
       gostergeAyligi +
@@ -163,7 +166,7 @@ MaasHesapSonucu hesaplaMaas({
       (donem.tabanAylik * sendikaTabanAylikKesintiOrani);
   final besKesintisi = brut * besKesintiOrani;
 
-  final ozetKesinti = brut * (1 - donem.tahminiNetOrani);
+  final ozetKesinti = brut * (1 - netOrani);
   final kesinti = (ozetKesinti -
           vergiIstisnaEtkisi -
           ozelSaglikVergiEtkisi +
