@@ -21,7 +21,7 @@ class EgitimPage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
-        title: const Text('Eğitim ve Sertifikalarım'),
+        title: const Text('Eğitimlerim'),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _open(context, ref),

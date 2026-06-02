@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/police_module_icon.dart';
+import '../../common/widgets/police_module_list_tile.dart';
 import '../gorevlerim/atis/atis_takip_page.dart';
 import '../gorevlerim/gunluk/gorev_gunluk_page.dart';
 import '../gorevlerim/izin/izin_takip_page.dart';
@@ -52,57 +53,57 @@ class AraclarPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
         children: [
           const _SectionTitle('Hesaplayıcılar'),
-          _ToolTile(
-            icon: PhosphorIconsRegular.calendarCheck,
-            title: 'Vardiya hesaplama',
+          PoliceModuleListTile(
+            style: PoliceModules.vardiya,
+            title: 'Vardiyam',
             subtitle: '10 vardiya türü; seçim cihazda saklanır.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const VardiyaHesaplamaPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.calculator,
-            title: 'Maaş hesaplama',
+          PoliceModuleListTile(
+            style: PoliceModules.maas,
+            title: 'Maaşım',
             subtitle: 'Katsayıya göre tahmini; bağlayıcı değildir.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const MaasHesaplamaPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.houseLine,
+          PoliceModuleListTile(
+            style: PoliceModules.lojman,
             title: 'Lojman puanı hesaplama',
             subtitle: 'Aile, hizmet, bekleme ve konut bilgilerine göre puan.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const LojmanPuaniPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.airplaneTilt,
+          PoliceModuleListTile(
+            style: PoliceModules.harcirah,
             title: 'Yol harcırah hesaplama',
             subtitle: 'İller arası km, eş/çocuk ve örnek rapor.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const HarcirahHesaplamaPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.mapPin,
+          PoliceModuleListTile(
+            style: PoliceModules.tayin,
             title: 'Görev puanları cetveli',
             subtitle: '2025 il / ilçe günlük görev yeri puanları.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const GorevPuanlariPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.calculator,
+          PoliceModuleListTile(
+            style: PoliceModules.tayin,
             title: 'Görev puanı hesapla',
             subtitle: 'EGM hizmet puanı — görev yerleri ve süreleri.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const GorevPuaniGirisPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.password,
+          PoliceModuleListTile(
+            style: PoliceModules.sifre,
             title: 'Şifre üretici',
             subtitle: 'Cihazda güçlü, rastgele şifre üret veya kasaya kaydet.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const SifreUreticiPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.vault,
+          PoliceModuleListTile(
+            style: PoliceModules.sifreKasa,
             title: 'Kayıtlı şifreler',
             subtitle: 'Sisteme/bankaya bağlı şifre kasan (yalnızca cihazda).',
             onTap: () => Navigator.of(context)
@@ -148,22 +149,22 @@ class AraclarPage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           const _SectionTitle('Saha rehberleri'),
-          _ToolTile(
-            icon: PhosphorIconsRegular.translate,
+          PoliceModuleListTile(
+            style: PoliceModules.ingilizce,
             title: 'Polis İngilizcesi',
             subtitle: 'Durdurma, kimlik, trafik ve yardım kalıpları (offline).',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const PolisIngilizcePage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.lifebuoy,
+          PoliceModuleListTile(
+            style: PoliceModules.kriz,
             title: 'Kriz rehberi',
             subtitle: 'Kritik olaylarda adım adım kontrol listesi.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const KrizRehberiPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.broadcast,
+          PoliceModuleListTile(
+            style: PoliceModules.telsiz,
             title: 'Telsiz kodları',
             subtitle: '33-10, protokol ve birim çağrı kodlarını hızlı ara.',
             onTap: () => Navigator.of(context)
@@ -171,15 +172,15 @@ class AraclarPage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           const _SectionTitle('Teşkilat & Kültür'),
-          _ToolTile(
-            icon: PhosphorIconsRegular.buildings,
+          PoliceModuleListTile(
+            style: PoliceModules.teskilat,
             title: 'Teşkilat',
             subtitle: 'Yapı, birimler ve il listesi.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const TeskilatPage())),
           ),
-          _ToolTile(
-            icon: PhosphorIconsRegular.palette,
+          PoliceModuleListTile(
+            style: PoliceModules.kultur,
             title: 'Kültür',
             subtitle: 'Tarih, şehitler, tören ve önemli günler.',
             onTap: () =>
@@ -205,93 +206,6 @@ class _SectionTitle extends StatelessWidget {
           color: PoliceColors.titleOnDark,
           fontWeight: FontWeight.w800,
           fontSize: 16,
-        ),
-      ),
-    );
-  }
-}
-
-class _ToolTile extends StatelessWidget {
-  const _ToolTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Material(
-        color: PoliceColors.surfaceDark,
-        borderRadius: BorderRadius.circular(16),
-        child: InkWell(
-          onTap: () {
-            HapticFeedback.selectionClick();
-            onTap();
-          },
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
-              ),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: PoliceColors.primaryBlue.withValues(alpha: 0.14),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: PhosphorIcon(
-                    icon,
-                    color: PoliceColors.primaryBlue,
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          color: PoliceColors.titleOnDark,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15.5,
-                        ),
-                      ),
-                      const SizedBox(height: 3),
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: PoliceColors.textMuted.withValues(alpha: 0.9),
-                          fontSize: 12.5,
-                          height: 1.32,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const PhosphorIcon(
-                  PhosphorIconsRegular.caretRight,
-                  color: PoliceColors.textMuted,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );
@@ -326,10 +240,11 @@ class _SahaTile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              PhosphorIcon(
-                category.icon,
-                color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
-                size: 26,
+              PoliceModuleIconBadge(
+                style: PoliceModules.forSahaCategory(category.id),
+                size: 24,
+                padding: 8,
+                borderRadius: 10,
               ),
               const SizedBox(height: 8),
               Text(

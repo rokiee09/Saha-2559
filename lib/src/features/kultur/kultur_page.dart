@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/police_module_icon.dart';
 import '../home/root_drawer_scope.dart';
 import '../../common/widgets/primary_card.dart';
 import '../martyrs/martyrs_page.dart';
@@ -42,9 +44,10 @@ class KulturPage extends StatelessWidget {
           ),
           _cultureCard(
             context,
+            style: PoliceModules.gazilik,
             title: 'Atatürk ve Türk Polisi',
-            subtitle: 'Gazi’den anlatım, Polis Koleji ve Enstitü emri; EGM resmî metin',
-            icon: Icons.flag_outlined,
+            subtitle:
+                'Gazi’den anlatım, Polis Koleji ve Enstitü emri; EGM resmî metin',
             isPrimary: true,
             onTap: () => Navigator.of(context).push(
               fadeRoute(const AtaturkVeTurkPolisiPage()),
@@ -52,40 +55,42 @@ class KulturPage extends StatelessWidget {
           ),
           _cultureCard(
             context,
+            style: PoliceModules.kultur,
             title: 'Polis Tarihi',
             subtitle: 'Kuruluş süreci, Cumhuriyet dönemi ve kurumsal gelişim',
-            icon: Icons.history_edu_outlined,
-            onTap: () => Navigator.of(context).push(fadeRoute(const PolisTarihiPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const PolisTarihiPage())),
           ),
           _cultureCard(
             context,
+            style: PoliceModules.sehitler,
             title: 'Şehitlerimiz',
             subtitle: 'Ad, il, tarih (anı metni yok; resmî kaynaklara bakınız)',
-            icon: Icons.people_outline,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const MartyrsPage()),
             ),
           ),
           _cultureCard(
             context,
+            style: PoliceModules.kultur,
             title: 'Polis Andı',
             subtitle: 'Göreve başlarken edilen yemin metni',
-            icon: Icons.menu_book_outlined,
-            onTap: () => Navigator.of(context).push(fadeRoute(const PolisAndiPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const PolisAndiPage())),
           ),
           _cultureCard(
             context,
+            style: PoliceModules.onemliGunler,
             title: 'Önemli Günler',
             subtitle: '10 Nisan Polis Günü, 15 Temmuz ve diğer tarihler',
-            icon: Icons.calendar_today_outlined,
-            onTap: () => Navigator.of(context).push(fadeRoute(const OnemliGunlerPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const OnemliGunlerPage())),
           ),
           _cultureCard(
             context,
-            title: 'Vefa ve Teşekkür',
+            style: PoliceModules.tesekkurVefa,
+            title: 'Şükran ve Vefa',
             subtitle: 'Şehitlerimiz, kahramanlarımız ve görevdekilere',
-            icon: Icons.favorite_border,
-            isPrimary: false,
             onTap: () => Navigator.of(context).push(
               fadeRoute(const TesekkurVefaPage()),
             ),
@@ -97,13 +102,12 @@ class KulturPage extends StatelessWidget {
 
   Widget _cultureCard(
     BuildContext context, {
+    required PoliceModuleStyle style,
     required String title,
     required String subtitle,
-    required IconData icon,
     required VoidCallback onTap,
     bool isPrimary = false,
   }) {
-    const iconFg = Color(0xFF94A3B8);
     final titleStyle = isPrimary
         ? Theme.of(context).textTheme.titleLarge?.copyWith(
               color: PoliceColors.gold,
@@ -114,7 +118,6 @@ class KulturPage extends StatelessWidget {
               color: PoliceColors.gold,
               fontWeight: FontWeight.w600,
             );
-    final iconSize = isPrimary ? 32.0 : 28.0;
     final pad = isPrimary ? 14.0 : 12.0;
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
@@ -126,16 +129,10 @@ class KulturPage extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Container(
-              padding: EdgeInsets.all(pad),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.06),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.08),
-                ),
-              ),
-              child: Icon(icon, color: iconFg, size: iconSize),
+            PoliceModuleIconBadge(
+              style: style,
+              size: isPrimary ? 30 : 26,
+              padding: pad,
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -154,9 +151,10 @@ class KulturPage extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(
-              Icons.chevron_right,
-              color: iconFg,
+            PhosphorIcon(
+              PhosphorIconsRegular.caretRight,
+              color: PoliceColors.textMuted.withValues(alpha: 0.9),
+              size: 20,
             ),
           ],
         ),

@@ -17,7 +17,7 @@ class PolisMainNavigationBar extends StatelessWidget {
 
   static final List<({IconData icon, String label})> _items = [
     (icon: PhosphorIconsRegular.house, label: kNavHomeLabel),
-    (icon: PhosphorIconsRegular.sparkle, label: 'Asistan'),
+    (icon: PhosphorIconsRegular.brain, label: 'Asistan'),
     (icon: PhosphorIconsRegular.listChecks, label: 'Profilim'),
     (icon: PhosphorIconsRegular.books, label: 'Mevzuat'),
     (icon: PhosphorIconsRegular.wrench, label: 'Araçlar'),

@@ -120,8 +120,6 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                   loading: () => const SizedBox.shrink(),
                   error: (_, __) => const SizedBox.shrink(),
                   data: (all) {
-                    final filtered =
-                        asistanScenariosForDomain(all, selectedDomain);
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -133,8 +131,8 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                                 label: 'Tümü',
                                 selected: selectedDomain == null,
                                 onTap: () => ref
-                                    .read(asistanSelectedDomainProvider
-                                        .notifier)
+                                    .read(
+                                        asistanSelectedDomainProvider.notifier)
                                     .state = null,
                               ),
                               for (final d in asistanAllDomains) ...[
@@ -151,30 +149,6 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                             ],
                           ),
                         ),
-                        if (query.isEmpty) ...[
-                          const SizedBox(height: 12),
-                          Text(
-                            'Örnek senaryolar',
-                            style: TextStyle(
-                              color: PoliceColors.textMuted
-                                  .withValues(alpha: 0.9),
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          ...asistanFeaturedScenarios(filtered)
-                              .take(6)
-                              .map(
-                                (s) => Padding(
-                                  padding: const EdgeInsets.only(bottom: 8),
-                                  child: _ScenarioCard(
-                                    scenario: s,
-                                    onTap: () => _applyScenario(s),
-                                  ),
-                                ),
-                              ),
-                        ],
                       ],
                     );
                   },
@@ -184,7 +158,26 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
           ),
           Expanded(
             child: query.isEmpty
-                ? const _AsistanIntro()
+                ? scenariosAsync.when(
+                    loading: () => const Center(
+                      child: CircularProgressIndicator(
+                        color: PoliceColors.primaryBlue,
+                      ),
+                    ),
+                    error: (_, __) => const _AsistanIntro(
+                      scenarios: [],
+                      onScenarioTap: null,
+                    ),
+                    data: (all) {
+                      final filtered =
+                          asistanScenariosForDomain(all, selectedDomain);
+                      return _AsistanIntro(
+                        scenarios:
+                            asistanFeaturedScenarios(filtered).take(6).toList(),
+                        onScenarioTap: _applyScenario,
+                      );
+                    },
+                  )
                 : !inScope
                     ? const _OutOfScopeMessage()
                     : resultsAsync.when(
@@ -209,8 +202,7 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                             );
                           }
                           return ListView(
-                            padding:
-                                const EdgeInsets.fromLTRB(16, 8, 16, 24),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                             children: [
                               if (answer != null)
                                 _StructuredAnswerCard(
@@ -451,8 +443,7 @@ class _StructuredAnswerCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
                   color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
                   borderRadius: BorderRadius.circular(8),
@@ -759,13 +750,39 @@ class _ResultCard extends StatelessWidget {
 }
 
 class _AsistanIntro extends StatelessWidget {
-  const _AsistanIntro();
+  const _AsistanIntro({
+    required this.scenarios,
+    required this.onScenarioTap,
+  });
+
+  final List<AsistanScenario> scenarios;
+  final ValueChanged<AsistanScenario>? onScenarioTap;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
       children: [
+        if (scenarios.isNotEmpty) ...[
+          Text(
+            'Örnek senaryolar',
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.9),
+              fontWeight: FontWeight.w700,
+              fontSize: 12,
+            ),
+          ),
+          const SizedBox(height: 8),
+          for (final scenario in scenarios)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: _ScenarioCard(
+                scenario: scenario,
+                onTap: () => onScenarioTap?.call(scenario),
+              ),
+            ),
+          const SizedBox(height: 8),
+        ],
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(

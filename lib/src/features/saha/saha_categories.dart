@@ -15,27 +15,27 @@ class SahaCategoryDef {
 
   static const List<SahaCategoryDef> all = [
     SahaCategoryDef(
-        id: 'notlar', title: 'Notlar', icon: PhosphorIconsRegular.notePencil),
+        id: 'notlar', title: 'Notlar', icon: PhosphorIconsRegular.notebook),
     SahaCategoryDef(
         id: 'o1_gider',
-        title: 'O-1 giderleri',
+        title: 'O-1 Giderleri',
         icon: PhosphorIconsRegular.receipt),
     SahaCategoryDef(
         id: 'izin',
-        title: 'İzin takip',
-        icon: PhosphorIconsRegular.calendarBlank),
+        title: 'İzinlerim',
+        icon: PhosphorIconsRegular.calendarCheck),
     SahaCategoryDef(
         id: 'tutanak',
-        title: 'Tutanak Merkezi',
-        icon: PhosphorIconsRegular.clipboardText),
+        title: 'Tutanaklarım',
+        icon: PhosphorIconsRegular.fileText),
     SahaCategoryDef(
         id: 'arama_karari',
-        title: 'Arama Rehberi',
-        icon: PhosphorIconsRegular.magnifyingGlass),
+        title: 'Arama Kararları',
+        icon: PhosphorIconsRegular.scales),
     SahaCategoryDef(
         id: 'gorev_gunlugu',
         title: 'Görev Günlüğüm',
-        icon: PhosphorIconsRegular.bookBookmark),
+        icon: PhosphorIconsRegular.clipboardText),
     SahaCategoryDef(
         id: 'atis_takip',
         title: 'Atış Takibim',

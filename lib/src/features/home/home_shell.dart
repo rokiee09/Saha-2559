@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common/constants/app_branding.dart';
@@ -337,8 +338,8 @@ class _HomeMainMenuBody extends StatelessWidget {
           ),
           _DrawerTile(
             selected: selectedIndex == 1,
-            icon: Icons.auto_awesome_outlined,
-            title: 'Asistan',
+            icon: PhosphorIconsRegular.brain,
+            title: 'Polis Asistanı',
             subtitle: 'Soru yaz, ilgili kanun maddesini bul (offline)',
             onTap: () => onSelect(1),
           ),
