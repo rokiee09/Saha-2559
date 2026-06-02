@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'maas_form_style_constants.dart';
 import 'maas_katsayi_data.dart';
+import 'polis_odeme_derece_kademe.dart';
 
 /// Yaygın memur maaş / bordro giriş formu düzenine benzer alan grupları.
 /// Kesin net ve kesintiler kurum bordrosu ve güncel mevzuata bağlıdır.
@@ -36,14 +37,17 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   final _digerKesintiCtrl = TextEditingController(text: '0');
 
   MaasKatsayiFile? _file;
+  PolisOdemeDereceKademeTablosu? _polisOdeme;
   String? _donemId;
   MaasHesapSonucu? _sonuc;
   Object? _loadErr;
+  double? _polisNetOrani;
+  String? _dkOtomatikNot;
 
   int _ayIndex = 0;
   String _kadroUnvan = kPolisEmniyetUnvanlari.first;
   int _derece = 5;
-  int _kademe = 1;
+  int _kademe = 2;
   int _kidemYili = 0;
   int _kidemAyIndex = 0;
   int _medeniHal = 0;
@@ -117,18 +121,76 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   Future<void> _load() async {
     try {
       final f = await loadMaasKatsayiFile();
+      final polis = await loadPolisOdemeDereceKademeTablosu();
       if (!mounted) return;
       setState(() {
         _file = f;
+        _polisOdeme = polis;
         _donemId = f.donemById(f.varsayilanDonem) != null
             ? f.varsayilanDonem
             : (f.donemler.isNotEmpty ? f.donemler.first.id : null);
         _loadErr = null;
       });
+      _uygulaDereceKademe();
     } catch (e) {
       if (!mounted) return;
       setState(() => _loadErr = e);
     }
+  }
+
+  String _formatTrNum(double v, {int frac = 2}) {
+    final s = v.toStringAsFixed(frac);
+    final parts = s.split('.');
+    return '${parts[0]},${parts[1]}';
+  }
+
+  void _uygulaDereceKademe() {
+    final polis = _polisOdeme;
+    final f = _file;
+    final id = _donemId;
+    if (polis == null || f == null || id == null) return;
+    final d = f.donemById(id);
+    if (d == null) return;
+
+    if (!polis.desteklenenUnvan(_kadroUnvan)) {
+      setState(() {
+        _polisNetOrani = null;
+        _dkOtomatikNot =
+            'Bu ünvan için otomatik derece/kademe tablosu yok; kalemleri elle girin.';
+      });
+      return;
+    }
+
+    final sonuc = polis.hesapla(
+      unvan: _kadroUnvan,
+      derece: _derece,
+      kademe: _kademe,
+      memurAylikKatsayisi: d.memurAylikKatsayisi,
+    );
+    if (sonuc == null) {
+      setState(() {
+        _polisNetOrani = null;
+        _dkOtomatikNot =
+            'Seçilen derece/kademe 657 gösterge tablosunda geçerli değil.';
+      });
+      return;
+    }
+
+    setState(() {
+      _gostergeCtrl.text = '${sonuc.gostergePuan}';
+      _ekGostergeCtrl.text = _formatTrNum(sonuc.ekGostergeTl);
+      _kidemCtrl.text = _formatTrNum(sonuc.kidemAylik);
+      _ohtCtrl.text = _formatTrNum(sonuc.ohtTl);
+      _ekOdemeCtrl.text = _formatTrNum(sonuc.ekOdemeToplam);
+      _gvIstisnaCtrl.text = _formatTrNum(sonuc.gvIstisnasi);
+      _dvIstisnaCtrl.text = _formatTrNum(sonuc.dvIstisnaMatrahi, frac: 0);
+      _polisNetOrani = sonuc.tahminiNetBrutOrani;
+      final kaynak = sonuc.kalibreNokta
+          ? 'referans bordro (kalibre)'
+          : '657 gösterge ${sonuc.gostergePuan657} puanı + emniyet ödeme çarpanı';
+      _dkOtomatikNot =
+          '$_kadroUnvan $_derece/$_kademe: gösterge $kaynak; ek gösterge ve ÖHT ödeme derecesine göre dolduruldu.';
+    });
   }
 
   @override
@@ -218,6 +280,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
         kefaletKesintisi: _parseTr(_kefaletCtrl.text),
         raporluGun: _raporluGun.toDouble(),
         digerKesintiler: _nafakaToplami(),
+        tahminiNetOraniOverride: _polisNetOrani,
       );
     });
   }
@@ -247,7 +310,9 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _ayIndex = 0;
       _kadroUnvan = kPolisEmniyetUnvanlari.first;
       _derece = 5;
-      _kademe = 1;
+      _kademe = 2;
+      _polisNetOrani = null;
+      _dkOtomatikNot = null;
       _kidemYili = 0;
       _kidemAyIndex = 0;
       _medeniHal = 0;
@@ -266,6 +331,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _yabanciDilKurumYarari = false;
       _sonuc = null;
     });
+    _uygulaDereceKademe();
   }
 
   void _sifirla() {
@@ -426,7 +492,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                         value: p.id,
                         child: Text(p.etiket, overflow: TextOverflow.ellipsis)),
                 ],
-                onChanged: (v) => setState(() => _donemId = v),
+                onChanged: (v) {
+                  setState(() => _donemId = v);
+                  _uygulaDereceKademe();
+                },
               ),
             ),
             if (d != null) ...[
@@ -465,7 +534,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                   isDense: true,
                   border: OutlineInputBorder(),
                   helperText:
-                      'Tam ünvan listesi kurum kadro cetvelindedir; göstergeyi elle girin.',
+                      'Polis Memuru seçiliyken derece/kademe alt kalemleri otomatik dolar.',
                 ),
                 items: [
                   for (final u in kPolisEmniyetUnvanlari)
@@ -473,8 +542,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                         value: u,
                         child: Text(u, overflow: TextOverflow.ellipsis)),
                 ],
-                onChanged: (v) =>
-                    setState(() => _kadroUnvan = v ?? _kadroUnvan),
+                onChanged: (v) {
+                  setState(() => _kadroUnvan = v ?? _kadroUnvan);
+                  _uygulaDereceKademe();
+                },
               ),
             ),
             const SizedBox(height: 12),
@@ -489,10 +560,13 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                       decoration: const InputDecoration(
                           labelText: 'Derece', border: OutlineInputBorder()),
                       items: [
-                        for (var i = 1; i <= 9; i++)
+                        for (var i = 1; i <= 15; i++)
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
-                      onChanged: (v) => setState(() => _derece = v ?? 1),
+                      onChanged: (v) {
+                        setState(() => _derece = v ?? 1);
+                        _uygulaDereceKademe();
+                      },
                     ),
                   ),
                   const Padding(
@@ -507,12 +581,25 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                         for (var i = 1; i <= 9; i++)
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
-                      onChanged: (v) => setState(() => _kademe = v ?? 1),
+                      onChanged: (v) {
+                        setState(() => _kademe = v ?? 1);
+                        _uygulaDereceKademe();
+                      },
                     ),
                   ),
                 ],
               ),
             ),
+            if (_dkOtomatikNot != null) ...[
+              const SizedBox(height: 8),
+              Text(
+                _dkOtomatikNot!,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                      height: 1.35,
+                    ),
+              ),
+            ],
             const SizedBox(height: 12),
             _bilgiSatiri(
               context,
@@ -631,16 +718,18 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Ünvan seçimi yalnızca bilgi amaçlıdır; gösterge puanı otomatik gelmez. Toplam gösterge ve tutarları cetvelden girin. '
-              'Aşağıdaki TL alanları çevrimdışı toplam içindir.',
+              'Polis Memuru için ödemeye esas derece/kademe (ör. 1/4, 3/1, 5/2) gösterge, ek gösterge, ÖHT ve yaygın ek ödemeleri otomatik doldurur. '
+              'Diğer ünvanlarda veya özel durumlarda alanları elle düzenleyebilirsiniz.',
               style:
                   Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35),
             ),
             const SizedBox(height: 12),
             _numField(context, _gostergeCtrl, 'Toplam gösterge puanı',
-                hint: '1350'),
+                hint: '5907',
+                helper: 'Aylık tutar = puan × memur aylık katsayısı'),
             const SizedBox(height: 10),
-            _numField(context, _ekGostergeCtrl, 'Ek gösterge (TL)'),
+            _numField(context, _ekGostergeCtrl, 'Ek gösterge (TL)',
+                helper: 'Ödeme derecesine göre; MAHEP ile uyumlu TL'),
             const SizedBox(height: 10),
             _numField(context, _kidemCtrl, 'Kıdem aylığı (TL)'),
             const SizedBox(height: 10),
@@ -648,7 +737,12 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             const SizedBox(height: 10),
             _numField(context, _dilCtrl, 'Dil tazminatı (TL)'),
             const SizedBox(height: 10),
-            _numField(context, _ekOdemeCtrl, 'Ek ödeme / görev tazminatı (TL)'),
+            _numField(
+              context,
+              _ekOdemeCtrl,
+              'Ek ödeme toplamı (666 + mesai + tayin + 375.40)',
+              helper: 'Polis Memuru varsayılanı otomatik gelir',
+            ),
             const SizedBox(height: 10),
             _numField(context, _aileCtrl, 'Aile yardımı (TL)'),
             const SizedBox(height: 10),

@@ -68,6 +68,7 @@ flutter:
     - assets/asistan/scenarios.json
     - assets/json/city_contacts.json
     - assets/json/maas_katsayilari.json
+    - assets/json/polis_odeme_derece_kademe.json
     - assets/json/gorev_puanlari_2025.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg
