@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../common/constants/app_branding.dart';
 import '../common/theme/police_colors.dart';
-import 'home/home_shell.dart';
+import '../security/vault_gate.dart';
 import 'onboarding/ataturk_quote_welcome_page.dart';
 import 'onboarding/onboarding_page.dart';
 
@@ -122,7 +122,7 @@ class RootGate extends ConsumerWidget {
         if (!quoteSeen) {
           return const AtaturkQuoteWelcomePage();
         }
-        return const HomeShell();
+        return const VaultGate();
       },
     );
   }

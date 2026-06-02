@@ -10,6 +10,7 @@ const String kAppFullDisclaimer =
 /// Offline-first ürün; kullanıcıya verinin nerede tutulduğunu özetler (ayarlar / mağaza metni için).
 const String kAppOfflineDataSummary =
     'Mevzuat metinleri uygulama paketindeki dosyalardan okunur; sürekli internet gerektirmez. '
-    'Favoriler, son görüntülenen kayıtlar, kişisel madde notları ve tema gibi tercihler yalnızca '
-    'cihazınızda (SharedPreferences) saklanır; sunucuya gönderilmez. İsteğe bağlı yerel içe aktarma '
-    'yalnızca seçtiğiniz JSON ile şehir iletişim ve şehit listesi verilerini cihaz veritabanına yazar.';
+    'Görev notları, tutanaklar, kişisel saha kayıtları ve kayıtlı şifreler 6 haneli PIN ile '
+    'korunan yerel kasada AES-256-GCM ile şifrelenir; sunucuya gönderilmez. Tema ve favoriler '
+    'gibi genel tercihler cihazınızda tutulur. İsteğe bağlı yerel içe aktarma yalnızca seçtiğiniz '
+    'JSON ile şehir iletişim ve şehit listesi verilerini cihaz veritabanına yazar.';

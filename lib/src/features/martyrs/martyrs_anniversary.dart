@@ -3,8 +3,8 @@ import 'package:intl/intl.dart';
 import '../../data/models/martyr.dart';
 import 'martyrs_loader.dart';
 
-const sehitDevriyeKapanis =
-    'Ruhları şad olsun. Sonsuza dek minnettarız.';
+/// Ana sayfa kayar bant ve devriye kartının kapanış duası.
+const sehitDevriyeKapanis = 'Vatan size sonsuz minnettar.';
 
 /// Bugünün ay-günü ile şehadet tarihi eşleşen şehitler (yıldönümü).
 List<Martyr> martyrsOnAnniversaryDay(
@@ -32,10 +32,8 @@ String formatAnniversaryGunLabel(DateTime gun) {
   return DateFormat('d MMMM', 'tr_TR').format(gun);
 }
 
-/// Kayar bant metni: isimler + kapanış duası.
+/// Kayar bant: bugünün yıldönümündeki şehit isimleri (kapanış metni ayrı gösterilir).
 String buildSehitDevriyeMarqueeText(List<Martyr> martyrs) {
-  if (martyrs.isEmpty) return sehitDevriyeKapanis;
-
   final parts = <String>[];
   for (final m in martyrs) {
     final y = m.dateOfMartyrdom?.year;
@@ -48,7 +46,6 @@ String buildSehitDevriyeMarqueeText(List<Martyr> martyrs) {
     final suffix = ek.isEmpty ? '' : ' (${ek.join(' · ')})';
     parts.add('${m.fullName}$suffix');
   }
-  parts.add(sehitDevriyeKapanis);
   return parts.join('   ◆   ');
 }
 

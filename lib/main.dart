@@ -5,11 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/app.dart';
 import 'src/common/theme/police_colors.dart';
+import 'src/security/screenshot_guard.dart';
 import 'src/data/db/isar_service.dart';
 import 'src/data/repositories/offline_import_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await ScreenshotGuard.enable();
 
   ErrorWidget.builder = (details) => Material(
         color: PoliceColors.backgroundDark,

@@ -2,15 +2,14 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../../security/vault_platform.dart';
 
 import 'gorev_gunluk_models.dart';
 
 const _prefsKey = 'gorev_gunluk_v1';
 
 Future<List<GorevGunlukKayit>> gorevGunlukLoadAll() async {
-  final prefs = await SharedPreferences.getInstance();
-  final raw = prefs.getString(_prefsKey);
+  final raw = await VaultPlatform.readSensitive(_prefsKey);
   if (raw == null || raw.isEmpty) return [];
   try {
     final dec = jsonDecode(raw);
@@ -30,8 +29,7 @@ Future<List<GorevGunlukKayit>> gorevGunlukLoadAll() async {
 }
 
 Future<void> _saveAll(List<GorevGunlukKayit> list) async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setString(
+  await VaultPlatform.writeSensitive(
     _prefsKey,
     jsonEncode(list.map((e) => e.toJson()).toList()),
   );

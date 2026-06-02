@@ -3,15 +3,14 @@ import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../security/vault_platform.dart';
 
 import 'saha_note.dart';
 
 const _prefsKey = 'saha_local_notes_v1';
 
 Future<List<SahaNote>> _loadAllSorted() async {
-  final prefs = await SharedPreferences.getInstance();
-  final raw = prefs.getString(_prefsKey);
+  final raw = await VaultPlatform.readSensitive(_prefsKey);
   if (raw == null || raw.isEmpty) return [];
   try {
     final dec = jsonDecode(raw);
@@ -28,8 +27,7 @@ Future<List<SahaNote>> _loadAllSorted() async {
 }
 
 Future<void> _saveAll(List<SahaNote> notes) async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setString(
+  await VaultPlatform.writeSensitive(
     _prefsKey,
     jsonEncode(notes.map((e) => e.toJson()).toList()),
   );
