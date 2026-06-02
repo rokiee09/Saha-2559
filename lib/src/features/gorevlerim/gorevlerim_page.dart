@@ -4,6 +4,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/module_section_header.dart';
 import '../../common/widgets/police_module_icon.dart';
 import '../../common/widgets/police_module_list_tile.dart';
 import '../../common/widgets/rutbe_level_icon.dart';
@@ -98,7 +99,7 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
             data: (ozet) => _MiniOzet(ozet: ozet),
           ),
           const SizedBox(height: 18),
-          const _SectionLabel('Kariyer'),
+          const ModuleSectionHeader('Kariyer', topGap: 4),
           PoliceModuleListTile(
             style: PoliceModules.basari,
             title: 'Başarı Dosyam',
@@ -120,8 +121,10 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const KariyerHubPage())),
           ),
-          const SizedBox(height: 18),
-          const _SectionLabel('Görev takibi'),
+          const ModuleSectionHeader(
+            'Görev takibi',
+            topGap: 18,
+          ),
           PoliceModuleListTile(
             style: PoliceModules.gorevGunlugu,
             title: 'Görev Günlüğüm',
@@ -136,8 +139,7 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const AtisTakipPage())),
           ),
-          const SizedBox(height: 18),
-          const _SectionLabel('Emeklilik'),
+          const ModuleSectionHeader('Emeklilik', topGap: 18),
           PoliceModuleListTile(
             style: PoliceModules.emeklilik,
             title: 'Emeklilik Takibi',
@@ -145,8 +147,11 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const EmeklilikTakipPage())),
           ),
-          const SizedBox(height: 18),
-          const _SectionLabel('Diğer'),
+          const ModuleSectionHeader(
+            'Kişisel kayıtlar ve özlük',
+            subtitle: 'İzin, gider, disiplin, tayin ve lojman.',
+            topGap: 18,
+          ),
           PoliceModuleListTile(
             style: PoliceModules.izin,
             title: 'İzinlerim',
@@ -306,27 +311,6 @@ class _ProfilSummaryCard extends StatelessWidget {
             child: const Text('Düzenle'),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _SectionLabel extends StatelessWidget {
-  const _SectionLabel(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: PoliceColors.titleOnDark,
-          fontWeight: FontWeight.w800,
-          fontSize: 14.5,
-        ),
       ),
     );
   }

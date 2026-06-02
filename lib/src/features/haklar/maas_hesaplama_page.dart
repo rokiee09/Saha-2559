@@ -43,6 +43,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   Object? _loadErr;
   double? _polisNetOrani;
   String? _dkOtomatikNot;
+  /// 666, mesai, tayin, 375.40 vb. — Polis Memuru için varsayılan açık (MAHEP netine yakın).
+  bool _polisTamBordroVarsayilan = true;
 
   int _ayIndex = 0;
   String _kadroUnvan = kPolisEmniyetUnvanlari.first;
@@ -50,9 +52,14 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
   int _kademe = 2;
   int _kidemYili = 0;
   int _kidemAyIndex = 0;
-  int _medeniHal = 0;
+  int _medeniHal = 1;
   int _cocuk06 = 0;
   int _cocuk7 = 0;
+
+  /// 2026 dönemi örnek brüt yardım tutarları (katsayı güncellenince JSON’a taşınabilir).
+  static const _aileYardimEvliCalismayan = 2477.28;
+  static const _cocukYardim06 = 469.55;
+  static const _cocukYardim7 = 234.78;
   int _sendika = 0;
   int _gvOraniSecim = 0;
   int _besOrani = 0;
@@ -131,65 +138,109 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             : (f.donemler.isNotEmpty ? f.donemler.first.id : null);
         _loadErr = null;
       });
-      _uygulaDereceKademe();
+      _planlaAlanGuncelle();
     } catch (e) {
       if (!mounted) return;
       setState(() => _loadErr = e);
     }
   }
 
+  /// D/K ve ünvan değişince yalnızca form alanlarını doldurur; net hesaplamaz.
+  void _planlaAlanGuncelle() {
+    if (!mounted) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _uygulaDereceKademeAlanlari();
+    });
+  }
+
+  void _guncelleSosyalYardimAlanlari() {
+    final aile = switch (_medeniHal) {
+      2 => _aileYardimEvliCalismayan,
+      _ => 0.0,
+    };
+    _aileCtrl.text = aile > 0 ? _formatTrNum(aile) : '0';
+    final cocuk = _cocuk06 * _cocukYardim06 + _cocuk7 * _cocukYardim7;
+    _cocukCtrl.text = cocuk > 0 ? _formatTrNum(cocuk) : '0';
+  }
+
   String _formatTrNum(double v, {int frac = 2}) {
+    if (frac <= 0) return v.round().toString();
     final s = v.toStringAsFixed(frac);
     final parts = s.split('.');
+    if (parts.length < 2) return parts[0];
     return '${parts[0]},${parts[1]}';
   }
 
-  void _uygulaDereceKademe() {
+  int _maxKademeSecimi() {
+    final polis = _polisOdeme;
+    if (polis == null) return 9;
+    final m = polis.maxKademe657(_derece);
+    return m > 0 ? m : 9;
+  }
+
+  void _uygulaDereceKademeAlanlari() {
     final polis = _polisOdeme;
     final f = _file;
     final id = _donemId;
-    if (polis == null || f == null || id == null) return;
+    if (f == null || id == null) return;
     final d = f.donemById(id);
     if (d == null) return;
 
-    if (!polis.desteklenenUnvan(_kadroUnvan)) {
-      setState(() {
-        _polisNetOrani = null;
-        _dkOtomatikNot =
-            'Bu ünvan için otomatik derece/kademe tablosu yok; kalemleri elle girin.';
-      });
-      return;
+    _guncelleSosyalYardimAlanlari();
+
+    String? not;
+    double? netOrani;
+    var yeniKademe = _kademe;
+
+    if (polis != null && polis.desteklenenUnvan(_kadroUnvan)) {
+      var kademe = _kademe;
+      final maxK = polis.maxKademe657(_derece);
+      if (maxK > 0 && kademe > maxK) kademe = maxK;
+
+      final odeme = polis.hesapla(
+        unvan: _kadroUnvan,
+        derece: _derece,
+        kademe: kademe,
+        memurAylikKatsayisi: d.memurAylikKatsayisi,
+      );
+      if (odeme == null) {
+        not = 'Seçilen derece/kademe 657 gösterge tablosunda geçerli değil.';
+      } else {
+        yeniKademe = kademe;
+        _gostergeCtrl.text = '${odeme.gostergePuan}';
+        _ekGostergeCtrl.text = _formatTrNum(odeme.ekGostergeTl);
+        _kidemCtrl.text = _formatTrNum(odeme.kidemAylik);
+        _ohtCtrl.text = _formatTrNum(odeme.ohtTl);
+        if (_polisTamBordroVarsayilan) {
+          _ekOdemeCtrl.text = _formatTrNum(odeme.ekOdemeToplam);
+          _gvIstisnaCtrl.text = _formatTrNum(odeme.gvIstisnasi);
+          _dvIstisnaCtrl.text =
+              _formatTrNum(odeme.dvIstisnaMatrahi, frac: 0);
+          netOrani = odeme.tahminiNetBrutOrani;
+        } else {
+          netOrani = null;
+        }
+        final kaynak = odeme.kalibreNokta
+            ? 'referans bordro (kalibre)'
+            : '657 gösterge ${odeme.gostergePuan657} puanı + emniyet ödeme çarpanı';
+        final ekNot = _polisTamBordroVarsayilan
+            ? ' Tam bordro varsayılanları alanlara yazıldı.'
+            : ' Ek ödemeler kapalı; tam net için anahtarı açın.';
+        not =
+            '$_kadroUnvan $_derece/$kademe: $kaynak.$ekNot Hesap için «Hesapla»ya basın.';
+      }
+    } else if (polis != null) {
+      not =
+          'Bu ünvan için otomatik derece/kademe tablosu yok; kalemleri elle girin.';
     }
 
-    final sonuc = polis.hesapla(
-      unvan: _kadroUnvan,
-      derece: _derece,
-      kademe: _kademe,
-      memurAylikKatsayisi: d.memurAylikKatsayisi,
-    );
-    if (sonuc == null) {
-      setState(() {
-        _polisNetOrani = null;
-        _dkOtomatikNot =
-            'Seçilen derece/kademe 657 gösterge tablosunda geçerli değil.';
-      });
-      return;
-    }
-
+    if (!mounted) return;
     setState(() {
-      _gostergeCtrl.text = '${sonuc.gostergePuan}';
-      _ekGostergeCtrl.text = _formatTrNum(sonuc.ekGostergeTl);
-      _kidemCtrl.text = _formatTrNum(sonuc.kidemAylik);
-      _ohtCtrl.text = _formatTrNum(sonuc.ohtTl);
-      _ekOdemeCtrl.text = _formatTrNum(sonuc.ekOdemeToplam);
-      _gvIstisnaCtrl.text = _formatTrNum(sonuc.gvIstisnasi);
-      _dvIstisnaCtrl.text = _formatTrNum(sonuc.dvIstisnaMatrahi, frac: 0);
-      _polisNetOrani = sonuc.tahminiNetBrutOrani;
-      final kaynak = sonuc.kalibreNokta
-          ? 'referans bordro (kalibre)'
-          : '657 gösterge ${sonuc.gostergePuan657} puanı + emniyet ödeme çarpanı';
-      _dkOtomatikNot =
-          '$_kadroUnvan $_derece/$_kademe: gösterge $kaynak; ek gösterge ve ÖHT ödeme derecesine göre dolduruldu.';
+      _kademe = yeniKademe;
+      _polisNetOrani = netOrani;
+      _dkOtomatikNot = not;
+      _sonuc = null;
     });
   }
 
@@ -246,43 +297,50 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
         _ => 0,
       };
 
+  MaasHesapSonucu? _hesaplaSonuc(
+    MaasDonemData d, {
+    double? tahminiNetOraniOverride,
+  }) {
+    final ekToplu = _parseTr(_ekOdemeCtrl.text) +
+        _parseTr(_sosyalDengeCtrl.text) +
+        _parseTr(_yemekCtrl.text) +
+        _parseTr(_ek28Ctrl.text);
+
+    return hesaplaMaas(
+      donem: d,
+      gostergePuan: _parseTr(_gostergeCtrl.text),
+      ekGostergeTl: _parseTr(_ekGostergeCtrl.text),
+      kidemAyligi: _parseTr(_kidemCtrl.text),
+      ozelHizmetTazminati: _parseTr(_ohtCtrl.text),
+      dilTazminati: _parseTr(_dilCtrl.text),
+      ekOdeme: ekToplu,
+      aileYardimi: _parseTr(_aileCtrl.text),
+      cocukYardimi: _parseTr(_cocukCtrl.text),
+      gvIstisnasi: _parseTr(_gvIstisnaCtrl.text),
+      dvIstisnaMatrahi: _parseTr(_dvIstisnaCtrl.text),
+      ozelSaglikPrimi: _parseTr(_ozelSaglikCtrl.text),
+      gelirVergisiOrani: _gvOrani(),
+      sendikaKesintiOrani: _sendikaOrani(),
+      sendikaTabanAylikKesintiOrani: _sendikaTabanOrani(),
+      besKesintiOrani: _besOrani / 100,
+      ilksanKesintisi: _parseTr(_ilksanCtrl.text),
+      kefaletKesintisi: _parseTr(_kefaletCtrl.text),
+      raporluGun: _raporluGun.toDouble(),
+      digerKesintiler: _nafakaToplami(),
+      tahminiNetOraniOverride:
+          tahminiNetOraniOverride ?? _polisNetOrani,
+    );
+  }
+
   void _hesapla() {
     final f = _file;
     final id = _donemId;
     if (f == null || id == null) return;
     final d = f.donemById(id);
     if (d == null) return;
-
-    final ekToplu = _parseTr(_ekOdemeCtrl.text) +
-        _parseTr(_sosyalDengeCtrl.text) +
-        _parseTr(_yemekCtrl.text) +
-        _parseTr(_ek28Ctrl.text);
-
-    setState(() {
-      _sonuc = hesaplaMaas(
-        donem: d,
-        gostergePuan: _parseTr(_gostergeCtrl.text),
-        ekGostergeTl: _parseTr(_ekGostergeCtrl.text),
-        kidemAyligi: _parseTr(_kidemCtrl.text),
-        ozelHizmetTazminati: _parseTr(_ohtCtrl.text),
-        dilTazminati: _parseTr(_dilCtrl.text),
-        ekOdeme: ekToplu,
-        aileYardimi: _parseTr(_aileCtrl.text),
-        cocukYardimi: _parseTr(_cocukCtrl.text),
-        gvIstisnasi: _parseTr(_gvIstisnaCtrl.text),
-        dvIstisnaMatrahi: _parseTr(_dvIstisnaCtrl.text),
-        ozelSaglikPrimi: _parseTr(_ozelSaglikCtrl.text),
-        gelirVergisiOrani: _gvOrani(),
-        sendikaKesintiOrani: _sendikaOrani(),
-        sendikaTabanAylikKesintiOrani: _sendikaTabanOrani(),
-        besKesintiOrani: _besOrani / 100,
-        ilksanKesintisi: _parseTr(_ilksanCtrl.text),
-        kefaletKesintisi: _parseTr(_kefaletCtrl.text),
-        raporluGun: _raporluGun.toDouble(),
-        digerKesintiler: _nafakaToplami(),
-        tahminiNetOraniOverride: _polisNetOrani,
-      );
-    });
+    final maas = _hesaplaSonuc(d);
+    if (!mounted) return;
+    setState(() => _sonuc = maas);
   }
 
   void _temizle() {
@@ -313,9 +371,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _kademe = 2;
       _polisNetOrani = null;
       _dkOtomatikNot = null;
+      _polisTamBordroVarsayilan = true;
       _kidemYili = 0;
       _kidemAyIndex = 0;
-      _medeniHal = 0;
+      _medeniHal = 1;
       _cocuk06 = 0;
       _cocuk7 = 0;
       _sendika = 0;
@@ -331,7 +390,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
       _yabanciDilKurumYarari = false;
       _sonuc = null;
     });
-    _uygulaDereceKademe();
+    _planlaAlanGuncelle();
   }
 
   void _sifirla() {
@@ -391,6 +450,10 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
 
     final cs = Theme.of(context).colorScheme;
     final d = _donemId != null ? f.donemById(_donemId!) : null;
+    final maxKademe = _maxKademeSecimi();
+    final kademeGoster =
+        _kademe.clamp(1, maxKademe > 0 ? maxKademe : 9);
+    final polisOto = _polisOdeme?.desteklenenUnvan(_kadroUnvan) ?? false;
 
     return Scaffold(
       appBar: AppBar(
@@ -494,7 +557,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 ],
                 onChanged: (v) {
                   setState(() => _donemId = v);
-                  _uygulaDereceKademe();
+                  _planlaAlanGuncelle();
                 },
               ),
             ),
@@ -544,7 +607,7 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                 ],
                 onChanged: (v) {
                   setState(() => _kadroUnvan = v ?? _kadroUnvan);
-                  _uygulaDereceKademe();
+                  _planlaAlanGuncelle();
                 },
               ),
             ),
@@ -564,8 +627,12 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
                       onChanged: (v) {
-                        setState(() => _derece = v ?? 1);
-                        _uygulaDereceKademe();
+                        setState(() {
+                          _derece = v ?? 1;
+                          final mk = _maxKademeSecimi();
+                          if (mk > 0 && _kademe > mk) _kademe = mk;
+                        });
+                        _planlaAlanGuncelle();
                       },
                     ),
                   ),
@@ -574,22 +641,45 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                       child: Text('/')),
                   Expanded(
                     child: DropdownButtonFormField<int>(
-                      value: _kademe,
+                      value: kademeGoster,
                       decoration: const InputDecoration(
                           labelText: 'Kademe', border: OutlineInputBorder()),
                       items: [
-                        for (var i = 1; i <= 9; i++)
+                        for (var i = 1; i <= maxKademe; i++)
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
                       onChanged: (v) {
                         setState(() => _kademe = v ?? 1);
-                        _uygulaDereceKademe();
+                        _planlaAlanGuncelle();
                       },
                     ),
                   ),
                 ],
               ),
             ),
+            if (polisOto) ...[
+              const SizedBox(height: 8),
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                title: const Text('Tam bordro varsayılanları'),
+                subtitle: const Text(
+                  '666 KHK, fazla mesai, tayin, 375.40, GV/DV istisnası — MAHEP örneği',
+                  style: TextStyle(fontSize: 12),
+                ),
+                value: _polisTamBordroVarsayilan,
+                onChanged: (v) {
+                  setState(() {
+                    _polisTamBordroVarsayilan = v;
+                    if (!v) {
+                      _ekOdemeCtrl.text = '0';
+                      _gvIstisnaCtrl.text = '0';
+                      _dvIstisnaCtrl.text = '0';
+                    }
+                  });
+                  _planlaAlanGuncelle();
+                },
+              ),
+            ],
             if (_dkOtomatikNot != null) ...[
               const SizedBox(height: 8),
               Text(
@@ -652,7 +742,13 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                     DropdownMenuItem(
                         value: i, child: Text(_medeniEtiketler[i])),
                 ],
-                onChanged: (v) => setState(() => _medeniHal = v ?? 0),
+                onChanged: (v) {
+                  setState(() {
+                    _medeniHal = v ?? 0;
+                    _sonuc = null;
+                  });
+                  _planlaAlanGuncelle();
+                },
               ),
             ),
             const SizedBox(height: 12),
@@ -670,7 +766,13 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                         for (var i = 0; i <= 6; i++)
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
-                      onChanged: (v) => setState(() => _cocuk06 = v ?? 0),
+                      onChanged: (v) {
+                        setState(() {
+                          _cocuk06 = v ?? 0;
+                          _sonuc = null;
+                        });
+                        _planlaAlanGuncelle();
+                      },
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -683,7 +785,13 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
                         for (var i = 0; i <= 9; i++)
                           DropdownMenuItem(value: i, child: Text('$i'))
                       ],
-                      onChanged: (v) => setState(() => _cocuk7 = v ?? 0),
+                      onChanged: (v) {
+                        setState(() {
+                          _cocuk7 = v ?? 0;
+                          _sonuc = null;
+                        });
+                        _planlaAlanGuncelle();
+                      },
                     ),
                   ),
                 ],
@@ -718,8 +826,8 @@ class _MaasHesaplamaPageState extends State<MaasHesaplamaPage> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Polis Memuru için ödemeye esas derece/kademe (ör. 1/4, 3/1, 5/2) gösterge, ek gösterge, ÖHT ve yaygın ek ödemeleri otomatik doldurur. '
-              'Diğer ünvanlarda veya özel durumlarda alanları elle düzenleyebilirsiniz.',
+              'Polis Memuru: derece/kademe (1/4, 3/1, 5/2…) gösterge puanı, ek gösterge, kıdem ve ÖHT otomatik gelir. '
+              'MAHEP ile aynı net için «Tam bordro varsayılanları»nı açın.',
               style:
                   Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.35),
             ),

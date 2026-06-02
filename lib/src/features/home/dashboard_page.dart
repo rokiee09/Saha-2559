@@ -77,10 +77,13 @@ class DashboardPage extends ConsumerWidget {
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-              child: Column(
+          SliverSafeArea(
+            top: true,
+            bottom: false,
+            sliver: SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
@@ -233,6 +236,7 @@ class DashboardPage extends ConsumerWidget {
                   const SizedBox(height: 24),
                 ],
               ),
+            ),
             ),
           ),
         ],

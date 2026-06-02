@@ -63,6 +63,11 @@ void main() {
       expect(r.gostergePuan * katsayi, closeTo(1200.51, 1.0));
     });
 
+    test('derece 1 için en fazla 4 kademe', () {
+      expect(tablo.maxKademe657(1), 4);
+      expect(tablo.maxKademe657(5), 9);
+    });
+
     test('geçersiz kademe null döner', () {
       expect(
         tablo.hesapla(
@@ -73,6 +78,43 @@ void main() {
         ),
         isNull,
       );
+    });
+
+    test('5/2 tam bordro — tahmini net ~81.000 (çekirdek tek başına değil)', () {
+      final odeme = tablo.hesapla(
+        unvan: 'Polis Memuru',
+        derece: 5,
+        kademe: 2,
+        memurAylikKatsayisi: katsayi,
+      )!;
+      final donem = MaasDonemData(
+        id: 't',
+        etiket: 't',
+        memurAylikKatsayisi: katsayi,
+        tabanAylik: 22722.79,
+        tahminiNetOrani: 0.73,
+      );
+      final cekirdek = hesaplaMaas(
+        donem: donem,
+        gostergePuan: odeme.gostergePuan.toDouble(),
+        ekGostergeTl: odeme.ekGostergeTl,
+        kidemAyligi: odeme.kidemAylik,
+        ozelHizmetTazminati: odeme.ohtTl,
+      );
+      expect(cekirdek.tahminiNet, lessThan(40000));
+
+      final tam = hesaplaMaas(
+        donem: donem,
+        gostergePuan: odeme.gostergePuan.toDouble(),
+        ekGostergeTl: odeme.ekGostergeTl,
+        kidemAyligi: odeme.kidemAylik,
+        ozelHizmetTazminati: odeme.ohtTl,
+        ekOdeme: odeme.ekOdemeToplam,
+        gvIstisnasi: odeme.gvIstisnasi,
+        dvIstisnaMatrahi: odeme.dvIstisnaMatrahi,
+        tahminiNetOraniOverride: odeme.tahminiNetBrutOrani,
+      );
+      expect(tam.tahminiNet, closeTo(81044, 1200));
     });
 
     test('tam bordro ile tahmini net ~84.936 (1/4 örnek)', () {
