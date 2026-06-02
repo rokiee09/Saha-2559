@@ -7,7 +7,9 @@ import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
 import '../../common/widgets/police_siren_accent_bar.dart';
 import '../gorevlerim/izin/izin_provider.dart';
+import '../gorevlerim/emeklilik/widgets/emeklilik_dashboard_card.dart';
 import '../gorevlerim/kariyer/widgets/gazi_tesekkur_kart.dart';
+import '../martyrs/widgets/sehit_yildonumu_devriye_kart.dart';
 import '../gorevlerim/kariyer/widgets/personel_ozet_kart.dart';
 import '../haklar/vardiya/vardiya_cycle_calculator.dart';
 import '../haklar/vardiya/vardiya_today_provider.dart';
@@ -105,7 +107,9 @@ class DashboardPage extends ConsumerWidget {
                   ),
                   const SizedBox(height: 20),
                   const GaziTesekkurKart(),
+                  const SehitYildonumuDevriyeKart(),
                   PersonelOzetKart(onTap: onOpenProfilim),
+                  const EmeklilikDashboardCard(),
                   _DutyTodayPanel(
                     vardiya: vardiyaToday,
                     leave: upcomingLeave,

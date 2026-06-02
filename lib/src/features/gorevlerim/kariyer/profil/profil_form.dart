@@ -32,6 +32,7 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
   String _rutbeId = '';
   String _egitimId = '';
   DateTime? _baslama;
+  DateTime? _dogum;
   bool _gazi = false;
   bool _bound = false;
   bool _saving = false;
@@ -57,18 +58,31 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
     if (p.gorevBaslamaMs > 0) {
       _baslama = DateTime.fromMillisecondsSinceEpoch(p.gorevBaslamaMs);
     }
+    if (p.dogumTarihiMs > 0) {
+      _dogum = DateTime.fromMillisecondsSinceEpoch(p.dogumTarihiMs);
+    }
     _bound = true;
   }
 
-  Future<void> _pickDate() async {
+  Future<void> _pickDate({
+    required bool meslekGiris,
+  }) async {
+    final initial = meslekGiris ? (_baslama ?? DateTime.now()) : (_dogum ?? DateTime(1990));
     final picked = await showDatePicker(
       context: context,
-      initialDate: _baslama ?? DateTime.now(),
-      firstDate: DateTime(1970),
-      lastDate: DateTime.now(),
+      initialDate: initial,
+      firstDate: DateTime(1950),
+      lastDate: meslekGiris ? DateTime.now() : DateTime.now(),
       locale: const Locale('tr', 'TR'),
     );
-    if (picked != null) setState(() => _baslama = picked);
+    if (picked == null) return;
+    setState(() {
+      if (meslekGiris) {
+        _baslama = picked;
+      } else {
+        _dogum = picked;
+      }
+    });
   }
 
   Future<void> _save() async {
@@ -86,6 +100,7 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
       birim: _birimCtrl.text.trim(),
       il: _ilCtrl.text.trim(),
       gorevBaslamaMs: _baslama?.millisecondsSinceEpoch ?? 0,
+      dogumTarihiMs: _dogum?.millisecondsSinceEpoch ?? 0,
       egitimId: _egitimId,
       gazi: _gazi,
     );
@@ -197,59 +212,17 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
               decoration: _dec('İl'),
             ),
             const SizedBox(height: 10),
-            Material(
-              color: PoliceColors.backgroundDark.withValues(alpha: 0.6),
-              borderRadius: BorderRadius.circular(12),
-              child: InkWell(
-                onTap: _pickDate,
-                borderRadius: BorderRadius.circular(12),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 14,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Göreve başlama tarihi',
-                              style: TextStyle(
-                                color: PoliceColors.textMuted
-                                    .withValues(alpha: 0.9),
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              _baslama == null
-                                  ? 'Tarih seçin'
-                                  : '${_baslama!.day.toString().padLeft(2, '0')}.'
-                                      '${_baslama!.month.toString().padLeft(2, '0')}.'
-                                      '${_baslama!.year}',
-                              style: const TextStyle(
-                                color: PoliceColors.primaryBlue,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Icon(Icons.calendar_today_rounded,
-                          color: PoliceColors.primaryBlue, size: 20),
-                    ],
-                  ),
-                ),
-              ),
+            _TarihSecici(
+              etiket: 'Mesleğe giriş tarihi',
+              tarih: _baslama,
+              onTap: () => _pickDate(meslekGiris: true),
+            ),
+            const SizedBox(height: 10),
+            _TarihSecici(
+              etiket: 'Doğum tarihi',
+              tarih: _dogum,
+              onTap: () => _pickDate(meslekGiris: false),
+              renk: PoliceColors.emeklilikAccent,
             ),
             const SizedBox(height: 10),
             DropdownButtonFormField<String>(
@@ -320,6 +293,74 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
           ],
         );
       },
+    );
+  }
+}
+
+class _TarihSecici extends StatelessWidget {
+  const _TarihSecici({
+    required this.etiket,
+    required this.tarih,
+    required this.onTap,
+    this.renk = PoliceColors.primaryBlue,
+  });
+
+  final String etiket;
+  final DateTime? tarih;
+  final VoidCallback onTap;
+  final Color renk;
+
+  @override
+  Widget build(BuildContext context) {
+    final metin = tarih == null
+        ? 'Tarih seçin'
+        : '${tarih!.day.toString().padLeft(2, '0')}.'
+            '${tarih!.month.toString().padLeft(2, '0')}.'
+            '${tarih!.year}';
+    return Material(
+      color: PoliceColors.backgroundDark.withValues(alpha: 0.6),
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
+            ),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      etiket,
+                      style: TextStyle(
+                        color: PoliceColors.textMuted.withValues(alpha: 0.9),
+                        fontSize: 12,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      metin,
+                      style: TextStyle(
+                        color: renk,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.calendar_today_rounded, color: renk, size: 20),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

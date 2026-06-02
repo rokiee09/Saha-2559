@@ -14,6 +14,12 @@ abstract final class PoliceColors {
   /// Birincil mavi (butonlar, aktif sekme)
   static const Color primaryBlue = Color(0xFF2D7EFF);
 
+  /// Emeklilik / yaş haddi vurgusu
+  static const Color emeklilikAccent = Color(0xFF8B5CF6);
+
+  /// Şehit yıldönümü / anma bandı
+  static const Color sehitAccent = Color(0xFFF87171);
+
   /// Başlık (açık metin)
   static const Color titleOnDark = Color(0xFFFFFFFF);
 

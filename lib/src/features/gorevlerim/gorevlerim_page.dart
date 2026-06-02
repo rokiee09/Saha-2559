@@ -19,6 +19,7 @@ import 'kariyer/basari/basari_page.dart';
 import 'kariyer/egitim/egitim_page.dart';
 import 'kariyer/kariyer_hub_page.dart';
 import 'kariyer/kariyer_ozet_provider.dart';
+import 'emeklilik/emeklilik_takip_page.dart';
 import 'kariyer/profil/profil_form.dart';
 
 /// Profilim: kişisel bilgiler + kariyer modülleri.
@@ -134,6 +135,15 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
             subtitle: '4 dönem atış puanı.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const AtisTakipPage())),
+          ),
+          const SizedBox(height: 18),
+          const _SectionLabel('Emeklilik'),
+          PoliceModuleListTile(
+            style: PoliceModules.emeklilik,
+            title: 'Emeklilik Takibi',
+            subtitle: '20 yıl zorunlu hizmet ve yaş haddi ilerlemesi.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const EmeklilikTakipPage())),
           ),
           const SizedBox(height: 18),
           const _SectionLabel('Diğer'),

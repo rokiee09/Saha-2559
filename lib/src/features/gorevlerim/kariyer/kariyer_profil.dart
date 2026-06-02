@@ -9,6 +9,7 @@ class KariyerProfil {
     this.birim = '',
     this.il = '',
     this.gorevBaslamaMs = 0,
+    this.dogumTarihiMs = 0,
     this.egitimId = '',
     this.gazi = false,
   });
@@ -19,6 +20,7 @@ class KariyerProfil {
   final String birim;
   final String il;
   final int gorevBaslamaMs;
+  final int dogumTarihiMs;
   final String egitimId;
   final bool gazi;
 
@@ -39,6 +41,9 @@ class KariyerProfil {
   bool get hasOzet =>
       adSoyad.isNotEmpty || rutbe != null || birim.isNotEmpty;
 
+  bool get emeklilikHesaplanabilir =>
+      rutbeId.isNotEmpty && gorevBaslamaMs > 0 && dogumTarihiMs > 0;
+
   Map<String, dynamic> toJson() => {
         'adSoyad': adSoyad,
         'sicil': sicil,
@@ -46,6 +51,7 @@ class KariyerProfil {
         'birim': birim,
         'il': il,
         'gorevBaslamaMs': gorevBaslamaMs,
+        'dogumTarihiMs': dogumTarihiMs,
         'egitimId': egitimId,
         'gazi': gazi,
       };
@@ -57,6 +63,7 @@ class KariyerProfil {
         birim: j['birim'] as String? ?? '',
         il: j['il'] as String? ?? '',
         gorevBaslamaMs: (j['gorevBaslamaMs'] as num?)?.toInt() ?? 0,
+        dogumTarihiMs: (j['dogumTarihiMs'] as num?)?.toInt() ?? 0,
         egitimId: j['egitimId'] as String? ?? '',
         gazi: j['gazi'] as bool? ?? false,
       );
@@ -77,6 +84,7 @@ class KariyerProfil {
     String? birim,
     String? il,
     int? gorevBaslamaMs,
+    int? dogumTarihiMs,
     String? egitimId,
     bool? gazi,
   }) {
@@ -87,6 +95,7 @@ class KariyerProfil {
       birim: birim ?? this.birim,
       il: il ?? this.il,
       gorevBaslamaMs: gorevBaslamaMs ?? this.gorevBaslamaMs,
+      dogumTarihiMs: dogumTarihiMs ?? this.dogumTarihiMs,
       egitimId: egitimId ?? this.egitimId,
       gazi: gazi ?? this.gazi,
     );
