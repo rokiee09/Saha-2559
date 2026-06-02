@@ -47,6 +47,8 @@ class KariyerRutbe {
     KariyerRutbe(id: 'polis_memuru', label: 'Polis Memuru', levelIndex: 0),
     KariyerRutbe(id: 'baspolis', label: 'Başpolis', levelIndex: 1),
     KariyerRutbe(
+        id: 'kideme_baspolis', label: 'Kıdemli Başpolis', levelIndex: 2),
+    KariyerRutbe(
         id: 'komiser_yardimcisi', label: 'Komiser Yardımcısı', levelIndex: 3),
     KariyerRutbe(id: 'komiser', label: 'Komiser', levelIndex: 4),
     KariyerRutbe(id: 'baskomiser', label: 'Başkomiser', levelIndex: 5),

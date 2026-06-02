@@ -4,8 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../common/theme/police_colors.dart';
 import '../../common/widgets/turkish_flag_circle_icon.dart';
 import '../../data/models/martyr.dart';
+import 'martyrs_anniversary.dart';
 import 'martyrs_controller.dart';
 import 'martyr_detail_page.dart';
+import 'widgets/sehit_devriye_kayar_bant.dart';
 
 class MartyrsPage extends ConsumerWidget {
   const MartyrsPage({super.key});
@@ -15,6 +17,8 @@ class MartyrsPage extends ConsumerWidget {
     final martyrsAsync = ref.watch(martyrsFilteredProvider);
     final citiesAsync = ref.watch(martyrCitiesProvider);
     final selectedCity = ref.watch(martyrCityFilterProvider);
+    final anniversaryOnly = ref.watch(martyrsAnniversaryFilterProvider);
+    final todayAsync = ref.watch(martyrsAnniversaryTodayProvider);
 
     return Scaffold(
       backgroundColor: PoliceColors.backgroundDark,
@@ -22,9 +26,24 @@ class MartyrsPage extends ConsumerWidget {
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
         title: martyrsAsync.maybeWhen(
-          data: (items) => Text('Şehitlerimiz (${items.length})'),
+          data: (items) => Text(
+            anniversaryOnly
+                ? 'Yıldönümü devriyesi (${items.length})'
+                : 'Şehitlerimiz (${items.length})',
+          ),
           orElse: () => const Text('Şehitlerimiz'),
         ),
+        actions: [
+          if (anniversaryOnly)
+            IconButton(
+              tooltip: 'Tüm şehitler',
+              onPressed: () {
+                ref.read(martyrsAnniversaryFilterProvider.notifier).state =
+                    false;
+              },
+              icon: const Icon(Icons.close_rounded),
+            ),
+        ],
       ),
       body: Column(
         children: [
@@ -65,6 +84,78 @@ class MartyrsPage extends ConsumerWidget {
               ),
             ),
           ),
+          todayAsync.when(
+            data: (today) {
+              if (today.martyrs.isEmpty) return const SizedBox.shrink();
+              final marquee = buildSehitDevriyeMarqueeText(today.martyrs);
+              return Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+                child: Card(
+                  color: PoliceColors.surfaceDark,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    side: BorderSide(
+                      color: PoliceColors.sehitAccent.withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          'Bugün — ${formatAnniversaryGunLabel(today.gun)}',
+                          style: const TextStyle(
+                            color: PoliceColors.gold,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          martyrAnniversarySubtitle(today.martyrs, today.gun),
+                          style: TextStyle(
+                            color: PoliceColors.textMuted.withValues(alpha: 0.9),
+                            fontSize: 12,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        SehitDevriyeKayarBant(text: marquee, height: 44),
+                        const SizedBox(height: 8),
+                        Text(
+                          sehitDevriyeKapanis,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: PoliceColors.gold.withValues(alpha: 0.9),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                        if (!anniversaryOnly) ...[
+                          const SizedBox(height: 8),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: TextButton(
+                              onPressed: () {
+                                ref
+                                    .read(martyrsAnniversaryFilterProvider
+                                        .notifier)
+                                    .state = true;
+                              },
+                              child: const Text('Yalnızca bugünkü yıldönümü'),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
             child: Card(
@@ -82,7 +173,8 @@ class MartyrsPage extends ConsumerWidget {
               ),
             ),
           ),
-          Padding(
+          if (!anniversaryOnly)
+            Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Row(
               children: [

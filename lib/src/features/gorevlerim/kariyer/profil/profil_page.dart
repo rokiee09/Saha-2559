@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../common/theme/police_colors.dart';
 import '../../../../common/widgets/rutbe_level_icon.dart';
+import '../../emeklilik/emeklilik_calculator.dart';
 import '../kariyer_constants.dart';
 import '../kariyer_profil.dart';
 import '../kariyer_profil_provider.dart';
@@ -156,6 +157,20 @@ class _ProfilKayitOzet extends StatelessWidget {
           _ozetSatir('Birim', profil.birim.isEmpty ? '—' : profil.birim),
           _ozetSatir('İl', profil.il.isEmpty ? '—' : profil.il),
           _ozetSatir('Eğitim', egitim ?? '—'),
+          if (profil.gorevBaslamaMs > 0)
+            _ozetSatir(
+              'Mesleğe giriş',
+              formatTrTarih(
+                DateTime.fromMillisecondsSinceEpoch(profil.gorevBaslamaMs),
+              ),
+            ),
+          if (profil.dogumTarihiMs > 0)
+            _ozetSatir(
+              'Doğum tarihi',
+              formatTrTarih(
+                DateTime.fromMillisecondsSinceEpoch(profil.dogumTarihiMs),
+              ),
+            ),
         ],
       ),
     );

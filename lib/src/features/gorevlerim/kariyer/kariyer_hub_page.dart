@@ -6,6 +6,7 @@ import '../../../common/theme/police_colors.dart';
 import '../../../common/widgets/police_module_icon.dart';
 import '../../../common/widgets/police_module_list_tile.dart';
 import '../atis/atis_takip_page.dart';
+import '../emeklilik/emeklilik_takip_page.dart';
 import '../gunluk/gorev_gunluk_page.dart';
 import 'basari/basari_page.dart';
 import 'egitim/egitim_page.dart';
@@ -43,6 +44,13 @@ class KariyerHubPage extends ConsumerWidget {
               subtitle: 'Kimlik, rütbe, birim, eğitim, gazilik',
               onTap: () =>
                   Navigator.of(context).push(fadeRoute(const ProfilPage())),
+            ),
+            PoliceModuleListTile(
+              style: PoliceModules.emeklilik,
+              title: 'Emeklilik Takibi',
+              subtitle: '20 yıl zorunlu hizmet ve yaş haddi',
+              onTap: () => Navigator.of(context)
+                  .push(fadeRoute(const EmeklilikTakipPage())),
             ),
             PoliceModuleListTile(
               style: PoliceModules.basari,

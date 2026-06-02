@@ -113,6 +113,10 @@ abstract final class PoliceModules {
     icon: PhosphorIconsRegular.chartLineUp,
     color: Color(0xFF2DD4BF),
   );
+  static const emeklilik = PoliceModuleStyle(
+    icon: PhosphorIconsRegular.chartPie,
+    color: Color(0xFF8B5CF6),
+  );
   static const asistan = PoliceModuleStyle(
     icon: PhosphorIconsRegular.brain,
     color: Color(0xFF38BDF8),
