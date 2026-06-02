@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/module_section_header.dart';
 import '../../common/widgets/police_module_icon.dart';
 import '../../common/widgets/police_module_list_tile.dart';
 import '../gorevlerim/atis/atis_takip_page.dart';
@@ -28,13 +29,32 @@ import 'sifre_uretici_page.dart';
 import 'telsiz_kodlari_page.dart';
 import 'tutanak/tutanak_merkezi_page.dart';
 
-/// Araçlar: hesaplayıcılar, yerel saha defteri ve teşkilat/kültür bilgisi
-/// tek bir merkezde. Polisin "işime yarayan araçlar" mantığına göre gruplanır.
+/// Araçlar: hesaplayıcılar, kişisel kayıtlar, tutanak/operasyon ve referans.
 class AraclarPage extends StatelessWidget {
   const AraclarPage({super.key});
 
+  static const _tutanakOperasyonIds = {
+    'tutanak',
+    'arama_karari',
+    'gorev_gunlugu',
+    'atis_takip',
+  };
+
+  static const _kisiselKayitIds = {
+    'notlar',
+    'o1_gider',
+    'izin',
+  };
+
   @override
   Widget build(BuildContext context) {
+    final tutanakCats = SahaCategoryDef.all
+        .where((c) => _tutanakOperasyonIds.contains(c.id))
+        .toList();
+    final kisiselCats = SahaCategoryDef.all
+        .where((c) => _kisiselKayitIds.contains(c.id))
+        .toList();
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -52,7 +72,7 @@ class AraclarPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
         children: [
-          const _SectionTitle('Hesaplayıcılar'),
+          const ModuleSectionHeader('Hesaplayıcılar'),
           PoliceModuleListTile(
             style: PoliceModules.vardiya,
             title: 'Vardiyam',
@@ -109,46 +129,23 @@ class AraclarPage extends StatelessWidget {
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const KayitliSifrelerPage())),
           ),
-          const SizedBox(height: 18),
-          const _SectionTitle('Yerel saha defteri'),
-          Text(
-            'Yalnızca bu telefonda tutulur; buluta çıkmaz.',
-            style: TextStyle(
-              color: PoliceColors.textMuted.withValues(alpha: 0.85),
-              fontSize: 12.5,
-              height: 1.3,
-            ),
+          const ModuleSectionHeader(
+            'Kişisel kayıtlar',
+            subtitle: 'Yalnızca bu telefonda tutulur; buluta çıkmaz.',
+            topGap: 18,
           ),
-          const SizedBox(height: 12),
-          GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 4,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            childAspectRatio: 0.82,
-            children: [
-              for (final cat in SahaCategoryDef.all)
-                _SahaTile(
-                  category: cat,
-                  onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (_) => switch (cat.id) {
-                        'izin' => const IzinTakipPage(),
-                        'o1_gider' => const O1GiderPage(),
-                        'tutanak' => const TutanakMerkeziPage(),
-                        'arama_karari' => const AramaRehberiPage(),
-                        'gorev_gunlugu' => const GorevGunlukPage(),
-                        'atis_takip' => const AtisTakipPage(),
-                        _ => SahaCategoryPage(categoryId: cat.id),
-                      },
-                    ),
-                  ),
-                ),
-            ],
+          _SahaCategoryGrid(categories: kisiselCats),
+          const ModuleSectionHeader(
+            'Tutanak ve operasyon',
+            subtitle: 'Görev kaydı, tutanak taslağı ve arama rehberi.',
+            topGap: 18,
           ),
-          const SizedBox(height: 18),
-          const _SectionTitle('Saha rehberleri'),
+          _SahaCategoryGrid(categories: tutanakCats),
+          const ModuleSectionHeader(
+            'Referans',
+            subtitle: 'Dil, telsiz, teşkilat ve kültür.',
+            topGap: 18,
+          ),
           PoliceModuleListTile(
             style: PoliceModules.ingilizce,
             title: 'Polis İngilizcesi',
@@ -170,8 +167,6 @@ class AraclarPage extends StatelessWidget {
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const TelsizKodlariPage())),
           ),
-          const SizedBox(height: 18),
-          const _SectionTitle('Teşkilat & Kültür'),
           PoliceModuleListTile(
             style: PoliceModules.teskilat,
             title: 'Teşkilat',
@@ -192,22 +187,43 @@ class AraclarPage extends StatelessWidget {
   }
 }
 
-class _SectionTitle extends StatelessWidget {
-  const _SectionTitle(this.text);
-  final String text;
+class _SahaCategoryGrid extends StatelessWidget {
+  const _SahaCategoryGrid({required this.categories});
+
+  final List<SahaCategoryDef> categories;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: PoliceColors.titleOnDark,
-          fontWeight: FontWeight.w800,
-          fontSize: 16,
-        ),
-      ),
+    final w = MediaQuery.sizeOf(context).width;
+    final cols = w < 380 ? 3 : 4;
+    final aspect = cols == 3 ? 0.94 : 0.88;
+
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: cols,
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 10,
+      childAspectRatio: aspect,
+      children: [
+        for (final cat in categories)
+          _SahaTile(
+            category: cat,
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => switch (cat.id) {
+                  'izin' => const IzinTakipPage(),
+                  'o1_gider' => const O1GiderPage(),
+                  'tutanak' => const TutanakMerkeziPage(),
+                  'arama_karari' => const AramaRehberiPage(),
+                  'gorev_gunlugu' => const GorevGunlukPage(),
+                  'atis_takip' => const AtisTakipPage(),
+                  _ => SahaCategoryPage(categoryId: cat.id),
+                },
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
@@ -220,6 +236,8 @@ class _SahaTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final label = category.gridTitle ?? category.title;
+
     return Material(
       color: Colors.white.withValues(alpha: 0.06),
       borderRadius: BorderRadius.circular(14),
@@ -242,21 +260,21 @@ class _SahaTile extends StatelessWidget {
             children: [
               PoliceModuleIconBadge(
                 style: PoliceModules.forSahaCategory(category.id),
-                size: 24,
-                padding: 8,
+                size: 22,
+                padding: 7,
                 borderRadius: 10,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               Text(
-                category.title,
+                label,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   color: PoliceColors.titleOnDark,
-                  fontSize: 11.5,
+                  fontSize: 10.5,
                   fontWeight: FontWeight.w600,
-                  height: 1.15,
+                  height: 1.12,
                 ),
               ),
             ],

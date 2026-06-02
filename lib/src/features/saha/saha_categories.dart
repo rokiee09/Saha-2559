@@ -7,11 +7,14 @@ class SahaCategoryDef {
     required this.id,
     required this.title,
     required this.icon,
+    this.gridTitle,
   });
 
   final String id;
   final String title;
   final IconData icon;
+  /// Küçük kare kartlarda gösterilecek kısa başlık.
+  final String? gridTitle;
 
   static const List<SahaCategoryDef> all = [
     SahaCategoryDef(
@@ -19,6 +22,7 @@ class SahaCategoryDef {
     SahaCategoryDef(
         id: 'o1_gider',
         title: 'O-1 Giderleri',
+        gridTitle: 'O-1 Gider',
         icon: PhosphorIconsRegular.receipt),
     SahaCategoryDef(
         id: 'izin',
@@ -31,10 +35,12 @@ class SahaCategoryDef {
     SahaCategoryDef(
         id: 'arama_karari',
         title: 'Arama Kararları',
+        gridTitle: 'Arama Kar.',
         icon: PhosphorIconsRegular.scales),
     SahaCategoryDef(
         id: 'gorev_gunlugu',
         title: 'Görev Günlüğüm',
+        gridTitle: 'Görev Günlüğü',
         icon: PhosphorIconsRegular.clipboardText),
     SahaCategoryDef(
         id: 'atis_takip',

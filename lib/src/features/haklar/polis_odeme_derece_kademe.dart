@@ -86,12 +86,14 @@ class _KalibreNokta {
   final double ekGostergeTl;
   final double ohtTl;
   final double? gvIstisnasi;
+  final double? netBrutOrani;
 
   _KalibreNokta({
     required this.gostergePuan,
     required this.ekGostergeTl,
     required this.ohtTl,
     this.gvIstisnasi,
+    this.netBrutOrani,
   });
 
   factory _KalibreNokta.fromJson(Map<String, dynamic> j) => _KalibreNokta(
@@ -99,6 +101,7 @@ class _KalibreNokta {
         ekGostergeTl: (j['ekGostergeTl'] as num?)?.toDouble() ?? 0,
         ohtTl: (j['ohtTl'] as num?)?.toDouble() ?? 0,
         gvIstisnasi: (j['gvIstisnasi'] as num?)?.toDouble(),
+        netBrutOrani: (j['netBrutOrani'] as num?)?.toDouble(),
       );
 }
 
@@ -170,6 +173,16 @@ class PolisOdemeDereceKademeTablosu {
     );
   }
 
+  /// 657 tablosunda bu derece için geçerli en yüksek kademe (1–9).
+  int maxKademe657(int derece) {
+    if (derece < 1 || derece > gosterge657.length) return 0;
+    final row = gosterge657[derece - 1];
+    for (var i = row.length - 1; i >= 0; i--) {
+      if (row[i] > 0) return i + 1;
+    }
+    return 0;
+  }
+
   int? _gosterge657Puan(int derece, int kademe) {
     if (derece < 1 || derece > gosterge657.length) return null;
     final row = gosterge657[derece - 1];
@@ -203,12 +216,14 @@ class PolisOdemeDereceKademeTablosu {
     double gvIst;
     var kalibreNokta = false;
 
+    double? netOraniKalibre;
     if (kal != null) {
       kalibreNokta = true;
       gostergePuan = kal.gostergePuan;
       ekTl = kal.ekGostergeTl * katsayiOran;
       ohtTl = kal.ohtTl * katsayiOran;
       gvIst = (kal.gvIstisnasi ?? u.sabit.gvIstisnasi) * katsayiOran;
+      netOraniKalibre = kal.netBrutOrani ?? u.tahminiNetBrutOrani;
     } else {
       gostergePuan = (g657 * u.gostergeCarpani).round();
       final dIdx = (derece - 1).clamp(0, 14);
@@ -234,7 +249,7 @@ class PolisOdemeDereceKademeTablosu {
       gvIstisnasi: gvIst,
       dvIstisnaMatrahi: u.sabit.dvIstisnaMatrahi,
       kalibreNokta: kalibreNokta,
-      tahminiNetBrutOrani: u.tahminiNetBrutOrani,
+      tahminiNetBrutOrani: netOraniKalibre ?? u.tahminiNetBrutOrani,
     );
   }
 

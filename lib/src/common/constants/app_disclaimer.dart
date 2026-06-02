@@ -1,3 +1,7 @@
+/// Alt bant ve tek satırlık özet (tam metin: [kAppFullDisclaimer]).
+const String kAppShortDisclaimer =
+    'Bilgilendirme amaçlıdır · Resmî kurum uygulaması değildir · Detay: Ayarlar';
+
 /// Uygulama genel bilgilendirme metni (yasal/ürün ayrımı; resmî kaynak vurgusu).
 const String kAppFullDisclaimer =
     'Bu uygulama bilgilendirme amaçlıdır. Resmî ve güncel mevzuat için mevzuat.gov.tr esas alınmalıdır. '

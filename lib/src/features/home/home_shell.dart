@@ -3,9 +3,9 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common/constants/app_branding.dart';
-import '../../common/constants/app_disclaimer.dart';
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/app_legal_strip.dart';
 import '../../common/widgets/polis_main_navigation_bar.dart';
 import '../../common/widgets/police_filigran_layer.dart';
 import '../settings/settings_page.dart';
@@ -204,33 +204,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
                 ],
               ),
             ),
-            Divider(
-              height: 1,
-              thickness: 1,
-              color: Theme.of(context)
-                  .colorScheme
-                  .outlineVariant
-                  .withValues(alpha: 0.55),
-            ),
-            Material(
-              child: SafeArea(
-                top: false,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
-                  child: Text(
-                    kAppFullDisclaimer,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          height: 1.35,
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onSurfaceVariant
-                              .withValues(alpha: 0.95),
-                        ),
-                  ),
-                ),
-              ),
-            ),
+            const AppLegalStrip(),
           ],
         ),
         bottomNavigationBar: PolisMainNavigationBar(
