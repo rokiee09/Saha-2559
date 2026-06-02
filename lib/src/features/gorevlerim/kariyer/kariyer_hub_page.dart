@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/routing/transitions.dart';
 import '../../../common/theme/police_colors.dart';
+import '../../../common/widgets/police_module_icon.dart';
+import '../../../common/widgets/police_module_list_tile.dart';
 import '../atis/atis_takip_page.dart';
 import '../gunluk/gorev_gunluk_page.dart';
 import 'basari/basari_page.dart';
@@ -37,38 +37,38 @@ class KariyerHubPage extends ConsumerWidget {
           children: [
             _OzetPanel(ozet: ozet),
             const SizedBox(height: 18),
-            _ModulTile(
-              icon: PhosphorIconsRegular.user,
+            PoliceModuleListTile(
+              style: PoliceModules.profilim,
               title: 'Profilim',
               subtitle: 'Kimlik, rütbe, birim, eğitim, gazilik',
               onTap: () =>
                   Navigator.of(context).push(fadeRoute(const ProfilPage())),
             ),
-            _ModulTile(
-              icon: PhosphorIconsRegular.medal,
+            PoliceModuleListTile(
+              style: PoliceModules.basari,
               title: 'Başarı Dosyam',
               subtitle:
                   'Başarı ${ozet.basariHesap.basariSayisi} · Üstün ${ozet.basariHesap.ustunSayisi}',
               onTap: () =>
                   Navigator.of(context).push(fadeRoute(const BasariPage())),
             ),
-            _ModulTile(
-              icon: PhosphorIconsRegular.graduationCap,
-              title: 'Eğitim ve Sertifikalarım',
+            PoliceModuleListTile(
+              style: PoliceModules.egitim,
+              title: 'Eğitimlerim',
               subtitle:
                   '${ozet.egitimStat.toplamEgitim} eğitim · ${ozet.egitimStat.toplamSertifika} sertifika',
               onTap: () =>
                   Navigator.of(context).push(fadeRoute(const EgitimPage())),
             ),
-            _ModulTile(
-              icon: PhosphorIconsRegular.bookBookmark,
+            PoliceModuleListTile(
+              style: PoliceModules.gorevGunlugu,
               title: 'Görev Günlüğüm',
               subtitle: '${ozet.toplamGorev} kayıtlı görev',
               onTap: () => Navigator.of(context)
                   .push(fadeRoute(const GorevGunlukPage())),
             ),
-            _ModulTile(
-              icon: PhosphorIconsRegular.target,
+            PoliceModuleListTile(
+              style: PoliceModules.atisTakip,
               title: 'Atış Takibim',
               subtitle: '${ozet.atisTamamlanan}/4 dönem tamamlandı',
               onTap: () =>
@@ -157,68 +157,3 @@ class _OzetPanel extends StatelessWidget {
       );
 }
 
-class _ModulTile extends StatelessWidget {
-  const _ModulTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Material(
-        color: PoliceColors.surfaceDark,
-        borderRadius: BorderRadius.circular(14),
-        child: InkWell(
-          onTap: () {
-            HapticFeedback.selectionClick();
-            onTap();
-          },
-          borderRadius: BorderRadius.circular(14),
-          child: Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
-              ),
-            ),
-            child: Row(
-              children: [
-                PhosphorIcon(icon, color: PoliceColors.primaryBlue, size: 26),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title,
-                          style: const TextStyle(
-                              color: PoliceColors.titleOnDark,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 15)),
-                      Text(subtitle,
-                          style: TextStyle(
-                              color:
-                                  PoliceColors.textMuted.withValues(alpha: 0.85),
-                              fontSize: 12.5)),
-                    ],
-                  ),
-                ),
-                const PhosphorIcon(PhosphorIconsRegular.caretRight,
-                    color: PoliceColors.textMuted, size: 18),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

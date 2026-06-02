@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/widgets/police_module_icon.dart';
+import '../../common/widgets/police_module_list_tile.dart';
+import '../../common/widgets/rutbe_level_icon.dart';
 import '../araclar/gider/o1_gider_page.dart';
 import '../araclar/gorev_puanlari/gorev_puani_giris_page.dart';
 import '../araclar/lojman/lojman_puani_page.dart';
@@ -20,11 +22,18 @@ import 'kariyer/kariyer_ozet_provider.dart';
 import 'kariyer/profil/profil_form.dart';
 
 /// Profilim: kişisel bilgiler + kariyer modülleri.
-class GorevlerimPage extends ConsumerWidget {
+class GorevlerimPage extends ConsumerStatefulWidget {
   const GorevlerimPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<GorevlerimPage> createState() => _GorevlerimPageState();
+}
+
+class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
+  bool _profilFormAcik = false;
+
+  @override
+  Widget build(BuildContext context) {
     final ozetAsync = ref.watch(kariyerOzetProvider);
 
     return Scaffold(
@@ -54,8 +63,7 @@ class GorevlerimPage extends ConsumerWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            'Ad, sicil, rütbe, birim, göreve başlama, eğitim ve gazilik durumunu buradan gir. '
-            'Ana sayfada yalnızca rütbe, ad, birim ve eğitim özeti görünür.',
+            'Bilgileri ilk kez girerken form görünür. Kaydettikten sonra ekranı kaplamasın diye özet karta döner.',
             style: TextStyle(
               color: PoliceColors.textMuted.withValues(alpha: 0.85),
               fontSize: 12.5,
@@ -63,16 +71,24 @@ class GorevlerimPage extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: PoliceColors.surfaceDark,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: PoliceColors.primaryBlue.withValues(alpha: 0.35),
-              ),
+          ozetAsync.when(
+            loading: () => const Center(
+              child: CircularProgressIndicator(color: PoliceColors.primaryBlue),
             ),
-            child: const ProfilForm(),
+            error: (_, __) => const Text('Profil yüklenemedi.'),
+            data: (ozet) {
+              final profilVar = ozet.profil.hasOzet;
+              final formAcik = _profilFormAcik || !profilVar;
+              if (formAcik) {
+                return _ProfilFormCard(
+                  onSaved: () => setState(() => _profilFormAcik = false),
+                );
+              }
+              return _ProfilSummaryCard(
+                ozet: ozet,
+                onEdit: () => setState(() => _profilFormAcik = true),
+              );
+            },
           ),
           const SizedBox(height: 20),
           ozetAsync.when(
@@ -82,38 +98,38 @@ class GorevlerimPage extends ConsumerWidget {
           ),
           const SizedBox(height: 18),
           const _SectionLabel('Kariyer'),
-          _GorevTile(
-            icon: PhosphorIconsRegular.medal,
+          PoliceModuleListTile(
+            style: PoliceModules.basari,
             title: 'Başarı Dosyam',
             subtitle: 'Başarı ve üstün başarı belgeleri',
-            onTap: () => Navigator.of(context)
-                .push(fadeRoute(const BasariPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const BasariPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.graduationCap,
-            title: 'Eğitim ve Sertifikalarım',
+          PoliceModuleListTile(
+            style: PoliceModules.egitim,
+            title: 'Eğitimlerim',
             subtitle: 'Kurs, sertifika ve diploma kayıtları',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const EgitimPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.chartLineUp,
+          PoliceModuleListTile(
+            style: PoliceModules.kariyerOzet,
             title: 'Kariyer özeti',
             subtitle: 'Tüm kariyer verilerinin özeti',
-            onTap: () => Navigator.of(context)
-                .push(fadeRoute(const KariyerHubPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const KariyerHubPage())),
           ),
           const SizedBox(height: 18),
           const _SectionLabel('Görev takibi'),
-          _GorevTile(
-            icon: PhosphorIconsRegular.bookBookmark,
+          PoliceModuleListTile(
+            style: PoliceModules.gorevGunlugu,
             title: 'Görev Günlüğüm',
             subtitle: 'Görev kaydı, takvim ve istatistik.',
-            onTap: () => Navigator.of(context)
-                .push(fadeRoute(const GorevGunlukPage())),
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const GorevGunlukPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.target,
+          PoliceModuleListTile(
+            style: PoliceModules.atisTakip,
             title: 'Atış Takibim',
             subtitle: '4 dönem atış puanı.',
             onTap: () =>
@@ -121,40 +137,163 @@ class GorevlerimPage extends ConsumerWidget {
           ),
           const SizedBox(height: 18),
           const _SectionLabel('Diğer'),
-          _GorevTile(
-            icon: PhosphorIconsRegular.calendarBlank,
+          PoliceModuleListTile(
+            style: PoliceModules.izin,
             title: 'İzinlerim',
             subtitle: 'Yıllık, mazeret, refakat izni.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const IzinPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.receipt,
-            title: 'O-1 giderleri',
+          PoliceModuleListTile(
+            style: PoliceModules.o1Gider,
+            title: 'O-1 Giderleri',
             subtitle: 'Görev giderleri ve fişler.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const O1GiderPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.scales,
+          PoliceModuleListTile(
+            style: PoliceModules.disiplin,
             title: 'Disiplinlerim',
             subtitle: 'Fiil rehberi ve savunma süreci.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const DisiplinRehberiPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.mapPinLine,
+          PoliceModuleListTile(
+            style: PoliceModules.tayin,
             title: 'Tayinim',
             subtitle: 'EGM hizmet puanı hesapla.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const GorevPuaniGirisPage())),
           ),
-          _GorevTile(
-            icon: PhosphorIconsRegular.house,
+          PoliceModuleListTile(
+            style: PoliceModules.lojman,
             title: 'Lojmanım',
             subtitle: 'Lojman puanı hesaplama.',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const LojmanPuaniPage())),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ProfilFormCard extends StatelessWidget {
+  const _ProfilFormCard({required this.onSaved});
+
+  final VoidCallback onSaved;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.35),
+        ),
+      ),
+      child: ProfilForm(onSaved: onSaved),
+    );
+  }
+}
+
+class _ProfilSummaryCard extends StatelessWidget {
+  const _ProfilSummaryCard({
+    required this.ozet,
+    required this.onEdit,
+  });
+
+  final KariyerOzet ozet;
+  final VoidCallback onEdit;
+
+  @override
+  Widget build(BuildContext context) {
+    final profil = ozet.profil;
+    final rutbe = profil.rutbe;
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.35),
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 48,
+            height: 48,
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: PoliceColors.primaryBlue.withValues(alpha: 0.14),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: rutbe == null
+                ? const PhosphorIcon(
+                    PhosphorIconsRegular.userCircle,
+                    color: PoliceColors.primaryBlue,
+                    size: 30,
+                  )
+                : RutbeRankIcon(
+                    levelIndex: rutbe.levelIndex,
+                    size: 32,
+                  ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  profil.adSoyad.isEmpty
+                      ? 'Profil bilgileri kayıtlı'
+                      : profil.adSoyad,
+                  style: const TextStyle(
+                    color: PoliceColors.titleOnDark,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  [
+                    if (ozet.rutbeLabel != '—') ozet.rutbeLabel,
+                    if (profil.birim.isNotEmpty) profil.birim,
+                    if (profil.il.isNotEmpty) profil.il,
+                  ].join(' · '),
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.9),
+                    fontSize: 12.5,
+                    height: 1.3,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                if (ozet.egitimLabel != '—') ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    ozet.egitimLabel,
+                    style: TextStyle(
+                      color: PoliceColors.gold.withValues(alpha: 0.9),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ],
+            ),
+          ),
+          const SizedBox(width: 8),
+          TextButton(
+            onPressed: onEdit,
+            child: const Text('Düzenle'),
           ),
         ],
       ),
@@ -230,89 +369,3 @@ class _MiniOzet extends StatelessWidget {
       );
 }
 
-class _GorevTile extends StatelessWidget {
-  const _GorevTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Material(
-        color: PoliceColors.surfaceDark,
-        borderRadius: BorderRadius.circular(16),
-        child: InkWell(
-          onTap: () {
-            HapticFeedback.selectionClick();
-            onTap();
-          },
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: PoliceColors.outlineMuted.withValues(alpha: 0.5),
-              ),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: PoliceColors.primaryBlue.withValues(alpha: 0.14),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: PhosphorIcon(
-                    icon,
-                    color: PoliceColors.primaryBlue,
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          color: PoliceColors.titleOnDark,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15.5,
-                        ),
-                      ),
-                      const SizedBox(height: 3),
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: PoliceColors.textMuted.withValues(alpha: 0.9),
-                          fontSize: 12.5,
-                          height: 1.32,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const PhosphorIcon(
-                  PhosphorIconsRegular.caretRight,
-                  color: PoliceColors.textMuted,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

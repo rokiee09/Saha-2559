@@ -37,7 +37,7 @@ class _AramaRehberiPageState extends State<AramaRehberiPage> {
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
-        title: const Text('Arama Rehberi'),
+        title: const Text('Arama Kararları'),
         shape: Border(
           bottom: BorderSide(color: PoliceColors.accentMix(0.34), width: 1),
         ),

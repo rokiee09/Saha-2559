@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'common/constants/app_branding.dart';
 import 'common/theme/app_theme.dart';
+import 'common/widgets/turkish_input_accessory.dart';
 import 'features/root_gate.dart';
 import 'features/settings/reading_scale_controller.dart';
 import 'features/settings/theme_controller.dart';
@@ -40,11 +41,12 @@ class PolisMevzuatApp extends ConsumerWidget {
         );
         return MediaQuery(
           data: mq.copyWith(textScaler: scaled),
-          child: child ?? const SizedBox.shrink(),
+          child: TurkishInputAccessory(
+            child: child ?? const SizedBox.shrink(),
+          ),
         );
       },
       home: const RootGate(),
     );
   }
 }
-

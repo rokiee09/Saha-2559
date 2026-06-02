@@ -10,10 +10,15 @@ import '../widgets/gazi_tesekkur_kart.dart';
 
 /// Personel profil formu — Profilim sekmesi ve Kariyerim'de ortak.
 class ProfilForm extends ConsumerStatefulWidget {
-  const ProfilForm({super.key, this.compact = false});
+  const ProfilForm({
+    super.key,
+    this.compact = false,
+    this.onSaved,
+  });
 
   /// true: yalnızca form; false: rozet + tam form.
   final bool compact;
+  final VoidCallback? onSaved;
 
   @override
   ConsumerState<ProfilForm> createState() => _ProfilFormState();
@@ -87,6 +92,7 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
     await kariyerSaveProfil(ref, profil);
     if (!mounted) return;
     setState(() => _saving = false);
+    widget.onSaved?.call();
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Profil kaydedildi.')),
     );
@@ -217,8 +223,8 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
                             Text(
                               'Göreve başlama tarihi',
                               style: TextStyle(
-                                color:
-                                    PoliceColors.textMuted.withValues(alpha: 0.9),
+                                color: PoliceColors.textMuted
+                                    .withValues(alpha: 0.9),
                                 fontSize: 12,
                               ),
                             ),

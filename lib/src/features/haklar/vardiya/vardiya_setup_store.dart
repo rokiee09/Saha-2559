@@ -41,8 +41,7 @@ class VardiyaSetupStore {
           (shiftId == 'gercek_12_36'),
       group: prefs.getInt(_key(shiftId, 'group')) ?? 1,
       tableDays: prefs.getInt(_key(shiftId, 'tabledays')) ?? 15,
-      cakmaPatternId:
-          prefs.getString(_key(shiftId, 'cakmapattern')) ?? '5_10',
+      cakmaPatternId: prefs.getString(_key(shiftId, 'cakmapattern')) ?? '5_10',
       optionId: prefs.getString(_key(shiftId, 'option')),
     );
   }
@@ -91,9 +90,12 @@ class VardiyaSetupStore {
     return null;
   }
 
-  /// Gerçek 12/36: 4 grup arasında yaklaşık 7 günlük kaydırma.
+  /// Seçilen tarih, kullanıcının kendi grubuna ait referans tarihidir.
+  ///
+  /// Önceden gerçek 12/36 için 2. grup seçildiğinde tarih 7 gün geri
+  /// çekiliyordu. Bu, "2. grubun gece başlangıcı 24.05" gibi kullanıcı
+  /// girişlerini 17.05'e kaydırıp hatalı çizelge üretiyordu.
   static int groupOffsetDays(String shiftId, int group) {
-    if (shiftId != 'gercek_12_36' || group <= 1) return 0;
-    return (group - 1) * 7;
+    return 0;
   }
 }

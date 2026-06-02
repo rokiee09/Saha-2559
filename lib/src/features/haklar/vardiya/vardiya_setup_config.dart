@@ -18,6 +18,7 @@ class VardiyaSetupOption {
   final String? subtitle;
   final IconData? icon;
   final String? emoji;
+
   /// Referans gününde döngünün kaçıncı adımı olduğunu belirtir.
   final int cycleIndex;
 }
@@ -100,14 +101,14 @@ class VardiyaSetupConfig {
     ),
   ];
 
-  static VardiyaSetupConfig? forShift(String shiftId) =>
-      _configs[shiftId];
+  static VardiyaSetupConfig? forShift(String shiftId) => _configs[shiftId];
 
   static const Map<String, VardiyaSetupConfig> _configs = {
     '12_24': VardiyaSetupConfig(
       shiftId: '12_24',
       questionTitle: 'Bugün hangi vardiyadasınız?',
-      questionHint: 'Seçiminiz referans günü için alınır; takvim buna göre oluşturulur.',
+      questionHint:
+          'Seçiminiz referans günü için alınır; takvim buna göre oluşturulur.',
       options: [
         VardiyaSetupOption(
           id: 'day',
@@ -135,7 +136,8 @@ class VardiyaSetupConfig {
     'cakma_12_36': VardiyaSetupConfig(
       shiftId: 'cakma_12_36',
       questionTitle: 'Vardiya paternini seçin',
-      questionHint: 'Blok uzunluğu biriminize göre değişebilir; kesin sıra cetvelden doğrulanmalıdır.',
+      questionHint:
+          'Blok uzunluğu biriminize göre değişebilir; kesin sıra cetvelden doğrulanmalıdır.',
       showCakmaPatternPicker: true,
       showDayNightPicker: true,
       showTableDaysPicker: true,
@@ -159,7 +161,8 @@ class VardiyaSetupConfig {
     'gercek_12_36': VardiyaSetupConfig(
       shiftId: 'gercek_12_36',
       questionTitle: 'Şu an hangi vardiyadasınız?',
-      questionHint: 'Gerçek 12/36: 15 gece + 15 gündüz blokları; grup seçimi döngü kaymasını belirler.',
+      questionHint:
+          'Gerçek 12/36: seçtiğiniz tarih, kendi grubunuzun seçtiğiniz gece/gündüz bloğuna başladığı tarihtir.',
       showGroupPicker: true,
       showDayNightPicker: true,
       showTableDaysPicker: true,
@@ -206,7 +209,8 @@ class VardiyaSetupConfig {
     '8_24': VardiyaSetupConfig(
       shiftId: '8_24',
       questionTitle: 'Şu anda hangi vardiyadasınız?',
-      questionHint: 'Bugünkü vardiyayı seçiniz (saatler 08:00–20:00 aralığında özetlenir).',
+      questionHint:
+          'Bugünkü vardiyayı seçiniz (saatler 08:00–20:00 aralığında özetlenir).',
       options: [
         VardiyaSetupOption(
           id: 'morning',
@@ -247,8 +251,10 @@ class VardiyaSetupConfig {
         VardiyaSetupOption(id: 'd2', title: 'Gündüz – 2. gün', cycleIndex: 1),
         VardiyaSetupOption(id: 'n1', title: 'Gece – 1. gün', cycleIndex: 2),
         VardiyaSetupOption(id: 'n2', title: 'Gece – 2. gün', cycleIndex: 3),
-        VardiyaSetupOption(id: 'r1', title: 'İstirahat – 1. gün', cycleIndex: 4),
-        VardiyaSetupOption(id: 'r2', title: 'İstirahat – 2. gün', cycleIndex: 5),
+        VardiyaSetupOption(
+            id: 'r1', title: 'İstirahat – 1. gün', cycleIndex: 4),
+        VardiyaSetupOption(
+            id: 'r2', title: 'İstirahat – 2. gün', cycleIndex: 5),
       ],
     ),
     '11': VardiyaSetupConfig(
@@ -295,7 +301,8 @@ class VardiyaSetupConfig {
     'asayis_11': VardiyaSetupConfig(
       shiftId: 'asayis_11',
       questionTitle: 'Bugün hangi vardiyadasınız?',
-      questionHint: 'Asayiş tipi vardiya — saatler 08:00–20:00 aralığında özetlenir.',
+      questionHint:
+          'Asayiş tipi vardiya — saatler 08:00–20:00 aralığında özetlenir.',
       options: [
         VardiyaSetupOption(
           id: 'early',

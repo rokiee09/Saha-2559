@@ -173,7 +173,7 @@ class DashboardPage extends ConsumerWidget {
                     children: [
                       Expanded(
                         child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.sparkle,
+                          icon: PhosphorIconsRegular.brain,
                           title: 'Çalışma Asistanı',
                           subtitle: 'Senaryo · mevzuat rehberi',
                           onTap: () {
@@ -201,7 +201,7 @@ class DashboardPage extends ConsumerWidget {
                     children: [
                       Expanded(
                         child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.calendarBlank,
+                          icon: PhosphorIconsRegular.calendarCheck,
                           title: 'İzinlerim',
                           subtitle: izinSubtitle,
                           onTap: () {
@@ -213,7 +213,7 @@ class DashboardPage extends ConsumerWidget {
                       const SizedBox(width: 12),
                       Expanded(
                         child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.calendarCheck,
+                          icon: PhosphorIconsRegular.clockCountdown,
                           title: 'Vardiyam',
                           subtitle: 'Vardiya türünü seç',
                           onTap: () {

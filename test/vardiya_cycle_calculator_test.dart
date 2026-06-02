@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:coderipple/src/features/haklar/vardiya/vardiya_cycle_calculator.dart';
+import 'package:coderipple/src/features/haklar/vardiya/vardiya_setup_store.dart';
 
 void main() {
   group('vardiyaCyclePatternFor', () {
@@ -168,6 +169,23 @@ void main() {
       expect(shifts[1].start, DateTime(2026, 6, 1, 20));
     });
 
+    test('grup seçimi kullanıcının seçtiği başlangıç tarihini geri kaydırmaz',
+        () {
+      final groupOffset = VardiyaSetupStore.groupOffsetDays('gercek_12_36', 2);
+      final shifts = buildVardiyaUpcomingShifts(
+        anchorLocalDate: DateTime(2026, 5, 24),
+        shiftId: 'gercek_12_36',
+        startNight: true,
+        from: DateTime(2026, 5, 24),
+        count: 1,
+        groupOffsetDays: groupOffset,
+      );
+
+      expect(groupOffset, 0);
+      expect(shifts.first.start, DateTime(2026, 5, 24, 20));
+      expect(shifts.first.end, DateTime(2026, 5, 25, 8));
+    });
+
     test('gündüz başlayınca ilk nöbet 08:00–20:00', () {
       final shifts = buildVardiyaUpcomingShifts(
         anchorLocalDate: anchor,
@@ -197,7 +215,8 @@ void main() {
       }
       // 6. günden itibaren gece bloğu (gün aşırı gece nöbeti) görülür.
       final laterKinds = days.sublist(5).map((d) => d.kind).toSet();
-      expect(laterKinds.contains(VardiyaCalendarDayKind.cakmaNightDuty), isTrue);
+      expect(
+          laterKinds.contains(VardiyaCalendarDayKind.cakmaNightDuty), isTrue);
     });
 
     test('gündüz nöbetleri günlük 08:00–20:00', () {

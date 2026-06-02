@@ -167,7 +167,8 @@ class _VardiyaSetupPageState extends State<VardiyaSetupPage> {
                     child: Text(
                       description,
                       style: TextStyle(
-                        color: PoliceColors.mevzuatBodyText.withValues(alpha: 0.92),
+                        color: PoliceColors.mevzuatBodyText
+                            .withValues(alpha: 0.92),
                         height: 1.48,
                         fontSize: 13.5,
                       ),
@@ -177,7 +178,8 @@ class _VardiyaSetupPageState extends State<VardiyaSetupPage> {
                   if (_config.showDatePicker) ...[
                     VardiyaSectionCard(
                       title: 'Tarih seçin',
-                      subtitle: 'Referans günü — genelde bugün veya döngüye girdiğiniz gün.',
+                      subtitle:
+                          'Referans günü — genelde bugün veya döngüye girdiğiniz gün.',
                       child: Row(
                         children: [
                           Expanded(
@@ -205,7 +207,8 @@ class _VardiyaSetupPageState extends State<VardiyaSetupPage> {
                   if (_config.showGroupPicker) ...[
                     VardiyaSectionCard(
                       title: 'Hangi gruptasınız?',
-                      subtitle: '4 grup arasında döngü kayması uygulanır (örnek model).',
+                      subtitle:
+                          'Seçtiğiniz tarih, bu grubun seçili gece/gündüz bloğuna başladığı tarih kabul edilir.',
                       child: Row(
                         children: [
                           for (var g = 1; g <= 4; g++)
@@ -298,7 +301,8 @@ class _VardiyaSetupPageState extends State<VardiyaSetupPage> {
                             emoji: o.emoji,
                             selected: _selectedOptionId == o.id,
                             accentColor: accent,
-                            onTap: () => setState(() => _selectedOptionId = o.id),
+                            onTap: () =>
+                                setState(() => _selectedOptionId = o.id),
                           ),
                       ],
                     ),
@@ -311,7 +315,8 @@ class _VardiyaSetupPageState extends State<VardiyaSetupPage> {
                   ),
                   const SizedBox(height: 14),
                   const VardiyaInfoBanner(
-                    text: 'Bu ekran bilgilendirme amaçlıdır; kesin görev saati ve sıra '
+                    text:
+                        'Bu ekran bilgilendirme amaçlıdır; kesin görev saati ve sıra '
                         'yalnızca kurum çizelgesi ile belirlenir. Veri sunucuya gönderilmez.',
                   ),
                 ],
