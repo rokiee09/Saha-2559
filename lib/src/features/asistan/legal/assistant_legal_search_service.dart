@@ -1,6 +1,7 @@
 import '../decision_support/legal_knowledge_index.dart';
 import '../decision_support/legal_query_analyzer.dart';
 import '../decision_support/legal_search_service.dart' as ds;
+import '../decision_support/legal_search_service.dart' show LegalSearchHit;
 import 'assistant_legal_index.dart';
 import 'assistant_query_classifier.dart';
 

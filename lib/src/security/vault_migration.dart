@@ -14,7 +14,8 @@ class VaultMigration {
     'sifre_kayitli_v1',
   ];
 
-  static const _doneKey = 'vault_migration_v1_done';
+  static const migrationDonePrefsKey = 'vault_migration_v1_done';
+  static const _doneKey = migrationDonePrefsKey;
 
   static Future<void> runIfNeeded() async {
     if (!VaultSession.isUnlocked) return;

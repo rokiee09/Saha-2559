@@ -5,7 +5,10 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/theme/saha_module_theme.dart';
+import '../../common/widgets/module_section_header.dart';
 import '../../common/widgets/police_siren_accent_bar.dart';
+import '../../common/widgets/saha_module_card.dart';
 import '../gorevlerim/izin/izin_provider.dart';
 import '../gorevlerim/emeklilik/widgets/emeklilik_dashboard_card.dart';
 import '../gorevlerim/kariyer/widgets/gazi_tesekkur_kart.dart';
@@ -170,38 +173,28 @@ class DashboardPage extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  Text(
+                  const ModuleSectionHeader(
                     'Hızlı geçiş',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: PoliceColors.titleOnDark,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    subtitle: 'Kaynaklı mevzuat asistanı ve sık kullanılan modüller',
+                    area: SahaModuleArea.asistan,
                   ),
-                  const SizedBox(height: 12),
                   Row(
                     children: [
                       Expanded(
-                        child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.brain,
-                          title: 'Çalışma Asistanı',
-                          subtitle: 'Senaryo · mevzuat rehberi',
-                          onTap: () {
-                            HapticFeedback.selectionClick();
-                            onOpenAsistan();
-                          },
+                        child: SahaModuleCard.feature(
+                          area: SahaModuleArea.asistan,
+                          title: 'Mevzuat Asistanı',
+                          subtitle: 'Olay anlat → dayanaklı ön değerlendirme',
+                          onTap: onOpenAsistan,
                         ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.bookBookmark,
+                        child: SahaModuleCard.feature(
+                          area: SahaModuleArea.mevzuat,
                           title: 'Mevzuat',
                           subtitle: 'Kanun ve yönetmelik',
-                          onTap: () {
-                            HapticFeedback.selectionClick();
-                            onOpenMevzuat();
-                          },
+                          onTap: onOpenMevzuat,
                         ),
                       ),
                     ],
@@ -210,26 +203,20 @@ class DashboardPage extends ConsumerWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.calendarCheck,
+                        child: SahaModuleCard.feature(
+                          area: SahaModuleArea.gorevlerim,
                           title: 'İzinlerim',
                           subtitle: izinSubtitle,
-                          onTap: () {
-                            HapticFeedback.selectionClick();
-                            onOpenIzin();
-                          },
+                          onTap: onOpenIzin,
                         ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _HomeQuickCard(
-                          icon: PhosphorIconsRegular.clockCountdown,
+                        child: SahaModuleCard.feature(
+                          area: SahaModuleArea.vardiya,
                           title: 'Vardiyam',
                           subtitle: 'Vardiya türünü seç',
-                          onTap: () {
-                            HapticFeedback.selectionClick();
-                            onOpenVardiya();
-                          },
+                          onTap: onOpenVardiya,
                         ),
                       ),
                     ],
@@ -583,88 +570,6 @@ class _ActionPill extends StatelessWidget {
                 PhosphorIconsRegular.caretRight,
                 color: PoliceColors.textMuted,
                 size: 22,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _HomeQuickCard extends StatefulWidget {
-  const _HomeQuickCard({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  State<_HomeQuickCard> createState() => _HomeQuickCardState();
-}
-
-class _HomeQuickCardState extends State<_HomeQuickCard> {
-  double _scale = 1;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => setState(() => _scale = 0.98),
-      onTapUp: (_) => setState(() => _scale = 1),
-      onTapCancel: () => setState(() => _scale = 1),
-      onTap: widget.onTap,
-      child: AnimatedScale(
-        scale: _scale,
-        duration: const Duration(milliseconds: 120),
-        curve: Curves.easeOut,
-        child: Container(
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            color: PoliceColors.surfaceDark,
-            borderRadius: BorderRadius.circular(18),
-            border: Border.all(
-              color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
-              width: 1,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.35),
-                blurRadius: 14,
-                offset: const Offset(0, 6),
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              PhosphorIcon(
-                widget.icon,
-                color: PoliceColors.primaryBlue,
-                size: 34,
-              ),
-              const SizedBox(height: 14),
-              Text(
-                widget.title,
-                style: const TextStyle(
-                  color: PoliceColors.titleOnDark,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                widget.subtitle,
-                style: const TextStyle(
-                  color: PoliceColors.textMuted,
-                  fontSize: 12.5,
-                  height: 1.35,
-                ),
               ),
             ],
           ),

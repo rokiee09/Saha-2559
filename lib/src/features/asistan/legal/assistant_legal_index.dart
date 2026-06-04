@@ -1,6 +1,7 @@
 import '../../mevzuat/mevzuat_provider.dart';
 import '../../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 
+import 'assistant_content_index.dart';
 import 'assistant_legal_app_index.dart';
 
 /// Mevzuat kaynak türü.
@@ -509,6 +510,9 @@ List<LegalIndexRecord> buildFullLegalIndex({
     ...legalIndexFromHelpCorpus(),
     ...legalIndexFromSaglikRehber(),
     ...legalIndexFromTutanakTemplates(),
+    ...legalIndexFromDilekceTemplates(),
+    ...legalIndexFromEmsal(),
+    ...legalIndexFromTrafik(),
     ...dynamicRecords,
   ];
 }

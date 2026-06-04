@@ -188,6 +188,30 @@
       "refs": [{"entryId": "kanun-dmk", "label": "657 DMK"}]
     },
     {
+      "id": "yediemin-arac-teslim",
+      "domain": "pvsk",
+      "title": "Yediemin — araç teslimi",
+      "situation": "Adli emanetteki araç için başka il mahkeme kararı var; teslim ve savcı talimatı soruluyor.",
+      "triggers": ["yediemin", "yedieminden arac", "arac teslim", "mahkeme karari", "baska il", "savci talimati", "infaz", "emanet"],
+      "expand": ["yediemin", "teslim", "infaz", "mahkeme", "savci"],
+      "summary": "Karar metninde teslim hükmü ve infaz koordinasyonu esastır; savcı talimatı her dosyada otomatik şart değildir.",
+      "appContext": "Mevzuat Asistanı'nda olayı yazın; Araçlar → Emsal özetleri ve Tutanak Merkezi'ni kullanın.",
+      "source": "CMK · adli emanet uygulaması (bilgilendirme)",
+      "refs": []
+    },
+    {
+      "id": "trafik-alkol",
+      "domain": "pvsk",
+      "title": "Trafik — alkollü sürücü",
+      "situation": "Trafik kontrolünde alkollü sürücü; idari ve disiplin süreçleri soruluyor.",
+      "triggers": ["alkol", "alkollu", "trafik kontrol", "promil", "surucu alkol"],
+      "expand": ["alkol", "trafik", "tutanak", "idari"],
+      "summary": "Ölçüm ve tutanak tamamlanır; idari para ceza/adli işlem ile personel disiplini ayrı yürütülür.",
+      "appContext": "Araçlar → Trafik rehberi ve İdari para cezaları; gerekirse Tutanak şablonu.",
+      "source": "TCK trafik güvenliği · kabahatler",
+      "refs": []
+    },
+    {
       "id": "konut-dokunulmazligi",
       "domain": "pvsk",
       "title": "Konuta girme",

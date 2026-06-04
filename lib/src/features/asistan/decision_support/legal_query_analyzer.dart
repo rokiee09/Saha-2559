@@ -114,6 +114,18 @@ class LegalQueryAnalyzer {
     'idari_para_ceza': ['idari para', 'kabahat', 'dilencilik'],
     'personel_haklari': ['basari', 'odul', 'taltif'],
     'atis': ['atis', 'poligon'],
+    'trafik': [
+      'trafik',
+      'alkol',
+      'alkollu',
+      'hiz',
+      'hız',
+      'ehliyetsiz',
+      'surucu',
+      'sürücü',
+      'kaza',
+    ],
+    'emsal': ['emsal', 'ornek uygulama', 'uygulama ozeti'],
   };
 
   static const _processPatterns = <String, List<String>>{

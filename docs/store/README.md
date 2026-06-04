@@ -36,14 +36,16 @@ Play Console gereksinimleri:
 - Kenar uzunluğu **320–3840 px** arası; en-boy oranı 16:9 veya 9:16 (dikey önerilir).
 - Önerilen dikey çözünürlük: **1080×1920 px**.
 
-Önerilen ekranlar:
+Önerilen ekranlar (2026 vitrin seti):
 
-1. Ana sayfa / özet
-2. Mevzuat listesi + arama
-3. Madde detayı (okuma görünümü)
-4. Maaş hesaplayıcı
-5. Vardiya/nöbet takvimi
-6. Teşkilat veya kültür ekranı
+1. `01-anasayfa` — Ana sayfa, hızlı geçiş kartları
+2. `02-asistan` — Mevzuat Asistanı cevap kartı (dayanak/gerekçe)
+3. `03-mevzuat` — Mevzuat arama ve madde detayı
+4. `04-guvenlik` — Güvenlik merkezi, şifreli veri listesi
+5. `05-araclar` — Araçlar (tutanak, trafik, dilekçe, emsal)
+6. `06-vardiya` — Vardiya/izin veya Profilim
+
+Uygulama içi **Ayarlar → Mağaza hazırlığı** ekranında dosya adları ve kopyalanabilir metinler listelenir.
 
 > NOT: Ekran görüntüleri gerçek uygulamadan alınmalıdır (yapay/temsilî görsel kullanmayın;
 > Play politikası gereği gerçek arayüzü yansıtmalıdır).
