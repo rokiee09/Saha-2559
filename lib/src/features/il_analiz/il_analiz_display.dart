@@ -106,19 +106,26 @@ String formatIlYasamIndeksiSira(int? sira, {int? yil}) {
   return '$sira/81$y';
 }
 
-/// TÜİK sırasından 0–100 görsel skor (1. sıra ≈ 100).
+String formatIlNufusVeyaDash(int? n) {
+  final v = formatIlNufus(n);
+  return v.isEmpty ? kIlAnalizBosDash : v;
+}
+
+/// TÜİK sırasından 0–100 görsel skor (1. sıra ≈ 100) — yalnızca profil çubukları için.
 int yasamSkorFromSira(int sira) {
   final v = ((82 - sira) / 81 * 100).round();
   return v.clamp(1, 100);
 }
 
-/// Liste kartı skoru — profil puanları veya TÜİK yaşam endeksi.
-int? ilGenelSkorFromProfil(IlAnalizProfil p) {
-  final manual = ilGenelSkor(p.puanlar);
-  if (manual != null) return manual;
-  final sira = p.genel.yasamIndeksiSira;
-  if (sira != null) return yasamSkorFromSira(sira);
-  return null;
+/// Liste kartı skoru — yalnızca en az bir puan varsa (editör profili 0–100).
+int? ilGenelSkor(IlAnalizPuanlar p) {
+  final vals = [
+    p.polisYasam,
+    p.aile,
+    p.bekar,
+  ].whereType<int>().toList();
+  if (vals.isEmpty) return null;
+  return (vals.reduce((a, b) => a + b) / vals.length).round();
 }
 
 /// İl listesi alt satırı — bölge, görev puanı, tazminat (yalnızca dolu alanlar).
@@ -150,15 +157,4 @@ String ilHeroAltBaslik(IlAnalizProfil p) {
     parts.add('İl');
   }
   return parts.isEmpty ? kIlAnalizBosGosterim : parts.join(' · ');
-}
-
-/// Liste kartı skoru — yalnızca en az bir puan varsa.
-int? ilGenelSkor(IlAnalizPuanlar p) {
-  final vals = [
-    p.polisYasam,
-    p.aile,
-    p.bekar,
-  ].whereType<int>().toList();
-  if (vals.isEmpty) return null;
-  return (vals.reduce((a, b) => a + b) / vals.length).round();
 }
