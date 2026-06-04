@@ -10,6 +10,7 @@ import '../../common/widgets/police_module_list_tile.dart';
 import '../../common/widgets/rutbe_level_icon.dart';
 import '../araclar/gider/o1_gider_page.dart';
 import '../araclar/gorev_puanlari/gorev_puan_hub_page.dart';
+import '../il_analiz/il_analiz_hub_page.dart';
 import '../araclar/lojman/lojman_puani_page.dart';
 import '../home/root_drawer_scope.dart';
 import 'atis/atis_takip_page.dart';
@@ -175,8 +176,16 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
           ),
           PoliceModuleListTile(
             style: PoliceModules.tayin,
-            title: 'Tayinim',
-            subtitle: '2025 / 2026 görev puanı ve cetvel.',
+            title: 'İl Analizi',
+            subtitle:
+                'Tayin kararı — kartlar, puanlar, ilçe ve karşılaştırma.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const IlAnalizHubPage())),
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.rehber,
+            title: 'Görev puanı hesaplama',
+            subtitle: '2025 / 2026 cetveli ve hizmet süreleri.',
             onTap: () => Navigator.of(context)
                 .push(fadeRoute(const GorevPuanHubPage())),
           ),

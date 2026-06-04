@@ -8,6 +8,7 @@ import 'gorev_puan_sark_prefs.dart';
 import 'gorev_hizmet_sureleri_page.dart';
 import 'gorev_puani_giris_page.dart';
 import 'gorev_puanlari_page.dart';
+import '../../il_analiz/il_analiz_hub_page.dart';
 
 /// Görev puanı merkezi — cetvel, hesaplama ve PBS uyarısı (2025 / 2026).
 class GorevPuanHubPage extends ConsumerWidget {
@@ -30,6 +31,18 @@ class GorevPuanHubPage extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         children: [
+          _MenuCard(
+            icon: PhosphorIconsRegular.mapTrifold,
+            title: 'İl Analizi (Tayin)',
+            subtitle:
+                'Yaşam, lojman, görev puanı ve ilçe profilleri — kart görünümü.',
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const IlAnalizHubPage(),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
           _MenuCard(
             icon: PhosphorIconsRegular.calculator,
             title: '2025 Puan Hesaplama',

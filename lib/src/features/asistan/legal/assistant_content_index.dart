@@ -1,5 +1,6 @@
 import '../../araclar/dilekce/dilekce_templates.dart';
 import '../../araclar/emsal/emsal_rehberi_data.dart';
+import '../../araclar/mutalaa/mutalaa_ozel_data.dart';
 import '../../araclar/trafik/trafik_rehberi_data.dart';
 import 'assistant_legal_index.dart';
 
@@ -56,6 +57,55 @@ List<LegalIndexRecord> legalIndexFromEmsal() {
           'Anonim uygulama özeti; yargı kararı değildir. Araçlar → Emsal özetleri.',
       isAppGuide: true,
       isPriority: e.id == 'yediemin_teslim',
+    );
+  }).toList();
+}
+
+List<LegalIndexRecord> legalIndexFromMutalaaOzel(List<MutalaaKayit> kayitlar) {
+  return kayitlar.map((m) {
+    final soru = m.soruMetni;
+    final cevap = m.cevapMetni;
+    final full = StringBuffer()
+      ..writeln(m.baslik)
+      ..writeln()
+      ..writeln(soru);
+    if (cevap.isNotEmpty) {
+      full.writeln('\nGörüş: $cevap\n');
+    }
+    full.write(m.metin);
+    return LegalIndexRecord(
+      id: 'mutalaa_${m.id}',
+      sourceType: LegalSourceType.rehber,
+      sourceName: 'DPB · Mütalaalar Özel Bülteni',
+      articleNo: m.ref.isNotEmpty ? m.ref : 'Mütalaa',
+      title: m.baslik.length > 120
+          ? '${m.baslik.substring(0, 117)}…'
+          : m.baslik,
+      summary: soru.isNotEmpty ? soru : m.ozet,
+      fullText: full.toString().trim(),
+      keywords: [
+        ...m.keywords,
+        'mutalaa',
+        'dpb',
+        'personel',
+        if (m.ref.isNotEmpty) m.ref,
+      ],
+      synonyms: const [
+        'mutalaa',
+        'mütalaa',
+        'dpb',
+        'devlet personel',
+        'gorus',
+      ],
+      tags: ['mutalaa_ozel', 'personel', 'dpb'],
+      moduleRoute: 'mutalaa_ozel',
+      explanation:
+          'DPB görüş özetidir; güncel mevzuatla birlikte kullanın. '
+          'Araçlar → Mütalaa Özel.',
+      isAppGuide: true,
+      riskNote: cevap.isNotEmpty
+          ? cevap
+          : 'Görüşün güncelliğini mevzuatla doğrulayın.',
     );
   }).toList();
 }

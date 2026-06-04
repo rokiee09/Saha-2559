@@ -1,0 +1,332 @@
+{
+  "surum": 1,
+  "yil": 2015,
+  "kaynak": "TÜİK İllerde Yaşam Endeksi, 2015 — veriportali.tuik.gov.tr",
+  "not": "Bileşik endeks sıralaması (1=en iyi, 81=en düşük). Endeks değerleri 0–1 aralığında.",
+  "iller": {
+    "isparta": {
+      "sira": 1,
+      "ad": "Isparta"
+    },
+    "sakarya": {
+      "sira": 2,
+      "ad": "Sakarya"
+    },
+    "bolu": {
+      "sira": 3,
+      "ad": "Bolu"
+    },
+    "kutahya": {
+      "sira": 4,
+      "ad": "Kütahya"
+    },
+    "istanbul": {
+      "sira": 5,
+      "ad": "İstanbul"
+    },
+    "usak": {
+      "sira": 6,
+      "ad": "Uşak"
+    },
+    "balikesir": {
+      "sira": 7,
+      "ad": "Balıkesir"
+    },
+    "artvin": {
+      "sira": 8,
+      "ad": "Artvin"
+    },
+    "kirikkale": {
+      "sira": 9,
+      "ad": "Kırıkkale"
+    },
+    "afyonkarahisar": {
+      "sira": 10,
+      "ad": "Afyonkarahisar"
+    },
+    "sinop": {
+      "sira": 11,
+      "ad": "Sinop"
+    },
+    "karabuk": {
+      "sira": 12,
+      "ad": "Karabük"
+    },
+    "bilecik": {
+      "sira": 13,
+      "ad": "Bilecik"
+    },
+    "rize": {
+      "sira": 14,
+      "ad": "Rize"
+    },
+    "eskisehir": {
+      "sira": 15,
+      "ad": "Eskişehir"
+    },
+    "yalova": {
+      "sira": 16,
+      "ad": "Yalova"
+    },
+    "ankara": {
+      "sira": 17,
+      "ad": "Ankara"
+    },
+    "konya": {
+      "sira": 18,
+      "ad": "Konya"
+    },
+    "bursa": {
+      "sira": 19,
+      "ad": "Bursa"
+    },
+    "trabzon": {
+      "sira": 20,
+      "ad": "Trabzon"
+    },
+    "izmir": {
+      "sira": 21,
+      "ad": "İzmir"
+    },
+    "cankiri": {
+      "sira": 22,
+      "ad": "Çankırı"
+    },
+    "kocaeli": {
+      "sira": 23,
+      "ad": "Kocaeli"
+    },
+    "canakkale": {
+      "sira": 24,
+      "ad": "Çanakkale"
+    },
+    "karaman": {
+      "sira": 25,
+      "ad": "Karaman"
+    },
+    "denizli": {
+      "sira": 26,
+      "ad": "Denizli"
+    },
+    "amasya": {
+      "sira": 27,
+      "ad": "Amasya"
+    },
+    "kirsehir": {
+      "sira": 28,
+      "ad": "Kırşehir"
+    },
+    "giresun": {
+      "sira": 29,
+      "ad": "Giresun"
+    },
+    "tekirdag": {
+      "sira": 30,
+      "ad": "Tekirdağ"
+    },
+    "manisa": {
+      "sira": 31,
+      "ad": "Manisa"
+    },
+    "kirklareli": {
+      "sira": 32,
+      "ad": "Kırklareli"
+    },
+    "samsun": {
+      "sira": 33,
+      "ad": "Samsun"
+    },
+    "erzincan": {
+      "sira": 34,
+      "ad": "Erzincan"
+    },
+    "edirne": {
+      "sira": 35,
+      "ad": "Edirne"
+    },
+    "kastamonu": {
+      "sira": 36,
+      "ad": "Kastamonu"
+    },
+    "nevsehir": {
+      "sira": 37,
+      "ad": "Nevşehir"
+    },
+    "bartin": {
+      "sira": 38,
+      "ad": "Bartın"
+    },
+    "tokat": {
+      "sira": 39,
+      "ad": "Tokat"
+    },
+    "sivas": {
+      "sira": 40,
+      "ad": "Sivas"
+    },
+    "zonguldak": {
+      "sira": 41,
+      "ad": "Zonguldak"
+    },
+    "kayseri": {
+      "sira": 42,
+      "ad": "Kayseri"
+    },
+    "burdur": {
+      "sira": 43,
+      "ad": "Burdur"
+    },
+    "antalya": {
+      "sira": 44,
+      "ad": "Antalya"
+    },
+    "mugla": {
+      "sira": 45,
+      "ad": "Muğla"
+    },
+    "aydin": {
+      "sira": 46,
+      "ad": "Aydın"
+    },
+    "bayburt": {
+      "sira": 47,
+      "ad": "Bayburt"
+    },
+    "kahramanmaras": {
+      "sira": 48,
+      "ad": "Kahramanmaraş"
+    },
+    "duzce": {
+      "sira": 49,
+      "ad": "Düzce"
+    },
+    "gumushane": {
+      "sira": 50,
+      "ad": "Gümüşhane"
+    },
+    "nigde": {
+      "sira": 51,
+      "ad": "Niğde"
+    },
+    "erzurum": {
+      "sira": 52,
+      "ad": "Erzurum"
+    },
+    "malatya": {
+      "sira": 53,
+      "ad": "Malatya"
+    },
+    "aksaray": {
+      "sira": 54,
+      "ad": "Aksaray"
+    },
+    "ordu": {
+      "sira": 55,
+      "ad": "Ordu"
+    },
+    "corum": {
+      "sira": 56,
+      "ad": "Çorum"
+    },
+    "yozgat": {
+      "sira": 57,
+      "ad": "Yozgat"
+    },
+    "elazig": {
+      "sira": 58,
+      "ad": "Elazığ"
+    },
+    "mersin": {
+      "sira": 59,
+      "ad": "Mersin"
+    },
+    "gaziantep": {
+      "sira": 60,
+      "ad": "Gaziantep"
+    },
+    "adana": {
+      "sira": 61,
+      "ad": "Adana"
+    },
+    "tunceli": {
+      "sira": 62,
+      "ad": "Tunceli"
+    },
+    "bingol": {
+      "sira": 63,
+      "ad": "Bingöl"
+    },
+    "hatay": {
+      "sira": 64,
+      "ad": "Hatay"
+    },
+    "siirt": {
+      "sira": 65,
+      "ad": "Siirt"
+    },
+    "osmaniye": {
+      "sira": 66,
+      "ad": "Osmaniye"
+    },
+    "kilis": {
+      "sira": 67,
+      "ad": "Kilis"
+    },
+    "bitlis": {
+      "sira": 68,
+      "ad": "Bitlis"
+    },
+    "adiyaman": {
+      "sira": 69,
+      "ad": "Adıyaman"
+    },
+    "kars": {
+      "sira": 70,
+      "ad": "Kars"
+    },
+    "van": {
+      "sira": 71,
+      "ad": "Van"
+    },
+    "igdir": {
+      "sira": 72,
+      "ad": "Iğdır"
+    },
+    "sanliurfa": {
+      "sira": 73,
+      "ad": "Şanlıurfa"
+    },
+    "ardahan": {
+      "sira": 74,
+      "ad": "Ardahan"
+    },
+    "diyarbakir": {
+      "sira": 75,
+      "ad": "Diyarbakır"
+    },
+    "hakkari": {
+      "sira": 76,
+      "ad": "Hakkari"
+    },
+    "batman": {
+      "sira": 77,
+      "ad": "Batman"
+    },
+    "sirnak": {
+      "sira": 78,
+      "ad": "Şırnak"
+    },
+    "agri": {
+      "sira": 79,
+      "ad": "Ağrı"
+    },
+    "mardin": {
+      "sira": 80,
+      "ad": "Mardin"
+    },
+    "mus": {
+      "sira": 81,
+      "ad": "Muş"
+    }
+  }
+}

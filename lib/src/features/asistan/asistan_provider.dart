@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../common/text/tr_text.dart';
 import '../mevzuat/mevzuat_provider.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_data.dart';
+import '../araclar/mutalaa/mutalaa_ozel_data.dart';
+import 'legal/assistant_content_index.dart';
 import 'asistan_domain.dart';
 import 'assistant_sensitive_query.dart';
 import 'decision_support/legal_decision_engine.dart';
@@ -303,9 +305,11 @@ final legalKnowledgeIndexProvider =
     FutureProvider<List<LegalKnowledgeRecord>>((ref) async {
   final index = await ref.watch(asistanIndexProvider.future);
   final cezaSet = await ref.watch(idariParaCezaProvider.future);
+  final mutalaaSet = await ref.watch(mutalaaOzelProvider.future);
   return buildLegalKnowledgeIndex(
     mevzuatItems: index.map((i) => (entry: i.entry, section: i.section)),
     cezaKayitlar: cezaSet.kayitlar,
+    extraIndexRecords: legalIndexFromMutalaaOzel(mutalaaSet.kayitlar),
   );
 });
 

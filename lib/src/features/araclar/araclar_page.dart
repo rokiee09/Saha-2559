@@ -24,6 +24,7 @@ import 'gorev_puanlari/gorev_puan_hub_page.dart';
 import 'harcirah/harcirah_hesaplama_page.dart';
 import 'dilekce/dilekce_merkezi_page.dart';
 import 'emsal/emsal_rehberi_page.dart';
+import 'mutalaa/mutalaa_ozel_page.dart';
 import 'idari_para_ceza/idari_para_ceza_page.dart';
 import 'trafik/trafik_rehberi_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
@@ -145,7 +146,8 @@ class AraclarPage extends StatelessWidget {
           _SahaCategoryGrid(categories: tutanakCats),
           const ModuleSectionHeader(
             'Görev içeriği',
-            subtitle: 'Dilekçe taslağı, emsal özet ve trafik kontrol listesi.',
+            subtitle:
+                'Dilekçe, emsal, trafik ve DPB mütalaa görüşleri (offline).',
             topGap: 18,
             area: SahaModuleArea.araclar,
           ),
@@ -169,6 +171,14 @@ class AraclarPage extends StatelessWidget {
             subtitle: 'Kontrol, alkol, hız ve kaza adımları (offline).',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const TrafikRehberiPage())),
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.rehber,
+            title: 'Mütalaa Özel',
+            subtitle:
+                'DPB Mütalaalar Özel Bülteni — görüş arama ve soru-cevap.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const MutalaaOzelPage())),
           ),
           const ModuleSectionHeader(
             'Referans',
