@@ -1,6 +1,8 @@
 import '../../mevzuat/mevzuat_provider.dart';
 import '../../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 
+import 'assistant_legal_app_index.dart';
+
 /// Mevzuat kaynak türü.
 enum LegalSourceType {
   kanun,
@@ -35,9 +37,13 @@ class LegalIndexRecord {
     required this.tags,
     this.entryId,
     this.sectionId,
+    this.moduleRoute,
+    this.saglikKonuId,
+    this.tutanakTemplateId,
     this.riskNote = '',
     this.explanation = '',
     this.isPriority = false,
+    this.isAppGuide = false,
   });
 
   final String id;
@@ -52,9 +58,13 @@ class LegalIndexRecord {
   final List<String> tags;
   final String? entryId;
   final String? sectionId;
+  final String? moduleRoute;
+  final String? saglikKonuId;
+  final String? tutanakTemplateId;
   final String riskNote;
   final String explanation;
   final bool isPriority;
+  final bool isAppGuide;
 
   String get sourceLabel => '$sourceName · $articleNo';
 
@@ -494,9 +504,13 @@ List<LegalIndexRecord> buildFullLegalIndex({
     ...legalIndexFromMevzuat(mevzuatItems),
     ...legalIndexFromIdariParaCeza(cezaKayitlar),
   ];
-  // Öncelik kayıtları aynı konuda dinamik kaydın önüne geçsin diye önce dinamik sonra priority değil -
-  // search'te priority boost kullanılacak; listeye priority önce ekle
-  return [...kPriorityLegalRecords, ...dynamicRecords];
+  return [
+    ...kPriorityLegalRecords,
+    ...legalIndexFromHelpCorpus(),
+    ...legalIndexFromSaglikRehber(),
+    ...legalIndexFromTutanakTemplates(),
+    ...dynamicRecords,
+  ];
 }
 
 List<String> _extractKeywords(String title, String article, String text) {

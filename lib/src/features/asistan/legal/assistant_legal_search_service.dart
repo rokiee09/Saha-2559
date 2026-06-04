@@ -153,6 +153,7 @@ class AssistantLegalSearchService {
     }
 
     if (record.isPriority) score += 18;
+    if (record.isAppGuide) score += 16;
 
     if (_categoryTagMatch(category, trFold(record.tags.join(' ')))) {
       score += 12;
