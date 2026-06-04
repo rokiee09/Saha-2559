@@ -6,10 +6,10 @@ from pathlib import Path
 
 from rapidocr_onnxruntime import RapidOCR
 
-ASSETS = Path(
-    r"C:\Users\burak\.cursor\projects\c-projects-Saha-2559-Saha-2559\assets"
+DEFAULT_ASSETS = Path(
+    r"C:\Users\burak\.cursor\projects\c-Users-burak-Documents-Codex-2026-05-23-kendini-bana-anlat-ne-i-e\assets"
 )
-OUT = Path(__file__).resolve().parent.parent / "assets" / "json" / "gorev_puanlari_2025.json"
+JSON_DIR = Path(__file__).resolve().parent.parent / "assets" / "json"
 
 PUAN_RE = re.compile(r"(\d{1,2}[.,]\d{3})\s*Puan?", re.IGNORECASE)
 LOC_RE = re.compile(r"^[A-ZÇĞİÖŞÜIVXLC0-9\-]+$")
@@ -186,11 +186,26 @@ def parse_ocr_lines(lines: list[str]) -> list[tuple[str, float]]:
 
 
 def main() -> int:
+    yil = 2026
+    assets = DEFAULT_ASSETS
+    if len(sys.argv) >= 2:
+        yil = int(sys.argv[1])
+    if len(sys.argv) >= 3:
+        assets = Path(sys.argv[2])
+    out = JSON_DIR / f"gorev_puanlari_{yil}.json"
+
     ocr = RapidOCR()
     all_entries: dict[str, float] = {}
-    images = sorted(ASSETS.glob("*.png"))
+    images = sorted(p for p in assets.glob("*.png") if p.is_file())
+    if not images:
+        images = sorted(p for p in assets.glob("**/*.png") if p.is_file())
+    # Yalnızca görev puanı ekran görüntüleri (2026 cetveli).
+    images = [p for p in images if "2026-06-04" in p.name or "Gorev" in p.name.lower()]
 
     for img in images:
+        if not img.exists():
+            print(f"skip missing: {img.name}", file=sys.stderr)
+            continue
         result, _ = ocr(str(img))
         if not result:
             continue
@@ -205,17 +220,17 @@ def main() -> int:
     sorted_items = sorted(all_entries.items(), key=lambda x: x[0])
     data = [{"yer": yer, "puan": round(puan, 3)} for yer, puan in sorted_items]
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
+    out.parent.mkdir(parents=True, exist_ok=True)
     payload = {
-        "yil": 2025,
-        "kaynak": "Emniyet Genel Müdürlüğü görev yeri puanları (POL-NET)",
+        "yil": yil,
+        "kaynak": f"Emniyet Genel Müdürlüğü {yil} görev yeri puanları (POL-NET / ekran görüntüsü OCR)",
         "uyari": "Resmî tebliğ esas alınmalıdır; uygulama bilgi amaçlıdır.",
         "kayit_sayisi": len(data),
         "kayitlar": data,
     }
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     iller = {x["yer"].split("-")[0] for x in data}
-    print(f"Extracted {len(data)} entries, {len(iller)} provinces -> {OUT}")
+    print(f"Extracted {len(data)} entries, {len(iller)} provinces -> {out}")
     return 0
 
 

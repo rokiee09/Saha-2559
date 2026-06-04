@@ -1,0 +1,4008 @@
+{
+  "yil": 2026,
+  "kaynak": "Emniyet Genel Müdürlüğü 2026 görev yeri puanları (POL-NET)",
+  "uyari": "Resmî tebliğ esas alınmalıdır; uygulama bilgi amaçlıdır.",
+  "kayit_sayisi": 1000,
+  "kayitlar": [
+    {
+      "yer": "ADANA",
+      "puan": 1.978
+    },
+    {
+      "yer": "ADANA-ALADAG",
+      "puan": 2.662
+    },
+    {
+      "yer": "ADANA-CEYHAN",
+      "puan": 2.151
+    },
+    {
+      "yer": "ADANA-FEKE",
+      "puan": 2.742
+    },
+    {
+      "yer": "ADANA-IMAMOGLU",
+      "puan": 2.432
+    },
+    {
+      "yer": "ADANA-KARAISALI",
+      "puan": 2.523
+    },
+    {
+      "yer": "ADANA-KARATAS",
+      "puan": 2.532
+    },
+    {
+      "yer": "ADANA-KOZAN",
+      "puan": 2.19
+    },
+    {
+      "yer": "ADANA-POZANTI",
+      "puan": 2.27
+    },
+    {
+      "yer": "ADANA-SAIMBEYLI",
+      "puan": 2.738
+    },
+    {
+      "yer": "ADANA-SARICAM",
+      "puan": 2.008
+    },
+    {
+      "yer": "ADANA-SEYHAN",
+      "puan": 1.905
+    },
+    {
+      "yer": "ADANA-TUFANBEYLI",
+      "puan": 2.495
+    },
+    {
+      "yer": "ADANA-YUMURTALIK",
+      "puan": 2.434
+    },
+    {
+      "yer": "ADANA-YUREGIR",
+      "puan": 2.063
+    },
+    {
+      "yer": "ADANA-ÇUKUROVA",
+      "puan": 1.936
+    },
+    {
+      "yer": "ADIYAMAN",
+      "puan": 3.08
+    },
+    {
+      "yer": "ADIYAMAN-BESNI",
+      "puan": 3.455
+    },
+    {
+      "yer": "ADIYAMAN-CELIKHAN",
+      "puan": 3.606
+    },
+    {
+      "yer": "ADIYAMAN-GERGER",
+      "puan": 3.834
+    },
+    {
+      "yer": "ADIYAMAN-GÖLBAŞI",
+      "puan": 3.261
+    },
+    {
+      "yer": "ADIYAMAN-KAHTA",
+      "puan": 3.511
+    },
+    {
+      "yer": "ADIYAMAN-SAMSAT",
+      "puan": 3.723
+    },
+    {
+      "yer": "ADIYAMAN-SINCIK",
+      "puan": 3.819
+    },
+    {
+      "yer": "ADIYAMAN-TUT",
+      "puan": 3.772
+    },
+    {
+      "yer": "AFYONKARAHİSAR",
+      "puan": 2.291
+    },
+    {
+      "yer": "AFYONKARAHİSAR-BASMAKCI",
+      "puan": 2.835
+    },
+    {
+      "yer": "AFYONKARAHİSAR-BAYAT",
+      "puan": 3.014
+    },
+    {
+      "yer": "AFYONKARAHİSAR-BOLVADIN",
+      "puan": 2.595
+    },
+    {
+      "yer": "AFYONKARAHİSAR-CAY",
+      "puan": 2.766
+    },
+    {
+      "yer": "AFYONKARAHİSAR-COBANLAR",
+      "puan": 3.137
+    },
+    {
+      "yer": "AFYONKARAHİSAR-DAZKIRI",
+      "puan": 2.603
+    },
+    {
+      "yer": "AFYONKARAHİSAR-DINAR",
+      "puan": 2.639
+    },
+    {
+      "yer": "AFYONKARAHİSAR-EMIRDAG",
+      "puan": 2.665
+    },
+    {
+      "yer": "AFYONKARAHİSAR-EVCILER",
+      "puan": 2.919
+    },
+    {
+      "yer": "AFYONKARAHİSAR-HOCALAR",
+      "puan": 3.111
+    },
+    {
+      "yer": "AFYONKARAHİSAR-IHSANIYE",
+      "puan": 2.983
+    },
+    {
+      "yer": "AFYONKARAHİSAR-ISCEHISAR",
+      "puan": 2.818
+    },
+    {
+      "yer": "AFYONKARAHİSAR-KIZILOREN",
+      "puan": 3.029
+    },
+    {
+      "yer": "AFYONKARAHİSAR-SANDIKLI",
+      "puan": 2.561
+    },
+    {
+      "yer": "AFYONKARAHİSAR-SINANPASA",
+      "puan": 3.024
+    },
+    {
+      "yer": "AFYONKARAHİSAR-SUHUT",
+      "puan": 2.899
+    },
+    {
+      "yer": "AFYONKARAHİSAR-SULTANDAGI",
+      "puan": 2.781
+    },
+    {
+      "yer": "AKSARAY",
+      "puan": 2.147
+    },
+    {
+      "yer": "AKSARAY-AGACOREN",
+      "puan": 2.718
+    },
+    {
+      "yer": "AKSARAY-ESKIL",
+      "puan": 2.713
+    },
+    {
+      "yer": "AKSARAY-GULAGAC",
+      "puan": 2.821
+    },
+    {
+      "yer": "AKSARAY-GUZELYURT",
+      "puan": 2.859
+    },
+    {
+      "yer": "AKSARAY-ORTAKOY",
+      "puan": 2.474
+    },
+    {
+      "yer": "AKSARAY-SARIYAHSI",
+      "puan": 2.658
+    },
+    {
+      "yer": "AKSARAY-SULTANHANI",
+      "puan": 2.809
+    },
+    {
+      "yer": "AMASYA",
+      "puan": 1.823
+    },
+    {
+      "yer": "AMASYA-GOYNUCEK",
+      "puan": 2.541
+    },
+    {
+      "yer": "AMASYA-GUMUSHACIKOY",
+      "puan": 2.143
+    },
+    {
+      "yer": "AMASYA-HAMAMOZU",
+      "puan": 2.458
+    },
+    {
+      "yer": "AMASYA-MERZIFON",
+      "puan": 1.86
+    },
+    {
+      "yer": "AMASYA-SULUOVA",
+      "puan": 1.975
+    },
+    {
+      "yer": "AMASYA-TASOVA",
+      "puan": 2.311
+    },
+    {
+      "yer": "ANKARA",
+      "puan": 1.667
+    },
+    {
+      "yer": "ANKARA-AKYURT",
+      "puan": 1.759
+    },
+    {
+      "yer": "ANKARA-ALTINDAĞ",
+      "puan": 1.603
+    },
+    {
+      "yer": "ANKARA-AYAS",
+      "puan": 1.905
+    },
+    {
+      "yer": "ANKARA-BALA",
+      "puan": 2.297
+    },
+    {
+      "yer": "ANKARA-BEYPAZARI",
+      "puan": 1.842
+    },
+    {
+      "yer": "ANKARA-CAMLIDERE",
+      "puan": 2.226
+    },
+    {
+      "yer": "ANKARA-CANKAYA",
+      "puan": 1.59
+    },
+    {
+      "yer": "ANKARA-ELMADAĞ",
+      "puan": 1.81
+    },
+    {
+      "yer": "ANKARA-ETİMESGUT",
+      "puan": 1.632
+    },
+    {
+      "yer": "ANKARA-EVREN",
+      "puan": 2.188
+    },
+    {
+      "yer": "ANKARA-GÖLBAŞI",
+      "puan": 1.634
+    },
+    {
+      "yer": "ANKARA-GÜDÜL",
+      "puan": 2.202
+    },
+    {
+      "yer": "ANKARA-HAYMANA",
+      "puan": 2.269
+    },
+    {
+      "yer": "ANKARA-KAHRAMANKAZAN",
+      "puan": 1.659
+    },
+    {
+      "yer": "ANKARA-KALECIK",
+      "puan": 2.099
+    },
+    {
+      "yer": "ANKARA-KEÇİÖREN",
+      "puan": 1.679
+    },
+    {
+      "yer": "ANKARA-KIZILCAHAMAM",
+      "puan": 1.912
+    },
+    {
+      "yer": "ANKARA-MAMAK",
+      "puan": 1.751
+    },
+    {
+      "yer": "ANKARA-NALLIHAN",
+      "puan": 1.953
+    },
+    {
+      "yer": "ANKARA-POLATLI",
+      "puan": 1.786
+    },
+    {
+      "yer": "ANKARA-PURSAKLAR",
+      "puan": 1.813
+    },
+    {
+      "yer": "ANKARA-SEREFLIKOCHISAR",
+      "puan": 1.888
+    },
+    {
+      "yer": "ANKARA-SİNCAN",
+      "puan": 1.71
+    },
+    {
+      "yer": "ANKARA-YENİMAHALLE",
+      "puan": 1.59
+    },
+    {
+      "yer": "ANKARA-ÇUBUK",
+      "puan": 1.846
+    },
+    {
+      "yer": "ANTALYA",
+      "puan": 1.618
+    },
+    {
+      "yer": "ANTALYA-AKSEKI",
+      "puan": 1.983
+    },
+    {
+      "yer": "ANTALYA-AKSU",
+      "puan": 1.768
+    },
+    {
+      "yer": "ANTALYA-ALANYA",
+      "puan": 1.571
+    },
+    {
+      "yer": "ANTALYA-DEMRE",
+      "puan": 1.827
+    },
+    {
+      "yer": "ANTALYA-DOSEMEALTI",
+      "puan": 1.612
+    },
+    {
+      "yer": "ANTALYA-ELMALI",
+      "puan": 1.972
+    },
+    {
+      "yer": "ANTALYA-FINIKE",
+      "puan": 1.802
+    },
+    {
+      "yer": "ANTALYA-GAZIPASA",
+      "puan": 1.836
+    },
+    {
+      "yer": "ANTALYA-GUNDOGMUS",
+      "puan": 2.499
+    },
+    {
+      "yer": "ANTALYA-IBRADI",
+      "puan": 2.043
+    },
+    {
+      "yer": "ANTALYA-KAS",
+      "puan": 1.818
+    },
+    {
+      "yer": "ANTALYA-KEMER",
+      "puan": 1.593
+    },
+    {
+      "yer": "ANTALYA-KEPEZ",
+      "puan": 1.623
+    },
+    {
+      "yer": "ANTALYA-KONYAALTI",
+      "puan": 1.546
+    },
+    {
+      "yer": "ANTALYA-KORKUTELI",
+      "puan": 1.858
+    },
+    {
+      "yer": "ANTALYA-KUMLUCA",
+      "puan": 1.752
+    },
+    {
+      "yer": "ANTALYA-MANAVGAT",
+      "puan": 1.583
+    },
+    {
+      "yer": "ANTALYA-MURATPASA",
+      "puan": 1.54
+    },
+    {
+      "yer": "ANTALYA-SERIK",
+      "puan": 1.682
+    },
+    {
+      "yer": "ARDAHAN",
+      "puan": 3.589
+    },
+    {
+      "yer": "ARDAHAN-DAMAL",
+      "puan": 4.215
+    },
+    {
+      "yer": "ARDAHAN-GÖLE",
+      "puan": 4.223
+    },
+    {
+      "yer": "ARDAHAN-HANAK",
+      "puan": 4.261
+    },
+    {
+      "yer": "ARDAHAN-POSOF",
+      "puan": 3.962
+    },
+    {
+      "yer": "ARDAHAN-ÇILDIR",
+      "puan": 4.184
+    },
+    {
+      "yer": "ARTVİN",
+      "puan": 3.045
+    },
+    {
+      "yer": "ARTVİN-ARDANUC",
+      "puan": 3.575
+    },
+    {
+      "yer": "ARTVİN-ARHAVI",
+      "puan": 3.203
+    },
+    {
+      "yer": "ARTVİN-BORCKA",
+      "puan": 3.447
+    },
+    {
+      "yer": "ARTVİN-HOPA",
+      "puan": 3.137
+    },
+    {
+      "yer": "ARTVİN-KEMALPASA",
+      "puan": 3.553
+    },
+    {
+      "yer": "ARTVİN-MURGUL",
+      "puan": 3.351
+    },
+    {
+      "yer": "ARTVİN-SAVSAT",
+      "puan": 3.53
+    },
+    {
+      "yer": "ARTVİN-YUSUFELI",
+      "puan": 3.45
+    },
+    {
+      "yer": "AYDIN",
+      "puan": 1.661
+    },
+    {
+      "yer": "AYDIN-BOZDOGAN",
+      "puan": 2.354
+    },
+    {
+      "yer": "AYDIN-BUHARKENT",
+      "puan": 2.155
+    },
+    {
+      "yer": "AYDIN-CINE",
+      "puan": 2.002
+    },
+    {
+      "yer": "AYDIN-DIDIM",
+      "puan": 1.748
+    },
+    {
+      "yer": "AYDIN-EFELER",
+      "puan": 1.661
+    },
+    {
+      "yer": "AYDIN-GERMENCIK",
+      "puan": 2.155
+    },
+    {
+      "yer": "AYDIN-INCIRLIOVA",
+      "puan": 2.02
+    },
+    {
+      "yer": "AYDIN-KARACASU",
+      "puan": 2.255
+    },
+    {
+      "yer": "AYDIN-KARPUZLU",
+      "puan": 2.515
+    },
+    {
+      "yer": "AYDIN-KOCARLI",
+      "puan": 2.375
+    },
+    {
+      "yer": "AYDIN-KOSK",
+      "puan": 2.176
+    },
+    {
+      "yer": "AYDIN-KUSADASI",
+      "puan": 1.656
+    },
+    {
+      "yer": "AYDIN-KUYUCAK",
+      "puan": 2.103
+    },
+    {
+      "yer": "AYDIN-NAZILLI",
+      "puan": 1.761
+    },
+    {
+      "yer": "AYDIN-SULTANHISAR",
+      "puan": 2.135
+    },
+    {
+      "yer": "AYDIN-SÖKE",
+      "puan": 1.748
+    },
+    {
+      "yer": "AYDIN-YENIPAZAR",
+      "puan": 2.154
+    },
+    {
+      "yer": "AĞRI",
+      "puan": 4.014
+    },
+    {
+      "yer": "AĞRI-DOĞUBAYAZIT",
+      "puan": 4.365
+    },
+    {
+      "yer": "AĞRI-DİYADİN",
+      "puan": 4.58
+    },
+    {
+      "yer": "AĞRI-ELEŞKİRT",
+      "puan": 4.542
+    },
+    {
+      "yer": "AĞRI-HAMUR",
+      "puan": 4.6
+    },
+    {
+      "yer": "AĞRI-PATNOS",
+      "puan": 4.555
+    },
+    {
+      "yer": "AĞRI-TASLICAY",
+      "puan": 4.573
+    },
+    {
+      "yer": "AĞRI-TUTAK",
+      "puan": 4.598
+    },
+    {
+      "yer": "BALIKESİR",
+      "puan": 1.646
+    },
+    {
+      "yer": "BALIKESİR-ALTIEYLUL",
+      "puan": 1.63
+    },
+    {
+      "yer": "BALIKESİR-AYVALIK",
+      "puan": 1.666
+    },
+    {
+      "yer": "BALIKESİR-BALYA",
+      "puan": 2.312
+    },
+    {
+      "yer": "BALIKESİR-BANDIRMA",
+      "puan": 1.644
+    },
+    {
+      "yer": "BALIKESİR-BIGADIC",
+      "puan": 1.953
+    },
+    {
+      "yer": "BALIKESİR-BURHANIYE",
+      "puan": 1.736
+    },
+    {
+      "yer": "BALIKESİR-DURSUNBEY",
+      "puan": 2.186
+    },
+    {
+      "yer": "BALIKESİR-EDREMIT",
+      "puan": 1.638
+    },
+    {
+      "yer": "BALIKESİR-ERDEK",
+      "puan": 1.788
+    },
+    {
+      "yer": "BALIKESİR-GOMEC",
+      "puan": 1.862
+    },
+    {
+      "yer": "BALIKESİR-GONEN",
+      "puan": 1.797
+    },
+    {
+      "yer": "BALIKESİR-HAVRAN",
+      "puan": 2.198
+    },
+    {
+      "yer": "BALIKESİR-IVRINDI",
+      "puan": 2.206
+    },
+    {
+      "yer": "BALIKESİR-KARESI",
+      "puan": 1.661
+    },
+    {
+      "yer": "BALIKESİR-KEPSUT",
+      "puan": 2.258
+    },
+    {
+      "yer": "BALIKESİR-MANYAS",
+      "puan": 2.069
+    },
+    {
+      "yer": "BALIKESİR-MARMARA",
+      "puan": 1.765
+    },
+    {
+      "yer": "BALIKESİR-SAVAŞTEPE",
+      "puan": 2.156
+    },
+    {
+      "yer": "BALIKESİR-SINDIRGI",
+      "puan": 2.202
+    },
+    {
+      "yer": "BALIKESİR-SUSURLUK",
+      "puan": 1.812
+    },
+    {
+      "yer": "BARTIN",
+      "puan": 2.198
+    },
+    {
+      "yer": "BARTIN-AMASRA",
+      "puan": 2.381
+    },
+    {
+      "yer": "BARTIN-KURUCASILE",
+      "puan": 2.86
+    },
+    {
+      "yer": "BARTIN-ULUS",
+      "puan": 2.737
+    },
+    {
+      "yer": "BATMAN",
+      "puan": 3.477
+    },
+    {
+      "yer": "BATMAN-BESIRI",
+      "puan": 4.149
+    },
+    {
+      "yer": "BATMAN-GERCUS",
+      "puan": 4.229
+    },
+    {
+      "yer": "BATMAN-HASANKEYF",
+      "puan": 4.092
+    },
+    {
+      "yer": "BATMAN-KOZLUK",
+      "puan": 4.205
+    },
+    {
+      "yer": "BATMAN-SASON",
+      "puan": 4.259
+    },
+    {
+      "yer": "BAYBURT",
+      "puan": 2.997
+    },
+    {
+      "yer": "BAYBURT-AYDINTEPE",
+      "puan": 3.425
+    },
+    {
+      "yer": "BAYBURT-DEMIROZU",
+      "puan": 3.505
+    },
+    {
+      "yer": "BOLU",
+      "puan": 1.648
+    },
+    {
+      "yer": "BOLU-DÖRTDİVAN",
+      "puan": 2.501
+    },
+    {
+      "yer": "BOLU-GEREDE",
+      "puan": 1.942
+    },
+    {
+      "yer": "BOLU-GOYNUK",
+      "puan": 2.223
+    },
+    {
+      "yer": "BOLU-KIBRISCIK",
+      "puan": 2.415
+    },
+    {
+      "yer": "BOLU-MENGEN",
+      "puan": 2.087
+    },
+    {
+      "yer": "BOLU-MUDURNU",
+      "puan": 2.248
+    },
+    {
+      "yer": "BOLU-SEBEN",
+      "puan": 2.202
+    },
+    {
+      "yer": "BOLU-YENICAGA",
+      "puan": 1.984
+    },
+    {
+      "yer": "BURDUR",
+      "puan": 2.102
+    },
+    {
+      "yer": "BURDUR-AGLASUN",
+      "puan": 2.646
+    },
+    {
+      "yer": "BURDUR-ALTINYAYLA",
+      "puan": 2.815
+    },
+    {
+      "yer": "BURDUR-BUCAK",
+      "puan": 2.222
+    },
+    {
+      "yer": "BURDUR-CAVDIR",
+      "puan": 2.619
+    },
+    {
+      "yer": "BURDUR-CELTIKCI",
+      "puan": 2.7
+    },
+    {
+      "yer": "BURDUR-GOLHISAR",
+      "puan": 2.304
+    },
+    {
+      "yer": "BURDUR-KARAMANLI",
+      "puan": 2.356
+    },
+    {
+      "yer": "BURDUR-KEMER",
+      "puan": 2.716
+    },
+    {
+      "yer": "BURDUR-TEFENNI",
+      "puan": 2.534
+    },
+    {
+      "yer": "BURDUR-YESILOVA",
+      "puan": 2.536
+    },
+    {
+      "yer": "BURSA",
+      "puan": 1.771
+    },
+    {
+      "yer": "BURSA-BUYUKORHAN",
+      "puan": 2.658
+    },
+    {
+      "yer": "BURSA-GEMLIK",
+      "puan": 1.828
+    },
+    {
+      "yer": "BURSA-GURSU",
+      "puan": 1.971
+    },
+    {
+      "yer": "BURSA-HARMANCIK",
+      "puan": 2.283
+    },
+    {
+      "yer": "BURSA-INEGOL",
+      "puan": 1.77
+    },
+    {
+      "yer": "BURSA-IZNIK",
+      "puan": 1.987
+    },
+    {
+      "yer": "BURSA-KARACABEY",
+      "puan": 1.869
+    },
+    {
+      "yer": "BURSA-KELES",
+      "puan": 2.303
+    },
+    {
+      "yer": "BURSA-KESTEL",
+      "puan": 1.818
+    },
+    {
+      "yer": "BURSA-MUDANYA",
+      "puan": 1.759
+    },
+    {
+      "yer": "BURSA-MUSTAFAKEMALPASA",
+      "puan": 1.945
+    },
+    {
+      "yer": "BURSA-NILUFER",
+      "puan": 1.638
+    },
+    {
+      "yer": "BURSA-ORHANELI",
+      "puan": 2.275
+    },
+    {
+      "yer": "BURSA-ORHANGAZI",
+      "puan": 1.891
+    },
+    {
+      "yer": "BURSA-OSMANGAZI",
+      "puan": 1.663
+    },
+    {
+      "yer": "BURSA-YENISEHIR",
+      "puan": 2.017
+    },
+    {
+      "yer": "BURSA-YILDIRIM",
+      "puan": 1.768
+    },
+    {
+      "yer": "BİLECİK",
+      "puan": 2.106
+    },
+    {
+      "yer": "BİLECİK-BOZUYUK",
+      "puan": 2.167
+    },
+    {
+      "yer": "BİLECİK-GOLPAZARI",
+      "puan": 2.61
+    },
+    {
+      "yer": "BİLECİK-INHISAR",
+      "puan": 2.592
+    },
+    {
+      "yer": "BİLECİK-OSMANELI",
+      "puan": 2.398
+    },
+    {
+      "yer": "BİLECİK-PAZARYERI",
+      "puan": 2.504
+    },
+    {
+      "yer": "BİLECİK-SÖĞÜT",
+      "puan": 2.293
+    },
+    {
+      "yer": "BİLECİK-YENIPAZAR",
+      "puan": 2.653
+    },
+    {
+      "yer": "BİNGÖL",
+      "puan": 3.307
+    },
+    {
+      "yer": "BİNGÖL-ADAKLI",
+      "puan": 3.998
+    },
+    {
+      "yer": "BİNGÖL-GENC",
+      "puan": 3.812
+    },
+    {
+      "yer": "BİNGÖL-KARLIOVA",
+      "puan": 3.98
+    },
+    {
+      "yer": "BİNGÖL-KIGI",
+      "puan": 3.701
+    },
+    {
+      "yer": "BİNGÖL-SOLHAN",
+      "puan": 3.862
+    },
+    {
+      "yer": "BİNGÖL-YAYLADERE",
+      "puan": 3.64
+    },
+    {
+      "yer": "BİTLİS",
+      "puan": 3.857
+    },
+    {
+      "yer": "BİTLİS-ADILCEVAZ",
+      "puan": 4.431
+    },
+    {
+      "yer": "BİTLİS-AHLAT",
+      "puan": 4.352
+    },
+    {
+      "yer": "BİTLİS-GUROYMAK",
+      "puan": 4.497
+    },
+    {
+      "yer": "BİTLİS-HIZAN",
+      "puan": 4.523
+    },
+    {
+      "yer": "BİTLİS-MUTKI",
+      "puan": 4.553
+    },
+    {
+      "yer": "BİTLİS-TATVAN",
+      "puan": 3.897
+    },
+    {
+      "yer": "DENİZLİ",
+      "puan": 1.568
+    },
+    {
+      "yer": "DENİZLİ-ACIPAYAM",
+      "puan": 1.84
+    },
+    {
+      "yer": "DENİZLİ-BABADAG",
+      "puan": 2.123
+    },
+    {
+      "yer": "DENİZLİ-BAKLAN",
+      "puan": 2.216
+    },
+    {
+      "yer": "DENİZLİ-BEKILLI",
+      "puan": 1.976
+    },
+    {
+      "yer": "DENİZLİ-BEYAGAC",
+      "puan": 2.247
+    },
+    {
+      "yer": "DENİZLİ-BOZKURT",
+      "puan": 2.041
+    },
+    {
+      "yer": "DENİZLİ-BULDAN",
+      "puan": 1.861
+    },
+    {
+      "yer": "DENİZLİ-CAL",
+      "puan": 1.979
+    },
+    {
+      "yer": "DENİZLİ-CAMELI",
+      "puan": 2.228
+    },
+    {
+      "yer": "DENİZLİ-CARDAK",
+      "puan": 1.989
+    },
+    {
+      "yer": "DENİZLİ-CIVRIL",
+      "puan": 1.918
+    },
+    {
+      "yer": "DENİZLİ-GUNEY",
+      "puan": 2.148
+    },
+    {
+      "yer": "DENİZLİ-HONAZ",
+      "puan": 1.68
+    },
+    {
+      "yer": "DENİZLİ-KALE",
+      "puan": 2.079
+    },
+    {
+      "yer": "DENİZLİ-MERKEZEFENDİ",
+      "puan": 1.529
+    },
+    {
+      "yer": "DENİZLİ-PAMUKKALE",
+      "puan": 1.608
+    },
+    {
+      "yer": "DENİZLİ-SARAYKÖY",
+      "puan": 1.826
+    },
+    {
+      "yer": "DENİZLİ-SERİNHİSAR",
+      "puan": 1.877
+    },
+    {
+      "yer": "DENİZLİ-TAVAS",
+      "puan": 1.932
+    },
+    {
+      "yer": "DÜZCE",
+      "puan": 1.965
+    },
+    {
+      "yer": "DÜZCE-AKCAKOCA",
+      "puan": 2.13
+    },
+    {
+      "yer": "DÜZCE-CILIMLI",
+      "puan": 2.312
+    },
+    {
+      "yer": "DÜZCE-CUMAYERI",
+      "puan": 2.343
+    },
+    {
+      "yer": "DÜZCE-GOLYAKA",
+      "puan": 2.512
+    },
+    {
+      "yer": "DÜZCE-GUMUSOVA",
+      "puan": 2.271
+    },
+    {
+      "yer": "DÜZCE-KAYNASLI",
+      "puan": 2.249
+    },
+    {
+      "yer": "DÜZCE-YIGILCA",
+      "puan": 2.814
+    },
+    {
+      "yer": "DİYARBAKIR",
+      "puan": 3.339
+    },
+    {
+      "yer": "DİYARBAKIR-BAGLAR",
+      "puan": 3.436
+    },
+    {
+      "yer": "DİYARBAKIR-BISMIL",
+      "puan": 3.909
+    },
+    {
+      "yer": "DİYARBAKIR-CERMIK",
+      "puan": 3.993
+    },
+    {
+      "yer": "DİYARBAKIR-CUNGUS",
+      "puan": 4.043
+    },
+    {
+      "yer": "DİYARBAKIR-DICLE",
+      "puan": 4.056
+    },
+    {
+      "yer": "DİYARBAKIR-EGIL",
+      "puan": 4.066
+    },
+    {
+      "yer": "DİYARBAKIR-ERGANI",
+      "puan": 3.796
+    },
+    {
+      "yer": "DİYARBAKIR-HANI",
+      "puan": 4.084
+    },
+    {
+      "yer": "DİYARBAKIR-HAZRO",
+      "puan": 4.086
+    },
+    {
+      "yer": "DİYARBAKIR-KAYAPINAR",
+      "puan": 3.237
+    },
+    {
+      "yer": "DİYARBAKIR-KOCAKOY",
+      "puan": 4.06
+    },
+    {
+      "yer": "DİYARBAKIR-KULP",
+      "puan": 4.051
+    },
+    {
+      "yer": "DİYARBAKIR-LICE",
+      "puan": 4.031
+    },
+    {
+      "yer": "DİYARBAKIR-SILVAN",
+      "puan": 3.964
+    },
+    {
+      "yer": "DİYARBAKIR-SUR",
+      "puan": 3.377
+    },
+    {
+      "yer": "DİYARBAKIR-YENISEHIR",
+      "puan": 3.307
+    },
+    {
+      "yer": "DİYARBAKIR-ÇINAR",
+      "puan": 4.083
+    },
+    {
+      "yer": "EDİRNE",
+      "puan": 2.017
+    },
+    {
+      "yer": "EDİRNE-ENEZ",
+      "puan": 2.539
+    },
+    {
+      "yer": "EDİRNE-HAVSA",
+      "puan": 2.486
+    },
+    {
+      "yer": "EDİRNE-IPSALA",
+      "puan": 2.631
+    },
+    {
+      "yer": "EDİRNE-KESAN",
+      "puan": 2.216
+    },
+    {
+      "yer": "EDİRNE-LALAPASA",
+      "puan": 2.579
+    },
+    {
+      "yer": "EDİRNE-MERIC",
+      "puan": 2.961
+    },
+    {
+      "yer": "EDİRNE-SULOGLU",
+      "puan": 2.541
+    },
+    {
+      "yer": "EDİRNE-UZUNKOPRU",
+      "puan": 2.34
+    },
+    {
+      "yer": "ELAZIĞ",
+      "puan": 2.648
+    },
+    {
+      "yer": "ELAZIĞ-AGIN",
+      "puan": 3.28
+    },
+    {
+      "yer": "ELAZIĞ-ALACAKAYA",
+      "puan": 3.342
+    },
+    {
+      "yer": "ELAZIĞ-ARICAK",
+      "puan": 3.476
+    },
+    {
+      "yer": "ELAZIĞ-BASKIL",
+      "puan": 3.335
+    },
+    {
+      "yer": "ELAZIĞ-KARAKOCAN",
+      "puan": 3.167
+    },
+    {
+      "yer": "ELAZIĞ-KEBAN",
+      "puan": 3.107
+    },
+    {
+      "yer": "ELAZIĞ-KOVANCILAR",
+      "puan": 3.125
+    },
+    {
+      "yer": "ELAZIĞ-MADEN",
+      "puan": 3.252
+    },
+    {
+      "yer": "ELAZIĞ-PALU",
+      "puan": 3.353
+    },
+    {
+      "yer": "ELAZIĞ-SIVRICE",
+      "puan": 3.301
+    },
+    {
+      "yer": "ERZURUM",
+      "puan": 3.38
+    },
+    {
+      "yer": "ERZURUM-ASKALE",
+      "puan": 3.928
+    },
+    {
+      "yer": "ERZURUM-AZIZIYE",
+      "puan": 3.499
+    },
+    {
+      "yer": "ERZURUM-CAT",
+      "puan": 4.209
+    },
+    {
+      "yer": "ERZURUM-HINIS",
+      "puan": 4.139
+    },
+    {
+      "yer": "ERZURUM-HORASAN",
+      "puan": 4.076
+    },
+    {
+      "yer": "ERZURUM-ISPIR",
+      "puan": 3.745
+    },
+    {
+      "yer": "ERZURUM-KARACOBAN",
+      "puan": 4.22
+    },
+    {
+      "yer": "ERZURUM-KARAYAZI",
+      "puan": 4.234
+    },
+    {
+      "yer": "ERZURUM-KOPRUKOY",
+      "puan": 4.221
+    },
+    {
+      "yer": "ERZURUM-NARMAN",
+      "puan": 4.083
+    },
+    {
+      "yer": "ERZURUM-OLTU",
+      "puan": 3.509
+    },
+    {
+      "yer": "ERZURUM-OLUR",
+      "puan": 3.985
+    },
+    {
+      "yer": "ERZURUM-PALANDOKEN",
+      "puan": 3.423
+    },
+    {
+      "yer": "ERZURUM-PASINLER",
+      "puan": 4.07
+    },
+    {
+      "yer": "ERZURUM-PAZARYOLU",
+      "puan": 3.957
+    },
+    {
+      "yer": "ERZURUM-SENKAYA",
+      "puan": 4.205
+    },
+    {
+      "yer": "ERZURUM-TEKMAN",
+      "puan": 4.237
+    },
+    {
+      "yer": "ERZURUM-TORTUM",
+      "puan": 3.936
+    },
+    {
+      "yer": "ERZURUM-UZUNDERE",
+      "puan": 3.906
+    },
+    {
+      "yer": "ERZURUM-YAKUTIYE",
+      "puan": 3.217
+    },
+    {
+      "yer": "ERZİNCAN",
+      "puan": 3.092
+    },
+    {
+      "yer": "ERZİNCAN-CAYIRLI",
+      "puan": 3.669
+    },
+    {
+      "yer": "ERZİNCAN-ILIC",
+      "puan": 3.47
+    },
+    {
+      "yer": "ERZİNCAN-KEMAH",
+      "puan": 3.719
+    },
+    {
+      "yer": "ERZİNCAN-KEMALIYE",
+      "puan": 3.442
+    },
+    {
+      "yer": "ERZİNCAN-OTLUKBELI",
+      "puan": 3.625
+    },
+    {
+      "yer": "ERZİNCAN-REFAHIYE",
+      "puan": 3.525
+    },
+    {
+      "yer": "ERZİNCAN-TERCAN",
+      "puan": 3.65
+    },
+    {
+      "yer": "ERZİNCAN-UZUMLU",
+      "puan": 3.75
+    },
+    {
+      "yer": "ESKİŞEHİR",
+      "puan": 1.523
+    },
+    {
+      "yer": "ESKİŞEHİR-ALPU",
+      "puan": 2.092
+    },
+    {
+      "yer": "ESKİŞEHİR-BEYLIKOVA",
+      "puan": 2.108
+    },
+    {
+      "yer": "ESKİŞEHİR-CIFTELER",
+      "puan": 1.955
+    },
+    {
+      "yer": "ESKİŞEHİR-GUNYUZU",
+      "puan": 2.224
+    },
+    {
+      "yer": "ESKİŞEHİR-HAN",
+      "puan": 2.348
+    },
+    {
+      "yer": "ESKİŞEHİR-INONU",
+      "puan": 1.728
+    },
+    {
+      "yer": "ESKİŞEHİR-MAHMUDIYE",
+      "puan": 2.05
+    },
+    {
+      "yer": "ESKİŞEHİR-MIHALGAZI",
+      "puan": 2.13
+    },
+    {
+      "yer": "ESKİŞEHİR-MIHALICCIK",
+      "puan": 2.237
+    },
+    {
+      "yer": "ESKİŞEHİR-ODUNPAZARI",
+      "puan": 1.523
+    },
+    {
+      "yer": "ESKİŞEHİR-SARICAKAYA",
+      "puan": 2.201
+    },
+    {
+      "yer": "ESKİŞEHİR-SEYITGAZI",
+      "puan": 2.028
+    },
+    {
+      "yer": "ESKİŞEHİR-SIVRIHISAR",
+      "puan": 1.91
+    },
+    {
+      "yer": "ESKİŞEHİR-TEPEBASI",
+      "puan": 1.566
+    },
+    {
+      "yer": "GAZİANTEP",
+      "puan": 3.091
+    },
+    {
+      "yer": "GAZİANTEP-ARABAN",
+      "puan": 3.894
+    },
+    {
+      "yer": "GAZİANTEP-ISLAHIYE",
+      "puan": 3.578
+    },
+    {
+      "yer": "GAZİANTEP-KARKAMIS",
+      "puan": 3.952
+    },
+    {
+      "yer": "GAZİANTEP-NIZIP",
+      "puan": 3.433
+    },
+    {
+      "yer": "GAZİANTEP-NURDAGI",
+      "puan": 3.647
+    },
+    {
+      "yer": "GAZİANTEP-OGUZELI",
+      "puan": 3.6
+    },
+    {
+      "yer": "GAZİANTEP-SAHINBEY",
+      "puan": 3.163
+    },
+    {
+      "yer": "GAZİANTEP-SEHITKAMIL",
+      "puan": 3.02
+    },
+    {
+      "yer": "GAZİANTEP-YAVUZELI",
+      "puan": 4.024
+    },
+    {
+      "yer": "GÜMÜŞHANE",
+      "puan": 2.851
+    },
+    {
+      "yer": "GÜMÜŞHANE-KELKIT",
+      "puan": 3.241
+    },
+    {
+      "yer": "GÜMÜŞHANE-KOSE",
+      "puan": 3.401
+    },
+    {
+      "yer": "GÜMÜŞHANE-KURTUN",
+      "puan": 3.445
+    },
+    {
+      "yer": "GÜMÜŞHANE-SIRAN",
+      "puan": 3.308
+    },
+    {
+      "yer": "GÜMÜŞHANE-TORUL",
+      "puan": 3.191
+    },
+    {
+      "yer": "GİRESUN",
+      "puan": 2.087
+    },
+    {
+      "yer": "GİRESUN-ALUCRA",
+      "puan": 2.733
+    },
+    {
+      "yer": "GİRESUN-BULANCAK",
+      "puan": 2.335
+    },
+    {
+      "yer": "GİRESUN-CAMOLUK",
+      "puan": 2.981
+    },
+    {
+      "yer": "GİRESUN-CANAKCI",
+      "puan": 2.821
+    },
+    {
+      "yer": "GİRESUN-DERELI",
+      "puan": 2.943
+    },
+    {
+      "yer": "GİRESUN-DOGANKENT",
+      "puan": 2.779
+    },
+    {
+      "yer": "GİRESUN-ESPIYE",
+      "puan": 2.448
+    },
+    {
+      "yer": "GİRESUN-EYNESIL",
+      "puan": 2.563
+    },
+    {
+      "yer": "GİRESUN-GORELE",
+      "puan": 2.38
+    },
+    {
+      "yer": "GİRESUN-GUCE",
+      "puan": 2.928
+    },
+    {
+      "yer": "GİRESUN-KESAP",
+      "puan": 2.495
+    },
+    {
+      "yer": "GİRESUN-PIRAZIZ",
+      "puan": 2.437
+    },
+    {
+      "yer": "GİRESUN-SEBINKARAHISAR",
+      "puan": 2.471
+    },
+    {
+      "yer": "GİRESUN-TIREBOLU",
+      "puan": 2.357
+    },
+    {
+      "yer": "GİRESUN-YAGLIDERE",
+      "puan": 2.763
+    },
+    {
+      "yer": "HAKKARİ",
+      "puan": 3.969
+    },
+    {
+      "yer": "HAKKARİ-YUKSEKOVA",
+      "puan": 4.254
+    },
+    {
+      "yer": "HAKKARİ-ÇUKURCA",
+      "puan": 4.171
+    },
+    {
+      "yer": "HAKKARİ-ŞEMDİNLİ",
+      "puan": 4.407
+    },
+    {
+      "yer": "HATAY",
+      "puan": 2.837
+    },
+    {
+      "yer": "HATAY-ALTINOZU",
+      "puan": 3.576
+    },
+    {
+      "yer": "HATAY-ANTAKYA",
+      "puan": 2.771
+    },
+    {
+      "yer": "HATAY-ARSUZ",
+      "puan": 3.013
+    },
+    {
+      "yer": "HATAY-BELEN",
+      "puan": 2.961
+    },
+    {
+      "yer": "HATAY-DEFNE",
+      "puan": 2.903
+    },
+    {
+      "yer": "HATAY-DÖRTYOL",
+      "puan": 2.902
+    },
+    {
+      "yer": "HATAY-ERZIN",
+      "puan": 3.11
+    },
+    {
+      "yer": "HATAY-HASSA",
+      "puan": 3.39
+    },
+    {
+      "yer": "HATAY-ISKENDERUN",
+      "puan": 2.77
+    },
+    {
+      "yer": "HATAY-KIRIKHAN",
+      "puan": 3.094
+    },
+    {
+      "yer": "HATAY-KUMLU",
+      "puan": 3.549
+    },
+    {
+      "yer": "HATAY-PAYAS",
+      "puan": 2.999
+    },
+    {
+      "yer": "HATAY-REYHANLI",
+      "puan": 3.325
+    },
+    {
+      "yer": "HATAY-SAMANDAG",
+      "puan": 3.0
+    },
+    {
+      "yer": "HATAY-YAYLADAGI",
+      "puan": 3.526
+    },
+    {
+      "yer": "ISPARTA",
+      "puan": 1.584
+    },
+    {
+      "yer": "ISPARTA-AKSU",
+      "puan": 2.39
+    },
+    {
+      "yer": "ISPARTA-ATABEY",
+      "puan": 2.069
+    },
+    {
+      "yer": "ISPARTA-EGIRDIR",
+      "puan": 1.931
+    },
+    {
+      "yer": "ISPARTA-GELENDOST",
+      "puan": 2.374
+    },
+    {
+      "yer": "ISPARTA-GONEN",
+      "puan": 1.902
+    },
+    {
+      "yer": "ISPARTA-KECIBORLU",
+      "puan": 1.958
+    },
+    {
+      "yer": "ISPARTA-SARKIKARAAGAC",
+      "puan": 2.047
+    },
+    {
+      "yer": "ISPARTA-SENIRKENT",
+      "puan": 2.13
+    },
+    {
+      "yer": "ISPARTA-SUTCULER",
+      "puan": 2.478
+    },
+    {
+      "yer": "ISPARTA-ULUBORLU",
+      "puan": 1.94
+    },
+    {
+      "yer": "ISPARTA-YALVAC",
+      "puan": 1.942
+    },
+    {
+      "yer": "ISPARTA-YENISARBADEMLI",
+      "puan": 2.151
+    },
+    {
+      "yer": "IĞDIR",
+      "puan": 3.224
+    },
+    {
+      "yer": "IĞDIR-ARALIK",
+      "puan": 3.774
+    },
+    {
+      "yer": "IĞDIR-KARAKOYUNLU",
+      "puan": 3.818
+    },
+    {
+      "yer": "IĞDIR-TUZLUCA",
+      "puan": 3.807
+    },
+    {
+      "yer": "KAHRAMANMARAŞ",
+      "puan": 2.91
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-",
+      "puan": 2.389
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-AFSIN",
+      "puan": 2.626
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-ANDIRIN",
+      "puan": 2.854
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-EKINOZU",
+      "puan": 2.928
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-ELBISTAN",
+      "puan": 2.459
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-GOKSUN",
+      "puan": 2.729
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-NURHAK",
+      "puan": 2.829
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-ONIKISUBAT",
+      "puan": 2.375
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-PAZARCIK",
+      "puan": 2.659
+    },
+    {
+      "yer": "KAHRAMANMARAŞ-TURKOGLU",
+      "puan": 2.712
+    },
+    {
+      "yer": "KARABÜK",
+      "puan": 2.123
+    },
+    {
+      "yer": "KARABÜK-EFLANI",
+      "puan": 2.873
+    },
+    {
+      "yer": "KARABÜK-ESKIPAZAR",
+      "puan": 2.615
+    },
+    {
+      "yer": "KARABÜK-OVACIK",
+      "puan": 2.949
+    },
+    {
+      "yer": "KARABÜK-SAFRANBOLU",
+      "puan": 2.191
+    },
+    {
+      "yer": "KARABÜK-YENICE",
+      "puan": 2.676
+    },
+    {
+      "yer": "KARAMAN",
+      "puan": 2.067
+    },
+    {
+      "yer": "KARAMAN-AYRANCI",
+      "puan": 2.716
+    },
+    {
+      "yer": "KARAMAN-BASYAYLA",
+      "puan": 2.594
+    },
+    {
+      "yer": "KARAMAN-ERMENEK",
+      "puan": 2.402
+    },
+    {
+      "yer": "KARAMAN-KAZIMKARABEKIR",
+      "puan": 2.243
+    },
+    {
+      "yer": "KARAMAN-SARIVELILER",
+      "puan": 2.687
+    },
+    {
+      "yer": "KARS",
+      "puan": 3.606
+    },
+    {
+      "yer": "KARS-AKYAKA",
+      "puan": 4.314
+    },
+    {
+      "yer": "KARS-ARPACAY",
+      "puan": 4.36
+    },
+    {
+      "yer": "KARS-DIGOR",
+      "puan": 4.424
+    },
+    {
+      "yer": "KARS-KAGIZMAN",
+      "puan": 4.287
+    },
+    {
+      "yer": "KARS-SARIKAMIS",
+      "puan": 4.301
+    },
+    {
+      "yer": "KARS-SELIM",
+      "puan": 4.38
+    },
+    {
+      "yer": "KARS-SUSUZ",
+      "puan": 4.396
+    },
+    {
+      "yer": "KASTAMONU",
+      "puan": 2.375
+    },
+    {
+      "yer": "KASTAMONU-ABANA",
+      "puan": 2.564
+    },
+    {
+      "yer": "KASTAMONU-AGLI",
+      "puan": 2.936
+    },
+    {
+      "yer": "KASTAMONU-ARAC",
+      "puan": 3.003
+    },
+    {
+      "yer": "KASTAMONU-AZDAVAY",
+      "puan": 2.897
+    },
+    {
+      "yer": "KASTAMONU-BOZKURT",
+      "puan": 2.734
+    },
+    {
+      "yer": "KASTAMONU-CATALZEYTIN",
+      "puan": 2.894
+    },
+    {
+      "yer": "KASTAMONU-CIDE",
+      "puan": 2.976
+    },
+    {
+      "yer": "KASTAMONU-DADAY",
+      "puan": 2.893
+    },
+    {
+      "yer": "KASTAMONU-DEVREKANI",
+      "puan": 2.862
+    },
+    {
+      "yer": "KASTAMONU-DOGANYURT",
+      "puan": 3.284
+    },
+    {
+      "yer": "KASTAMONU-HANONU",
+      "puan": 2.872
+    },
+    {
+      "yer": "KASTAMONU-IHSANGAZI",
+      "puan": 2.925
+    },
+    {
+      "yer": "KASTAMONU-INEBOLU",
+      "puan": 2.74
+    },
+    {
+      "yer": "KASTAMONU-KURE",
+      "puan": 3.003
+    },
+    {
+      "yer": "KASTAMONU-PINARBASI",
+      "puan": 3.064
+    },
+    {
+      "yer": "KASTAMONU-SENPAZAR",
+      "puan": 3.206
+    },
+    {
+      "yer": "KASTAMONU-SEYDILER",
+      "puan": 2.68
+    },
+    {
+      "yer": "KASTAMONU-TASKOPRU",
+      "puan": 2.805
+    },
+    {
+      "yer": "KASTAMONU-TOSYA",
+      "puan": 2.635
+    },
+    {
+      "yer": "KAYSERİ",
+      "puan": 1.54
+    },
+    {
+      "yer": "KAYSERİ-AKKISLA",
+      "puan": 2.348
+    },
+    {
+      "yer": "KAYSERİ-BUNYAN",
+      "puan": 1.996
+    },
+    {
+      "yer": "KAYSERİ-DEVELI",
+      "puan": 1.841
+    },
+    {
+      "yer": "KAYSERİ-FELAHIYE",
+      "puan": 2.153
+    },
+    {
+      "yer": "KAYSERİ-HACILAR",
+      "puan": 1.539
+    },
+    {
+      "yer": "KAYSERİ-INCESU",
+      "puan": 1.948
+    },
+    {
+      "yer": "KAYSERİ-KOCASINAN",
+      "puan": 1.505
+    },
+    {
+      "yer": "KAYSERİ-MELIKGAZI",
+      "puan": 1.477
+    },
+    {
+      "yer": "KAYSERİ-OZVATAN",
+      "puan": 1.961
+    },
+    {
+      "yer": "KAYSERİ-PINARBASI",
+      "puan": 2.117
+    },
+    {
+      "yer": "KAYSERİ-SARIOGLAN",
+      "puan": 2.212
+    },
+    {
+      "yer": "KAYSERİ-SARIZ",
+      "puan": 2.255
+    },
+    {
+      "yer": "KAYSERİ-TALAS",
+      "puan": 1.641
+    },
+    {
+      "yer": "KAYSERİ-TOMARZA",
+      "puan": 2.262
+    },
+    {
+      "yer": "KAYSERİ-YAHYALI",
+      "puan": 2.021
+    },
+    {
+      "yer": "KAYSERİ-YESILHISAR",
+      "puan": 1.888
+    },
+    {
+      "yer": "KIRIKKALE",
+      "puan": 2.131
+    },
+    {
+      "yer": "KIRIKKALE-BAHSILI",
+      "puan": 2.328
+    },
+    {
+      "yer": "KIRIKKALE-BALISEYH",
+      "puan": 2.681
+    },
+    {
+      "yer": "KIRIKKALE-CELEBI",
+      "puan": 2.755
+    },
+    {
+      "yer": "KIRIKKALE-DELICE",
+      "puan": 2.718
+    },
+    {
+      "yer": "KIRIKKALE-KARAKECILI",
+      "puan": 2.584
+    },
+    {
+      "yer": "KIRIKKALE-KESKIN",
+      "puan": 2.641
+    },
+    {
+      "yer": "KIRIKKALE-SULAKYURT",
+      "puan": 2.9
+    },
+    {
+      "yer": "KIRIKKALE-YAHSIHAN",
+      "puan": 2.014
+    },
+    {
+      "yer": "KIRKLARELİ",
+      "puan": 2.002
+    },
+    {
+      "yer": "KIRKLARELİ-BABAESKI",
+      "puan": 2.147
+    },
+    {
+      "yer": "KIRKLARELİ-DEMIRKOY",
+      "puan": 2.382
+    },
+    {
+      "yer": "KIRKLARELİ-KOFCAZ",
+      "puan": 2.707
+    },
+    {
+      "yer": "KIRKLARELİ-LULEBURGAZ",
+      "puan": 1.969
+    },
+    {
+      "yer": "KIRKLARELİ-PEHLIVANKOY",
+      "puan": 2.451
+    },
+    {
+      "yer": "KIRKLARELİ-PINARHISAR",
+      "puan": 2.219
+    },
+    {
+      "yer": "KIRKLARELİ-VIZE",
+      "puan": 2.234
+    },
+    {
+      "yer": "KIRŞEHIR",
+      "puan": 2.209
+    },
+    {
+      "yer": "KIRŞEHIR-AKCAKENT",
+      "puan": 2.97
+    },
+    {
+      "yer": "KIRŞEHIR-AKPINAR",
+      "puan": 2.817
+    },
+    {
+      "yer": "KIRŞEHIR-BOZTEPE",
+      "puan": 2.801
+    },
+    {
+      "yer": "KIRŞEHIR-CICEKDAGI",
+      "puan": 2.899
+    },
+    {
+      "yer": "KIRŞEHIR-KAMAN",
+      "puan": 2.449
+    },
+    {
+      "yer": "KIRŞEHIR-MUCUR",
+      "puan": 2.554
+    },
+    {
+      "yer": "KOCAELİ",
+      "puan": 1.859
+    },
+    {
+      "yer": "KOCAELİ-BASISKELE",
+      "puan": 1.776
+    },
+    {
+      "yer": "KOCAELİ-CAYIROVA",
+      "puan": 1.858
+    },
+    {
+      "yer": "KOCAELİ-DARICA",
+      "puan": 1.943
+    },
+    {
+      "yer": "KOCAELİ-DERINCE",
+      "puan": 1.92
+    },
+    {
+      "yer": "KOCAELİ-DILOVASI",
+      "puan": 1.916
+    },
+    {
+      "yer": "KOCAELİ-GEBZE",
+      "puan": 1.728
+    },
+    {
+      "yer": "KOCAELİ-GOLCUK",
+      "puan": 1.876
+    },
+    {
+      "yer": "KOCAELİ-IZMIT",
+      "puan": 1.751
+    },
+    {
+      "yer": "KOCAELİ-KANDIRA",
+      "puan": 2.26
+    },
+    {
+      "yer": "KOCAELİ-KARAMURSEL",
+      "puan": 2.0
+    },
+    {
+      "yer": "KOCAELİ-KARTEPE",
+      "puan": 1.883
+    },
+    {
+      "yer": "KOCAELİ-KORFEZ",
+      "puan": 1.951
+    },
+    {
+      "yer": "KONYA",
+      "puan": 1.702
+    },
+    {
+      "yer": "KONYA-AHIRLI",
+      "puan": 2.592
+    },
+    {
+      "yer": "KONYA-AKOREN",
+      "puan": 2.465
+    },
+    {
+      "yer": "KONYA-AKSEHIR",
+      "puan": 1.88
+    },
+    {
+      "yer": "KONYA-ALTINEKIN",
+      "puan": 2.448
+    },
+    {
+      "yer": "KONYA-BEYSEHIR",
+      "puan": 1.878
+    },
+    {
+      "yer": "KONYA-BOZKIR",
+      "puan": 2.383
+    },
+    {
+      "yer": "KONYA-CELTIK",
+      "puan": 2.364
+    },
+    {
+      "yer": "KONYA-CIHANBEYLI",
+      "puan": 2.06
+    },
+    {
+      "yer": "KONYA-CUMRA",
+      "puan": 2.12
+    },
+    {
+      "yer": "KONYA-DERBENT",
+      "puan": 2.604
+    },
+    {
+      "yer": "KONYA-DEREBUCAK",
+      "puan": 2.424
+    },
+    {
+      "yer": "KONYA-DOGANHISAR",
+      "puan": 2.426
+    },
+    {
+      "yer": "KONYA-EMIRGAZI",
+      "puan": 2.507
+    },
+    {
+      "yer": "KONYA-EREGLI",
+      "puan": 1.866
+    },
+    {
+      "yer": "KONYA-GUNEYSINIR",
+      "puan": 2.43
+    },
+    {
+      "yer": "KONYA-HADIM",
+      "puan": 2.47
+    },
+    {
+      "yer": "KONYA-HALKAPINAR",
+      "puan": 2.521
+    },
+    {
+      "yer": "KONYA-HUYUK",
+      "puan": 2.319
+    },
+    {
+      "yer": "KONYA-ILGIN",
+      "puan": 2.042
+    },
+    {
+      "yer": "KONYA-KADINHANI",
+      "puan": 2.341
+    },
+    {
+      "yer": "KONYA-KARAPINAR",
+      "puan": 2.065
+    },
+    {
+      "yer": "KONYA-KARATAY",
+      "puan": 1.708
+    },
+    {
+      "yer": "KONYA-KULU",
+      "puan": 2.043
+    },
+    {
+      "yer": "KONYA-MERAM",
+      "puan": 1.751
+    },
+    {
+      "yer": "KONYA-SARAYONU",
+      "puan": 2.215
+    },
+    {
+      "yer": "KONYA-SELCUKLU",
+      "puan": 1.646
+    },
+    {
+      "yer": "KONYA-SEYDISEHIR",
+      "puan": 1.912
+    },
+    {
+      "yer": "KONYA-TASKENT",
+      "puan": 2.487
+    },
+    {
+      "yer": "KONYA-TUZLUKCU",
+      "puan": 2.475
+    },
+    {
+      "yer": "KONYA-YALIHUYUK",
+      "puan": 2.467
+    },
+    {
+      "yer": "KONYA-YUNAK",
+      "puan": 2.378
+    },
+    {
+      "yer": "KÜTAHYA",
+      "puan": 2.154
+    },
+    {
+      "yer": "KÜTAHYA-ALTINTAS",
+      "puan": 2.785
+    },
+    {
+      "yer": "KÜTAHYA-ASLANAPA",
+      "puan": 2.982
+    },
+    {
+      "yer": "KÜTAHYA-CAVDARHISAR",
+      "puan": 2.818
+    },
+    {
+      "yer": "KÜTAHYA-DOMANIC",
+      "puan": 2.758
+    },
+    {
+      "yer": "KÜTAHYA-DUMLUPINAR",
+      "puan": 2.551
+    },
+    {
+      "yer": "KÜTAHYA-EMET",
+      "puan": 2.614
+    },
+    {
+      "yer": "KÜTAHYA-GEDIZ",
+      "puan": 2.466
+    },
+    {
+      "yer": "KÜTAHYA-HISARCIK",
+      "puan": 2.779
+    },
+    {
+      "yer": "KÜTAHYA-PAZARLAR",
+      "puan": 2.847
+    },
+    {
+      "yer": "KÜTAHYA-SAPHANE",
+      "puan": 2.779
+    },
+    {
+      "yer": "KÜTAHYA-SIMAV",
+      "puan": 2.448
+    },
+    {
+      "yer": "KÜTAHYA-TAVSANLI",
+      "puan": 2.352
+    },
+    {
+      "yer": "KİLİS",
+      "puan": 3.152
+    },
+    {
+      "yer": "KİLİS-ELBEYLI",
+      "puan": 3.727
+    },
+    {
+      "yer": "KİLİS-MUSABEYLI",
+      "puan": 3.829
+    },
+    {
+      "yer": "KİLİS-POLATELI",
+      "puan": 3.817
+    },
+    {
+      "yer": "MALATYA",
+      "puan": 3.172
+    },
+    {
+      "yer": "MALATYA-AKCADAG",
+      "puan": 3.728
+    },
+    {
+      "yer": "MALATYA-ARAPGIR",
+      "puan": 3.62
+    },
+    {
+      "yer": "MALATYA-ARGUVAN",
+      "puan": 3.993
+    },
+    {
+      "yer": "MALATYA-BATTALGAZI",
+      "puan": 3.191
+    },
+    {
+      "yer": "MALATYA-DARENDE",
+      "puan": 3.653
+    },
+    {
+      "yer": "MALATYA-DOGANSEHIR",
+      "puan": 3.799
+    },
+    {
+      "yer": "MALATYA-DOGANYOL",
+      "puan": 4.024
+    },
+    {
+      "yer": "MALATYA-HEKIMHAN",
+      "puan": 3.819
+    },
+    {
+      "yer": "MALATYA-KALE",
+      "puan": 3.896
+    },
+    {
+      "yer": "MALATYA-KULUNCAK",
+      "puan": 3.99
+    },
+    {
+      "yer": "MALATYA-PUTURGE",
+      "puan": 4.058
+    },
+    {
+      "yer": "MALATYA-YAZIHAN",
+      "puan": 3.881
+    },
+    {
+      "yer": "MALATYA-YESILYURT",
+      "puan": 3.151
+    },
+    {
+      "yer": "MANİSA",
+      "puan": 1.9
+    },
+    {
+      "yer": "MANİSA-AHMETLI",
+      "puan": 2.371
+    },
+    {
+      "yer": "MANİSA-AKHISAR",
+      "puan": 2.061
+    },
+    {
+      "yer": "MANİSA-ALASEHIR",
+      "puan": 2.194
+    },
+    {
+      "yer": "MANİSA-DEMIRCI",
+      "puan": 2.295
+    },
+    {
+      "yer": "MANİSA-GOLMARMARA",
+      "puan": 2.581
+    },
+    {
+      "yer": "MANİSA-GORDES",
+      "puan": 2.415
+    },
+    {
+      "yer": "MANİSA-KIRKAGAC",
+      "puan": 2.323
+    },
+    {
+      "yer": "MANİSA-KOPRUBASI",
+      "puan": 2.448
+    },
+    {
+      "yer": "MANİSA-KULA",
+      "puan": 2.254
+    },
+    {
+      "yer": "MANİSA-SALIHLI",
+      "puan": 2.044
+    },
+    {
+      "yer": "MANİSA-SARIGOL",
+      "puan": 2.381
+    },
+    {
+      "yer": "MANİSA-SARUHANLI",
+      "puan": 2.31
+    },
+    {
+      "yer": "MANİSA-SEHZADELER",
+      "puan": 2.007
+    },
+    {
+      "yer": "MANİSA-SELENDI",
+      "puan": 2.563
+    },
+    {
+      "yer": "MANİSA-SOMA",
+      "puan": 2.093
+    },
+    {
+      "yer": "MANİSA-TURGUTLU",
+      "puan": 2.07
+    },
+    {
+      "yer": "MANİSA-YUNUSEMRE",
+      "puan": 1.9
+    },
+    {
+      "yer": "MARDİN",
+      "puan": 3.142
+    },
+    {
+      "yer": "MARDİN-ARTUKLU",
+      "puan": 3.142
+    },
+    {
+      "yer": "MARDİN-DARGECIT",
+      "puan": 3.746
+    },
+    {
+      "yer": "MARDİN-DERIK",
+      "puan": 3.803
+    },
+    {
+      "yer": "MARDİN-KIZILTEPE",
+      "puan": 3.315
+    },
+    {
+      "yer": "MARDİN-MAZIDAGI",
+      "puan": 3.79
+    },
+    {
+      "yer": "MARDİN-MIDYAT",
+      "puan": 3.403
+    },
+    {
+      "yer": "MARDİN-NUSAYBIN",
+      "puan": 3.43
+    },
+    {
+      "yer": "MARDİN-OMERLI",
+      "puan": 3.742
+    },
+    {
+      "yer": "MARDİN-SAVUR",
+      "puan": 3.825
+    },
+    {
+      "yer": "MARDİN-YESILLI",
+      "puan": 3.766
+    },
+    {
+      "yer": "MERSİN",
+      "puan": 1.596
+    },
+    {
+      "yer": "MERSİN-AKDENIZ",
+      "puan": 1.575
+    },
+    {
+      "yer": "MERSİN-ANAMUR",
+      "puan": 1.721
+    },
+    {
+      "yer": "MERSİN-AYDINCIK",
+      "puan": 1.883
+    },
+    {
+      "yer": "MERSİN-BOZYAZI",
+      "puan": 1.9
+    },
+    {
+      "yer": "MERSİN-CAMLIYAYLA",
+      "puan": 2.088
+    },
+    {
+      "yer": "MERSİN-ERDEMLI",
+      "puan": 1.717
+    },
+    {
+      "yer": "MERSİN-GULNAR",
+      "puan": 1.939
+    },
+    {
+      "yer": "MERSİN-MEZITLI",
+      "puan": 1.575
+    },
+    {
+      "yer": "MERSİN-MUT",
+      "puan": 1.883
+    },
+    {
+      "yer": "MERSİN-SILIFKE",
+      "puan": 1.679
+    },
+    {
+      "yer": "MERSİN-TARSUS",
+      "puan": 1.662
+    },
+    {
+      "yer": "MERSİN-TOROSLAR",
+      "puan": 1.711
+    },
+    {
+      "yer": "MERSİN-YENISEHIR",
+      "puan": 1.523
+    },
+    {
+      "yer": "MUĞLA",
+      "puan": 1.596
+    },
+    {
+      "yer": "MUĞLA-BODRUM",
+      "puan": 1.555
+    },
+    {
+      "yer": "MUĞLA-DALAMAN",
+      "puan": 1.724
+    },
+    {
+      "yer": "MUĞLA-DATCA",
+      "puan": 1.658
+    },
+    {
+      "yer": "MUĞLA-FETHIYE",
+      "puan": 1.594
+    },
+    {
+      "yer": "MUĞLA-KAVAKLIDERE",
+      "puan": 2.021
+    },
+    {
+      "yer": "MUĞLA-KOYCEGIZ",
+      "puan": 1.781
+    },
+    {
+      "yer": "MUĞLA-MARMARIS",
+      "puan": 1.587
+    },
+    {
+      "yer": "MUĞLA-MENTESE",
+      "puan": 1.596
+    },
+    {
+      "yer": "MUĞLA-MILAS",
+      "puan": 1.698
+    },
+    {
+      "yer": "MUĞLA-ORTACA",
+      "puan": 1.662
+    },
+    {
+      "yer": "MUĞLA-SEYDIKEMER",
+      "puan": 2.142
+    },
+    {
+      "yer": "MUĞLA-ULA",
+      "puan": 1.754
+    },
+    {
+      "yer": "MUĞLA-YATAGAN",
+      "puan": 1.793
+    },
+    {
+      "yer": "MUŞ",
+      "puan": 3.953
+    },
+    {
+      "yer": "MUŞ-BULANIK",
+      "puan": 4.375
+    },
+    {
+      "yer": "MUŞ-HASKOY",
+      "puan": 4.373
+    },
+    {
+      "yer": "MUŞ-KORKUT",
+      "puan": 4.409
+    },
+    {
+      "yer": "MUŞ-MALAZGIRT",
+      "puan": 4.373
+    },
+    {
+      "yer": "MUŞ-VARTO",
+      "puan": 4.319
+    },
+    {
+      "yer": "NEVŞEHIR",
+      "puan": 1.884
+    },
+    {
+      "yer": "NEVŞEHIR-ACIGOL",
+      "puan": 2.576
+    },
+    {
+      "yer": "NEVŞEHIR-AVANOS",
+      "puan": 2.127
+    },
+    {
+      "yer": "NEVŞEHIR-DERINKUYU",
+      "puan": 2.494
+    },
+    {
+      "yer": "NEVŞEHIR-GULSEHIR",
+      "puan": 2.309
+    },
+    {
+      "yer": "NEVŞEHIR-HACIBEKTAS",
+      "puan": 2.208
+    },
+    {
+      "yer": "NEVŞEHIR-KOZAKLI",
+      "puan": 2.158
+    },
+    {
+      "yer": "NEVŞEHIR-URGUP",
+      "puan": 1.988
+    },
+    {
+      "yer": "NİĞDE",
+      "puan": 2.113
+    },
+    {
+      "yer": "NİĞDE-ALTUNHISAR",
+      "puan": 2.811
+    },
+    {
+      "yer": "NİĞDE-BOR",
+      "puan": 2.211
+    },
+    {
+      "yer": "NİĞDE-CAMARDI",
+      "puan": 2.709
+    },
+    {
+      "yer": "NİĞDE-CIFTLIK",
+      "puan": 2.814
+    },
+    {
+      "yer": "NİĞDE-ULUKISLA",
+      "puan": 2.419
+    },
+    {
+      "yer": "ORDU",
+      "puan": 1.89
+    },
+    {
+      "yer": "ORDU-AKKUS",
+      "puan": 2.677
+    },
+    {
+      "yer": "ORDU-ALTINORDU",
+      "puan": 1.89
+    },
+    {
+      "yer": "ORDU-AYBASTI",
+      "puan": 2.368
+    },
+    {
+      "yer": "ORDU-CAMAS",
+      "puan": 2.588
+    },
+    {
+      "yer": "ORDU-CATALPINAR",
+      "puan": 2.632
+    },
+    {
+      "yer": "ORDU-CAYBASI",
+      "puan": 2.654
+    },
+    {
+      "yer": "ORDU-FATSA",
+      "puan": 2.023
+    },
+    {
+      "yer": "ORDU-GOLKOY",
+      "puan": 2.493
+    },
+    {
+      "yer": "ORDU-GULYALI",
+      "puan": 2.167
+    },
+    {
+      "yer": "ORDU-GURGENTEPE",
+      "puan": 2.637
+    },
+    {
+      "yer": "ORDU-IKIZCE",
+      "puan": 2.671
+    },
+    {
+      "yer": "ORDU-KABADUZ",
+      "puan": 2.571
+    },
+    {
+      "yer": "ORDU-KABATAS",
+      "puan": 2.605
+    },
+    {
+      "yer": "ORDU-KORGAN",
+      "puan": 2.553
+    },
+    {
+      "yer": "ORDU-KUMRU",
+      "puan": 2.49
+    },
+    {
+      "yer": "ORDU-MESUDIYE",
+      "puan": 2.629
+    },
+    {
+      "yer": "ORDU-PERSEMBE",
+      "puan": 2.332
+    },
+    {
+      "yer": "ORDU-ULUBEY",
+      "puan": 2.565
+    },
+    {
+      "yer": "ORDU-UNYE",
+      "puan": 2.041
+    },
+    {
+      "yer": "OSMANİYE",
+      "puan": 2.903
+    },
+    {
+      "yer": "OSMANİYE-BAHCE",
+      "puan": 3.186
+    },
+    {
+      "yer": "OSMANİYE-DUZICI",
+      "puan": 3.168
+    },
+    {
+      "yer": "OSMANİYE-HASANBEYLI",
+      "puan": 3.379
+    },
+    {
+      "yer": "OSMANİYE-KADIRLI",
+      "puan": 2.978
+    },
+    {
+      "yer": "OSMANİYE-SUMBAS",
+      "puan": 3.591
+    },
+    {
+      "yer": "OSMANİYE-TOPRAKKALE",
+      "puan": 3.057
+    },
+    {
+      "yer": "RİZE",
+      "puan": 2.134
+    },
+    {
+      "yer": "RİZE-ARDESEN",
+      "puan": 2.335
+    },
+    {
+      "yer": "RİZE-CAMLIHEMSIN",
+      "puan": 2.499
+    },
+    {
+      "yer": "RİZE-DEREPAZARI",
+      "puan": 2.545
+    },
+    {
+      "yer": "RİZE-FINDIKLI",
+      "puan": 2.353
+    },
+    {
+      "yer": "RİZE-GUNEYSU",
+      "puan": 2.445
+    },
+    {
+      "yer": "RİZE-HEMSIN",
+      "puan": 2.488
+    },
+    {
+      "yer": "RİZE-IKIZDERE",
+      "puan": 2.645
+    },
+    {
+      "yer": "RİZE-IYIDERE",
+      "puan": 2.439
+    },
+    {
+      "yer": "RİZE-KALKANDERE",
+      "puan": 2.614
+    },
+    {
+      "yer": "RİZE-PAZAR",
+      "puan": 2.297
+    },
+    {
+      "yer": "RİZE-ÇAYELİ",
+      "puan": 2.34
+    },
+    {
+      "yer": "SAKARYA",
+      "puan": 1.733
+    },
+    {
+      "yer": "SAKARYA-ADAPAZARI",
+      "puan": 1.715
+    },
+    {
+      "yer": "SAKARYA-AKYAZI",
+      "puan": 1.899
+    },
+    {
+      "yer": "SAKARYA-ARIFIYE",
+      "puan": 1.723
+    },
+    {
+      "yer": "SAKARYA-ERENLER",
+      "puan": 1.798
+    },
+    {
+      "yer": "SAKARYA-FERIZLI",
+      "puan": 2.007
+    },
+    {
+      "yer": "SAKARYA-GEYVE",
+      "puan": 1.968
+    },
+    {
+      "yer": "SAKARYA-HENDEK",
+      "puan": 1.867
+    },
+    {
+      "yer": "SAKARYA-KARAPURCEK",
+      "puan": 2.203
+    },
+    {
+      "yer": "SAKARYA-KARASU",
+      "puan": 1.9
+    },
+    {
+      "yer": "SAKARYA-KAYNARCA",
+      "puan": 2.127
+    },
+    {
+      "yer": "SAKARYA-KOCAALI",
+      "puan": 2.08
+    },
+    {
+      "yer": "SAKARYA-PAMUKOVA",
+      "puan": 1.956
+    },
+    {
+      "yer": "SAKARYA-SAPANCA",
+      "puan": 1.79
+    },
+    {
+      "yer": "SAKARYA-SERDIVAN",
+      "puan": 1.697
+    },
+    {
+      "yer": "SAKARYA-SOGUTLU",
+      "puan": 1.97
+    },
+    {
+      "yer": "SAKARYA-TARAKLI",
+      "puan": 2.188
+    },
+    {
+      "yer": "SAMSUN",
+      "puan": 1.607
+    },
+    {
+      "yer": "SAMSUN-ALACAM",
+      "puan": 2.023
+    },
+    {
+      "yer": "SAMSUN-ASARCIK",
+      "puan": 2.264
+    },
+    {
+      "yer": "SAMSUN-ATAKUM",
+      "puan": 1.53
+    },
+    {
+      "yer": "SAMSUN-AYVACIK",
+      "puan": 2.288
+    },
+    {
+      "yer": "SAMSUN-BAFRA",
+      "puan": 1.737
+    },
+    {
+      "yer": "SAMSUN-CANIK",
+      "puan": 1.676
+    },
+    {
+      "yer": "SAMSUN-CARSAMBA",
+      "puan": 1.808
+    },
+    {
+      "yer": "SAMSUN-HAVZA",
+      "puan": 1.844
+    },
+    {
+      "yer": "SAMSUN-ILKADIM",
+      "puan": 1.566
+    },
+    {
+      "yer": "SAMSUN-KAVAK",
+      "puan": 1.971
+    },
+    {
+      "yer": "SAMSUN-LADIK",
+      "puan": 1.927
+    },
+    {
+      "yer": "SAMSUN-ONDOKUZMAYIS",
+      "puan": 1.852
+    },
+    {
+      "yer": "SAMSUN-SALIPAZARI",
+      "puan": 2.258
+    },
+    {
+      "yer": "SAMSUN-TEKKEKOY",
+      "puan": 1.655
+    },
+    {
+      "yer": "SAMSUN-TERME",
+      "puan": 1.901
+    },
+    {
+      "yer": "SAMSUN-VEZIRKOPRU",
+      "puan": 2.13
+    },
+    {
+      "yer": "SAMSUN-YAKAKENT",
+      "puan": 2.123
+    },
+    {
+      "yer": "SİNOP",
+      "puan": 2.024
+    },
+    {
+      "yer": "SİNOP-AYANCIK",
+      "puan": 2.202
+    },
+    {
+      "yer": "SİNOP-BOYABAT",
+      "puan": 2.262
+    },
+    {
+      "yer": "SİNOP-DIKMEN",
+      "puan": 2.89
+    },
+    {
+      "yer": "SİNOP-DURAGAN",
+      "puan": 2.739
+    },
+    {
+      "yer": "SİNOP-ERFELEK",
+      "puan": 2.656
+    },
+    {
+      "yer": "SİNOP-GERZE",
+      "puan": 2.301
+    },
+    {
+      "yer": "SİNOP-SARAYDUZU",
+      "puan": 2.778
+    },
+    {
+      "yer": "SİNOP-TURKELI",
+      "puan": 2.35
+    },
+    {
+      "yer": "SİVAS",
+      "puan": 2.586
+    },
+    {
+      "yer": "SİVAS-AKINCILAR",
+      "puan": 3.113
+    },
+    {
+      "yer": "SİVAS-ALTINYAYLA",
+      "puan": 3.234
+    },
+    {
+      "yer": "SİVAS-DIVRIGI",
+      "puan": 2.922
+    },
+    {
+      "yer": "SİVAS-DOGANSAR",
+      "puan": 3.208
+    },
+    {
+      "yer": "SİVAS-GEMEREK",
+      "puan": 3.09
+    },
+    {
+      "yer": "SİVAS-GOLOVA",
+      "puan": 3.183
+    },
+    {
+      "yer": "SİVAS-GURUN",
+      "puan": 3.084
+    },
+    {
+      "yer": "SİVAS-HAFIK",
+      "puan": 3.28
+    },
+    {
+      "yer": "SİVAS-IMRANLI",
+      "puan": 3.177
+    },
+    {
+      "yer": "SİVAS-KANGAL",
+      "puan": 3.084
+    },
+    {
+      "yer": "SİVAS-KOYULHISAR",
+      "puan": 3.285
+    },
+    {
+      "yer": "SİVAS-SARKISLA",
+      "puan": 2.896
+    },
+    {
+      "yer": "SİVAS-SUSEHRI",
+      "puan": 2.958
+    },
+    {
+      "yer": "SİVAS-ULAS",
+      "puan": 3.185
+    },
+    {
+      "yer": "SİVAS-YILDIZELI",
+      "puan": 3.292
+    },
+    {
+      "yer": "SİVAS-ZARA",
+      "puan": 3.032
+    },
+    {
+      "yer": "SİİRT",
+      "puan": 3.576
+    },
+    {
+      "yer": "SİİRT-BAYKAN",
+      "puan": 4.189
+    },
+    {
+      "yer": "SİİRT-ERUH",
+      "puan": 4.197
+    },
+    {
+      "yer": "SİİRT-KURTALAN",
+      "puan": 4.079
+    },
+    {
+      "yer": "SİİRT-PERVARI",
+      "puan": 4.234
+    },
+    {
+      "yer": "SİİRT-SIRVAN",
+      "puan": 4.23
+    },
+    {
+      "yer": "SİİRT-TILLO",
+      "puan": 4.192
+    },
+    {
+      "yer": "TEKİRDAĞ",
+      "puan": 1.88
+    },
+    {
+      "yer": "TEKİRDAĞ-CERKEZKOY",
+      "puan": 1.907
+    },
+    {
+      "yer": "TEKİRDAĞ-CORLU",
+      "puan": 1.85
+    },
+    {
+      "yer": "TEKİRDAĞ-ERGENE",
+      "puan": 1.961
+    },
+    {
+      "yer": "TEKİRDAĞ-HAYRABOLU",
+      "puan": 2.19
+    },
+    {
+      "yer": "TEKİRDAĞ-KAPAKLI",
+      "puan": 2.071
+    },
+    {
+      "yer": "TEKİRDAĞ-MALKARA",
+      "puan": 2.085
+    },
+    {
+      "yer": "TEKİRDAĞ-MARMARAEREGLISI",
+      "puan": 2.072
+    },
+    {
+      "yer": "TEKİRDAĞ-MURATLI",
+      "puan": 2.091
+    },
+    {
+      "yer": "TEKİRDAĞ-SARAY",
+      "puan": 2.111
+    },
+    {
+      "yer": "TEKİRDAĞ-SARKOY",
+      "puan": 2.12
+    },
+    {
+      "yer": "TEKİRDAĞ-SULEYMANPASA",
+      "puan": 1.88
+    },
+    {
+      "yer": "TOKAT",
+      "puan": 1.956
+    },
+    {
+      "yer": "TOKAT-ALMUS",
+      "puan": 2.563
+    },
+    {
+      "yer": "TOKAT-ARTOVA",
+      "puan": 2.522
+    },
+    {
+      "yer": "TOKAT-BASCIFTLIK",
+      "puan": 2.714
+    },
+    {
+      "yer": "TOKAT-ERBAA",
+      "puan": 2.208
+    },
+    {
+      "yer": "TOKAT-NIKSAR",
+      "puan": 2.243
+    },
+    {
+      "yer": "TOKAT-PAZAR",
+      "puan": 2.662
+    },
+    {
+      "yer": "TOKAT-RESADIYE",
+      "puan": 2.681
+    },
+    {
+      "yer": "TOKAT-SULUSARAY",
+      "puan": 2.82
+    },
+    {
+      "yer": "TOKAT-TURHAL",
+      "puan": 2.189
+    },
+    {
+      "yer": "TOKAT-YESILYURT",
+      "puan": 2.721
+    },
+    {
+      "yer": "TOKAT-ZILE",
+      "puan": 2.299
+    },
+    {
+      "yer": "TRABZON",
+      "puan": 1.594
+    },
+    {
+      "yer": "TRABZON-AKCAABAT",
+      "puan": 1.758
+    },
+    {
+      "yer": "TRABZON-ARAKLI",
+      "puan": 1.976
+    },
+    {
+      "yer": "TRABZON-ARSIN",
+      "puan": 1.882
+    },
+    {
+      "yer": "TRABZON-BESIKDUZU",
+      "puan": 1.81
+    },
+    {
+      "yer": "TRABZON-CARSIBASI",
+      "puan": 2.041
+    },
+    {
+      "yer": "TRABZON-DERNEKPAZARI",
+      "puan": 2.056
+    },
+    {
+      "yer": "TRABZON-DUZKOY",
+      "puan": 2.252
+    },
+    {
+      "yer": "TRABZON-HAYRAT",
+      "puan": 2.291
+    },
+    {
+      "yer": "TRABZON-KOPRUBASI",
+      "puan": 2.142
+    },
+    {
+      "yer": "TRABZON-MACKA",
+      "puan": 1.924
+    },
+    {
+      "yer": "TRABZON-OF",
+      "puan": 1.89
+    },
+    {
+      "yer": "TRABZON-ORTAHISAR",
+      "puan": 1.594
+    },
+    {
+      "yer": "TRABZON-SALPAZARI",
+      "puan": 2.181
+    },
+    {
+      "yer": "TRABZON-SURMENE",
+      "puan": 1.85
+    },
+    {
+      "yer": "TRABZON-TONYA",
+      "puan": 2.131
+    },
+    {
+      "yer": "TRABZON-VAKFIKEBIR",
+      "puan": 1.792
+    },
+    {
+      "yer": "TRABZON-YOMRA",
+      "puan": 1.753
+    },
+    {
+      "yer": "TRABZON-ÇAYKARA",
+      "puan": 1.868
+    },
+    {
+      "yer": "TUNCELİ",
+      "puan": 2.818
+    },
+    {
+      "yer": "TUNCELİ-CEMISGEZEK",
+      "puan": 3.275
+    },
+    {
+      "yer": "TUNCELİ-HOZAT",
+      "puan": 3.205
+    },
+    {
+      "yer": "TUNCELİ-MAZGIRT",
+      "puan": 3.4
+    },
+    {
+      "yer": "TUNCELİ-NAZIMIYE",
+      "puan": 3.509
+    },
+    {
+      "yer": "TUNCELİ-OVACIK",
+      "puan": 3.237
+    },
+    {
+      "yer": "TUNCELİ-PERTEK",
+      "puan": 3.307
+    },
+    {
+      "yer": "TUNCELİ-PULUMUR",
+      "puan": 3.329
+    },
+    {
+      "yer": "UŞAK",
+      "puan": 2.021
+    },
+    {
+      "yer": "UŞAK-BANAZ",
+      "puan": 2.394
+    },
+    {
+      "yer": "UŞAK-ESME",
+      "puan": 2.337
+    },
+    {
+      "yer": "UŞAK-KARAHALLI",
+      "puan": 2.639
+    },
+    {
+      "yer": "UŞAK-SİVASLI",
+      "puan": 2.501
+    },
+    {
+      "yer": "UŞAK-ULUBEY",
+      "puan": 2.386
+    },
+    {
+      "yer": "VAN",
+      "puan": 3.291
+    },
+    {
+      "yer": "VAN-BAHCESARAY",
+      "puan": 3.832
+    },
+    {
+      "yer": "VAN-BASKALE",
+      "puan": 3.815
+    },
+    {
+      "yer": "VAN-EDREMIT",
+      "puan": 3.434
+    },
+    {
+      "yer": "VAN-ERCIS",
+      "puan": 3.666
+    },
+    {
+      "yer": "VAN-GEVAŞ",
+      "puan": 3.705
+    },
+    {
+      "yer": "VAN-GÜRPINAR",
+      "puan": 3.812
+    },
+    {
+      "yer": "VAN-IPEKYOLU",
+      "puan": 3.129
+    },
+    {
+      "yer": "VAN-MURADIYE",
+      "puan": 3.812
+    },
+    {
+      "yer": "VAN-OZALP",
+      "puan": 3.822
+    },
+    {
+      "yer": "VAN-SARAY",
+      "puan": 3.83
+    },
+    {
+      "yer": "VAN-TUSBA",
+      "puan": 3.309
+    },
+    {
+      "yer": "VAN-ÇALDIRAN",
+      "puan": 3.829
+    },
+    {
+      "yer": "VAN-ÇATAK",
+      "puan": 3.799
+    },
+    {
+      "yer": "YALOVA",
+      "puan": 1.406
+    },
+    {
+      "yer": "YALOVA-ALTINOVA",
+      "puan": 1.528
+    },
+    {
+      "yer": "YALOVA-ARMUTLU",
+      "puan": 1.633
+    },
+    {
+      "yer": "YALOVA-CIFTLIKKOY",
+      "puan": 1.464
+    },
+    {
+      "yer": "YALOVA-TERMAL",
+      "puan": 1.579
+    },
+    {
+      "yer": "YALOVA-ÇINARCIK",
+      "puan": 1.597
+    },
+    {
+      "yer": "YOZGAT",
+      "puan": 2.599
+    },
+    {
+      "yer": "YOZGAT-AKDAGMADENI",
+      "puan": 2.992
+    },
+    {
+      "yer": "YOZGAT-AYDINCIK",
+      "puan": 3.322
+    },
+    {
+      "yer": "YOZGAT-BOGAZLIYAN",
+      "puan": 2.881
+    },
+    {
+      "yer": "YOZGAT-CANDIR",
+      "puan": 2.901
+    },
+    {
+      "yer": "YOZGAT-CEKEREK",
+      "puan": 3.169
+    },
+    {
+      "yer": "YOZGAT-KADISEHRI",
+      "puan": 3.301
+    },
+    {
+      "yer": "YOZGAT-SARAYKENT",
+      "puan": 3.139
+    },
+    {
+      "yer": "YOZGAT-SARIKAYA",
+      "puan": 3.005
+    },
+    {
+      "yer": "YOZGAT-SEFAATLI",
+      "puan": 2.964
+    },
+    {
+      "yer": "YOZGAT-SORGUN",
+      "puan": 2.797
+    },
+    {
+      "yer": "YOZGAT-YENIFAKILI",
+      "puan": 2.958
+    },
+    {
+      "yer": "YOZGAT-YERKOY",
+      "puan": 2.751
+    },
+    {
+      "yer": "YOZGAT-ÇAYIRALAN",
+      "puan": 2.991
+    },
+    {
+      "yer": "ZONGULDAK",
+      "puan": 2.247
+    },
+    {
+      "yer": "ZONGULDAK-ALAPLI",
+      "puan": 2.562
+    },
+    {
+      "yer": "ZONGULDAK-DEVREK",
+      "puan": 2.507
+    },
+    {
+      "yer": "ZONGULDAK-EREGLI",
+      "puan": 2.353
+    },
+    {
+      "yer": "ZONGULDAK-GOKCEBEY",
+      "puan": 2.563
+    },
+    {
+      "yer": "ZONGULDAK-KILIMLI",
+      "puan": 2.591
+    },
+    {
+      "yer": "ZONGULDAK-KOZLU",
+      "puan": 2.357
+    },
+    {
+      "yer": "ZONGULDAK-ÇAYCUMA",
+      "puan": 2.46
+    },
+    {
+      "yer": "ÇANAKKALE",
+      "puan": 1.544
+    },
+    {
+      "yer": "ÇANAKKALE-AYVACIK",
+      "puan": 1.819
+    },
+    {
+      "yer": "ÇANAKKALE-BAYRAMIC",
+      "puan": 2.009
+    },
+    {
+      "yer": "ÇANAKKALE-BIGA",
+      "puan": 1.767
+    },
+    {
+      "yer": "ÇANAKKALE-BOZCAADA",
+      "puan": 1.553
+    },
+    {
+      "yer": "ÇANAKKALE-CAN",
+      "puan": 1.804
+    },
+    {
+      "yer": "ÇANAKKALE-ECEABAT",
+      "puan": 1.854
+    },
+    {
+      "yer": "ÇANAKKALE-EZINE",
+      "puan": 1.871
+    },
+    {
+      "yer": "ÇANAKKALE-GELIBOLU",
+      "puan": 1.756
+    },
+    {
+      "yer": "ÇANAKKALE-GOKCEADA",
+      "puan": 1.714
+    },
+    {
+      "yer": "ÇANAKKALE-LAPSEKI",
+      "puan": 1.903
+    },
+    {
+      "yer": "ÇANAKKALE-YENICE",
+      "puan": 2.124
+    },
+    {
+      "yer": "ÇANKIRI",
+      "puan": 2.569
+    },
+    {
+      "yer": "ÇANKIRI-ATKARACALAR",
+      "puan": 3.114
+    },
+    {
+      "yer": "ÇANKIRI-BAYRAMOREN",
+      "puan": 3.35
+    },
+    {
+      "yer": "ÇANKIRI-ELDIVAN",
+      "puan": 3.166
+    },
+    {
+      "yer": "ÇANKIRI-ILGAZ",
+      "puan": 2.91
+    },
+    {
+      "yer": "ÇANKIRI-KIZILIRMAK",
+      "puan": 3.275
+    },
+    {
+      "yer": "ÇANKIRI-KORGUN",
+      "puan": 3.198
+    },
+    {
+      "yer": "ÇANKIRI-KURŞUNLU",
+      "puan": 2.858
+    },
+    {
+      "yer": "ÇANKIRI-ORTA",
+      "puan": 3.269
+    },
+    {
+      "yer": "ÇANKIRI-SABANOZU",
+      "puan": 2.826
+    },
+    {
+      "yer": "ÇANKIRI-YAPRAKLI",
+      "puan": 3.376
+    },
+    {
+      "yer": "ÇANKIRI-ÇERKEŞ",
+      "puan": 2.908
+    },
+    {
+      "yer": "ÇORUM",
+      "puan": 2.16
+    },
+    {
+      "yer": "ÇORUM-ALACA",
+      "puan": 2.591
+    },
+    {
+      "yer": "ÇORUM-BAYAT",
+      "puan": 2.988
+    },
+    {
+      "yer": "ÇORUM-BOGAZKALE",
+      "puan": 2.808
+    },
+    {
+      "yer": "ÇORUM-DODURGA",
+      "puan": 2.721
+    },
+    {
+      "yer": "ÇORUM-ISKILIP",
+      "puan": 2.716
+    },
+    {
+      "yer": "ÇORUM-KARGI",
+      "puan": 2.795
+    },
+    {
+      "yer": "ÇORUM-LACIN",
+      "puan": 2.934
+    },
+    {
+      "yer": "ÇORUM-MECITOZU",
+      "puan": 2.898
+    },
+    {
+      "yer": "ÇORUM-OGUZLAR",
+      "puan": 2.957
+    },
+    {
+      "yer": "ÇORUM-ORTAKOY",
+      "puan": 2.879
+    },
+    {
+      "yer": "ÇORUM-OSMANCIK",
+      "puan": 2.499
+    },
+    {
+      "yer": "ÇORUM-SUNGURLU",
+      "puan": 2.537
+    },
+    {
+      "yer": "ÇORUM-UGURLUDAG",
+      "puan": 3.0
+    },
+    {
+      "yer": "İSTANBUL",
+      "puan": 2.876
+    },
+    {
+      "yer": "İSTANBUL-ADALAR",
+      "puan": 2.869
+    },
+    {
+      "yer": "İSTANBUL-ARNAVUTKOY",
+      "puan": 3.015
+    },
+    {
+      "yer": "İSTANBUL-ATASEHIR",
+      "puan": 2.832
+    },
+    {
+      "yer": "İSTANBUL-AVCILAR",
+      "puan": 2.896
+    },
+    {
+      "yer": "İSTANBUL-BAGCILAR",
+      "puan": 2.856
+    },
+    {
+      "yer": "İSTANBUL-BAHCELIEVLER",
+      "puan": 2.852
+    },
+    {
+      "yer": "İSTANBUL-BAKIRKOY",
+      "puan": 2.823
+    },
+    {
+      "yer": "İSTANBUL-BASAKSEHIR",
+      "puan": 2.829
+    },
+    {
+      "yer": "İSTANBUL-BAYRAMPASA",
+      "puan": 2.857
+    },
+    {
+      "yer": "İSTANBUL-BESIKTAS",
+      "puan": 2.818
+    },
+    {
+      "yer": "İSTANBUL-BEYKOZ",
+      "puan": 2.882
+    },
+    {
+      "yer": "İSTANBUL-BEYLIKDUZU",
+      "puan": 2.845
+    },
+    {
+      "yer": "İSTANBUL-BEYOGLU",
+      "puan": 2.833
+    },
+    {
+      "yer": "İSTANBUL-BUYUKCEKMECE",
+      "puan": 2.877
+    },
+    {
+      "yer": "İSTANBUL-ESENLER",
+      "puan": 2.913
+    },
+    {
+      "yer": "İSTANBUL-ESENYURT",
+      "puan": 2.856
+    },
+    {
+      "yer": "İSTANBUL-EYUPSULTAN",
+      "puan": 2.876
+    },
+    {
+      "yer": "İSTANBUL-FATIH",
+      "puan": 2.833
+    },
+    {
+      "yer": "İSTANBUL-GAZIOSMANPASA",
+      "puan": 2.908
+    },
+    {
+      "yer": "İSTANBUL-GUNGOREN",
+      "puan": 2.871
+    },
+    {
+      "yer": "İSTANBUL-KADIKOY",
+      "puan": 2.828
+    },
+    {
+      "yer": "İSTANBUL-KAGITHANE",
+      "puan": 2.862
+    },
+    {
+      "yer": "İSTANBUL-KARTAL",
+      "puan": 2.855
+    },
+    {
+      "yer": "İSTANBUL-KUCUKCEKMECE",
+      "puan": 2.865
+    },
+    {
+      "yer": "İSTANBUL-MALTEPE",
+      "puan": 2.843
+    },
+    {
+      "yer": "İSTANBUL-PENDIK",
+      "puan": 2.85
+    },
+    {
+      "yer": "İSTANBUL-SANCAKTEPE",
+      "puan": 2.918
+    },
+    {
+      "yer": "İSTANBUL-SARIYER",
+      "puan": 2.835
+    },
+    {
+      "yer": "İSTANBUL-SILE",
+      "puan": 2.99
+    },
+    {
+      "yer": "İSTANBUL-SILIVRI",
+      "puan": 2.913
+    },
+    {
+      "yer": "İSTANBUL-SISLI",
+      "puan": 2.824
+    },
+    {
+      "yer": "İSTANBUL-SULTANBEYLI",
+      "puan": 3.002
+    },
+    {
+      "yer": "İSTANBUL-SULTANGAZI",
+      "puan": 2.985
+    },
+    {
+      "yer": "İSTANBUL-TUZLA",
+      "puan": 2.84
+    },
+    {
+      "yer": "İSTANBUL-UMRANIYE",
+      "puan": 2.838
+    },
+    {
+      "yer": "İSTANBUL-USKUDAR",
+      "puan": 2.836
+    },
+    {
+      "yer": "İSTANBUL-ZEYTINBURNU",
+      "puan": 2.853
+    },
+    {
+      "yer": "İSTANBUL-ÇATALCA",
+      "puan": 3.001
+    },
+    {
+      "yer": "İSTANBUL-ÇEKMEKÖY",
+      "puan": 2.907
+    },
+    {
+      "yer": "İZMİR",
+      "puan": 1.745
+    },
+    {
+      "yer": "İZMİR-ALIAGA",
+      "puan": 1.803
+    },
+    {
+      "yer": "İZMİR-BALCOVA",
+      "puan": 1.691
+    },
+    {
+      "yer": "İZMİR-BAYINDIR",
+      "puan": 2.32
+    },
+    {
+      "yer": "İZMİR-BAYRAKLI",
+      "puan": 1.795
+    },
+    {
+      "yer": "İZMİR-BERGAMA",
+      "puan": 1.982
+    },
+    {
+      "yer": "İZMİR-BEYDAG",
+      "puan": 2.461
+    },
+    {
+      "yer": "İZMİR-BORNOVA",
+      "puan": 1.704
+    },
+    {
+      "yer": "İZMİR-BUCA",
+      "puan": 1.812
+    },
+    {
+      "yer": "İZMİR-CESME",
+      "puan": 1.728
+    },
+    {
+      "yer": "İZMİR-CIGLI",
+      "puan": 1.728
+    },
+    {
+      "yer": "İZMİR-DIKILI",
+      "puan": 1.923
+    },
+    {
+      "yer": "İZMİR-FOCA",
+      "puan": 1.86
+    },
+    {
+      "yer": "İZMİR-GAZIEMIR",
+      "puan": 1.729
+    },
+    {
+      "yer": "İZMİR-GUZELBAHCE",
+      "puan": 1.732
+    },
+    {
+      "yer": "İZMİR-KARABAGLAR",
+      "puan": 1.836
+    },
+    {
+      "yer": "İZMİR-KARABURUN",
+      "puan": 1.898
+    },
+    {
+      "yer": "İZMİR-KARSIYAKA",
+      "puan": 1.721
+    },
+    {
+      "yer": "İZMİR-KEMALPASA",
+      "puan": 1.827
+    },
+    {
+      "yer": "İZMİR-KINIK",
+      "puan": 2.306
+    },
+    {
+      "yer": "İZMİR-KIRAZ",
+      "puan": 2.591
+    },
+    {
+      "yer": "İZMİR-KONAK",
+      "puan": 1.69
+    },
+    {
+      "yer": "İZMİR-MENDERES",
+      "puan": 1.857
+    },
+    {
+      "yer": "İZMİR-MENEMEN",
+      "puan": 1.87
+    },
+    {
+      "yer": "İZMİR-NARLIDERE",
+      "puan": 1.753
+    },
+    {
+      "yer": "İZMİR-ODEMIS",
+      "puan": 1.991
+    },
+    {
+      "yer": "İZMİR-SEFERIHISAR",
+      "puan": 1.847
+    },
+    {
+      "yer": "İZMİR-SELCUK",
+      "puan": 1.891
+    },
+    {
+      "yer": "İZMİR-TIRE",
+      "puan": 1.953
+    },
+    {
+      "yer": "İZMİR-TORBALI",
+      "puan": 1.851
+    },
+    {
+      "yer": "İZMİR-URLA",
+      "puan": 1.744
+    },
+    {
+      "yer": "ŞANLIURFA",
+      "puan": 3.819
+    },
+    {
+      "yer": "ŞANLIURFA-AKCAKALE",
+      "puan": 4.362
+    },
+    {
+      "yer": "ŞANLIURFA-BIRECIK",
+      "puan": 4.159
+    },
+    {
+      "yer": "ŞANLIURFA-BOZOVA",
+      "puan": 4.29
+    },
+    {
+      "yer": "ŞANLIURFA-CEYLANPINAR",
+      "puan": 4.253
+    },
+    {
+      "yer": "ŞANLIURFA-EYYUBIYE",
+      "puan": 4.1
+    },
+    {
+      "yer": "ŞANLIURFA-HALFETI",
+      "puan": 4.229
+    },
+    {
+      "yer": "ŞANLIURFA-HALILIYE",
+      "puan": 3.718
+    },
+    {
+      "yer": "ŞANLIURFA-HARRAN",
+      "puan": 4.366
+    },
+    {
+      "yer": "ŞANLIURFA-HILVAN",
+      "puan": 4.254
+    },
+    {
+      "yer": "ŞANLIURFA-KARAKOPRU",
+      "puan": 3.639
+    },
+    {
+      "yer": "ŞANLIURFA-SURUÇ",
+      "puan": 4.279
+    },
+    {
+      "yer": "ŞANLIURFA-SİVEREK",
+      "puan": 4.231
+    },
+    {
+      "yer": "ŞANLIURFA-VIRANSEHIR",
+      "puan": 4.236
+    },
+    {
+      "yer": "ŞIRNAK",
+      "puan": 4.015
+    },
+    {
+      "yer": "ŞIRNAK-BEYTUSSEBAP",
+      "puan": 4.295
+    },
+    {
+      "yer": "ŞIRNAK-CIZRE",
+      "puan": 4.112
+    },
+    {
+      "yer": "ŞIRNAK-GUCLUKONAK",
+      "puan": 4.4
+    },
+    {
+      "yer": "ŞIRNAK-IDIL",
+      "puan": 4.403
+    },
+    {
+      "yer": "ŞIRNAK-SILOPI",
+      "puan": 4.26
+    },
+    {
+      "yer": "ŞIRNAK-ULUDERE",
+      "puan": 4.382
+    }
+  ]
+}

@@ -103,7 +103,7 @@ class DashboardPage extends ConsumerWidget {
                   const SizedBox(height: 10),
                   const Align(
                     alignment: Alignment.centerLeft,
-                    child: PoliceSirenAccentBar(),
+                    child: PoliceSirenAccentBar(width: 84, height: 6),
                   ),
                   const SizedBox(height: 12),
                   Text(

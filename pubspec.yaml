@@ -75,6 +75,8 @@ flutter:
     - assets/json/maas_katsayilari.json
     - assets/json/polis_odeme_derece_kademe.json
     - assets/json/gorev_puanlari_2025.json
+    - assets/json/gorev_puanlari_2026.json
+    - assets/json/gorev_hizmet_sureleri_2026.json
     - assets/json/idari_para_cezalari_2026.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg

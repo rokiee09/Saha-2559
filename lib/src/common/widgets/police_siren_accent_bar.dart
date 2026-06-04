@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class PoliceSirenAccentBar extends StatefulWidget {
   const PoliceSirenAccentBar({
     super.key,
-    this.width = 52,
-    this.height = 4,
+    this.width = 76,
+    this.height = 5,
   });
 
   final double width;
   final double height;
 
-  static const _sirenRed = Color(0xFFDC2626);
-  static const _sirenBlue = Color(0xFF2563EB);
+  static const _sirenRed = Color(0xFFFF3B3B);
+  static const _sirenBlue = Color(0xFF3B8CFF);
 
   @override
   State<PoliceSirenAccentBar> createState() => _PoliceSirenAccentBarState();
@@ -40,7 +40,7 @@ class _PoliceSirenAccentBarState extends State<PoliceSirenAccentBar>
   double _lampPower(double t, {required bool isRed}) {
     final redPhase = t < 0.5;
     final active = isRed ? redPhase : !redPhase;
-    return active ? 1.0 : 0.22;
+    return active ? 1.0 : 0.42;
   }
 
   @override
@@ -53,27 +53,35 @@ class _PoliceSirenAccentBarState extends State<PoliceSirenAccentBar>
         final bluePower = _lampPower(t, isRed: false);
         final radius = BorderRadius.circular(widget.height / 2);
 
+        final glowH = widget.height + 10;
+
         return SizedBox(
           width: widget.width,
-          height: widget.height + 6,
+          height: glowH + 4,
           child: Stack(
             alignment: Alignment.center,
             clipBehavior: Clip.none,
             children: [
               Positioned(
                 left: 0,
-                right: widget.width * 0.5,
+                right: widget.width * 0.5 + 2,
                 child: IgnorePointer(
                   child: Container(
-                    height: widget.height + 4,
+                    height: glowH,
                     decoration: BoxDecoration(
                       borderRadius: radius,
                       boxShadow: [
                         BoxShadow(
                           color: PoliceSirenAccentBar._sirenRed
-                              .withValues(alpha: 0.55 * redPower),
-                          blurRadius: 8 * redPower,
-                          spreadRadius: 0.5 * redPower,
+                              .withValues(alpha: 0.92 * redPower),
+                          blurRadius: 14 + 6 * redPower,
+                          spreadRadius: 1.2 * redPower,
+                        ),
+                        BoxShadow(
+                          color: PoliceSirenAccentBar._sirenRed
+                              .withValues(alpha: 0.45 * redPower),
+                          blurRadius: 22 * redPower,
+                          spreadRadius: 2 * redPower,
                         ),
                       ],
                     ),
@@ -81,19 +89,25 @@ class _PoliceSirenAccentBarState extends State<PoliceSirenAccentBar>
                 ),
               ),
               Positioned(
-                left: widget.width * 0.5,
+                left: widget.width * 0.5 - 2,
                 right: 0,
                 child: IgnorePointer(
                   child: Container(
-                    height: widget.height + 4,
+                    height: glowH,
                     decoration: BoxDecoration(
                       borderRadius: radius,
                       boxShadow: [
                         BoxShadow(
                           color: PoliceSirenAccentBar._sirenBlue
-                              .withValues(alpha: 0.55 * bluePower),
-                          blurRadius: 8 * bluePower,
-                          spreadRadius: 0.5 * bluePower,
+                              .withValues(alpha: 0.92 * bluePower),
+                          blurRadius: 14 + 6 * bluePower,
+                          spreadRadius: 1.2 * bluePower,
+                        ),
+                        BoxShadow(
+                          color: PoliceSirenAccentBar._sirenBlue
+                              .withValues(alpha: 0.45 * bluePower),
+                          blurRadius: 22 * bluePower,
+                          spreadRadius: 2 * bluePower,
                         ),
                       ],
                     ),
@@ -102,21 +116,28 @@ class _PoliceSirenAccentBarState extends State<PoliceSirenAccentBar>
               ),
               ClipRRect(
                 borderRadius: radius,
-                child: SizedBox(
+                child: Container(
                   width: widget.width,
                   height: widget.height,
+                  decoration: BoxDecoration(
+                    borderRadius: radius,
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.12),
+                      width: 0.5,
+                    ),
+                  ),
                   child: Row(
                     children: [
                       Expanded(
                         child: ColoredBox(
                           color: PoliceSirenAccentBar._sirenRed
-                              .withValues(alpha: 0.35 + 0.65 * redPower),
+                              .withValues(alpha: 0.55 + 0.45 * redPower),
                         ),
                       ),
                       Expanded(
                         child: ColoredBox(
                           color: PoliceSirenAccentBar._sirenBlue
-                              .withValues(alpha: 0.35 + 0.65 * bluePower),
+                              .withValues(alpha: 0.55 + 0.45 * bluePower),
                         ),
                       ),
                     ],
