@@ -7,12 +7,28 @@ sürümleme [Semantic Versioning](https://semver.org/lang/tr/) ile uyumludur.
 ## [Yayımlanmadı]
 
 ### Eklendi
-- INTERNET izni kaldırıldı; uygulama artık hiçbir ağ izni istemiyor.
+- Mevzuat muhakeme asistanı (olay analizi, netleştirme, kaynaklı cevap); isteğe bağlı RAG/LLM.
+- Ortak görsel sistem: `SahaModuleCard`, `SahaEmptyState`, modül temaları.
+- Görev içeriği: Dilekçe Merkezi, Emsal özetleri, Trafik rehberi; asistan indeks entegrasyonu.
+- Güvenlik merkezi: şifreli veri envanteri, JSON yedek/geri yükleme, manuel kasa kilidi.
+- Uygulama içi Mağaza hazırlığı ekranı ve güncellenmiş Play metinleri (`docs/store/`).
+- CI `build-release-apk` işi; widget ve yedekleme testleri.
+
+### Değiştirildi
+- Ayarlar: Güvenlik merkezi ve Mağaza hazırlığı girişleri.
+- Asistan tek legal indeks motoru; geriye dönük sarmalayıcı import düzeltmeleri.
+- Sürüm `1.1.0+2`.
+
+## [1.0.0+1] — Temel yayın
+
+### Eklendi
+- INTERNET izni kaldırıldı; uygulama hiçbir ağ izni istemiyor (LLM isteğe bağlı).
 - Uygulama içi "Veri güncelliği" ekranı: kaynak, son içerik kontrol tarihleri,
   "resmî kaynak değildir" uyarısı ve resmî kaynağa erişim butonu.
 - Mevzuat verisi bütünlük doğrulayıcısı (`tool/validate_mevzuat.dart`) ve CI adımı.
 - GitHub Pages için gizlilik politikası sayfası (`docs/index.html`).
 - CHANGELOG.md, SECURITY.md ve sürüm öncesi cihaz test listesi.
+- Yerel kasa: PIN, biyometrik, AES-256-GCM şifreli SharedPreferences.
 
 ### Değiştirildi
 - Mağaza metni "bağımsız bilgilendirme uygulaması" çizgisiyle güçlendirildi.
@@ -20,9 +36,7 @@ sürümleme [Semantic Versioning](https://semver.org/lang/tr/) ile uyumludur.
 ### Düzeltildi
 - Jandarma Kanunu (2803) verisindeki metni boş iki "Ek Madde" artığı temizlendi.
 
-## [1.0.0+1] — İlk yayın
-
-### Modüller
+### Modüller (1.0.0)
 - **Mevzuat**: Kanun/yönetmelik metinleri, madde arama, favoriler,
   son görüntülenenler, kişisel madde notları (çevrimdışı).
 - **Teşkilat**: Birimler ve teşkilat yapısı, rütbe görselleri.

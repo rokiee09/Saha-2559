@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../../common/theme/saha_module_theme.dart';
 import '../../common/widgets/module_section_header.dart';
 import '../../common/widgets/police_module_icon.dart';
 import '../../common/widgets/police_module_list_tile.dart';
+import '../../common/widgets/saha_module_card.dart';
 import '../gorevlerim/atis/atis_takip_page.dart';
 import '../gorevlerim/gunluk/gorev_gunluk_page.dart';
 import '../gorevlerim/izin/izin_takip_page.dart';
@@ -21,7 +23,10 @@ import 'gider/o1_gider_page.dart';
 import 'gorev_puanlari/gorev_puani_giris_page.dart';
 import 'gorev_puanlari/gorev_puanlari_page.dart';
 import 'harcirah/harcirah_hesaplama_page.dart';
+import 'dilekce/dilekce_merkezi_page.dart';
+import 'emsal/emsal_rehberi_page.dart';
 import 'idari_para_ceza/idari_para_ceza_page.dart';
+import 'trafik/trafik_rehberi_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
 import 'kriz/kriz_rehberi_page.dart';
 import 'lojman/lojman_puani_page.dart';
@@ -73,7 +78,10 @@ class AraclarPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
         children: [
-          const ModuleSectionHeader('Hesaplayıcılar'),
+          const ModuleSectionHeader(
+            'Hesaplayıcılar',
+            area: SahaModuleArea.araclar,
+          ),
           PoliceModuleListTile(
             style: PoliceModules.vardiya,
             title: 'Vardiyam',
@@ -143,9 +151,37 @@ class AraclarPage extends StatelessWidget {
           ),
           _SahaCategoryGrid(categories: tutanakCats),
           const ModuleSectionHeader(
+            'Görev içeriği',
+            subtitle: 'Dilekçe taslağı, emsal özet ve trafik kontrol listesi.',
+            topGap: 18,
+            area: SahaModuleArea.araclar,
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.disiplin,
+            title: 'Dilekçe Merkezi',
+            subtitle: 'İzin, refakat ve disiplin savunması taslakları.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const DilekceMerkeziPage())),
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.rehber,
+            title: 'Emsal özetleri',
+            subtitle: 'Anonim uygulama özetleri ve kontrol listeleri.',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const EmsalRehberiPage())),
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.idariParaCeza,
+            title: 'Trafik rehberi',
+            subtitle: 'Kontrol, alkol, hız ve kaza adımları (offline).',
+            onTap: () =>
+                Navigator.of(context).push(fadeRoute(const TrafikRehberiPage())),
+          ),
+          const ModuleSectionHeader(
             'Referans',
             subtitle: 'Dil, telsiz, teşkilat ve kültür.',
             topGap: 18,
+            area: SahaModuleArea.araclar,
           ),
           PoliceModuleListTile(
             style: PoliceModules.idariParaCeza,
@@ -215,8 +251,9 @@ class _SahaCategoryGrid extends StatelessWidget {
       childAspectRatio: aspect,
       children: [
         for (final cat in categories)
-          _SahaTile(
-            category: cat,
+          SahaModuleCard.compact(
+            style: PoliceModules.forSahaCategory(cat.id),
+            title: cat.gridTitle ?? cat.title,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (_) => switch (cat.id) {
@@ -232,63 +269,6 @@ class _SahaCategoryGrid extends StatelessWidget {
             ),
           ),
       ],
-    );
-  }
-}
-
-class _SahaTile extends StatelessWidget {
-  const _SahaTile({required this.category, required this.onTap});
-
-  final SahaCategoryDef category;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final label = category.gridTitle ?? category.title;
-
-    return Material(
-      color: Colors.white.withValues(alpha: 0.06),
-      borderRadius: BorderRadius.circular(14),
-      child: InkWell(
-        onTap: () {
-          HapticFeedback.selectionClick();
-          onTap();
-        },
-        borderRadius: BorderRadius.circular(14),
-        child: Ink(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: PoliceColors.primaryBlue.withValues(alpha: 0.25),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(6, 10, 6, 8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              PoliceModuleIconBadge(
-                style: PoliceModules.forSahaCategory(category.id),
-                size: 22,
-                padding: 7,
-                borderRadius: 10,
-              ),
-              const SizedBox(height: 6),
-              Text(
-                label,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: PoliceColors.titleOnDark,
-                  fontSize: 10.5,
-                  fontWeight: FontWeight.w600,
-                  height: 1.12,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

@@ -240,6 +240,102 @@ const kScenarioKnowledgeRecords = <LegalKnowledgeRecord>[
         'varsa teslim yapılmamalı; keyfi teslim hukuki sorumluluk doğurabilir.',
     isPriority: true,
   ),
+  LegalKnowledgeRecord(
+    id: 'scenario_kimlik_vermeyen',
+    sourceName: '2559 sayılı PVSK · CMK (bilgilendirme özeti)',
+    articleNo: 'Kimlik ve durdurma',
+    title: 'Kimlik vermeyen şahıs — durdurma ve tespit',
+    summary:
+        'Durdurma makul sebebe dayanmalıdır. Kimlik ibraz etmeyen şahısta '
+        'tespit ve gerekirse yakalama/gözaltı CMK usulü ile birlikte '
+        'değerlendirilir; zor kullanımı orantılı olmalıdır.',
+    fullText:
+        'PVSK md. 4/A kapsamında durdurma gerekçesi yazılı hale getirilir. '
+        'Kimlik tespit tutanağı düzenlenir. Gözaltı ve müdafi bildirimi CMK '
+        'hükümlerine tabidir. Keyfi veya süresiz durdurma hukuka aykırıdır.',
+    keywords: [
+      'kimlik vermeyen',
+      'kimlik vermiyor',
+      'kimlik sorma',
+      'durdurma',
+      'tespit',
+      'mukavemet',
+    ],
+    synonyms: ['kimlik ibraz', 'nufus', 'kimlik tespit'],
+    tags: ['pvsk', 'cmk', 'kimlik', 'durdurma'],
+    topics: ['pvsk', 'yetki'],
+    exampleQuestions: [
+      'Kimlik vermeyen şahsa ne yapılır?',
+      'Durdurduğum kişi kimliğini göstermiyor.',
+    ],
+    riskLevel: LegalRiskLevel.high,
+    entryId: 'kanun-pvsk',
+    sectionId: 'pvsk-4a',
+    explanation: 'Araçlar → Emsal özetleri ve Tutanak şablonlarını kullanın.',
+    riskNote: 'Orantısız müdahale disiplin ve tazminat riski doğurabilir.',
+    isPriority: true,
+  ),
+  LegalKnowledgeRecord(
+    id: 'scenario_alkol_trafik',
+    sourceName: 'Trafik ve disiplin (bilgilendirme özeti)',
+    articleNo: 'Alkollü sürücü',
+    title: 'Alkollü sürücü — trafik işlemi ve personel disiplini',
+    summary:
+        'Trafik/adli işlem ile memur disiplin süreci ayrı yürütülür. '
+        'Ölçüm kaydı, tutanak ve idari yaptırım dosyası tamamlanmalıdır.',
+    fullText:
+        'Alkol ölçümü cihaz ve saat bilgisiyle kayıt altına alınır. '
+        'İdari para ceza ve gerekirse adli süreç açılır. Görevli personel '
+        'ise 7068 kapsamında ayrı disiplin değerlendirmesi yapılır.',
+    keywords: [
+      'alkol',
+      'alkollu',
+      'alkollu surucu',
+      'trafik',
+      'promil',
+    ],
+    tags: ['trafik', 'disiplin', 'idari_para'],
+    topics: ['idari_para_ceza', 'disiplin'],
+    exampleQuestions: [
+      'Alkollü araç kullandım disiplin cezası nedir?',
+      'Trafik kontrolünde alkollü sürücü işlemi nasıl yapılır?',
+    ],
+    riskLevel: LegalRiskLevel.high,
+    moduleRoute: 'trafik',
+    explanation: 'Araçlar → Trafik rehberi ve İdari para cezaları.',
+    isPriority: true,
+  ),
+  LegalKnowledgeRecord(
+    id: 'scenario_gec_kalma',
+    sourceName: '7068 sayılı Genel Kolluk Disiplin Kanunu (özet)',
+    articleNo: 'Geç kalma',
+    title: 'İşe geç kalma — disiplin değerlendirmesi',
+    summary:
+        'Tekrarlayan geç kalmalarda fiilin niteliğine göre uyarma, kınama '
+        'veya aylıktan kesme gündeme gelebilir; savunma hakkı tanınmalıdır.',
+    fullText:
+        '7068 md. 8 kapsamında geç kalma fiilleri derecelendirilir. '
+        'Ön rapor, savunma ve delil toplama usulüne uyulur. '
+        'Dilekçe Merkezi savunma taslağı hazırlamaya yardımcı olur.',
+    keywords: [
+      'gec kaldim',
+      'gec kalma',
+      'ise gec',
+      'disiplin cezasi',
+      'uyarma',
+    ],
+    tags: ['disiplin', 'dmk'],
+    topics: ['disiplin'],
+    exampleQuestions: [
+      'İşe geç kaldım cezası nedir?',
+      'Geç kalma disiplin cezası kaç kez olunca kınama?',
+    ],
+    riskLevel: LegalRiskLevel.medium,
+    entryId: 'kanun-disiplin',
+    moduleRoute: 'dilekce',
+    explanation: 'Profilim → Disiplin ve Araçlar → Dilekçe Merkezi.',
+    isPriority: true,
+  ),
 ];
 
 List<LegalKnowledgeRecord> buildLegalKnowledgeIndex({

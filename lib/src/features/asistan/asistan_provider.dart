@@ -14,6 +14,7 @@ import 'decision_support/legal_llm_config.dart';
 import 'legal/assistant_answer_builder.dart';
 import 'legal/assistant_legal_index.dart';
 import 'legal/assistant_legal_search_service.dart';
+import 'legal/assistant_query_classifier.dart';
 
 /// Mevzuat kaynaklı soru-cevap asistanı.
 

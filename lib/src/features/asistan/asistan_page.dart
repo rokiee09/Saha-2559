@@ -5,7 +5,10 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../araclar/dilekce/dilekce_merkezi_page.dart';
+import '../araclar/emsal/emsal_rehberi_page.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_page.dart';
+import '../araclar/trafik/trafik_rehberi_page.dart';
 import '../araclar/idari_para_ceza/widgets/idari_para_ceza_card.dart';
 import '../araclar/tutanak/tutanak_merkezi_page.dart';
 import '../gorevlerim/atis/atis_takip_page.dart';
@@ -18,11 +21,14 @@ import '../saglik/saglik_sosyal_haklar_page.dart';
 import 'asistan_domain.dart';
 import 'asistan_provider.dart';
 import 'search/assistant_models.dart';
+import '../../common/theme/saha_module_theme.dart';
+import '../../common/widgets/saha_empty_state.dart';
 import 'decision_support/legal_clarification_service.dart';
 import 'settings/asistan_llm_settings_page.dart';
 import 'legal/assistant_answer_builder.dart';
 import 'legal/assistant_legal_index.dart';
 import 'legal/assistant_legal_search_service.dart';
+import 'legal/assistant_query_classifier.dart';
 
 /// Mevzuat kaynaklı soru-cevap asistanı (offline).
 class AsistanPage extends ConsumerStatefulWidget {
@@ -113,6 +119,9 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
       'egitim' => const EgitimPage(),
       'idari_para_ceza' =>
         IdariParaCezaPage(initialQuery: record.title),
+      'dilekce' => const DilekceMerkeziPage(),
+      'emsal' => EmsalRehberiPage(initialQuery: record.title),
+      'trafik' => TrafikRehberiPage(initialQuery: record.title),
       _ => null,
     };
   }
@@ -198,38 +207,49 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                             color: PoliceColors.primaryBlue,
                           ),
                         ),
-                        error: (_, __) => const _AsistanMessage(
+                        error: (_, __) => SahaEmptyState(
+                          theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
                           icon: Icons.error_outline_rounded,
                           title: 'Yanıt üretilemedi',
                           message: 'Lütfen tekrar deneyin.',
                         ),
                         data: (answer) {
                           if (answer == null) {
-                            return const _AsistanMessage(
+                            return SahaEmptyState(
+                              theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
                               icon: Icons.search_off_rounded,
                               title: 'Sonuç yok',
                               message: 'Lütfen sorunuzu yazın.',
                             );
                           }
                           if (answer.sensitiveBlocked) {
-                            return _AsistanMessage(
+                            return SahaEmptyState(
+                              theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
                               icon: Icons.shield_outlined,
                               title: 'Hassas konu',
                               message: answer.shortAnswer,
                             );
                           }
                           if (answer.outOfScope) {
-                            return _AsistanMessage(
+                            return SahaEmptyState(
+                              theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
                               icon: Icons.info_outline_rounded,
                               title: 'Kapsam dışı',
                               message: answer.shortAnswer,
                             );
                           }
                           if (answer.noStrongMatch) {
-                            return _AsistanMessage(
+                            return SahaEmptyState(
+                              theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
                               icon: Icons.search_off_rounded,
-                              title: 'Net sonuç bulunamadı',
+                              title: 'Net madde bulunamadı',
                               message: answer.shortAnswer,
+                              actionLabel: 'Mevzuat sekmesine git',
+                              onAction: () {
+                                ref.read(asistanQueryProvider.notifier).state =
+                                    '';
+                                Navigator.of(context).pop();
+                              },
                             );
                           }
                           final primary = answer.primaryIndexRecord!;
@@ -703,7 +723,8 @@ class _OutOfScopeMessage extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
       children: [
-        const _AsistanMessage(
+        SahaEmptyState(
+          theme: SahaModuleTheme.forArea(SahaModuleArea.asistan),
           icon: Icons.block_rounded,
           title: 'Bu konu çalışma alanım dışında',
           message:
@@ -1431,53 +1452,3 @@ class _CezaCardCompact extends ConsumerWidget {
   }
 }
 
-class _AsistanMessage extends StatelessWidget {
-  const _AsistanMessage({
-    required this.icon,
-    required this.title,
-    required this.message,
-  });
-
-  final IconData icon;
-  final String title;
-  final String message;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              size: 52,
-              color: PoliceColors.primaryBlue.withValues(alpha: 0.45),
-            ),
-            const SizedBox(height: 14),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: PoliceColors.titleOnDark,
-                fontWeight: FontWeight.w700,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: PoliceColors.textMuted.withValues(alpha: 0.9),
-                height: 1.45,
-                fontSize: 13.5,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}

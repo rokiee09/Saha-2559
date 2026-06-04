@@ -12,6 +12,7 @@ import 'device_integrity.dart';
 import 'pin_auth_service.dart';
 import 'screenshot_guard.dart';
 import 'secure_vault_storage.dart';
+import 'vault_lock_notifier.dart';
 import 'vault_migration.dart';
 import 'vault_session.dart';
 import 'widgets/pin_pad.dart';
@@ -218,6 +219,12 @@ class _VaultGateState extends ConsumerState<VaultGate>
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<int>(vaultLockEpochProvider, (prev, next) {
+      if (prev != null && next > prev && _phase == _VaultPhase.unlocked) {
+        _lockFromBackground();
+      }
+    });
+
     if (_phase == _VaultPhase.unlocked) {
       return const HomeShell();
     }

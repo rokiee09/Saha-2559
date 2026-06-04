@@ -17,7 +17,8 @@ import 'data_freshness_page.dart';
 import 'reading_scale_controller.dart';
 import 'theme_controller.dart';
 import '../asistan/settings/asistan_llm_settings_page.dart';
-import 'vault_security_settings.dart';
+import 'security_center_page.dart';
+import 'store_publish_page.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -126,15 +127,15 @@ class SettingsPage extends ConsumerWidget {
               Icons.enhanced_encryption_outlined,
               color: Theme.of(context).colorScheme.primary,
             ),
-            title: const Text('Yerel kasa güvenliği'),
+            title: const Text('Güvenlik merkezi'),
             subtitle: const Text(
-              'PIN, biyometrik, şifreli kayıtlar ve cihaz uyarıları',
+              'Şifreli veriler, yedekleme, PIN ve cihaz uyarıları',
             ),
             trailing: const Icon(Icons.chevron_right_rounded),
             onTap: () {
               Navigator.of(context).push<void>(
                 MaterialPageRoute<void>(
-                  builder: (_) => const VaultSecuritySettings(),
+                  builder: (_) => const SecurityCenterPage(),
                 ),
               );
             },
@@ -231,11 +232,19 @@ class SettingsPage extends ConsumerWidget {
               Icons.storefront_outlined,
               color: Theme.of(context).colorScheme.primary,
             ),
-            title: const Text('Mağaza yayın markası'),
+            title: const Text('Mağaza hazırlığı'),
             subtitle: Text(
-              'Google Play vitrin kimliği: $kMarketBrandName · '
-                  'Uygulama adı: $kAppDisplayName',
+              'Play metinleri, gizlilik URL, ekran görüntüsü rehberi · '
+              '$kMarketBrandName / $kAppDisplayName',
             ),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () {
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const StorePublishPage(),
+                ),
+              );
+            },
           ),
           const Divider(height: 0),
           const ListTile(
