@@ -5,14 +5,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../common/routing/transitions.dart';
 import '../../../../common/theme/police_colors.dart';
 import '../../../../common/widgets/rutbe_level_icon.dart';
+import '../basari/basari_page.dart';
 import '../kariyer_constants.dart';
 import '../kariyer_ozet_provider.dart';
 import '../profil/profil_page.dart';
-/// Ana sayfa personel özeti — yalnızca kısa ön bilgiler (rütbe, ad, birim, eğitim).
+import '../taltif/taltif_models.dart';
+
+/// Ana sayfa personel özeti — kısa bilgiler + başarı/ödül özeti.
 class PersonelOzetKart extends ConsumerWidget {
   const PersonelOzetKart({super.key, this.onTap});
 
-  /// Varsayılan: Profilim sekmesine geçiş veya detay sayfası.
   final VoidCallback? onTap;
 
   @override
@@ -27,6 +29,8 @@ class PersonelOzetKart extends ConsumerWidget {
         final p = ozet.profil;
         final rutbe = p.rutbe;
         final egitim = p.egitim;
+        final h = ozet.basariHesap;
+        final t = ozet.taltifOzet;
 
         void openProfil() {
           HapticFeedback.selectionClick();
@@ -35,6 +39,11 @@ class PersonelOzetKart extends ConsumerWidget {
           } else {
             Navigator.of(context).push(fadeRoute(const ProfilPage()));
           }
+        }
+
+        void openBasariOduller() {
+          HapticFeedback.selectionClick();
+          Navigator.of(context).push(fadeRoute(const BasariPage()));
         }
 
         return Padding(
@@ -53,74 +62,117 @@ class PersonelOzetKart extends ConsumerWidget {
                     color: PoliceColors.primaryBlue.withValues(alpha: 0.28),
                   ),
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (rutbe != null)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: RutbeRankIcon(
-                          levelIndex: rutbe.levelIndex,
-                          size: 44,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        if (rutbe != null)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: RutbeRankIcon(
+                              levelIndex: rutbe.levelIndex,
+                              size: 44,
+                            ),
+                          ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (rutbe != null)
+                                Text(
+                                  rutbe.label,
+                                  style: TextStyle(
+                                    color:
+                                        PoliceColors.gold.withValues(alpha: 0.95),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12.5,
+                                  ),
+                                ),
+                              if (p.adSoyad.isNotEmpty) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  p.adSoyad,
+                                  style: const TextStyle(
+                                    color: PoliceColors.titleOnDark,
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 15.5,
+                                  ),
+                                ),
+                              ],
+                              if (p.birim.isNotEmpty || p.il.isNotEmpty) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  [
+                                    if (p.il.isNotEmpty) p.il,
+                                    if (p.birim.isNotEmpty) p.birim,
+                                  ].join(' '),
+                                  style: TextStyle(
+                                    color: PoliceColors.textMuted
+                                        .withValues(alpha: 0.88),
+                                    fontSize: 12.5,
+                                  ),
+                                ),
+                              ],
+                              if (egitim != null) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  egitim.kisaLabel,
+                                  style: TextStyle(
+                                    color: PoliceColors.primaryBlue
+                                        .withValues(alpha: 0.88),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+                        Icon(
+                          Icons.chevron_right_rounded,
+                          color: PoliceColors.textMuted.withValues(alpha: 0.7),
+                          size: 22,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Material(
+                      color: PoliceColors.backgroundDark.withValues(alpha: 0.45),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: openBasariOduller,
+                        borderRadius: BorderRadius.circular(10),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 8,
+                          ),
+                          child: Column(
+                            children: [
+                              _ozetSatir(
+                                '🏅 Başarı Belgesi',
+                                '${h.basariSayisi}',
+                              ),
+                              _ozetSatir(
+                                '⭐ Üstün Başarı Belgesi',
+                                '${h.ustunSayisi}',
+                              ),
+                              _ozetSatir(
+                                '💰 Taltif',
+                                t.toplamSayi > 0
+                                    ? '${t.toplamSayi} · ${formatTaltifTutari(t.toplamTutar)} TL'
+                                    : '${t.toplamSayi}',
+                              ),
+                              _ozetSatir(
+                                '🇹🇷 Gazilik Durumu',
+                                ozet.gaziLabel,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (rutbe != null)
-                            Text(
-                              rutbe.label,
-                              style: TextStyle(
-                                color: PoliceColors.gold.withValues(alpha: 0.95),
-                                fontWeight: FontWeight.w700,
-                                fontSize: 12.5,
-                              ),
-                            ),
-                          if (p.adSoyad.isNotEmpty) ...[
-                            const SizedBox(height: 2),
-                            Text(
-                              p.adSoyad,
-                              style: const TextStyle(
-                                color: PoliceColors.titleOnDark,
-                                fontWeight: FontWeight.w800,
-                                fontSize: 15.5,
-                              ),
-                            ),
-                          ],
-                          if (p.birim.isNotEmpty || p.il.isNotEmpty) ...[
-                            const SizedBox(height: 2),
-                            Text(
-                              [
-                                if (p.il.isNotEmpty) p.il,
-                                if (p.birim.isNotEmpty) p.birim,
-                              ].join(' '),
-                              style: TextStyle(
-                                color: PoliceColors.textMuted
-                                    .withValues(alpha: 0.88),
-                                fontSize: 12.5,
-                              ),
-                            ),
-                          ],
-                          if (egitim != null) ...[
-                            const SizedBox(height: 2),
-                            Text(
-                              egitim.kisaLabel,
-                              style: TextStyle(
-                                color: PoliceColors.primaryBlue
-                                    .withValues(alpha: 0.88),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                    Icon(
-                      Icons.chevron_right_rounded,
-                      color: PoliceColors.textMuted.withValues(alpha: 0.7),
-                      size: 22,
                     ),
                   ],
                 ),
@@ -131,4 +183,29 @@ class PersonelOzetKart extends ConsumerWidget {
       },
     );
   }
+
+  Widget _ozetSatir(String label, String value) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 2),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.9),
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            Text(
+              value,
+              style: const TextStyle(
+                color: PoliceColors.titleOnDark,
+                fontWeight: FontWeight.w700,
+                fontSize: 12.5,
+              ),
+            ),
+          ],
+        ),
+      );
 }

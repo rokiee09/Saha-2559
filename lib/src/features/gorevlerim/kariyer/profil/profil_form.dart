@@ -239,7 +239,7 @@ class _ProfilFormState extends ConsumerState<ProfilForm> {
             ),
             const SizedBox(height: 14),
             const Text(
-              'Gazilik durumu',
+              'Gazilik Durumu',
               style: TextStyle(
                 color: PoliceColors.titleOnDark,
                 fontWeight: FontWeight.w700,

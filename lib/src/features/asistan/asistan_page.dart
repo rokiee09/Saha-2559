@@ -5,12 +5,19 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
+import '../araclar/idari_para_ceza/idari_para_ceza_page.dart';
+import '../araclar/idari_para_ceza/widgets/idari_para_ceza_card.dart';
 import '../home/root_drawer_scope.dart';
 import '../mevzuat/mevzuat_article_detail_page.dart';
 import 'asistan_domain.dart';
 import 'asistan_provider.dart';
+import 'search/assistant_models.dart';
+import 'legal/assistant_answer_builder.dart';
+import 'legal/assistant_legal_index.dart';
+import 'legal/assistant_legal_search_service.dart';
+import 'legal/assistant_query_classifier.dart';
 
-/// Polis çalışma asistanı: senaryo tabanlı mevzuat kullanım rehberi (offline).
+/// Mevzuat kaynaklı soru-cevap asistanı (offline).
 class AsistanPage extends ConsumerStatefulWidget {
   const AsistanPage({super.key});
 
@@ -46,6 +53,16 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
     _focusNode.unfocus();
   }
 
+  void _applyQuery(String q) {
+    HapticFeedback.selectionClick();
+    _controller.text = q;
+    _controller.selection = TextSelection.fromPosition(
+      TextPosition(offset: q.length),
+    );
+    _runQuery(q);
+    _focusNode.unfocus();
+  }
+
   void _openSection(String entryId, String? sectionId) {
     HapticFeedback.lightImpact();
     Navigator.of(context).push(
@@ -58,14 +75,23 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
     );
   }
 
+  void _openLegalRecord(LegalIndexRecord record) {
+    HapticFeedback.lightImpact();
+    if (record.sourceType == LegalSourceType.idariParaCeza) {
+      Navigator.of(context).push(
+        fadeRoute(IdariParaCezaPage(initialQuery: record.title)),
+      );
+      return;
+    }
+    if (record.entryId != null && record.entryId!.isNotEmpty) {
+      _openSection(record.entryId!, record.sectionId);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final query = ref.watch(asistanQueryProvider).trim();
-    final selectedDomain = ref.watch(asistanSelectedDomainProvider);
-    final scenariosAsync = ref.watch(asistanScenariosProvider);
-    final inScope = ref.watch(asistanScopeProvider);
-    final resultsAsync = ref.watch(asistanResultsProvider);
-    final answer = ref.watch(asistanAnswerProvider).valueOrNull;
+    final searchAsync = ref.watch(legalAssistantAnswerProvider);
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -73,7 +99,7 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
         leading: const HomeDrawerButton(),
         automaticallyImplyLeading: false,
         title: const Text(
-          'Çalışma Asistanı',
+          'Mevzuat Asistanı',
           style: TextStyle(
             color: PoliceColors.gold,
             fontSize: 17,
@@ -89,7 +115,7 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Görev senaryonuz nedir?',
+                  'Mevzuat sorunuz nedir?',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: PoliceColors.titleOnDark,
                         fontWeight: FontWeight.w800,
@@ -97,8 +123,8 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'PVSK, CMK, TCK, izin, tayin, lojman ve maaş — '
-                  'mevzuatı aratmak yerine nasıl kullanacağınızı gösterir.',
+                  'Kanun, yönetmelik, disiplin, izin, idari para cezaları ve '
+                  'personel mevzuatında kaynaklı cevap arar. Serbest soru yazın.',
                   style: TextStyle(
                     color: PoliceColors.textMuted.withValues(alpha: 0.9),
                     fontSize: 12.5,
@@ -115,72 +141,13 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                     _runQuery('');
                   },
                 ),
-                const SizedBox(height: 10),
-                scenariosAsync.when(
-                  loading: () => const SizedBox.shrink(),
-                  error: (_, __) => const SizedBox.shrink(),
-                  data: (all) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              _DomainChip(
-                                label: 'Tümü',
-                                selected: selectedDomain == null,
-                                onTap: () => ref
-                                    .read(
-                                        asistanSelectedDomainProvider.notifier)
-                                    .state = null,
-                              ),
-                              for (final d in asistanAllDomains) ...[
-                                const SizedBox(width: 8),
-                                _DomainChip(
-                                  label: d.label,
-                                  selected: selectedDomain == d,
-                                  onTap: () => ref
-                                      .read(asistanSelectedDomainProvider
-                                          .notifier)
-                                      .state = d,
-                                ),
-                              ],
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
               ],
             ),
           ),
           Expanded(
             child: query.isEmpty
-                ? scenariosAsync.when(
-                    loading: () => const Center(
-                      child: CircularProgressIndicator(
-                        color: PoliceColors.primaryBlue,
-                      ),
-                    ),
-                    error: (_, __) => const _AsistanIntro(
-                      scenarios: [],
-                      onScenarioTap: null,
-                    ),
-                    data: (all) {
-                      final filtered =
-                          asistanScenariosForDomain(all, selectedDomain);
-                      return _AsistanIntro(
-                        scenarios:
-                            asistanFeaturedScenarios(filtered).take(6).toList(),
-                        onScenarioTap: _applyScenario,
-                      );
-                    },
-                  )
-                : !inScope
-                    ? const _OutOfScopeMessage()
-                    : resultsAsync.when(
+                ? _AsistanIntro(onExampleTap: _applyQuery)
+                : searchAsync.when(
                         loading: () => const Center(
                           child: CircularProgressIndicator(
                             color: PoliceColors.primaryBlue,
@@ -191,28 +158,45 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                           title: 'Yanıt üretilemedi',
                           message: 'Lütfen tekrar deneyin.',
                         ),
-                        data: (hits) {
-                          if (answer == null && hits.isEmpty) {
+                        data: (answer) {
+                          if (answer == null) {
                             return const _AsistanMessage(
                               icon: Icons.search_off_rounded,
-                              title: 'Senaryo bulunamadı',
-                              message:
-                                  'Sorunuzu farklı kelimelerle yazın veya yukarıdan '
-                                  'bir uzmanlık alanı ve örnek senaryo seçin.',
+                              title: 'Sonuç yok',
+                              message: 'Lütfen sorunuzu yazın.',
                             );
                           }
+                          if (answer.outOfScope) {
+                            return _AsistanMessage(
+                              icon: Icons.info_outline_rounded,
+                              title: 'Kapsam dışı',
+                              message: answer.shortAnswer,
+                            );
+                          }
+                          if (answer.noStrongMatch) {
+                            return _AsistanMessage(
+                              icon: Icons.search_off_rounded,
+                              title: 'Net sonuç bulunamadı',
+                              message: answer.shortAnswer,
+                            );
+                          }
+                          final primary = answer.primaryRecord!;
                           return ListView(
                             padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                             children: [
-                              if (answer != null)
-                                _StructuredAnswerCard(
-                                  answer: answer,
-                                  onOpenRef: _openSection,
-                                ),
-                              if (hits.isNotEmpty) ...[
-                                if (answer != null) const SizedBox(height: 16),
+                              if (primary.sourceType ==
+                                  LegalSourceType.idariParaCeza) ...[
+                                const _CezaCardCompact(),
+                                const SizedBox(height: 12),
+                              ],
+                              _LegalAnswerCard(
+                                answer: answer,
+                                onOpenFullText: () => _openLegalRecord(primary),
+                              ),
+                              if (answer.topHits.length > 1) ...[
+                                const SizedBox(height: 16),
                                 Text(
-                                  'İlgili maddeler (ek)',
+                                  'Diğer ilgili maddeler',
                                   style: TextStyle(
                                     color: PoliceColors.textMuted
                                         .withValues(alpha: 0.9),
@@ -221,16 +205,14 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                                   ),
                                 ),
                                 const SizedBox(height: 8),
-                                for (final hit in hits) ...[
-                                  _ResultCard(
-                                    hit: hit,
-                                    onTap: () => _openSection(
-                                      hit.entry.id,
-                                      hit.section.id,
+                                for (final h in answer.topHits.skip(1))
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 8),
+                                    child: _LegalHitTile(
+                                      hit: h,
+                                      onTap: () => _openLegalRecord(h.record),
                                     ),
                                   ),
-                                  const SizedBox(height: 10),
-                                ],
                               ],
                             ],
                           );
@@ -265,7 +247,7 @@ class _SearchField extends StatelessWidget {
       textInputAction: TextInputAction.search,
       onChanged: onChanged,
       decoration: InputDecoration(
-        hintText: 'Örn. "Gözaltında müdafi hakkı" veya "refakat izni"',
+        hintText: 'Örn. "Kimlik vermeyen şahsa ne yapılır?" veya "dilencilik cezası"',
         prefixIcon: Icon(
           Icons.support_agent_rounded,
           color: cs.primary.withValues(alpha: 0.9),
@@ -546,7 +528,7 @@ class _StructuredAnswerCard extends StatelessWidget {
           ],
           const SizedBox(height: 12),
           Text(
-            asistanDisclaimer,
+            kLegalAssistantDisclaimer,
             style: TextStyle(
               color: PoliceColors.textMuted.withValues(alpha: 0.85),
               fontStyle: FontStyle.italic,
@@ -750,39 +732,40 @@ class _ResultCard extends StatelessWidget {
 }
 
 class _AsistanIntro extends StatelessWidget {
-  const _AsistanIntro({
-    required this.scenarios,
-    required this.onScenarioTap,
-  });
+  const _AsistanIntro({this.onExampleTap});
 
-  final List<AsistanScenario> scenarios;
-  final ValueChanged<AsistanScenario>? onScenarioTap;
+  final ValueChanged<String>? onExampleTap;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
       children: [
-        if (scenarios.isNotEmpty) ...[
-          Text(
-            'Örnek senaryolar',
-            style: TextStyle(
-              color: PoliceColors.textMuted.withValues(alpha: 0.9),
-              fontWeight: FontWeight.w700,
-              fontSize: 12,
-            ),
+        Text(
+          'Örnek sorular',
+          style: TextStyle(
+            color: PoliceColors.textMuted.withValues(alpha: 0.9),
+            fontWeight: FontWeight.w700,
+            fontSize: 12,
           ),
-          const SizedBox(height: 8),
-          for (final scenario in scenarios)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: _ScenarioCard(
-                scenario: scenario,
-                onTap: () => onScenarioTap?.call(scenario),
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            for (final q in kLegalAsistanOrnekSorular)
+              ActionChip(
+                label: Text(q, style: const TextStyle(fontSize: 11.5)),
+                onPressed: onExampleTap == null ? null : () => onExampleTap!(q),
+                backgroundColor: PoliceColors.surfaceDark,
+                side: BorderSide(
+                  color: PoliceColors.outlineMuted.withValues(alpha: 0.4),
+                ),
               ),
-            ),
-          const SizedBox(height: 8),
-        ],
+          ],
+        ),
+        const SizedBox(height: 14),
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -805,7 +788,7 @@ class _AsistanIntro extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Polis çalışma asistanı',
+                      'Mevzuat kaynaklı asistan',
                       style: TextStyle(
                         color: PoliceColors.titleOnDark,
                         fontWeight: FontWeight.w800,
@@ -817,9 +800,9 @@ class _AsistanIntro extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                'Genel sohbet botu değildir. Görev senaryonuzu seçin veya yazın; '
-                'kısa özet, uygulamada ne yapmanız gerektiği ve kaynak mevzuat '
-                'tek kartta sunulur.',
+                'Doğal dilde sorularınızı sınıflandırır, yerel mevzuat indeksinde '
+                'puanlı arama yapar ve kaynak göstererek cevap üretir. Uydurma '
+                'cevap vermez; güçlü eşleşme yoksa bunu açıkça belirtir.',
                 style: TextStyle(
                   color: PoliceColors.mevzuatBodyText.withValues(alpha: 0.9),
                   height: 1.45,
@@ -828,11 +811,11 @@ class _AsistanIntro extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                asistanDisclaimer,
+                kLegalAssistantDisclaimer,
                 style: TextStyle(
                   color: PoliceColors.textMuted.withValues(alpha: 0.85),
                   fontStyle: FontStyle.italic,
-                  fontSize: 12,
+                  fontSize: 11.5,
                   height: 1.4,
                 ),
               ),
@@ -840,6 +823,371 @@ class _AsistanIntro extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _LegalAnswerCard extends StatelessWidget {
+  const _LegalAnswerCard({
+    required this.answer,
+    required this.onOpenFullText,
+  });
+
+  final LegalAssistantAnswer answer;
+  final VoidCallback onOpenFullText;
+
+  @override
+  Widget build(BuildContext context) {
+    final record = answer.primaryRecord;
+    final category = answer.classification.primary;
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.4),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+            decoration: BoxDecoration(
+              color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              category.label,
+              style: const TextStyle(
+                color: PoliceColors.primaryBlue,
+                fontWeight: FontWeight.w700,
+                fontSize: 11,
+              ),
+            ),
+          ),
+          if (record != null) ...[
+            const SizedBox(height: 8),
+            Text(
+              record.title,
+              style: const TextStyle(
+                color: PoliceColors.gold,
+                fontWeight: FontWeight.w800,
+                fontSize: 15,
+              ),
+            ),
+          ],
+          const SizedBox(height: 14),
+          _AnswerSection(
+            number: '1',
+            title: 'Kısa Cevap',
+            body: answer.shortAnswer,
+          ),
+          const SizedBox(height: 12),
+          _AnswerSection(
+            number: '2',
+            title: 'İlgili Mevzuat',
+            body: answer.relatedLegislation,
+          ),
+          const SizedBox(height: 12),
+          _AnswerSection(
+            number: '3',
+            title: 'Açıklama',
+            body: answer.explanation,
+          ),
+          if (answer.riskNote.trim().isNotEmpty) ...[
+            const SizedBox(height: 12),
+            _AnswerSection(
+              number: '4',
+              title: 'Risk / Not',
+              body: answer.riskNote,
+            ),
+          ],
+          const SizedBox(height: 14),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton.icon(
+              onPressed: record?.entryId != null ||
+                      record?.sourceType == LegalSourceType.idariParaCeza
+                  ? onOpenFullText
+                  : null,
+              icon: const PhosphorIcon(
+                PhosphorIconsRegular.scroll,
+                size: 18,
+                color: Colors.white,
+              ),
+              label: const Text(
+                'Tam metni aç',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+              style: FilledButton.styleFrom(
+                backgroundColor: PoliceColors.primaryBlue,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            answer.disclaimer,
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.85),
+              fontStyle: FontStyle.italic,
+              fontSize: 11.5,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LegalHitTile extends StatelessWidget {
+  const _LegalHitTile({required this.hit, required this.onTap});
+
+  final LegalSearchHit hit;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final r = hit.record;
+    return Material(
+      color: PoliceColors.surfaceDark,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
+            ),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      r.title,
+                      style: const TextStyle(
+                        color: PoliceColors.titleOnDark,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 13.5,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      r.sourceLabel,
+                      style: const TextStyle(
+                        color: PoliceColors.primaryBlue,
+                        fontSize: 11.5,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const PhosphorIcon(
+                PhosphorIconsRegular.caretRight,
+                color: PoliceColors.textMuted,
+                size: 18,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _UnifiedAnswerCard extends StatelessWidget {
+  const _UnifiedAnswerCard({
+    required this.result,
+    required this.category,
+    required this.onOpenDetail,
+  });
+
+  final SearchResult result;
+  final AssistantCategory? category;
+  final VoidCallback onOpenDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: PoliceColors.primaryBlue.withValues(alpha: 0.4),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (category != null)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(
+                color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                category!.label,
+                style: const TextStyle(
+                  color: PoliceColors.primaryBlue,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 11,
+                ),
+              ),
+            ),
+          const SizedBox(height: 10),
+          Text(
+            result.title,
+            style: const TextStyle(
+              color: PoliceColors.gold,
+              fontWeight: FontWeight.w800,
+              fontSize: 15,
+            ),
+          ),
+          const SizedBox(height: 14),
+          _AnswerSection(number: '1', title: 'Kısa Cevap', body: result.shortAnswer),
+          const SizedBox(height: 12),
+          _AnswerSection(
+            number: '2',
+            title: 'Bulunan Kaynak',
+            body: result.source,
+          ),
+          const SizedBox(height: 12),
+          _AnswerSection(
+            number: '3',
+            title: 'Uygulamada Ne Anlama Gelir',
+            body: result.appContext,
+          ),
+          const SizedBox(height: 12),
+          _AnswerSection(
+            number: '4',
+            title: 'İlgili Madde / Belge / Modül',
+            body: result.title,
+          ),
+          const SizedBox(height: 14),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton.icon(
+              onPressed: result.nav != null ? onOpenDetail : null,
+              icon: const PhosphorIcon(
+                PhosphorIconsRegular.arrowSquareOut,
+                size: 18,
+                color: Colors.white,
+              ),
+              label: const Text(
+                'Detayı aç',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+              style: FilledButton.styleFrom(
+                backgroundColor: PoliceColors.primaryBlue,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            kLegalAssistantDisclaimer,
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.85),
+              fontStyle: FontStyle.italic,
+              fontSize: 11.5,
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CompactResultTile extends StatelessWidget {
+  const _CompactResultTile({required this.result, required this.onTap});
+
+  final SearchResult result;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: PoliceColors.surfaceDark,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: PoliceColors.outlineMuted.withValues(alpha: 0.45),
+            ),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      result.title,
+                      style: const TextStyle(
+                        color: PoliceColors.titleOnDark,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 13.5,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      result.category.label,
+                      style: TextStyle(
+                        color: PoliceColors.textMuted.withValues(alpha: 0.85),
+                        fontSize: 11.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                result.relevanceScore.round().toString(),
+                style: TextStyle(
+                  color: PoliceColors.gold.withValues(alpha: 0.9),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CezaCardCompact extends ConsumerWidget {
+  const _CezaCardCompact();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ceza = ref.watch(idariParaCezaAsistanProvider);
+    if (ceza == null) return const SizedBox.shrink();
+    return IdariParaCezaCard(
+      kayit: ceza,
+      compact: true,
+      onOpenModule: () => Navigator.of(context).push(
+        fadeRoute(IdariParaCezaPage(initialQuery: ceza.kabahatAdi)),
+      ),
     );
   }
 }

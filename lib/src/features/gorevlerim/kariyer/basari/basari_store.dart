@@ -46,7 +46,9 @@ Future<void> _migrateLegacy(SharedPreferences prefs) async {
             ? DateTime(yil).millisecondsSinceEpoch
             : DateTime.now().millisecondsSinceEpoch,
         verenMakam: '',
+        evrakNo: '',
         aciklama: row['not'] as String? ?? '',
+        not: '',
         createdAtMs: DateTime.now().millisecondsSinceEpoch,
       ));
     }

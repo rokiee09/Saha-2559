@@ -117,6 +117,10 @@ abstract final class PoliceModules {
     icon: PhosphorIconsRegular.chartPie,
     color: Color(0xFF8B5CF6),
   );
+  static const saglik = PoliceModuleStyle(
+    icon: PhosphorIconsRegular.heart,
+    color: Color(0xFFFB7185),
+  );
   static const asistan = PoliceModuleStyle(
     icon: PhosphorIconsRegular.brain,
     color: Color(0xFF38BDF8),
@@ -152,6 +156,14 @@ abstract final class PoliceModules {
   static const ingilizce = PoliceModuleStyle(
     icon: PhosphorIconsRegular.translate,
     color: Color(0xFF67E8F9),
+  );
+  static const idariParaCeza = PoliceModuleStyle(
+    icon: PhosphorIconsRegular.coins,
+    color: Color(0xFFFCD34D),
+  );
+  static const taltif = PoliceModuleStyle(
+    icon: PhosphorIconsRegular.wallet,
+    color: Color(0xFF34D399),
   );
 
   static PoliceModuleStyle forSahaCategory(String id) => switch (id) {

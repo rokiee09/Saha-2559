@@ -1,0 +1,861 @@
+{
+  "law": "Sağlık Uygulamalarına İlişkin Uygulama Rehberi",
+  "displayTitle": "Sağlık Uygulamaları Rehberi",
+  "subtitle": "Emniyet teşkilatında hastalık raporu, istirahat ve heyet süreçlerine ilişkin uygulama esasları (genelge niteliğinde özet metin).",
+  "disclaimer": "Resmî evrak numarası ve üst yazı gösterilmez; metin içerik olarak korunmuştur. Bağlayıcı işlem için kurum yazısı ve güncel mevzuat esas alınır.",
+  "source": "Emniyet Genel Müdürlüğü sağlık uygulamaları genelgesi (içerik)",
+  "articles": [
+    {
+      "id": "su-1-1",
+      "article": "1.1",
+      "title": "Bölüm 1.1",
+      "text": "İstirahat Raporu Düzenleyebilecek Sağlık Hizmet Sunucuları"
+    },
+    {
+      "id": "su-1-1-1",
+      "article": "1.1.1",
+      "title": "İstirahat raporu, memuriyet mahallindeki veya kanuni izinlerin kullanıldığı yerlerdeki sağlık hizmet",
+      "text": "sunucuları tarafından düzenlenmelidir. Mesai saatleri içinde memuriyet mahalli dışındaki sağlık hizmet\nsunucularından alınmış istirahat raporları, acil servislerden dahi alınmış olsa usule aykırıdır."
+    },
+    {
+      "id": "su-1-1-2",
+      "article": "1.1.2",
+      "title": "İstirahat raporu düzenleyen özel sağlık hizmet sunucusunun Sosyal Güvenlik Kurumu (SGK) ile",
+      "text": "sözleşmesi bulunmalıdır, aksi takdirde usule aykırı olacaktır."
+    },
+    {
+      "id": "su-1-1-3",
+      "article": "1.1.3",
+      "title": "SGK ile sözleşmesi bulunmayan sağlık hizmet sunucusu tarafından düzenlenen istirahat raporları,",
+      "text": "SGK ile sözleşmeli sağlık hizmet sunucusu hekim (10 güne kadar olan istirahat raporları) veya sağlık\nkurullarınca (sağlık kurulu raporu şeklinde düzenlenen istirahat raporları) onaylanması halinde usule uygun hale\ngelir."
+    },
+    {
+      "id": "su-1-1-4",
+      "article": "1.1.4",
+      "title": "Hafta sonu tatili, ulusal bayram, resmi bayram, dini bayram günleri ile genel tatil günlerinde",
+      "text": "memuriyet mahalli dışına çıkan memur, memuriyet mahalli dışındaki resmi veya özel sağlık hizmet sunucularının\nancak acil servislerinden istirahat raporu alabilir, acil servisler dışında düzenlenen istirahat raporları hastalık\niznine çevrilemez."
+    },
+    {
+      "id": "su-1-1-5",
+      "article": "1.1.5",
+      "title": "Kanuni izinlerin (hastalık izni dahil) kullanılması sırasında memuriyet mahalli dışında bulunan",
+      "text": "memurlar, mesai günleri içerisinde (hafta sonu tatili, ulusal bayram-resmi bayram-dini bayram günleri ile genel\ntatil günleri hariç) resmi veya özel sağlık hizmet sunucularının acil servisi harici diğer servislerinden de istirahat\nraporu alabilirler."
+    },
+    {
+      "id": "su-1-2",
+      "article": "1.2",
+      "title": "Bölüm 1.2",
+      "text": "İstirahat Raporu Süreleri"
+    },
+    {
+      "id": "su-1-2-1",
+      "article": "1.2.1",
+      "title": "Tek hekim tarafından bir seferde en fazla 10 günlük istirahat raporu verilebilir. Kontrol muayenesi",
+      "text": "sonucunda hastalığın devam ettiği tespit edilirse en fazla 10 gün daha istirahat raporu verilebilir. Bu süreleri aşan\nraporlar sağlık kurulunca düzenlenmelidir."
+    },
+    {
+      "id": "su-1-2-2",
+      "article": "1.2.2",
+      "title": "Tek hekim tarafından düzenlenen istirahat raporunun bitiminde, memurun aynı hastalığının devam",
+      "text": "etmesi veya farklı bir hastalığa yakalanması halinde göreve başlamadan tekrar aynı veya farklı bir tek hekimden\nistirahat raporu almasında sakınca yoktur. Ancak bu durumda arka arkaya alman tek hekim istirahat raporlarının\ntoplam süresinin 20 günü geçmemesi gerekir.\nÖrnek; göreve başlamadan aralıksız olarak aynı veya başka bir hastalıktan dolayı 7 gün+3 gün+5 gün+5\ngün tek hekim istirahat raporu alınabilir. Aralıksız olarak toplamda 20 (yirmi) günlük tek hekim istirahat raporu\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA\n-.03124624660\n: shsdrapor@egm.gov.tr\n\nkullanılmış olmasına rağmen memurun aynı hastalığının devam etmesi veya başka bir hastalığa yakalanması\nhalinde alacağı istirahat raporunun sağlık kurulunca düzenlenmiş olması gerekmektedir."
+    },
+    {
+      "id": "su-1-2-3",
+      "article": "1.2.3",
+      "title": "Memurun bir takvim yılı içinde almış olduğu tek hekim istirahat raporlarının toplam süresi 40 günü",
+      "text": "geçemez. Son alınan tek hekim istirahat raporunun süresi toplamda 40 günün aşılmasına neden oluyorsa bu\nraporun geçerli sayılabilmesi için resmi sağlık kurullarınca onaylanması veya kişinin alacağı raporun sağlık\nkurulu raporu olması gerekmektedir.\nÖrnek: 37 günlük toplam tek hekim istirahat raporu kullanmış olan memurun alacağı 7 günlük tek\nhekim istirahat raporu toplamda 40 günün aşılmasına neden olacağı için usule aykırı olarak değerlendirilir. Son\nalınan 7 günlük istirahat raporu sağlık kurulu raporu olmalıdır veya resmi sağlık kurullarınca onaylanmalıdır."
+    },
+    {
+      "id": "su-1-2-4",
+      "article": "1.2.4",
+      "title": "Sağlık kurulu raporu şeklinde düzenlenmiş istirahat raporları için yıl içindeki azami süreyi",
+      "text": "tanımlayan bir hüküm yoktur. îlgi (a) Yönetmelikte tedavi ve istirahat hakları için 12 ay+12 ay veya 18 ay+18\nay olmak üzere iki farklı tanım vardır. Hasta için hangi süreler dahilinde hastalık izni verileceği, kişinin istirahat\nraporunu düzenleyen doktorun veya sağlık kurulunun kişiye ve hastalığa özel olarak vereceği karara göre\nbelirlenir."
+    },
+    {
+      "id": "su-1-2-5",
+      "article": "1.2.5",
+      "title": "Bir takvim yılı ibaresinden, 1 Ocak ve 31 Aralık tarihleri de dahil olmak üzere bu tarihler arasında",
+      "text": "geçen sürenin anlaşılması gerekir."
+    },
+    {
+      "id": "su-1-2-6",
+      "article": "1.2.6",
+      "title": "Yıl sonunu ve izleyen yılın başını kapsayan tek hekim raporu alınması durumunda, 31 Aralık tarihi",
+      "text": "ve öncesini kapsayan rapor süresinin içinde bulunulan yıla ait olduğu, 1 Ocak tarihi ve sonrasını kapsayan rapor\nsüresinin takip eden yıla ait olduğu değerlendirilmelidir."
+    },
+    {
+      "id": "su-1-2-7",
+      "article": "1.2.7",
+      "title": "îlgi (a) Yönetmelikte belirtilen istisnalar hariç olmak üzere tek hekim veya sağlık kurulu istirahat",
+      "text": "raporunun bitiminde usule ve fenne uygun olması durumunda göreve başlamadan tekrar tek hekimden veya sağlık\nkurulundan istirahat raporu alınmasında bir sakınca yoktur."
+    },
+    {
+      "id": "su-1-2-8",
+      "article": "1.2.8",
+      "title": "İstirahat raporunda belirtilen kontrol muayenesi günü, memurun istirahat raporlu olduğu gün olarak",
+      "text": "değerlendirilemez. Hastalık izninin son gününden sonra gelen günü ifade eder ve memurun istirahatli olacağı\nanlamını taşımaz. Kontrol muayenesi günü memuriyet mahalli dışından alınmış olan istirahat raporu usule aykırı\nolarak değerlendirilir ve hastalık iznine çevrilemez."
+    },
+    {
+      "id": "su-1-2-9",
+      "article": "1.2.9",
+      "title": "İstirahat raporu formunda bulunması gereken rapor tarihi, hastalık izninin başlangıç tarihi, yani",
+      "text": "birinci günü olarak belirlenir. Geçmişe veya ileriye dönük olarak düzenlenmiş olan istirahat raporları usule aykırı\nolarak değerlendirilir."
+    },
+    {
+      "id": "su-1-2-10",
+      "article": "1.2.10",
+      "title": "İstirahat raporlarında süreler gün bazında belirlenir fakat gün içinde mesaiye gelmeyen ve izin",
+      "text": "vermeye yetkili kılınan birim amirine hasta olduğuna dair bildirimde bulunmayan memurun, mesai saati içinde\nveya mesai saati bitiminden sonra alacağı istirahat raporu, günlük mesai saatleri içerisinde göreve gelmediği\nsüreler için özür olarak kabul edilemez ve ilgili memur hakkında izinsiz ve özürsüz olarak göreve gelmemekten\nişlem yapılır."
+    },
+    {
+      "id": "su-1-2-11",
+      "article": "1.2.11",
+      "title": "İstirahat raporları günlük düzenlenir, saatlik düzenlenemez. 23:40’ta düzenlenen istirahat",
+      "text": "raporunun birinci gününün bitmesine 20 dakika kalmıştır. İşe başlama tarihi belirtilmeyen ve “ay” olarak\ndüzenlenen istirahat raporlarında “ay” ifadesinden 30 gün anlaşılmalıdır."
+    },
+    {
+      "id": "su-1-2-12",
+      "article": "1.2.12",
+      "title": "Rapor formu üzerinde sonradan yapılan her türlü düzeltme veya düzenleme için, düzeltmenin",
+      "text": "yapıldığı günü belirten tarih ile kim tarafından yapıldığını belirten doktor kaşe ve imzası bulunmalıdır. Aksi\ntakdirde düzeltmeli rapor usule aykırı olarak değerlendirilir."
+    },
+    {
+      "id": "su-1-2-13",
+      "article": "1.2.13",
+      "title": "Hastanede yatarak görülen tedavi sürelerinin, hastalık iznine ait sürenin hesabında dikkate alınması",
+      "text": "gerekmektedir. Hastane yatışına ait evrakın usulünü tanımlayan bir hüküm bulunmamaktadır, doktor tarafından\nonaylanmış bir evrak olmalıdır, bu evrak tek hekim onaylı da olabilir."
+    },
+    {
+      "id": "su-1-3",
+      "article": "1.3",
+      "title": "Bölüm 1.3",
+      "text": "İstirahat Rapor Formu"
+    },
+    {
+      "id": "su-1-3-1",
+      "article": "1.3.1",
+      "title": "İlgi (b) yönerge ile tanımlanan usul ve esaslar aranacaktır. E-Rapor sisteminin uygulanmasına dair",
+      "text": "tanımlanan usul ve esaslar ile ilgi (b) yönerge hükümlerine uygun olmayan istirahat raporları hastalık iznine\nçevrilmeyecektir."
+    },
+    {
+      "id": "su-1-3-2",
+      "article": "1.3.2",
+      "title": "Tüm sağlık hizmet sunucuları “Sosyal Güvenlik Kurumu îş Göremezlik Uygulamasını (e-Rapor",
+      "text": "sistemini)” kullanarak istirahat raporu düzenlemekle görevlidir. İş göremezlik sisteminde (e-Rapor sisteminde)\nhata nedeniyle rapor düzenlenemeyen durumlarda ilgi (b) yönergenin ekindeki İstirahat Rapor Formatına uygun\nşekilde manuel rapor düzenlenebilecektir. E-Rapor sisteminde kullanılan istirahat raporunun formatı hakkında\nilgi (b) yönergede özel bir tanımlama bulunmamaktadır.\nBu nedenle;"
+    },
+    {
+      "id": "su-1-3-2-1",
+      "article": "1.3.2.1",
+      "title": "îlgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrası hükmü gereği e-Devlet kapısı üzerinden",
+      "text": "kişilere gönderilen rapor formatı (Ek-1) üzerinden işlem yapılacaktır. Bu istirahat raporu formatında\nhekim/hekimlerin ıslak imzası aranmayacaktır. îlgi (b) yönergenin aynı maddesi hükmü gereği de izin vermeye\nyetkili kılınan birim amiri tarafından bahse konu istirahat raporunun doğrulaması yapılacaktır.\n____________________________________________\nW\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA Ayrıntılı Bilgi : Dr. Levent ÖCALAN\nç' □\n: shsdrapor@egm.gov.tr\nx"
+    },
+    {
+      "id": "su-1-3-2-2",
+      "article": "1.3.2.2",
+      "title": "E-Devlet kapısı üzerinden kişilere gönderilmesi gereken istirahat raporları, ilgi (a) Yönetmelik",
+      "text": "ile tanımlı olan sürede kişilere ulaşmaz ise veya ulaşmayacağı anlaşılır ise; “Sosyal Güvenlik Kurumu îş\nGöremezlik Uygulamasında (e-Rapor sisteminde)” tanımlı olan işlemler neticesinde düzenlenen istirahat raporu\nformatının onaylı bir çıktısı (Ek-2) hekim/hekimlerden talep edilerek veya ilgi (b) yönergenin 6 ncı maddesinin\n3 üncü fıkrası hükmü gereği ilgi (b) yönergenin ekindeki “İstirahat Rapor Formatma” uygun şekilde manuel rapor\ndüzenlenmesi ve onaylanması hekim/hekimlerden talep edilerek izin vermeye yetkili birim amirine ulaştırılabilir."
+    },
+    {
+      "id": "su-1-4",
+      "article": "1.4",
+      "title": "Bölüm 1.4",
+      "text": "İstirahat Raporunun Birim Amirine Ulaştırılması"
+    },
+    {
+      "id": "su-1-4-1",
+      "article": "1.4.1",
+      "title": "Kendisi hakkında istirahat raporu düzenlenen personel, bahse konu istirahat raporu, ilgi (b)",
+      "text": "yönergenin 6 ncı maddesinin 1 inci fıkrası kapsamında düzenlenmiş ve aynı yönergenin 6 ncı maddesinin 2 nci\nfıkrası kapsamında e-Devlet kapısı üzerinden sadece rapor sahibinin görebileceği bir istirahat raporu ise; bu\nraporun çıktısını almak suretiyle veya bu raporun ilgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrasında tanımlı\nolduğu üzere birim amiri tarafından doğrulanabilmesini, görülebilmesini sağlayan bilgiyi bildirmek suretiyle, en\ngeç raporun düzenlendiği günü takip eden mesai gününün bitimine kadar birim amirine gerekli bilgiyi veya evrakı\nulaştırmakla görevlidir, aksi takdirde bahse konu istirahat raporu usule aykırı olarak değerlendirilecektir."
+    },
+    {
+      "id": "su-1-4-2",
+      "article": "1.4.2",
+      "title": "îlgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrasında tanımlı olan şekilde, kişilerin e-Devlet kapısı",
+      "text": "üzerinden görüntülenebilen istirahat raporunun; ilgi (b) yönergenin aynı maddesi kapsamında birim amiri\ntarafından doğrulaması yapılabildiği, bahse konu evrak usulen bütün bir istirahat raporu olarak birim amiri\ntarafından görülebildiği ve bu istirahat raporunda evrak aslından bahsedilemeyeceği için istirahat süresi bitiminde\nbahse konu evrakın birim amirine ulaştırılma zorunluluğu olmayacaktır."
+    },
+    {
+      "id": "su-1-4-3",
+      "article": "1.4.3",
+      "title": "Gerekli olan bilgi kendisine ulaştırılmamış olan birim amirinin ilgi (b) yönergenin 6 ncı maddesinin",
+      "text": "2 nci fıkrası ile tanımlı olan şekilde bahse konu istirahat raporunu görme yetkisi olmadığı gibi bu şekilde bir\nsorumluluğu da bulunmamaktadır. Bahse konu istirahat raporunu da, bu raporun birim amirince görülebilmesini\nsağlayan gerekli bilgiyi de ilgi (a) Yönetmelikte tanımlı olan sürede birim amirine ulaştırmak ilgili personelin\ngörevidir."
+    },
+    {
+      "id": "su-1-4-4",
+      "article": "1.4.4",
+      "title": "Bahse konu istirahat raporu, ilgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrasında tanımlı olan usulde",
+      "text": "e-Devlet kapısı üzerinden paylaşıma açılan ve birim amiri tarafından doğrulanabilen, görülebilen bir istirahat\nraporu değilse; ilgili personel tarafından bahse konu istirahat raporunun aslı veya bir örneği, en geç raporun\ndüzenlendiği günü takip eden mesai gününün bitimine kadar birim amirine ulaştırılmalıdır. Aksi takdirde bahse\nkonu istirahat raporu usule aykırı olarak değerlendirilecektir. Örneği gönderilen raporun aslı, hastalık izninin\nbitiminde birim amirine ulaştırılmalıdır."
+    },
+    {
+      "id": "su-1-5",
+      "article": "1.5",
+      "title": "Bölüm 1.5",
+      "text": "İstirahat Raporlarının Usule Uygunluğunun Değerlendirilmesi"
+    },
+    {
+      "id": "su-1-5-1",
+      "article": "1.5.1",
+      "title": "İstirahat raporu veya ilgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrasında tanımlı olan şekilde",
+      "text": "istirahat raporunun görülebilmesi için gerekli olan bilgi, ilgi (a) Yönetmelikte tanımlı olan sürede kendisine\nulaştırılan birim amiri, genel mevzuat hükümleri ve bu genelge hükümleri çerçevesinde usule uygunluk yönünden\ngereken değerlendirmeyi yapar. Bu değerlendirme işlemi için tanımlı olan bir süre yoktur, bu nedenle en kısa\nsürede gereken değerlendirme yapılmalıdır ve uygun görülen istirahat raporları, fenne uygunluk yönünden de\ntereddüt yoksa “hastalık iznine” çevrilmelidir. Hastalık iznine çevrilmeyen istirahat raporları kanuni izin anlamı\ntaşımamaktadır."
+    },
+    {
+      "id": "su-1-5-2",
+      "article": "1.5.2",
+      "title": "İstirahat raporu, usule uygunluğunun denetlenmesi için hakem hastanelere sevk edilemez,",
+      "text": "hekimliklere gönderilemez."
+    },
+    {
+      "id": "su-1-5-3",
+      "article": "1.5.3",
+      "title": "İstirahat raporunda usule aykırı bir durum tespit edildiğinde, usule aykırı olan durum ve istirahat",
+      "text": "raporunun hastalık iznine çevrilmediği, bildirimin yapıldığı günü takip eden gün görevine gelmekle yükümlü\nolduğu memura yazılı olarak bildirilir ve hastalık izin onayı verilmez. Bu bildirimin yapıldığı günü takip eden\ngün memur görevine gelmekle yükümlüdür. Göreve gelmemesi halinde gelmediği her gün için tutanak tutulur ve\nmevzuat hükümleri çerçevesinde gereği yapılır."
+    },
+    {
+      "id": "su-1-5-4",
+      "article": "1.5.4",
+      "title": "Usule aykırı olan istirahat raporunun usule uygun hale getirilmesi memurun kendi",
+      "text": "sorumluluğundadır."
+    },
+    {
+      "id": "su-1-6",
+      "article": "1.6",
+      "title": "Bölüm 1.6",
+      "text": "İstirahat Raporlarının Fenne Uygunluğunun Değerlendirilmesi"
+    },
+    {
+      "id": "su-1-6-1",
+      "article": "1.6.1",
+      "title": "İzin vermeye yetkili kılınan birim amiri tarafından, istirahat raporunun fenne uygunluğu yönünden",
+      "text": "tereddüt oluşması durumunda, söz konusu istirahat raporu hastalık iznine çevrilmeyerek, düzenlenmiş olan\nistirahat raporu ile birlikte memurun bulunduğu yere en yakın hakem hastaneye kişinin şevki sağlanır. Bu\nhastanenin, ilgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde yer alan Emniyet Teşkilatı personeli sağlık\nraporları konusunda yetkilendirilmiş hastaneler olması gerektiği anlaşılmamalıdır. îlgi (b) yönerge eki Ek-12\nHakem Hastane Listesinde yer alan tüm hastaneler arasından, kişinin bulunduğu yere en yakın aynı veya üst\nroldeki bir hastanenin birim amiri tarafından seçilmesi uygundur.\n_______________________________________________________________________________________________________ A_______\n: Ayrancı Mah. Dikmen Cad.No:l 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr\n\\ \\\nM"
+    },
+    {
+      "id": "su-1-6-2",
+      "article": "1.6.2",
+      "title": "Hakem hastaneye yapılacak olan şevkte; “istirahat raporunda belirtilen tanının kişide bulunup",
+      "text": "bulunmadığı” ve “istirahat raporunda belirtilen tanı kişide varsa, belirlenen istirahat süresinin fenne uygun olup\nolmadığı” sorulur. Yapılacak olan bu sevk işleminde ilgi (b) yönergenin 36 ncı maddesinde tanımlanan usul ve\nesaslara göre işlem yapılır."
+    },
+    {
+      "id": "su-1-6-3",
+      "article": "1.6.3",
+      "title": "Fenne uygunluk tespiti için yapılan hakem hastaneye sevk işlemi süresince kişi hastalık iznini",
+      "text": "kullanıyor sayılır."
+    },
+    {
+      "id": "su-1-6-4",
+      "article": "1.6.4",
+      "title": "Fenne uygunluk tespiti için yapılan hakem hastaneye sevk işlemine memurun gitmemesi",
+      "text": "durumunda, amirin emrini yapmamakla ilgili disiplin hükümleri uygulanır."
+    },
+    {
+      "id": "su-1-6-5",
+      "article": "1.6.5",
+      "title": "Hakem hastane tarafından, ilgili istirahat raporunun fenne uygun olmadığı yönünde sağlık kurulu",
+      "text": "raporu şeklinde düzenlenmiş sonuç raporu birim amirine geldiğinde; memura, “istirahat raporunun fenne aykırı\nolması sebebiyle hastalık iznine çevrilmediğine ve görevine başlaması gerektiğine” ilişkin yazılı bildirim yapılır.\nYazılı bildirim yapılmasına rağmen personelin, yazılı bildirimin yapıldığı günü takip eden günün mesai saati\nbitimine kadar görevine başlamaması halinde ise söz konusu memur izinsiz ve özürsüz olarak görevini terk etmiş\nsayılır."
+    },
+    {
+      "id": "su-1-6-6",
+      "article": "1.6.6",
+      "title": "Süresi bitmiş olan istirahat raporları fenne uygunluk tespiti için hakem hastanelere sevk edilemez.",
+      "text": "İstirahat raporları en kısa sürede usule ve fenne uygunluğu yönünden denetlenmeli, aykırı bulunan durumlar\nkişiye yazılı olarak bildirilmelidir."
+    },
+    {
+      "id": "su-1-6-7",
+      "article": "1.6.7",
+      "title": "Fenne aykırı olduğu tespit edilen istirahat raporunun düzenlenmesi ile ilgili memura atfedilecek bir",
+      "text": "sorumluluğun bulunması halinde ilgili memur hakkında gereği yapılır."
+    },
+    {
+      "id": "su-1-6-8",
+      "article": "1.6.8",
+      "title": "İstirahat raporunun fenne uygunluğunun tespiti amacıyla yapılan şevklerde, 03.01.2018 tarihli ve",
+      "text": "30290 sayılı Resmî Gazete’de yayımlanan Emniyet Teşkilatı Sağlık Şartları Yönetmeliği (ETSŞY)’ne göre dilim\nbelirtilmesi istenemez. ETSŞY’ye göre aldırılan son durum ve dilim belirtir sağlık kurulu raporları “nihai\ndurumu” yansıtan raporlardır. Kişilerin istirahatleri (hastalık izinleri) devam ederken, kendileri istemediği sürece\nETSŞY’ye göre düzenlenen son durum ve dilim belirtir sağlık kurulu raporu aldırılmak için şevkleri yapılamaz."
+    },
+    {
+      "id": "su-1-7",
+      "article": "1.7",
+      "title": "İstirahat Raporlarının ETSŞY’nin 15 inci Maddesinin (2) nci Fıkrası Gereği Hekimliklere",
+      "text": "İncelettirilmesi"
+    },
+    {
+      "id": "su-1-7-1",
+      "article": "1.7.1",
+      "title": "Tek hekim raporu şeklinde düzenlenmiş istirahat raporları hastalık iznine çevrildikten sonra, izin",
+      "text": "vermeye yetkili kılınan birim amiri tarafından istirahat raporları üzerine “birim amiri tarafından incelenmiştir,\nuygundur” şeklinde onay yapılarak, kişinin dosyasında muhafaza edilir, hekimliklere gönderilmez. İstirahat\nraporunun tanısı ile rapor süresinin uyumlu olup olmadığı veya ETSŞY’ye göre düzenlenen son durum ve dilim\nbelirtir sağlık kurulu raporu aldırılması gerekip gerekmediği ile ilgili tereddüt olması durumunda hekimliklere\nincelettirilebilir."
+    },
+    {
+      "id": "su-1-7-2",
+      "article": "1.7.2",
+      "title": "Sağlık kurulu raporu şeklinde düzenlenmiş istirahat raporları hastalık iznine çevrildikten sonra, izin",
+      "text": "vermeye yetkili kılınan birim amiri tarafından istirahat raporları üzerine “birim amiri tarafından incelenmiştir,\nuygundur” şeklinde onay yapılarak, ETSŞY’nin 15 inci maddesi hükmü gereği incelenmek üzere hekimliklere\ngönderilir."
+    },
+    {
+      "id": "su-1-7-3",
+      "article": "1.7.3",
+      "title": "Tek hekim tarafından veya sağlık kurulunca düzenlenmiş psikiyatrik tamlı istirahat raporu birim",
+      "text": "amirine ulaştığında ETSŞY’nin 23 üncü maddesinin (4) üncü fıkrası hükmü gereği işlem yapılır. İstirahat raporu\nfenne uygun bulunmazsa, memur, birim amiri tarafından ivedilikle fenne uygunluk tespiti için hakem hastaneye\nsevk edilir. Bu hastanenin, ilgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde yer alan Emniyet Teşkilatı\npersoneli sağlık raporları konusunda yetkilendirilmiş hastaneler olması gerektiği anlaşılmamalıdır. îlgi (b)\nyönerge eki Ek-12 Hakem Hastane Listesinde yer alan tüm hastaneler arasından, kişinin bulunduğu yere en yakın\naynı veya üst roldeki bir hastanenin birim amiri tarafından seçilmesi uygundur. Bu sevk işleminde, ilgi (b)\nyönergenin 36 ncı maddesi hükümlerine göre işlem yapılır. İstirahat raporunda yazılan tanı/tanılar için\nETSŞY’nin 15 inci maddesinin (2) nci fıkrası hükmü gereği dilim ve detaylı son durum belirtir sağlık kurulu\nraporu aldırılması uygun bulunursa hastalık izni bitiminde memur birim amiri tarafından hastaneye sevk edilir."
+    },
+    {
+      "id": "su-1-8",
+      "article": "1.8",
+      "title": "Bölüm 1.8",
+      "text": "Hastalık İzninin Nerede Kullanılacağı"
+    },
+    {
+      "id": "su-1-8-1",
+      "article": "1.8.1",
+      "title": "Hastalık izninin geçirileceği adres belirtilerek birim amirinin bilgisi dahilinde görev mahalli dışına",
+      "text": "çıkmakta bir sakınca yoktur."
+    },
+    {
+      "id": "su-1-8-2",
+      "article": "1.8.2",
+      "title": "İstirahat raporları, izin vermeye yetkili kılınan birim amiri tarafından “hastalık iznine”",
+      "text": "çevrilmedikçe hastalık izni anlamı taşımamaktadır."
+    },
+    {
+      "id": "su-1-9",
+      "article": "1.9",
+      "title": "Bölüm 1.9",
+      "text": "Kanuni İzinli Günlerde Görev Mahalli Dışından Alınan İstirahat Raporuna Yapılacak İşlemler"
+    },
+    {
+      "id": "su-1-9-1",
+      "article": "1.9.1",
+      "title": "Görev mahalli dışından alınan istirahat raporunda usule aykırı bir durum tespit edilmesi durumunda,",
+      "text": "usule aykırı durumu memura yazılı olarak bildirmek izin vermeye yetkili kılman birim amirinin görevidir.\nAyrancı Mah. Dikmen Cad.No;! 1 Çankaya 06100 ANKARA\n03124624660\nshsdrapor@egm.gov.tr\n\nMemurun o an için bulunduğu ilin Î1 Emniyet Müdürlüğü, bahse konu evrakı kişiye en kısa sürede ve usulüne\nuygun şekilde tebliğ etmekle görevlidir."
+    },
+    {
+      "id": "su-1-9-2",
+      "article": "1.9.2",
+      "title": "Görev mahalli dışından alman istirahat raporunun fenne uygun olmadığı yönünde tereddüt",
+      "text": "bulunması halinde, izin vermeye yetkili kılınan birim amiri tarafından, memurun bulunduğu yerdeki en yakın\nhakem hastaneye memurun şevki yapılır. Bu hastanenin, ilgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde\nyer alan Emniyet Teşkilatı personeli sağlık raporları konusunda yetkilendirilmiş hastaneler olması gerektiği\nanlaşılmamalıdır. İlgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde yer alan tüm hastaneler arasından, kişinin\nbulunduğu yere en yakın aynı veya üst roldeki bir hastanenin birim amiri tarafından seçilmesi uygundur. Bu sevk\nişleminde, ilgi (b) yönergenin 36 ncı maddesi hükümlerine göre işlem yapılır. Bu durumda memuru sevk etmek\nizin vermeye yetkili kılınan birim amirinin görevidir. Memurun o an için bulunduğu ilin Î1 Emniyet Müdürlüğü,\nbahse konu sevk evrakını kişiye en kısa sürede ve usulüne uygun şekilde tebliğ etmekle görevlidir."
+    },
+    {
+      "id": "su-1-10",
+      "article": "1.10",
+      "title": "Bölüm 1.10",
+      "text": "Yurt Dışından Alınan İstirahat Raporuna Yapılacak İşlemler"
+    },
+    {
+      "id": "su-1-10-1",
+      "article": "1.10.1",
+      "title": "Yurtdışından alman istirahat raporları, ilgili ülkenin mahalli mevzuatına göre düzenlenir.",
+      "text": "Yurtdışından alman istirahat raporlarına hastalık izni verilebilmesi için “rapor ve raporda belirtilen süreler ülke\nmevzuatına uygundur' şeklinde ilgili raporun dış temsilciliklerce onaylanması gerekir, aksi takdirde hastalık izni\nverilemez."
+    },
+    {
+      "id": "su-1-10-2",
+      "article": "1.10.2",
+      "title": "Yurtdışından alman istirahat raporlarına istinaden hastalık izni verilebilmesi için istirahat",
+      "text": "raporunun aslının veya bir örneğinin en geç raporun düzenlendiği günü takip eden günün mesai saati bitimine\nkadar elektronik ortamda veya uygun yollarla izin vermeye yetkili kılınan birim amirine ulaştırılması\ngerekmektedir. Yıllık iznini yurtdışında geçiren memurların aldıkları istirahat raporlarının aslı, dış\ntemsilciliklerce onaylanmalarına müteakip en geç izin bitim tarihinde disiplin amirlerine intikal ettirilir."
+    },
+    {
+      "id": "su-1-10-3",
+      "article": "1.10.3",
+      "title": "Yurt içinden alman istirahat raporu gibi yurtdışından alman istirahat raporları da izin vermeye",
+      "text": "yetkili kılınan birim amirlerince değerlendirilecektir."
+    },
+    {
+      "id": "su-1-10-4",
+      "article": "1.10.4",
+      "title": "Yurtdışından alınan istirahat raporlarının fenne aykırılığı hususunda tereddüt hasıl olması halinde,",
+      "text": "ilgili dış temsilcilik aracılığıyla anılan raporun fenne uygunluğunun tespitine yönelik o ülke mevzuatında\nöngörülen usullerin işletilmesi gerekmektedir."
+    },
+    {
+      "id": "su-1-10-5",
+      "article": "1.10.5",
+      "title": "Yurtdışından alman istirahat raporu süresi, yurt içinden alınan istirahat rapor süreleri ile birlikte",
+      "text": "hesaplanırken, ilgi (a) Yönetmeliğin 6 ncı maddesinin 1 inci fıkrasındaki izin sürelerine dahil edilir."
+    },
+    {
+      "id": "su-1-10-6",
+      "article": "1.10.6",
+      "title": "Yurtdışı doktor raporunda (istirahat raporunda), hastalık tanısı ile birlikte karar olarak “... tarihine",
+      "text": "kadar çalışamaz”, “... tarihine kadar istirahatlidir”, “... gün istirahatlidir” anlamına gelen kesin hükümler\nyazılmalıdır."
+    },
+    {
+      "id": "su-1-11",
+      "article": "1.11",
+      "title": "Mehil Müddeti Süresinde Alınan İstirahat Raporları",
+      "text": "Mehil müddetinde olan ve yeni görev yerine başlamamış olan memur, almış olduğu istirahat raporunun bir\nörneğini veya bu raporun birim amiri tarafından ilgi (b) yönergenin 6 ncı maddesinin 2 nci fıkrasında tanımlı olan\nşekilde görülebilmesini, doğrulanabilmesini sağlayan bilgiyi en geç raporun düzenlendiği günü takip eden günün\nmesai saati bitimine kadar ilişik kestiği birime ulaştırmalıdır. Memurun ilişik kestiği il tarafından bu rapor usul\nve fen yönünden değerlendirilir ve uygun bulunması durumunda hastalık iznine çevrilir. Uygun görülmeyen\nraporlar hakkında yapılması gerekenler, ilişik kestiği birim tarafından yapılır.\nBu madde hükmünün uygulanması ile ilgili; gerek istirahat raporu formatı, gerek istirahat raporunun birim\namirine ulaştırılması, gerekse de diğer işlemlerde, bu Genelge ile tanımlanan usul ve esaslar geçerlidir."
+    },
+    {
+      "id": "su-1-12",
+      "article": "1.12",
+      "title": "Hastalık İzni Bitmeden Göreve Başlama",
+      "text": "Hastalık izni süresi bitmeden memurun göreve başlamak istemesi halinde, hastalık izni kesilerek görevine\nbaşlatılabilmesi için istirahat raporunda belirtilen tanıdan/tanılardan dolayı memurun iyileştiğine dair tek hekim\nraporu veya sağlık kurulu raporu bulunması gerekmektedir. Aksi takdirde, hastalık izni bitmeyen memur göreve\nbaşlatılamaz."
+    },
+    {
+      "id": "su-1-13",
+      "article": "1.13",
+      "title": "Bölüm 1.13",
+      "text": "Hastanede Yatış İşleminden Sonra Düzenlenen İstirahat Raporları"
+    },
+    {
+      "id": "su-1-13-1",
+      "article": "1.13.1",
+      "title": "Hastanede yatış işleminin son günü olan taburculuk gününde memur istirahatli sayılır.",
+      "text": "Düzenlenecek istirahat raporu, taburculuktan bir gün sonra başlamak üzere düzenlenir ve ilgili istirahat raporunun\nhastalık izninin birinci günü taburculuktan sonraki gündür."
+    },
+    {
+      "id": "su-1-13-2",
+      "article": "1.13.2",
+      "title": "Kanuni izinlerini kullanmakta iken memuriyet mahalli dışındaki bir sağlık hizmet sunucusuna",
+      "text": "yatışı yapılan memurun, yatışın sonunda düzenlenen istirahat raporunun hastalık iznine çevrilmesi\ngerekmektedir.\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr"
+    },
+    {
+      "id": "su-1-14",
+      "article": "1.14",
+      "title": "Bölüm 1.14",
+      "text": "Sağlık Hizmet Sunucularında Geçen Süre"
+    },
+    {
+      "id": "su-1-14-1",
+      "article": "1.14.1",
+      "title": "Personelin hastalanması nedeniyle sağlık hizmet sunucularına müracaat ederek söz konusu sağlık",
+      "text": "hizmet sunucularında muayene edilmesi sırasında ya da muayene sonrası tetkik ve tahlillerde geçirdiği süreler\niçin gereken kolaylığın gösterilmesi gerekmektedir. Sağlık hizmet sunucularında geçirilen sürelerin suistimal\nedildiği yönünde kanaate varılması halinde personelden, sağlık hizmet sunucularında muayene edildiğine veya\nmuayene sonrası tetkik ve tahlil yaptırdığına dair belge istenebilir."
+    },
+    {
+      "id": "su-1-14-2",
+      "article": "1.14.2",
+      "title": "Mesai saatinin bitiminden sonra sağlık hizmet sunucularına başvurarak istirahat raporu alınması",
+      "text": "halinde, istirahat raporunun alındığı gün, hastalık izninin başlangıç tarihi olarak belirlenir ve söz konusu raporun\nilgi (a) Yönetmelikte yer verilen usul ve esaslara uygun olması halinde hastalık iznine çevrilmesi gerekir.\n2- REFAKAT İZNİ"
+    },
+    {
+      "id": "su-2-1",
+      "article": "2.1",
+      "title": "Bölüm 2.1",
+      "text": "Refakat Sebebiyle Verilecek İzne Esas Teşkil Edecek Sağlık Kurulu Raporu"
+    },
+    {
+      "id": "su-2-1-1",
+      "article": "2.1.1",
+      "title": "Refakat sebebiyle izin verilmesine esas teşkil edecek olan raporlar durum bildirir şekilde düzenlenen",
+      "text": "sağlık kurulu raporu olmalıdır."
+    },
+    {
+      "id": "su-2-1-2",
+      "article": "2.1.2",
+      "title": "Bu raporlar resmi veya özel sağlık hizmet sunucularından alınabilir. Refakat izni verilmesine esas",
+      "text": "teşkil edecek olan sağlık kurulu raporunun SGK ile sözleşmesi olmayan özel sağlık hizmet sunucusundan\nalınması halinde, söz konusu rapor SGK ile sözleşmeli sağlık hizmet sunucusunun sağlık kurulu tarafından\nonaylandığı takdirde geçerli olacaktır."
+    },
+    {
+      "id": "su-2-1-3",
+      "article": "2.1.3",
+      "title": "Refakat izni verilmesine esas teşkil edecek olan sağlık kurulu raporunun, en geç raporun",
+      "text": "düzenlendiği günü takip eden günün mesai saati bitimine kadar izin vermeye yetkili kılınan birim amirine\nulaştırılması gerekir."
+    },
+    {
+      "id": "su-2-1-4",
+      "article": "2.1.4",
+      "title": "Bölüm 2.1.4",
+      "text": "İlgili sağlık kurulu raporları izin vermeye yetkili kılınan birim amiri tarafından incelenir."
+    },
+    {
+      "id": "su-2-1-5",
+      "article": "2.1.5",
+      "title": "Memur refakat etmediği takdirde hayati tehlikeye girecek anne, baba, eş ve çocuklar ile kardeşler",
+      "text": "için refakat izni kullanabilir."
+    },
+    {
+      "id": "su-2-1-6",
+      "article": "2.1.6",
+      "title": "Refakat sebebiyle izin verilmesine esas teşkil edecek olan sağlık kurulu raporunda;",
+      "text": "J Refakati gerektiren tıbbi sebeplerin,\nJ Refakat edilmediği takdirde hayati tehlike bulunduğunun,\nJ Sürekli ve yakın bakım gerektiğinin,\nJ Üç ayı geçmeyecek şekilde refakat süresinin,\nyer alması gerekmekte olup, bahsi geçen hususların hepsinin sağlık kurulu raporunda bulunması zorunludur ve\nbu dört unsurdan herhangi birini içermeyen sağlık kurulu raporuna istinaden refakat izninin verilmesi mümkün\ndeğildir."
+    },
+    {
+      "id": "su-2-1-7",
+      "article": "2.1.7",
+      "title": "Sağlık kurulu raporunda bulunması gereken kriterler, memurun hastaya bakmakla yükümlü olup",
+      "text": "olmadığına göre farklılık göstermez."
+    },
+    {
+      "id": "su-2-1-8",
+      "article": "2.1.8",
+      "title": "Hastaya bakacak başka kardeşlerin veya eşin bulunması halinde de memurun refakat izni kullanması",
+      "text": "mümkündür."
+    },
+    {
+      "id": "su-2-1-9",
+      "article": "2.1.9",
+      "title": "Bölüm 2.1.9",
+      "text": "Aynı hastayla ilgili olarak aynı dönemde birden fazla memur refakat izni kullanamaz."
+    },
+    {
+      "id": "su-2-1-10",
+      "article": "2.1.10",
+      "title": "Bölüm 2.1.10",
+      "text": "Sağlık kurulu raporunda refakatçinin adının ve soyadının yazılmasına gerek yoktur."
+    },
+    {
+      "id": "su-2-1-11",
+      "article": "2.1.11",
+      "title": "Bölüm 2.1.11",
+      "text": "Refakat izni, hastanın tedavisinin evde veya hastanede olmasına bağlı değildir."
+    },
+    {
+      "id": "su-2-1-12",
+      "article": "2.1.12",
+      "title": "Bölüm 2.1.12",
+      "text": "Refakat izni verildikten sonra memur hastası ile sürekli ve yakından ilgilenmelidir."
+    },
+    {
+      "id": "su-2-1-13",
+      "article": "2.1.13",
+      "title": "Refakat izni verilen personele yolluk ve harcırah verilmesi mümkün değildir. Refakat izni ile",
+      "text": "birlikte ayrıca yol süresinin verilmesi de mümkün değildir."
+    },
+    {
+      "id": "su-2-2",
+      "article": "2.2",
+      "title": "Bölüm 2.2",
+      "text": "Refakat İzninde Süre"
+    },
+    {
+      "id": "su-2-2-1",
+      "article": "2.2.1",
+      "title": "Aynı kişinin aynı hastalığı veya aynı vakasına dayalı olarak verilecek refakat izninin toplam süresi",
+      "text": "memuriyet süresi boyunca altı ayı geçemez. Azami 6 ay süreden sonra memurun tekrar refakat izni kullanabilmesi\niçin ya hastanın değişmesi ya da aynı hastayla ilgili olarak öncekinden tamamen bağımsız yeni bir hastalığın veya\nvakanın ortaya çıkması gerekir."
+    },
+    {
+      "id": "su-2-2-2",
+      "article": "2.2.2",
+      "title": "Bölüm 2.2.2",
+      "text": "Refakat izni bir seferde en fazla 3 ay verilebilir."
+    },
+    {
+      "id": "su-2-2-3",
+      "article": "2.2.3",
+      "title": "Tek seferde azami 3 ay verilebilen refakat izninin haftada 1 gün veya ayda 4 gün gibi parça parça",
+      "text": "kullanılması mümkün değildir. Sağlık kurulu raporunda uygun görülen refakat süresi kesintisiz kullanılır. Refakat\nizni yarıda kesilerek göreve başlanılmasından sonra yarı bırakılan refakat izninin kalan kısmının kullanılabilmesi\niçin ilgi (a) Yönetmelikte öngörülen şartları karşılayan yeni tarihli sağlık kurulu raporu alınmalıdır."
+    },
+    {
+      "id": "su-2-2-4",
+      "article": "2.2.4",
+      "title": "Bölüm 2.2.4",
+      "text": "Refakat izninin başlangıç tarihi sağlık kurulu raporunun tarihidir."
+    },
+    {
+      "id": "su-2-2-5",
+      "article": "2.2.5",
+      "title": "Refakat izni sebebinin son bulması halinde memur derhal görevine dönmelidir. Refakat izni sebebi",
+      "text": "son bulmasa da memur iznini yarıda keserek görevine dönebilir.\n: Ayrancı Mah. Dikmen Cad.Noıl 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr"
+    },
+    {
+      "id": "su-2-2-6",
+      "article": "2.2.6",
+      "title": "Sağlık kurulu raporuna dayalı olarak ve söz konusu raporda ilgi (a) Yönetmelikte öngörülen şartların",
+      "text": "bulunması halinde, her defasında yeni bir sağlık kurulu raporu alınması koşuluyla refakat izni azami süre\ndahilinde kısım kısım kullanılabilir. 3 aylık azami refakat izni süresinin bitiminde bu istirahatin uzatılması talep\nediliyorsa yeniden, ilgi (a) Yönetmelikte öngörülen şartları karşılayan yeni tarihli sağlık kurulu raporu alınması\ngerekmektedir."
+    },
+    {
+      "id": "su-2-2-7",
+      "article": "2.2.7",
+      "title": "Söz konusu rapor, ilgi (a) Yönetmelik ile tanımlanan hükümlere uygun ise rapor tarihi başlangıç",
+      "text": "olmak üzere refakat izni kullandırılır. Uygulamada aksaklık olmaması için, refakat iznine ihtiyaç duyulan anda\nsağlık kurulu raporu alınması, ileride kullanılmak üzere ilgili raporun bekletilmemesi gerekmektedir."
+    },
+    {
+      "id": "su-2-2-8",
+      "article": "2.2.8",
+      "title": "Söz konusu rapor ilgi (a) Yönetmelik ile tanımlanan hükümlere aykırı ise, bu durum memura yazılı",
+      "text": "olarak bildirilir, bildirimin yapıldığı günü takip eden gün memur görevine gelmekle yükümlüdür. Bildirimin\nyapılmasına rağmen görevlerine başlamayan memurlar izinsiz ve özürsüz olarak görevlerini terk etmiş sayılır."
+    },
+    {
+      "id": "su-2-3",
+      "article": "2.3",
+      "title": "Bölüm 2.3",
+      "text": "Yurtdışından Alınan Rapora İstinaden Refakat İzni"
+    },
+    {
+      "id": "su-2-3-1",
+      "article": "2.3.1",
+      "title": "Refakat sebebiyle izin verilmesine esas teşkil edecek raporda,",
+      "text": "J Refakati gerektiren tıbbi sebeplerin,\nJ Refakat edilmediği takdirde hayati tehlike bulunduğunun,\nJ Sürekli ve yakın bakım gerektiğinin,\nJ Üç ayı geçmeyecek şekilde refakat süresinin,\nyer alması gerekmekte olup, bahsi geçen hususların hepsinin raporda bulunması zorunludur ve bu dört\nunsurdan herhangi birini içermeyen rapora istinaden refakat izninin verilmesi mümkün değildir."
+    },
+    {
+      "id": "su-2-3-2",
+      "article": "2.3.2",
+      "title": "Raporun, “ilgili ülke mevzuatına uygun olup olmadığı” ve “ilgili ülke mevzuatında hastalık",
+      "text": "durumunda sağlık kurulu raporu tanzim edilip edilmediği” hususlarında dış temsilciliğin onayının alınması\ngerekmektedir."
+    },
+    {
+      "id": "su-2-4",
+      "article": "2.4",
+      "title": "Bölüm 2.4",
+      "text": "Refakat Sebebiyle Aylıksız İzin"
+    },
+    {
+      "id": "su-2-4-1",
+      "article": "2.4.1",
+      "title": "Refakat sebebiyle verilen iznin bitiş tarihi itibariyle ve sağlık kurulu raporu ile belgelenmesi şartıyla",
+      "text": "657 sayılı Devlet Memurları Kanunun 108 (A) bendi uyarınca 18 aya kadar refakat sebebiyle aylıksız izin\nverilebilir."
+    },
+    {
+      "id": "su-2-4-2",
+      "article": "2.4.2",
+      "title": "Bölüm 2.4.2",
+      "text": "İlgili sağlık kurulu raporları izin vermeye yetkili kılınan birim amiri tarafından incelenir."
+    },
+    {
+      "id": "su-2-4-3",
+      "article": "2.4.3",
+      "title": "Personele, refakat sebebiyle aylıksız izin verilmesine esas olacak sağlık kurulu raporunda bulunması",
+      "text": "gereken ifadelere ilişkin olarak herhangi bir mevzuat hükmü yer almamakla birlikte; söz konusu aylıksız iznin\nrefakat izninin bitiminden itibaren aynı amaç doğrultusunda verilmesi sebebiyle refakat izni verilmesine esas\nteşkil eden sağlık kurulu raporunda bulunması gereken ifadelerin, memura refakat sebebiyle aylıksız izin\nverilmesine esas teşkil edecek olan sağlık kurulu raporunda da bulunması gerekir."
+    },
+    {
+      "id": "su-2-4-4",
+      "article": "2.4.4",
+      "title": "Bölüm 2.4.4",
+      "text": "Refakat sebebiyle aylıksız izin verilebilmesi için personelin refakat iznini kullanmış olması gerekir."
+    },
+    {
+      "id": "su-2-4-5",
+      "article": "2.4.5",
+      "title": "Refakat sebebiyle verilecek aylıksız iznin başlangıç tarihinin, refakat izninin bitiş tarihi olarak",
+      "text": "belirlenmesi gerekir."
+    },
+    {
+      "id": "su-2-4-6",
+      "article": "2.4.6",
+      "title": "Refakat sebebiyle verilecek aylıksız iznin bitiş tarihi, refakat izninin bitiş tarihinden itibaren 18 aylık",
+      "text": "sürenin bitimini hiçbir surette geçemez."
+    },
+    {
+      "id": "su-2-4-7",
+      "article": "2.4.7",
+      "title": "6 aylık refakat izninin bitiminden itibaren belirli bir süre geçtikten sonra personelin refakat sebebiyle",
+      "text": "aylıksız izin talebinde bulunması halinde, refakat izninin bitiş tarihi ile refakat sebebiyle verilecek aylıksız iznin\nbaşlangıç tarihi arasında geçen sürenin 18 aylık süreden çıkarılması gerekir."
+    },
+    {
+      "id": "su-2-4-8",
+      "article": "2.4.8",
+      "title": "Refakat sebebiyle verilen 18 aylık aylıksız iznini kullanırken mazereti ortadan kalkan memurun 657",
+      "text": "sayılı Kanunun 108 inci maddesinin (F) bendi uyarınca görevine dönmesi gerekir; fakat göreve başladıktan sonra\nhastasının rahatsızlığının nüksetmesi halinde personele bu durumu sağlık kurulu raporuyla belgelendirmesi\nşartıyla refakat izninin bitiş tarihini takip eden 18 aylık sürenin bitimini aşmayacak şekilde kalan süre kadar tekrar\naylıksız izin verilir.\n3- BAKIMA MUHTAÇ ENGELLİ AİLE BİREYİ BULUNAN PERSONEL"
+    },
+    {
+      "id": "su-3-1",
+      "article": "3.1",
+      "title": "30.01.2010 tarihli ve 27478 sayılı Resmi Gazete’de yayımlanan “Sendikal Gelişmeler Doğrultusunda",
+      "text": "Alınacak Önlemler ” konulu 2010/2 numaralı Genelge’nin 3 üncü maddesinde, bakıma muhtaç engelli aile bireyi\nbulunan personele, “özürlü aile bireyinin, bakıma muhtaç olduğunun ilgili mevzuatına göre alınmış geçerli özürlü sağlık\nkurulu raporu ile belgelendirilmesi kaydıylcı” ön koşulu belirlenerek çeşitli haklar tanımlanmıştır. Bu personele,\nbakıma muhtaç engelli aile bireyinin günlük bakımı için mesai saatleri içinde izin kullanması hususunda gerekli\nkolaylık sağlanacak ve personel sadece hafta içi mesai günlerinde çalıştırılacak, mesai saatleri dışındaki tüm ek\ngörevlerden, nöbetlerden ve gece mesaisinden muaf tutulacaktır.\nAdres : Ayrancı Mah. Dikmen Cad.No:l 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr"
+    },
+    {
+      "id": "su-3-2",
+      "article": "3.2",
+      "title": "Bölüm 3.2",
+      "text": "İlgili genelge hükmündeki haklardan personelin yararlanabilmesi için;"
+    },
+    {
+      "id": "su-3-2-1",
+      "article": "3.2.1",
+      "title": "Engelli aile bireyinin bakıma muhtaç olduğunun, ilgili mevzuatına göre alınmış geçerli engelli sağlık",
+      "text": "kurulu raporu ile belgelendirilmesi gerekmektedir."
+    },
+    {
+      "id": "su-3-2-2",
+      "article": "3.2.2",
+      "title": "21.10.2010 tarihli ve 27736 sayılı Resmi Gazete’de yayımlanan son güncelleme ile yürürlükte olan",
+      "text": "“Bakıma Muhtaç Özürlülere Yönelik Resmi Kurum ve Kuruluşlar Bakım Merkezleri Yönetmeliği”nin Tanımlar\nbaşlıklı 4 üncü maddesinin (1 )-b) fıkrasında “bakıma muhtaç özürlü” kavramı; “özürlülük sınıflandırmasına göre\nağır özürlü olduğu belgelendir ileni er den... ” olarak tanımlanmıştır.\n“Ağır Engelli” kavramı;"
+    },
+    {
+      "id": "su-3-2-2-1",
+      "article": "3.2.2.1",
+      "title": "20.02.2019 tarihli ve 30692 sayılı Resmi Gazete’de yayımlanan “Erişkinler îçin Engellilik",
+      "text": "Değerlendirmesi Hakkında Yönetmeliğin” 8 inci maddesinin (1 )-f) fıkrasında “tam bağımlı engelli birey” olarak\ntanımlanmıştır."
+    },
+    {
+      "id": "su-3-2-2-2",
+      "article": "3.2.2.2",
+      "title": "20.02.2019 tarihli ve 30692 sayılı Resmi Gazete’de yayımlanan “Çocuklar İçin Özel",
+      "text": "Gereksinim Değerlendirmesi Hakkında Yönetmeliğin” 15 inci maddesinin (1) fıkrasında “Çok ileri düzeyde\nÖGV”, “Belirgin ÖGV” ve “Özel koşul gereksinimi var (ÖKGV)” olarak tanımlanmıştır."
+    },
+    {
+      "id": "su-3-3",
+      "article": "3.3",
+      "title": "Engelli aile bireyi ibaresinden; memurun bakıma muhtaç engelli eşinin, çocuğunun, annesinin ve",
+      "text": "babasının anlaşılması gerekmektedir. Kardeş için ilgili genelgedeki haklardan yararlanılması mümkün değildir."
+    },
+    {
+      "id": "su-3-4",
+      "article": "3.4",
+      "title": "Annenin ve babanın personel olması durumunda her ikisinin de belirtilen haklardan faydalandırılması",
+      "text": "mümkündür."
+    },
+    {
+      "id": "su-3-5",
+      "article": "3.5",
+      "title": "Personelin bakıma muhtaç engelli aile bireyinin başka kurumlardan sigortalı olup olmadığına",
+      "text": "bakılmaksızın, bakmakla mükellef olma şartı aranmaksızın, bakıma muhtaç engelli aile bireyinin bakımı ile\nbizzat ilgilendikleri sürece ilgili genelgede belirtilen haklardan faydalandırılması gerekmektedir.\n4- BÎRİM AMİRİNİN SEVK YETKİSİ ve PERSONELİN SEVK TALEBİ"
+    },
+    {
+      "id": "su-4-1",
+      "article": "4.1",
+      "title": "Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonunun veya birim amirinin lüzum görmesi",
+      "text": "halinde ya da personelin kendi isteğiyle birimine müracaatı halinde, kişi tam teşekküllü hastanelere sevk edilerek,\nETSŞY Ek-3’e göre düzenlenen son durum ve dilim belirtir sağlık kurulu raporu aldırılır. Sevk yapılacak\nhastanenin, ilgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde yer alan Emniyet Teşkilatı personeli sağlık\nraporları konusunda yetkilendirilmiş hastaneler olması gerektiği anlaşılmamalıdır. Bu hastaneler, itiraz\ndurumlarında tayin edilen hastanelerdir. îlgi (b) yönerge eki Ek-12 Hakem Hastane Listesinde yer alan tüm\nhastaneler arasından kişinin bulunduğu ildeki bir hastane tercih edilmelidir. Bu raporlar, kişilerin hastanelerde\nyatarak gördüğü tedavilerin ve doktor tarafından uygun görülen istirahat raporlarının bitiminde, sağlık yönünden\nson durumlarının tespiti amacıyla aldırılır. İstirahat raporu (hastalık izni) devam eden memur kendisi istemediği\nsürece, ETSŞY Ek-3’e göre düzenlenen son durum ve dilim belirtir sağlık kurulu raporu aldırılmak üzere sevk\nedilemez."
+    },
+    {
+      "id": "su-4-2",
+      "article": "4.2",
+      "title": "ETSŞY’nin 18 nci maddesinin (3) üncü fıkrası ve ilgi (b) yönergenin 10 uncu maddesi hükmü gereği,",
+      "text": "hastaneler tarafından düzenlenen son durum ve dilim belirtir sağlık kurulu raporları ETSŞY hükümlerine uygun\nve detaylı olmak zorundadır."
+    },
+    {
+      "id": "su-4-3",
+      "article": "4.3",
+      "title": "Personel adaylarımız ve personelimiz için durum tespiti yapmasını istediğimiz hastane Sağlık Kurulları;",
+      "text": "kişinin tüm sağlık özgeçmişini, şevke neden olan durumun ayrıntılarını, birim amirince kişi hakkında belirtilen\ngörüşleri veya Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonunca yapılan açıklayıcı bilgileri ve\nönemli olacak tüm ayrıntıları bilerek değerlendirme yapmalıdır. Aksi takdirde usule ve fenne aykırı veya eksik\nraporlar ortaya çıkacak, işgücü ve zaman kaybı oluşacaktır. Bu nedenle, hastanelere yazılan resmi yazı şeklindeki\nsevk evrakı, ilgili tüm ayrıntıları içerecek şekilde detaylı hazırlanmalıdır."
+    },
+    {
+      "id": "su-4-4",
+      "article": "4.4",
+      "title": "Personelin sevk talebi, geçerli bir gerekçe olmadıkça geri çevrilmemelidir. Tekrarlayan sevk talepleri,",
+      "text": "nedeni anlaşılamayan sevk talepleri veya diğer tereddütlü olan durumlarda öğrenci adayının, öğrencinin, personel\nadayının, personelin sevk talebine birim amirince karar verilemediğinde tüm sağlık dosyası ve kişinin talebi,\ngörüş alınmak için Sosyal Hizmetler ve Sağlık Daire Başkanlığına gönderilebilir."
+    },
+    {
+      "id": "su-4-5",
+      "article": "4.5",
+      "title": "Şüpheli bir durum olmadığı sürece, sevk talepleri kişilerin istediği hastaneye yapılabilir. Raporlara itiraz",
+      "text": "konusu hariç, personelin kendi isteği olmaksızın birim amiri sevk yetkisini kullanarak sevk işlemi yapıyorsa\nhakem hastaneyi de kendisi tayin etmelidir. Bu iki durumda da il dışına sevk işlemi yapılamaz. Hastane tercihinde\nveya tayininde, bu Genelgenin 4.1 fıkrasında tanımlı olan hastaneler anlaşılmalıdır."
+    },
+    {
+      "id": "su-4-6",
+      "article": "4.6",
+      "title": "İl dışındaki hastanelere sevk yetkisi; o ildeki en üst düzey hastanede ve ETSŞY’nin verdiği yetki ile",
+      "text": "Sağlık Komisyonundadır. Aksi yönde işlem yapılmamalıdır."
+    },
+    {
+      "id": "su-4-7",
+      "article": "4.7",
+      "title": "Birim amiri tarafından yapılan sevk işlemlerinde bu Genelgenin 4.3 fıkrası gereği ayrıntılı bir sevk evrakı",
+      "text": "düzenlenerek personel hastanelere yönlendirilmelidir. Bu sevk evrakında; “öncelikle, tedavi ve istirahat hakları\nX\n: Ayrancı Mah. Dikmen Cad.No.l 1 Çankaya 06100 ANKARA Ayrıntılı Bilgi : Dr. Levent ÖCALAN \\\n: shsdrapor@egm.gov.tr\n\nkullandırılarak kişinin ihtiyaç duyduğu tedavinin yapılması, sonra, tedavi ve istirahatlerinin bitiminde ETSŞY\nEk-3’e göre dilim ve detaylı son durum belirtir sağlık kurulu raporu düzenlenmesi” istenir."
+    },
+    {
+      "id": "su-4-8",
+      "article": "4.8",
+      "title": "Hastanelerin, ETSŞY hükümlerine göre son durum ve dilim belirtir sağlık kurulu raporu",
+      "text": "düzenleyebilmesi için kurumun resmi yazı şeklindeki üst yazısı ile hastane sağlık kurullarına başvurulması\ngerekmektedir. Bu hususta, resmi yazı şeklinde sevk evrakı olmadan hastanelere bireysel başvuru\nyapılmamalıdır."
+    },
+    {
+      "id": "su-4-9",
+      "article": "4.9",
+      "title": "Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu veya birim amiri tarafından personelin",
+      "text": "hastanelere sevk edilmesi uygun görüldüğünde, ilgili mevzuattaki ve bu Genelgedeki hükümler dikkate alınarak,\nusulüne uygun şekilde yapılacak olan sevk emri kişiye yazılı olarak tebliğ edilir. Bu sevk emrinin gereğini\nyapmayanlar hakkında ETSŞY’nin 20 nci maddesi gereği disiplin hükümleri uygulanır.\n5- RAPORLARA İTİRAZ"
+    },
+    {
+      "id": "su-5-1",
+      "article": "5.1",
+      "title": "Emniyet Teşkilatı öğrenci adaylarının, öğrencilerinin, personel adaylarının, personelinin; haklarında",
+      "text": "ETSŞY hükümlerine göre düzenlenmiş olan son durum ve dilim belirtir sağlık kurulu raporlarına ve giriş\nraporlarına itiraz etmek için il sağlık müdürlüklerine veya hastanelere bireysel başvuruda bulunamayacakları, bu\nbaşvuruların da il sağlık müdürlükleri veya hastaneler tarafından kabul edilmeyeceği ilgi (b) yönergenin 41 inci\nmaddesinin (1) inci fıkrasında belirtilmiştir.\nBu şekildeki itirazlar ile ilgili olarak;"
+    },
+    {
+      "id": "su-5-1-1",
+      "article": "5.1.1",
+      "title": "Sağlık hizmet sunucularına veya il sağlık müdürlüklerine bireysel müracaat edilmemeli ve birim",
+      "text": "amirleri tarafından da bu şekildeki işlemlerle ilgili gerekli kontrol yapılmalıdır."
+    },
+    {
+      "id": "su-5-1-2",
+      "article": "5.1.2",
+      "title": "Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna doğrudan müracaat edilmemeli",
+      "text": "ve birim amirleri tarafından da bu şekildeki işlemlerle ilgili gerekli kontrol yapılmalıdır."
+    },
+    {
+      "id": "su-5-1-3",
+      "article": "5.1.3",
+      "title": "Emniyet Teşkilatı öğrenci adayları ve öğrencileri, taleplerini ilgili birim amirlerine iletmeli ve Polis",
+      "text": "Okulu veya Polis Akademisi Başkanlığı tarafından bahse konu talep değerlendirildikten sonra uygun görülürse\nkişinin sağlık dosyası ile birlikte Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna iletilmeli ve\nSağlık Komisyonu tarafından verilecek karar doğrultusunda işlem yapılmalıdır."
+    },
+    {
+      "id": "su-5-1-4",
+      "article": "5.1.4",
+      "title": "Personel adayları ve personel, taleplerini ilgili birim amirlerine veya birime iletmeli ve ilgili birim",
+      "text": "amiri veya birim tarafından bahse konu talep değerlendirildikten sonra uygun görülürse kişinin sağlık dosyası ile\nbirlikte Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna iletilmeli ve Sağlık Komisyonu\ntarafından verilecek karar doğrultusunda işlem yapılmalıdır."
+    },
+    {
+      "id": "su-5-2",
+      "article": "5.2",
+      "title": "Gerek tek raporla gerekse de birden fazla raporla kişinin beklentisinin tersi yönünde işlem yapılırken,",
+      "text": "bahse konu sağlık kurulu raporlarının kararları ve bu raporlara istinaden Sosyal Hizmetler ve Sağlık Daire\nBaşkanlığı Sağlık Komisyonu tarafından verilen olumlu veya olumsuz kararlar hakkında polis okulu öğrenci\nadaylarının, polis okulu öğrencilerinin, personel adaylarının ve personelin çoğu zaman bilgisi olmamakta ve itiraz\niçin gerekli olan süre kaybedilmektedir. Bu nedenle, giriş raporu alım sürecinde, hakem hastanelerden durum\nbildirir sağlık kurulu raporu alım sürecinde ve Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu\ntarafından bahse konu raporlara ve sağlık dosyasına istinaden verilen kararlarla, tesis edilen yeni işlemlerle ilgili\nolarak; Polis Okulu öğrenci adayları, Polis Okulu öğrencileri, personel adayları ve personel, gerekli şekilde ve\nzamanında birim amirleri tarafından bilgilendirilmelidir.\n6- SİLAH MUHAFAZASI ve PSİKİYATRİK YÖNDEN SEVK"
+    },
+    {
+      "id": "su-6-1",
+      "article": "6.1",
+      "title": "Kendisine veya çevresine zarar verme riski taşıdığı kanaati oluşan personel hakkında, tehlikeli-riskli",
+      "text": "olarak değerlendirilen her durumda ve geç müdahale etmenin sakıncalı olacağı hallerde, kişinin üzerine kayıtlı\ntüm silahların birim amirleri veya olaya müdahale eden personel tarafından geçici olarak alınıp muhafaza\nedilmesi ile ilgili, ETSŞY’nin 23 üncü maddesi hükmü gereği işlem yapılmalıdır."
+    },
+    {
+      "id": "su-6-2",
+      "article": "6.2",
+      "title": "Akli dengesizlik gösteren ancak silahının alınması konusunda zorluk çıkaran kişiler ile ilgili hükümler",
+      "text": "04.12.2004 tarihli ve 25673 sayılı Ceza Muhakemesi Kanununun 90 inci maddesinde düzenlenmiş olup, ruh\nsağlığı bozulan ve kendisine veya çevresine zarar verme riski bulunan personelin üzerine kayıtlı silah veya\nsilahlarının alınması konusunda amirlerine ilgili mevzuattaki usuller çerçevesinde yetki ve görev yüklenmektedir.\nİhtiyaç duyulan hallerde bu mevzuat hükümleri çerçevesinde işlem yapılmalıdır."
+    },
+    {
+      "id": "su-6-3",
+      "article": "6.3",
+      "title": "22.11.2001 tarihli ve 4721 sayılı Türk Medeni Kanununun 432 nci maddesinde “akıl hastalığı ve akıl",
+      "text": "zayıflığı sebebiyle toplum için tehlike oluşturan kişiler, kişisel korunmasının başka şekilde sağlanamaması\nhalinde, tedavisi, eğitimi veya ıslahı için elverişli bir kuruma yerleştirilir veya alıkonabilif\\ buna ek olarak,\n04.12.2004 tarihli ve 25673 sayılı Ceza Muhakemesi Kanununun 90 inci maddesi ve 01.06.2005 tarihli ve 25832\nsayılı Yakalama Gözaltına Alma ve İfade Alma Yönetmeliğinin 5 inci maddesinde “kolluk görevlilerinin ilgili\nmevzuattaki usuller çerçevesinde bir kurumda tedavilerinin yapılması amacıyla akıl hastalığı ve akıl zayıflığı\n.. U\n: Ayrancı Mah. Dikmen Cad.No:l 1 Çankaya 06100 ANKARA Ayrıntılı Bilgi : Dr. Levent ÖCALAN\nÇÇ'\n: shsdrapor@egm.gov.tr\n\nsebebiyle toplum için tehlike oluşturan kişilerle ilgili koruma tedbiri alınır, ” hükümleri bulunmaktadır, ihtiyaç\nduyulan hallerde bu mevzuat hükümleri çerçevesinde işlem yapılmalıdır."
+    },
+    {
+      "id": "su-6-4",
+      "article": "6.4",
+      "title": "Silahları muhafaza altına alman personel; “ihtiyaç duyduğu tedavisinin düzenlenmesi, doktor tarafından",
+      "text": "uygun görülmesi halinde istirahat raporu düzenlenmesi, tedavilerinin ve istirahatlerinin bitiminde, ETSŞY Ek-3-\n11 (Psikiyatri) ’e göre dilim ve detaylı son durum belirtir sağlık kurulu raporu düzenlenmesi” için bu Genelgenin\n4 üncü maddesindeki hükümlere dikkat edilerek Devlet Hastanesine veya Devlet Üniversitesi Hastanesine sevk\nedilmelidir. Bu sevk emrinin gereğinin yerine getirilmemesi halinde, ETSŞY’nin 20 nci maddesi gereği işlem\nyapılır. Alınacak raporlarla birlikte tüm sağlık dosyası incelenmek ve karara bağlanmak üzere Sosyal Hizmetler\nve Sağlık Daire Başkanlığı Sağlık Komisyonuna gönderilmelidir.\n7- PSİKİYATRİK TEDAVİ ve KONTROL\nPsikiyatrik takip-kontrol sürecine alman Emniyet Hizmetleri Sınıfı (EHS) veya EHS harici diğer hizmet sınıfı\npersonel ile vazife malulü olarak çalışmaya devam eden personelin, hastane sağlık kurulları veya Sosyal\nHizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu tarafından uygun görülen zamanda kontrollerinin\nyapılabilmesi için hastanelere şevkleri yapılmalı, alınacak raporlar ile birlikte sağlık dosyaları zamanında Sosyal\nHizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna ulaştırılmalı, birim amirleri bu süreçle ilgili olarak\ngecikmelere sebebiyet vermemelidir.\nPsikiyatrik tedavi sürecinde uygulanan “silahsızlık tedbiri” sürekli bir çalışma durumu haline\ngetirilmemelidir. Bu uygulama, kişinin tedavi olabilmesine imkân sağlamak için uygulanan geçici bir tedbirdir.\nBu durumun ikincil kazanım haline getirilmemesi için azami dikkat gösterilmelidir.\nPersonelin, psikiyatrik nedenlerden dolayı EHS’den malul olduktan sonra, EHS harici diğer hizmet\nsınıflarında çalışması veya vazife malulü olarak çalışmaya devam etmesi, bu personelin ETSŞY hükümlerinden\nmuaf olduğu, hastalıklarının veya sakatlıklarının Sağlık Komisyonu veya birim amirleri tarafından\ndenetlenemeyeceği anlamına gelmemektedir.\nPsikiyatrik tedaviye ihtiyacı olduğu tespit edilen personelin sahip olduğu tedavi ve istirahat haklarının bir\nsınırı vardır, bu sınırların kontrolü ve yapılan tedaviler neticesinde oluşan nihai durumun tespiti de\ngerekmektedir.\nBu bilgiler çerçevesinde;\nHastane sağlık kurulları veya Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu tarafından\nuygun görülen takip ve kontrol sürecine uyulup uyulmadığı birim amirlerince denetlenmeli, gecikme olduğu\ntespit edilenler ivedilikle hastanelere sevk edilmeli, bu sevk işlemine direnenler veya geciktirme yoluna gidenler\nhakkında ETSŞY’nin 20 nci maddesi hükmü gereği işlem yapılmalıdır.\n8- ETSŞY’NİN 16 (5) inci MADDESİ KAPSAMINDA ÇALIŞTIRILMA ve ÇALIŞABİLİRLİK\nDURUMUNUN TESPİTİ\nEmniyet Hizmetleri Sınıfı (EHS) personelin almış olduğu C dilimli sağlık kurulu raporları, ETSŞY’nin 16 nci\nmaddesinin (l)-a) ve (2)-a) fıkraları gereği “EHS’de çalışabilecek iyilik haline sahip olunduğu” anlamına\ngelmektedir. Fakat bazı özel durumlar için ve kişilerin talepleri üzerine ETSŞY’nin 16 nci maddesinin (5) inci\nfıkrası hükmü gereği işlem yapılabilmekte ve Sağlık Komisyonu tarafından uygun görülürse “birimlerin faal\ngörevleri dışında kalan diğer görevlerde çalıştırılma” kararı verilebilmektedir.\nEHS personelin;\n- Üst ekstremitesi (uzvu) ile “kavrama yapabilecek, silah kullanabilecek, güç kullanabilecek”,\n- Alt ekstremitesi ile “merdiven-yokuş inip çıkabilecek, koşabilecek, güç kullanabilecek”\n- Genel vücut fonksiyonları ve ruh sağlığı açısından “gece ve gündüz çalışabilecek”, “silahlı olarak\nçalışabilecek” iyilik haline, yeterlilik düzeyine sahip olması gerektiği, ETSŞY’nin C ve D dilimlerinde net şekilde\ntanımlanmıştır.\nSağlık Komisyonu tarafından, ETSŞY’nin 16 nci maddesinin (5) inci fıkrası kapsamındaki tedbir uygun\ngörülürken; “uzun süreli ve sabit pozisyonda ayakta kalınmayacak şekilde görevlendirme yapılması, birim içinde\nuygulanabilmesi mümkün olan pozitif ayrımın bahse konu kişi için birim amirlerince uygulanması”\namaçlanmaktadır.\nKişi hakkında uygun görülen bu tedbirin, birim içindeki eşitlik ve adalet duygusunu zedelemeyecek şekilde\nnasıl uygulanacağı birim amirlerinin takdiri, sorumluluğu ve görevidir. Bu tedbirin uygulanma şekli ile ilgili\nolarak birim amirleri tarafından karar verilemeyen durumlarda ETSŞY’nin 16 nci maddesinin 5-(c) fıkrası hükmü\ngereği işlem yapılır.\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr\n\nBir EHS personelin yukarıda belirtilen görevlere ve çalışma usulüne, sağlığının gerektirdiği zorunluluklar\nnedeniyle uyum sağlayamaması, kişinin sağlık durumunun maluliyet gerektirecek düzeyde ağır olduğu anlamına\ngelmektedir ve birim amirince ETSŞY hükümleri kapsamında gereği yapılmalıdır.\nEHS’de çalışıyor olmaktan dolayı personelin sağlığının daha fazla bozulmaması, yürütülen görevin\naksamaması ve sürdürülebilirliğinin sağlanması, kişide bulunan kısıtlılıklar ve kişinin yerine getiremeyeceği\ngörevlerden dolayı gerek kendisinin gerekse de görev arkadaşlarının zarar görmemesi, personel arasındaki eşitlik\nduygusunun zedelenmemesi, mağduriyetlerin veya suistimallerin yaşanmaması için birim amirleri tarafından\npersonelin sağlığı yakından takip edilmeli, bulunduğu hizmet sınıfında çalışmaya devam edebilmesi için gerekli\nolan fiziksel ve psikiyatrik iyilik haline sahip olmadığı düşünülen veya tespit edilen personel hakkında birim\namiri tarafından ETSŞY hükümleri kapsamında gereği yapılmalıdır.\nBu bilgiler çerçevesinde;"
+    },
+    {
+      "id": "su-8-1",
+      "article": "8.1",
+      "title": "Sağlık Komisyonu tarafından kişiler hakkında verilen kararlar, sağlık raporları ve sağlık dosyaları",
+      "text": "üzerinden, kişiler muayene edilmeden ve görülmeden verilmektedir. Hastalıkların tıbbi tanımları üzerinden değil,\nhastalığın hastada oluşturduğu klinik bulgular üzerinden değerlendirme yapılması gerektiğinden, ETSŞY’nin 16\nncı maddesinin (5) inci fıkrası kapsamında Sağlık Komisyonuna gönderilen raporların, bu Genelgenin 4 üncü\nmaddesinde tanımlandığı üzere, bahse konu hastalık/sakatlık durumunun kişide oluşturduğu fiziksel kısıtlılıkları,\nfonksiyonel kayıpları, EHS personelin çalışma usulleri çerçevesinde detaylıca açıklaması gerekmektedir.\nHastanelere sevk işlemi yapılırken bu durum, ilgili sağlık kuruluna hatırlatılmalıdır."
+    },
+    {
+      "id": "su-8-2",
+      "article": "8.2",
+      "title": "ETSŞY hükümleri kapsamında Sağlık Komisyonuna ulaştırılması gereken sağlık raporları hakkında",
+      "text": "personelin veya birim amirlerinin bir talebi varsa, ayrıntılı bir amir raporu veya personel dilekçesi düzenlenerek\nsağlık dosyasına eklemek suretiyle Sağlık Komisyonuna ulaştırılmalıdır."
+    },
+    {
+      "id": "su-8-3",
+      "article": "8.3",
+      "title": "Personel;",
+      "text": "- Hastalığından/sakatlığmdan dolayı yapmak zorunda olduğu görevleri yerine getirmek için gerekli olan\nfiziksel ve psikiyatrik iyilik haline sahip değilse,\n- ETSŞY’nin 16 ncı maddesinin (5) inci fıkrası kapsamında uygun görülen sınırlı tedbire rağmen EHS’de\nçalışıyor olmak kişinin sağlığını olumsuz yönde etkiliyor ise,\nmevcut durumun maluliyet gerektirecek düzeyde ciddi olduğu anlaşılmalı ve öncelikli olarak tedavi ve istirahat\nhaklarının kullandırılması, sonrasında da ETSŞY hükümlerine göre düzenlenmiş detaylı son durum ve dilim\nbelirtir sağlık kurulu raporu aldırılması için personel hastaneye sevk edilmeli, alınacak rapor ile birlikte kişinin\nsağlık durumunu, fonksiyonel kayıplarını, fiziksel kısıtlılıklarını ve birim amirinin kişi hakkındaki diğer\ntespitlerini içeren ayrıntılı bir amir raporu da sağlık dosyasına eklenerek Sağlık Komisyonuna ulaştırılmalıdır."
+    },
+    {
+      "id": "su-8-4",
+      "article": "8.4",
+      "title": "ETSŞY’nin 16 ncı maddesinin (5) inci fıkrası kapsamında verilen kararı gerektirecek düzeyde",
+      "text": "hastalığın/sakatlığın ilgili personelde bulunup bulunmadığı veya kişinin hastalığının/sakatlığının EHS’den malul\nolmayı gerektirecek düzeyde ağır olup olmadığı birim amirlerince denetlenmelidir ve gereği yapılmalıdır."
+    },
+    {
+      "id": "su-8-5",
+      "article": "8.5",
+      "title": "ETSŞY’nin 16 ncı maddesinin (5) inci fıkrası hükmünün uygulanması ile ilgili yanlış veya şüpheli",
+      "text": "durumlar olduğu konusunda birim amirinin tereddüdü, tespiti veya personelin itirazı olması halinde mevcut\ndurumu tüm ayrıntılarıyla açıklayan bir rapor veya dilekçe ile birlikte kişinin sağlık dosyası birim amiri tarafından\nivedilikle Sağlık Komisyonuna ulaştırılmalıdır.\n9- MALULİYET, VAZİFE MALULLÜĞÜ ve SGK’YA BAŞVURU USULÜ\nETSŞY hükümlerine göre alınan son durum ve dilim belirtir sağlık kurulu raporuna, SGK Sağlık Kurulları\ntarafından maluliyet ve vazife malullüğü yönünde işlem yapılabilmesi için bu raporun ETSŞY’nin 16 ncı ve 17\nnci maddeleri kapsamında Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu tarafından incelenerek\nuygun görülmesi gerekmektedir.\nVazife malullüğü durumlarında bahse konu maluliyet talebine neden olan travmatik olayın, görev tesiri ile\noluşup oluşmadığına karar verebilmek için, SGK Sağlık Kurullarının mevcut dosyada görmesi gereken bilgi ve\nbelgeler Personel Dairesi Başkanlığı tarafından temin edilerek, Sağlık Komisyonunun da ilgili rapor hakkındaki\ngörüşü ile birlikte kişinin dosyasına eklenmeli ve SGK’ya ulaştırılmalıdır.\nVazife malullüğü durumlarında, bahse konu travmatik olayın görev tesiri ile oluştuğunun ispatlanabilmesi\niçin, idari ve adli bilgi ve belgelerin, bahse konu sağlık durumunu belgeleyen geçerli sağlık raporlarının olay anı\nitibariyle en uygun ve en erken zamanda temin edilmesi, gerekli tespitlerin zamanında yapılması gerekmektedir.\nAksi takdirde, SGK Sağlık Kurulları tarafından, bahse konu hastalık/sakatlık durumunun görev tesiri ile oluşmuş\nbir travma neticesinde meydana geldiğine dair karar verilememekte ve hak kayıpları oluşabilmektedir.\n: Ayrancı Mah. Dikmen Cad.No:l 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr\n\nBu bilgiler çerçevesinde;\nMaluliyet talebi için SGK’ya bireysel başvuru yapılmamalı, birim amirleri tarafından da bu şekilde bireysel\nbaşvuru yapılmasına izin verilmemeli, dosyada bulunması gereken tüm bilgi ve belgelerle birlikte bahse konu\ntalep birim amiri tarafından değerlendirilmeli ve uygun ise gereği yapılmak üzere ilgili birime gönderilmelidir.\n10- SAĞLIK KOMİSYONUNA BAŞVURU USULÜ ve SAĞLIK NEDENLİ ATAMA"
+    },
+    {
+      "id": "su-10-1",
+      "article": "10.1",
+      "title": "Sağlık Komisyonuna Başvuru Usulü",
+      "text": "Sağlık raporu ve ilgili diğer evrak, sağlıkla ilgili başvurular, itirazlar, ihbarlar ve benzeri diğer talepler için\nPolis Okulu öğrenci adaylarımız ve öğrencilerimiz, personel adaylarımız ve personelimiz tarafından Sosyal\nHizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna doğrudan başvuru yapıldığı veya sağlıkla ilgili\nevrakın, konunun muhatabı birim tarafından gerekli idari değerlendirmesi yapılmadan, başvurunun kabulünün\nmümkün olup olmadığı değerlendirilmeden, kişinin sağlık özgeçmişini gösteren bilgi belgelerin bulunduğu sağlık\ndosyası ile birleştirilmeden doğrudan Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna\ngönderildiği görülmektedir. Bu durum, yapılacak idari işlemde gecikmelere, yazışma sayısını artırmak suretiyle\niş gücü kayıplarına, kişi açısından da hak kayıplarına neden olmaktadır.\nYapılan idari işlemin sağlık nedenli olarak kişi aleyhinde sonuçlanmış olması, bahse konu idari işlem ile ilgili\nbaşvuru yapılacak birimin Sosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonu olduğu anlamına\ngelmemektedir. Kişiler her türlü taleplerini birim amirlerine veya bağlı bulundukları birime yapmalıdır.\nBu bilgiler çerçevesinde;"
+    },
+    {
+      "id": "su-10-1-1",
+      "article": "10.1.1",
+      "title": "Polis Okulu öğrenci adaylarının ve öğrencilerinin, devam eden veya sonuçlanmış olan adaylık",
+      "text": "süreci veya öğrencilik süreci ile ilgili olan her türlü talep, itiraz, ihbar ve diğer başvuruları Polis Akademisi\nBaşkanlığınca veya ilgili Polis Okulunca kabul edilerek değerlendirilmeli, bahse konu başvuru, olması gereken\nusul kriterleri açısından uygun bulunursa kabul edilmeli, kabul edildikten sonra bahse konu başvuru sağlık\nyönünden değerlendirme gerektiriyorsa kişinin sağlık dosyası ile birlikte Sağlık Komisyonuna gönderilmeli,\nalınacak görüş sonucunda da gerekli değerlendirme yapılarak kişiye verilecek cevap da yine kişinin idari yönden\nbağlı bulunduğu Polis Akademisi Başkanlığınca veya ilgili Polis Okulunca verilmelidir."
+    },
+    {
+      "id": "su-10-1-2",
+      "article": "10.1.2",
+      "title": "Çarşı ve mahalle bekçisi adaylarının ve diğer personel adaylarının devam eden veya sonuçlanmış",
+      "text": "olan adaylık süreci ile ilgili olan her türlü talep, itiraz, ihbar ve diğer başvuruları Î1 Emniyet Müdürlükleri veya\nPersonel Dairesi Başkanlığı tarafından kabul edilerek değerlendirilmeli, bahse konu başvuru, olması gereken usul\nkriterleri açısından uygun bulunursa kabul edilmeli, kabul edildikten sonra bahse konu başvuru sağlık yönünden\ndeğerlendirme gerektiriyorsa kişinin sağlık dosyası ile birlikte Sağlık Komisyonuna gönderilmeli, alınacak görüş\nsonucunda da gerekli değerlendirme yapılarak kişiye verilecek cevap da yine kişinin idari yönden bağlı\nbulunduğu Î1 Emniyet Müdürlükleri veya Personel Dairesi Başkanlığı tarafından verilmelidir."
+    },
+    {
+      "id": "su-10-1-3",
+      "article": "10.1.3",
+      "title": "Personelimizin sağlık ile ilgili her türlü talep, itiraz, ihbar ve diğer başvuruları birim amirleri",
+      "text": "tarafından kabul edilerek değerlendirilmeli, bahse konu başvuru, olması gereken usul kriterleri açısından uygun\nbulunursa kabul edilmeli, kabul edildikten sonra bahse konu başvuru sağlık yönünden değerlendirme\ngerektiriyorsa kişinin sağlık dosyası ile birlikte Sağlık Komisyonuna gönderilmeli, alınacak görüş sonucunda da\ngerekli değerlendirme yapılarak kişiye verilecek cevap da yine kişinin idari yönden bağlı bulunduğu birim amiri\ntarafından verilmelidir."
+    },
+    {
+      "id": "su-10-2",
+      "article": "10.2",
+      "title": "Sağlık Nedenli Atama",
+      "text": "ETSŞY’nin 22 nci maddesinin 1 inci fıkrasında belirtildiği üzere Sosyal Hizmetler ve Sağlık Daire Başkanlığı\nSağlık Komisyonu, Personel Dairesi Başkanlığı tarafından gönderilen sağlık kurulu raporlarını inceleyerek\nkişilerin muayene ve tedavilerinin yapılabileceği poliklinikleri belirlemekle ve Personel Dairesi Başkanlığına\nbildirmekle görevlidir. Belirtilen polikliniklerin bulunduğu iller arasından kişinin durumuna uygun olan ili\nseçerek atama işlemini gerçekleştirmek 11.09.1992 tarihli ve 21342 sayılı Emniyet Hizmetleri Sınıfı Mensupları\nAtama ve Yer Değiştirme Yönetmeliği hükmü gereği Personel Dairesi Başkanlığının yetki ve sorumluluğundadır.\nSosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonunun atama yapma veya yapılacak atama işlemini\nuygun görme gibi bir yetkisi bulunmamaktadır.\nBu bilgiler çerçevesinde;\nSağlık nedenli atama talebi veya atama işlemine itiraz için Personel Dairesi Başkanlığına başvurulmalı,\nSosyal Hizmetler ve Sağlık Daire Başkanlığı Sağlık Komisyonuna doğrudan müracaat edilmemelidir.\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA\n:03124624660\n: shsdrapor@egm.gov.tr\n\n11- DİĞER İZİNLER\nDoğum sebebiyle verilecek izinler (analık izni, süt izni, yarım gün izin, doğum sebebiyle verilecek aylıksız\nizin) ve evlat edinme halinde verilecek izinler konusunda 13.04.2016 tarihli ve 29683 sayılı Resmi Gazetede\nyayımlanan “Kamu Personeli Genel Tebliği” kapsamında işlem yapılmalıdır.\n12- YÜRÜRLÜKTEN KALDIRILAN GENELGE\nBu Genelgenin yayımlanması ile 09.12.2019 tarihli EGM Genelge 2019/21 sayılı genelge yürürlükten\nkaldırılmıştır.\n13- GENELGENİN UYGULANMASINDA DİKKAT EDİLECEK HUSUSLAR\nBu Genelgenin uygulanmasına ilişkin olarak;\n- Bütün birimlerdeki sıralı birim amirlerine bu Genelgenin tebliğ edilerek bilgi sahibi olunmasının, görev\ndeğişikliği olduğunda yeni atanan birim amirlerinin de bu Genelgedeki hükümler hakkında bilgi sahibi olmasının\nsağlanması,\n- Emniyet Teşkilatı öğrenci adaylarının, öğrencilerinin, personel adaylarının, personelin sağlık nedenli\ntalepleri ve sağlık nedenli diğer durumları ile ilgili yazışmalarını ve işlemlerini yapmakla görevli olan personelin,\nbu Genelge hakkında birim amirleri tarafından bilgilendirilmesi, bu birimlerde personel değişikliği olması\ndurumunda yeni atanan personelin de bu Genelgedeki hükümler hakkında bilgi sahibi olmasının sağlanması,\n- Sağlık uygulamaları ile ilgili sahip oldukları haklarından ve yerine getirmekle görevli oldukları\nsorumluluklarından haberdar olmaları için Emniyet Teşkilatı öğrenci adaylarının, öğrencilerinin, personel\nadaylarının ve personelin bu Genelgedeki hükümler hakkında birim amirleri tarafından bilgilendirilmesi,\n- Bu Genelgeyle açıklanan sağlık uygulamaları dışında kalan konularla ilgili olarak tereddüt yaşanan, karar\nverilemeyen farklı bir durum gelişmesi halinde sözel veya yazılı olarak Sosyal Hizmetler ve Sağlık Daire\nBaşkanlığı Sağlık Komisyonunun görüşünün alınması ve Sağlık Komisyonun görüşleri doğrultusunda işlem\nyapılması,\n- Konunun titizlikle takibi ve emre göre hareket edilerek herhangi bir aksaklığa meydan verilmemesi\nhususunda;\n|\nBilgi ve gereğini rica ederim.\nA\nUİB\nVali\nEmniyet Genel Müdürü\nEk :\n1- E-Rapor İstirahat Raporu Formatı\n2- E-Rapor Olmayan İstirahat Raporu Formatı\nGereği:\nMerkez ve Taşra Teşkilatına\nBilgi:\nGenel Müdür Yardımcıları adlarına\n: Ayrancı Mah. Dikmen Cad.No:! 1 Çankaya 06100 ANKARA\n: 03124624660\n: shsdrapor@egm.gov.tr\n\n25.11.2020\nhttps://uyg.sgk.gov.tr/B r nc Basamak/detayGoster2 do#\nİ.L.\nSOSYAL GÜVENLİK KURUMU\nLEVENT ÖCALAN Pratisyen Hekim KURUM POLİKLİNİKLERİ\nAna Sayfa CIKIS\nRapor Takip No:\nTC kimlik No:\nS550***\nRapor Slra No:\nAd Soyad:\n1\nF”‘* Ü***\nRapor Başlama\nTarihi:\n24.11.2020\nSigortalı Turu\n4c (es)\nHastane Yatı,\nTarihi:\n-\nAyakta Başlama\nTarihi:\n24.11.2020\nHastane Çıkıyı\nTarihi:\nAyakta Bitiş\nTarihi:\n24.11,2020\nlybayı / Kontrol\nTarihi:\n25.11.2020\nAdlivaka /\nTraflkKazayı:\nYok\nTeshls:\nJ03-AKUT TONSİLLİT\nAçıklama:\nTesis Kodu:\n11069901\nTesis Adi:\nKURUM POLİKLİNİKLERİ\nVaka:\nHASTALIK\nDüzenleme Turu: TEK HEKİM\nRapor Durumu:\nKaydedildiği\nÇALIŞIR\nBranş Kodu:\n9999\nTarih:\n24.11.2020\nKazayı Tarihi:\nHekim-Heyet\nOnay Durumu:\nHekim-Heyet Onaylı\nHeklm-Heyet\nOnay Tarihi:\n24,11.2020\nSGM Kodu:\nDoktor:\n0\nL«»« ö«««»\nSGM Adi:\n-\n\nS55O444\nHekım-Heyet imza\nIS GÖREMEZLİK FIAPORU\nRapor Takip No\n8550444\nRapor Sira No:\n1\nTC Kimlik No\n1813\nAdSoyad:\nFA\nUN\nPoliklinik Tarihi\n24 11 2020\nSigortali Turu\n4c (es)\nHastane Yatis\nTanhı:\n-\nAyakta Başlama\nTanhı:\n24 11 2020\nHastane Cikrs\nTanhı\n-\nAyakta Bıtıs Tanhı: 24.11.2020\nIsbası/Kontrol\nTarihi\n2511.2020\nAri Vaka/Trafik\nKazası\nYok\nTeshis:\nJ03-AKUT\nTONSILLIT\nAçıklama:\nTesis Kodu\n11069901\nTesis Adı:\nKURUM\nPOLİKLİNİKLERİ\nVaka:\nHASTALIK\nDüzenleme Turu:\nTEK HEKİM\nRapor Durumu:\nÇALIŞIR\nBranş Kodu:\n9999\nKaydedildiği Tanh: 24.11.2020\nIs Kazası Tanhı:\n-\nHekım-Heyet\nOnay Durumu:\nHekım-Heyet\nOnaylı\nHekım-Heyet\nOnay Tanhi:\n24.11.2020\nSGM Kodu:\n0\nSGM Adı:\n-\nDoktor\nL’”\n\nSAĞLIK BAKANLIĞI\nSAĞLIK BİLİMLERİ ÜNİVERSİTESİ ANKARA\nEĞİTİM VE ARAŞTIRMA HASTANESİ\nİSTİRAHAT RAPORU\nBAŞVURU SAHİBİ\n45 gun istirahatı uygundur. (İş Kazası/Hastalık: M32.9-SİSTEMİK LUPUS ERİTEMATOZUS,\nTANIMLANMAMIŞ)\nSGK Rapor Takip No:\n100000000060*******\nT.C. Kimlik No:\n1191 *******\nAdı Soyadı:\nBaba Adı:\ni““\nDoğum Yeri:\nDoğum Tarihi:\n11.02.1981\nAdres:\n*t**4*«*4*«***♦♦♦***»wAw*****************************A*********A**************\nHastane Yatış Tarihi:\n20.10.2020\nHastane Çıkış Tarihi:\n27,10.2020\nAyakta Başlama Tarihi:\n28.10.2020\nAyakta Bitiş Tarihi:\n11.12.2020\nSigortalı Turu:\n4A\nVaka:\nHastalık\nRapor Durumu:\nÇalışır\nIşbaşı/Kontrol Tarihi\n12.12.2020\nCD KODU VE TANI(LAR)\nDOKTOR(LAR)\n;\nG** G\"*“\n:\nBranş Kodu:1000\ni Branş Adı: İç Hastalıkları (Ana\n;\nBranş)\n|^<***** |^i***ı»***\nBranş Kodu:1000\nBranş Adı: iç Hastalıkları (Ana\nBranş)\n^****\nŞ***\nBranş Kodu:1000\nBranş Adı: İç Hastalıkları (Ana :\nBranş)\n20201 Q27********ww*\nBu belgenin aslına ilişkin sorgulama https://erapor.saglik.gov.tr/DogruiamaServisi/ Internet\nadresinden yapılabilir. İşbu rapor Sosyal Güvenlik Kurumu'ndan elektronik ortamda alınan\nverilere dayanılarak hazırlanmıştır.\n\nSAĞLIK BAKANLIĞI\nKURUM POLİKLİNİKLERİ\nİSTİRAHAT RAPORU\nBAŞVURU SAHİBİ\nSGK Rapor Takip No:\n8550***\nT.C. Kimlik No:\n18131******\nAdı Soyadı:\nF**** II****\nBaba Adı:\n| |******\nDoğum Yeri:\nQ*****\nDoğum Tarihi:\n15.02.1982\nAdres:\n*******************************************************************************\nHastane Yatış Tarihi:\nHastane Çıkış Tarihi:\nAyakta Başlama Tarihi:\n24.11.2020\nAyakta Bitiş Tarihi:\n24.11.2020\nSigortalı Turu:\n4C\nVaka:\nHastalık\nRapor Durumu:\nÇalışır\nİşbaşı/Kontrol Tarihi\n25.11.2020\nICDKODU VE TANI(LAR)\n(İş Kazası/Hastalık: J03-AKUT TONSİLLİT)\nDOKTOR(LAR)\nBranş Kodu:9999\nBranş Adı: Pratisyen Hekim\n20201124*************\nBu belgenin aslına ilişkin sorgulama https://erapor.saglik.gov.tr/DogrulamaServisi/lnternet\nadresinden yapılabilir. İşbu rapor Sosyal Güvenlik Kurumu'ndan elektronik ortamda alınan\nverilere dayanılarak hazırlanmıştır."
+    }
+  ]
+}
