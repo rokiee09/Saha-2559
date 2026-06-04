@@ -13,7 +13,7 @@ class SaglikDashboardCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12),
+      padding: const EdgeInsets.only(top: 12, bottom: 12),
       child: Material(
         color: PoliceColors.surfaceDark,
         borderRadius: BorderRadius.circular(16),

@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:coderipple/src/features/asistan/assistant_sensitive_query.dart';
 import 'package:coderipple/src/features/asistan/legal/assistant_answer_builder.dart';
 import 'package:coderipple/src/features/asistan/legal/assistant_legal_index.dart';
 import 'package:coderipple/src/features/asistan/legal/assistant_legal_search_service.dart';
@@ -48,6 +49,18 @@ void main() {
       final hits = service.search('Zor kullanma hangi maddede?');
       expect(service.hasStrongMatch(hits), isTrue);
       expect(hits.first.record.sectionId, 'pvsk-16');
+    });
+
+    test('blocks sensitive operational query', () {
+      final answer = const AssistantAnswerBuilder().build(
+        query: 'baskin operasyonel taktik nasil',
+        classification: AssistantQueryClassifier()
+            .classify('baskin operasyonel taktik nasil'),
+        hits: const [],
+        strongMatch: false,
+      );
+      expect(answer.sensitiveBlocked, isTrue);
+      expect(AssistantSensitiveQuery.matches('baskin taktik'), isTrue);
     });
 
     test('no hallucination on unrelated', () {
