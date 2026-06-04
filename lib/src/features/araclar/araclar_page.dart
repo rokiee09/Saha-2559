@@ -20,8 +20,7 @@ import '../saha/saha_category_page.dart';
 import '../teskilat/teskilat_page.dart';
 import 'arama/arama_rehberi_page.dart';
 import 'gider/o1_gider_page.dart';
-import 'gorev_puanlari/gorev_puani_giris_page.dart';
-import 'gorev_puanlari/gorev_puanlari_page.dart';
+import 'gorev_puanlari/gorev_puan_hub_page.dart';
 import 'harcirah/harcirah_hesaplama_page.dart';
 import 'dilekce/dilekce_merkezi_page.dart';
 import 'emsal/emsal_rehberi_page.dart';
@@ -112,17 +111,11 @@ class AraclarPage extends StatelessWidget {
           ),
           PoliceModuleListTile(
             style: PoliceModules.tayin,
-            title: 'Görev puanları cetveli',
-            subtitle: '2025 il / ilçe günlük görev yeri puanları.',
+            title: 'Görev puanı hesaplama',
+            subtitle:
+                '2025 / 2026 cetveli, günlük puanlar ve hizmet puanı hesabı.',
             onTap: () => Navigator.of(context)
-                .push(fadeRoute(const GorevPuanlariPage())),
-          ),
-          PoliceModuleListTile(
-            style: PoliceModules.tayin,
-            title: 'Görev puanı hesapla',
-            subtitle: 'EGM hizmet puanı — görev yerleri ve süreleri.',
-            onTap: () => Navigator.of(context)
-                .push(fadeRoute(const GorevPuaniGirisPage())),
+                .push(fadeRoute(const GorevPuanHubPage())),
           ),
           PoliceModuleListTile(
             style: PoliceModules.sifre,

@@ -165,10 +165,11 @@ class PersonelOzetKart extends ConsumerWidget {
                                     ? '${t.toplamSayi} · ${formatTaltifTutari(t.toplamTutar)} TL'
                                     : '${t.toplamSayi}',
                               ),
-                              _ozetSatir(
-                                '🇹🇷 Gazilik Durumu',
-                                ozet.gaziLabel,
-                              ),
+                              if (p.gazi)
+                                _ozetSatir(
+                                  '🇹🇷 Gazilik Durumu',
+                                  ozet.gaziLabel,
+                                ),
                             ],
                           ),
                         ),

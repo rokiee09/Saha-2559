@@ -6,6 +6,8 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../common/text/tr_text.dart';
 import '../../../common/theme/police_colors.dart';
+import 'gorev_puan_cetvel_policy.dart';
+import 'gorev_puan_sark_prefs.dart';
 import 'gorev_puani_calculator.dart';
 import 'gorev_puani_kayit_provider.dart';
 import 'gorev_puanlari_data.dart';
@@ -14,7 +16,10 @@ import 'gorev_puanlari_page.dart';
 /// EGM görev (hizmet) puanı hesaplama — görev yerleri ve süreleri girilir,
 /// dönem puanları toplanarak genel hizmet puanı görülür.
 class GorevPuaniGirisPage extends ConsumerStatefulWidget {
-  const GorevPuaniGirisPage({super.key});
+  const GorevPuaniGirisPage({super.key, this.tercihYil});
+
+  /// Hub'dan 2025 veya 2026 hesaplama ile açıldığında cetvel tercihi.
+  final int? tercihYil;
 
   @override
   ConsumerState<GorevPuaniGirisPage> createState() =>
@@ -22,7 +27,7 @@ class GorevPuaniGirisPage extends ConsumerStatefulWidget {
 }
 
 class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
-  GorevPuaniKayit? _secilenYer;
+  String? _secilenYerKey;
   DateTime? _baslangic;
   DateTime? _bitis;
   bool _halenGorevde = false;
@@ -42,23 +47,61 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
     return gorevPuaniGunSayisi(_baslangic!, _bitisEtkin!);
   }
 
-  double get _donemPuan {
-    if (_secilenYer == null || _gunSayisi <= 0) return 0;
-    return gorevPuaniToplam(_secilenYer!.puan, _gunSayisi);
+  int _aktifCetvelYili(
+    GorevPuanlariSet set2025,
+    GorevPuanlariSet set2026,
+    DateTime? sarkBaslangic,
+  ) {
+    if (_baslangic == null || _bitisEtkin == null) {
+      return widget.tercihYil ?? 2025;
+    }
+    final otomatik = gorevPuanCetvelYiliSarkIle(
+      baslangic: _baslangic!,
+      bitis: _bitisEtkin!,
+      sarkBaslangic: sarkBaslangic,
+    );
+    if (widget.tercihYil != null) return widget.tercihYil!;
+    return otomatik;
   }
 
-  Future<void> _sehirSec(GorevPuanlariSet set) async {
-    final picked = await showModalBottomSheet<GorevPuaniKayit>(
+  double? _gunlukPuan(
+    GorevPuanlariSet set2025,
+    GorevPuanlariSet set2026,
+    DateTime? sarkBaslangic,
+  ) {
+    if (_secilenYerKey == null) return null;
+    final yil = _aktifCetvelYili(set2025, set2026, sarkBaslangic);
+    final set = yil == 2026 ? set2026 : set2025;
+    return set.bul(_secilenYerKey!)?.puan;
+  }
+
+  double get _donemPuan {
+    final ikili = ref.read(gorevPuanlariIkiliProvider).valueOrNull;
+    final sark = ref.read(gorevPuanSarkBaslangicProvider).valueOrNull;
+    if (ikili == null || _gunSayisi <= 0) return 0;
+    final gunluk = _gunlukPuan(ikili.$1, ikili.$2, sark);
+    if (gunluk == null || gunluk <= 0) return 0;
+    return gorevPuaniToplam(gunluk, _gunSayisi);
+  }
+
+  Future<void> _sehirSec(
+    GorevPuanlariSet set2025,
+    GorevPuanlariSet set2026,
+  ) async {
+    final picked = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
       backgroundColor: PoliceColors.surfaceDark,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (ctx) => _SehirSecimSheet(kayitlar: set.kayitlar),
+      builder: (ctx) => _SehirSecimSheet(
+        set2025: set2025,
+        set2026: set2026,
+      ),
     );
     if (picked != null) {
-      setState(() => _secilenYer = picked);
+      setState(() => _secilenYerKey = picked);
     }
   }
 
@@ -92,7 +135,7 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
 
   void _formuTemizle() {
     setState(() {
-      _secilenYer = null;
+      _secilenYerKey = null;
       _baslangic = null;
       _bitis = null;
       _halenGorevde = false;
@@ -100,8 +143,23 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
   }
 
   Future<void> _kaydet() async {
-    if (_secilenYer == null) {
+    final ikili = ref.read(gorevPuanlariIkiliProvider).valueOrNull;
+    final sark = ref.read(gorevPuanSarkBaslangicProvider).valueOrNull;
+    if (ikili == null) {
+      _uyari('Puan cetveli yüklenemedi.');
+      return;
+    }
+    if (_secilenYerKey == null) {
       _uyari('Önce görev yerini seçin.');
+      return;
+    }
+    final gunluk = _gunlukPuan(ikili.$1, ikili.$2, sark);
+    if (gunluk == null || gunluk <= 0) {
+      _uyari(
+        widget.tercihYil == 2026
+            ? '2026 cetvelinde bu yer için puan yok. Tabloyu yükleyin veya 2025 bölümünü kullanın.'
+            : 'Bu görev yeri için günlük puan bulunamadı.',
+      );
       return;
     }
     if (_baslangic == null) {
@@ -118,15 +176,17 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
     }
 
     final bitisKayit = _halenGorevde ? DateTime.now() : _bitis!;
-    final yerAdi = displayGorevYeriAdi(_secilenYer!.yer);
+    final yerAdi = displayGorevYeriAdi(_secilenYerKey!);
+    final cetvelYili = _aktifCetvelYili(ikili.$1, ikili.$2, sark);
 
     setState(() => _kaydediliyor = true);
     await gorevPuaniKayitEkle(
       ref,
       GorevPuaniKaydi(
         id: gorevPuaniKayitId(),
-        yer: _secilenYer!.yer,
-        gunlukPuan: _secilenYer!.puan,
+        yer: _secilenYerKey!,
+        gunlukPuan: gunluk,
+        cetvelYili: cetvelYili,
         baslangicMs: _baslangic!.millisecondsSinceEpoch,
         bitisMs: bitisKayit.millisecondsSinceEpoch,
         gunSayisi: _gunSayisi,
@@ -155,26 +215,35 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
 
   @override
   Widget build(BuildContext context) {
-    final cetvelAsync = ref.watch(gorevPuanlariProvider);
+    final cetvelAsync = ref.watch(gorevPuanlariIkiliProvider);
+    final sarkAsync = ref.watch(gorevPuanSarkBaslangicProvider);
     final kayitlarAsync = ref.watch(gorevPuaniKayitlariProvider);
     final genelToplam = ref.watch(gorevPuaniGenelToplamProvider);
+
+    final baslik = widget.tercihYil == 2026
+        ? '2026 Görev Puanı'
+        : widget.tercihYil == 2025
+            ? '2025 Görev Puanı'
+            : 'Görev Puanı Hesapla';
 
     return Scaffold(
       backgroundColor: PoliceColors.backgroundDark,
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
-        title: const Text('Görev Puanı Hesapla'),
+        title: Text(baslik),
         actions: [
           IconButton(
-            tooltip: '2025 puan cetveli',
+            tooltip: 'Günlük görev puanları cetveli',
             icon: const PhosphorIcon(
               PhosphorIconsRegular.listBullets,
               color: PoliceColors.titleOnDark,
             ),
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (_) => const GorevPuanlariPage(),
+                builder: (_) => GorevPuanlariPage(
+                  baslangicYil: widget.tercihYil ?? 2025,
+                ),
               ),
             ),
           ),
@@ -193,10 +262,21 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
             style: TextStyle(color: PoliceColors.textMuted),
           ),
         ),
-        data: (set) {
+        data: (ikili) {
+          final set2025 = ikili.$1;
+          final set2026 = ikili.$2;
+          final sark = sarkAsync.valueOrNull;
           final kayitlar = kayitlarAsync.valueOrNull ?? const [];
           final onizlemeGenel = genelToplam + _donemPuan;
           final kayitliDonemSayisi = kayitlar.length;
+          final gunluk = _gunlukPuan(set2025, set2026, sark);
+          final aktifYil = _aktifCetvelYili(set2025, set2026, sark);
+          final p2025 = _secilenYerKey != null
+              ? set2025.bul(_secilenYerKey!)?.puan
+              : null;
+          final p2026 = _secilenYerKey != null
+              ? set2026.bul(_secilenYerKey!)?.puan
+              : null;
 
           return ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
@@ -211,12 +291,33 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                 acik: _bilgiAcik,
                 onToggle: () => setState(() => _bilgiAcik = !_bilgiAcik),
               ),
+              if (widget.tercihYil != null &&
+                  _baslangic != null &&
+                  _bitisEtkin != null) ...[
+                const SizedBox(height: 10),
+                _CetvelUyariBand(
+                  tercihYil: widget.tercihYil!,
+                  aktifYil: aktifYil,
+                  baslangic: _baslangic!,
+                  bitis: _bitisEtkin!,
+                ),
+              ],
+              if (sark != null) ...[
+                const SizedBox(height: 8),
+                Text(
+                  'Şark başlangıcı: ${_tarihFmt.format(sark)}',
+                  style: TextStyle(
+                    color: PoliceColors.primaryBlue.withValues(alpha: 0.85),
+                    fontSize: 12,
+                  ),
+                ),
+              ],
               const SizedBox(height: 14),
               _SectionCard(
                 title: 'Görev Yeri',
                 child: Column(
                   children: [
-                    if (_secilenYer == null)
+                    if (_secilenYerKey == null)
                       Text(
                         'Henüz bir görev yeri seçilmedi.',
                         style: TextStyle(
@@ -226,7 +327,7 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                       )
                     else ...[
                       Text(
-                        displayGorevYeriAdi(_secilenYer!.yer),
+                        displayGorevYeriAdi(_secilenYerKey!),
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           color: PoliceColors.titleOnDark,
@@ -234,20 +335,60 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                           fontSize: 16,
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Günlük görev yeri puanı: ${_secilenYer!.puanMetni}',
-                        style: TextStyle(
-                          color: PoliceColors.textMuted.withValues(alpha: 0.9),
-                          fontSize: 13,
+                      const SizedBox(height: 6),
+                      if (p2025 != null)
+                        Text(
+                          '2025 günlük puan: ${formatGorevPuani(p2025)}',
+                          style: TextStyle(
+                            color: aktifYil == 2025
+                                ? PoliceColors.primaryBlue
+                                : PoliceColors.textMuted
+                                    .withValues(alpha: 0.85),
+                            fontSize: 13,
+                            fontWeight: aktifYil == 2025
+                                ? FontWeight.w700
+                                : FontWeight.w400,
+                          ),
                         ),
-                      ),
+                      if (p2026 != null)
+                        Text(
+                          '2026 günlük puan: ${formatGorevPuani(p2026)}',
+                          style: TextStyle(
+                            color: aktifYil == 2026
+                                ? PoliceColors.primaryBlue
+                                : PoliceColors.textMuted
+                                    .withValues(alpha: 0.85),
+                            fontSize: 13,
+                            fontWeight: aktifYil == 2026
+                                ? FontWeight.w700
+                                : FontWeight.w400,
+                          ),
+                        )
+                      else if (set2026.bos)
+                        Text(
+                          '2026 cetveli henüz yüklenmedi.',
+                          style: TextStyle(
+                            color: PoliceColors.textMuted.withValues(alpha: 0.8),
+                            fontSize: 12,
+                          ),
+                        ),
+                      if (gunluk != null && _baslangic != null) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          'Hesapta kullanılan ($aktifYil): ${formatGorevPuani(gunluk)}',
+                          style: const TextStyle(
+                            color: PoliceColors.titleOnDark,
+                            fontSize: 12.5,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ],
                     const SizedBox(height: 14),
                     SizedBox(
                       width: double.infinity,
                       child: FilledButton(
-                        onPressed: () => _sehirSec(set),
+                        onPressed: () => _sehirSec(set2025, set2026),
                         style: FilledButton.styleFrom(
                           backgroundColor: PoliceColors.primaryBlue,
                           foregroundColor: PoliceColors.titleOnDark,
@@ -355,10 +496,10 @@ class _GorevPuaniGirisPageState extends ConsumerState<GorevPuaniGirisPage> {
                         fontSize: 14,
                       ),
                     ),
-                    if (_secilenYer != null && _gunSayisi > 0) ...[
+                    if (gunluk != null && _gunSayisi > 0) ...[
                       const SizedBox(height: 10),
                       Text(
-                        '${_secilenYer!.puanMetni} × $_gunSayisi gün',
+                        '${formatGorevPuani(gunluk)} ($aktifYil) × $_gunSayisi gün',
                         style: TextStyle(
                           color: PoliceColors.textMuted.withValues(alpha: 0.75),
                           fontSize: 12,
@@ -753,10 +894,52 @@ class _DateField extends StatelessWidget {
   }
 }
 
-class _SehirSecimSheet extends StatefulWidget {
-  const _SehirSecimSheet({required this.kayitlar});
+class _CetvelUyariBand extends StatelessWidget {
+  const _CetvelUyariBand({
+    required this.tercihYil,
+    required this.aktifYil,
+    required this.baslangic,
+    required this.bitis,
+  });
 
-  final List<GorevPuaniKayit> kayitlar;
+  final int tercihYil;
+  final int aktifYil;
+  final DateTime baslangic;
+  final DateTime bitis;
+
+  @override
+  Widget build(BuildContext context) {
+    if (tercihYil == aktifYil) return const SizedBox.shrink();
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: const Color(0xFF3D2A10).withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.orange.shade700.withValues(alpha: 0.6)),
+      ),
+      child: Text(
+        '$tercihYil hesaplama bölümündesiniz; görev tarihlerinize göre '
+        'otomatik cetvel $aktifYil olarak seçildi. '
+        '(${DateFormat('dd.MM.yyyy').format(baslangic)} – '
+        '${DateFormat('dd.MM.yyyy').format(bitis)})',
+        style: TextStyle(
+          color: PoliceColors.titleOnDark.withValues(alpha: 0.9),
+          fontSize: 11.5,
+          height: 1.35,
+        ),
+      ),
+    );
+  }
+}
+
+class _SehirSecimSheet extends StatefulWidget {
+  const _SehirSecimSheet({
+    required this.set2025,
+    required this.set2026,
+  });
+
+  final GorevPuanlariSet set2025;
+  final GorevPuanlariSet set2026;
 
   @override
   State<_SehirSecimSheet> createState() => _SehirSecimSheetState();
@@ -772,10 +955,8 @@ class _SehirSecimSheetState extends State<_SehirSecimSheet> {
     super.dispose();
   }
 
-  List<GorevPuaniKayit> get _filtered {
-    final q = trFold(_q.trim());
-    if (q.isEmpty) return widget.kayitlar;
-    return widget.kayitlar.where((k) => trFold(k.yer).contains(q)).toList();
+  List<GorevPuaniIkiliSatir> get _filtered {
+    return gorevPuaniIkiliListe(widget.set2025, widget.set2026, query: _q);
   }
 
   @override
@@ -797,13 +978,23 @@ class _SehirSecimSheetState extends State<_SehirSecimSheet> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(16, 14, 16, 8),
+              padding: EdgeInsets.fromLTRB(16, 14, 16, 4),
               child: Text(
-                'Görev yeri seç (2025 cetveli)',
+                'Görev yeri seç — 2025 / 2026 puanları',
                 style: TextStyle(
                   color: PoliceColors.titleOnDark,
                   fontWeight: FontWeight.w800,
                   fontSize: 16,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text(
+                'İl ve ilçe için her iki yılın günlük puanı ayrı gösterilir.',
+                style: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.85),
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -834,36 +1025,44 @@ class _SehirSecimSheetState extends State<_SehirSecimSheet> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
-                itemCount: items.length,
-                separatorBuilder: (_, __) => Divider(
-                  height: 1,
-                  color: PoliceColors.outlineMuted.withValues(alpha: 0.25),
-                ),
-                itemBuilder: (context, i) {
-                  final k = items[i];
-                  return ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      displayGorevYeriAdi(k.yer),
-                      style: const TextStyle(
-                        color: PoliceColors.titleOnDark,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
+              child: items.isEmpty
+                  ? const Center(
+                      child: Text(
+                        'Eşleşen yer yok.',
+                        style: TextStyle(color: PoliceColors.textMuted),
                       ),
-                    ),
-                    trailing: Text(
-                      k.puanMetni,
-                      style: TextStyle(
-                        color: PoliceColors.textMuted.withValues(alpha: 0.9),
-                        fontSize: 13,
+                    )
+                  : ListView.separated(
+                      padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+                      itemCount: items.length,
+                      separatorBuilder: (_, __) => Divider(
+                        height: 1,
+                        color:
+                            PoliceColors.outlineMuted.withValues(alpha: 0.25),
                       ),
+                      itemBuilder: (context, i) {
+                        final s = items[i];
+                        return ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          title: Text(
+                            displayGorevYeriAdi(s.yer),
+                            style: const TextStyle(
+                              color: PoliceColors.titleOnDark,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                            ),
+                          ),
+                          subtitle: Text(
+                            '2025: ${s.puan2025Metni}  ·  2026: ${s.puan2026Metni}',
+                            style: TextStyle(
+                              color: PoliceColors.textMuted.withValues(alpha: 0.88),
+                              fontSize: 11.5,
+                            ),
+                          ),
+                          onTap: () => Navigator.of(context).pop(s.yer),
+                        );
+                      },
                     ),
-                    onTap: () => Navigator.of(context).pop(k),
-                  );
-                },
-              ),
             ),
           ],
         ),
@@ -920,9 +1119,16 @@ class _KayitTile extends StatelessWidget {
                     fontSize: 12,
                   ),
                 ),
+                Text(
+                  'Cetvel ${kayit.cetvelYili} · günlük ${formatGorevPuani(kayit.gunlukPuan)}',
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.75),
+                    fontSize: 11,
+                  ),
+                ),
                 if (kayit.halenGorevde)
                   Text(
-                    'Günlük ${formatGorevPuani(kayit.gunlukPuan)} · güncel',
+                    'Halen görevde · güncel',
                     style: TextStyle(
                       color: PoliceColors.primaryBlue.withValues(alpha: 0.8),
                       fontSize: 11,

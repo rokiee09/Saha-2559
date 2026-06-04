@@ -15,6 +15,7 @@ class GorevPuaniKaydi {
     required this.bitisMs,
     required this.gunSayisi,
     required this.toplamPuan,
+    this.cetvelYili = 2025,
     this.halenGorevde = false,
     this.olusturulmaMs = 0,
   });
@@ -22,6 +23,7 @@ class GorevPuaniKaydi {
   final String id;
   final String yer;
   final double gunlukPuan;
+  final int cetvelYili;
   final int baslangicMs;
   final int bitisMs;
   final int gunSayisi;
@@ -56,6 +58,7 @@ class GorevPuaniKaydi {
         'bitisMs': bitisMs,
         'gunSayisi': gunSayisi,
         'toplamPuan': toplamPuan,
+        'cetvelYili': cetvelYili,
         'halenGorevde': halenGorevde,
         'olusturulmaMs': olusturulmaMs,
       };
@@ -68,6 +71,7 @@ class GorevPuaniKaydi {
         bitisMs: (j['bitisMs'] as num?)?.toInt() ?? 0,
         gunSayisi: (j['gunSayisi'] as num?)?.toInt() ?? 0,
         toplamPuan: (j['toplamPuan'] as num?)?.toDouble() ?? 0,
+        cetvelYili: (j['cetvelYili'] as num?)?.toInt() ?? 2025,
         halenGorevde: j['halenGorevde'] as bool? ?? false,
         olusturulmaMs: (j['olusturulmaMs'] as num?)?.toInt() ?? 0,
       );

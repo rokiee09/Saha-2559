@@ -1,0 +1,6224 @@
+{
+  "yil": 2026,
+  "kaynak": "Cumhurbaşkanlığı Kararı 10665 (5.12.2025 RG) — EK-1 Sayılı Cetvel",
+  "uyari": "Resmî cetvel esas alınmalıdır; uygulama bilgi amaçlıdır.",
+  "kayit_sayisi": 1036,
+  "kayitlar": [
+    {
+      "sn": 1,
+      "yer": "ADANA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 2,
+      "yer": "ADANA-ALADAĞ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 3,
+      "yer": "ADANA-CEYHAN",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 4,
+      "yer": "ADANA-ÇUKUROVA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 5,
+      "yer": "ADANA-FEKE",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 6,
+      "yer": "ADANA-İMAMOĞLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 7,
+      "yer": "ADANA-KARAİSALI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 8,
+      "yer": "ADANA-KARATAŞ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 9,
+      "yer": "ADANA-KOZAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 10,
+      "yer": "ADANA-POZANTI",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 11,
+      "yer": "ADANA-SAİMBEYLİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 12,
+      "yer": "ADANA-SARIÇAM",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 13,
+      "yer": "ADANA-SEYHAN",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 14,
+      "yer": "ADANA-TUFANBEYLİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 15,
+      "yer": "ADANA-YUMURTALIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 16,
+      "yer": "ADANA-YÜREĞİR",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 17,
+      "yer": "ADANA BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 18,
+      "yer": "ADANA ÖZEL HAREKAT MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 19,
+      "yer": "KEMAL SERHADLI POMEM",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 20,
+      "yer": "ADIYAMAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 21,
+      "yer": "ADIYAMAN-BESNİ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 22,
+      "yer": "ADIYAMAN-ÇELİKHAN",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 23,
+      "yer": "ADIYAMAN-GERGER",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 24,
+      "yer": "ADIYAMAN-GÖLBAŞI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 25,
+      "yer": "ADIYAMAN-KAHTA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 26,
+      "yer": "ADIYAMAN-SAMSAT",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 27,
+      "yer": "ADIYAMAN-SİNCİK",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 28,
+      "yer": "ADIYAMAN-TUT",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 29,
+      "yer": "AFYONKARAHİSAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 30,
+      "yer": "AFYONKARAHİSAR-BAŞMAKÇI",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 31,
+      "yer": "AFYONKARAHİSAR-BAYAT",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 32,
+      "yer": "AFYONKARAHİSAR-BOLVADİN",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 33,
+      "yer": "AFYONKARAHİSAR-ÇAY",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 34,
+      "yer": "AFYONKARAHİSAR-ÇOBANLAR",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 35,
+      "yer": "AFYONKARAHİSAR-DAZKIRI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 36,
+      "yer": "AFYONKARAHİSAR-DİNAR",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 37,
+      "yer": "AFYONKARAHİSAR-EMİRDAĞ",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 38,
+      "yer": "AFYONKARAHİSAR-EVCİLER",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 39,
+      "yer": "AFYONKARAHİSAR-HOCALAR",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 40,
+      "yer": "AFYONKARAHİSAR-İHSANİYE",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 41,
+      "yer": "AFYONKARAHİSAR-İSCEHİSAR",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 42,
+      "yer": "AFYONKARAHİSAR-KIZILÖREN",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 43,
+      "yer": "AFYONKARAHİSAR-SANDIKLI",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 44,
+      "yer": "AFYONKARAHİSAR-SİNANPAŞA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 45,
+      "yer": "AFYONKARAHİSAR-SULTANDAĞI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 46,
+      "yer": "AFYONKARAHİSAR-ŞUHUT",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 47,
+      "yer": "AFYONKARAHİSAR PMEM MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 48,
+      "yer": "AFYONKARAHİSAR POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 49,
+      "yer": "AĞRI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 50,
+      "yer": "AĞRI-DİYADİN",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 51,
+      "yer": "AĞRI-DOĞUBAYAZIT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 52,
+      "yer": "AĞRI-ELEŞKİRT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 53,
+      "yer": "AĞRI-HAMUR",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 54,
+      "yer": "AĞRI-PATNOS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 55,
+      "yer": "AĞRI-TAŞLIÇAY",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 56,
+      "yer": "AĞRI-TUTAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 57,
+      "yer": "AKSARAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 58,
+      "yer": "AKSARAY-AĞAÇÖREN",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 59,
+      "yer": "AKSARAY-ESKİL",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 60,
+      "yer": "AKSARAY-GÜLAĞAÇ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 61,
+      "yer": "AKSARAY-GÜZELYURT",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 62,
+      "yer": "AKSARAY-ORTAKÖY",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 63,
+      "yer": "AKSARAY-SARIYAHŞİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 64,
+      "yer": "AKSARAY-SULTANHANI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 65,
+      "yer": "AKSARAY ŞEHİT ÖNDER GÜZEL POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 66,
+      "yer": "AMASYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 67,
+      "yer": "AMASYA-GÖYNÜCEK",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 68,
+      "yer": "AMASYA-GÜMÜŞHACIKÖY",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 69,
+      "yer": "AMASYA-HAMAMÖZÜ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 70,
+      "yer": "AMASYA-MERZİFON",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 71,
+      "yer": "AMASYA-SULUOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 72,
+      "yer": "AMASYA-TAŞOVA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 73,
+      "yer": "AMASYA MERZİFON POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 74,
+      "yer": "ANKARA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 75,
+      "yer": "ANKARA-AKYURT",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 76,
+      "yer": "ANKARA-ALTINDAĞ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 77,
+      "yer": "ANKARA-AYAŞ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 78,
+      "yer": "ANKARA-BALA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 79,
+      "yer": "ANKARA-BEYPAZARI",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 80,
+      "yer": "ANKARA-ÇAMLIDERE",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 81,
+      "yer": "ANKARA-ÇANKAYA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 82,
+      "yer": "ANKARA-ÇUBUK",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 83,
+      "yer": "ANKARA-ELMADAĞ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 84,
+      "yer": "ANKARA-ETİMESGUT",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 85,
+      "yer": "ANKARA-EVREN",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 86,
+      "yer": "ANKARA-GÖLBAŞI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 87,
+      "yer": "ANKARA-GÜDÜL",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 88,
+      "yer": "ANKARA-HAYMANA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 89,
+      "yer": "ANKARA-KAHRAMANKAZAN",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 90,
+      "yer": "ANKARA-KALECİK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 91,
+      "yer": "ANKARA-KEÇİÖREN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 92,
+      "yer": "ANKARA-KIZILCAHAMAM",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 93,
+      "yer": "ANKARA-MAMAK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 94,
+      "yer": "ANKARA-NALLIHAN",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 95,
+      "yer": "ANKARA-POLATLI",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 96,
+      "yer": "ANKARA-PURSAKLAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 97,
+      "yer": "ANKARA-SİNCAN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 98,
+      "yer": "ANKARA-ŞEREFLİKOÇHİSAR",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 99,
+      "yer": "ANKARA-YENİMAHALLE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 100,
+      "yer": "AKYURT POMEM",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 101,
+      "yer": "ANKARA BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 102,
+      "yer": "ANKARA PMEM MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 103,
+      "yer": "ANKARA TAKVİYE HAZIR KUVVET MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 104,
+      "yer": "ŞEHİT MUSTAFA BÜYÜKPOYRAZ KORUMA EĞİTİM AKADEMİSİ POLİS EĞİTİM MERKEZİ MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 105,
+      "yer": "EMNİYET GENEL MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 106,
+      "yer": "POLİS AKADEMİSİ BAŞKANLIĞI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 107,
+      "yer": "ANTALYA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 108,
+      "yer": "ANTALYA-AKSEKİ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 109,
+      "yer": "ANTALYA-AKSU",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 110,
+      "yer": "ANTALYA-ALANYA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 111,
+      "yer": "ANTALYA-DEMRE",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 112,
+      "yer": "ANTALYA-DÖŞEMEALTI",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 113,
+      "yer": "ANTALYA-ELMALI",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 114,
+      "yer": "ANTALYA-FİNİKE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 115,
+      "yer": "ANTALYA-GAZİPAŞA",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 116,
+      "yer": "ANTALYA-GÜNDOĞMUŞ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 117,
+      "yer": "ANTALYA-İBRADI",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 118,
+      "yer": "ANTALYA-KAŞ",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 119,
+      "yer": "ANTALYA-KEMER",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 120,
+      "yer": "ANTALYA-KEPEZ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 121,
+      "yer": "ANTALYA-KONYAALTI",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 122,
+      "yer": "ANTALYA-KORKUTELİ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 123,
+      "yer": "ANTALYA-KUMLUCA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 124,
+      "yer": "ANTALYA-MANAVGAT",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 125,
+      "yer": "ANTALYA-MURATPAŞA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 126,
+      "yer": "ANTALYA-SERİK",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 127,
+      "yer": "ANTALYA BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 128,
+      "yer": "ANTALYA ÖZEL HAREKAT MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 129,
+      "yer": "ANTALYA PMEM MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 130,
+      "yer": "ARDAHAN",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 131,
+      "yer": "ARDAHAN-ÇILDIR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 132,
+      "yer": "ARDAHAN-DAMAL",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 133,
+      "yer": "ARDAHAN-GÖLE",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 134,
+      "yer": "ARDAHAN-HANAK",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 135,
+      "yer": "ARDAHAN-POSOF",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 136,
+      "yer": "ARTVİN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 137,
+      "yer": "ARTVİN-ARDANUC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 138,
+      "yer": "ARTVİN-ARHAVI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 139,
+      "yer": "ARTVİN-BORCKA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 140,
+      "yer": "ARTVİN-HOPA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 141,
+      "yer": "ARTVİN-KEMALPASA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 142,
+      "yer": "ARTVİN-MURGUL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 143,
+      "yer": "ARTVİN-SAVSAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 144,
+      "yer": "ARTVİN-YUSUFELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 145,
+      "yer": "AYDIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 146,
+      "yer": "AYDIN-BOZDOGAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 147,
+      "yer": "AYDIN-BUHARKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 148,
+      "yer": "AYDIN-CINE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 149,
+      "yer": "AYDIN-DIDIM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 150,
+      "yer": "AYDIN-EFELER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 151,
+      "yer": "AYDIN-GERMENCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 152,
+      "yer": "AYDIN-INCIRLIOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 153,
+      "yer": "AYDIN-KARACASU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 154,
+      "yer": "AYDIN-KARPUZLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 155,
+      "yer": "AYDIN-KOCARLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 156,
+      "yer": "AYDIN-KOSK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 157,
+      "yer": "AYDIN-KUSADASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 158,
+      "yer": "AYDIN-KUYUCAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 159,
+      "yer": "AYDIN-NAZILLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 160,
+      "yer": "AYDIN-SÖKE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 161,
+      "yer": "AYDIN-SULTANHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 162,
+      "yer": "AYDIN-YENIPAZAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 163,
+      "yer": "AYDINDIDIMPMEMMUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 164,
+      "yer": "AYDINPMYO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 165,
+      "yer": "BALIKESİR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 166,
+      "yer": "BALIKESİR-ALTIEYLUL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 167,
+      "yer": "BALIKESİR-AYVALIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 168,
+      "yer": "BALIKESİR-BALYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 169,
+      "yer": "BALIKESİR-BANDIRMA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 170,
+      "yer": "BALIKE BIGADIC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 171,
+      "yer": "BALIKE! BURHANIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 172,
+      "yer": "BALIKESİR-DURSUNBEY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 173,
+      "yer": "BALIKESİR-EDREMIT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 174,
+      "yer": "BALIKESİR-ERDEK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 175,
+      "yer": "BALIKESİR-GOMEC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 176,
+      "yer": "BALIKESİR-GONEN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 177,
+      "yer": "BALIKESİR-HAVRAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 178,
+      "yer": "BALIKESİR-IVRINDI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 179,
+      "yer": "BALIKESİR-KARESI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 180,
+      "yer": "BALIKESİR-KEPSUT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 181,
+      "yer": "BALIKESİR-MANYAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 182,
+      "yer": "BALIKESİR-MARMARA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 183,
+      "yer": "BALIKESİR-SAVAŞTEPE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 184,
+      "yer": "BALIKESİR-SINDIRGI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 185,
+      "yer": "BALIKESİR-SUSURLUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 186,
+      "yer": "BALIKESIR AYVALIK PMEM MUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 187,
+      "yer": "BALIKESIR POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 188,
+      "yer": "BARTIN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 189,
+      "yer": "BARTIN-AMASRA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 190,
+      "yer": "BARTIN-KURUCASILE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 191,
+      "yer": "BARTIN-ULUS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 192,
+      "yer": "BATMAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 193,
+      "yer": "BATMAN-BESIRI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 194,
+      "yer": "BATMAN-GERCUS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 195,
+      "yer": "BATMAN-HASANKEYF",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 196,
+      "yer": "BATMAN-KOZLUK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 197,
+      "yer": "BATMAN-SASON",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 198,
+      "yer": "BAYBURT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 199,
+      "yer": "BAYBURT-AYDINTEPE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 200,
+      "yer": "BAYBURT-DEMIROZU",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 201,
+      "yer": "BAYBURTPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 202,
+      "yer": "BİLECİK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 203,
+      "yer": "BİLECİK-BOZUYUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 204,
+      "yer": "BİLECİK-GOLPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 205,
+      "yer": "BİLECİK-INHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 206,
+      "yer": "BİLECİK-OSMANELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 207,
+      "yer": "BİLECİK-PAZARYERI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 208,
+      "yer": "BİLECİK-SÖĞÜT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 209,
+      "yer": "BİLECİK-YENIPAZAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 210,
+      "yer": "BILECIK POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 211,
+      "yer": "BİNGÖL",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 212,
+      "yer": "BİNGÖL-ADAKLI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 213,
+      "yer": "BİNGÖL-GENÇ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 214,
+      "yer": "BİNGÖL-KARLIOVA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 215,
+      "yer": "BİNGÖL-KIGI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 216,
+      "yer": "BİNGÖL-SOLHAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 217,
+      "yer": "BİNGÖL-YAYLADERE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 218,
+      "yer": "BİTLİS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 219,
+      "yer": "BİTLİS-ADILCEVAZ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 220,
+      "yer": "BITLIIS-AHLAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 221,
+      "yer": "BİTLİS-GÜROYMAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 222,
+      "yer": "BİTLİS-HIZAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 223,
+      "yer": "BITLIS-MUTKT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 224,
+      "yer": "BİTLİS-TATVAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 225,
+      "yer": "BITLIS POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 226,
+      "yer": "CUMHURBAŞKANLIĞI AHLAT YERLEŞKESİ KORUMA MÜDÜRLÜĞÜ",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 227,
+      "yer": "BOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 228,
+      "yer": "BOLU-DÖRTDİVAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 229,
+      "yer": "BOLU-GEREDE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 230,
+      "yer": "BOLU-GOYNUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 231,
+      "yer": "BOLU-KIBRISCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 232,
+      "yer": "BOLU-MENGEN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 233,
+      "yer": "BOLU-MUDURNU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 234,
+      "yer": "BOLU-SEBEN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 235,
+      "yer": "BOLU-YENICAGA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 236,
+      "yer": "BURDUR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 237,
+      "yer": "BURDUR-AGLASUN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 238,
+      "yer": "BURDUR-ALTINYAYLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 239,
+      "yer": "BURDUR-BUCAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 240,
+      "yer": "BURDUR-CAVDIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 241,
+      "yer": "BURDUR-CELTIKCI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 242,
+      "yer": "BURDUR-GOLHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 243,
+      "yer": "BURDUR-KARAMANLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 244,
+      "yer": "BURDUR-KEMER",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 245,
+      "yer": "BURDUR-TEFENNI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 246,
+      "yer": "BURDUR-YESILOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 247,
+      "yer": "BURSA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 248,
+      "yer": "BURSA-BUYUKORHAN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 249,
+      "yer": "BURSA-GEMLIK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 250,
+      "yer": "BURSA-GURSU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 251,
+      "yer": "BURSA-HARMANCIK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 252,
+      "yer": "BURSA-INEGOL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 253,
+      "yer": "BURSA-IZNIK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 254,
+      "yer": "BURSA-KARACABEY",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 255,
+      "yer": "BURSA-KELES",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 256,
+      "yer": "BURSA-KESTEL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 257,
+      "yer": "BURSA-MUDANYA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 258,
+      "yer": "BURSA-MUSTAFAKEMALPASA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 259,
+      "yer": "BURSA-NILUFER",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 260,
+      "yer": "BURSA-ORHANELI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 261,
+      "yer": "BURSA-ORHANELİ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 262,
+      "yer": "BURSA-OSMANGAZI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 263,
+      "yer": "BURSA-YENISEHIR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 264,
+      "yer": "BURSA-YILDIRIM",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 265,
+      "yer": "BURSA BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 266,
+      "yer": "BURSAPOMEM",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 267,
+      "yer": "ÇANAKKALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 268,
+      "yer": "ÇANAKKALE-AYVACIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 269,
+      "yer": "ÇANAKKALE-BAYRAMIC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 270,
+      "yer": "ÇANAKKALE-BIGA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 271,
+      "yer": "ÇANAKKALE-BOZCAADA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 272,
+      "yer": "ÇANAKKALE-CAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 273,
+      "yer": "ÇANAKKALE-ECEABAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 274,
+      "yer": "ÇANAKKALE-EZINE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 275,
+      "yer": "ÇANAKKALE-GELIBOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 276,
+      "yer": "ÇANAKKALE-GOKCEADA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 277,
+      "yer": "ÇANAKKALE-LAPSEKI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 278,
+      "yer": "ÇANAKKALE-YENICE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 279,
+      "yer": "CANAKKALEDENIZ PEM MUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 280,
+      "yer": "ÇANKIRI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 281,
+      "yer": "ÇANKIRI-ATKARACALAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 282,
+      "yer": "ÇANKIRI-BAYRAMOREN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 283,
+      "yer": "ÇANKIRI-ÇERKEŞ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 284,
+      "yer": "ÇANKIRI-ELDİVAN",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 285,
+      "yer": "ÇANKIRI-ILGAZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 286,
+      "yer": "ÇANKIRI-KIZILIRMAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 287,
+      "yer": "ÇANKIRI-KORGUN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 288,
+      "yer": "ÇANKIRI-KURŞUNLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 289,
+      "yer": "ÇANKIRI-ORTA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 290,
+      "yer": "ÇANKIRI-SABANOZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 291,
+      "yer": "ÇANKIRI-YAPRAKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 292,
+      "yer": "MUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 293,
+      "yer": "ÇORUM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 294,
+      "yer": "ÇORUM-ALACA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 295,
+      "yer": "ÇORUM-BAYAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 296,
+      "yer": "ÇORUM-BOGAZKALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 297,
+      "yer": "ÇORUM-DODURGA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 298,
+      "yer": "ÇORUM-ISKILIP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 299,
+      "yer": "ÇORUM-KARGI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 300,
+      "yer": "CORUM-LACIIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 301,
+      "yer": "ÇORUM-MECITOZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 302,
+      "yer": "ÇORUM-OGUZLAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 303,
+      "yer": "ÇORUM-ORTAKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 304,
+      "yer": "ÇORUM-OSMANCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 305,
+      "yer": "ÇORUM-SUNGURLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 306,
+      "yer": "ÇORUM-UGURLUDAG",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 307,
+      "yer": "DENİZLİ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 308,
+      "yer": "DENİZLİ-ACIPAYAM",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 309,
+      "yer": "DENİZLİ-BABADAĞ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 310,
+      "yer": "DENİZLİ-BAKLAN",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 311,
+      "yer": "DENİZLİ-BEKİLLİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 312,
+      "yer": "DENİZLİ-BEYAĞAÇ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 313,
+      "yer": "DENİZLİ-BOZKURT",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 314,
+      "yer": "DENİZLİ-BULDAN",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 315,
+      "yer": "DENİZLİ-ÇAL",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 316,
+      "yer": "DENİZLİ-ÇAMELİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 317,
+      "yer": "DENİZLİ-ÇARDAK",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 318,
+      "yer": "DENİZLİ-ÇİVRİL",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 319,
+      "yer": "DENİZLİ-GÜNEY",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 320,
+      "yer": "DENİZLİ-HONAZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 321,
+      "yer": "DENİZLİ-KALE",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 322,
+      "yer": "DENİZLİ-MERKEZEFENDİ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 323,
+      "yer": "DENİZLİ-PAMUKKALE",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 324,
+      "yer": "DENİZLİ-SARAYKÖY",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 325,
+      "yer": "DENİZLİ-SERİNHİSAR",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 326,
+      "yer": "DENİZLİ-TAVAS",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 327,
+      "yer": "DİYARBAKIR",
+      "bolge": 2,
+      "yil": 6
+    },
+    {
+      "sn": 328,
+      "yer": "DİYARBAKIR-BAĞLAR",
+      "bolge": 2,
+      "yil": 6
+    },
+    {
+      "sn": 329,
+      "yer": "DİYARBAKIR-BİSMİL",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 330,
+      "yer": "DİYARBAKIR-ÇERMİK",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 331,
+      "yer": "DİYARBAKIR-ÇINAR",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 332,
+      "yer": "DİYARBAKIR-ÇÜNGÜŞ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 333,
+      "yer": "DİYARBAKIR-DİCLE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 334,
+      "yer": "DİYARBAKIR-EĞİL",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 335,
+      "yer": "DİYARBAKIR-ERGANİ",
+      "bolge": 2,
+      "yil": 5
+    },
+    {
+      "sn": 336,
+      "yer": "DİYARBAKIR-HANI",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 337,
+      "yer": "DİYARBAKIR-HAZRO",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 338,
+      "yer": "DİYARBAKIR-KAYAPINAR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 339,
+      "yer": "DİYARBAKIR-KOCAKOY",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 340,
+      "yer": "DİYARBAKIR-KULP",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 341,
+      "yer": "DİYARBAKIR-LICE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 342,
+      "yer": "DİYARBAKIR-SILVAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 343,
+      "yer": "DİYARBAKIR-SUR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 344,
+      "yer": "DİYARBAKIR-YENISEHIR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 345,
+      "yer": "ALIGAFFAR OKKANPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 346,
+      "yer": "ALİ GAFFAR OKKAN POMEM",
+      "bolge": 2,
+      "yil": 7
+    },
+    {
+      "sn": 347,
+      "yer": "DÜZCE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 348,
+      "yer": "DÜZCE-AKCAKOCA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 349,
+      "yer": "DÜZCE-CUMAYERI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 350,
+      "yer": "DÜZCE-CILIMLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 351,
+      "yer": "DÜZCE-GOLYAKA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 352,
+      "yer": "DÜZCE-GUMUSOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 353,
+      "yer": "DÜZCE-KAYNASLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 354,
+      "yer": "DÜZCE-YIGILCA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 355,
+      "yer": "EDİRNE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 356,
+      "yer": "EDİRNE-ENEZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 357,
+      "yer": "EDİRNE-HAVSA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 358,
+      "yer": "EDİRNE-IPSALA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 359,
+      "yer": "EDİRNE-KESAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 360,
+      "yer": "EDİRNE-LALAPASA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 361,
+      "yer": "EDİRNE-MERIC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 362,
+      "yer": "EDİRNE-SULOGLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 363,
+      "yer": "EDİRNE-UZUNKOPRU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 364,
+      "yer": "ELAZIĞ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 365,
+      "yer": "ELAZIĞ-AGIN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 366,
+      "yer": "ELAZIĞ-ALACAKAYA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 367,
+      "yer": "ELAZIĞ-ARICAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 368,
+      "yer": "ELAZIĞ-BASKIL",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 369,
+      "yer": "ELAZIĞ-KARAKOCAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 370,
+      "yer": "ELAZIĞ-KEBAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 371,
+      "yer": "ELAZIĞ-KOVANCILAR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 372,
+      "yer": "ELAZIĞ-MADEN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 373,
+      "yer": "ELAZIĞ-PALU",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 374,
+      "yer": "ELAZIĞ-SIVRICE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 375,
+      "yer": "ELAZIG ZULFU AGAR POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 376,
+      "yer": "ERZİNCAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 377,
+      "yer": "ERZİNCAN-CAYIRLI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 378,
+      "yer": "ERZİNCAN-ILIC",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 379,
+      "yer": "ERZİNCAN-KEMAH",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 380,
+      "yer": "ERZİNCAN-KEMALIYE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 381,
+      "yer": "ERZİNCAN-OTLUKBELI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 382,
+      "yer": "ERZİNCAN-REFAHIYE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 383,
+      "yer": "ERZİNCAN-TERCAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 384,
+      "yer": "ERZİNCAN-UZUMLU",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 385,
+      "yer": "ERZINCAN POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 386,
+      "yer": "ERZURUM",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 387,
+      "yer": "ERZURUM-ASKALE",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 388,
+      "yer": "ERZURUM-AZIZIYE",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 389,
+      "yer": "ERZURUM-CAT",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 390,
+      "yer": "ERZURUM-HINIS",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 391,
+      "yer": "ERZURUM-HORASAN",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 392,
+      "yer": "ERZURUM-ISPIR",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 393,
+      "yer": "ERZURUM-KARACOBAN",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 394,
+      "yer": "ERZURUM-KARAYAZI",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 395,
+      "yer": "ERZURUM-KOPRUKOY",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 396,
+      "yer": "ERZURUM-NARMAN",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 397,
+      "yer": "ERZURUM-OLTU",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 398,
+      "yer": "ERZURUM-OLUR",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 399,
+      "yer": "ERZURUM-PALANDOKEN",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 400,
+      "yer": "ERZURUM-PASINLER",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 401,
+      "yer": "ERZURUM-PAZARYOLU",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 402,
+      "yer": "ERZURUM-SENKAYA",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 403,
+      "yer": "ERZURUM-TEKMAN",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 404,
+      "yer": "ERZURUM-TORTUM",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 405,
+      "yer": "ERZURUM-UZUNDERE",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 406,
+      "yer": "ERZURUM-YAKUTIYE",
+      "bolge": 2,
+      "yil": 11
+    },
+    {
+      "sn": 407,
+      "yer": "ERZURUM BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 2,
+      "yil": 7
+    },
+    {
+      "sn": 408,
+      "yer": "ERZURUMPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 409,
+      "yer": "ESKİŞEHİR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 410,
+      "yer": "ESKISEHIIR-ALPU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 411,
+      "yer": "ESKİŞEHİR-BEYLIKOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 412,
+      "yer": "ESKİŞEHİR-CIFTELER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 413,
+      "yer": "ESKİŞEHİR-GUNYUZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 414,
+      "yer": "ESKİŞEHİR-HAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 415,
+      "yer": "ESKISEH INONU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 416,
+      "yer": "ESKİŞEHİR-MAHMUDİYE",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 417,
+      "yer": "ESKİŞEHİR-MIHALGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 418,
+      "yer": "ESKİŞEHİR-MIHALICCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 419,
+      "yer": "ESKİŞEHİR-ODUNPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 420,
+      "yer": "ESKİŞEHİR-SARICAKAYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 421,
+      "yer": "ESKİŞEHİR-SEYITGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 422,
+      "yer": "ESKİŞEHİR-SIVRIHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 423,
+      "yer": "ESKİŞEHİR-TEPEBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 424,
+      "yer": "ESKİŞEHİR TRAFİK PEM MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 425,
+      "yer": "GAZİANTEP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 426,
+      "yer": "GAZİANTEP-ARABAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 427,
+      "yer": "GAZİANTEP-ISLAHIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 428,
+      "yer": "GAZİANTEP-KARKAMIŞ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 429,
+      "yer": "GAZİANTEP-NIZIP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 430,
+      "yer": "GAZİANTEP-NURDAGI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 431,
+      "yer": "GAZİANTEP-OGUZELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 432,
+      "yer": "GAZİANTEP-SAHINBEY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 433,
+      "yer": "GAZİANTEP-SEHITKAMIL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 434,
+      "yer": "GAZİANTEP-YAVUZELİ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 435,
+      "yer": "GAZIANTEPPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 436,
+      "yer": "GİRESUN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 437,
+      "yer": "GİRESUN-ALUCRA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 438,
+      "yer": "GİRESUN-BULANCAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 439,
+      "yer": "GİRESUN-CAMOLUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 440,
+      "yer": "GİRESUN-CANAKCI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 441,
+      "yer": "GİRESUN-DERELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 442,
+      "yer": "GİRESUN-DOGANKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 443,
+      "yer": "GİRESUN-ESPIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 444,
+      "yer": "GİRESUN-EYNESİL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 445,
+      "yer": "GİRESUN-GORELE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 446,
+      "yer": "GİRESUN-GUCE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 447,
+      "yer": "GİRESUN-KESAP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 448,
+      "yer": "GİRESUN-PIRAZIZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 449,
+      "yer": "GİRESUN-SEBINKARAHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 450,
+      "yer": "GİRESUN-TIREBOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 451,
+      "yer": "GİRESUN-YAGLIDERE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 452,
+      "yer": "GÜMÜŞHANE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 453,
+      "yer": "GÜMÜŞHANE-KELKIT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 454,
+      "yer": "GÜMÜŞHANE-KOSE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 455,
+      "yer": "GÜMÜŞHANE-KURTUN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 456,
+      "yer": "GÜMÜŞHANE-SIRAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 457,
+      "yer": "GÜMÜŞHANE-TORUL",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 458,
+      "yer": "HAKKARİ",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 459,
+      "yer": "HAKKARİ-ÇUKURCA",
+      "bolge": 2,
+      "yil": 2
+    },
+    {
+      "sn": 460,
+      "yer": "HAKKARİ-ŞEMDİNLİ",
+      "bolge": 2,
+      "yil": 2
+    },
+    {
+      "sn": 495,
+      "yer": "ISPARTA-YENİŞARBADEMLİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 496,
+      "yer": "İSTANBUL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 497,
+      "yer": "İSTANBUL-ADALAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 498,
+      "yer": "İSTANBUL-ARNAVUTKOY",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 499,
+      "yer": "İSTANBUL-ATASEHIR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 500,
+      "yer": "İSTANBUL-AVCILAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 501,
+      "yer": "İSTANBUL-BAGCILAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 502,
+      "yer": "İSTANBUL-BAHCELIEVLER",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 503,
+      "yer": "İSTANBUL-BAKIRKOY",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 504,
+      "yer": "İSTANBUL-BASAKSEHIR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 505,
+      "yer": "İSTANBUL-BAYRAMPASA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 506,
+      "yer": "İSTANBUL-BESIKTAS",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 507,
+      "yer": "İSTANBUL-BEYKOZ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 508,
+      "yer": "ISTANBUL-BEYLIKDUZO",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 509,
+      "yer": "İSTANBUL-BEYOGLU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 510,
+      "yer": "İSTANBUL-BUYUKCEKMECE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 511,
+      "yer": "İSTANBUL-ÇATALCA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 512,
+      "yer": "İSTANBUL-ÇEKMEKÖY",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 513,
+      "yer": "İSTANBUL-ESENLER",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 514,
+      "yer": "İSTANBUL-ESENLER",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 515,
+      "yer": "İSTANBUL-EYUPSULTAN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 516,
+      "yer": "STANBUL-FATIH",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 517,
+      "yer": "İSTANBUL-GAZIOSMANPASA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 518,
+      "yer": "İSTANBUL-GUNGOREN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 519,
+      "yer": "İSTANBUL-KADIKOY",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 520,
+      "yer": "İSTANBUL-KAGITHANE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 521,
+      "yer": "İSTANBUL-KARTAL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 522,
+      "yer": "İSTANBUL-KUCUKCEKMECE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 523,
+      "yer": "İSTANBUL-MALTEPE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 524,
+      "yer": "İSTANBUL-PENDIK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 525,
+      "yer": "İSTANBUL-SANCAKTEPE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 526,
+      "yer": "İSTANBUL-SARIYER",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 527,
+      "yer": "İSTANBUL-SİLİVRİ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 528,
+      "yer": "İSTANBUL-SULTANBEYLI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 529,
+      "yer": "İSTANBUL-SULTANGAZI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 530,
+      "yer": "İSTANBUL-SILE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 531,
+      "yer": "İSTANBUL-ŞİLE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 532,
+      "yer": "İSTANBUL-TUZLA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 533,
+      "yer": "İSTANBUL-UMRANIYE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 534,
+      "yer": "İSTANBUL-USKUDAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 535,
+      "yer": "İSTANBUL-ZEYTINBURNU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 536,
+      "yer": "ADILE SADULLAHMERMERCIPMYO",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 537,
+      "yer": "ISTANBULARNAVUTKOYPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 538,
+      "yer": "LABORATUVARIMUDURLUGU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 539,
+      "yer": "ISTANBUL KEMALETTIN EROGE PEM MUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 540,
+      "yer": "ISTANBU ZELHAREKATMUDUR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 541,
+      "yer": "ISTANBULTAKVIYE HAZIRKUVVET MODURLUGU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 542,
+      "yer": "İZMİR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 543,
+      "yer": "İZMİR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 544,
+      "yer": "İZMİR-BALCOVA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 545,
+      "yer": "İZMİR-BAYINDIR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 546,
+      "yer": "İZMİR-BAYRAKLI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 547,
+      "yer": "İZMİR-BERGAMA",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 548,
+      "yer": "İZMİR-BEYDAG",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 549,
+      "yer": "ZMIR-BORNOVA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 550,
+      "yer": "IZMTR-BUCA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 551,
+      "yer": "İZMİR-ÇEŞME",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 552,
+      "yer": "İZMİR-CIGLI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 553,
+      "yer": "IZMIR-DIKILT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 554,
+      "yer": "İZMİR-FOCA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 555,
+      "yer": "İZMİR-GAZIEMIR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 556,
+      "yer": "İZMİR-GUZELBAHCE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 557,
+      "yer": "İZMİR-KARABAGLAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 558,
+      "yer": "ZMIR-KARABURUN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 559,
+      "yer": "İZMİR-KARSIYAKA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 560,
+      "yer": "İZMİR-KEMALPASA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 561,
+      "yer": "İZMİR-KINIK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 562,
+      "yer": "İZMİR-KIRAZ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 563,
+      "yer": "İZMİR-KONAK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 564,
+      "yer": "İZMİR-MENDERES",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 565,
+      "yer": "İZMİR-MENEMEN",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 566,
+      "yer": "ZMIR-NARLIDERE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 567,
+      "yer": "İZMİR-ODEMIS",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 568,
+      "yer": "İZMİR-SEFERIHISAR",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 569,
+      "yer": "İZMİR-SELCUK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 570,
+      "yer": "İZMİR-TIRE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 571,
+      "yer": "İZMİR-TORBALI",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 572,
+      "yer": "İZMİR-URLA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 573,
+      "yer": "İZMİR BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 574,
+      "yer": "İZMİR ÖZEL HAREKAT MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 575,
+      "yer": "ZMIR PMEM MUDURLUGU",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 576,
+      "yer": "RUSTUUNSALPMYO",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 577,
+      "yer": "KAHRAMANMARAŞ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 578,
+      "yer": "KAHRAMANMARAŞ-AFSIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 579,
+      "yer": "KAHRAMANMARAŞ-ANDIRIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 580,
+      "yer": "KAHRAMANMARAS-CAGLAYANCERIT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 581,
+      "yer": "KAHRAMANMARAS-DULKADIROGLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 582,
+      "yer": "KAHRAMANMARAŞ-EKINOZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 583,
+      "yer": "KAHRAMANMARAŞ-ELBISTAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 584,
+      "yer": "KAHRAMANMARAŞ-ELBİSTAN",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 585,
+      "yer": "KAHRAMANMARAŞ-NURHAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 586,
+      "yer": "KAHRAMANMARAŞ-ONIKISUBAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 587,
+      "yer": "KAHRAMANMARAŞ-PAZARCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 588,
+      "yer": "KAHRAMANMARAŞ-TURKOGLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 589,
+      "yer": "KARABÜK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 590,
+      "yer": "KARABÜK-EFLANI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 591,
+      "yer": "KARABÜK-ESKIPAZAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 592,
+      "yer": "KARABÜK-OVACIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 593,
+      "yer": "KARABÜK-SAFRANBOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 594,
+      "yer": "KARABÜK-YENICE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 595,
+      "yer": "KARABUKPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 596,
+      "yer": "KARAMAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 597,
+      "yer": "KARAMAN-AYRANCI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 598,
+      "yer": "KARAMAN-BASYAYLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 599,
+      "yer": "KARAMAN-ERMENEK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 600,
+      "yer": "KARAMAN-KAZIMKARABEKIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 601,
+      "yer": "KARAMAN-SARIVELILER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 602,
+      "yer": "KARAMANPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 603,
+      "yer": "KARS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 604,
+      "yer": "KARS-AKYAKA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 605,
+      "yer": "KARS-AKYAKA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 606,
+      "yer": "KARS-DIGOR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 607,
+      "yer": "KARS-KAGIZMAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 608,
+      "yer": "KARS-SARIKAMIS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 609,
+      "yer": "KARS-SELIM",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 610,
+      "yer": "KARS-SUSUZ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 611,
+      "yer": "KASTAMONU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 612,
+      "yer": "KASTAMONU-ABANA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 613,
+      "yer": "KASTAMONU-AĞLI",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 614,
+      "yer": "KASTAMONU-ARAC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 615,
+      "yer": "KASTAMONU-AZDAVAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 616,
+      "yer": "KASTAMONU-BOZKURT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 617,
+      "yer": "KASTAMONU-CİDE",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 618,
+      "yer": "KASTAMONU-CATALZEYTIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 619,
+      "yer": "KASTAMONU-DADAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 620,
+      "yer": "KASTAMONU-DEVREKANT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 621,
+      "yer": "KASTAMONU-DOGANYURT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 622,
+      "yer": "KASTAN U-HANONO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 623,
+      "yer": "KASTAMONU-IHSANGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 624,
+      "yer": "KASTAMONU-INEBOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 625,
+      "yer": "KASTAMONU-KURE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 626,
+      "yer": "KASTAMONU-PINARBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 627,
+      "yer": "KASTAMONU-SEYDILER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 628,
+      "yer": "KASTAMONU-SENPAZAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 629,
+      "yer": "KASTAMONU-TASKOPRU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 630,
+      "yer": "KASTAMONU-TOSYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 631,
+      "yer": "KASTAMONU PMYO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 632,
+      "yer": "KAYSERİ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 633,
+      "yer": "KAYSERİ-AKKISLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 634,
+      "yer": "KAYSERİ-BUNYAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 635,
+      "yer": "KAYSERİ-DEVELİ",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 636,
+      "yer": "KAYSERİ-FELAHIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 637,
+      "yer": "KAYSERİ-HACILAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 638,
+      "yer": "KAYSERİ-INCESU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 639,
+      "yer": "KAYSERİ-İNCESU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 640,
+      "yer": "KAYSERİ-MELIKGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 641,
+      "yer": "KAYSERİ-OZVATAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 642,
+      "yer": "KAYSERİ-PINARBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 643,
+      "yer": "KAYSERİ-SARIOĞLAN",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 644,
+      "yer": "KAYSERİ-SARIZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 645,
+      "yer": "KAYSERİ-TALAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 646,
+      "yer": "KAYSERİ-TOMARZA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 647,
+      "yer": "KAYSERİ-YAHYALI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 648,
+      "yer": "KAYSERİ-YESILHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 649,
+      "yer": "KAYSERİ BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 650,
+      "yer": "KAYSERIPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 651,
+      "yer": "KIRIKKALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 652,
+      "yer": "KIRIKKALE-BAHSILI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 653,
+      "yer": "KIRIKKALE-BALISEYH",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 654,
+      "yer": "KIRIKKALE-CELEBI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 655,
+      "yer": "KIRIKKALE-DELICE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 656,
+      "yer": "KIRIKKALE-KARAKECIILI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 657,
+      "yer": "KIRIKKALE-KESKIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 658,
+      "yer": "KIRIKKALE-SULAKYURT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 659,
+      "yer": "KIRIKKALE-YAHSIHAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 660,
+      "yer": "KIRIKKALE PMYO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 661,
+      "yer": "KIRKLARELİ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 662,
+      "yer": "KIRKLARELLBABAESKI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 663,
+      "yer": "KIRKLARELİ-DEMIRKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 664,
+      "yer": "KIRKLA -KOFCAZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 665,
+      "yer": "KIRKLARLL-LULEBURGAZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 666,
+      "yer": "KIRKLAREL-PEHLIVANKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 667,
+      "yer": "KIRKLARELİ-PINARHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 668,
+      "yer": "KIRKLARELİ-VIZE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 669,
+      "yer": "KIRŞEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 670,
+      "yer": "KIRŞEHIR-AKCAKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 671,
+      "yer": "KIRŞEHIR-AKPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 672,
+      "yer": "KIRŞEHIR-BOZTEPE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 673,
+      "yer": "KIRŞEHIR-CICEKDAGI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 674,
+      "yer": "KIRŞEHIR-KAMAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 675,
+      "yer": "KIRŞEHIR-MUCUR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 676,
+      "yer": "KIRSEHIR POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 677,
+      "yer": "KİLİS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 678,
+      "yer": "KİLİS-ELBEYLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 679,
+      "yer": "KİLİS-MUSABEYLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 680,
+      "yer": "KILIS-POLATELF",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 681,
+      "yer": "KOCAELİ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 682,
+      "yer": "KOCAELİ-BASISKELE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 683,
+      "yer": "KOCAELİ-CAYIROVA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 684,
+      "yer": "KOCAELİ-DARICA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 685,
+      "yer": "KOCAELİ-DERINCE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 686,
+      "yer": "KOCAELİ-DILOVASI",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 687,
+      "yer": "KOCAELİ-GEBZE",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 688,
+      "yer": "KOCAELİ-GOLCUK",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 689,
+      "yer": "KOCAELI-IIZMIT",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 690,
+      "yer": "KOCAELİ-KANDIRA",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 691,
+      "yer": "KOCAELİ-KARAMURSEL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 692,
+      "yer": "KOCAELİ-KARAMÜRSEL",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 693,
+      "yer": "KOCAELİ-KORFEZ",
+      "bolge": 1,
+      "yil": 10
+    },
+    {
+      "sn": 694,
+      "yer": "KONYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 695,
+      "yer": "KONYA-AHIRLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 696,
+      "yer": "KONYA-AKOREN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 697,
+      "yer": "KONYA-AKSEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 698,
+      "yer": "KONYA-ALTINEKIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 699,
+      "yer": "KONYA-BEYSEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 700,
+      "yer": "KONYA-BOZKIR",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 701,
+      "yer": "KONYA-CIHANBEYLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 702,
+      "yer": "KONYA-CELTIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 703,
+      "yer": "KONYA-CUMRA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 704,
+      "yer": "KONYA-DERBENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 705,
+      "yer": "KONYA-DEREBUCAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 706,
+      "yer": "KONYA-DOGANHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 707,
+      "yer": "KONYA-EMIRGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 708,
+      "yer": "KONYA-EREGLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 709,
+      "yer": "KONYA-GUNEYSINIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 710,
+      "yer": "KONYA-HADIM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 711,
+      "yer": "KONYA-HALKAPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 712,
+      "yer": "KONYA-HUYUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 713,
+      "yer": "KONYA-ILGIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 714,
+      "yer": "KONYA-KADINHANI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 715,
+      "yer": "KONYA-KARAPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 716,
+      "yer": "KONYA-KARATAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 717,
+      "yer": "KONYA-KULU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 718,
+      "yer": "KONYA-MERAM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 719,
+      "yer": "KONYA-SARAYONU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 720,
+      "yer": "KONYA-SELCUKLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 721,
+      "yer": "KONYA-SEYDISEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 722,
+      "yer": "KONYA-TASKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 723,
+      "yer": "KONYA-TUZLUKCU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 724,
+      "yer": "KONYA-YALIHUYUK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 725,
+      "yer": "KONYA-YUNAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 726,
+      "yer": "KONYAEREGLIPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 727,
+      "yer": "KONYA ÖZEL HAREKAT MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 728,
+      "yer": "KOTAHYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 729,
+      "yer": "KÜTAHYA-ALTINTAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 730,
+      "yer": "KÜTAHYA-ASLANAPA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 731,
+      "yer": "KÜTAHYA-ASLANAPA",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 732,
+      "yer": "KÜTAHYA-DOMANIC",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 733,
+      "yer": "KÜTAHYA-DUMLUPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 734,
+      "yer": "KÜTAHYA-EMET",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 735,
+      "yer": "KÜTAHYA-GEDİZ",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 736,
+      "yer": "KÜTAHYA-HISARCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 737,
+      "yer": "KÜTAHYA-PAZARLAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 738,
+      "yer": "KÜTAHYA-SIMAV",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 739,
+      "yer": "KÜTAHYA-SAPHANE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 740,
+      "yer": "KÜTAHYA-TAVSANLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 741,
+      "yer": "MALATYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 742,
+      "yer": "MALATYA-AKCADAG",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 743,
+      "yer": "MALATYA-ARAPGIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 744,
+      "yer": "MALATYA-ARGUVAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 745,
+      "yer": "MALATYA BATTALGAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 746,
+      "yer": "MALATYA-DARENDE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 747,
+      "yer": "MALATY DOGANSEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 748,
+      "yer": "MALATYA-DOGANYOL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 749,
+      "yer": "MALATYA-HEKIMHAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 750,
+      "yer": "MALATYA-KALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 751,
+      "yer": "MALATYA-KULUNCAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 752,
+      "yer": "MALATYA-PUTURGE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 753,
+      "yer": "MALATYA-YAZIHAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 754,
+      "yer": "MALATYA-YESILYURT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 755,
+      "yer": "MALATYA OZEL HAREKAT MUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 756,
+      "yer": "MALATYA POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 757,
+      "yer": "MANİSA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 758,
+      "yer": "MANİSA-AHMETLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 759,
+      "yer": "MANİSA-AKHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 760,
+      "yer": "MANİSA-AHMETLİ",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 761,
+      "yer": "MANİSA-DEMIRCI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 762,
+      "yer": "MANİSA-GOLMARMARA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 763,
+      "yer": "MANİSA-GORDES",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 764,
+      "yer": "MANİSA-GÖRDES",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 765,
+      "yer": "MANİSA-KOPRUBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 766,
+      "yer": "MANİSA-KULA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 767,
+      "yer": "MANİSA-SALIHLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 768,
+      "yer": "MANİSA-SARIGOL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 769,
+      "yer": "MANİSA-SARUHANLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 770,
+      "yer": "MANISA-SELEND",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 771,
+      "yer": "MANİSA-SOMA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 772,
+      "yer": "MANİSA-SEHZADELER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 773,
+      "yer": "MANİSA-TURGUTLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 774,
+      "yer": "MANİSA-YUNUSEMRE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 775,
+      "yer": "MARDİN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 776,
+      "yer": "MARDİN-ARTUKLU",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 777,
+      "yer": "MARDİN-DARGECIT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 778,
+      "yer": "MARDİN-DERIK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 779,
+      "yer": "MARDİN-KIZILTEPE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 780,
+      "yer": "MARDİN-MAZIDAGI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 781,
+      "yer": "MARDİN-MIDYAT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 782,
+      "yer": "MARDİN-NUSAYBIN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 783,
+      "yer": "MARDİN-OMERLI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 784,
+      "yer": "MARDİN-SAVUR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 785,
+      "yer": "MARDIIN-YESILLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 786,
+      "yer": "MERSİN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 787,
+      "yer": "MERSİN-AKDENIZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 788,
+      "yer": "MERSİN-ANAMUR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 789,
+      "yer": "MERSIN-A YDINCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 790,
+      "yer": "MERSİN-BOZYAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 791,
+      "yer": "MERSİN-CAMLIYAYLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 792,
+      "yer": "MERSİN-ERDEMLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 793,
+      "yer": "MERSİN-GULNAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 794,
+      "yer": "MERSİN-MEZITLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 795,
+      "yer": "MERSİN-MUT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 796,
+      "yer": "MERSİN-SILIFKE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 797,
+      "yer": "MERSİN-TARSUS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 798,
+      "yer": "MERSİN-TOROSLAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 799,
+      "yer": "MERSİN-YENISEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 800,
+      "yer": "MERSIN SEHIT ALTUG VERDI POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 801,
+      "yer": "MUĞLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 802,
+      "yer": "MUĞLA-BODRUM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 803,
+      "yer": "MUĞLA-DALAMAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 804,
+      "yer": "MUĞLA-DATCA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 805,
+      "yer": "MUĞLA-FETHIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 806,
+      "yer": "MUĞLA-KAVAKLIDERE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 807,
+      "yer": "MUĞLA-KOYCEGIZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 808,
+      "yer": "MUĞLA-MARMARIS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 809,
+      "yer": "MUĞLA-MENTESE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 810,
+      "yer": "MUĞLA-MILAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 811,
+      "yer": "MUĞLA-ORTACA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 812,
+      "yer": "MUĞLA-SEYDIKEMER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 813,
+      "yer": "MUĞLA-ULA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 814,
+      "yer": "MUĞLA-YATAGAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 815,
+      "yer": "MUŞ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 816,
+      "yer": "MUŞ-BULANIK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 817,
+      "yer": "MUŞ-HASKOY",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 818,
+      "yer": "MUŞ-KORKUT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 819,
+      "yer": "MUŞ-MALAZGIRT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 820,
+      "yer": "MUŞ-VARTO",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 821,
+      "yer": "NEVŞEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 822,
+      "yer": "NEVŞEHIR-ACIGOL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 823,
+      "yer": "NEVŞEHIR-AVANOS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 824,
+      "yer": "NEVŞEHIR-DERINKUYU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 825,
+      "yer": "NEVŞEHIR-GULSEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 826,
+      "yer": "NEVŞEHIR-HACIBEKTAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 827,
+      "yer": "NEVŞEHIR-KOZAKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 828,
+      "yer": "NEVŞEHIR-URGUP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 829,
+      "yer": "NİĞDE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 830,
+      "yer": "NİĞDE-ALTUNHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 831,
+      "yer": "NİĞDE-BOR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 832,
+      "yer": "NIGDE-C ARDI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 833,
+      "yer": "NIGDE-CIETLIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 834,
+      "yer": "NİĞDE-ULUKISLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 835,
+      "yer": "NIGDE POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 836,
+      "yer": "ORDU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 837,
+      "yer": "ORDU-AKKUS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 838,
+      "yer": "ORDU-ALTINORDU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 839,
+      "yer": "ORDU-AYBASTI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 840,
+      "yer": "ORDU-CAMAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 841,
+      "yer": "ORDU-CATALPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 842,
+      "yer": "ORDU-CAYBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 843,
+      "yer": "ORDU-FATSA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 844,
+      "yer": "ORDU-GOLKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 845,
+      "yer": "ORDU-GULYALI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 846,
+      "yer": "ORDU-GURGENTEPE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 847,
+      "yer": "ORDU-IKIZCE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 848,
+      "yer": "ORDU-KABADUZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 849,
+      "yer": "ORDU-KABATAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 850,
+      "yer": "ORDU-KORGAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 851,
+      "yer": "ORDU-KUMRU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 852,
+      "yer": "ORDU-MESUDIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 853,
+      "yer": "ORDU-PERSEMBE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 854,
+      "yer": "ORDU-ULUBEY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 855,
+      "yer": "ORDU-UNYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 856,
+      "yer": "OSMANİYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 857,
+      "yer": "OSMANİYE-BAHCE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 858,
+      "yer": "OSMANİYE-DUZICI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 859,
+      "yer": "OSMANIYE-HASANBEYL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 860,
+      "yer": "OSMANİYE-KADIRLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 861,
+      "yer": "OSMANİYE-TOPRAKKALE",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 862,
+      "yer": "OSMANİYE-TOPRAKKALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 863,
+      "yer": "RIZB",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 864,
+      "yer": "RİZE-ARDESEN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 865,
+      "yer": "RİZE-CAMLIHEMSIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 866,
+      "yer": "RİZE-ÇAYELİ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 867,
+      "yer": "RİZE-DEREPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 868,
+      "yer": "RİZE-FINDIKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 869,
+      "yer": "RIZE-GONEYSU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 870,
+      "yer": "RİZE-HEMSIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 871,
+      "yer": "RİZE-IKIZDERE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 872,
+      "yer": "RİZE-IYIDERE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 873,
+      "yer": "RİZE-KALKANDERE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 874,
+      "yer": "RIZE-PA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 875,
+      "yer": "RIZE POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 876,
+      "yer": "SAKARYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 877,
+      "yer": "SAKARYA-ADAPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 878,
+      "yer": "SAKARYA-AKYAZI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 879,
+      "yer": "SAKARYA-ARIFIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 880,
+      "yer": "SAKARYA-ERENLER",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 881,
+      "yer": "SAKARYA-FERIZLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 882,
+      "yer": "SAKARYA-GEYVE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 883,
+      "yer": "SAKARYA-HENDEK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 884,
+      "yer": "SAKARYA-KARAPURCEK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 885,
+      "yer": "SAKARYA-KARASU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 886,
+      "yer": "SAKARYA-KAYNARCA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 887,
+      "yer": "SAKARYA-KOCAALI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 888,
+      "yer": "SAKARYA-PAMUKOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 889,
+      "yer": "SAKARYA-SAPANCA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 890,
+      "yer": "SAKARYA-SÖĞÜTLÜ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 891,
+      "yer": "SAKARYA-SOGUTLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 892,
+      "yer": "SAKARYA-TARAKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 893,
+      "yer": "SAMSUN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 894,
+      "yer": "SAMSUN-ALACAM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 895,
+      "yer": "SAMSUN-ASARCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 896,
+      "yer": "SAMSUN-ATAKUM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 897,
+      "yer": "SAMSUN-AYVACIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 898,
+      "yer": "SAMSUN-BAFRA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 899,
+      "yer": "SAMSUN-CANIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 900,
+      "yer": "SAMSUN-CARSAMBA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 901,
+      "yer": "SAMSUN-HAVZA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 902,
+      "yer": "SAMSUN-ILKADIM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 903,
+      "yer": "SAMSUN-KAVAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 904,
+      "yer": "SAMSUN-LADIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 905,
+      "yer": "SAMSUN-ONDOKUZMAYIS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 906,
+      "yer": "SAMSUN-SALIPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 907,
+      "yer": "SAMSUN-TEKKEKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 908,
+      "yer": "SAMSUN-TERME",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 909,
+      "yer": "SAMSUN-VEZİRKÖPRÜ",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 910,
+      "yer": "SAMSUN-YAKAKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 911,
+      "yer": "SAMSUN 19MAYIS PMYO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 912,
+      "yer": "SAMSUN BÖLGE KRİMİNAL POLİS LABORATUVARI MÜDÜRLÜĞÜ",
+      "bolge": 1,
+      "yil": 8
+    },
+    {
+      "sn": 913,
+      "yer": "SAMSUNOZELHAREKATMUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 914,
+      "yer": "SIRT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 915,
+      "yer": "SIRT-BAYKAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 916,
+      "yer": "SHIRT-ERUH",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 917,
+      "yer": "SİİRT-KURTALAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 918,
+      "yer": "SİİRT-PERVARI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 919,
+      "yer": "SİİRT-SIRVAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 920,
+      "yer": "SHRT-TILLO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 921,
+      "yer": "SİNOP",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 922,
+      "yer": "SİNOP-AYANCIK",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 923,
+      "yer": "SİNOP-BOYABAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 924,
+      "yer": "SİNOP-DIKMEN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 925,
+      "yer": "SİNOP-DURAGAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 926,
+      "yer": "SİNOP-ERFELEK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 927,
+      "yer": "SİNOP-GERZE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 928,
+      "yer": "SİNOP-SARAYDUZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 929,
+      "yer": "SİNOP-TURKELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 930,
+      "yer": "SİVAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 931,
+      "yer": "SİVAS-AKINCILAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 932,
+      "yer": "SİVAS-ALTINYAYLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 933,
+      "yer": "SİVAS-DIVRIGI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 934,
+      "yer": "SİVAS-DİVRİĞİ",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 935,
+      "yer": "SİVAS-GEMEREK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 936,
+      "yer": "SİVAS-GOLOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 937,
+      "yer": "SİVAS-GURUN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 938,
+      "yer": "SİVAS-HAFIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 939,
+      "yer": "SİVAS-IMRANLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 940,
+      "yer": "SİVAS-KANGAL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 941,
+      "yer": "SİVAS-KOYULHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 942,
+      "yer": "SİVAS-KOYULHİSAR",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 943,
+      "yer": "SIIVAS-SARKISLA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 944,
+      "yer": "SİVAS-ULAS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 945,
+      "yer": "SİVAS-YILDIZELI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 946,
+      "yer": "SİVAS-ZARA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 947,
+      "yer": "SIVAS PMYO",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 948,
+      "yer": "ŞANLIURFA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 949,
+      "yer": "ŞANLIURFA-AKCAKALE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 950,
+      "yer": "ŞANLIURFA-BIRECIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 951,
+      "yer": "ŞANLIURFA-BOZOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 952,
+      "yer": "ŞANLIURFA-CEYLANPINAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 953,
+      "yer": "ŞANLIURFA-EYYUBIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 954,
+      "yer": "ŞANLIURFA-HALFETI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 955,
+      "yer": "SANLIURFA HALIL IVE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 956,
+      "yer": "ŞANLIURFA-HARRAN",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 957,
+      "yer": "SANLIU HILVAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 958,
+      "yer": "ŞANLIURFA-KARAKOPRU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 959,
+      "yer": "ŞANLIURFA-SİVEREK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 960,
+      "yer": "ŞANLIURFA-SURUÇ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 961,
+      "yer": "ŞANLIURFA-VIRANSEHIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 962,
+      "yer": "ŞIRNAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 963,
+      "yer": "ŞIRNAK-BEYTUSSEBAP",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 964,
+      "yer": "ŞIRNAK-CIZRE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 965,
+      "yer": "ŞIRNAK-GUCLUKONAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 966,
+      "yer": "ŞIRNAK-IDIL",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 967,
+      "yer": "ŞIRNAK-SILOPI",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 968,
+      "yer": "ŞIRNAK-ULUDERE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 969,
+      "yer": "TEKİRDAĞ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 970,
+      "yer": "TEKİRDAĞ-CERKEZKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 971,
+      "yer": "TEKİRDAĞ-CORLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 972,
+      "yer": "TEKİRDAĞ-ERGENE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 973,
+      "yer": "TEKİRDAĞ-HAYRABOLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 974,
+      "yer": "TEKİRDAĞ-KAPAKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 975,
+      "yer": "TEKİRDAĞ-MALKARA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 976,
+      "yer": "TEKİRDAĞ-MARMARAEREGLISI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 977,
+      "yer": "TEKİRDAĞ-MURATLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 978,
+      "yer": "TEKİRDAĞ-SARAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 979,
+      "yer": "TEKİRDAĞ-SULEYMANPASA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 980,
+      "yer": "TEKİRDAĞ-SARKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 981,
+      "yer": "TOKAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 982,
+      "yer": "TOKAT-ALMUS",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 983,
+      "yer": "TOKAT-ARTOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 984,
+      "yer": "TOKAT-BASCIFTLIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 985,
+      "yer": "TOKAT-ERBAA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 986,
+      "yer": "TOKAT-NIKSAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 987,
+      "yer": "TOKAT-NİKSAR",
+      "bolge": 1,
+      "yil": 4
+    },
+    {
+      "sn": 988,
+      "yer": "TOKAT-RESADIYE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 989,
+      "yer": "TOKAT-SULUSARAY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 990,
+      "yer": "TOKAT-TURHAL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 991,
+      "yer": "TOKAT-YESILYURT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 992,
+      "yer": "TOKAT-ZILE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 993,
+      "yer": "TRABZON",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 994,
+      "yer": "TRABZON-AKCAABAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 995,
+      "yer": "TRABZON-ARAKLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 996,
+      "yer": "TRABZON-ARSIN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 997,
+      "yer": "TRABZON-BESIKDUZU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 998,
+      "yer": "TRABZON-CARSIBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 999,
+      "yer": "TRABZO AYKARA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1000,
+      "yer": "TRABZO ERNEKPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1001,
+      "yer": "TRABZON-DUZKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1002,
+      "yer": "TRABZON-HAYRAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1003,
+      "yer": "TRABZON-KOPRUBASI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1004,
+      "yer": "TRABZON-MACKA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1005,
+      "yer": "TRABZON-OF",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1006,
+      "yer": "TRABZON-ORTAHISAR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1007,
+      "yer": "TRABZON-SURMENE",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1008,
+      "yer": "TRABZON-SALPAZARI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1009,
+      "yer": "TRABZON-TONYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1010,
+      "yer": "TRABZON-VAKFIKEBIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1011,
+      "yer": "TRABZON-YOMRA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1012,
+      "yer": "TRABZONOZELHAREKATMUDURLUGU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1013,
+      "yer": "TRABZON SEHIT MERIC ALEMDAR POMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1014,
+      "yer": "TUNCELİ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1015,
+      "yer": "TUNCELİ-ÇEMİŞGEZEK",
+      "bolge": 2,
+      "yil": 3
+    },
+    {
+      "sn": 1016,
+      "yer": "TUNCELİ-HOZAT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1017,
+      "yer": "TUNCELİ-MAZGIRT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1018,
+      "yer": "TUNCELİ-NAZIMIYE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1019,
+      "yer": "TUNCELİ-OVACIK",
+      "bolge": 2,
+      "yil": 2
+    },
+    {
+      "sn": 1020,
+      "yer": "TUNCELİ-PERTEK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1021,
+      "yer": "TUNCELİ-PULUMUR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1022,
+      "yer": "UŞAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1023,
+      "yer": "UŞAK-BANAZ",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1024,
+      "yer": "UŞAK-ESME",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1025,
+      "yer": "UŞAK-KARAHALLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1026,
+      "yer": "UŞAK-SİVASLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1027,
+      "yer": "UŞAK-ULUBEY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1028,
+      "yer": "VAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1029,
+      "yer": "VAN-BAHCESARAY",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1030,
+      "yer": "VAN-BASKALE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1031,
+      "yer": "VAN-ÇALDIRAN",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1032,
+      "yer": "VAN-ÇATAK",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1033,
+      "yer": "VAN-EDREMIT",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1034,
+      "yer": "VAN-ERCIS",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1035,
+      "yer": "VAN-GEVAŞ",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1036,
+      "yer": "VAN-GÜRPINAR",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1037,
+      "yer": "VAN-IPEKYOLU",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1038,
+      "yer": "VAN-MURADIYE",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1039,
+      "yer": "VAN-OZALP",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1040,
+      "yer": "VAN-SARAY",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1041,
+      "yer": "VAN-TUSBA",
+      "bolge": 2,
+      "yil": 4
+    },
+    {
+      "sn": 1042,
+      "yer": "YALOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1043,
+      "yer": "YALOVA-ALTINOVA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1044,
+      "yer": "YALOVA-ARMUTLU",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1045,
+      "yer": "YALOVA-ÇINARCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1046,
+      "yer": "YALOVA-ÇINARCIK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1047,
+      "yer": "YALOVA-TERMAL",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1048,
+      "yer": "YOZGAT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1049,
+      "yer": "YOZGAT-AKDAGMADENI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1050,
+      "yer": "YOZGAT-AYDINCIK",
+      "bolge": 1,
+      "yil": 3
+    },
+    {
+      "sn": 1051,
+      "yer": "YOZGAT-BOGAZLIYAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1052,
+      "yer": "YOZGAT-CANDIR",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1053,
+      "yer": "YOZGAT-ÇAYIRALAN",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1054,
+      "yer": "YOZGAT-CEKEREK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1055,
+      "yer": "YOZGAT-KADISEHRI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1056,
+      "yer": "YOZGAT-SARAYKENT",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1057,
+      "yer": "YOZGAT-SARIKAYA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1058,
+      "yer": "YOZGAT-SORGUN",
+      "bolge": 1,
+      "yil": 5
+    },
+    {
+      "sn": 1059,
+      "yer": "YOZGAT-SEFAATLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1060,
+      "yer": "YOZGAT-YENIFAKILI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1061,
+      "yer": "YOZGAT-YERKOY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1062,
+      "yer": "YOZGATPOMEM",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1063,
+      "yer": "ZONGULDAK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1064,
+      "yer": "ZONGULDAK-ALAPLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1065,
+      "yer": "ZONGULDAK-ÇAYCUMA",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1066,
+      "yer": "ZONGULDAK-DEVREK",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1067,
+      "yer": "ZONGULDAK-EREGLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1068,
+      "yer": "ZONGULDAK-GOKCEBEY",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1069,
+      "yer": "ZONGULDAK-KILIMLI",
+      "bolge": 1,
+      "yil": 6
+    },
+    {
+      "sn": 1070,
+      "yer": "ZONGULDAK-KOZLU",
+      "bolge": 1,
+      "yil": 6
+    }
+  ]
+}
