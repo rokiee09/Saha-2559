@@ -1,3 +1,4 @@
+import '../assistant_sensitive_query.dart';
 import '../../../common/text/tr_text.dart';
 import '../../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 import '../../araclar/tutanak/tutanak_templates.dart';
@@ -20,25 +21,8 @@ class AssistantSearchService {
   final List<AsistanIndexItem> mevzuatIndex;
   final List<IdariParaCezaKayit> cezaKayitlar;
 
-  static const _sensitivePatterns = [
-    'baskin',
-    'operasyonel taktik',
-    'gizli yontem',
-    'istihbarat toplama',
-    'sorgu yontemi',
-    'teknik takip',
-    'infaz takip',
-    'casusluk',
-    'mahkemesiz takip',
-  ];
-
-  static bool isSensitiveQuery(String raw) {
-    final q = trFold(raw);
-    for (final p in _sensitivePatterns) {
-      if (q.contains(p)) return true;
-    }
-    return false;
-  }
+  static bool isSensitiveQuery(String raw) =>
+      AssistantSensitiveQuery.matches(raw);
 
   AssistantAnswer search(String rawQuery) {
     final trimmed = rawQuery.trim();

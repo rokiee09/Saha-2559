@@ -19,11 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # pubspec.lock Flutter >=3.38 / Dart >=3.10 gerektirir (3.29.x ile uyumsuz).
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.29.3
+          flutter-version: "3.38.5"
           cache: true
 
       - name: Install dependencies
@@ -38,4 +39,4 @@ jobs:
         run: dart run tool/validate_mevzuat.dart
 
       - name: Run tests
-        run: flutter test
+        run: flutter test --exclude-tags slow --timeout 90s

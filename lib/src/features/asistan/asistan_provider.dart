@@ -7,10 +7,11 @@ import '../../common/text/tr_text.dart';
 import '../mevzuat/mevzuat_provider.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 import 'asistan_domain.dart';
+import 'assistant_sensitive_query.dart';
 import 'legal/assistant_answer_builder.dart';
+import 'legal/assistant_query_classifier.dart';
 import 'legal/assistant_legal_index.dart';
 import 'legal/assistant_legal_search_service.dart';
-import 'search/query_normalizer.dart';
 
 /// Mevzuat kaynaklı soru-cevap asistanı.
 
@@ -230,8 +231,9 @@ bool asistanQueryInScope(String raw, List<AsistanScenario> scenarios) {
   final trimmed = raw.trim();
   if (trimmed.length < 2) return false;
 
-  final nq = QueryNormalizer.normalize(trimmed);
-  if (nq.tokens.isNotEmpty) return true;
+  if (AssistantQueryClassifier().classify(trimmed).isInLegalScope) {
+    return true;
+  }
 
   final q = trFold(trimmed);
   for (final d in asistanAllDomains) {
@@ -318,8 +320,11 @@ final legalAssistantAnswerProvider =
 
   final service = await ref.watch(assistantLegalSearchServiceProvider.future);
   final classification = service.classify(raw);
-  final hits = service.search(raw);
-  final strong = service.hasStrongMatch(hits);
+  final hits = AssistantSensitiveQuery.matches(raw)
+      ? const <LegalSearchHit>[]
+      : service.search(raw);
+  final strong =
+      !AssistantSensitiveQuery.matches(raw) && service.hasStrongMatch(hits);
   return const AssistantAnswerBuilder().build(
     query: raw,
     classification: classification,

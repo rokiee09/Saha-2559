@@ -1,3 +1,4 @@
+import '../assistant_sensitive_query.dart';
 import 'assistant_legal_index.dart';
 import 'assistant_legal_search_service.dart';
 import 'assistant_query_classifier.dart';
@@ -41,6 +42,7 @@ class LegalAssistantAnswer {
     required this.topHits,
     this.noStrongMatch = false,
     this.outOfScope = false,
+    this.sensitiveBlocked = false,
   });
 
   final String query;
@@ -53,6 +55,7 @@ class LegalAssistantAnswer {
   final List<LegalSearchHit> topHits;
   final bool noStrongMatch;
   final bool outOfScope;
+  final bool sensitiveBlocked;
 
   LegalIndexRecord? get primaryRecord =>
       topHits.isEmpty ? null : topHits.first.record;
@@ -67,6 +70,20 @@ class AssistantAnswerBuilder {
     required List<LegalSearchHit> hits,
     required bool strongMatch,
   }) {
+    if (AssistantSensitiveQuery.matches(query)) {
+      return LegalAssistantAnswer(
+        query: query,
+        classification: classification,
+        shortAnswer: AssistantSensitiveQuery.message,
+        relatedLegislation: '',
+        explanation: '',
+        riskNote: '',
+        disclaimer: kLegalAssistantDisclaimer,
+        topHits: const [],
+        sensitiveBlocked: true,
+      );
+    }
+
     if (!classification.isInLegalScope) {
       return LegalAssistantAnswer(
         query: query,

@@ -5,8 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:coderipple/src/features/mevzuat/mevzuat_provider.dart';
 
-/// Disk üzerindeki gerçek mevzuat asset'lerini doğrular.
-/// (flutter test, paket kökünden çalışır; göreli yollar geçerlidir.)
+/// Tam mevzuat dosya taraması — CI'da `validate_mevzuat` ile örtüşür; yavaş.
+@Tags(['slow'])
 void main() {
   const baseDir = 'assets/mevzuat';
   const catalogPath = '$baseDir/catalog.json';

@@ -166,6 +166,13 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                               message: 'Lütfen sorunuzu yazın.',
                             );
                           }
+                          if (answer.sensitiveBlocked) {
+                            return _AsistanMessage(
+                              icon: Icons.shield_outlined,
+                              title: 'Hassas konu',
+                              message: answer.shortAnswer,
+                            );
+                          }
                           if (answer.outOfScope) {
                             return _AsistanMessage(
                               icon: Icons.info_outline_rounded,
