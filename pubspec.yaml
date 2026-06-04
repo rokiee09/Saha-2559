@@ -39,6 +39,7 @@ dependencies:
   local_auth: ^2.3.0
   cryptography: ^2.7.0
   device_info_plus: ^11.2.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:

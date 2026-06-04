@@ -8,12 +8,15 @@ class AssistantSensitiveQuery {
     'baskin',
     'operasyonel taktik',
     'gizli yontem',
+    'gizli takip',
     'istihbarat toplama',
     'sorgu yontemi',
     'teknik takip',
     'infaz takip',
     'casusluk',
     'mahkemesiz takip',
+    'taktik',
+    'operasyon plan',
   ];
 
   static const message =

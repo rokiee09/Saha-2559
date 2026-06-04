@@ -8,8 +8,10 @@ import '../mevzuat/mevzuat_provider.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 import 'asistan_domain.dart';
 import 'assistant_sensitive_query.dart';
+import 'decision_support/legal_decision_engine.dart';
+import 'decision_support/legal_knowledge_index.dart';
+import 'decision_support/legal_llm_config.dart';
 import 'legal/assistant_answer_builder.dart';
-import 'legal/assistant_query_classifier.dart';
 import 'legal/assistant_legal_index.dart';
 import 'legal/assistant_legal_search_service.dart';
 
@@ -296,14 +298,32 @@ final asistanIndexProvider =
   return out;
 });
 
-final assistantLegalIndexProvider =
-    FutureProvider<List<LegalIndexRecord>>((ref) async {
+final legalKnowledgeIndexProvider =
+    FutureProvider<List<LegalKnowledgeRecord>>((ref) async {
   final index = await ref.watch(asistanIndexProvider.future);
   final cezaSet = await ref.watch(idariParaCezaProvider.future);
-  return buildFullLegalIndex(
+  return buildLegalKnowledgeIndex(
     mevzuatItems: index.map((i) => (entry: i.entry, section: i.section)),
     cezaKayitlar: cezaSet.kayitlar,
   );
+});
+
+/// Geriye dönük — düz mevzuat indeks kayıtları.
+final assistantLegalIndexProvider =
+    FutureProvider<List<LegalIndexRecord>>((ref) async {
+  final knowledge = await ref.watch(legalKnowledgeIndexProvider.future);
+  return knowledge.map((k) => k.toIndexRecord()).toList();
+});
+
+final legalLlmConfigProvider = FutureProvider<LegalLlmConfig>((ref) async {
+  return LegalLlmConfigStorage.load();
+});
+
+final legalDecisionEngineProvider =
+    FutureProvider<LegalDecisionEngine>((ref) async {
+  final records = await ref.watch(legalKnowledgeIndexProvider.future);
+  final llmConfig = await ref.watch(legalLlmConfigProvider.future);
+  return LegalDecisionEngine(index: records, llmConfig: llmConfig);
 });
 
 final assistantLegalSearchServiceProvider =
@@ -312,25 +332,14 @@ final assistantLegalSearchServiceProvider =
   return AssistantLegalSearchService(index: records);
 });
 
-/// Mevzuat kaynaklı arama — ana cevap kaynağı.
+/// Kaynaklı mevzuat muhakeme — ana cevap kaynağı.
 final legalAssistantAnswerProvider =
-    FutureProvider.autoDispose<LegalAssistantAnswer?>((ref) async {
+    FutureProvider.autoDispose<LegalDecisionAnswer?>((ref) async {
   final raw = ref.watch(asistanQueryProvider).trim();
   if (raw.isEmpty) return null;
 
-  final service = await ref.watch(assistantLegalSearchServiceProvider.future);
-  final classification = service.classify(raw);
-  final hits = AssistantSensitiveQuery.matches(raw)
-      ? const <LegalSearchHit>[]
-      : service.search(raw);
-  final strong =
-      !AssistantSensitiveQuery.matches(raw) && service.hasStrongMatch(hits);
-  return const AssistantAnswerBuilder().build(
-    query: raw,
-    classification: classification,
-    hits: hits,
-    strongMatch: strong,
-  );
+  final engine = await ref.watch(legalDecisionEngineProvider.future);
+  return await engine.answer(raw);
 });
 
 /// Geriye dönük alias.

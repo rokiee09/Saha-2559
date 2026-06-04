@@ -49,6 +49,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Yerel APK kopyalama scripti (masaüstü dağıtım)
+ac_apk_klasoru.ps1
+
 # Release imzalama gizli dosyaları — ASLA depoya eklenmez
 /android/key.properties
 **/*.jks

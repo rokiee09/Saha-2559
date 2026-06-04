@@ -16,6 +16,7 @@ import '../legal/user_agreement_viewer_page.dart';
 import 'data_freshness_page.dart';
 import 'reading_scale_controller.dart';
 import 'theme_controller.dart';
+import '../asistan/settings/asistan_llm_settings_page.dart';
 import 'vault_security_settings.dart';
 
 class SettingsPage extends ConsumerWidget {
@@ -99,6 +100,25 @@ class SettingsPage extends ConsumerWidget {
           const ListTile(
             title: Text('Veri ve gizlilik özeti'),
             subtitle: Text(kAppOfflineDataSummary),
+          ),
+          const Divider(height: 0),
+          ListTile(
+            leading: Icon(
+              Icons.psychology_outlined,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Mevzuat asistanı — AI özeti (RAG)'),
+            subtitle: const Text(
+              'İsteğe bağlı: bulunan maddelere dayalı LLM özeti (API anahtarı)',
+            ),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () {
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const AsistanLlmSettingsPage(),
+                ),
+              );
+            },
           ),
           const Divider(height: 0),
           ListTile(
