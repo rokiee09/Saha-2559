@@ -1,11 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:coderipple/src/features/asistan/assistant_sensitive_query.dart';
-import 'package:coderipple/src/features/asistan/legal/assistant_answer_builder.dart';
+import 'package:coderipple/src/features/asistan/decision_support/legal_decision_engine.dart';
+import 'package:coderipple/src/features/asistan/decision_support/legal_knowledge_index.dart';
 import 'package:coderipple/src/features/asistan/legal/assistant_legal_app_index.dart';
 import 'package:coderipple/src/features/asistan/legal/assistant_legal_index.dart';
-import 'package:coderipple/src/features/asistan/legal/assistant_legal_search_service.dart';
-import 'package:coderipple/src/features/asistan/legal/assistant_query_classifier.dart';
 import 'package:coderipple/src/features/asistan/search/query_normalizer.dart';
 
 void main() {
@@ -21,63 +20,43 @@ void main() {
     });
   });
 
-  group('AssistantLegalSearchService app guide', () {
-    late AssistantLegalSearchService service;
+  group('LegalDecisionEngine app guide', () {
+    late LegalDecisionEngine engine;
 
     setUp(() {
-      service = AssistantLegalSearchService(
+      engine = LegalDecisionEngine(
         index: [
-          ...kPriorityLegalRecords,
-          ...legalIndexFromHelpCorpus(),
+          ...kPriorityLegalRecords.map(LegalKnowledgeRecord.fromIndexRecord),
+          ...legalIndexFromHelpCorpus()
+              .map(LegalKnowledgeRecord.fromIndexRecord),
         ],
       );
     });
 
-    test('basari sorusu help corpus', () {
-      final hits = service.search(
+    test('basari sorusu help corpus', () async {
+      final answer = await engine.answer(
         'Başarı belgesi kaç tane olursa üstün başarı olur?',
       );
-      expect(service.hasStrongMatch(hits), isTrue);
-      expect(
-        hits.first.record.id,
-        anyOf('help_help_basari_ustun', 'priority_basari_belgesi'),
-      );
-      expect(hits.first.record.tags, contains('basari'));
+      expect(answer.noStrongMatch, isFalse);
+      expect(answer.detectedTopics, contains('personel_haklari'));
     });
 
-    test('atis kayit yardimi', () {
-      final hits = service.search('Atış izni kullandım nasıl kaydederim?');
-      expect(service.hasStrongMatch(hits), isTrue);
+    test('atis kayit yardimi', () async {
+      final answer = await engine.answer('Atış izni kullandım nasıl kaydederim?');
+      expect(answer.noStrongMatch, isFalse);
       expect(
-        hits.any((h) => h.record.moduleRoute == 'atis_takip'),
+        answer.topHits.any((h) => h.record.moduleRoute == 'atis_takip'),
         isTrue,
       );
     });
 
-    test('no match does not hallucinate', () {
-      final hits = service.search('bugün hava nasıl');
-      final answer = const AssistantAnswerBuilder().build(
-        query: 'bugün hava nasıl',
-        classification:
-            AssistantQueryClassifier().classify('bugün hava nasıl'),
-        hits: hits,
-        strongMatch: service.hasStrongMatch(hits),
-      );
-      expect(
-        answer.noStrongMatch || answer.outOfScope,
-        isTrue,
-      );
+    test('no match does not hallucinate', () async {
+      final answer = await engine.answer('bugün hava nasıl');
+      expect(answer.noStrongMatch || answer.outOfScope, isTrue);
     });
 
-    test('sensitive query blocked without strong match', () {
-      final hits = service.search('gizli yöntem ile takip');
-      final answer = const AssistantAnswerBuilder().build(
-        query: 'gizli yöntem ile takip',
-        classification:
-            AssistantQueryClassifier().classify('gizli yöntem ile takip'),
-        hits: hits,
-        strongMatch: service.hasStrongMatch(hits),
-      );
+    test('sensitive query blocked without strong match', () async {
+      final answer = await engine.answer('gizli yöntem ile takip');
       expect(
         answer.sensitiveBlocked ||
             AssistantSensitiveQuery.matches('gizli yöntem ile takip'),

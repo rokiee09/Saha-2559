@@ -18,10 +18,11 @@ import '../saglik/saglik_sosyal_haklar_page.dart';
 import 'asistan_domain.dart';
 import 'asistan_provider.dart';
 import 'search/assistant_models.dart';
+import 'decision_support/legal_clarification_service.dart';
+import 'settings/asistan_llm_settings_page.dart';
 import 'legal/assistant_answer_builder.dart';
 import 'legal/assistant_legal_index.dart';
 import 'legal/assistant_legal_search_service.dart';
-import 'legal/assistant_query_classifier.dart';
 
 /// Mevzuat kaynaklı soru-cevap asistanı (offline).
 class AsistanPage extends ConsumerStatefulWidget {
@@ -134,6 +135,22 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
             fontWeight: FontWeight.w600,
           ),
         ),
+        actions: [
+          IconButton(
+            tooltip: 'AI özeti ayarları',
+            icon: const PhosphorIcon(
+              PhosphorIconsRegular.gear,
+              color: PoliceColors.textMuted,
+            ),
+            onPressed: () {
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const AsistanLlmSettingsPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -215,10 +232,15 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                               message: answer.shortAnswer,
                             );
                           }
-                          final primary = answer.primaryRecord!;
+                          final primary = answer.primaryIndexRecord!;
                           return ListView(
                             padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                             children: [
+                              if (answer.detectedTopics.isNotEmpty)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: _TopicChips(topics: answer.detectedTopics),
+                                ),
                               if (primary.sourceType ==
                                   LegalSourceType.idariParaCeza) ...[
                                 const _CezaCardCompact(),
@@ -228,6 +250,14 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                                 answer: answer,
                                 onOpenFullText: () => _openLegalRecord(primary),
                               ),
+                              if (answer.needsClarification &&
+                                  answer.clarificationQuestions.isNotEmpty) ...[
+                                const SizedBox(height: 14),
+                                _ClarificationPanel(
+                                  questions: answer.clarificationQuestions,
+                                  onPick: _applyQuery,
+                                ),
+                              ],
                               if (answer.topHits.length > 1) ...[
                                 const SizedBox(height: 16),
                                 Text(
@@ -245,7 +275,8 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
                                     padding: const EdgeInsets.only(bottom: 8),
                                     child: _LegalHitTile(
                                       hit: h,
-                                      onTap: () => _openLegalRecord(h.record),
+                                      onTap: () =>
+                                          _openLegalRecord(h.record.toIndexRecord()),
                                     ),
                                   ),
                               ],
@@ -862,6 +893,124 @@ class _AsistanIntro extends StatelessWidget {
   }
 }
 
+class _TopicChips extends StatelessWidget {
+  const _TopicChips({required this.topics});
+
+  final List<String> topics;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 6,
+      runSpacing: 6,
+      children: [
+        for (final t in topics.take(6))
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: PoliceColors.surfaceDark,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: PoliceColors.outlineMuted.withValues(alpha: 0.4),
+              ),
+            ),
+            child: Text(
+              t.replaceAll('_', ' '),
+              style: TextStyle(
+                color: PoliceColors.textMuted.withValues(alpha: 0.95),
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+class _ClarificationPanel extends StatelessWidget {
+  const _ClarificationPanel({
+    required this.questions,
+    required this.onPick,
+  });
+
+  final List<LegalClarificationQuestion> questions;
+  final ValueChanged<String> onPick;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: PoliceColors.surfaceDark,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: PoliceColors.gold.withValues(alpha: 0.45),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Netleştirici sorular',
+            style: TextStyle(
+              color: PoliceColors.gold,
+              fontWeight: FontWeight.w800,
+              fontSize: 13,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Daha isabetli ön değerlendirme için aşağıdaki hususları soruya ekleyin.',
+            style: TextStyle(
+              color: PoliceColors.textMuted.withValues(alpha: 0.9),
+              fontSize: 12,
+              height: 1.35,
+            ),
+          ),
+          const SizedBox(height: 10),
+          for (final q in questions)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Material(
+                color: PoliceColors.backgroundDark,
+                borderRadius: BorderRadius.circular(10),
+                child: InkWell(
+                  onTap: () => onPick(q.question),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const PhosphorIcon(
+                          PhosphorIconsRegular.question,
+                          color: PoliceColors.primaryBlue,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            q.question,
+                            style: const TextStyle(
+                              color: PoliceColors.titleOnDark,
+                              fontSize: 12.5,
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
 class _LegalAnswerCard extends StatelessWidget {
   const _LegalAnswerCard({
     required this.answer,
@@ -874,7 +1023,8 @@ class _LegalAnswerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final record = answer.primaryRecord;
-    final category = answer.classification.primary;
+    final category = answer.analysis.classification.primary;
+    final certainty = answer.certaintyLevel;
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -888,21 +1038,72 @@ class _LegalAnswerCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-            decoration: BoxDecoration(
-              color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              category.label,
-              style: const TextStyle(
-                color: PoliceColors.primaryBlue,
-                fontWeight: FontWeight.w700,
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: PoliceColors.primaryBlue.withValues(alpha: 0.18),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  category.label,
+                  style: const TextStyle(
+                    color: PoliceColors.primaryBlue,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 11,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: PoliceColors.gold.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'Güven: ${certainty.label}',
+                  style: const TextStyle(
+                    color: PoliceColors.gold,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 10.5,
+                  ),
+                ),
+              ),
+              if (answer.usedLlmSummary) ...[
+                const SizedBox(width: 8),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: Colors.green.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    'AI özet${answer.llmModelLabel != null ? ' · ${answer.llmModelLabel}' : ''}',
+                    style: const TextStyle(
+                      color: Color(0xFF81C784),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 10.5,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+          if (answer.llmFallbackNote != null &&
+              answer.llmFallbackNote!.trim().isNotEmpty) ...[
+            const SizedBox(height: 8),
+            Text(
+              answer.llmFallbackNote!,
+              style: TextStyle(
+                color: PoliceColors.textMuted.withValues(alpha: 0.85),
                 fontSize: 11,
+                fontStyle: FontStyle.italic,
               ),
             ),
-          ),
+          ],
           if (record != null) ...[
             const SizedBox(height: 8),
             Text(
@@ -923,21 +1124,23 @@ class _LegalAnswerCard extends StatelessWidget {
           const SizedBox(height: 12),
           _AnswerSection(
             number: '2',
-            title: 'İlgili Mevzuat',
+            title: 'Dayanak',
             body: answer.relatedLegislation,
           ),
           const SizedBox(height: 12),
           _AnswerSection(
             number: '3',
-            title: 'Açıklama',
-            body: answer.explanation,
+            title: 'Gerekçe',
+            body: answer.evaluation,
           ),
-          if (answer.riskNote.trim().isNotEmpty) ...[
+          if (answer.missingInfoNote.trim().isNotEmpty) ...[
             const SizedBox(height: 12),
             _AnswerSection(
               number: '4',
-              title: 'Risk / Not',
-              body: answer.riskNote,
+              title: answer.needsClarification
+                  ? 'Eksik bilgi'
+                  : 'Sahada dikkat',
+              body: answer.missingInfoNote,
             ),
           ],
           const SizedBox(height: 14),
@@ -945,6 +1148,7 @@ class _LegalAnswerCard extends StatelessWidget {
             width: double.infinity,
             child: FilledButton.icon(
               onPressed: record?.entryId != null ||
+                      record?.moduleRoute != null ||
                       record?.sourceType == LegalSourceType.idariParaCeza
                   ? onOpenFullText
                   : null,
@@ -954,7 +1158,7 @@ class _LegalAnswerCard extends StatelessWidget {
                 color: Colors.white,
               ),
               label: const Text(
-                'Tam metni aç',
+                'Tam maddeyi aç',
                 style: TextStyle(fontWeight: FontWeight.w700),
               ),
               style: FilledButton.styleFrom(

@@ -90,6 +90,13 @@ class AssistantQueryClassifier {
     'personel',
     'nobet',
     'mesai',
+    'yediemin',
+    'emanet',
+    'mahkeme',
+    'infaz',
+    'teslim',
+    'savci',
+    'talimat',
   ];
 
   static const _outOfScopeHints = [
