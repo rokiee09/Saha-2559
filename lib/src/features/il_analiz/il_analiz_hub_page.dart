@@ -5,6 +5,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import 'il_analiz_compare_page.dart';
+import 'il_analiz_sablon_fields.dart';
 import 'il_analiz_display.dart';
 import 'il_analiz_data.dart';
 import 'il_analiz_detail_page.dart';
@@ -157,11 +158,7 @@ class _IlListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = il.profil;
-    final skor = p != null ? ilGenelSkorFromProfil(p) : null;
-    final manualSkor = p != null ? ilGenelSkor(p.puanlar) : null;
-    final skorRenk = manualSkor != null
-        ? PoliceColors.gold
-        : PoliceColors.primaryBlue;
+    final rozet = p != null ? ilListeRozetFromProfil(p) : null;
     return Card(
       color: PoliceColors.surfaceDark,
       margin: const EdgeInsets.only(bottom: 8),
@@ -226,21 +223,37 @@ class _IlListTile extends StatelessWidget {
                   ],
                 ),
               ),
-              if (skor != null)
+              if (rozet != null)
                 Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  constraints: const BoxConstraints(maxWidth: 96),
                   decoration: BoxDecoration(
-                    color: skorRenk.withValues(alpha: 0.15),
+                    color: PoliceColors.primaryBlue.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Text(
-                    '$skor',
-                    style: TextStyle(
-                      color: skorRenk.withValues(alpha: 0.95),
-                      fontWeight: FontWeight.w800,
-                      fontSize: 16,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        rozet.deger,
+                        style: TextStyle(
+                          color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
+                          fontWeight: FontWeight.w800,
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.end,
+                      ),
+                      Text(
+                        rozet.etiket,
+                        style: TextStyle(
+                          color: PoliceColors.textMuted.withValues(alpha: 0.85),
+                          fontSize: 9,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.end,
+                      ),
+                    ],
                   ),
                 )
               else

@@ -93,6 +93,9 @@ class IlHeroCard extends StatelessWidget {
     final tz = profil.polis.tazminatDerece;
     final ek = profil.polis.ekTazminatTl;
     final ekMetin = formatIlTl(ek);
+    final yasamSira = profil.genel.yasamIndeksiSira;
+    final yasamYil = profil.genel.yasamIndeksiYil;
+    final profilSkorDolu = !p.bos;
     return Container(
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
@@ -222,6 +225,55 @@ class IlHeroCard extends StatelessWidget {
             value: p.emeklilik,
             color: PoliceColors.primaryBlue,
           ),
+          if (yasamSira != null) ...[
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    'TÜİK yaşam endeksi${yasamYil != null ? ' ($yasamYil)' : ''}',
+                    style: TextStyle(
+                      color: PoliceColors.textMuted.withValues(alpha: 0.95),
+                      fontSize: 12.5,
+                      height: 1.35,
+                    ),
+                  ),
+                ),
+                Text(
+                  formatIlYasamIndeksiSira(yasamSira, yil: yasamYil),
+                  style: const TextStyle(
+                    color: PoliceColors.primaryBlue,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(
+                'Bileşik sıra (81 il) — 1 en yüksek yaşam koşulu',
+                style: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.7),
+                  fontSize: 10.5,
+                  height: 1.3,
+                ),
+              ),
+            ),
+          ],
+          if (profilSkorDolu)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                'Profil çubukları 0–100 editör değerlendirmesidir.',
+                style: TextStyle(
+                  color: PoliceColors.textMuted.withValues(alpha: 0.65),
+                  fontSize: 10.5,
+                  height: 1.3,
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -363,29 +415,45 @@ class IlMetricRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final valueStyle = TextStyle(
+      color: value == kIlAnalizBosDash
+          ? PoliceColors.textMuted.withValues(alpha: 0.65)
+          : PoliceColors.titleOnDark,
+      fontWeight: FontWeight.w600,
+      fontSize: 13,
+      height: 1.35,
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, size: 18, color: PoliceColors.textMuted.withValues(alpha: 0.85)),
+          Padding(
+            padding: const EdgeInsets.only(top: 1),
+            child: Icon(
+              icon,
+              size: 18,
+              color: PoliceColors.textMuted.withValues(alpha: 0.85),
+            ),
+          ),
           const SizedBox(width: 10),
-          Expanded(
+          SizedBox(
+            width: 108,
             child: Text(
               label,
               style: TextStyle(
                 color: PoliceColors.textMuted.withValues(alpha: 0.95),
                 fontSize: 13,
+                height: 1.35,
               ),
             ),
           ),
-          Text(
-            value,
-            style: TextStyle(
-              color: value == kIlAnalizBosDash
-                  ? PoliceColors.textMuted.withValues(alpha: 0.65)
-                  : PoliceColors.titleOnDark,
-              fontWeight: FontWeight.w600,
-              fontSize: 13,
+          Expanded(
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              softWrap: true,
+              style: valueStyle,
             ),
           ),
         ],
@@ -480,17 +548,47 @@ class IlceMiniCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (ilce.gorevYil != null)
+                  if (ilce.nufus != null)
                     Text(
-                      '${ilce.gorevYil} yıl',
+                      '${formatIlNufus(ilce.nufus)} nüfus',
                       style: TextStyle(
-                        color: PoliceColors.gold.withValues(alpha: 0.95),
+                        color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                      ),
+                    )
+                  else if (ilce.gorevYil != null)
+                    Text(
+                      '${ilce.gorevYil} yıl görev',
+                      style: TextStyle(
+                        color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
                         fontWeight: FontWeight.w700,
                         fontSize: 12,
                       ),
                     ),
                 ],
               ),
+              if (ilMetinDolu(ilce.profil)) ...[
+                const SizedBox(height: 6),
+                Text(
+                  ilce.profil!,
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.9),
+                    fontSize: 12,
+                    height: 1.35,
+                  ),
+                ),
+              ],
+              if (ilce.kiraTl != null) ...[
+                const SizedBox(height: 6),
+                Text(
+                  'Ort. kira: ${formatIlTl(ilce.kiraTl)}',
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.85),
+                    fontSize: 11.5,
+                  ),
+                ),
+              ],
               if (ilce.yasam != null ||
                   ilce.aile != null ||
                   ilce.isYuku != null) ...[
