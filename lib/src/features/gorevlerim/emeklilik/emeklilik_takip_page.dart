@@ -74,7 +74,7 @@ class EmeklilikTakipPage extends ConsumerWidget {
                     child: _GrafikKart(
                       baslik: 'Zorunlu hizmet',
                       altBaslik: '20 yıl',
-                      renk: PoliceColors.primaryBlue,
+                      renk: PoliceColors.emeklilikSliceNavy,
                       ilerleme: durum.zorunluHizmet,
                     ),
                   ),
@@ -83,7 +83,7 @@ class EmeklilikTakipPage extends ConsumerWidget {
                     child: _GrafikKart(
                       baslik: 'Yaş haddi',
                       altBaslik: '${durum.yasHaddiYas} yaş',
-                      renk: PoliceColors.emeklilikAccent,
+                      renk: PoliceColors.emeklilikSliceRed,
                       ilerleme: durum.yasHaddi,
                     ),
                   ),
@@ -94,7 +94,7 @@ class EmeklilikTakipPage extends ConsumerWidget {
               const SizedBox(height: 14),
               _DetayKart(
                 baslik: 'Zorunlu hizmet (20 yıl)',
-                renk: PoliceColors.primaryBlue,
+                renk: PoliceColors.emeklilikSliceNavy,
                 meslekGiris: durum.zorunluHizmet.baslangic,
                 bitis: durum.zorunluHizmet.bitis,
                 ilerleme: durum.zorunluHizmet,
@@ -102,7 +102,7 @@ class EmeklilikTakipPage extends ConsumerWidget {
               const SizedBox(height: 10),
               _DetayKart(
                 baslik: 'Yaş haddi (${durum.yasHaddiYas})',
-                renk: PoliceColors.emeklilikAccent,
+                renk: PoliceColors.emeklilikSliceRed,
                 meslekGiris: durum.yasHaddi.baslangic,
                 bitis: durum.yasHaddi.bitis,
                 ilerleme: durum.yasHaddi,
