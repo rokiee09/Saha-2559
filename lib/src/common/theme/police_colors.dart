@@ -14,8 +14,12 @@ abstract final class PoliceColors {
   /// Birincil mavi (butonlar, aktif sekme)
   static const Color primaryBlue = Color(0xFF2D7EFF);
 
-  /// Emeklilik / yaş haddi vurgusu
+  /// Emeklilik / yaş haddi vurgusu (metin vurgusu)
   static const Color emeklilikAccent = Color(0xFF8B5CF6);
+
+  /// Emeklilik pasta — zorunlu hizmet / ikon dilimleri
+  static const Color emeklilikSliceNavy = Color(0xFF1E3A6E);
+  static const Color emeklilikSliceRed = Color(0xFFE53935);
 
   /// Sağlık ve sosyal haklar vurgusu
   static const Color saglikAccent = Color(0xFFFB7185);

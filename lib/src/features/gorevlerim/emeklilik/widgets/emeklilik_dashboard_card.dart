@@ -109,14 +109,14 @@ class EmeklilikDashboardCard extends ConsumerWidget {
           'Zorunlu hizmet (20 yıl)',
           z.tamamlandi ? 'Tamamlandı' : z.kalan.kalanMetin(),
           formatYuzde(z.yuzde),
-          PoliceColors.primaryBlue,
+          PoliceColors.emeklilikSliceNavy,
         ),
         const SizedBox(height: 6),
         _satir(
           'Yaş haddi (${durum.yasHaddiYas})',
           y.tamamlandi ? 'Tamamlandı' : y.kalan.kalanMetin(),
           formatYuzde(y.yuzde),
-          PoliceColors.emeklilikAccent,
+          PoliceColors.emeklilikSliceRed,
         ),
         const SizedBox(height: 8),
         Text(

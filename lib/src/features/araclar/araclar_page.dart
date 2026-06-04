@@ -164,7 +164,7 @@ class AraclarPage extends StatelessWidget {
                 Navigator.of(context).push(fadeRoute(const EmsalRehberiPage())),
           ),
           PoliceModuleListTile(
-            style: PoliceModules.idariParaCeza,
+            style: PoliceModules.trafikRehberi,
             title: 'Trafik rehberi',
             subtitle: 'Kontrol, alkol, hız ve kaza adımları (offline).',
             onTap: () =>
