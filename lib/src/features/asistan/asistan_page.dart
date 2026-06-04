@@ -7,8 +7,14 @@ import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_page.dart';
 import '../araclar/idari_para_ceza/widgets/idari_para_ceza_card.dart';
+import '../araclar/tutanak/tutanak_merkezi_page.dart';
+import '../gorevlerim/atis/atis_takip_page.dart';
+import '../gorevlerim/kariyer/basari/basari_oduller_hub_page.dart';
+import '../gorevlerim/kariyer/egitim/egitim_page.dart';
+import '../gorevlerim/kariyer/kariyer_hub_page.dart';
 import '../home/root_drawer_scope.dart';
 import '../mevzuat/mevzuat_article_detail_page.dart';
+import '../saglik/saglik_sosyal_haklar_page.dart';
 import 'asistan_domain.dart';
 import 'asistan_provider.dart';
 import 'search/assistant_models.dart';
@@ -83,9 +89,31 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
       );
       return;
     }
+    final route = record.moduleRoute?.trim();
+    if (route != null && route.isNotEmpty) {
+      final page = _pageForModuleRoute(route, record);
+      if (page != null) {
+        Navigator.of(context).push(fadeRoute(page));
+        return;
+      }
+    }
     if (record.entryId != null && record.entryId!.isNotEmpty) {
       _openSection(record.entryId!, record.sectionId);
     }
+  }
+
+  Widget? _pageForModuleRoute(String route, LegalIndexRecord record) {
+    return switch (route) {
+      'atis_takip' => const AtisTakipPage(),
+      'basari_oduller' => const BasariOdullerHubPage(),
+      'saglik' => const SaglikSosyalHaklarPage(),
+      'tutanak' => const TutanakMerkeziPage(),
+      'kariyer' => const KariyerHubPage(),
+      'egitim' => const EgitimPage(),
+      'idari_para_ceza' =>
+        IdariParaCezaPage(initialQuery: record.title),
+      _ => null,
+    };
   }
 
   @override
