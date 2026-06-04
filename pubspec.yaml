@@ -74,9 +74,11 @@ flutter:
     - assets/json/maas_katsayilari.json
     - assets/json/polis_odeme_derece_kademe.json
     - assets/json/gorev_puanlari_2025.json
+    - assets/json/idari_para_cezalari_2026.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg
     - assets/kultur/
+    - assets/saglik/
     - assets/images/
     - assets/images/ataturk_matem.jpg
     - assets/icon/app_icon.png

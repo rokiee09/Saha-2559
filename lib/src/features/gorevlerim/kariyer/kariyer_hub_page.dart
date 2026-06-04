@@ -54,9 +54,9 @@ class KariyerHubPage extends ConsumerWidget {
             ),
             PoliceModuleListTile(
               style: PoliceModules.basari,
-              title: 'Başarı Dosyam',
+              title: 'Başarı ve Ödüllerim',
               subtitle:
-                  'Başarı ${ozet.basariHesap.basariSayisi} · Üstün ${ozet.basariHesap.ustunSayisi}',
+                  'Başarı ${ozet.basariHesap.basariSayisi} · Üstün ${ozet.basariHesap.ustunSayisi} · Taltif ${ozet.taltifOzet.toplamSayi}',
               onTap: () =>
                   Navigator.of(context).push(fadeRoute(const BasariPage())),
             ),
@@ -133,6 +133,8 @@ class _OzetPanel extends StatelessWidget {
           _line('Eğitim', ozet.egitimLabel),
           _line('Başarı belgesi', '${ozet.basariHesap.basariSayisi}'),
           _line('Üstün başarı', '${ozet.basariHesap.ustunSayisi}'),
+          _line('Taltif', '${ozet.taltifOzet.toplamSayi}'),
+          _line('Gazilik', ozet.gaziLabel),
           _line('Atış dönemi', '${ozet.atisTamamlanan}/4'),
           _line('Toplam görev', '${ozet.toplamGorev}'),
           _line('Toplam eğitim',

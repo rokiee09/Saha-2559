@@ -21,6 +21,7 @@ import 'gider/o1_gider_page.dart';
 import 'gorev_puanlari/gorev_puani_giris_page.dart';
 import 'gorev_puanlari/gorev_puanlari_page.dart';
 import 'harcirah/harcirah_hesaplama_page.dart';
+import 'idari_para_ceza/idari_para_ceza_page.dart';
 import 'ingilizce/polis_ingilizce_page.dart';
 import 'kriz/kriz_rehberi_page.dart';
 import 'lojman/lojman_puani_page.dart';
@@ -145,6 +146,13 @@ class AraclarPage extends StatelessWidget {
             'Referans',
             subtitle: 'Dil, telsiz, teşkilat ve kültür.',
             topGap: 18,
+          ),
+          PoliceModuleListTile(
+            style: PoliceModules.idariParaCeza,
+            title: 'İdari Para Cezaları',
+            subtitle: '2026 kabahat cezaları — arama, filtre ve favoriler.',
+            onTap: () => Navigator.of(context)
+                .push(fadeRoute(const IdariParaCezaPage())),
           ),
           PoliceModuleListTile(
             style: PoliceModules.ingilizce,

@@ -6,28 +6,23 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../common/theme/police_colors.dart';
 import '../kariyer_file_store.dart';
-import 'basari_models.dart';
-import 'basari_store.dart';
+import 'taltif_models.dart';
+import 'taltif_store.dart';
 
-class BasariEditorPage extends StatefulWidget {
-  const BasariEditorPage({
-    super.key,
-    this.existing,
-    required this.tur,
-  });
+class TaltifEditorPage extends StatefulWidget {
+  const TaltifEditorPage({super.key, this.existing});
 
-  final BasariBelge? existing;
-  final BasariBelgeTuru tur;
+  final TaltifKayit? existing;
 
   @override
-  State<BasariEditorPage> createState() => _BasariEditorPageState();
+  State<TaltifEditorPage> createState() => _TaltifEditorPageState();
 }
 
-class _BasariEditorPageState extends State<BasariEditorPage> {
+class _TaltifEditorPageState extends State<TaltifEditorPage> {
   final _picker = ImagePicker();
   late DateTime _tarih;
+  late final TextEditingController _tutarCtrl;
   late final TextEditingController _makamCtrl;
-  late final TextEditingController _evrakCtrl;
   late final TextEditingController _aciklamaCtrl;
   late final TextEditingController _notCtrl;
   String? _fotoPath;
@@ -41,8 +36,10 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
     _tarih = e != null
         ? DateTime.fromMillisecondsSinceEpoch(e.tarihMs)
         : DateTime.now();
+    _tutarCtrl = TextEditingController(
+      text: e != null && e.tutar > 0 ? '${e.tutar}' : '',
+    );
     _makamCtrl = TextEditingController(text: e?.verenMakam ?? '');
-    _evrakCtrl = TextEditingController(text: e?.evrakNo ?? '');
     _aciklamaCtrl = TextEditingController(text: e?.aciklama ?? '');
     _notCtrl = TextEditingController(text: e?.not ?? '');
     _fotoPath = e?.fotoPath.isNotEmpty == true ? e!.fotoPath : null;
@@ -51,11 +48,16 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
 
   @override
   void dispose() {
+    _tutarCtrl.dispose();
     _makamCtrl.dispose();
-    _evrakCtrl.dispose();
     _aciklamaCtrl.dispose();
     _notCtrl.dispose();
     super.dispose();
+  }
+
+  int _parseTutar() {
+    final raw = _tutarCtrl.text.replaceAll('.', '').replaceAll(',', '.').trim();
+    return (double.tryParse(raw) ?? 0).round();
   }
 
   Future<void> _pickDate() async {
@@ -98,20 +100,19 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
 
   @override
   Widget build(BuildContext context) {
-    final turLabel = widget.tur.label;
     return Scaffold(
       backgroundColor: PoliceColors.backgroundDark,
       appBar: AppBar(
         backgroundColor: PoliceColors.navy,
         foregroundColor: PoliceColors.titleOnDark,
-        title: Text(widget.existing == null ? '$turLabel ekle' : '$turLabel düzenle'),
+        title: Text(widget.existing == null ? 'Taltif ekle' : 'Taltif düzenle'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text('Belge tarihi',
+            title: const Text('Taltif tarihi',
                 style: TextStyle(color: PoliceColors.titleOnDark)),
             subtitle: Text(
               '${_tarih.day.toString().padLeft(2, '0')}.'
@@ -123,15 +124,16 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
           ),
           const SizedBox(height: 12),
           TextField(
-            controller: _makamCtrl,
+            controller: _tutarCtrl,
+            keyboardType: TextInputType.number,
             style: const TextStyle(color: PoliceColors.titleOnDark),
-            decoration: _dec('Veren makam'),
+            decoration: _dec('Taltif tutarı (TL)'),
           ),
           const SizedBox(height: 12),
           TextField(
-            controller: _evrakCtrl,
+            controller: _makamCtrl,
             style: const TextStyle(color: PoliceColors.titleOnDark),
-            decoration: _dec('Belge sayısı / evrak no'),
+            decoration: _dec('Veren makam'),
           ),
           const SizedBox(height: 12),
           TextField(
@@ -197,7 +199,7 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
                     if (_fotoPath != null &&
                         _fotoPath != widget.existing?.fotoPath) {
                       foto = await kariyerCopyFile(
-                        sub: 'basari',
+                        sub: 'taltif',
                         sourcePath: _fotoPath!,
                         prefix: 'foto',
                       );
@@ -205,21 +207,20 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
                     if (_pdfPath != null &&
                         _pdfPath != widget.existing?.pdfPath) {
                       pdf = await kariyerCopyFile(
-                        sub: 'basari',
+                        sub: 'taltif',
                         sourcePath: _pdfPath!,
                         prefix: 'pdf',
                       );
                     }
-                    final belge = BasariBelge(
-                      id: widget.existing?.id ?? basariGenerateId(),
-                      tur: widget.tur,
+                    final kayit = TaltifKayit(
+                      id: widget.existing?.id ?? taltifGenerateId(),
                       tarihMs: DateTime(
                         _tarih.year,
                         _tarih.month,
                         _tarih.day,
                       ).millisecondsSinceEpoch,
+                      tutar: _parseTutar(),
                       verenMakam: _makamCtrl.text.trim(),
-                      evrakNo: _evrakCtrl.text.trim(),
                       aciklama: _aciklamaCtrl.text.trim(),
                       not: _notCtrl.text.trim(),
                       fotoPath: foto,
@@ -228,7 +229,7 @@ class _BasariEditorPageState extends State<BasariEditorPage> {
                           DateTime.now().millisecondsSinceEpoch,
                     );
                     if (!context.mounted) return;
-                    Navigator.of(context).pop(belge);
+                    Navigator.of(context).pop(kayit);
                   },
             style: FilledButton.styleFrom(
               backgroundColor: PoliceColors.primaryBlue,

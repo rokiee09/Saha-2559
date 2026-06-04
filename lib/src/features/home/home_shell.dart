@@ -18,6 +18,7 @@ import '../asistan/asistan_page.dart';
 import '../gorevlerim/gorevlerim_page.dart';
 import '../gorevlerim/izin/izin_page.dart';
 import '../araclar/araclar_page.dart';
+import '../saglik/saglik_sosyal_haklar_page.dart';
 import 'dashboard_page.dart';
 import 'root_drawer_scope.dart';
 
@@ -163,6 +164,10 @@ class _HomeShellState extends ConsumerState<HomeShell> {
                           );
                         });
                       },
+                      onOpenSaglik: () {
+                        Navigator.of(sheetCtx).pop();
+                        nav.push(fadeRoute(const SaglikSosyalHaklarPage()));
+                      },
                     ),
                   ),
                 ],
@@ -223,6 +228,7 @@ class _HomeMainMenuBody extends StatelessWidget {
     required this.onSelect,
     required this.onOpenSettings,
     required this.onOpenMevzuatEntry,
+    required this.onOpenSaglik,
   });
 
   final ScrollController scrollController;
@@ -230,6 +236,7 @@ class _HomeMainMenuBody extends StatelessWidget {
   final ValueChanged<int> onSelect;
   final VoidCallback onOpenSettings;
   final ValueChanged<String> onOpenMevzuatEntry;
+  final VoidCallback onOpenSaglik;
 
   @override
   Widget build(BuildContext context) {
@@ -323,6 +330,13 @@ class _HomeMainMenuBody extends StatelessWidget {
             title: 'Profilim',
             subtitle: 'İzin, kariyer, disiplin ve kişisel kayıtların',
             onTap: () => onSelect(2),
+          ),
+          _DrawerTile(
+            selected: false,
+            icon: PhosphorIconsRegular.heart,
+            title: 'Sağlık ve Sosyal Haklar',
+            subtitle: 'Rapor, heyet, elverişlilik, maluliyet rehberi',
+            onTap: onOpenSaglik,
           ),
           _DrawerTile(
             selected: selectedIndex == 3,

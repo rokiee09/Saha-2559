@@ -11,6 +11,7 @@ import '../gorevlerim/emeklilik/widgets/emeklilik_dashboard_card.dart';
 import '../gorevlerim/kariyer/widgets/gazi_tesekkur_kart.dart';
 import '../martyrs/widgets/sehit_yildonumu_devriye_kart.dart';
 import '../gorevlerim/kariyer/widgets/personel_ozet_kart.dart';
+import '../saglik/widgets/saglik_dashboard_card.dart';
 import '../haklar/vardiya/vardiya_cycle_calculator.dart';
 import '../haklar/vardiya/vardiya_today_provider.dart';
 import '../mevzuat/mevzuat_provider.dart';
@@ -114,6 +115,7 @@ class DashboardPage extends ConsumerWidget {
                   const GaziTesekkurKart(),
                   PersonelOzetKart(onTap: onOpenProfilim),
                   const EmeklilikDashboardCard(),
+                  const SaglikDashboardCard(),
                   _DutyTodayPanel(
                     vardiya: vardiyaToday,
                     leave: upcomingLeave,

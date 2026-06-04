@@ -102,8 +102,8 @@ class _GorevlerimPageState extends ConsumerState<GorevlerimPage> {
           const ModuleSectionHeader('Kariyer', topGap: 4),
           PoliceModuleListTile(
             style: PoliceModules.basari,
-            title: 'Başarı Dosyam',
-            subtitle: 'Başarı ve üstün başarı belgeleri',
+            title: 'Başarı ve Ödüllerim',
+            subtitle: 'Başarı, üstün başarı belgeleri ve taltifler',
             onTap: () =>
                 Navigator.of(context).push(fadeRoute(const BasariPage())),
           ),
@@ -335,10 +335,9 @@ class _MiniOzet extends StatelessWidget {
       child: Row(
         children: [
           _chip('Başarı', '${ozet.basariHesap.basariSayisi}'),
-          _chip('Eğitim',
-              '${ozet.egitimStat.toplamEgitim + ozet.egitimStat.toplamSertifika}'),
-          _chip('Görev', '${ozet.toplamGorev}'),
-          _chip('Atış', '${ozet.atisTamamlanan}/4'),
+          _chip('Üstün', '${ozet.basariHesap.ustunSayisi}'),
+          _chip('Taltif', '${ozet.taltifOzet.toplamSayi}'),
+          _chip('Gazi', ozet.gaziLabel),
         ],
       ),
     );

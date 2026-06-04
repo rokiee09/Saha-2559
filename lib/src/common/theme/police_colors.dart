@@ -17,6 +17,9 @@ abstract final class PoliceColors {
   /// Emeklilik / yaş haddi vurgusu
   static const Color emeklilikAccent = Color(0xFF8B5CF6);
 
+  /// Sağlık ve sosyal haklar vurgusu
+  static const Color saglikAccent = Color(0xFFFB7185);
+
   /// Şehit yıldönümü / anma bandı
   static const Color sehitAccent = Color(0xFFF87171);
 

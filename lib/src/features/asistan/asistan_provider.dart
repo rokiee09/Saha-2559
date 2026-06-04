@@ -3,11 +3,16 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common/text/tr_text.dart';
 import '../mevzuat/mevzuat_provider.dart';
+import '../araclar/idari_para_ceza/idari_para_ceza_data.dart';
 import 'asistan_domain.dart';
+import 'legal/assistant_answer_builder.dart';
+import 'legal/assistant_legal_index.dart';
+import 'legal/assistant_legal_search_service.dart';
+import 'search/query_normalizer.dart';
 
-/// Polis çalışma asistanı: offline senaryo + mevzuat yönlendirme.
-/// Genel amaçlı sohbet değildir; hukuki tavsiye vermez.
+/// Mevzuat kaynaklı soru-cevap asistanı.
 
 class AsistanIndexItem {
   final MevzuatEntry entry;
@@ -46,32 +51,9 @@ class AsistanHit {
   }
 }
 
-String asistanNormalize(String input) {
-  return input
-      .replaceAll('İ', 'i')
-      .replaceAll('I', 'ı')
-      .toLowerCase();
-}
+String asistanNormalize(String input) => trLower(input);
 
-String asistanFold(String input) {
-  final lower = asistanNormalize(input);
-  const map = {
-    'ç': 'c',
-    'ğ': 'g',
-    'ı': 'i',
-    'ö': 'o',
-    'ş': 's',
-    'ü': 'u',
-    'â': 'a',
-    'î': 'i',
-    'û': 'u',
-  };
-  final sb = StringBuffer();
-  for (final ch in lower.split('')) {
-    sb.write(map[ch] ?? ch);
-  }
-  return sb.toString();
-}
+String asistanFold(String input) => trFold(input);
 
 class AsistanRef {
   final String entryId;
@@ -93,7 +75,6 @@ class AsistanRef {
   }
 }
 
-/// Senaryo tabanlı çalışma asistanı kaydı.
 class AsistanScenario {
   const AsistanScenario({
     required this.id,
@@ -119,7 +100,6 @@ class AsistanScenario {
   final String source;
   final List<AsistanRef> refs;
 
-  /// Eski concepts.json uyumluluğu.
   String get label => title;
 
   factory AsistanScenario.fromJson(Map<String, dynamic> json) {
@@ -174,7 +154,6 @@ class AsistanScenario {
   }
 }
 
-/// Eski test ve API uyumluluğu.
 typedef AsistanConcept = AsistanScenario;
 
 const _scenariosPath = 'assets/asistan/scenarios.json';
@@ -206,7 +185,6 @@ final asistanScenariosProvider =
   }
 });
 
-/// Eski provider adı.
 final asistanConceptsProvider = asistanScenariosProvider;
 
 AsistanScenario? asistanMatchScenario(
@@ -228,6 +206,10 @@ AsistanScenario? asistanMatchScenario(
         s = 500 + nt.length;
       } else if (nt.contains(q) && q.length >= 4) {
         s = 200 + q.length;
+      } else {
+        for (final tok in q.split(' ')) {
+          if (tok.length >= 3 && nt.contains(tok)) s += 80 + tok.length;
+        }
       }
       if (s > bestScore) {
         bestScore = s;
@@ -235,7 +217,7 @@ AsistanScenario? asistanMatchScenario(
       }
     }
   }
-  return best;
+  return bestScore >= 200 ? best : null;
 }
 
 AsistanScenario? asistanMatchConcept(
@@ -244,18 +226,31 @@ AsistanScenario? asistanMatchConcept(
 ) =>
     asistanMatchScenario(rawQuery, concepts);
 
-/// Sorgu uzmanlık alanı içinde mi?
 bool asistanQueryInScope(String raw, List<AsistanScenario> scenarios) {
   final trimmed = raw.trim();
   if (trimmed.length < 2) return false;
-  if (asistanMatchScenario(trimmed, scenarios) != null) return true;
 
-  final q = asistanFold(trimmed);
+  final nq = QueryNormalizer.normalize(trimmed);
+  if (nq.tokens.isNotEmpty) return true;
+
+  final q = trFold(trimmed);
   for (final d in asistanAllDomains) {
     for (final k in d.keywords) {
-      final nk = asistanFold(k);
-      if (nk.length >= 2 && q.contains(nk)) return true;
+      if (q.contains(trFold(k))) return true;
     }
+  }
+  const extra = [
+    'ceza',
+    'tutanak',
+    'saglik',
+    'atis',
+    'basari',
+    'taltif',
+    'rapor',
+    'heyet',
+  ];
+  for (final k in extra) {
+    if (q.contains(k)) return true;
   }
   return false;
 }
@@ -270,41 +265,13 @@ class AsistanStructuredAnswer {
   });
 }
 
-/// Eski cevap tipi.
 typedef AsistanAnswer = AsistanStructuredAnswer;
 
 final asistanScopeProvider = Provider.autoDispose<bool>((ref) {
   final raw = ref.watch(asistanQueryProvider).trim();
   if (raw.isEmpty) return true;
-  final scenarios = ref.watch(asistanScenariosProvider).valueOrNull;
-  if (scenarios == null) return true;
-  return asistanQueryInScope(raw, scenarios);
-});
-
-final asistanAnswerProvider =
-    FutureProvider.autoDispose<AsistanStructuredAnswer?>((ref) async {
-  final raw = ref.watch(asistanQueryProvider).trim();
-  if (raw.isEmpty) return null;
-  if (!ref.watch(asistanScopeProvider)) return null;
-
-  final scenarios = await ref.watch(asistanScenariosProvider.future);
-  final scenario = asistanMatchScenario(raw, scenarios);
-  if (scenario == null) return null;
-
-  final index = await ref.watch(asistanIndexProvider.future);
-  final entryIds = <String>{for (final i in index) i.entry.id};
-  final sectionIds = <String>{for (final i in index) i.section.id};
-
-  final resolved = <AsistanRef>[];
-  for (final r in scenario.refs) {
-    if (!entryIds.contains(r.entryId)) continue;
-    if (r.sectionId != null && !sectionIds.contains(r.sectionId)) {
-      resolved.add(AsistanRef(entryId: r.entryId, label: r.label));
-    } else {
-      resolved.add(r);
-    }
-  }
-  return AsistanStructuredAnswer(scenario: scenario, resolvedRefs: resolved);
+  if (raw.length >= 2) return true;
+  return false;
 });
 
 final asistanIndexProvider =
@@ -317,7 +284,8 @@ final asistanIndexProvider =
 
   final out = <AsistanIndexItem>[];
   for (final entry in entries) {
-    final doc = await ref.watch(mevzuatDocumentContentProvider(entry.id).future);
+    final doc =
+        await ref.watch(mevzuatDocumentContentProvider(entry.id).future);
     for (final s in doc.sections) {
       if (s.text.trim().isEmpty && s.title.trim().isEmpty) continue;
       out.add(AsistanIndexItem(entry: entry, section: s));
@@ -326,13 +294,71 @@ final asistanIndexProvider =
   return out;
 });
 
+final assistantLegalIndexProvider =
+    FutureProvider<List<LegalIndexRecord>>((ref) async {
+  final index = await ref.watch(asistanIndexProvider.future);
+  final cezaSet = await ref.watch(idariParaCezaProvider.future);
+  return buildFullLegalIndex(
+    mevzuatItems: index.map((i) => (entry: i.entry, section: i.section)),
+    cezaKayitlar: cezaSet.kayitlar,
+  );
+});
+
+final assistantLegalSearchServiceProvider =
+    FutureProvider<AssistantLegalSearchService>((ref) async {
+  final records = await ref.watch(assistantLegalIndexProvider.future);
+  return AssistantLegalSearchService(index: records);
+});
+
+/// Mevzuat kaynaklı arama — ana cevap kaynağı.
+final legalAssistantAnswerProvider =
+    FutureProvider.autoDispose<LegalAssistantAnswer?>((ref) async {
+  final raw = ref.watch(asistanQueryProvider).trim();
+  if (raw.isEmpty) return null;
+
+  final service = await ref.watch(assistantLegalSearchServiceProvider.future);
+  final classification = service.classify(raw);
+  final hits = service.search(raw);
+  final strong = service.hasStrongMatch(hits);
+  return const AssistantAnswerBuilder().build(
+    query: raw,
+    classification: classification,
+    hits: hits,
+    strongMatch: strong,
+  );
+});
+
+/// Geriye dönük alias.
+final assistantSearchProvider = legalAssistantAnswerProvider;
+
+/// Senaryo tabanlı cevap (yalnızca geriye dönük; ana akış mevzuat araması).
+final asistanAnswerProvider =
+    FutureProvider.autoDispose<AsistanStructuredAnswer?>((ref) async {
+  return null;
+});
+
+final idariParaCezaAsistanProvider =
+    Provider.autoDispose<IdariParaCezaKayit?>((ref) {
+  final answer = ref.watch(legalAssistantAnswerProvider).valueOrNull;
+  final record = answer?.primaryRecord;
+  if (record == null ||
+      record.sourceType != LegalSourceType.idariParaCeza) {
+    return null;
+  }
+  final id = record.id.replaceFirst('ceza_', '');
+  final set = ref.watch(idariParaCezaProvider).valueOrNull;
+  if (set == null) return null;
+  for (final k in set.kayitlar) {
+    if (k.id == id) return k;
+  }
+  return set.enIyiEslesme(answer!.query);
+});
+
 final asistanQueryProvider = StateProvider<String>((ref) => '');
 
-/// Seçili uzmanlık alanı (null = tümü).
 final asistanSelectedDomainProvider =
     StateProvider<AsistanDomain?>((ref) => null);
 
-/// Giriş ekranında gösterilen örnek senaryolar.
 List<AsistanScenario> asistanFeaturedScenarios(List<AsistanScenario> all) {
   final seen = <AsistanDomain>{};
   final out = <AsistanScenario>[];
@@ -343,7 +369,6 @@ List<AsistanScenario> asistanFeaturedScenarios(List<AsistanScenario> all) {
   return out;
 }
 
-/// Alan filtresine göre senaryolar.
 List<AsistanScenario> asistanScenariosForDomain(
   List<AsistanScenario> all,
   AsistanDomain? domain,
@@ -354,88 +379,26 @@ List<AsistanScenario> asistanScenariosForDomain(
 
 final asistanResultsProvider =
     FutureProvider.autoDispose<List<AsistanHit>>((ref) async {
-  final raw = ref.watch(asistanQueryProvider).trim();
-  if (raw.isEmpty) return const [];
-  if (!ref.watch(asistanScopeProvider)) return const [];
-
-  final scenarios = await ref.watch(asistanScenariosProvider.future);
-  final structured = asistanMatchScenario(raw, scenarios);
-  // Senaryo eşleşince madde aramasını gizle — mevzuatı kullandırmaya odaklan.
-  if (structured != null) return const [];
-
-  final normalized = asistanNormalize(raw);
-  final phrase = normalized.replaceAll(RegExp(r'\s+'), ' ').trim();
-  final isPhrase = phrase.contains(' ');
-
-  final tokens = normalized
-      .split(RegExp(r'[^0-9a-zçğıöşü]+'))
-      .where((t) => t.length >= 2)
-      .toList();
-  if (tokens.isEmpty) return const [];
-
-  final concept = structured;
-  final expandTokens = <String>{
-    if (concept != null)
-      for (final e in concept.expand)
-        if (asistanFold(e).trim().length >= 2) asistanFold(e).trim(),
-  };
-  final refSectionIds = <String>{
-    if (concept != null)
-      for (final r in concept.refs)
-        if (r.sectionId != null) r.sectionId!,
-  };
+  final answer = await ref.watch(legalAssistantAnswerProvider.future);
+  if (answer == null || answer.noStrongMatch) return const [];
 
   final index = await ref.watch(asistanIndexProvider.future);
   final hits = <AsistanHit>[];
 
-  for (final item in index) {
-    final title = asistanNormalize(
-      '${item.section.title} ${item.section.article}',
-    );
-    final body = asistanNormalize(item.section.text);
-    final ref0 = asistanNormalize(
-      '${item.entry.displayTitle} ${item.entry.catalogTag}',
-    );
-
-    var score = 0.0;
-    for (final t in tokens) {
-      if (title.contains(t)) score += 6;
-      if (ref0.contains(t)) score += 4;
-      final occurrences = t.allMatches(body).length;
-      if (occurrences > 0) score += occurrences > 3 ? 3.0 : occurrences.toDouble();
-    }
-
-    if (isPhrase) {
-      if (title.contains(phrase)) score += 40;
-      if (ref0.contains(phrase)) score += 25;
-      if (body.contains(phrase)) score += 25;
-    }
-
-    final matchedAll = tokens.every(
-      (t) => title.contains(t) || body.contains(t) || ref0.contains(t),
-    );
-    if (matchedAll && tokens.length > 1) score += 8;
-
-    if (expandTokens.isNotEmpty) {
-      final foldedTitle = asistanFold(title);
-      final foldedBody = asistanFold(body);
-      for (final e in expandTokens) {
-        if (foldedTitle.contains(e)) score += 3;
-        if (foldedBody.contains(e)) score += 1.5;
+  for (final h in answer.topHits) {
+    final rec = h.record;
+    if (rec.entryId == null || rec.sectionId == null) continue;
+    for (final item in index) {
+      if (item.entry.id == rec.entryId &&
+          item.section.id == rec.sectionId) {
+        hits.add(AsistanHit(
+          entry: item.entry,
+          section: item.section,
+          score: h.score,
+        ));
+        break;
       }
     }
-
-    if (refSectionIds.contains(item.section.id)) {
-      score += 200;
-    }
-
-    if (score > 0) {
-      hits.add(
-        AsistanHit(entry: item.entry, section: item.section, score: score),
-      );
-    }
   }
-
-  hits.sort((a, b) => b.score.compareTo(a.score));
-  return hits.length > 5 ? hits.sublist(0, 5) : hits;
+  return hits;
 });

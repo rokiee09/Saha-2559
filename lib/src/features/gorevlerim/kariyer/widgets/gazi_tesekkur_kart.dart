@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 
 import '../../../../common/theme/police_colors.dart';
 import '../kariyer_profil_provider.dart';
@@ -41,8 +42,8 @@ class GaziTesekkurKart extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Icon(
-                  Icons.military_tech_rounded,
+                PhosphorIcon(
+                  PhosphorIconsRegular.medalMilitary,
                   color: PoliceColors.gold.withValues(alpha: 0.95),
                   size: 22,
                 ),
