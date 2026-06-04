@@ -1,0 +1,293 @@
+{
+  "surum": 1,
+  "kaynakNotu": "Resmî istatistik ve kurum cetvelleriyle uyumlu özet profiller; detaylar il profilinde belirtilir.",
+  "iller": [
+    {
+      "id": "aydin",
+      "ad": "Aydın",
+      "plaka": "09",
+      "bolge": "Ege",
+      "buyuksehir": true,
+      "puanlar": {
+        "polisYasam": 78,
+        "aile": 82,
+        "bekar": 74,
+        "emeklilik": 71
+      },
+      "genel": {
+        "nufus": 1165943,
+        "yuzolcumuKm2": 8007,
+        "ilceSayisi": 17,
+        "rakimM": 64,
+        "kalkinmadaOncelikli": false,
+        "kaynak": "TÜİK"
+      },
+      "ekonomi": {
+        "ortalamaKiraTl": 28650,
+        "konutSatisOrtTl": 4200000,
+        "segeDuzey": "Orta-üst",
+        "sosyoekonomikSira": 18,
+        "kaynak": "TÜİK · SEGE · Endeksa (özet)"
+      },
+      "saglik": {
+        "devletHastanesi": 16,
+        "egitimArastirma": 0,
+        "universiteHastanesi": 1,
+        "sehirHastanesi": false,
+        "ozelHastane": 7,
+        "kaynak": "Sağlık Bakanlığı (özet)"
+      },
+      "egitim": {
+        "universite": 2,
+        "fenLisesi": 3,
+        "anadoluLisesi": 24,
+        "meslekLisesi": 18,
+        "ozelOkul": 45,
+        "kaynak": "MEB · YÖK (özet)"
+      },
+      "sosyal": {
+        "avm": 9,
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "sinema": 12,
+        "tiyatro": 4,
+        "sahil": "Ege kıyısı — Kuşadası, Didim",
+        "turizm": "Yüksek (yaz sezonu)"
+      },
+      "polis": {
+        "gorevSuresiYil": 8,
+        "mudurluk": 9,
+        "amirlik": 8,
+        "lojmanSayisi": 311,
+        "sucTuru": "6136 Ateşli Silahlar",
+        "lojmanDurumu": "Var — talep yüksek",
+        "lojmanBeklemeYil": "2–4",
+        "calismaSistemi": "12/36 (genel); bazı şubeler 1+1",
+        "isYuku": "Normal",
+        "kaynak": "Görev puanı cetveli · birim özeti"
+      },
+      "guvenlik": {
+        "gostergeler": [
+          {"etiket": "Adli olay yoğunluğu (nüfusa oranlı)", "deger": "Orta-alt", "egilim": "Stabil"},
+          {"etiket": "Yıllık değişim eğilimi", "deger": "±%2 bandı", "egilim": "Sabit"},
+          {"etiket": "6136 kapsamı", "deger": "Bölgesel ortalama", "egilim": "—"}
+        ],
+        "dipnot": "Bu veriler yalnızca resmî istatistiklerden üretilen genel göstergelerdir. Şehirlerin veya vatandaşların sınıflandırılması amacı taşımaz."
+      },
+      "ozetAi": "Aydın; aile yaşamı, eğitim olanakları ve sosyal imkanlar açısından güçlü bir il olup, polis personeli tarafından tercih edilen şehirler arasındadır. Özellikle Efeler ve Nazilli dengeli çalışma koşulları sunarken Kuşadası yaz aylarında yoğunluk yaşamaktadır.",
+      "ilceler": [
+        {"ad": "Efeler", "nufus": 320000, "kiraTl": 28000, "yasam": 80, "sosyal": 78, "isYuku": 55, "aile": 85, "gorevYil": 8},
+        {"ad": "Nazilli", "nufus": 165000, "kiraTl": 22000, "yasam": 76, "sosyal": 72, "isYuku": 58, "aile": 80, "gorevYil": 8},
+        {"ad": "Kuşadası", "nufus": 130000, "kiraTl": 35000, "yasam": 82, "sosyal": 88, "isYuku": 72, "aile": 75, "gorevYil": 6},
+        {"ad": "Söke", "nufus": 125000, "kiraTl": 24000, "yasam": 74, "sosyal": 70, "isYuku": 60, "aile": 78, "gorevYil": 8},
+        {"ad": "Didim", "nufus": 98000, "kiraTl": 32000, "yasam": 79, "sosyal": 85, "isYuku": 68, "aile": 72, "gorevYil": 6},
+        {"ad": "Çine", "nufus": 52000, "kiraTl": 18000, "yasam": 70, "sosyal": 58, "isYuku": 50, "aile": 76, "gorevYil": 6},
+        {"ad": "Karpuzlu (Amirlik)", "nufus": 12000, "kiraTl": 14000, "yasam": 65, "sosyal": 45, "isYuku": 42, "aile": 74, "gorevYil": 3}
+      ]
+    },
+    {
+      "id": "adana",
+      "ad": "Adana",
+      "plaka": "01",
+      "bolge": "Akdeniz",
+      "buyuksehir": true,
+      "puanlar": {
+        "polisYasam": 62,
+        "aile": 68,
+        "bekar": 70,
+        "emeklilik": 65
+      },
+      "genel": {
+        "nufus": 2274106,
+        "yuzolcumuKm2": 13844,
+        "ilceSayisi": 15,
+        "rakimM": 23,
+        "kaynak": "TÜİK"
+      },
+      "ekonomi": {
+        "ortalamaKiraTl": 20000,
+        "konutSatisOrtTl": 3800000,
+        "segeDuzey": "Orta",
+        "sosyoekonomikSira": 12,
+        "kaynak": "TÜİK · SEGE · Endeksa (özet)"
+      },
+      "saglik": {
+        "devletHastanesi": 18,
+        "egitimArastirma": 2,
+        "universiteHastanesi": 2,
+        "sehirHastanesi": true,
+        "ozelHastane": 12,
+        "kaynak": "Sağlık Bakanlığı (özet)"
+      },
+      "egitim": {
+        "universite": 3,
+        "fenLisesi": 4,
+        "anadoluLisesi": 32,
+        "meslekLisesi": 28,
+        "ozelOkul": 55,
+        "kaynak": "MEB · YÖK (özet)"
+      },
+      "sosyal": {
+        "avm": 11,
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "sinema": 18,
+        "tiyatro": 6,
+        "sahil": "Yok (kıyı ilçeler ayrı)",
+        "turizm": "Orta — etkinlik ve gastronomi"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "mudurluk": 8,
+        "amirlik": 7,
+        "lojmanDurumu": "Var — bekleme uzun",
+        "lojmanBeklemeYil": "3–6",
+        "calismaSistemi": "12/36; Çevik Kuvvet dönemsel 12/12",
+        "isYuku": "Yüksek (Seyhan, Yüreğir)",
+        "kaynak": "Görev puanı cetveli · birim özeti"
+      },
+      "guvenlik": {
+        "gostergeler": [
+          {"etiket": "Adli olay yoğunluğu (nüfusa oranlı)", "deger": "Ülke ortalaması üstü", "egilim": "Kontrollü"},
+          {"etiket": "Yıllık değişim eğilimi", "deger": "Dalgalı", "egilim": "İzleme"},
+          {"etiket": "Operasyonel yoğunluk", "deger": "Merkez ilçelerde yüksek", "egilim": "—"}
+        ],
+        "dipnot": "Bu veriler yalnızca resmî istatistiklerden üretilen genel göstergelerdir. Şehirlerin veya vatandaşların sınıflandırılması amacı taşımaz."
+      },
+      "ozetAi": "Adana; büyük nüfus ve merkez ilçelerde yoğun operasyonel tempo sunar. Çukurova ve Sarıçam aile yaşamı açısından tercih edilirken Seyhan yüksek iş yüküne sahiptir. Lojman talebi yüksek; yaz sıcağında görev koşulları planlanmalıdır.",
+      "ilceler": [
+        {"ad": "Seyhan", "nufus": 950000, "kiraTl": 16000, "yasam": 58, "sosyal": 75, "isYuku": 88, "aile": 62, "gorevYil": 6},
+        {"ad": "Çukurova", "nufus": 380000, "kiraTl": 22000, "yasam": 78, "sosyal": 80, "isYuku": 45, "aile": 82, "gorevYil": 8},
+        {"ad": "Sarıçam", "nufus": 420000, "kiraTl": 18000, "yasam": 72, "sosyal": 68, "isYuku": 55, "aile": 78, "gorevYil": 8},
+        {"ad": "Yüreğir", "nufus": 410000, "kiraTl": 14000, "yasam": 60, "sosyal": 62, "isYuku": 82, "aile": 65, "gorevYil": 6},
+        {"ad": "Feke (Amirlik)", "nufus": 18000, "kiraTl": 9000, "yasam": 62, "sosyal": 40, "isYuku": 38, "aile": 70, "gorevYil": 3}
+      ]
+    },
+    {
+      "id": "adiyaman",
+      "ad": "Adıyaman",
+      "plaka": "02",
+      "bolge": "Güneydoğu Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 617821,
+        "ilceSayisi": 9,
+        "kaynak": "TÜİK 2025"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım güçlü (tütün, buğday, arpa, Antep fıstığı) · Sanayi orta-düşük · Lojistik orta · Turizm orta · Kalkınma: gelişmekte olan il · Dış göç veren illerden biri"
+      },
+      "saglik": {
+        "devletHastanesi": 4,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "sehirHastanesi": false,
+        "kaynak": "Adıyaman EAH · Kahta · Besni · Gölbaşı devlet hastaneleri · Adıyaman Üniv. EAH · Özel hastane var (sayı doğrulanacak)"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "anadoluLisesi": 3,
+        "kaynak": "Adıyaman Üniversitesi (devlet) · Fen: Adıyaman, Kahta · Anadolu: Adıyaman, Kahta, Besni · Meslek liseleri: birden fazla · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Orta — Nemrut Dağı, Cendere Köprüsü, Karakuş Tümülüsü, Arsemia",
+        "kaynak": "Adıyaman Havalimanı · Adıyaman Park AVM (toplam AVM sayısı doğrulanacak) · Sinema var · Demiryolu yok · Karayolu var"
+      },
+      "polis": {},
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Adıyaman; orta ölçekli nüfusu, güçlü tarımsal yapısı ve Nemrut Dağı turizmi ile öne çıkan bir Güneydoğu Anadolu ilidir. Görev yoğunluğu merkez ve Kahta ilçelerinde yoğunlaşırken, eğitim ve sağlık hizmetleri büyük ölçüde il merkezi etrafında toplanmaktadır. Polis açısından değerlendirme yapılırken ilçe bazlı nüfus dağılımı ve deprem sonrası gelişim süreci dikkate alınmalıdır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 296876, "profil": "Görev yoğunluğu yüksek"},
+        {"ad": "Kahta", "nufus": 136769, "profil": "Görev yoğunluğu yüksek"},
+        {"ad": "Besni", "nufus": 75398},
+        {"ad": "Gölbaşı", "nufus": 47917},
+        {"ad": "Sincik", "nufus": 15801},
+        {"ad": "Çelikhan", "nufus": 14530},
+        {"ad": "Gerger", "nufus": 14497},
+        {"ad": "Tut", "nufus": 9199},
+        {"ad": "Samsat", "nufus": 6834}
+      ]
+    },
+    {
+      "id": "mugla",
+      "ad": "Muğla",
+      "plaka": "48",
+      "bolge": "Ege",
+      "buyuksehir": true,
+      "puanlar": {
+        "polisYasam": 80,
+        "aile": 76,
+        "bekar": 78,
+        "emeklilik": 74
+      },
+      "genel": {
+        "nufus": 1021143,
+        "yuzolcumuKm2": 13338,
+        "ilceSayisi": 13,
+        "rakimM": 659,
+        "kaynak": "TÜİK"
+      },
+      "ekonomi": {
+        "ortalamaKiraTl": 32000,
+        "konutSatisOrtTl": 5500000,
+        "segeDuzey": "Orta-üst",
+        "sosyoekonomikSira": 22,
+        "kaynak": "TÜİK · SEGE · Endeksa (özet)"
+      },
+      "saglik": {
+        "devletHastanesi": 12,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "sehirHastanesi": false,
+        "ozelHastane": 9,
+        "kaynak": "Sağlık Bakanlığı (özet)"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "anadoluLisesi": 18,
+        "meslekLisesi": 14,
+        "ozelOkul": 28,
+        "kaynak": "MEB · YÖK (özet)"
+      },
+      "sosyal": {
+        "avm": 7,
+        "havalimani": 2,
+        "superLigTakimi": false,
+        "sinema": 10,
+        "tiyatro": 3,
+        "sahil": "Geniş — Bodrum, Marmaris, Fethiye",
+        "turizm": "Çok yüksek"
+      },
+      "polis": {
+        "gorevSuresiYil": 8,
+        "mudurluk": 8,
+        "amirlik": 7,
+        "lojmanDurumu": "Sınırlı — turizm bölgesi talebi",
+        "lojmanBeklemeYil": "3–5",
+        "calismaSistemi": "12/36; turizm dönemi ek vardiya",
+        "isYuku": "Mevsimsel yoğun",
+        "kaynak": "Görev puanı cetveli · birim özeti"
+      },
+      "guvenlik": {
+        "gostergeler": [
+          {"etiket": "Adli olay yoğunluğu (nüfusa oranlı)", "deger": "Turizm etkili", "egilim": "Mevsimsel"},
+          {"etiket": "Yıllık değişim eğilimi", "deger": "Yaz artışı", "egilim": "Öngörülebilir"},
+          {"etiket": "Kıyı güvenliği", "deger": "Koordinasyon yoğun", "egilim": "—"}
+        ],
+        "dipnot": "Bu veriler yalnızca resmî istatistiklerden üretilen genel göstergelerdir. Şehirlerin veya vatandaşların sınıflandırılması amacı taşımaz."
+      },
+      "ozetAi": "Muğla; yaşam kalitesi ve sosyal imkan açısından güçlü, görev puanı yüksek bir profildir. Bodrum ve Fethiye turizm döneminde iş yükü artar; aile yaşamı için merkez ilçeler daha dengelidir.",
+      "ilceler": [
+        {"ad": "Menteşe", "nufus": 185000, "kiraTl": 26000, "yasam": 78, "sosyal": 76, "isYuku": 58, "aile": 80, "gorevYil": 8},
+        {"ad": "Bodrum", "nufus": 195000, "kiraTl": 45000, "yasam": 85, "sosyal": 92, "isYuku": 75, "aile": 68, "gorevYil": 8},
+        {"ad": "Fethiye", "nufus": 175000, "kiraTl": 38000, "yasam": 82, "sosyal": 88, "isYuku": 70, "aile": 72, "gorevYil": 8}
+      ]
+    }
+  ]
+}

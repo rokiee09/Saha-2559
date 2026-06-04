@@ -126,6 +126,13 @@ class LegalQueryAnalyzer {
       'kaza',
     ],
     'emsal': ['emsal', 'ornek uygulama', 'uygulama ozeti'],
+    'mutalaa_ozel': [
+      'mutalaa',
+      'mütalaa',
+      'dpb',
+      'devlet personel',
+      'personel baskanligi',
+    ],
   };
 
   static const _processPatterns = <String, List<String>>{

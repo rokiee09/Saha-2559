@@ -7,6 +7,7 @@ import '../../common/routing/transitions.dart';
 import '../../common/theme/police_colors.dart';
 import '../araclar/dilekce/dilekce_merkezi_page.dart';
 import '../araclar/emsal/emsal_rehberi_page.dart';
+import '../araclar/mutalaa/mutalaa_ozel_page.dart';
 import '../araclar/idari_para_ceza/idari_para_ceza_page.dart';
 import '../araclar/trafik/trafik_rehberi_page.dart';
 import '../araclar/idari_para_ceza/widgets/idari_para_ceza_card.dart';
@@ -122,6 +123,7 @@ class _AsistanPageState extends ConsumerState<AsistanPage> {
       'dilekce' => const DilekceMerkeziPage(),
       'emsal' => EmsalRehberiPage(initialQuery: record.title),
       'trafik' => TrafikRehberiPage(initialQuery: record.title),
+      'mutalaa_ozel' => MutalaaOzelPage(initialQuery: record.title),
       _ => null,
     };
   }

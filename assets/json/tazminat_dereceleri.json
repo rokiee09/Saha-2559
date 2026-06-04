@@ -1,0 +1,77 @@
+{
+  "surum": 1,
+  "kaynak": "Emniyet ek ödeme (tazminat) derece cetveli — Polis360 tablosu ile uyumlu özet",
+  "guncelleme": "2026",
+  "dereceler": [
+    {
+      "derece": 1,
+      "ekOdemeTl": 10991,
+      "etiket": "1. Derece",
+      "renk": "#E53935",
+      "iller": [
+        "kilis",
+        "agri",
+        "batman",
+        "bingol",
+        "bitlis",
+        "diyarbakir",
+        "hakkari",
+        "hatay",
+        "mardin",
+        "mus",
+        "siirt",
+        "sirnak",
+        "tunceli",
+        "van"
+      ]
+    },
+    {
+      "derece": 2,
+      "ekOdemeTl": 7144,
+      "etiket": "2. Derece",
+      "renk": "#FB8C00",
+      "iller": [
+        "giresun",
+        "osmaniye",
+        "tokat",
+        "ardahan",
+        "elazig",
+        "erzincan",
+        "erzurum",
+        "igdir",
+        "kars"
+      ]
+    },
+    {
+      "derece": 3,
+      "ekOdemeTl": 3297,
+      "etiket": "3. Derece",
+      "renk": "#2D7EFF",
+      "iller": [
+        "adana",
+        "amasya",
+        "corum",
+        "istanbul",
+        "mersin",
+        "ordu",
+        "sivas",
+        "gumushane",
+        "kahramanmaras",
+        "malatya",
+        "sanliurfa"
+      ]
+    },
+    {
+      "derece": 4,
+      "ekOdemeTl": 2200,
+      "etiket": "4. Derece",
+      "renk": "#43A047",
+      "iller": [
+        "ankara",
+        "gaziantep",
+        "izmir",
+        "adiyaman"
+      ]
+    }
+  ]
+}

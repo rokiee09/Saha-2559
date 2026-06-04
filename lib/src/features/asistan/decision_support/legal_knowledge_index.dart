@@ -341,13 +341,48 @@ const kScenarioKnowledgeRecords = <LegalKnowledgeRecord>[
 List<LegalKnowledgeRecord> buildLegalKnowledgeIndex({
   required Iterable<({MevzuatEntry entry, MevzuatSection section})> mevzuatItems,
   required List<IdariParaCezaKayit> cezaKayitlar,
+  List<LegalIndexRecord> extraIndexRecords = const [],
 }) {
   final legacy = buildFullLegalIndex(
     mevzuatItems: mevzuatItems,
     cezaKayitlar: cezaKayitlar,
   );
+  final extras = extraIndexRecords.map((r) {
+    final examples = <String>[];
+    if (r.summary.trim().isNotEmpty) examples.add(r.summary.trim());
+    if (r.riskNote.trim().isNotEmpty &&
+        r.riskNote.trim() != r.summary.trim()) {
+      examples.add(r.riskNote.trim());
+    }
+    final base = LegalKnowledgeRecord.fromIndexRecord(r);
+    return LegalKnowledgeRecord(
+      id: base.id,
+      sourceType: base.sourceType,
+      sourceName: base.sourceName,
+      articleNo: base.articleNo,
+      title: base.title,
+      summary: base.summary,
+      fullText: base.fullText,
+      keywords: base.keywords,
+      synonyms: base.synonyms,
+      tags: base.tags,
+      entryId: base.entryId,
+      sectionId: base.sectionId,
+      moduleRoute: base.moduleRoute,
+      saglikKonuId: base.saglikKonuId,
+      tutanakTemplateId: base.tutanakTemplateId,
+      riskNote: base.riskNote,
+      explanation: base.explanation,
+      isPriority: base.isPriority,
+      isAppGuide: base.isAppGuide,
+      riskLevel: base.riskLevel,
+      topics: const ['mutalaa_ozel', 'personel'],
+      exampleQuestions: examples,
+    );
+  });
   return [
     ...kScenarioKnowledgeRecords,
+    ...extras,
     ...legacy.map(LegalKnowledgeRecord.fromIndexRecord),
   ];
 }

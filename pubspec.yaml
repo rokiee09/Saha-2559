@@ -78,6 +78,10 @@ flutter:
     - assets/json/gorev_puanlari_2026.json
     - assets/json/gorev_hizmet_sureleri_2026.json
     - assets/json/idari_para_cezalari_2026.json
+    - assets/json/mutalaa_ozel.json
+    - assets/json/il_analiz.json
+    - assets/json/tazminat_dereceleri.json
+    - assets/json/yasam_indeksi.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg
     - assets/kultur/

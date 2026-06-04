@@ -1,0 +1,97 @@
+{
+  "surum": 1,
+  "_not": "Bilmiyorsanız veya Polis360'ta boş olan alanları JSON'dan silin veya null bırakın. Uygulama boş alanı göstermez.",
+  "iller": [
+    {
+      "id": "ornek_il",
+      "ad": "Örnek İl",
+      "plaka": "00",
+      "bolge": null,
+      "buyuksehir": null,
+      "puanlar": {
+        "polisYasam": null,
+        "aile": null,
+        "bekar": null,
+        "emeklilik": null
+      },
+      "genel": {
+        "nufus": null,
+        "yuzolcumuKm2": null,
+        "ilceSayisi": null,
+        "rakimM": null,
+        "kalkinmadaOncelikli": null,
+        "kaynak": null
+      },
+      "ekonomi": {
+        "ortalamaKiraTl": null,
+        "konutSatisOrtTl": null,
+        "segeDuzey": null,
+        "sosyoekonomikSira": null,
+        "kaynak": null
+      },
+      "saglik": {
+        "devletHastanesi": null,
+        "egitimArastirma": null,
+        "universiteHastanesi": null,
+        "sehirHastanesi": null,
+        "ozelHastane": null,
+        "kaynak": null
+      },
+      "egitim": {
+        "universite": null,
+        "fenLisesi": null,
+        "anadoluLisesi": null,
+        "meslekLisesi": null,
+        "ozelOkul": null,
+        "kaynak": null
+      },
+      "sosyal": {
+        "avm": null,
+        "havalimani": null,
+        "superLigTakimi": null,
+        "sinema": null,
+        "tiyatro": null,
+        "sporTesisleri": null,
+        "sahil": null,
+        "turizm": null
+      },
+      "polis": {
+        "gorevPuani": null,
+        "gorevSuresiYil": null,
+        "mudurluk": null,
+        "amirlik": null,
+        "ekTazminatTl": null,
+        "lojmanSayisi": null,
+        "lojmanDurumu": null,
+        "lojmanBeklemeYil": null,
+        "calismaSistemi": null,
+        "mesai": null,
+        "anons": null,
+        "uygulama": null,
+        "isYuku": null,
+        "sucTuru": null,
+        "kaynak": null
+      },
+      "guvenlik": {
+        "gostergeler": [],
+        "dipnot": null
+      },
+      "ozetAi": null,
+      "ilceler": [
+        {
+          "ad": "Örnek İlçe",
+          "nufus": null,
+          "kiraTl": null,
+          "yasam": null,
+          "sosyal": null,
+          "isYuku": null,
+          "aile": null,
+          "gorevYil": null,
+          "yogunluk": null,
+          "uygulama": null,
+          "profil": null
+        }
+      ]
+    }
+  ]
+}
