@@ -24,6 +24,7 @@ const kLegalOutOfScopeMessage =
 const kLegalAsistanOrnekSorular = [
   'Yedieminden araç çıkaracağız, başka il mahkeme kararı var. Savcı talimatı gerekir mi?',
   'Refakat iznim kaç gün?',
+  'Aday memur başka kuruma KPSS ile atanabilir mi?',
   'İşe geç kaldım cezası nedir?',
   'Kimlik vermeyen şahsa ne yapılır?',
   'Dilencilik cezası ne kadar?',
@@ -261,6 +262,11 @@ class LegalAnswerBuilder {
       return 'İlgili mevzuata göre ${record.title} konusunda '
           '${record.sourceName} hükümleri çerçevesinde ön değerlendirme yapılır.';
     }
+    if (record.tags.contains('mutalaa_ozel')) {
+      return base.isNotEmpty
+          ? base
+          : 'İlgili konuda DPB Mütalaalar Özel Bülteni görüşü bulunmaktadır.';
+    }
     if (analysis.jurisdictionIssues.contains('baska_il_yetkisi') &&
         record.topics.contains('yediemin')) {
       return '${base.split('.').first.trim()}. Başka il mahkeme kararının infazında '
@@ -279,6 +285,12 @@ class LegalAnswerBuilder {
     List<LegalSearchHit> hits,
   ) {
     final buf = StringBuffer();
+    if (primary.tags.contains('mutalaa_ozel')) {
+      buf.writeln(
+        'Kaynak Devlet Personel Başkanlığı görüş özetidir; bağlayıcı '
+        'mahkeme kararı veya güncel mevzuat hükmü değildir.',
+      );
+    }
     final expl = primary.explanation.trim();
     if (expl.isNotEmpty) {
       buf.writeln(expl);
