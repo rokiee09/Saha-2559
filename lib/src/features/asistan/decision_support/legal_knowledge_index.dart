@@ -156,6 +156,14 @@ List<String> _inferTopics(LegalIndexRecord record) {
   if (blob.contains('arama')) add('arama');
   if (blob.contains('atis')) add('atis');
   if (blob.contains('basari')) add('personel_haklari');
+  if (record.tags.contains('mutalaa_ozel')) add('mutalaa_ozel');
+  if (blob.contains('aday memur') ||
+      blob.contains('kpss') ||
+      blob.contains('nakil') ||
+      blob.contains('kademe') ||
+      blob.contains('derece')) {
+    add('personel');
+  }
   return topics;
 }
 
@@ -355,6 +363,7 @@ List<LegalKnowledgeRecord> buildLegalKnowledgeIndex({
       examples.add(r.riskNote.trim());
     }
     final base = LegalKnowledgeRecord.fromIndexRecord(r);
+    final topics = base.topics.isNotEmpty ? base.topics : r.tags;
     return LegalKnowledgeRecord(
       id: base.id,
       sourceType: base.sourceType,
@@ -376,7 +385,7 @@ List<LegalKnowledgeRecord> buildLegalKnowledgeIndex({
       isPriority: base.isPriority,
       isAppGuide: base.isAppGuide,
       riskLevel: base.riskLevel,
-      topics: const ['mutalaa_ozel', 'personel'],
+      topics: topics,
       exampleQuestions: examples,
     );
   });

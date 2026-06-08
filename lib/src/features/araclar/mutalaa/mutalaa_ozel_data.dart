@@ -80,6 +80,22 @@ final mutalaaOzelProvider = FutureProvider<MutalaaOzelSet>((ref) async {
   return loadMutalaaOzelSet();
 });
 
+/// DPB görüş metninden asistan özet cevabı üretir.
+String mutalaaCevapOzeti(String cevap, {int maxLen = 360}) {
+  final t = cevap.trim();
+  if (t.isEmpty) return '';
+  final lines = t.split('\n').where((l) => l.trim().isNotEmpty).toList();
+  if (lines.isNotEmpty) {
+    final last = lines.last.trim();
+    if (last.length >= 40 && last.length <= maxLen) return last;
+  }
+  if (t.length <= maxLen) return t;
+  final cut = t.substring(0, maxLen);
+  final lastDot = cut.lastIndexOf('.');
+  if (lastDot > 80) return cut.substring(0, lastDot + 1).trim();
+  return '${cut.trimRight()}…';
+}
+
 List<MutalaaKayit> mutalaaEslestir(String query, List<MutalaaKayit> kayitlar) {
   final q = trFold(query.trim());
   if (q.length < 2) return const [];
@@ -88,7 +104,7 @@ List<MutalaaKayit> mutalaaEslestir(String query, List<MutalaaKayit> kayitlar) {
   final out = <MutalaaKayit>[];
   for (final k in kayitlar) {
     final blob = trFold(
-      '${k.baslik} ${k.ozet} ${k.soruMetni} ${k.keywords.join(' ')}',
+      '${k.baslik} ${k.ozet} ${k.soruMetni} ${k.cevapMetni} ${k.metin} ${k.keywords.join(' ')}',
     );
     final match = blob.contains(q) ||
         k.keywords.any((w) => trFold(w).contains(q)) ||

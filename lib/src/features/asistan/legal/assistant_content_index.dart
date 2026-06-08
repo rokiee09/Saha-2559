@@ -65,14 +65,19 @@ List<LegalIndexRecord> legalIndexFromMutalaaOzel(List<MutalaaKayit> kayitlar) {
   return kayitlar.map((m) {
     final soru = m.soruMetni;
     final cevap = m.cevapMetni;
+    final cevapOzet = mutalaaCevapOzeti(cevap);
     final full = StringBuffer()
       ..writeln(m.baslik)
-      ..writeln()
-      ..writeln(soru);
-    if (cevap.isNotEmpty) {
-      full.writeln('\nGörüş: $cevap\n');
+      ..writeln();
+    if (soru.isNotEmpty) {
+      full.writeln('Soru: $soru\n');
     }
-    full.write(m.metin);
+    if (cevap.isNotEmpty) {
+      full.writeln('Görüş: $cevap\n');
+    }
+    if (m.metin.isNotEmpty && m.metin.trim() != cevap.trim()) {
+      full.write(m.metin);
+    }
     return LegalIndexRecord(
       id: 'mutalaa_${m.id}',
       sourceType: LegalSourceType.rehber,
@@ -81,13 +86,17 @@ List<LegalIndexRecord> legalIndexFromMutalaaOzel(List<MutalaaKayit> kayitlar) {
       title: m.baslik.length > 120
           ? '${m.baslik.substring(0, 117)}…'
           : m.baslik,
-      summary: soru.isNotEmpty ? soru : m.ozet,
+      summary: cevapOzet.isNotEmpty
+          ? cevapOzet
+          : (soru.isNotEmpty ? soru : m.ozet),
       fullText: full.toString().trim(),
       keywords: [
         ...m.keywords,
         'mutalaa',
+        'mütalaa',
         'dpb',
         'personel',
+        'devlet memuru',
         if (m.ref.isNotEmpty) m.ref,
       ],
       synonyms: const [
@@ -96,16 +105,19 @@ List<LegalIndexRecord> legalIndexFromMutalaaOzel(List<MutalaaKayit> kayitlar) {
         'dpb',
         'devlet personel',
         'gorus',
+        'gorusu',
       ],
       tags: ['mutalaa_ozel', 'personel', 'dpb'],
       moduleRoute: 'mutalaa_ozel',
-      explanation:
-          'DPB görüş özetidir; güncel mevzuatla birlikte kullanın. '
-          'Araçlar → Mütalaa Özel.',
+      explanation: soru.isNotEmpty
+          ? 'Soru: $soru · DPB görüşü 2013 bülteninden; güncel mevzuatla birlikte '
+              'değerlendirin. Araçlar → Mütalaa Özel.'
+          : 'DPB görüş özetidir; güncel mevzuatla birlikte kullanın. '
+              'Araçlar → Mütalaa Özel.',
       isAppGuide: true,
-      riskNote: cevap.isNotEmpty
-          ? cevap
-          : 'Görüşün güncelliğini mevzuatla doğrulayın.',
+      riskNote:
+          'DPB Mütalaalar Özel Bülteni (2013); görüş bağlayıcı değildir, '
+          'güncel mevzuat ve kurum yazılarıyla doğrulayın.',
     );
   }).toList();
 }
