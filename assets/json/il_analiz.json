@@ -1444,79 +1444,1268 @@
       ]
     },
     {
+      "id": "gaziantep",
+      "ad": "Gaziantep",
+      "plaka": "27",
+      "bolge": "Güneydoğu Anadolu",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 2180000,
+        "ilceSayisi": 9,
+        "kaynak": "TÜİK (yaklaşık) · Güneydoğu Anadolu'nun en büyük ekonomik merkezi · UNESCO Gastronomi Şehri · Göç alan şehir"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi çok güçlü — Türkiye'nin en büyük OSB'lerinden biri · İhracat çok güçlü · Tekstil, gıda sanayi çok güçlü · Lojistik çok güçlü · Gastronomi (baklava, beyran, katmer, kebap) · Şanlıurfa, Kilis, Kahramanmaraş, Adana, Osmaniye bağlantıları · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Gaziantep Şehir Hastanesi · GAÜN Hastanesi · Eğitim araştırma hastaneleri var · Devlet hastaneleri çok sayıda · Özel hastane çok güçlü · Sağlık turizmi gelişmekte"
+      },
+      "egitim": {
+        "universite": 3,
+        "fenLisesi": 3,
+        "kaynak": "Devlet: Gaziantep Üniversitesi (GAÜN) · Vakıf: Hasan Kalyoncu, Sanko · Fen: Vehbi Dinçerler, TOBB, Nizip · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul yoğunluğu çok yüksek"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "turizm": "Çok güçlü — Zeugma Mozaik Müzesi, Bakırcılar Çarşısı, Gaziantep Kalesi, Rumkale, Yesemek; UNESCO Gastronomi Şehri",
+        "kaynak": "Gaziantep Havalimanı · Demiryolu var · Karayolu çok güçlü · AVM: Forum Gaziantep, Sanko Park, Primemall, M1 · Süper Lig: Gaziantep FK"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Güneydoğu Anadolu'nun en büyük ekonomik merkezi · Büyükşehir — görev çeşitliliği çok yüksek · Şahinbey ve Şehitkamil nüfusun büyük bölümü · Sanayi bölgeleri iş ve nüfus hareketliliği · Havalimanı ve lojistik güçlü · Asayiş, trafik, sanayi ve büyük organizasyonlar öne çıkar · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Gaziantep; sanayi, ihracat, gastronomi ve eğitim alanlarında Türkiye'nin en güçlü şehirlerinden biridir. Gaziantep Üniversitesi, Gaziantep Şehir Hastanesi, Zeugma Mozaik Müzesi ve güçlü organize sanayi bölgeleriyle bölgesel merkez konumundadır. Polis teşkilatı açısından değerlendirildiğinde yüksek nüfus, yoğun sanayi faaliyetleri, lojistik hareketlilik ve büyükşehir yapısı nedeniyle görev çeşitliliği ve operasyonel yoğunluğu yüksek bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Şahinbey", "nufus": 950000, "profil": "Merkez — yoğun", "gorevYil": 6},
+        {"ad": "Şehitkamil", "nufus": 900000, "profil": "Merkez — yoğun", "gorevYil": 6},
+        {"ad": "Nizip", "nufus": 150000, "gorevYil": 6},
+        {"ad": "İslahiye", "nufus": 65000, "gorevYil": 6},
+        {"ad": "Nurdağı", "nufus": 45000, "gorevYil": 6},
+        {"ad": "Oğuzeli", "nufus": 40000, "gorevYil": 6},
+        {"ad": "Araban", "nufus": 32000, "gorevYil": 6},
+        {"ad": "Yavuzeli", "nufus": 23000, "gorevYil": 4},
+        {"ad": "Karkamış", "nufus": 10000, "profil": "Sınır bölgesi", "gorevYil": 3}
+      ]
+    },
+    {
+      "id": "giresun",
+      "ad": "Giresun",
+      "plaka": "28",
+      "bolge": "Karadeniz",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 460000,
+        "ilceSayisi": 16,
+        "kaynak": "TÜİK (yaklaşık) · Karadeniz — sakin, yaşam kalitesi yüksek · Fındık üretimi · Deniz kıyısı · Göç veren il"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım çok güçlü — Giresun kalite fındığı dünya çapında tanınır · Hayvancılık orta · Sanayi orta · Turizm gelişmekte · Lojistik orta · Emekli nüfus yüksek · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 0,
+        "kaynak": "Giresun Eğitim ve Araştırma Hastanesi · Devlet: Bulancak, Tirebolu, Görele · Şehir ve üniversite hastanesi yok · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "Giresun Üniversitesi (devlet) · Tam teşekküllü üniversite hastanesi yok · Fen: Giresun, Bulancak, Tirebolu · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "sahil": "Karadeniz — sahil ilçeleri; Karadeniz Sahil Yolu",
+        "turizm": "Güçlü — Giresun Adası, Kümbet Yaylası, Bektaş Yaylası, Mavi Göl, Kuzalan Şelalesi; yayla turizmi çok güçlü",
+        "kaynak": "Ordu-Giresun Havalimanı — deniz üzerine inşa edilen ilk havalimanlarından biri · Karayolu güçlü (Karadeniz Sahil Yolu) · Demiryolu yok · AVM: G-City · Futbol: Giresunspor (alt ligler) · Gece hayatı düşük-orta"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Karadeniz'in sakin şehirlerinden biri · Büyükşehir yoğunluğu yok · Fındık ekonomisi temel dinamik · Bulancak ve Tirebolu ekonomik hareketlilik · Yayla turizmi yaz dönemi yoğunluk · Ordu-Giresun Havalimanı ulaşım avantajı · Görev yoğunluğu merkez ve sahil ilçelerinde · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Giresun; Karadeniz Bölgesi'nin fındık üretimiyle öne çıkan, doğal güzellikleri ve yaylalarıyla dikkat çeken şehirlerinden biridir. Ordu-Giresun Havalimanı ulaşım açısından önemli avantaj sağlarken, Giresun Adası ve yayla turizmi ilin turizm potansiyelini güçlendirmektedir. Polis teşkilatı açısından değerlendirildiğinde büyükşehir karmaşasından uzak, yaşam kalitesi yüksek ve görev yoğunluğu daha dengeli bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 145000, "profil": "İl merkezi", "gorevYil": 6},
+        {"ad": "Bulancak", "nufus": 70000, "profil": "Sahil — ekonomik hareketlilik", "gorevYil": 6},
+        {"ad": "Espiye", "nufus": 40000, "gorevYil": 6},
+        {"ad": "Tirebolu", "nufus": 32000, "profil": "Sahil — ekonomik hareketlilik", "gorevYil": 6},
+        {"ad": "Görele", "nufus": 31000, "gorevYil": 6},
+        {"ad": "Keşap", "nufus": 23000, "gorevYil": 6},
+        {"ad": "Şebinkarahisar", "nufus": 20000, "gorevYil": 6},
+        {"ad": "Dereli", "nufus": 18000, "gorevYil": 6},
+        {"ad": "Alucra", "gorevYil": 6},
+        {"ad": "Çamoluk", "gorevYil": 6},
+        {"ad": "Çanakçı", "gorevYil": 6},
+        {"ad": "Doğankent", "gorevYil": 6},
+        {"ad": "Eynesil", "gorevYil": 6},
+        {"ad": "Güce", "gorevYil": 6},
+        {"ad": "Piraziz", "gorevYil": 6},
+        {"ad": "Yağlıdere", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "gumushane",
+      "ad": "Gümüşhane",
+      "plaka": "29",
+      "bolge": "Karadeniz",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 145000,
+        "ilceSayisi": 6,
+        "kaynak": "TÜİK (yaklaşık) · Nüfus bakımından Türkiye'nin küçük illerinden biri · Zigana Tüneli ve Trabzon bağlantısı · Deniz kıyısı yok · Çok yüksek göç veren il"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım orta · Hayvancılık güçlü · Madencilik güçlü (altın, gümüş, bakır) · Sanayi düşük · Turizm gelişmekte · Emekli nüfus yüksek · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 0,
+        "universiteHastanesi": 0,
+        "kaynak": "Devlet: Gümüşhane, Kelkit, Şiran · Şehir, üniversite ve EAH yok · Özel hastane çok sınırlı · Trabzon sağlık merkezlerine erişim"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Gümüşhane Üniversitesi (devlet) · Üniversite hastanesi yok · Fen: Gümüşhane, Kelkit · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "superLigTakimi": false,
+        "turizm": "Güçlü potansiyel — Karaca Mağarası, Limni Gölü, Zigana Dağı, Santa Harabeleri, Tomara Şelalesi; yayla turizmi",
+        "kaynak": "Zigana Tüneli — Avrupa'nın en uzun çift tüplü kara yolu tünellerinden biri · Karayolu çok güçlü · Merkez-Trabzon ~1,5 saat · Havalimanı yok — Trabzon ve Bayburt-Gümüşhane (tamamlandığında) erişimi · Demiryolu yok · Büyük AVM yok · Futbol: Gümüşhanespor (alt ligler) · Gece hayatı düşük"
+      },
+      "polis": {
+        "gorevSuresiYil": 4,
+        "kaynak": "Nüfus bakımından küçük il · Büyükşehir yoğunluğu yok · Trabzon yakınlığı avantaj · Zigana Tüneli sonrası ulaşım iyileşmesi · Kelkit ekonomik öne çıkar · Görev yoğunluğu merkez ve Kelkit'te · Sakin görev ortamı profili · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Gümüşhane; Karadeniz Bölgesi'nin nüfusu düşük ancak doğal güzellikleri ve stratejik ulaşım projeleriyle dikkat çeken şehirlerinden biridir. Zigana Tüneli, Karaca Mağarası ve Tomara Şelalesi ilin öne çıkan değerleri arasındadır. Trabzon'a yakınlığı ulaşım ve sağlık imkanları açısından avantaj sağlarken, polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu nispeten düşük, yaşam temposu sakin ve doğa ağırlıklı bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 55000, "gorevYil": 4},
+        {"ad": "Kelkit", "nufus": 40000, "profil": "Ekonomik öne çıkan ilçe", "gorevYil": 4},
+        {"ad": "Şiran", "nufus": 20000, "gorevYil": 4},
+        {"ad": "Torul", "nufus": 12000, "gorevYil": 4},
+        {"ad": "Kürtün", "nufus": 11000, "gorevYil": 4},
+        {"ad": "Köse", "nufus": 7000, "gorevYil": 4}
+      ]
+    },
+    {
+      "id": "hakkari",
+      "ad": "Hakkâri",
+      "plaka": "30",
+      "bolge": "Doğu Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 290000,
+        "ilceSayisi": 4,
+        "kaynak": "TÜİK (yaklaşık) · Türkiye'nin en doğusundaki illerden biri · Sınır ili (İran) · Dağlık coğrafya · Göç dengeli"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım sınırlı · Hayvancılık güçlü (koyun, büyükbaş) · Sınır ticareti önemli · Sanayi düşük · Turizm gelişmekte (Cilo, Sat Gölleri) · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 0,
+        "universiteHastanesi": 0,
+        "kaynak": "Devlet: Hakkâri, Yüksekova, Şemdinli · Şehir, üniversite ve EAH yok · Özel hastane çok sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Hakkâri Üniversitesi (devlet) · Üniversite hastanesi yok · Fen: Hakkâri, Yüksekova · Anadolu ve meslek liseleri var · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Çok güçlü potansiyel — Cilo Dağları, Sat Gölleri, Zap Vadisi, Cennet-Cehennem Vadisi, buzul gölleri; kış sporları gelişmekte",
+        "kaynak": "Yüksekova Selahaddin Eyyubi Havalimanı — önemli ulaşım avantajı · Karayolu kış şartlarından etkilenebilir · Demiryolu yok · İran sınırına yakınlık · Büyük AVM yok · Futbol: Hakkârispor (alt ligler) · Gece hayatı düşük"
+      },
+      "polis": {
+        "gorevSuresiYil": 3,
+        "kaynak": "Türkiye'nin en doğusundaki illerden biri · Yüksekova günümüzde en hareketli ilçe — ekonomi, nüfus ve ulaşım merkezi · Havalimanı ulaşımı kolaylaştırdı · Coğrafi yapı dağlık · Kış şartları dönemsel ulaşım etkisi · İlçe koşulları ve coğrafya önemli değişken · Çukurca ve Şemdinli EK-1'de 2 yıl · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Hakkâri; yüksek dağları, buzul gölleri ve eşsiz doğasıyla Türkiye'nin en farklı şehirlerinden biridir. Yüksekova Selahaddin Eyyubi Havalimanı ilin ulaşım altyapısına önemli katkı sağlamaktadır. Cilo Dağları ve Sat Gölleri uluslararası düzeyde doğa turizmi potansiyeline sahiptir. Polis teşkilatı açısından değerlendirildiğinde ilçe koşulları, kış şartları ve coğrafi yapı önemli değişkenler olup, Yüksekova ilin merkezinden bile daha fazla hareketlilik gösterebilen bir konuma sahiptir.",
+      "ilceler": [
+        {"ad": "Yüksekova", "nufus": 120000, "profil": "Ekonomi, nüfus ve ulaşım merkezi — havalimanı", "gorevYil": 3},
+        {"ad": "Merkez", "nufus": 85000, "gorevYil": 3},
+        {"ad": "Şemdinli", "nufus": 45000, "gorevYil": 2},
+        {"ad": "Çukurca", "nufus": 18000, "gorevYil": 2}
+      ]
+    },
+    {
+      "id": "hatay",
+      "ad": "Hatay",
+      "plaka": "31",
+      "bolge": "Akdeniz",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 1540000,
+        "ilceSayisi": 15,
+        "kaynak": "TÜİK (yaklaşık) · Akdeniz'in en stratejik şehirlerinden biri · Sınır ili (Suriye) · Deniz ve liman · Çok kültürlü yapı · Yüksek göç hareketliliği"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi çok güçlü (demir-çelik, liman işletmeleri) · Ticaret çok güçlü · Tarım güçlü (narenciye, zeytin, sebzecilik) · Lojistik ve liman ekonomisi çok güçlü · Gastronomi çok güçlü (künefe, tepsi kebabı, humus, zahter) · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Mustafa Kemal Üniversitesi Araştırma Hastanesi · Devlet: İskenderun, Dörtyol, Kırıkhan, Reyhanlı · Şehir hastanesi güncel durumu ayrıca takip edilmeli · Özel hastane güçlü (sayı doğrulanacak)"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "Hatay Mustafa Kemal Üniversitesi (devlet) · Fen: TOBB, İskenderun, Kırıkhan · Anadolu ve meslek liseleri çok sayıda · Özel okul var (sayı doğrulanacak)"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "sahil": "Akdeniz — İskenderun Limanı; deniz ulaşımı çok güçlü",
+        "turizm": "Güçlü — Habib-i Neccar Camii, Titus Tüneli, Beşikli Mağara, St. Pierre Kilisesi, Harbiye Şelaleleri; gastronomi",
+        "kaynak": "Hatay Havalimanı — deprem sonrası dönemsel durum ayrıca takip edilmeli · Demiryolu var · Karayolu çok güçlü · Suriye bağlantılı sınır kapıları · AVM: Palladium, Primemall İskenderun · Futbol: Hatayspor (Süper Lig durumu ayrıca kontrol edilmeli)"
+      },
+      "polis": {
+        "kaynak": "Sınır ili — stratejik önem · İskenderun ekonomik ve sanayi merkezi · Antakya tarihî ve idari merkez · Limanlar ve sınır ticareti hareketlilik · Büyükşehir — görev çeşitliliği yüksek · İlçe dinamikleri birbirinden farklı · Sınır, liman, sanayi ve şehir merkezi görevleri aynı ilde · EK-1 görev süreleri (SN 461-494) cetvel OCR gap — il ve ilçe süreleri resmî cetvelden doğrulanacak · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Hatay; Akdeniz'in en stratejik şehirlerinden biri olup limanları, sanayisi, tarımı ve çok kültürlü yapısıyla öne çıkmaktadır. İskenderun Limanı ekonomik gücün merkezini oluştururken, Antakya tarihî ve kültürel kimliği temsil etmektedir. Mustafa Kemal Üniversitesi ve gelişmiş ulaşım altyapısı ilin bölgesel önemini artırmaktadır. Polis teşkilatı açısından değerlendirildiğinde sınır hareketliliği, liman faaliyetleri, büyükşehir yapısı ve yoğun nüfus nedeniyle görev çeşitliliği oldukça yüksek bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Antakya", "nufus": 390000, "profil": "Tarihî ve idari merkez"},
+        {"ad": "İskenderun", "nufus": 250000, "profil": "Ekonomik ve sanayi merkezi — liman"},
+        {"ad": "Defne", "nufus": 155000},
+        {"ad": "Samandağ", "nufus": 125000},
+        {"ad": "Dörtyol", "nufus": 120000},
+        {"ad": "Kırıkhan", "nufus": 120000},
+        {"ad": "Reyhanlı", "nufus": 105000, "profil": "Sınır bölgesi"},
+        {"ad": "Arsuz", "nufus": 105000},
+        {"ad": "Belen"},
+        {"ad": "Yayladağı", "profil": "Sınır bölgesi"},
+        {"ad": "Kumlu"},
+        {"ad": "Altınözü"},
+        {"ad": "Hassa"},
+        {"ad": "Erzin"},
+        {"ad": "Payas", "profil": "Liman ve sanayi"}
+      ]
+    },
+    {
+      "id": "isparta",
+      "ad": "Isparta",
+      "plaka": "32",
+      "bolge": "Akdeniz",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 450000,
+        "ilceSayisi": 13,
+        "kaynak": "TÜİK (yaklaşık) · Göller Bölgesi · Sakin, öğrenci şehri — yaşam kalitesi yüksek · Gül ve lavanta üretim merkezi · Göç dengeli"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım çok güçlü (gül, elma, kiraz, lavanta) · Hayvancılık orta · Sanayi orta · Eğitim ekonomisi güçlü (iki üniversite) · Turizm gelişmekte · Antalya, Burdur, Konya, Afyon bağlantıları · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "universiteHastanesi": 1,
+        "kaynak": "SDÜ Araştırma ve Uygulama Hastanesi · Isparta Şehir Hastanesi · Eğirdir Kemik Eklem Hastalıkları Hastanesi · Yalvaç Devlet Hastanesi · EAH hizmetleri kısmen şehir hastanesi bünyesinde · Özel hastane var (sayı doğrulanacak)"
+      },
+      "egitim": {
+        "universite": 2,
+        "fenLisesi": 2,
+        "kaynak": "Devlet: Süleyman Demirel (SDÜ), Isparta Uygulamalı Bilimler (ISUBÜ) · Fen: Süleyman Demirel, Yalvaç · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu çok yüksek · Özel okul var (sayı doğrulanacak)"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Güçlü — Eğirdir Gölü, Kovada Gölü, Davraz Kayak Merkezi, Yazılı Kanyon, Adada; lavanta (Kuyucak) ve gül turizmi çok güçlü",
+        "kaynak": "Süleyman Demirel Havalimanı (Keçiborlu) · Demiryolu var · Karayolu güçlü · AVM: Iyaş Park, Centrum Garden · Futbol: Isparta 32 Spor (alt ligler)"
+      },
+      "polis": {
+        "kaynak": "Büyükşehir yoğunluğu olmayan düzenli şehir · Öğrenci nüfusu şehir yapısını etkiler · Antalya yakınlığı avantaj · Eğirdir ve Yalvaç öne çıkar · Şehir Hastanesi ve SDÜ sağlık avantajı · Görev yoğunluğu genellikle merkezde · EK-1 görev süreleri (SN 461-494 OCR gap) — il ve çoğu ilçe resmî cetvelden doğrulanacak · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Isparta; eğitim, sağlık ve yaşam kalitesi açısından Türkiye'nin öne çıkan orta ölçekli şehirlerinden biridir. Süleyman Demirel Üniversitesi, Isparta Şehir Hastanesi, Eğirdir Gölü ve Davraz Kayak Merkezi ile bölgesel çekim merkezi konumundadır. Gül ve lavanta üretimiyle tanınan şehir, sakin yaşam tarzı ve güçlü eğitim altyapısıyla dikkat çeker. Polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu dengeli, yaşam kalitesi yüksek ve aile yaşamına uygun bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 270000, "profil": "Nüfusun büyük bölümü — görev yoğunluğu"},
+        {"ad": "Yalvaç", "nufus": 47000, "profil": "Adada antik kent"},
+        {"ad": "Eğirdir", "nufus": 31000, "profil": "Eğirdir Gölü — turizm"},
+        {"ad": "Şarkikaraağaç", "nufus": 25000},
+        {"ad": "Gelendost", "nufus": 16000},
+        {"ad": "Keçiborlu", "nufus": 15000},
+        {"ad": "Senirkent", "nufus": 11000},
+        {"ad": "Uluborlu", "nufus": 8000},
+        {"ad": "Aksu"},
+        {"ad": "Atabey"},
+        {"ad": "Gönen"},
+        {"ad": "Sütçüler"},
+        {"ad": "Yenişarbademli", "gorevYil": 3}
+      ]
+    },
+    {
+      "id": "mersin",
+      "ad": "Mersin",
+      "plaka": "33",
+      "bolge": "Akdeniz",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 1950000,
+        "ilceSayisi": 13,
+        "kaynak": "TÜİK (yaklaşık) · Liman, turizm, tarım, sanayi ve uluslararası ticaret merkezi · Deniz bağlantısı · Çok yüksek göç hareketliliği"
+      },
+      "ekonomi": {
+        "kaynak": "Liman ekonomisi çok güçlü (Mersin Limanı — konteyner) · Tarım çok güçlü (muz, limon, portakal, mandalina, seracılık) · Sanayi ve lojistik çok güçlü · Enerji çok güçlü (Akkuyu NGS — Türkiye'nin ilk nükleer santrali) · İhracat çok güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Mersin Şehir Hastanesi · Mersin Üniversitesi Hastanesi · Eğitim araştırma hastaneleri var · Devlet hastaneleri çok sayıda · Özel hastane çok güçlü (sayı doğrulanacak)"
+      },
+      "egitim": {
+        "universite": 2,
+        "fenLisesi": 4,
+        "kaynak": "Devlet: Mersin Üniversitesi, Tarsus Üniversitesi · Fen: Yusuf Kalkavan, Eyüp Aygar, Tarsus, Silifke · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul yoğunluğu çok yüksek"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "sahil": "Akdeniz — Kızkalesi, Silifke, Erdemli; Mersin Marina; deniz turizmi çok güçlü",
+        "turizm": "Çok güçlü — Kızkalesi, Cennet-Cehennem Obrukları, Adamkayalar, Narlıkuyu, Mamure Kalesi",
+        "kaynak": "Çukurova Uluslararası Havalimanı (Mersin-Adana ortak) · Demiryolu var · Karayolu çok güçlü · Mersin Limanı · AVM: Forum Mersin, Sayapark, Palm City, Marina · Basketbol kültürü güçlü"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Türkiye'nin en önemli liman şehirlerinden biri · Liman ve uluslararası ticaret — hareketlilik çok yüksek · Tarsus tek başına büyük ilçe · Yaz aylarında sahil ilçelerinde nüfus artışı · Büyükşehir — görev çeşitliliği yüksek · Akkuyu NGS stratejik önem · Asayiş, trafik, liman güvenliği, turizm ve büyük organizasyonlar · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Mersin; liman, tarım, sanayi, enerji ve turizmi aynı anda güçlü şekilde barındıran Türkiye'nin en stratejik şehirlerinden biridir. Mersin Limanı, Çukurova Uluslararası Havalimanı ve Akkuyu Nükleer Güç Santrali ilin ekonomik ve stratejik önemini artırmaktadır. Kızkalesi ve Silifke kıyıları turizm açısından öne çıkarken, Tarsus ve merkez ilçeler yoğun nüfus ve ticaret hareketliliği oluşturmaktadır. Polis teşkilatı açısından değerlendirildiğinde görev çeşitliliği ve operasyonel yoğunluğu yüksek iller arasında yer almaktadır.",
+      "ilceler": [
+        {"ad": "Tarsus", "nufus": 355000, "profil": "Tek başına büyük ilçe — yoğun nüfus", "gorevYil": 6},
+        {"ad": "Toroslar", "nufus": 330000, "profil": "Merkez ilçe", "gorevYil": 6},
+        {"ad": "Yenişehir", "nufus": 290000, "profil": "Merkez ilçe", "gorevYil": 6},
+        {"ad": "Akdeniz", "nufus": 270000, "profil": "Merkez ilçe — liman", "gorevYil": 6},
+        {"ad": "Mezitli", "nufus": 240000, "profil": "Merkez ilçe — sahil", "gorevYil": 6},
+        {"ad": "Erdemli", "nufus": 155000, "profil": "Sahil — emekli nüfus", "gorevYil": 6},
+        {"ad": "Silifke", "nufus": 135000, "profil": "Sahil — turizm", "gorevYil": 6},
+        {"ad": "Anamur", "gorevYil": 6},
+        {"ad": "Aydıncık", "gorevYil": 6},
+        {"ad": "Bozyazı", "gorevYil": 6},
+        {"ad": "Gülnar", "gorevYil": 6},
+        {"ad": "Mut", "gorevYil": 6},
+        {"ad": "Çamlıyayla", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "izmir",
+      "ad": "İzmir",
+      "plaka": "35",
+      "bolge": "Ege",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 4500000,
+        "ilceSayisi": 30,
+        "kaynak": "TÜİK (yaklaşık) · Türkiye'nin üçüncü büyük şehri · Liman şehri · Çok yüksek göç · Yaşam kalitesi Türkiye'nin en yükseklerinden"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi, liman, ticaret, tarım, turizm ve ihracat çok güçlü · Zeytin, üzüm, mandalina · İzmir Limanı ve Aliağa limanları · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "İzmir Bayraklı Şehir Hastanesi · Ege ve Dokuz Eylül üniversite hastaneleri · EAH çok sayıda · Devlet ve özel hastane çok güçlü (sayılar doğrulanacak)"
+      },
+      "egitim": {
+        "universite": 8,
+        "kaynak": "Devlet: Ege, Dokuz Eylül, İzmir Katip Çelebi, Bakırçay, Demokrasi · Vakıf: Yaşar, İzmir Ekonomi, Tınaztepe · Fen liseleri çok sayıda — ayrı liste doğrulanacak · Öğrenci nüfusu çok yüksek"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "sahil": "Ege — Karşıyaka, Çeşme, Foça, Urla; deniz ulaşımı ve marina",
+        "turizm": "Çok güçlü — Çeşme, Alaçatı, Foça, Seferihisar, Urla, Selçuk, Efes (UNESCO)",
+        "kaynak": "Adnan Menderes Havalimanı · Metro, tramvay, İZBAN · İzmir ve Aliağa limanları · AVM: Forum Bornova, İstinyePark, MaviBahçe, Optimum, Agora, Westpark, Ege Park · Süper Lig: Göztepe · Karşıyaka, Altay, Altınordu (profesyonel)"
+      },
+      "polis": {
+        "gorevSuresiYil": 10,
+        "kaynak": "Türkiye'nin üçüncü büyük şehri · Turizm, liman, ticaret ve sanayi bir arada · Çeşme ve Alaçatı yazın nüfus katlanır · Bayraklı adliye ve iş merkezi · Aliağa liman ve sanayi stratejik · Üniversite nüfusu çok yüksek · Asayiş, trafik, turizm, liman güvenliği ve büyük organizasyonlar · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "İzmir; Türkiye'nin üçüncü büyük şehri olup sanayi, limancılık, turizm, eğitim ve yaşam kalitesi açısından ülkenin en güçlü merkezlerinden biridir. Ege Üniversitesi ve Dokuz Eylül Üniversitesi başta olmak üzere çok sayıda yükseköğretim kurumu, Bayraklı Şehir Hastanesi, Adnan Menderes Havalimanı ve gelişmiş raylı sistem ağı ile bölgesel çekim merkezi konumundadır. Çeşme, Alaçatı, Urla ve Foça gibi turizm merkezleri yıl boyunca yoğun ziyaretçi alırken, Aliağa sanayi ve liman faaliyetleriyle ekonomik gücün önemli bir bölümünü oluşturmaktadır. Polis teşkilatı açısından değerlendirildiğinde; liman güvenliği, turizm bölgeleri, büyük organizasyonlar, yoğun trafik, üniversite nüfusu ve metropol yapısı nedeniyle görev çeşitliliği ve operasyonel yoğunluğu yüksek iller arasında yer almaktadır.",
+      "ilceler": [
+        {"ad": "Buca", "nufus": 530000, "gorevYil": 10},
+        {"ad": "Karabağlar", "nufus": 480000, "gorevYil": 10},
+        {"ad": "Bornova", "nufus": 450000, "profil": "Üniversiteler bölgesi — öğrenci yoğunluğu", "gorevYil": 10},
+        {"ad": "Karşıyaka", "nufus": 350000, "profil": "Yaşam kalitesi — sahil", "gorevYil": 10},
+        {"ad": "Konak", "nufus": 330000, "profil": "Tarihi merkez — kamu kurumları", "gorevYil": 10},
+        {"ad": "Bayraklı", "nufus": 310000, "profil": "İş merkezi — adliye", "gorevYil": 10},
+        {"ad": "Çiğli", "nufus": 220000, "gorevYil": 10},
+        {"ad": "Torbalı", "nufus": 215000, "gorevYil": 8},
+        {"ad": "Menemen", "nufus": 210000, "gorevYil": 10},
+        {"ad": "Aliağa", "profil": "Sanayi ve liman merkezi"},
+        {"ad": "Balçova", "gorevYil": 10},
+        {"ad": "Bayındır", "gorevYil": 10},
+        {"ad": "Bergama", "gorevYil": 8},
+        {"ad": "Beydağ", "gorevYil": 10},
+        {"ad": "Çeşme", "profil": "Turizm merkezi", "gorevYil": 5},
+        {"ad": "Dikili", "gorevYil": 6},
+        {"ad": "Foça", "gorevYil": 10},
+        {"ad": "Gaziemir", "gorevYil": 10},
+        {"ad": "Güzelbahçe", "gorevYil": 10},
+        {"ad": "Karaburun", "gorevYil": 10},
+        {"ad": "Kemalpaşa", "gorevYil": 10},
+        {"ad": "Kınık", "gorevYil": 10},
+        {"ad": "Kiraz", "gorevYil": 10},
+        {"ad": "Menderes", "gorevYil": 10},
+        {"ad": "Narlıdere", "gorevYil": 10},
+        {"ad": "Ödemiş", "gorevYil": 10},
+        {"ad": "Seferihisar", "profil": "Cittaslow — emekli nüfus", "gorevYil": 10},
+        {"ad": "Selçuk", "profil": "Efes — turizm", "gorevYil": 10},
+        {"ad": "Tire", "gorevYil": 10},
+        {"ad": "Urla", "profil": "Emekli ve yaşam kalitesi", "gorevYil": 10}
+      ]
+    },
+    {
+      "id": "kars",
+      "ad": "Kars",
+      "plaka": "36",
+      "bolge": "Doğu Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 275000,
+        "ilceSayisi": 8,
+        "kaynak": "TÜİK (yaklaşık) · Sınır ili (Ermenistan — Akyaka) · UNESCO: Ani Arkeolojik Alanı · Türkiye'nin en soğuk illerinden biri · Göç veren il"
+      },
+      "ekonomi": {
+        "kaynak": "Hayvancılık çok güçlü (büyükbaş, süt üretimi) · Tarım güçlü · Süt ürünleri çok güçlü (Kars kaşarı, gravyer) · Turizm güçlü · Sanayi sınırlı · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 0,
+        "universiteHastanesi": 1,
+        "kaynak": "Kafkas Üniversitesi Sağlık Araştırma ve Uygulama Merkezi · Devlet: Harakani, Sarıkamış, Kağızman · Şehir hastanesi ve EAH yok · Özel hastane çok sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Kafkas Üniversitesi (devlet) · Fen: Kars, Sarıkamış · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Çok güçlü — Ani Ören Yeri (UNESCO), Sarıkamış Kayak Merkezi, Çıldır Gölü, Kars Kalesi, Fethiye Camii; kış turizmi",
+        "kaynak": "Kars Harakani Havalimanı · Demiryolu var — Doğu Ekspresi (popüler tren rotası) · Karayolu güçlü · Akyaka — Ermenistan sınır hattı · Büyük AVM yok"
+      },
+      "polis": {
+        "gorevSuresiYil": 4,
+        "kaynak": "Doğu Anadolu'nun en farklı şehirlerinden biri · Sarıkamış kış turizmi dönemsel yoğunluk · Doğu Ekspresi turizmi · Kış şartları görev planlamasında önemli · Merkez dışı ilçeler geniş coğrafya · Büyükşehir yoğunluğu yok · Arpaçay EK-1'de ayrı satır yok — süre doğrulanacak · Sakin ama iklim zorlayıcı profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kars; tarih, kış turizmi ve sınır konumunu bir arada barındıran Doğu Anadolu şehirlerinden biridir. UNESCO Dünya Mirası listesindeki Ani Ören Yeri, Sarıkamış Kayak Merkezi ve Çıldır Gölü ile turizm açısından öne çıkmaktadır. Kafkas Üniversitesi ve Harakani Havalimanı ilin bölgesel önemini artırmaktadır. Polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu büyükşehirlere göre daha dengeli olsa da sert iklim koşulları ve geniş coğrafi alanlar önemli operasyonel faktörlerdir.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 125000, "gorevYil": 4},
+        {"ad": "Kağızman", "nufus": 24000, "gorevYil": 4},
+        {"ad": "Sarıkamış", "nufus": 23000, "profil": "Kayak merkezi — kış turizmi", "gorevYil": 4},
+        {"ad": "Selim", "nufus": 22000, "gorevYil": 4},
+        {"ad": "Digor", "nufus": 19000, "gorevYil": 4},
+        {"ad": "Arpaçay", "nufus": 16000, "gorevYil": 4},
+        {"ad": "Akyaka", "nufus": 11000, "profil": "Ermenistan sınır hattı", "gorevYil": 4},
+        {"ad": "Susuz", "nufus": 9000, "gorevYil": 4}
+      ]
+    },
+    {
+      "id": "kastamonu",
+      "ad": "Kastamonu",
+      "plaka": "37",
+      "bolge": "Karadeniz",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 390000,
+        "ilceSayisi": 20,
+        "kaynak": "TÜİK (yaklaşık) · Karadeniz'in en geniş yüzölçümlü illerinden biri · Deniz kıyısı (Cide, İnebolu, Abana) · Göç veren il · Emekli nüfus yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım güçlü (Taşköprü sarımsağı, buğday, yem bitkileri) · Hayvancılık güçlü · Ormancılık çok güçlü · Sanayi orta · Turizm gelişmekte · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 0,
+        "kaynak": "Kastamonu Eğitim ve Araştırma Hastanesi · Devlet: Tosya, Taşköprü, İnebolu · Şehir ve üniversite hastanesi yok · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "Kastamonu Üniversitesi (devlet) · Tam teşekküllü üniversite hastanesi yok · Fen: Kastamonu, Tosya, Taşköprü · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "sahil": "Karadeniz — Cide, İnebolu, Abana, Doğanyurt, Çatalzeytin",
+        "turizm": "Çok güçlü potansiyel — Küre Dağları Milli Parkı, Valla Kanyonu, Horma Kanyonu, Ilıca Şelalesi; İnebolu ve Cide sahilleri; doğa ve kültür turizmi",
+        "kaynak": "Kastamonu Havalimanı · Karayolu güçlü — Ankara, Karabük, Sinop, Çankırı, Bartın aksları · Demiryolu yok · Deniz ulaşımı sınırlı · AVM: Kastamall · Futbol: Kastamonuspor (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Büyükşehir yoğunluğu yok · İl coğrafyası geniş — sahil ve iç kesim farklı karakter · Turizm yazın sahil ilçelerinde artar · Görev yoğunluğu merkez ve Tosya hattında · Yaşam temposu sakin, aile yaşamına uygun · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kastamonu; Karadeniz Bölgesi'nin doğal güzellikleri, orman varlığı ve tarihî dokusuyla öne çıkan şehirlerinden biridir. Küre Dağları Milli Parkı, Valla Kanyonu ve Horma Kanyonu gibi önemli doğa alanlarına ev sahipliği yapmaktadır. Kastamonu Üniversitesi ve Eğitim Araştırma Hastanesi ilin eğitim ve sağlık altyapısını desteklemektedir. Polis teşkilatı açısından değerlendirildiğinde büyükşehir yoğunluğundan uzak, yaşam maliyetleri daha dengeli ve aile yaşamına uygun bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 155000, "profil": "Kamu kurumları yoğun", "gorevYil": 6},
+        {"ad": "Tosya", "nufus": 40000, "gorevYil": 6},
+        {"ad": "Taşköprü", "nufus": 37000, "profil": "Sarımsak üretimi", "gorevYil": 6},
+        {"ad": "Cide", "nufus": 22000, "profil": "Sahil — turizm", "gorevYil": 4},
+        {"ad": "İnebolu", "nufus": 20000, "profil": "Sahil — kültür turizmi", "gorevYil": 6},
+        {"ad": "Araç", "nufus": 18000, "gorevYil": 6},
+        {"ad": "Devrekani", "nufus": 12000, "gorevYil": 6},
+        {"ad": "Daday", "nufus": 9000, "gorevYil": 6},
+        {"ad": "Abana", "profil": "Sahil ilçesi", "gorevYil": 6},
+        {"ad": "Ağlı", "gorevYil": 3},
+        {"ad": "Azdavay", "gorevYil": 6},
+        {"ad": "Bozkurt", "gorevYil": 6},
+        {"ad": "Çatalzeytin", "profil": "Sahil ilçesi", "gorevYil": 6},
+        {"ad": "Doğanyurt", "profil": "Sahil ilçesi", "gorevYil": 6},
+        {"ad": "Hanönü", "gorevYil": 6},
+        {"ad": "İhsangazi", "gorevYil": 6},
+        {"ad": "Küre", "profil": "Küre Dağları — doğa turizmi", "gorevYil": 6},
+        {"ad": "Pınarbaşı", "gorevYil": 6},
+        {"ad": "Seydiler", "gorevYil": 6},
+        {"ad": "Şenpazar", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kayseri",
+      "ad": "Kayseri",
+      "plaka": "38",
+      "bolge": "İç Anadolu",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 1450000,
+        "ilceSayisi": 16,
+        "kaynak": "TÜİK (yaklaşık) · Anadolu metropolü — bölgesel merkez · Göç alan şehir · Eğitim seviyesi yüksek · Girişimcilik ve ticaret kültürü çok güçlü"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi çok güçlü (mobilya, metal, makine, tekstil) · Ticaret ve ihracat çok güçlü · Tarım güçlü · Lojistik çok güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Kayseri Şehir Hastanesi · Erciyes Üniversitesi Hastanesi · EAH ve devlet hastaneleri çok sayıda (sayılar doğrulanacak) · Özel hastane güçlü"
+      },
+      "egitim": {
+        "universite": 3,
+        "fenLisesi": 3,
+        "kaynak": "Devlet: Erciyes, Kayseri · Vakıf: Abdullah Gül · Erciyes Üniversitesi Hastanesi · Fen: Osman Ulubaş Kayseri, Nuh Mehmet Baldöktü, Develi · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu çok yüksek · Özel okul güçlü — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "turizm": "Çok güçlü — Erciyes Kayak Merkezi, Kapuzbaşı Şelaleleri, Soğanlı Vadisi, Sultan Sazlığı, Kayseri Kalesi; kış turizmi",
+        "kaynak": "Kayseri Erkilet Havalimanı · Demiryolu ve karayolu çok güçlü — Ankara, Nevşehir, Sivas, Kahramanmaraş, Yozgat bağlantıları · Tramvay: Kayseri Raylı Sistem · AVM: Forum Kayseri, Kayseri Park, Tuna Life Center, Meysu Outlet · Süper Lig: Kayserispor"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Anadolu'nun en güçlü sanayi şehirlerinden biri · Melikgazi, Kocasinan ve Talas merkez · Üniversite ve ticaret hareketliliği yüksek · Erciyes kış turizmi dönemsel yoğunluk · Düzenli şehir yapısı · Asayiş, trafik, sanayi bölgeleri ve büyük organizasyonlar · Kocasinan EK-1'de ayrı satır yok — süre doğrulanacak · Aile yaşamı tercih edilen profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kayseri; sanayi, ticaret, eğitim ve sağlık alanlarında Türkiye'nin en güçlü Anadolu şehirlerinden biridir. Erciyes Üniversitesi, Kayseri Şehir Hastanesi ve Erciyes Kayak Merkezi şehrin bölgesel önemini artırırken, güçlü organize sanayi bölgeleri ve ihracat kapasitesi ekonomik yapıyı desteklemektedir. Polis teşkilatı açısından değerlendirildiğinde sanayi faaliyetleri, yoğun ticaret hayatı, büyükşehir yapısı ve öğrenci nüfusu nedeniyle görev çeşitliliği yüksek, ancak şehir düzeni ve yaşam kalitesi açısından dengeli bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Melikgazi", "nufus": 600000, "profil": "Şehir merkezi", "gorevYil": 6},
+        {"ad": "Kocasinan", "nufus": 420000, "profil": "Şehir merkezi"},
+        {"ad": "Talas", "nufus": 180000, "profil": "Üniversite bölgesi", "gorevYil": 6},
+        {"ad": "Develi", "nufus": 68000, "gorevYil": 5},
+        {"ad": "Yahyalı", "nufus": 36000, "gorevYil": 6},
+        {"ad": "Bünyan", "nufus": 30000, "gorevYil": 6},
+        {"ad": "İncesu", "nufus": 30000, "gorevYil": 6},
+        {"ad": "Tomarza", "nufus": 22000, "gorevYil": 6},
+        {"ad": "Akkışla", "gorevYil": 6},
+        {"ad": "Felahiye", "gorevYil": 6},
+        {"ad": "Hacılar", "gorevYil": 6},
+        {"ad": "Özvatan", "gorevYil": 6},
+        {"ad": "Pınarbaşı", "gorevYil": 6},
+        {"ad": "Sarıoğlan", "gorevYil": 3},
+        {"ad": "Sarız", "gorevYil": 6},
+        {"ad": "Yeşilhisar", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kirklareli",
+      "ad": "Kırklareli",
+      "plaka": "39",
+      "bolge": "Marmara",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 380000,
+        "ilceSayisi": 8,
+        "kaynak": "TÜİK (yaklaşık) · Trakya — Avrupa sınırı (Bulgaristan, Dereköy) · İstanbul'a yakın · Göç alan il · Yaşam kalitesi çok yüksek · Emekli nüfus yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım çok güçlü (ayçiçeği, buğday, kanola) · Hayvancılık güçlü · Sanayi güçlü (Lüleburgaz, Babaeski) · Lojistik çok güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 0,
+        "kaynak": "Kırklareli Eğitim ve Araştırma Hastanesi · Devlet: Lüleburgaz, Babaeski · Şehir ve üniversite hastanesi yok · Özel hastane var — özellikle Lüleburgaz"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Kırklareli Üniversitesi (devlet) · Üniversite hastanesi yok · Fen: Kırklareli, Lüleburgaz · Anadolu ve meslek liseleri var · Eğitim seviyesi yüksek · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "superLigTakimi": false,
+        "sahil": "Karadeniz — İğneada, Kıyıköy; deniz turizmi",
+        "turizm": "Güçlü — İğneada Longoz Ormanları, Dupnisa Mağarası, Kıyıköy, Demirköy Dökümhanesi; doğa turizmi çok güçlü",
+        "kaynak": "İl içi havalimanı yok — İstanbul ve Çorlu erişimi · Demiryolu var · Karayolu çok güçlü (TEM, D100) · Dereköy Sınır Kapısı (Bulgaristan) · AVM: Kipa (Lüleburgaz) · Futbol: Kırklarelispor (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "İstanbul'a yakınlık avantajı · Lüleburgaz ekonomik merkez · Avrupa bağlantısı lojistik hareketlilik · Büyükşehir yoğunluğu yok · İğneada ve Karadeniz kıyıları yaz turizmi · Vize turizm hareketliliği · Demirköy sınır yakınlığı · Görev yoğunluğu Türkiye ortalamasının altında profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kırklareli; Trakya Bölgesi'nin yaşam kalitesi yüksek, nüfus yoğunluğu düşük ve Avrupa bağlantıları güçlü şehirlerinden biridir. Kırklareli Üniversitesi, Dereköy Sınır Kapısı ve İğneada Longoz Ormanları ilin öne çıkan değerleri arasında yer almaktadır. Tarım, sanayi ve lojistik faaliyetleri dengeli şekilde gelişmiştir. Polis teşkilatı açısından değerlendirildiğinde büyükşehir baskısı bulunmayan, görev yoğunluğu daha dengeli ve aile yaşamına uygun bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Lüleburgaz", "nufus": 155000, "profil": "Sanayi ve ticaret merkezi — İstanbul etkisi", "gorevYil": 6},
+        {"ad": "Merkez", "nufus": 110000, "gorevYil": 6},
+        {"ad": "Babaeski", "nufus": 50000, "gorevYil": 6},
+        {"ad": "Vize", "nufus": 32000, "profil": "İğneada bağlantısı — turizm", "gorevYil": 6},
+        {"ad": "Pınarhisar", "nufus": 18000, "gorevYil": 6},
+        {"ad": "Demirköy", "nufus": 9000, "profil": "Bulgaristan sınırına yakın", "gorevYil": 6},
+        {"ad": "Pehlivanköy", "nufus": 4000, "gorevYil": 6},
+        {"ad": "Kofçaz", "nufus": 3000, "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kirsehir",
+      "ad": "Kırşehir",
+      "plaka": "40",
+      "bolge": "İç Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 245000,
+        "ilceSayisi": 7,
+        "kaynak": "TÜİK (yaklaşık) · Ahilik kültürünün merkezi · Ankara-Kayseri aksı · Göç veren il · Emekli nüfus yüksek · Yaşam kalitesi yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım güçlü (buğday, arpa, ayçiçeği) · Hayvancılık güçlü · Sanayi ve ticaret orta · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Ahi Evran Üniversitesi Eğitim ve Araştırma Hastanesi · Devlet: Kaman, Mucur · Şehir hastanesi yok · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Kırşehir Ahi Evran Üniversitesi (devlet) · Fen: Kırşehir, Kaman · Anadolu ve meslek liseleri var · Öğrenci nüfusu belirgin · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "superLigTakimi": false,
+        "turizm": "Orta — Kaman Kalehöyük, Japon Bahçesi, Ahi Evran Külliyesi, Cacabey Medresesi; termal turizm (Terme); Ahilik kültür turizmi",
+        "kaynak": "Havalimanı yok — Kayseri Erkilet ve Ankara Esenboğa erişimi · Demiryolu yok · Karayolu güçlü (Ankara-Kayseri aksı) · AVM: Kentpark · Futbol: Kırşehir FK (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "İç Anadolu'nun sakin şehirlerinden biri · Merkez nüfusun büyük bölümü · Üniversite öğrenci hareketliliği · Ankara ve Kayseri yakınlığı avantaj · Büyükşehir yoğunluğu yok · Görev yoğunluğu merkezde toplanır · Aile yaşamı tercih edilebilir profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kırşehir; Ahilik kültürünün merkezi olarak bilinen, yaşam temposu sakin ve düzenli bir İç Anadolu şehridir. Ahi Evran Üniversitesi, Eğitim ve Araştırma Hastanesi, Kaman Kalehöyük ve Japon Bahçesi gibi değerleriyle öne çıkmaktadır. Ankara ve Kayseri arasında stratejik bir konumda bulunması ulaşım avantajı sağlarken, polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu dengeli, yaşam maliyetleri görece düşük ve aile yaşamına uygun bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 165000, "gorevYil": 6},
+        {"ad": "Kaman", "nufus": 35000, "profil": "Kalehöyük — arkeoloji", "gorevYil": 6},
+        {"ad": "Mucur", "nufus": 18000, "gorevYil": 6},
+        {"ad": "Çiçekdağı", "nufus": 15000, "gorevYil": 6},
+        {"ad": "Akpınar", "nufus": 7000, "gorevYil": 6},
+        {"ad": "Boztepe", "nufus": 4000, "gorevYil": 6},
+        {"ad": "Akçakent", "nufus": 3000, "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kocaeli",
+      "ad": "Kocaeli",
+      "plaka": "41",
+      "bolge": "Marmara",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 2130000,
+        "ilceSayisi": 12,
+        "kaynak": "TÜİK (yaklaşık) · Sanayi ve liman merkezi · İstanbul komşusu — nüfus ve ticaret hareketliliği çok yüksek · Göç çok yüksek · Genç nüfus çok yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi Türkiye'nin en güçlüleri arasında (otomotiv, petrokimya, demir-çelik, lastik, makine) · Limanlar ve lojistik çok güçlü · Teknoloji çok güçlü — Bilişim Vadisi, TÜBİTAK Gebze · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Kocaeli Şehir Hastanesi · Kocaeli Üniversitesi Hastanesi · EAH ve devlet hastaneleri çok sayıda (sayılar doğrulanacak) · Özel hastane çok güçlü"
+      },
+      "egitim": {
+        "universite": 2,
+        "fenLisesi": 3,
+        "kaynak": "Devlet: Kocaeli Üniversitesi, Gebze Teknik Üniversitesi · Fen: Muammer Dereli, Gebze, Körfez · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul çok yüksek — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "sahil": "Marmara ve Karadeniz — Kandıra sahilleri; liman ve deniz ulaşımı",
+        "turizm": "Orta — Kartepe Kayak Merkezi, Maşukiye, Ormanya, Kandıra sahilleri; doğa turizmi güçlü",
+        "kaynak": "Cengiz Topel Havalimanı (yolcu trafiği sınırlı) — Sabiha Gökçen erişimi · Demiryolu ve YHT çok güçlü · Otoyol: TEM, D100, Kuzey Marmara, Osmangazi Köprüsü · AVM: 41 Burda, Symbol, Gebze Center, Arasta Park, NCity · Süper Lig: Kocaelispor"
+      },
+      "polis": {
+        "gorevSuresiYil": 10,
+        "kaynak": "İstanbul yükünü paylaşan ana şehir · Gebze ve İzmit birçok ilden büyük · Sanayi bölgeleri — işçi ve araç hareketliliği çok yüksek · Liman ve lojistik yoğunluğu · Trafik Türkiye ortalamasının üzerinde · Asayiş, trafik, OSB, liman güvenliği ve büyük organizasyonlar · Kartepe EK-1'de ayrı satır yok — süre doğrulanacak · Görev çeşitliliği en yüksek iller arasında · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kocaeli; sanayi, teknoloji, lojistik ve ulaşım alanlarında Türkiye'nin en güçlü şehirlerinden biridir. Bilişim Vadisi, TÜBİTAK Gebze Yerleşkesi, Osmangazi Köprüsü, Kocaeli Şehir Hastanesi ve güçlü organize sanayi bölgeleri ilin stratejik önemini artırmaktadır. İstanbul'a komşu olması nedeniyle nüfus ve ticaret hareketliliği oldukça yüksektir. Polis teşkilatı açısından değerlendirildiğinde sanayi faaliyetleri, limanlar, yoğun trafik, büyük nüfus ve lojistik hareketlilik nedeniyle görev yoğunluğu ve operasyonel çeşitliliği en yüksek iller arasında yer almaktadır.",
+      "ilceler": [
+        {"ad": "Gebze", "nufus": 410000, "profil": "Sanayi ve teknoloji merkezi", "gorevYil": 10},
+        {"ad": "İzmit", "nufus": 380000, "profil": "İl merkezi — idari ve ticari", "gorevYil": 10},
+        {"ad": "Darıca", "nufus": 230000, "gorevYil": 10},
+        {"ad": "Körfez", "nufus": 180000, "profil": "Sanayi ve liman", "gorevYil": 10},
+        {"ad": "Gölcük", "nufus": 180000, "gorevYil": 10},
+        {"ad": "Çayırova", "nufus": 160000, "gorevYil": 10},
+        {"ad": "Kartepe", "nufus": 150000, "profil": "Kayak ve doğa turizmi"},
+        {"ad": "Başiskele", "nufus": 120000, "gorevYil": 10},
+        {"ad": "Kandıra", "profil": "Karadeniz sahili — turizm", "gorevYil": 10},
+        {"ad": "Dilovası", "profil": "Petrokimya ve sanayi", "gorevYil": 10},
+        {"ad": "Derince", "profil": "Liman merkezi", "gorevYil": 10},
+        {"ad": "Karamürsel", "gorevYil": 10}
+      ]
+    },
+    {
+      "id": "konya",
+      "ad": "Konya",
+      "plaka": "42",
+      "bolge": "İç Anadolu",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 2330000,
+        "yuzolcumuKm2": 38873,
+        "ilceSayisi": 31,
+        "kaynak": "TÜİK (yaklaşık) · Türkiye'nin yüzölçümü en büyük ili · Tarım ve sanayi gücü · Göç alan şehir · Öğrenci nüfusu çok yüksek · Aile yapısı güçlü"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım Türkiye'nin en güçlüleri arasında (buğday, şeker pancarı, arpa, mısır) · Hayvancılık çok güçlü · Sanayi ve makine sanayi çok güçlü · Savunma sanayi gelişiyor · Lojistik çok güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 2,
+        "kaynak": "Konya Şehir Hastanesi · Selçuk Üniversitesi Tıp Fakültesi Hastanesi · Necmettin Erbakan Üniversitesi Meram Tıp Fakültesi Hastanesi · EAH ve devlet hastaneleri çok sayıda · Özel hastane çok güçlü"
+      },
+      "egitim": {
+        "universite": 3,
+        "fenLisesi": 4,
+        "kaynak": "Devlet: Selçuk, Necmettin Erbakan, Konya Teknik · Fen: Meram, Konya, Ereğli, Akşehir · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu çok yüksek · Özel okul çok güçlü — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": true,
+        "turizm": "Çok güçlü — Mevlana Müzesi, Alaaddin Tepesi, İnce Minareli Medrese, Sille, Çatalhöyük (UNESCO), Beyşehir Gölü; kültür turizmi çok güçlü",
+        "kaynak": "Konya Havalimanı · YHT — Ankara, İstanbul, Eskişehir, Karaman · Tramvay (Türkiye'nin en uzun ağlarından biri) · Karayolu ve lojistik çok güçlü · AVM: Kulesite, Kent Plaza, Novaland, M1 Konya · Süper Lig: Konyaspor"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Türkiye'nin yüzölçümü en büyük ili · Selçuklu, Meram ve Karatay merkez · Üniversite nüfusu yüksek · Tarım ve sanayi bir arada · Düzenli şehir planlaması · 31 ilçe — görev şartları ilçeden ilçeye değişir · Asayiş, trafik, üniversite, OSB ve büyük organizasyonlar · Görev çeşitliliği yüksek · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Konya; yüzölçümü bakımından Türkiye'nin en büyük ili olup tarım, sanayi, eğitim ve kültürel miras alanlarında ülkenin önde gelen şehirlerinden biridir. Selçuk Üniversitesi, Necmettin Erbakan Üniversitesi, Konya Şehir Hastanesi ve Yüksek Hızlı Tren bağlantıları şehrin bölgesel gücünü artırmaktadır. Mevlana Müzesi ve Çatalhöyük gibi uluslararası öneme sahip kültürel değerleri barındıran şehir, güçlü tarım ekonomisi ve gelişen sanayi yapısıyla dikkat çekmektedir. Polis teşkilatı açısından değerlendirildiğinde geniş coğrafi alanı, yüksek nüfusu ve çeşitli ekonomik faaliyetleri nedeniyle görev çeşitliliği yüksek, ancak şehir düzeni ve yaşam kalitesi açısından dengeli bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Selçuklu", "nufus": 700000, "profil": "Modern merkez — üniversiteler", "gorevYil": 6},
+        {"ad": "Karatay", "nufus": 390000, "profil": "Sanayi ve ticaret", "gorevYil": 6},
+        {"ad": "Meram", "nufus": 350000, "profil": "Yaşam kalitesi — aile yaşamı", "gorevYil": 6},
+        {"ad": "Ereğli", "nufus": 155000, "profil": "Büyük ilçe merkezi", "gorevYil": 6},
+        {"ad": "Akşehir", "nufus": 95000, "gorevYil": 6},
+        {"ad": "Beyşehir", "nufus": 80000, "profil": "Turizm — Beyşehir Gölü", "gorevYil": 6},
+        {"ad": "Çumra", "nufus": 70000, "gorevYil": 6},
+        {"ad": "Seydişehir", "nufus": 65000, "gorevYil": 6},
+        {"ad": "Ahırlı", "gorevYil": 6},
+        {"ad": "Akören", "gorevYil": 6},
+        {"ad": "Altınekin", "gorevYil": 6},
+        {"ad": "Bozkır", "gorevYil": 4},
+        {"ad": "Cihanbeyli", "gorevYil": 6},
+        {"ad": "Çeltik", "gorevYil": 6},
+        {"ad": "Derbent", "gorevYil": 6},
+        {"ad": "Derebucak", "gorevYil": 6},
+        {"ad": "Doğanhisar", "gorevYil": 6},
+        {"ad": "Emirgazi", "gorevYil": 6},
+        {"ad": "Güneysınır", "gorevYil": 6},
+        {"ad": "Hadim", "gorevYil": 6},
+        {"ad": "Halkapınar", "gorevYil": 6},
+        {"ad": "Hüyük", "gorevYil": 6},
+        {"ad": "Ilgın", "gorevYil": 6},
+        {"ad": "Kadınhanı", "gorevYil": 6},
+        {"ad": "Karapınar", "gorevYil": 6},
+        {"ad": "Kulu", "gorevYil": 6},
+        {"ad": "Sarayönü", "gorevYil": 6},
+        {"ad": "Taşkent", "gorevYil": 6},
+        {"ad": "Tuzlukçu", "gorevYil": 6},
+        {"ad": "Yalıhüyük", "gorevYil": 6},
+        {"ad": "Yunak", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kutahya",
+      "ad": "Kütahya",
+      "plaka": "43",
+      "bolge": "Ege",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 580000,
+        "ilceSayisi": 13,
+        "kaynak": "TÜİK (yaklaşık) · Seramik ve porselen başkenti · Termal turizm · Göç dengeli · Emekli nüfus yüksek · Yaşam maliyeti görece düşük"
+      },
+      "ekonomi": {
+        "kaynak": "Seramik ve porselen Türkiye liderleri (Kütahya Porselen, Güral Porselen) · Madencilik güçlü (bor, linyit) · Tarım ve hayvancılık güçlü · Sanayi güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Evliya Çelebi Eğitim ve Araştırma Hastanesi (Kütahya Sağlık Bilimleri Üniversitesi) · Devlet: Tavşanlı, Simav, Gediz · Şehir hastanesi yok · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 2,
+        "fenLisesi": 3,
+        "kaynak": "Kütahya Dumlupınar Üniversitesi · Kütahya Sağlık Bilimleri Üniversitesi · Fen: Kütahya, Tavşanlı, Simav · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu belirgin · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Güçlü — Aizanoi Antik Kenti, Frig Vadisi, Dumlupınar Şehitliği, Çini Müzesi, Germiyan Sokakları; termal turizm çok güçlü (Yoncalı, Ilıca, Emet, Simav)",
+        "kaynak": "Zafer Havalimanı (Kütahya-Afyonkarahisar-Uşak ortak) · Demiryolu var · Karayolu güçlü — Eskişehir, Afyon, Uşak, Bursa, Balıkesir, Manisa bağlantıları · AVM: Sera, Kütahya Park · Futbol: Kütahyaspor (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Büyükşehir baskısı yok · Merkez ve Tavşanlı ekonomik hareketlilik · Üniversite öğrenci nüfusu · Termal turizm dönemsel yoğunluk · Yaşam maliyeti avantajı · Çavdarhisar EK-1'de ayrı satır yok — süre doğrulanacak · Görev yoğunluğu merkez ve Tavşanlı hattında · Aile yaşamı tercih edilebilir profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kütahya; seramik ve porselen üretimiyle tanınan, termal kaynakları ve tarihî mirasıyla öne çıkan Ege şehirlerinden biridir. Dumlupınar Üniversitesi, Aizanoi Antik Kenti, Frig Vadisi ve termal turizm merkezleri ilin önemli değerleri arasındadır. Sanayi, madencilik ve tarım faaliyetlerinin dengeli şekilde geliştiği şehir, yaşam maliyetleri açısından birçok büyükşehre göre avantajlıdır. Polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu görece dengeli, yaşam kalitesi yüksek ve aile yaşamına uygun bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 300000, "gorevYil": 6},
+        {"ad": "Tavşanlı", "nufus": 105000, "profil": "Ekonomik merkez", "gorevYil": 6},
+        {"ad": "Simav", "nufus": 60000, "profil": "Termal turizm", "gorevYil": 6},
+        {"ad": "Gediz", "nufus": 50000, "gorevYil": 5},
+        {"ad": "Emet", "nufus": 20000, "profil": "Termal turizm", "gorevYil": 6},
+        {"ad": "Altıntaş", "nufus": 15000, "gorevYil": 6},
+        {"ad": "Hisarcık", "nufus": 12000, "gorevYil": 6},
+        {"ad": "Aslanapa", "gorevYil": 6},
+        {"ad": "Çavdarhisar", "profil": "Aizanoi Antik Kenti"},
+        {"ad": "Domaniç", "gorevYil": 6},
+        {"ad": "Dumlupınar", "gorevYil": 6},
+        {"ad": "Pazarlar", "gorevYil": 6},
+        {"ad": "Şaphane", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "malatya",
+      "ad": "Malatya",
+      "plaka": "44",
+      "bolge": "Doğu Anadolu",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 750000,
+        "ilceSayisi": 13,
+        "kaynak": "TÜİK (yaklaşık) · Doğu Anadolu bölgesel merkezi · Dünya kayısı üretiminde lider · UNESCO: Aslantepe Höyüğü · 2023 depreminden ciddi etkilendi — yeniden yapılanma devam ediyor · Göç dengeli"
+      },
+      "ekonomi": {
+        "kaynak": "Kayısı dünya lideri · Tarım çok güçlü · Sanayi ve ticaret güçlü · Hayvancılık orta · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Turgut Özal Tıp Merkezi (organ nakli merkezi) · Malatya Eğitim ve Araştırma Hastanesi · Devlet: Battalgazi, Doğanşehir · Şehir hastanesi yok · Özel hastane güçlü"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "İnönü Üniversitesi (devlet) · Fen: Malatya, Erman Ilıcak, Darende · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul var — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Güçlü — Aslantepe Höyüğü (UNESCO), Levent Vadisi, Günpınar Şelalesi, Silahtar Mustafa Paşa Kervansarayı",
+        "kaynak": "Malatya Erhaç Havalimanı · Demiryolu var · Karayolu güçlü — Elazığ, Adıyaman, Kahramanmaraş, Sivas, Diyarbakır bağlantıları · AVM: MalatyaPark, Doğa Cadde · Futbol: Yeni Malatyaspor (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Doğu Anadolu'nun önemli merkez şehirlerinden biri · Yeşilyurt ve Battalgazi nüfusun büyük bölümü · Üniversite ve sağlık bölgesel çekim · Deprem sonrası şehirleşme süreci devam ediyor · Erhaç Havalimanı ulaşım avantajı · Asayiş, trafik ve kamu hizmetleri yoğunluğu bölge ortalamasının üzerinde · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Malatya; eğitim, sağlık ve tarım alanlarında Doğu Anadolu Bölgesi'nin en güçlü şehirlerinden biridir. İnönü Üniversitesi ve Turgut Özal Tıp Merkezi bölgesel sağlık merkezi rolünü desteklerken, dünya kayısı üretimindeki lider konumu ekonomik yapının temelini oluşturmaktadır. Aslantepe Höyüğü gibi UNESCO Dünya Mirası alanlarına sahip olan şehir, deprem sonrası yeniden yapılanma sürecini sürdürmektedir. Polis teşkilatı açısından değerlendirildiğinde bölgesel merkez özelliği, sağlık ve eğitim hareketliliği nedeniyle görev yoğunluğu orta-yüksek seviyede olan, ancak yaşam kalitesi açısından bölge ortalamasının üzerinde bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Yeşilyurt", "nufus": 340000, "profil": "Şehir merkezi — yeni yerleşim", "gorevYil": 6},
+        {"ad": "Battalgazi", "nufus": 300000, "profil": "Şehir merkezi — tarihî", "gorevYil": 6},
+        {"ad": "Doğanşehir", "nufus": 35000, "gorevYil": 6},
+        {"ad": "Akçadağ", "nufus": 30000, "gorevYil": 6},
+        {"ad": "Darende", "nufus": 25000, "gorevYil": 6},
+        {"ad": "Hekimhan", "nufus": 16000, "gorevYil": 6},
+        {"ad": "Yazıhan", "nufus": 13000, "gorevYil": 6},
+        {"ad": "Arapgir", "gorevYil": 6},
+        {"ad": "Arguvan", "gorevYil": 6},
+        {"ad": "Doğanyol", "gorevYil": 6},
+        {"ad": "Kale", "gorevYil": 6},
+        {"ad": "Kuluncak", "gorevYil": 6},
+        {"ad": "Pütürge", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "manisa",
+      "ad": "Manisa",
+      "plaka": "45",
+      "bolge": "Ege",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 1480000,
+        "ilceSayisi": 17,
+        "kaynak": "TÜİK (yaklaşık) · İzmir komşusu — ekonomik hinterland · Sanayi ve tarım çok güçlü · Göç alan şehir · Sanayi yoğunluğu çok yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Sanayi çok güçlü (Türkiye'nin en büyük OSB'leri) · Vestel merkezi — elektronik çok güçlü · Tarım çok güçlü (üzüm, zeytin, tütün) · Enerji güçlü (Soma) · İhracat çok güçlü · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 1,
+        "kaynak": "Manisa Şehir Hastanesi · Hafsa Sultan Hastanesi (MCBÜ) · EAH var · Devlet: Akhisar, Salihli, Soma, Turgutlu · Özel hastane güçlü"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 4,
+        "kaynak": "Manisa Celal Bayar Üniversitesi (devlet) · Fen: TOBB Bülent Koşmaz, Akhisar, Salihli, Turgutlu Halil Kale · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul güçlü — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "superLigTakimi": false,
+        "turizm": "Güçlü — Spil Dağı Milli Parkı, Sardes Antik Kenti, Kula Jeoparkı (UNESCO Global Jeopark), Ağlayan Kaya",
+        "kaynak": "İl içi aktif sivil havalimanı yok — İzmir Adnan Menderes erişimi · Demiryolu güçlü · Karayolu çok güçlü — İzmir günlük gidip gelme yaygın · AVM: Magnesia, 45 Park · Futbol: Manisa FK (1. Lig)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "İzmir ekonomik hinterlandı · Turgutlu, Akhisar ve Salihli büyük ilçe merkezleri · Vestel ve OSB işçi hareketliliği · İzmir yakınlığı nüfus hareketliliği · Asayiş, trafik, OSB ve işçi yoğunluğu · Alaşehir ve Kırkağaç EK-1'de ayrı satır yok — süre doğrulanacak · Yaşam maliyeti İzmir'den düşük profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Manisa; sanayi, tarım ve ihracat alanlarında Türkiye'nin en güçlü şehirlerinden biridir. Vestel başta olmak üzere büyük sanayi kuruluşlarına ev sahipliği yapan şehir, aynı zamanda üzüm, zeytin ve tütün üretiminde ülke liderleri arasındadır. Celal Bayar Üniversitesi, Manisa Şehir Hastanesi ve güçlü organize sanayi bölgeleri ilin ekonomik ve sosyal yapısını desteklemektedir. Polis teşkilatı açısından değerlendirildiğinde sanayi bölgeleri, yoğun işçi hareketliliği ve İzmir'e yakınlık nedeniyle görev çeşitliliği yüksek, ancak yaşam kalitesi açısından dengeli bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Yunusemre", "nufus": 280000, "profil": "İl merkezi", "gorevYil": 6},
+        {"ad": "Turgutlu", "nufus": 180000, "profil": "Sanayi — İzmir etkisi yoğun", "gorevYil": 6},
+        {"ad": "Akhisar", "nufus": 180000, "profil": "Zeytin ve ticaret merkezi", "gorevYil": 6},
+        {"ad": "Şehzadeler", "nufus": 175000, "profil": "İl merkezi — tarihî", "gorevYil": 6},
+        {"ad": "Salihli", "nufus": 165000, "profil": "Tarım ve sanayi", "gorevYil": 6},
+        {"ad": "Soma", "nufus": 110000, "profil": "Enerji ve madencilik", "gorevYil": 6},
+        {"ad": "Alaşehir", "nufus": 105000, "profil": "Üzüm üretimi"},
+        {"ad": "Kırkağaç", "nufus": 40000},
+        {"ad": "Ahmetli", "gorevYil": 6},
+        {"ad": "Demirci", "gorevYil": 6},
+        {"ad": "Gölmarmara", "gorevYil": 6},
+        {"ad": "Gördes", "gorevYil": 6},
+        {"ad": "Köprübaşı", "gorevYil": 6},
+        {"ad": "Kula", "profil": "UNESCO Jeopark", "gorevYil": 6},
+        {"ad": "Sarıgöl", "gorevYil": 6},
+        {"ad": "Saruhanlı", "gorevYil": 6},
+        {"ad": "Selendi", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "kahramanmaras",
+      "ad": "Kahramanmaraş",
+      "plaka": "46",
+      "bolge": "Akdeniz",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 1120000,
+        "ilceSayisi": 11,
+        "kaynak": "TÜİK (yaklaşık) · Güneydoğu-Akdeniz geçiş noktası — bölgesel merkez · Tekstil ve sanayi gücü · 2023 deprem merkez üssü illerinden biri — yeniden yapılanma çok yoğun devam ediyor · Göç dengeli"
+      },
+      "ekonomi": {
+        "kaynak": "Tekstil çok güçlü · Tarım güçlü (biber, ceviz, üzüm) · Enerji güçlü (Afşin-Elbistan termik santralleri) · Sanayi güçlü · Maraş dondurması dünya çapında tanınır · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": true,
+        "universiteHastanesi": 1,
+        "kaynak": "Necip Fazıl Şehir Hastanesi · KSÜ Tıp Fakültesi Hastanesi · Devlet: Elbistan, Afşin · Uzun vadeli sağlık yatırımları devam ediyor · Özel hastane var"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "Kahramanmaraş Sütçü İmam Üniversitesi (devlet) · Fen: TOBB, Kahramanmaraş, Elbistan · Anadolu ve meslek liseleri çok sayıda · Öğrenci nüfusu yüksek · Özel okul var — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Güçlü — Başkonuş Yaylası, Yedikuyular Kayak Merkezi, Eshab-ı Kehf, Döngel Mağaraları, Germanicia Mozaikleri; kış turizmi gelişiyor",
+        "kaynak": "Kahramanmaraş Havalimanı · Demiryolu sınırlı · Karayolu güçlü — Gaziantep, Adana, Malatya, Kayseri, Osmaniye bağlantıları · AVM: Piazza, Arnelia · Futbol: Kahramanmaraş İstiklalspor (alt ligler)"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Bölgenin önemli sanayi ve ticaret merkezi · Onikişubat ve Dulkadiroğlu merkez yükü · Elbistan büyük ilçe merkezi · Deprem sonrası yeniden yapılanma — şehir sürekli değişim · Üniversite ve sanayi hareketliliği · Göksun EK-1'de ayrı satır yok — süre doğrulanacak · Asayiş, trafik ve kamu hizmetleri yoğunluğu bölge ortalamasının üzerinde · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Kahramanmaraş; tekstil sanayisi, enerji üretimi, tarımsal gücü ve kültürel mirasıyla Türkiye'nin önemli büyükşehirlerinden biridir. Kahramanmaraş Sütçü İmam Üniversitesi, Maraş Dondurması, Afşin-Elbistan enerji havzası ve gelişen sanayi bölgeleri ilin ekonomik yapısını desteklemektedir. 2023 depremlerinden ciddi şekilde etkilenen şehirde yeniden yapılanma süreci devam etmektedir. Polis teşkilatı açısından değerlendirildiğinde sanayi, üniversite, yeniden yapılanma faaliyetleri ve büyükşehir yapısı nedeniyle görev çeşitliliği orta-yüksek seviyede olan bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Onikişubat", "nufus": 450000, "profil": "Şehir merkezi", "gorevYil": 6},
+        {"ad": "Dulkadiroğlu", "nufus": 230000, "profil": "Şehir merkezi — tarihî", "gorevYil": 6},
+        {"ad": "Elbistan", "nufus": 145000, "profil": "Büyük ilçe merkezi — enerji", "gorevYil": 6},
+        {"ad": "Afşin", "nufus": 80000, "profil": "Termik santral bölgesi", "gorevYil": 6},
+        {"ad": "Türkoğlu", "nufus": 75000, "gorevYil": 6},
+        {"ad": "Pazarcık", "nufus": 70000, "gorevYil": 6},
+        {"ad": "Göksun", "nufus": 50000},
+        {"ad": "Andırın", "gorevYil": 6},
+        {"ad": "Çağlayancerit", "gorevYil": 6},
+        {"ad": "Ekinözü", "gorevYil": 6},
+        {"ad": "Nurhak", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "mardin",
+      "ad": "Mardin",
+      "plaka": "47",
+      "bolge": "Güneydoğu Anadolu",
+      "buyuksehir": true,
+      "genel": {
+        "nufus": 900000,
+        "ilceSayisi": 10,
+        "kaynak": "TÜİK (yaklaşık) · Sınır ili (Suriye) · Turizm potansiyeli çok yüksek · Tarih, kültürel çeşitlilik ve sınır ticareti · Genç nüfus çok yüksek · Göç dengeli"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım çok güçlü (buğday, mercimek, arpa) · Hayvancılık güçlü · Sınır ticareti çok güçlü · Lojistik güçlü · Sanayi gelişiyor · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 1,
+        "universiteHastanesi": 0,
+        "kaynak": "Mardin Eğitim ve Araştırma Hastanesi · Devlet: Kızıltepe, Midyat, Nusaybin · Şehir ve tam teşekküllü üniversite hastanesi yok · Üniversite sağlık altyapısı gelişim aşamasında · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 3,
+        "kaynak": "Mardin Artuklu Üniversitesi (devlet) · Fen: Mardin, Midyat, Kızıltepe · Anadolu ve meslek liseleri çok sayıda · Özel okul var — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Çok güçlü — Mardin Eski Şehir, Zinciriye ve Kasımiye medreseleri, Dara Antik Kenti, Deyrulzafaran Manastırı, Midyat; çok kültürlü yapı",
+        "kaynak": "Mardin Prof. Dr. Aziz Sancar Havalimanı · Demiryolu var · Karayolu güçlü · Suriye sınır hattı — sınır ticareti ve lojistik · AVM: Mardian Mall, Movapark · Futbol: Mardin 1969 Spor"
+      },
+      "polis": {
+        "gorevSuresiYil": 4,
+        "kaynak": "Turizm ve sınır hareketliliği bir arada · Kızıltepe ekonomik merkez · Artuklu idari merkez · Midyat turizm · Nusaybin sınır hareketliliği · Görev şartları ilçeden ilçeye ciddi fark · Büyükşehir ama kırsal ilçeler mevcut · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Mardin; tarihî taş mimarisi, çok kültürlü yapısı ve sınır konumuyla Türkiye'nin en özgün şehirlerinden biridir. Mardin Artuklu Üniversitesi, Dara Antik Kenti, Deyrulzafaran Manastırı ve Midyat'ın tarihî dokusu şehrin turizm potansiyelini güçlendirmektedir. Tarım, sınır ticareti ve turizm ekonominin temel unsurlarıdır. Polis teşkilatı açısından değerlendirildiğinde turizm, sınır hareketliliği ve büyükşehir yapısının bir arada bulunduğu; görev şartlarının ilçelere göre önemli farklılıklar gösterdiği bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Kızıltepe", "nufus": 270000, "profil": "Ekonomik merkez — tarım ve ticaret", "gorevYil": 4},
+        {"ad": "Artuklu", "nufus": 200000, "profil": "İl merkezi — turizm ve kamu", "gorevYil": 4},
+        {"ad": "Midyat", "nufus": 125000, "profil": "Turizm — taş konaklar, Süryani kültürü", "gorevYil": 4},
+        {"ad": "Nusaybin", "nufus": 115000, "profil": "Suriye sınır hattı — lojistik", "gorevYil": 4},
+        {"ad": "Derik", "nufus": 60000, "gorevYil": 4},
+        {"ad": "Mazıdağı", "nufus": 40000, "gorevYil": 4},
+        {"ad": "Savur", "nufus": 25000, "gorevYil": 4},
+        {"ad": "Dargeçit", "gorevYil": 4},
+        {"ad": "Ömerli", "gorevYil": 4},
+        {"ad": "Yeşilli", "gorevYil": 6}
+      ]
+    },
+    {
       "id": "mugla",
       "ad": "Muğla",
       "plaka": "48",
       "bolge": "Ege",
       "buyuksehir": true,
-      "puanlar": {
-        "polisYasam": 80,
-        "aile": 76,
-        "bekar": 78,
-        "emeklilik": 74
-      },
       "genel": {
-        "nufus": 1021143,
-        "yuzolcumuKm2": 13338,
+        "nufus": 1080000,
         "ilceSayisi": 13,
-        "rakimM": 659,
-        "kaynak": "TÜİK"
+        "kaynak": "TÜİK (yaklaşık) · Türkiye'nin en güçlü turizm illerinden biri · İl merkezi Menteşe — asıl güç Bodrum, Marmaris, Fethiye ilçelerinde · Yazın bazı ilçelerde nüfus 4-5 katına çıkabilir · Göç çok yüksek · Emekli ve yabancı nüfus yüksek"
       },
       "ekonomi": {
-        "ortalamaKiraTl": 32000,
-        "konutSatisOrtTl": 5500000,
-        "segeDuzey": "Orta-üst",
-        "sosyoekonomikSira": 22,
-        "kaynak": "TÜİK · SEGE · Endeksa (özet)"
+        "kaynak": "Turizm çok güçlü · Yat turizmi ve denizcilik çok güçlü · Tarım güçlü (zeytin, narenciye, bal) · Enerji güçlü (Yatağan termik) · Ortalama kira, konut ve SEGE sırası doğrulanacak"
       },
       "saglik": {
-        "devletHastanesi": 12,
+        "sehirHastanesi": false,
         "egitimArastirma": 1,
         "universiteHastanesi": 1,
+        "kaynak": "Muğla Eğitim ve Araştırma Hastanesi (MSKÜ ile entegre) · Devlet: Bodrum, Fethiye, Marmaris, Milas · Şehir hastanesi yok · Özel hastane çok güçlü — özellikle Bodrum, Fethiye, Marmaris"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 4,
+        "kaynak": "Muğla Sıtkı Koçman Üniversitesi (devlet) · Fen: Muğla, Bodrum, Fethiye, Milas · Anadolu ve meslek liseleri çok sayıda · Özel okul çok güçlü — sayılar doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 2,
+        "superLigTakimi": true,
+        "sahil": "Ege ve Akdeniz — Bodrum, Marmaris, Fethiye, Datça, Akyaka; marina ve deniz ulaşımı çok güçlü",
+        "turizm": "Türkiye'nin en güçlüleri arasında — Bodrum Kalesi, Ölüdeniz, Saklıkent, Marmaris, Datça, Akyaka, Gökova, Knidos; Mavi Yolculuk merkezi",
+        "kaynak": "Milas-Bodrum ve Dalaman havalimanları · Karayolu güçlü · Marina altyapısı Türkiye'nin en yoğunları arasında · AVM: Midtown Bodrum, Oasis Bodrum, Rüya Park · Süper Lig: Bodrum FK"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Yazın ve kışın iki farklı şehir profili · Bodrum, Marmaris, Fethiye yazın olağanüstü yoğunluk · Turizm kaynaklı olay çeşitliliği yüksek · Yabancı turist ve yerleşik nüfus · Yaz trafiği ciddi seviye · Turizm sezonu çalışma temposunu belirler · İlçeler arası yaşam koşulları ciddi fark · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Muğla; Bodrum, Marmaris, Fethiye ve Datça gibi dünya çapında bilinen turizm merkezlerine ev sahipliği yapan, Türkiye'nin en güçlü turizm şehirlerinden biridir. İki uluslararası havalimanı, gelişmiş marina altyapısı ve yüksek yaşam kalitesi ile öne çıkmaktadır. Turizm, yatçılık ve hizmet sektörü ekonominin temelini oluştururken, yabancı nüfus ve yaz sezonundaki yoğun ziyaretçi trafiği ilin dinamik yapısını belirlemektedir. Polis teşkilatı açısından değerlendirildiğinde turizm sezonuna bağlı olarak görev yoğunluğunun ciddi şekilde değiştiği, yabancı turist hareketliliğinin yüksek olduğu ve ilçeler arasında yaşam şartlarının büyük farklılık gösterdiği bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Bodrum", "nufus": 210000, "profil": "Turizm — marina; yaz nüfusu çok yüksek", "gorevYil": 6},
+        {"ad": "Fethiye", "nufus": 185000, "profil": "Ölüdeniz — Babadağ yamaç paraşütü", "gorevYil": 6},
+        {"ad": "Milas", "nufus": 155000, "profil": "Havalimanı — sanayi ve enerji", "gorevYil": 6},
+        {"ad": "Menteşe", "nufus": 125000, "profil": "İl merkezi", "gorevYil": 6},
+        {"ad": "Marmaris", "nufus": 100000, "profil": "Yat turizmi — uluslararası ziyaretçi", "gorevYil": 6},
+        {"ad": "Ortaca", "nufus": 55000, "gorevYil": 6},
+        {"ad": "Yatağan", "nufus": 45000, "profil": "Termik santral", "gorevYil": 6},
+        {"ad": "Datça", "profil": "Yaşam kalitesi — emeklilik tercihi", "gorevYil": 6},
+        {"ad": "Dalaman", "gorevYil": 6},
+        {"ad": "Kavaklıdere", "gorevYil": 6},
+        {"ad": "Köyceğiz", "gorevYil": 6},
+        {"ad": "Seydikemer", "gorevYil": 6},
+        {"ad": "Ula", "profil": "Akyaka", "gorevYil": 6}
+      ]
+    },
+    {
+      "id": "mus",
+      "ad": "Muş",
+      "plaka": "49",
+      "bolge": "Doğu Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 400000,
+        "ilceSayisi": 6,
+        "kaynak": "TÜİK (yaklaşık) · Doğu hizmeti ili · Muş Ovası — Türkiye'nin en büyük ovalarından biri · Malazgirt tarihî önemi · Göç veren il · Genç nüfus çok yüksek · Kış şartları sert"
+      },
+      "ekonomi": {
+        "kaynak": "Tarım çok güçlü (buğday, arpa, yonca) · Hayvancılık çok güçlü · Sanayi sınırlı · Ticaret orta · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
         "sehirHastanesi": false,
-        "ozelHastane": 9,
-        "kaynak": "Sağlık Bakanlığı (özet)"
+        "egitimArastirma": 0,
+        "universiteHastanesi": 0,
+        "kaynak": "Devlet: Muş, Bulanık, Malazgirt · Şehir, EAH ve üniversite hastanesi yok · Özel hastane çok sınırlı"
       },
       "egitim": {
         "universite": 1,
         "fenLisesi": 2,
-        "anadoluLisesi": 18,
-        "meslekLisesi": 14,
-        "ozelOkul": 28,
-        "kaynak": "MEB · YÖK (özet)"
+        "kaynak": "Muş Alparslan Üniversitesi (devlet) · Tam teşekküllü üniversite hastanesi yok · Fen: Muş, Bulanık · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
       },
       "sosyal": {
-        "avm": 7,
-        "havalimani": 2,
+        "havalimani": 1,
         "superLigTakimi": false,
-        "sinema": 10,
-        "tiyatro": 3,
-        "sahil": "Geniş — Bodrum, Marmaris, Fethiye",
-        "turizm": "Çok yüksek"
+        "turizm": "Gelişmekte — Malazgirt Meydan Muharebesi Alanı, Murat Köprüsü, Muş Ovası, Hamurpet Gölleri; tarih turizmi önemli potansiyel",
+        "kaynak": "Muş Sultan Alparslan Havalimanı · Demiryolu var · Karayolu güçlü — Bitlis, Bingöl, Erzurum, Ağrı, Diyarbakır bağlantıları · Büyük AVM yok · Futbol: Muşspor"
       },
       "polis": {
-        "gorevSuresiYil": 8,
-        "mudurluk": 8,
-        "amirlik": 7,
-        "lojmanDurumu": "Sınırlı — turizm bölgesi talebi",
-        "lojmanBeklemeYil": "3–5",
-        "calismaSistemi": "12/36; turizm dönemi ek vardiya",
-        "isYuku": "Mevsimsel yoğun",
-        "kaynak": "Görev puanı cetveli · birim özeti"
+        "gorevSuresiYil": 4,
+        "kaynak": "Doğu Anadolu tarım ve hayvancılık merkezi · Bulanık ve Malazgirt öne çıkan ilçeler · Kış şartları görev planlamasında önemli · Büyükşehir yoğunluğu yok · Doğu hizmeti kapsamında · Görev yoğunluğu büyük illere göre düşük profil · Yaşam maliyeti Türkiye ortalamasının altında · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
       },
       "guvenlik": {
-        "gostergeler": [
-          {"etiket": "Adli olay yoğunluğu (nüfusa oranlı)", "deger": "Turizm etkili", "egilim": "Mevsimsel"},
-          {"etiket": "Yıllık değişim eğilimi", "deger": "Yaz artışı", "egilim": "Öngörülebilir"},
-          {"etiket": "Kıyı güvenliği", "deger": "Koordinasyon yoğun", "egilim": "—"}
-        ],
-        "dipnot": "Bu veriler yalnızca resmî istatistiklerden üretilen genel göstergelerdir. Şehirlerin veya vatandaşların sınıflandırılması amacı taşımaz."
+        "gostergeler": []
       },
-      "ozetAi": "Muğla; yaşam kalitesi ve sosyal imkan açısından güçlü, görev puanı yüksek bir profildir. Bodrum ve Fethiye turizm döneminde iş yükü artar; aile yaşamı için merkez ilçeler daha dengelidir.",
+      "ozetAi": "Muş; geniş tarım arazileri, güçlü hayvancılık potansiyeli ve Malazgirt Zaferi ile özdeşleşen tarihî kimliğiyle Doğu Anadolu'nun önemli şehirlerinden biridir. Muş Alparslan Üniversitesi ve Sultan Alparslan Havalimanı ilin bölgesel gelişimine katkı sağlamaktadır. Ekonomisi büyük ölçüde tarım ve hayvancılığa dayanırken, kış şartları ve geniş kırsal alanlar ilin karakteristik özellikleri arasında yer almaktadır. Polis teşkilatı açısından değerlendirildiğinde görev yoğunluğu büyük şehirlere göre daha dengeli, ancak iklim ve coğrafi şartların operasyonel faaliyetlerde etkili olduğu bir il profili sunmaktadır.",
       "ilceler": [
-        {"ad": "Menteşe", "nufus": 185000, "kiraTl": 26000, "yasam": 78, "sosyal": 76, "isYuku": 58, "aile": 80, "gorevYil": 8},
-        {"ad": "Bodrum", "nufus": 195000, "kiraTl": 45000, "yasam": 85, "sosyal": 92, "isYuku": 75, "aile": 68, "gorevYil": 8},
-        {"ad": "Fethiye", "nufus": 175000, "kiraTl": 38000, "yasam": 82, "sosyal": 88, "isYuku": 70, "aile": 72, "gorevYil": 8}
+        {"ad": "Merkez", "nufus": 200000, "gorevYil": 4},
+        {"ad": "Bulanık", "nufus": 80000, "profil": "Tarım ve hayvancılık merkezi", "gorevYil": 4},
+        {"ad": "Malazgirt", "nufus": 50000, "profil": "1071 Malazgirt — tarih turizmi", "gorevYil": 4},
+        {"ad": "Varto", "nufus": 30000, "profil": "Dağlık coğrafya — sert kış", "gorevYil": 4},
+        {"ad": "Hasköy", "nufus": 25000, "gorevYil": 4},
+        {"ad": "Korkut", "nufus": 20000, "gorevYil": 4}
+      ]
+    },
+    {
+      "id": "nevsehir",
+      "ad": "Nevşehir",
+      "plaka": "50",
+      "bolge": "İç Anadolu",
+      "buyuksehir": false,
+      "genel": {
+        "nufus": 320000,
+        "ilceSayisi": 8,
+        "kaynak": "TÜİK (yaklaşık) · Kapadokya merkezi — dünya turizm destinasyonu · UNESCO: Kapadokya Kültürel ve Doğal Alanları · Turizm etkisi çok yüksek · Yabancı turist yoğunluğu çok yüksek"
+      },
+      "ekonomi": {
+        "kaynak": "Turizm çok güçlü — ana gelir kaynağı · Tarım güçlü (patates, kabak çekirdeği, üzüm) · Termal turizm güçlü (Kozaklı) · Hayvancılık orta · Ortalama kira, konut ve SEGE sırası doğrulanacak"
+      },
+      "saglik": {
+        "sehirHastanesi": false,
+        "egitimArastirma": 0,
+        "universiteHastanesi": 0,
+        "kaynak": "Devlet: Nevşehir, Ürgüp · Şehir, EAH ve üniversite hastanesi yok · Özel hastane sınırlı"
+      },
+      "egitim": {
+        "universite": 1,
+        "fenLisesi": 2,
+        "kaynak": "Nevşehir Hacı Bektaş Veli Üniversitesi (devlet) · Tam teşekküllü üniversite hastanesi yok · Fen: Nevşehir, Ürgüp · Anadolu ve meslek liseleri var · Öğrenci nüfusu orta · Özel okul sayısı doğrulanacak"
+      },
+      "sosyal": {
+        "havalimani": 1,
+        "superLigTakimi": false,
+        "turizm": "Türkiye'nin en güçlüleri arasında — Göreme, Uçhisar, Derinkuyu, Kaymaklı, Paşabağları, Güvercinlik Vadisi; balon turizmi dünya çapında; UNESCO Kapadokya",
+        "kaynak": "Nevşehir Kapadokya Havalimanı · Demiryolu yok · Karayolu güçlü — Kayseri, Niğde, Kırşehir, Aksaray bağlantıları · AVM: Nissara · Turizm sezonu ile normal dönem arasında ciddi fark"
+      },
+      "polis": {
+        "gorevSuresiYil": 6,
+        "kaynak": "Turizm odaklı il yapısı · Ürgüp, Avanos ve Göreme hattı yıl boyu turist · Balon turizmi — uluslararası ziyaretçi yoğunluğu · Büyükşehir baskısı yok · Trafik sezonluk yoğunluk · Turizm güvenliği öne çıkan başlık · Yaşam temposu sakin profil · Görev puanı, ek tazminat, lojman ve iş yükü alanları doğrulanacak"
+      },
+      "guvenlik": {
+        "gostergeler": []
+      },
+      "ozetAi": "Nevşehir; Kapadokya'nın merkezi olarak dünya çapında tanınan, turizm odaklı yapısıyla öne çıkan bir İç Anadolu şehridir. Göreme Açık Hava Müzesi, Uçhisar, Derinkuyu ve sıcak hava balonları bölgenin uluslararası cazibesini oluşturmaktadır. Turizm ekonomisi ilin temel gelir kaynaklarından biri olup, Kozaklı termal turizmi de önemli katkı sağlamaktadır. Polis teşkilatı açısından değerlendirildiğinde yabancı turist yoğunluğu ve sezonluk hareketlilik nedeniyle görev çeşitliliği bulunan, ancak büyükşehir baskısı olmayan dengeli bir il profili sunmaktadır.",
+      "ilceler": [
+        {"ad": "Merkez", "nufus": 160000, "gorevYil": 6},
+        {"ad": "Ürgüp", "nufus": 55000, "profil": "Kapadokya turizmi merkezi", "gorevYil": 6},
+        {"ad": "Avanos", "nufus": 35000, "profil": "Çömlekçilik — turizm", "gorevYil": 6},
+        {"ad": "Kozaklı", "nufus": 25000, "profil": "Termal turizm", "gorevYil": 6},
+        {"ad": "Gülşehir", "nufus": 25000, "gorevYil": 6},
+        {"ad": "Derinkuyu", "nufus": 20000, "profil": "Yeraltı şehri", "gorevYil": 6},
+        {"ad": "Acıgöl", "nufus": 15000, "gorevYil": 6},
+        {"ad": "Hacıbektaş", "nufus": 11000, "profil": "Hacı Bektaş Veli Külliyesi", "gorevYil": 6}
       ]
     }
   ]
