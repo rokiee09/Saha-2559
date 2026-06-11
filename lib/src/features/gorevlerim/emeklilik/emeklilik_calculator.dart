@@ -171,11 +171,22 @@ EmeklilikDurum? hesaplaEmeklilik(KariyerProfil profil, DateTime simdi) {
     bitis: zorunluBitis,
     simdi: simdi,
   );
-  final yas = _ilerleme(
-    baslangic: dogum,
-    bitis: yasBitis,
-    simdi: simdi,
-  );
+  // Yaş haddi ilerlemesi: meslek girişinden 55 yaşına kadar (doğumdan değil).
+  // Böylece kalan süre ile tamamlanma yüzdesi aynı ölçekte kalır.
+  final yas = meslekGiris.isAfter(yasBitis)
+      ? EmeklilikIlerleme(
+          baslangic: yasBitis,
+          bitis: yasBitis,
+          simdi: simdi,
+          yuzde: 100,
+          kalan: const EmeklilikYilAyGun(years: 0, months: 0, days: 0),
+          tamamlandi: true,
+        )
+      : _ilerleme(
+          baslangic: meslekGiris,
+          bitis: yasBitis,
+          simdi: simdi,
+        );
 
   return EmeklilikDurum(
     rutbeLabel: rutbe?.label ?? '—',

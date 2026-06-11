@@ -20,6 +20,19 @@ void main() {
     expect(emeklilikYasHaddi('bir_sinif'), 65);
   });
 
+  test('yaş haddi yüzdesi meslek girişinden hesaplanır', () {
+    final profil = KariyerProfil(
+      rutbeId: 'polis_memuru',
+      gorevBaslamaMs: DateTime(2017, 3, 21).millisecondsSinceEpoch,
+      dogumTarihiMs: DateTime(1993, 7, 2).millisecondsSinceEpoch,
+    );
+    final d = hesaplaEmeklilik(profil, DateTime(2026, 6, 11))!;
+    // Doğumdan 55'e göre ~%60 görünürdü; meslek girişinden ~%30 olmalı.
+    expect(d.yasHaddi.yuzde, lessThan(40));
+    expect(d.yasHaddi.yuzde, greaterThan(20));
+    expect(d.yasHaddi.kalan.years, greaterThanOrEqualTo(21));
+  });
+
   test('2048 önce emeklilik tarihi zorunlu hizmet', () {
     final profil = KariyerProfil(
       rutbeId: 'polis_memuru',
