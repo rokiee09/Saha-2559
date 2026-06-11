@@ -32,7 +32,7 @@ final martyrsAnniversaryTodayProvider =
   return MartyrsAnniversaryToday(gun: gun, martyrs: martyrs);
 });
 
-/// Tüm şehit kayıtları — her zaman `martyrs.json`.
+/// Tüm şehit kayıtları — `martyrs.json` (Isar yalnızca tohum/yedek).
 final martyrsCatalogProvider = FutureProvider<List<Martyr>>((ref) async {
   final fromAsset = await loadMartyrsFromAsset();
   await _trySeedIsar(fromAsset);

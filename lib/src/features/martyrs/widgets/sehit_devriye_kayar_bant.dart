@@ -64,6 +64,7 @@ class _SehitDevriyeKayarBantState extends State<SehitDevriyeKayarBant>
     );
 
     return ClipRRect(
+      clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadius.circular(10),
       child: Container(
         height: widget.height,
@@ -71,6 +72,7 @@ class _SehitDevriyeKayarBantState extends State<SehitDevriyeKayarBant>
         alignment: Alignment.centerLeft,
         child: LayoutBuilder(
           builder: (context, constraints) {
+            final viewportWidth = constraints.maxWidth;
             final painter = TextPainter(
               text: TextSpan(text: widget.text, style: style),
               textDirection: TextDirection.ltr,
@@ -104,20 +106,31 @@ class _SehitDevriyeKayarBantState extends State<SehitDevriyeKayarBant>
               );
             }
 
-            return AnimatedBuilder(
-              animation: ctrl,
-              builder: (context, child) {
-                final offset = -ctrl.value * _segmentWidth;
-                return Transform.translate(
-                  offset: Offset(offset, 0),
-                  child: Row(
-                    children: [
-                      _segment(style),
-                      _segment(style),
-                    ],
+            return SizedBox(
+              width: viewportWidth,
+              child: ClipRect(
+                child: OverflowBox(
+                  alignment: Alignment.centerLeft,
+                  minWidth: 0,
+                  maxWidth: double.infinity,
+                  child: AnimatedBuilder(
+                    animation: ctrl,
+                    builder: (context, child) {
+                      final offset = -ctrl.value * _segmentWidth;
+                      return Transform.translate(
+                        offset: Offset(offset, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            _segment(style),
+                            _segment(style),
+                          ],
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
+                ),
+              ),
             );
           },
         ),

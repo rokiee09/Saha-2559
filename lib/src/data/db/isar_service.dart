@@ -8,6 +8,8 @@ import '../models/martyr.dart';
 class IsarService {
   static Isar? _isar;
 
+  static bool get isReady => _isar != null;
+
   static Future<void> init() async {
     if (_isar != null) return;
 

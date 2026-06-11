@@ -48,14 +48,12 @@ class _NavyFiligranPainter extends CustomPainter {
     final line = Paint()
       ..color = base.withValues(alpha: isDark ? 0.04 : 0.02)
       ..strokeWidth = 1;
-    const step = 80.0;
+    const step = 112.0;
     for (double x = -size.height; x < size.width + size.height; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x + size.height * 0.8, size.height), line);
     }
   }
 
   @override
-  bool shouldRepaint(covariant _NavyFiligranPainter oldDelegate) {
-    return oldDelegate.isDark != isDark;
-  }
+  bool shouldRepaint(covariant _NavyFiligranPainter oldDelegate) => false;
 }

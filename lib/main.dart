@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:async' show unawaited;
+
+import 'package:flutter/foundation.dart' show kIsWeb, debugPrint, debugPrintStack;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,23 +39,22 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
   ]);
 
-  // Ürün hedefi mobil; web derlemesi kullanılmıyorsa Isar yine güvenli şekilde atlanır.
-  // Isar başlatma; native kütüphane yüklenemese (ör. eski cihaz, beklenmedik ABI)
-  // veya beklenenden uzun sürse bile uygulamayı açılış ekranında kilitlemeyiz.
-  // Isar yalnızca şehit/iletişim verileri için kullanılır; başarısızlıkta bu sayfalar
-  // kendi hata durumunu gösterir, geri kalan modüller (mevzuat/haklar/vardiya/kültür)
-  // sorunsuz çalışır.
-  if (!kIsWeb) {
-    try {
-      await IsarService.init().timeout(const Duration(seconds: 10));
-      // İl emniyet listesi (81 il) — Teşkilat ekranı JSON/Isar için hazır olsun.
-      await OfflineImportService.importCityContacts();
-      await OfflineImportService.importMartyrs();
-    } catch (error, stackTrace) {
-      debugPrint('IsarService.init() başarısız; uygulama Isar olmadan açılıyor: $error');
-      debugPrintStack(stackTrace: stackTrace);
-    }
-  }
-
   runApp(const ProviderScope(child: PolisMevzuatApp()));
+
+  // Isar + tohum veri: UI açıldıktan sonra arka planda; her açılışta tablo silinmez.
+  if (!kIsWeb) {
+    unawaited(_warmOfflineData());
+  }
+}
+
+Future<void> _warmOfflineData() async {
+  try {
+    await IsarService.init().timeout(const Duration(seconds: 10));
+    await OfflineImportService.seedIfNeeded();
+  } catch (error, stackTrace) {
+    debugPrint(
+      'Isar/çevrimdışı veri hazırlığı atlandı; uygulama JSON ile devam eder: $error',
+    );
+    debugPrintStack(stackTrace: stackTrace);
+  }
 }

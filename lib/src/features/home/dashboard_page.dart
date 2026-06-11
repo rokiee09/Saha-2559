@@ -6,6 +6,7 @@ import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
 import '../../common/constants/app_branding.dart';
 import '../../common/theme/police_colors.dart';
 import '../../common/theme/saha_module_theme.dart';
+import '../../common/widgets/deferred_build.dart';
 import '../../common/widgets/module_section_header.dart';
 import '../../common/widgets/police_siren_accent_bar.dart';
 import '../../common/widgets/saha_module_card.dart';
@@ -27,6 +28,89 @@ typedef OpenMaddeCallback = void Function(String entryId, {String? sectionId});
 class DashboardPage extends ConsumerWidget {
   const DashboardPage({
     super.key,
+    required this.onContinueReading,
+    required this.onOpenGununMaddesi,
+    required this.onOpenFavorites,
+    required this.onOpenAsistan,
+    required this.onOpenIzin,
+    required this.onOpenVardiya,
+    required this.onOpenMevzuat,
+    required this.onOpenProfilim,
+  });
+
+  final VoidCallback onContinueReading;
+  final OpenMaddeCallback onOpenGununMaddesi;
+  final VoidCallback onOpenFavorites;
+  final VoidCallback onOpenAsistan;
+  final VoidCallback onOpenIzin;
+  final VoidCallback onOpenVardiya;
+  final VoidCallback onOpenMevzuat;
+  final VoidCallback onOpenProfilim;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ColoredBox(
+      color: PoliceColors.backgroundDark,
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverSafeArea(
+            top: true,
+            bottom: false,
+            sliver: SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    kAppDisplayName,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          color: PoliceColors.titleOnDark,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 0.5,
+                        ),
+                  ),
+                  const SizedBox(height: 10),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: PoliceSirenAccentBar(width: 84, height: 6),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    kAppTagline,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: PoliceColors.textMuted,
+                          height: 1.42,
+                          fontStyle: FontStyle.italic,
+                        ),
+                  ),
+                  const SizedBox(height: 20),
+                  DeferredBuild(
+                    builder: (context) => _DashboardDynamicSection(
+                      onContinueReading: onContinueReading,
+                      onOpenGununMaddesi: onOpenGununMaddesi,
+                      onOpenFavorites: onOpenFavorites,
+                      onOpenAsistan: onOpenAsistan,
+                      onOpenIzin: onOpenIzin,
+                      onOpenVardiya: onOpenVardiya,
+                      onOpenMevzuat: onOpenMevzuat,
+                      onOpenProfilim: onOpenProfilim,
+                    ),
+                  ),
+                ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DashboardDynamicSection extends ConsumerWidget {
+  const _DashboardDynamicSection({
     required this.onContinueReading,
     required this.onOpenGununMaddesi,
     required this.onOpenFavorites,
@@ -76,57 +160,23 @@ class DashboardPage extends ConsumerWidget {
     final upcomingLeave =
         izinRecords.isEmpty ? null : izinAktifVeyaYaklasan(izinRecords);
 
-    return ColoredBox(
-      color: PoliceColors.backgroundDark,
-      child: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverSafeArea(
-            top: true,
-            bottom: false,
-            sliver: SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
-                child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const SehitYildonumuDevriyeKart(),
-                  const SizedBox(height: 16),
-                  Text(
-                    kAppDisplayName,
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: PoliceColors.titleOnDark,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.5,
-                        ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: PoliceSirenAccentBar(width: 84, height: 6),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    kAppTagline,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: PoliceColors.textMuted,
-                          height: 1.42,
-                          fontStyle: FontStyle.italic,
-                        ),
-                  ),
-                  const SizedBox(height: 20),
-                  const GaziTesekkurKart(),
-                  PersonelOzetKart(onTap: onOpenProfilim),
-                  const EmeklilikDashboardCard(),
-                  const SaglikDashboardCard(),
-                  _DutyTodayPanel(
-                    vardiya: vardiyaToday,
-                    leave: upcomingLeave,
-                    onOpenVardiya: onOpenVardiya,
-                    onOpenIzin: onOpenIzin,
-                  ),
-                  const SizedBox(height: 20),
-                  if (hasRecentToContinue) ...[
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SehitYildonumuDevriyeKart(),
+        const SizedBox(height: 16),
+        const GaziTesekkurKart(),
+        PersonelOzetKart(onTap: onOpenProfilim),
+        const EmeklilikDashboardCard(),
+        const SaglikDashboardCard(),
+        _DutyTodayPanel(
+          vardiya: vardiyaToday,
+          leave: upcomingLeave,
+          onOpenVardiya: onOpenVardiya,
+          onOpenIzin: onOpenIzin,
+        ),
+        const SizedBox(height: 20),
+        if (hasRecentToContinue) ...[
                     _ActionPill(
                       icon: PhosphorIconsRegular.playCircle,
                       label: 'Devam et',
@@ -221,16 +271,10 @@ class DashboardPage extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 28),
-                  _GununMaddesiCard(onTapEntry: onOpenGununMaddesi),
-                  const SizedBox(height: 24),
-                ],
-              ),
-            ),
-            ),
-          ),
-        ],
-      ),
+        const SizedBox(height: 28),
+        _GununMaddesiCard(onTapEntry: onOpenGununMaddesi),
+        const SizedBox(height: 24),
+      ],
     );
   }
 }

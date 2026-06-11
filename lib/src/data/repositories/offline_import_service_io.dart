@@ -5,32 +5,51 @@ import '../../features/contacts/city_contacts_loader.dart';
 import '../../features/martyrs/martyrs_loader.dart';
 
 class OfflineImportService {
-  static Future<void> importAll() async {
+  /// Eski API — yalnızca boş tabloları doldurur.
+  static Future<void> importAll() => seedIfNeeded();
+
+  /// İlk kurulumda JSON → Isar; sonraki açılışlarda atlanır.
+  static Future<void> seedIfNeeded() async {
+    if (!IsarService.isReady) return;
     await Future.wait([
-      importCityContacts(),
-      importMartyrs(),
+      _seedCityContactsIfEmpty(),
+      _seedMartyrsIfEmpty(),
     ]);
   }
 
-  /// 81 il emniyet müdürlüğü — `assets/json/city_contacts.json` → Isar.
-  static Future<void> importCityContacts() async {
-    final contacts = await loadCityContactsFromAsset();
+  @Deprecated('seedIfNeeded kullanın')
+  static Future<void> importCityContacts() => _seedCityContactsIfEmpty();
 
-    final isar = IsarService.db;
-    await isar.writeTxn(() async {
-      await isar.cityContacts.clear();
-      await isar.cityContacts.putAll(contacts);
-    });
+  @Deprecated('seedIfNeeded kullanın')
+  static Future<void> importMartyrs() => _seedMartyrsIfEmpty();
+
+  static Future<void> _seedCityContactsIfEmpty() async {
+    try {
+      final isar = IsarService.db;
+      final count = await isar.cityContacts.count();
+      if (count > 0) return;
+
+      final contacts = await loadCityContactsFromAsset();
+      if (contacts.isEmpty) return;
+
+      await isar.writeTxn(() async {
+        await isar.cityContacts.putAll(contacts);
+      });
+    } catch (_) {}
   }
 
-  /// Şehit listesi — `assets/json/martyrs.json` → Isar.
-  static Future<void> importMartyrs() async {
-    final martyrs = await loadMartyrsFromAsset();
+  static Future<void> _seedMartyrsIfEmpty() async {
+    try {
+      final isar = IsarService.db;
+      final count = await isar.martyrs.count();
+      if (count > 0) return;
 
-    final isar = IsarService.db;
-    await isar.writeTxn(() async {
-      await isar.martyrs.clear();
-      await isar.martyrs.putAll(martyrs);
-    });
+      final martyrs = await loadMartyrsFromAsset();
+      if (martyrs.isEmpty) return;
+
+      await isar.writeTxn(() async {
+        await isar.martyrs.putAll(martyrs);
+      });
+    } catch (_) {}
   }
 }
