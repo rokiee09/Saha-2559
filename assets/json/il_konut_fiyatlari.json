@@ -1,0 +1,35 @@
+{
+  "defaultSourceNote": "Kira ve satılık konut değerleri piyasa endeksi/ilan verilerine göre yaklaşık değerlerdir. Küçük ilçelerde ilan sayısı düşük olduğundan tahmini bant kullanılmıştır.",
+  "lastUpdated": "2026-06",
+  "iller": [
+    {
+      "id": "adana",
+      "province": "Adana",
+      "plate": 1,
+      "sourceNote": "Kira ve satılık konut değerleri Endeksa/Sahibinden/Emlak ilan endeksleri üzerinden yaklaşık piyasa bandı olarak girilmiştir. Küçük ilçelerde ilan sayısı düşük olduğundan değerler tahminidir.",
+      "provinceAverage": {
+        "averageRent": 21872,
+        "rentPerSqm": 194,
+        "salePerSqm": 31623,
+        "amortizationYears": 14
+      },
+      "districtHousing": [
+        {"district": "Çukurova", "rentMin": 25000, "rentMax": 32000, "saleMin": 5000000, "saleMax": 6500000, "level": "high"},
+        {"district": "Seyhan", "rentMin": 20000, "rentMax": 27000, "saleMin": 4000000, "saleMax": 5500000, "level": "high"},
+        {"district": "Sarıçam", "rentMin": 17000, "rentMax": 23000, "saleMin": 2800000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Yüreğir", "rentMin": 16000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 4300000, "level": "medium"},
+        {"district": "Ceyhan", "rentMin": 15000, "rentMax": 20000, "saleMin": 2800000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Kozan", "rentMin": 14000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 3800000, "level": "medium"},
+        {"district": "İmamoğlu", "rentMin": 12000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3300000, "level": "low"},
+        {"district": "Karataş", "rentMin": 13000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4000000, "level": "seasonal"},
+        {"district": "Yumurtalık", "rentMin": 13000, "rentMax": 21000, "saleMin": 2700000, "saleMax": 4500000, "level": "seasonal"},
+        {"district": "Pozantı", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 3700000, "level": "seasonal"},
+        {"district": "Karaisalı", "rentMin": 11000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3200000, "level": "low"},
+        {"district": "Aladağ", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2700000, "level": "limitedData"},
+        {"district": "Feke", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Saimbeyli", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "Tufanbeyli", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"}
+      ]
+    }
+  ]
+}

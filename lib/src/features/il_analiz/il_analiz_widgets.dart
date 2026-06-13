@@ -519,9 +519,23 @@ class IlAiOzetCard extends StatelessWidget {
 }
 
 class IlceMiniCard extends StatelessWidget {
-  const IlceMiniCard({super.key, required this.ilce, this.onTap});
+  const IlceMiniCard({
+    super.key,
+    required this.ilce,
+    this.sagEtiket,
+    this.altBolum,
+    this.ortKiraTl,
+    this.standartGorunum = false,
+    this.onTap,
+  });
 
   final IlceAnaliz ilce;
+  final Widget? sagEtiket;
+  final Widget? altBolum;
+  /// İl analiz `kiraTl` yoksa konut bandından türetilen ortalama.
+  final int? ortKiraTl;
+  /// Konut modülü açıkken nüfus ve ort. kira satırları her kartta gösterilir.
+  final bool standartGorunum;
   final VoidCallback? onTap;
 
   @override
@@ -538,6 +552,7 @@ class IlceMiniCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: Text(
@@ -548,9 +563,13 @@ class IlceMiniCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (ilce.nufus != null)
+                  if (sagEtiket != null) ...[
+                    sagEtiket!,
+                    const SizedBox(width: 6),
+                  ],
+                  if (standartGorunum || ilce.nufus != null)
                     Text(
-                      '${formatIlNufus(ilce.nufus)} nüfus',
+                      '${ilce.nufus != null ? formatIlNufus(ilce.nufus) : kIlAnalizBosDash} nüfus',
                       style: TextStyle(
                         color: PoliceColors.primaryBlue.withValues(alpha: 0.95),
                         fontWeight: FontWeight.w700,
@@ -568,6 +587,16 @@ class IlceMiniCard extends StatelessWidget {
                     ),
                 ],
               ),
+              if (standartGorunum || ortKiraTl != null || ilce.kiraTl != null) ...[
+                const SizedBox(height: 6),
+                Text(
+                  'Ort. kira: ${formatIlTlVeyaDash(ortKiraTl ?? ilce.kiraTl)}',
+                  style: TextStyle(
+                    color: PoliceColors.textMuted.withValues(alpha: 0.85),
+                    fontSize: 11.5,
+                  ),
+                ),
+              ],
               if (ilMetinDolu(ilce.profil)) ...[
                 const SizedBox(height: 6),
                 Text(
@@ -576,16 +605,6 @@ class IlceMiniCard extends StatelessWidget {
                     color: PoliceColors.textMuted.withValues(alpha: 0.9),
                     fontSize: 12,
                     height: 1.35,
-                  ),
-                ),
-              ],
-              if (ilce.kiraTl != null) ...[
-                const SizedBox(height: 6),
-                Text(
-                  'Ort. kira: ${formatIlTl(ilce.kiraTl)}',
-                  style: TextStyle(
-                    color: PoliceColors.textMuted.withValues(alpha: 0.85),
-                    fontSize: 11.5,
                   ),
                 ),
               ],
@@ -604,6 +623,7 @@ class IlceMiniCard extends StatelessWidget {
                   ],
                 ),
               ],
+              if (altBolum != null) altBolum!,
             ],
           ),
         ),

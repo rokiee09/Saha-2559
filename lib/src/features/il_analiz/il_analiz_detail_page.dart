@@ -6,6 +6,7 @@ import 'il_analiz_sablon_fields.dart';
 import 'il_analiz_display.dart';
 import 'il_analiz_models.dart';
 import 'il_analiz_widgets.dart';
+import 'konut_fiyatlari_widgets.dart';
 
 class IlAnalizDetailPage extends StatelessWidget {
   const IlAnalizDetailPage({super.key, required this.profil});
@@ -177,6 +178,7 @@ class _DetaylarTab extends StatelessWidget {
             ilMetrikZorunlu(PhosphorIconsRegular.sun, 'Turizm', formatIlMetinVeyaDash(sy.turizm)),
           ],
         ),
+        _IlcelerTab(profil: profil),
         ilBolumKartiSablon(
           title: 'Polis bilgileri',
           icon: PhosphorIconsRegular.shield,
@@ -216,29 +218,7 @@ class _IlcelerTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (profil.ilceler.isEmpty) {
-      return Center(
-        child: Text(
-          'İlçe analizi henüz eklenmedi.',
-          style: TextStyle(color: PoliceColors.textMuted.withValues(alpha: 0.9)),
-        ),
-      );
-    }
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-      children: [
-        Text(
-          'İlçe nüfusu ve varsa profil puanları. İş yükü yüksek = daha yoğun tempo.',
-          style: TextStyle(
-            color: PoliceColors.textMuted.withValues(alpha: 0.85),
-            fontSize: 12,
-            height: 1.35,
-          ),
-        ),
-        const SizedBox(height: 12),
-        for (final ilce in profil.ilceler) IlceMiniCard(ilce: ilce),
-      ],
-    );
+    return IlIlcelerTabIcerik(profil: profil);
   }
 }
 
