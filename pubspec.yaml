@@ -82,6 +82,7 @@ flutter:
     - assets/json/il_analiz.json
     - assets/json/tazminat_dereceleri.json
     - assets/json/yasam_indeksi.json
+    - assets/json/il_konut_fiyatlari.json
     - assets/json/martyrs.json
     - assets/map/turkey.svg
     - assets/kultur/
