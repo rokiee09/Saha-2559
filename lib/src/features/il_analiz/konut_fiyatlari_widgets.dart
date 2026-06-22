@@ -8,7 +8,74 @@ import 'il_analiz_models.dart';
 import 'il_analiz_widgets.dart';
 import 'konut_fiyatlari_data.dart';
 
-/// İlçeler sekmesi — mevcut ilçe kartları + konut fiyatları.
+/// Detaylar sekmesi — il geneli özet, ilçe konut kartları ve veri notu.
+class YasamMaliyetiBolumu extends ConsumerWidget {
+  const YasamMaliyetiBolumu({super.key, required this.profil});
+
+  final IlAnalizProfil profil;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final async = ref.watch(konutFiyatlariProvider);
+    return async.when(
+      data: (katalog) => _buildBolum(katalog),
+      loading: () => const SizedBox.shrink(),
+      error: (_, __) => const SizedBox.shrink(),
+    );
+  }
+
+  Widget _buildBolum(KonutFiyatlariKatalog katalog) {
+    final konutProfil = katalog.profil(profil.id);
+    if (konutProfil == null) return const SizedBox.shrink();
+
+    final children = <Widget>[
+      IlSectionCard(
+        title: 'Yaşam Maliyeti',
+        icon: PhosphorIconsRegular.houseLine,
+        accent: PoliceColors.gold,
+        children: [
+          IlMetricRow(
+            icon: PhosphorIconsRegular.house,
+            label: 'Ortalama kira',
+            value: formatIlTlVeyaDash(konutProfil.provinceAverage.averageRent),
+          ),
+          IlMetricRow(
+            icon: PhosphorIconsRegular.ruler,
+            label: 'Ortalama m² kira',
+            value: formatIlKonutM2Fiyat(konutProfil.provinceAverage.rentPerSqm),
+          ),
+          IlMetricRow(
+            icon: PhosphorIconsRegular.tag,
+            label: 'Ortalama satılık m² fiyatı',
+            value: formatIlKonutM2Fiyat(konutProfil.provinceAverage.salePerSqm),
+          ),
+          IlMetricRow(
+            icon: PhosphorIconsRegular.hourglass,
+            label: 'Amortisman yılı',
+            value: konutProfil.provinceAverage.amortizationYears != null
+                ? '${konutProfil.provinceAverage.amortizationYears} yıl'
+                : kIlAnalizBosDash,
+          ),
+          IlMetricRow(
+            icon: PhosphorIconsRegular.calendar,
+            label: 'Veri güncelleme tarihi',
+            value: formatIlKonutGuncellemeTarihi(katalog.lastUpdated),
+          ),
+        ],
+      ),
+      const SizedBox(height: 4),
+      ...buildKonutIlceKartlari(profil: profil, konutProfil: konutProfil),
+      _VeriNotuKarti(metin: konutVeriNotu(katalog)),
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: children,
+    );
+  }
+}
+
+/// İlçeler sekmesi — görev profili; konut verisi varsa bantlar kartlara eklenir.
 class IlIlcelerTabIcerik extends ConsumerWidget {
   const IlIlcelerTabIcerik({super.key, required this.profil});
 
@@ -26,9 +93,6 @@ class IlIlcelerTabIcerik extends ConsumerWidget {
 
   Widget _buildIcerik(KonutFiyatlariKatalog? katalog) {
     final konutProfil = katalog?.profil(profil.id);
-    final konutHarita = konutProfil != null
-        ? konutIlceHaritasi(konutProfil)
-        : <String, IlceKonutFiyat>{};
 
     if (profil.ilceler.isEmpty && konutProfil == null) {
       return Center(
@@ -42,7 +106,7 @@ class IlIlcelerTabIcerik extends ConsumerWidget {
     final children = <Widget>[
       Text(
         konutProfil != null
-            ? 'İlçe nüfusu, görev profili ve varsa kira/konut fiyat bantları.'
+            ? 'İlçe nüfusu, görev profili ve kira/konut fiyat bantları. İl özeti için Detaylar sekmesine bakın.'
             : 'İlçe nüfusu ve varsa profil puanları. İş yükü yüksek = daha yoğun tempo.',
         style: TextStyle(
           color: PoliceColors.textMuted.withValues(alpha: 0.85),
@@ -54,75 +118,13 @@ class IlIlcelerTabIcerik extends ConsumerWidget {
     ];
 
     if (konutProfil != null) {
-      children.add(
-        IlSectionCard(
-          title: 'Yaşam maliyeti (il geneli)',
-          icon: PhosphorIconsRegular.houseLine,
-          accent: PoliceColors.gold,
-          children: [
-            IlMetricRow(
-              icon: PhosphorIconsRegular.house,
-              label: 'Ortalama kira',
-              value: formatIlTlVeyaDash(konutProfil.provinceAverage.averageRent),
-            ),
-            IlMetricRow(
-              icon: PhosphorIconsRegular.ruler,
-              label: 'Ort. m² kira',
-              value: formatIlKonutM2Fiyat(konutProfil.provinceAverage.rentPerSqm),
-            ),
-            IlMetricRow(
-              icon: PhosphorIconsRegular.tag,
-              label: 'Ort. satılık m²',
-              value: formatIlKonutM2Fiyat(konutProfil.provinceAverage.salePerSqm),
-            ),
-            IlMetricRow(
-              icon: PhosphorIconsRegular.hourglass,
-              label: 'Amortisman',
-              value: konutProfil.provinceAverage.amortizationYears != null
-                  ? '${konutProfil.provinceAverage.amortizationYears} yıl'
-                  : kIlAnalizBosDash,
-            ),
-            IlMetricRow(
-              icon: PhosphorIconsRegular.calendar,
-              label: 'Veri tarihi',
-              value: formatIlKonutGuncellemeTarihi(katalog!.lastUpdated),
-            ),
-          ],
-        ),
+      children.addAll(
+        buildKonutIlceKartlari(profil: profil, konutProfil: konutProfil),
       );
-    }
-
-    final standart = konutProfil != null;
-    final kullanilanAnalizAd = <String>{};
-
-    if (konutProfil != null) {
-      for (final konut in konutProfil.districtHousing) {
-        final analiz = ilceAnalizEslestir(konut.district, profil.ilceler);
-        if (analiz != null) kullanilanAnalizAd.add(analiz.ad);
-        final ilce = analiz ?? IlceAnaliz(ad: konut.district);
-        children.add(_ilceKarti(
-          ilce: ilce,
-          konut: konut,
-          standartGorunum: standart,
-        ));
-      }
-      for (final ilce in profil.ilceler) {
-        if (kullanilanAnalizAd.contains(ilce.ad)) continue;
-        final konut = konutForIlceAdi(ilce.ad, konutHarita);
-        children.add(_ilceKarti(
-          ilce: ilce,
-          konut: konut,
-          standartGorunum: standart,
-        ));
-      }
     } else {
       for (final ilce in profil.ilceler) {
         children.add(IlceMiniCard(ilce: ilce));
       }
-    }
-
-    if (konutProfil != null && katalog != null) {
-      children.add(_VeriNotuKarti(metin: konutVeriNotu(katalog, konutProfil)));
     }
 
     return ListView(
@@ -130,6 +132,36 @@ class IlIlcelerTabIcerik extends ConsumerWidget {
       children: children,
     );
   }
+}
+
+List<Widget> buildKonutIlceKartlari({
+  required IlAnalizProfil profil,
+  required IlKonutFiyatProfil konutProfil,
+}) {
+  final konutHarita = konutIlceHaritasi(konutProfil);
+  final kullanilanAnalizAd = <String>{};
+  final kartlar = <Widget>[];
+
+  for (final konut in konutProfil.districtHousing) {
+    final analiz = ilceAnalizEslestir(konut.district, profil.ilceler);
+    if (analiz != null) kullanilanAnalizAd.add(analiz.ad);
+    final ilce = analiz ?? IlceAnaliz(ad: konut.district);
+    kartlar.add(_ilceKarti(
+      ilce: ilce,
+      konut: konut,
+      standartGorunum: true,
+    ));
+  }
+  for (final ilce in profil.ilceler) {
+    if (kullanilanAnalizAd.contains(ilce.ad)) continue;
+    final konut = konutForIlceAdi(ilce.ad, konutHarita);
+    kartlar.add(_ilceKarti(
+      ilce: ilce,
+      konut: konut,
+      standartGorunum: true,
+    ));
+  }
+  return kartlar;
 }
 
 Widget _ilceKarti({

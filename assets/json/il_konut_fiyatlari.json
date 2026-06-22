@@ -30,6 +30,557 @@
         {"district": "Saimbeyli", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
         {"district": "Tufanbeyli", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"}
       ]
+    },
+    {
+      "id": "adiyaman",
+      "province": "Adıyaman",
+      "plate": 2,
+      "sourceNote": "Kira ve satılık konut değerleri Endeksa, Sahibinden/Emlakjet ilan endeksleri ve güncel ilan örnekleri üzerinden yaklaşık piyasa bandı olarak girilmiştir. Küçük ilçelerde ilan sayısı düşük olduğundan değerler tahminidir.",
+      "provinceAverage": {
+        "averageRent": 15500,
+        "rentPerSqm": null,
+        "salePerSqm": 22578,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 13000, "rentMax": 20000, "saleMin": 2700000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Kahta", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3200000, "level": "medium"},
+        {"district": "Besni", "rentMin": 10000, "rentMax": 16000, "saleMin": 1800000, "saleMax": 3000000, "level": "low"},
+        {"district": "Gölbaşı", "rentMin": 10000, "rentMax": 16000, "saleMin": 1800000, "saleMax": 3100000, "level": "low"},
+        {"district": "Gerger", "rentMin": 8000, "rentMax": 13000, "saleMin": 1300000, "saleMax": 2300000, "level": "limitedData"},
+        {"district": "Çelikhan", "rentMin": 8000, "rentMax": 13000, "saleMin": 1300000, "saleMax": 2300000, "level": "limitedData"},
+        {"district": "Tut", "rentMin": 8000, "rentMax": 12000, "saleMin": 1200000, "saleMax": 2100000, "level": "limitedData"},
+        {"district": "Sincik", "rentMin": 7000, "rentMax": 12000, "saleMin": 1100000, "saleMax": 2000000, "level": "limitedData"},
+        {"district": "Samsat", "rentMin": 7000, "rentMax": 12000, "saleMin": 1100000, "saleMax": 2000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "afyonkarahisar",
+      "province": "Afyonkarahisar",
+      "plate": 3,
+      "provinceAverage": {
+        "averageRent": 17000,
+        "rentPerSqm": null,
+        "salePerSqm": 28000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 17000, "rentMax": 25000, "saleMin": 3500000, "saleMax": 5500000, "level": "high"},
+        {"district": "Sandıklı", "rentMin": 13000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Bolvadin", "rentMin": 12000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Dinar", "rentMin": 12000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 3700000, "level": "medium"},
+        {"district": "Emirdağ", "rentMin": 13000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "medium"},
+        {"district": "İscehisar", "rentMin": 12000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3600000, "level": "medium"},
+        {"district": "Şuhut", "rentMin": 11000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3300000, "level": "low"},
+        {"district": "Çay", "rentMin": 11000, "rentMax": 15000, "saleMin": 2000000, "saleMax": 3200000, "level": "low"},
+        {"district": "Sinanpaşa", "rentMin": 10000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Sultandağı", "rentMin": 10000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Başmakçı", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Bayat", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Evciler", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "Hocalar", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "Kızılören", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "İhsaniye", "rentMin": 10000, "rentMax": 15000, "saleMin": 1900000, "saleMax": 3100000, "level": "limitedData"},
+        {"district": "Dazkırı", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2900000, "level": "limitedData"},
+        {"district": "Çobanlar", "rentMin": 10000, "rentMax": 15000, "saleMin": 1900000, "saleMax": 3100000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "agri",
+      "province": "Ağrı",
+      "plate": 4,
+      "provinceAverage": {
+        "averageRent": 14500,
+        "rentPerSqm": null,
+        "salePerSqm": 23000,
+        "amortizationYears": 14
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 4500000, "level": "high"},
+        {"district": "Doğubayazıt", "rentMin": 13000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4200000, "level": "high"},
+        {"district": "Patnos", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Eleşkirt", "rentMin": 10000, "rentMax": 15000, "saleMin": 1900000, "saleMax": 3000000, "level": "medium"},
+        {"district": "Tutak", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Diyadin", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Taşlıçay", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "Hamur", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "amasya",
+      "province": "Amasya",
+      "plate": 5,
+      "provinceAverage": {
+        "averageRent": 16500,
+        "rentPerSqm": null,
+        "salePerSqm": 28500,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 16000, "rentMax": 24000, "saleMin": 3200000, "saleMax": 5200000, "level": "high"},
+        {"district": "Merzifon", "rentMin": 15000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 4800000, "level": "high"},
+        {"district": "Suluova", "rentMin": 13000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Taşova", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3500000, "level": "medium"},
+        {"district": "Gümüşhacıköy", "rentMin": 11000, "rentMax": 17000, "saleMin": 2100000, "saleMax": 3400000, "level": "medium"},
+        {"district": "Göynücek", "rentMin": 10000, "rentMax": 15000, "saleMin": 1900000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Hamamözü", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3200000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "ankara",
+      "province": "Ankara",
+      "plate": 6,
+      "provinceAverage": {
+        "averageRent": 24000,
+        "rentPerSqm": null,
+        "salePerSqm": 42000,
+        "amortizationYears": 17
+      },
+      "districtHousing": [
+        {"district": "Çankaya", "rentMin": 30000, "rentMax": 50000, "saleMin": 6000000, "saleMax": 12000000, "level": "high"},
+        {"district": "Yenimahalle", "rentMin": 25000, "rentMax": 40000, "saleMin": 5000000, "saleMax": 9000000, "level": "high"},
+        {"district": "Etimesgut", "rentMin": 22000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 8000000, "level": "high"},
+        {"district": "Gölbaşı", "rentMin": 22000, "rentMax": 40000, "saleMin": 5000000, "saleMax": 10000000, "level": "high"},
+        {"district": "Pursaklar", "rentMin": 18000, "rentMax": 28000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Keçiören", "rentMin": 18000, "rentMax": 30000, "saleMin": 3500000, "saleMax": 6500000, "level": "medium"},
+        {"district": "Mamak", "rentMin": 17000, "rentMax": 28000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Sincan", "rentMin": 18000, "rentMax": 30000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Altındağ", "rentMin": 16000, "rentMax": 26000, "saleMin": 2800000, "saleMax": 5000000, "level": "low"},
+        {"district": "Polatlı", "rentMin": 15000, "rentMax": 25000, "saleMin": 2800000, "saleMax": 5000000, "level": "low"},
+        {"district": "Kahramankazan", "rentMin": 18000, "rentMax": 28000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Akyurt", "rentMin": 15000, "rentMax": 22000, "saleMin": 2500000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Çubuk", "rentMin": 14000, "rentMax": 22000, "saleMin": 2500000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Kızılcahamam", "rentMin": 14000, "rentMax": 22000, "saleMin": 2500000, "saleMax": 4500000, "level": "seasonal"},
+        {"district": "Beypazarı", "rentMin": 13000, "rentMax": 20000, "saleMin": 2300000, "saleMax": 4000000, "level": "low"},
+        {"district": "Elmadağ", "rentMin": 13000, "rentMax": 20000, "saleMin": 2200000, "saleMax": 3800000, "level": "low"},
+        {"district": "Şereflikoçhisar", "rentMin": 13000, "rentMax": 20000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Haymana", "rentMin": 12000, "rentMax": 18000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Ayaş", "rentMin": 12000, "rentMax": 18000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Kalecik", "rentMin": 12000, "rentMax": 18000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Nallıhan", "rentMin": 12000, "rentMax": 18000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Bala", "rentMin": 11000, "rentMax": 17000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Çamlıdere", "rentMin": 11000, "rentMax": 17000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Güdül", "rentMin": 11000, "rentMax": 17000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Evren", "rentMin": 10000, "rentMax": 15000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "antalya",
+      "province": "Antalya",
+      "plate": 7,
+      "provinceAverage": {
+        "averageRent": 26000,
+        "rentPerSqm": null,
+        "salePerSqm": 50000,
+        "amortizationYears": 17
+      },
+      "districtHousing": [
+        {"district": "Konyaaltı", "rentMin": 30000, "rentMax": 50000, "saleMin": 6000000, "saleMax": 12000000, "level": "high"},
+        {"district": "Muratpaşa", "rentMin": 25000, "rentMax": 45000, "saleMin": 5000000, "saleMax": 10000000, "level": "high"},
+        {"district": "Döşemealtı", "rentMin": 20000, "rentMax": 35000, "saleMin": 4000000, "saleMax": 9000000, "level": "high"},
+        {"district": "Kepez", "rentMin": 18000, "rentMax": 28000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Aksu", "rentMin": 18000, "rentMax": 30000, "saleMin": 3500000, "saleMax": 6500000, "level": "medium"},
+        {"district": "Alanya", "rentMin": 20000, "rentMax": 35000, "saleMin": 4000000, "saleMax": 8000000, "level": "seasonal"},
+        {"district": "Manavgat", "rentMin": 18000, "rentMax": 30000, "saleMin": 3500000, "saleMax": 7000000, "level": "seasonal"},
+        {"district": "Serik", "rentMin": 20000, "rentMax": 35000, "saleMin": 4000000, "saleMax": 9000000, "level": "seasonal"},
+        {"district": "Kemer", "rentMin": 20000, "rentMax": 35000, "saleMin": 4000000, "saleMax": 9000000, "level": "seasonal"},
+        {"district": "Kaş", "rentMin": 25000, "rentMax": 50000, "saleMin": 6000000, "saleMax": 15000000, "level": "high"},
+        {"district": "Kalkan", "rentMin": 35000, "rentMax": 70000, "saleMin": 10000000, "saleMax": 30000000, "level": "high"},
+        {"district": "Finike", "rentMin": 15000, "rentMax": 25000, "saleMin": 3000000, "saleMax": 5000000, "level": "seasonal"},
+        {"district": "Demre", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "seasonal"},
+        {"district": "Kumluca", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "seasonal"},
+        {"district": "Gazipaşa", "rentMin": 14000, "rentMax": 22000, "saleMin": 2500000, "saleMax": 4500000, "level": "seasonal"},
+        {"district": "Elmalı", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "low"},
+        {"district": "Korkuteli", "rentMin": 13000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4200000, "level": "low"},
+        {"district": "Akseki", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "İbradı", "rentMin": 10000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Gündoğmuş", "rentMin": 10000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "artvin",
+      "province": "Artvin",
+      "plate": 8,
+      "provinceAverage": {
+        "averageRent": 18000,
+        "rentPerSqm": null,
+        "salePerSqm": 32000,
+        "amortizationYears": 16
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 16000, "rentMax": 25000, "saleMin": 3500000, "saleMax": 5500000, "level": "high"},
+        {"district": "Hopa", "rentMin": 18000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 6500000, "level": "high"},
+        {"district": "Arhavi", "rentMin": 17000, "rentMax": 26000, "saleMin": 3800000, "saleMax": 6000000, "level": "high"},
+        {"district": "Borçka", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Yusufeli", "rentMin": 14000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Kemalpaşa", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Şavşat", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "low"},
+        {"district": "Murgul", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "low"},
+        {"district": "Ardanuç", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "aydin",
+      "province": "Aydın",
+      "plate": 9,
+      "provinceAverage": {
+        "averageRent": 22000,
+        "rentPerSqm": null,
+        "salePerSqm": 42000,
+        "amortizationYears": 17
+      },
+      "districtHousing": [
+        {"district": "Kuşadası", "rentMin": 28000, "rentMax": 50000, "saleMin": 6000000, "saleMax": 15000000, "level": "high"},
+        {"district": "Didim", "rentMin": 25000, "rentMax": 45000, "saleMin": 5500000, "saleMax": 12000000, "level": "high"},
+        {"district": "Efeler", "rentMin": 20000, "rentMax": 30000, "saleMin": 4000000, "saleMax": 7000000, "level": "high"},
+        {"district": "Nazilli", "rentMin": 17000, "rentMax": 25000, "saleMin": 3500000, "saleMax": 6000000, "level": "high"},
+        {"district": "Söke", "rentMin": 16000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Germencik", "rentMin": 15000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "medium"},
+        {"district": "İncirliova", "rentMin": 15000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Çine", "rentMin": 14000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Koçarlı", "rentMin": 13000, "rentMax": 19000, "saleMin": 2300000, "saleMax": 4000000, "level": "low"},
+        {"district": "Köşk", "rentMin": 13000, "rentMax": 19000, "saleMin": 2300000, "saleMax": 4000000, "level": "low"},
+        {"district": "Sultanhisar", "rentMin": 13000, "rentMax": 19000, "saleMin": 2400000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Kuyucak", "rentMin": 13000, "rentMax": 19000, "saleMin": 2400000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Karpuzlu", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Bozdoğan", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Yenipazar", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Buharkent", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Karacasu", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "balikesir",
+      "province": "Balıkesir",
+      "plate": 10,
+      "provinceAverage": {
+        "averageRent": 24000,
+        "rentPerSqm": null,
+        "salePerSqm": 45000,
+        "amortizationYears": 18
+      },
+      "districtHousing": [
+        {"district": "Ayvalık", "rentMin": 28000, "rentMax": 55000, "saleMin": 7000000, "saleMax": 18000000, "level": "high"},
+        {"district": "Edremit", "rentMin": 22000, "rentMax": 40000, "saleMin": 5000000, "saleMax": 10000000, "level": "high"},
+        {"district": "Burhaniye", "rentMin": 22000, "rentMax": 38000, "saleMin": 5000000, "saleMax": 10000000, "level": "high"},
+        {"district": "Bandırma", "rentMin": 22000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 8000000, "level": "high"},
+        {"district": "Karesi", "rentMin": 20000, "rentMax": 30000, "saleMin": 4000000, "saleMax": 7000000, "level": "high"},
+        {"district": "Altıeylül", "rentMin": 20000, "rentMax": 30000, "saleMin": 4000000, "saleMax": 7500000, "level": "high"},
+        {"district": "Marmara", "rentMin": 18000, "rentMax": 35000, "saleMin": 4000000, "saleMax": 8000000, "level": "seasonal"},
+        {"district": "Gömeç", "rentMin": 18000, "rentMax": 32000, "saleMin": 4000000, "saleMax": 8000000, "level": "seasonal"},
+        {"district": "Erdek", "rentMin": 20000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 9000000, "level": "seasonal"},
+        {"district": "Gönen", "rentMin": 17000, "rentMax": 26000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Susurluk", "rentMin": 15000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Havran", "rentMin": 15000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Bigadiç", "rentMin": 14000, "rentMax": 20000, "saleMin": 2800000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Sındırgı", "rentMin": 14000, "rentMax": 20000, "saleMin": 2800000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Manyas", "rentMin": 13000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 4000000, "level": "low"},
+        {"district": "Dursunbey", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "low"},
+        {"district": "İvrindi", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Kepsut", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Balya", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Savaştepe", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "bilecik",
+      "province": "Bilecik",
+      "plate": 11,
+      "provinceAverage": {
+        "averageRent": 18000,
+        "rentPerSqm": null,
+        "salePerSqm": 32000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 16000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5000000, "level": "high"},
+        {"district": "Bozüyük", "rentMin": 18000, "rentMax": 28000, "saleMin": 3500000, "saleMax": 6000000, "level": "high"},
+        {"district": "Osmaneli", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Söğüt", "rentMin": 13000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Gölpazarı", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Pazaryeri", "rentMin": 12000, "rentMax": 18000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Yenipazar", "rentMin": 10000, "rentMax": 16000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "İnhisar", "rentMin": 10000, "rentMax": 15000, "saleMin": 1700000, "saleMax": 3000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "bingol",
+      "province": "Bingöl",
+      "plate": 12,
+      "provinceAverage": {
+        "averageRent": 15000,
+        "rentPerSqm": null,
+        "salePerSqm": 26000,
+        "amortizationYears": 14
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "high"},
+        {"district": "Genç", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Solhan", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Karlıova", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "medium"},
+        {"district": "Kiğı", "rentMin": 9000, "rentMax": 14000, "saleMin": 1700000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Adaklı", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2700000, "level": "limitedData"},
+        {"district": "Yayladere", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"},
+        {"district": "Yedisu", "rentMin": 8000, "rentMax": 13000, "saleMin": 1500000, "saleMax": 2500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "bitlis",
+      "province": "Bitlis",
+      "plate": 13,
+      "provinceAverage": {
+        "averageRent": 15000,
+        "rentPerSqm": null,
+        "salePerSqm": 27000,
+        "amortizationYears": 14
+      },
+      "districtHousing": [
+        {"district": "Tatvan", "rentMin": 16000, "rentMax": 26000, "saleMin": 3500000, "saleMax": 6000000, "level": "high"},
+        {"district": "Merkez", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "high"},
+        {"district": "Ahlat", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Güroymak", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Adilcevaz", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Hizan", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Mutki", "rentMin": 9000, "rentMax": 15000, "saleMin": 1700000, "saleMax": 3000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "bolu",
+      "province": "Bolu",
+      "plate": 14,
+      "provinceAverage": {
+        "averageRent": 20000,
+        "rentPerSqm": null,
+        "salePerSqm": 38000,
+        "amortizationYears": 16
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 20000, "rentMax": 32000, "saleMin": 4500000, "saleMax": 8000000, "level": "high"},
+        {"district": "Gerede", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Mudurnu", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Mengen", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Göynük", "rentMin": 13000, "rentMax": 20000, "saleMin": 2700000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Yeniçağa", "rentMin": 14000, "rentMax": 21000, "saleMin": 2800000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Dörtdivan", "rentMin": 12000, "rentMax": 18000, "saleMin": 2400000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Kıbrıscık", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Seben", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "burdur",
+      "province": "Burdur",
+      "plate": 15,
+      "provinceAverage": {
+        "averageRent": 17000,
+        "rentPerSqm": null,
+        "salePerSqm": 30000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Bucak", "rentMin": 18000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 7000000, "level": "high"},
+        {"district": "Merkez", "rentMin": 16000, "rentMax": 25000, "saleMin": 3500000, "saleMax": 6000000, "level": "high"},
+        {"district": "Gölhisar", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Tefenni", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Yeşilova", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Çavdır", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Karamanlı", "rentMin": 11000, "rentMax": 16000, "saleMin": 2200000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Altınyayla", "rentMin": 10000, "rentMax": 15000, "saleMin": 2000000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Ağlasun", "rentMin": 10000, "rentMax": 15000, "saleMin": 2000000, "saleMax": 3300000, "level": "limitedData"},
+        {"district": "Kemer", "rentMin": 10000, "rentMax": 15000, "saleMin": 2000000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Çeltikçi", "rentMin": 10000, "rentMax": 15000, "saleMin": 2000000, "saleMax": 3200000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "bursa",
+      "province": "Bursa",
+      "plate": 16,
+      "provinceAverage": {
+        "averageRent": 25000,
+        "rentPerSqm": null,
+        "salePerSqm": 48000,
+        "amortizationYears": 17
+      },
+      "districtHousing": [
+        {"district": "Nilüfer", "rentMin": 28000, "rentMax": 50000, "saleMin": 6000000, "saleMax": 12000000, "level": "high"},
+        {"district": "Mudanya", "rentMin": 25000, "rentMax": 45000, "saleMin": 6000000, "saleMax": 12000000, "level": "high"},
+        {"district": "Tirilye", "rentMin": 30000, "rentMax": 55000, "saleMin": 7000000, "saleMax": 15000000, "level": "high"},
+        {"district": "Osmangazi", "rentMin": 22000, "rentMax": 38000, "saleMin": 4500000, "saleMax": 9000000, "level": "high"},
+        {"district": "Gemlik", "rentMin": 20000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 8500000, "level": "high"},
+        {"district": "İnegöl", "rentMin": 18000, "rentMax": 32000, "saleMin": 4000000, "saleMax": 7500000, "level": "medium"},
+        {"district": "Yıldırım", "rentMin": 18000, "rentMax": 30000, "saleMin": 3500000, "saleMax": 7000000, "level": "medium"},
+        {"district": "Orhangazi", "rentMin": 17000, "rentMax": 28000, "saleMin": 3500000, "saleMax": 6500000, "level": "medium"},
+        {"district": "Kestel", "rentMin": 17000, "rentMax": 27000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Gürsu", "rentMin": 16000, "rentMax": 25000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Karacabey", "rentMin": 16000, "rentMax": 25000, "saleMin": 3200000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Mustafakemalpaşa", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "İznik", "rentMin": 15000, "rentMax": 25000, "saleMin": 3000000, "saleMax": 6000000, "level": "seasonal"},
+        {"district": "Yenişehir", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Keles", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Orhaneli", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Harmancık", "rentMin": 10000, "rentMax": 16000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Büyükorhan", "rentMin": 10000, "rentMax": 16000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "canakkale",
+      "province": "Çanakkale",
+      "plate": 17,
+      "provinceAverage": {
+        "averageRent": 22000,
+        "rentPerSqm": null,
+        "salePerSqm": 45000,
+        "amortizationYears": 17
+      },
+      "districtHousing": [
+        {"district": "Bozcaada", "rentMin": 30000, "rentMax": 60000, "saleMin": 10000000, "saleMax": 25000000, "level": "high"},
+        {"district": "Gökçeada", "rentMin": 22000, "rentMax": 40000, "saleMin": 6000000, "saleMax": 12000000, "level": "high"},
+        {"district": "Merkez", "rentMin": 20000, "rentMax": 32000, "saleMin": 4500000, "saleMax": 8000000, "level": "high"},
+        {"district": "Ayvacık", "rentMin": 18000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 10000000, "level": "high"},
+        {"district": "Eceabat", "rentMin": 18000, "rentMax": 32000, "saleMin": 4500000, "saleMax": 8000000, "level": "high"},
+        {"district": "Biga", "rentMin": 18000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 7000000, "level": "high"},
+        {"district": "Gelibolu", "rentMin": 18000, "rentMax": 30000, "saleMin": 4000000, "saleMax": 7500000, "level": "high"},
+        {"district": "Lapseki", "rentMin": 17000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 7000000, "level": "medium"},
+        {"district": "Ezine", "rentMin": 16000, "rentMax": 25000, "saleMin": 3500000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Çan", "rentMin": 15000, "rentMax": 24000, "saleMin": 3200000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Bayramiç", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "low"},
+        {"district": "Yenice", "rentMin": 13000, "rentMax": 20000, "saleMin": 2800000, "saleMax": 4500000, "level": "low"}
+      ]
+    },
+    {
+      "id": "cankiri",
+      "province": "Çankırı",
+      "plate": 18,
+      "provinceAverage": {
+        "averageRent": 15000,
+        "rentPerSqm": null,
+        "salePerSqm": 27000,
+        "amortizationYears": 14
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "high"},
+        {"district": "Şabanözü", "rentMin": 13000, "rentMax": 21000, "saleMin": 2800000, "saleMax": 5000000, "level": "high"},
+        {"district": "Çerkeş", "rentMin": 12000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Ilgaz", "rentMin": 12000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Kurşunlu", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "medium"},
+        {"district": "Yapraklı", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "low"},
+        {"district": "Kızılırmak", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Atkaracalar", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Bayramören", "rentMin": 8000, "rentMax": 14000, "saleMin": 1500000, "saleMax": 2800000, "level": "limitedData"},
+        {"district": "Eldivan", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Korgun", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Orta", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "corum",
+      "province": "Çorum",
+      "plate": 19,
+      "provinceAverage": {
+        "averageRent": 17000,
+        "rentPerSqm": null,
+        "salePerSqm": 30000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Merkez", "rentMin": 18000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 7000000, "level": "high"},
+        {"district": "Sungurlu", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5500000, "level": "high"},
+        {"district": "Osmancık", "rentMin": 13000, "rentMax": 20000, "saleMin": 2800000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Alaca", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "İskilip", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "medium"},
+        {"district": "Mecitözü", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "low"},
+        {"district": "Kargı", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "low"},
+        {"district": "Ortaköy", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Uğurludağ", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Dodurga", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Oğuzlar", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Laçin", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Boğazkale", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Bayat", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "denizli",
+      "province": "Denizli",
+      "plate": 20,
+      "provinceAverage": {
+        "averageRent": 23000,
+        "rentPerSqm": null,
+        "salePerSqm": 45000,
+        "amortizationYears": 16
+      },
+      "districtHousing": [
+        {"district": "Pamukkale", "rentMin": 24000, "rentMax": 40000, "saleMin": 5500000, "saleMax": 10000000, "level": "high"},
+        {"district": "Merkezefendi", "rentMin": 22000, "rentMax": 36000, "saleMin": 5000000, "saleMax": 9000000, "level": "high"},
+        {"district": "Honaz", "rentMin": 18000, "rentMax": 28000, "saleMin": 4000000, "saleMax": 7000000, "level": "medium"},
+        {"district": "Çivril", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Acıpayam", "rentMin": 15000, "rentMax": 23000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Tavas", "rentMin": 14000, "rentMax": 22000, "saleMin": 2800000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Buldan", "rentMin": 15000, "rentMax": 24000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Sarayköy", "rentMin": 15000, "rentMax": 24000, "saleMin": 3200000, "saleMax": 5800000, "level": "medium"},
+        {"district": "Çal", "rentMin": 13000, "rentMax": 20000, "saleMin": 2500000, "saleMax": 4500000, "level": "low"},
+        {"district": "Bozkurt", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Serinhisar", "rentMin": 12000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 4200000, "level": "limitedData"},
+        {"district": "Babadağ", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Bekilli", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Güney", "rentMin": 12000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Çardak", "rentMin": 12000, "rentMax": 19000, "saleMin": 2500000, "saleMax": 4200000, "level": "medium"},
+        {"district": "Kale", "rentMin": 11000, "rentMax": 17000, "saleMin": 2200000, "saleMax": 3800000, "level": "limitedData"},
+        {"district": "Beyağaç", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3700000, "level": "limitedData"},
+        {"district": "Baklan", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Çameli", "rentMin": 11000, "rentMax": 17000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "diyarbakir",
+      "province": "Diyarbakır",
+      "plate": 21,
+      "provinceAverage": {
+        "averageRent": 20000,
+        "rentPerSqm": null,
+        "salePerSqm": 38000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Kayapınar", "rentMin": 22000, "rentMax": 40000, "saleMin": 5000000, "saleMax": 10000000, "level": "high"},
+        {"district": "Yenişehir", "rentMin": 20000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 9000000, "level": "high"},
+        {"district": "Bağlar", "rentMin": 15000, "rentMax": 28000, "saleMin": 3000000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Sur", "rentMin": 14000, "rentMax": 25000, "saleMin": 3000000, "saleMax": 6000000, "level": "medium"},
+        {"district": "Ergani", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5000000, "level": "medium"},
+        {"district": "Bismil", "rentMin": 13000, "rentMax": 21000, "saleMin": 2800000, "saleMax": 4800000, "level": "medium"},
+        {"district": "Silvan", "rentMin": 13000, "rentMax": 20000, "saleMin": 2700000, "saleMax": 4500000, "level": "medium"},
+        {"district": "Çınar", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4000000, "level": "low"},
+        {"district": "Çermik", "rentMin": 11000, "rentMax": 18000, "saleMin": 2300000, "saleMax": 4000000, "level": "low"},
+        {"district": "Kulp", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Lice", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Hani", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Eğil", "rentMin": 10000, "rentMax": 16000, "saleMin": 2000000, "saleMax": 3500000, "level": "limitedData"},
+        {"district": "Dicle", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3200000, "level": "limitedData"},
+        {"district": "Hazro", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Kocaköy", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"},
+        {"district": "Çüngüş", "rentMin": 9000, "rentMax": 15000, "saleMin": 1800000, "saleMax": 3000000, "level": "limitedData"}
+      ]
+    },
+    {
+      "id": "edirne",
+      "province": "Edirne",
+      "plate": 22,
+      "provinceAverage": {
+        "averageRent": 19000,
+        "rentPerSqm": null,
+        "salePerSqm": 36000,
+        "amortizationYears": 15
+      },
+      "districtHousing": [
+        {"district": "Enez", "rentMin": 18000, "rentMax": 35000, "saleMin": 4500000, "saleMax": 9000000, "level": "high"},
+        {"district": "Keşan", "rentMin": 18000, "rentMax": 32000, "saleMin": 4000000, "saleMax": 8000000, "level": "high"},
+        {"district": "Merkez", "rentMin": 18000, "rentMax": 30000, "saleMin": 4000000, "saleMax": 7500000, "level": "high"},
+        {"district": "Uzunköprü", "rentMin": 14000, "rentMax": 22000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "İpsala", "rentMin": 14000, "rentMax": 23000, "saleMin": 3000000, "saleMax": 5500000, "level": "medium"},
+        {"district": "Havsa", "rentMin": 12000, "rentMax": 18000, "saleMin": 2500000, "saleMax": 4500000, "level": "low"},
+        {"district": "Lalapaşa", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Meriç", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"},
+        {"district": "Süloğlu", "rentMin": 11000, "rentMax": 17000, "saleMin": 2300000, "saleMax": 4000000, "level": "limitedData"}
+      ]
     }
   ]
 }
