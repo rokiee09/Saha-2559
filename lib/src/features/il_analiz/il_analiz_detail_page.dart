@@ -178,7 +178,7 @@ class _DetaylarTab extends StatelessWidget {
             ilMetrikZorunlu(PhosphorIconsRegular.sun, 'Turizm', formatIlMetinVeyaDash(sy.turizm)),
           ],
         ),
-        _IlcelerTab(profil: profil),
+        YasamMaliyetiBolumu(profil: profil),
         ilBolumKartiSablon(
           title: 'Polis bilgileri',
           icon: PhosphorIconsRegular.shield,

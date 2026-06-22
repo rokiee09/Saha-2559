@@ -192,11 +192,9 @@ IlceAnaliz? ilceAnalizEslestir(String konutIlce, List<IlceAnaliz> ilceler) {
   return null;
 }
 
-String konutVeriNotu(KonutFiyatlariKatalog katalog, IlKonutFiyatProfil profil) {
+String konutVeriNotu(KonutFiyatlariKatalog katalog) {
   const sabit =
       'Kira ve satılık konut değerleri piyasa endeksi/ilan verilerine göre yaklaşık değerlerdir. Küçük ilçelerde ilan sayısı düşük olduğundan tahmini bant kullanılmıştır.';
-  final ozel = profil.sourceNote?.trim();
-  if (ozel != null && ozel.isNotEmpty) return ozel;
   final genel = katalog.defaultSourceNote.trim();
   if (genel.isNotEmpty) return genel;
   return sabit;
